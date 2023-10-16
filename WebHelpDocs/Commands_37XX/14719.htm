@@ -1,0 +1,282 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14699.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14700.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t14719" class="heading2-icl">display.getannunciators()</h2>
+<p class="bodyzero">This function reads the annunciators (indicators) that are presently turned on.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">annunciators</em> = display.getannunciators()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">annunciators</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The bitmasked value that shows which indicators are turned on</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function returns a bitmasked value showing which indicators are turned on. The 16&#8209;bit binary equivalent of the returned value is the bitmask. The return value is a sum of set annunciators, based on the weighted value, as shown in the following table.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="120" height="0"></td>
+<td width="96" height="0"></td>
+<td width="96" height="0"></td>
+<td width="288" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #FFFFFF;border-right:1px solid #FFFFFF;border-top:1px solid #FFFFFF;border-bottom:1px solid #C0C0C0;" colspan="4" width="600"><p class="tableheading">Annunciator (indicator) bitmasked values and equivalent constants</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Indicator</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tableheading">Bit</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tableheading">Weighted value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Equivalent constant</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">FILT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_FILTER</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">MATH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_MATH</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">4W</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_4_WIRE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">AUTO</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_AUTO</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">ARM</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_ARM</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">TRIG</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_TRIGGER</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">* (asterisk)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">64</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_STAR</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">SMPL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_SAMPLE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">EDIT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">9</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">256</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_EDIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">ERR</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">10</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">512</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_ERROR</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">REM</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">11</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">1024</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_REMOTE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">TALK</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">12</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">2048</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_TALK </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">LSTN</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">13</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">4096</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_LISTEN</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">SRQ</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">14</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">8192</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_SRQ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">REAR</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">15</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">16384</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_REAR</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">REL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">32768</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">display.ANNUNCIATOR_REL</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">testAnnunciators = display.getannunciators()</p>
+<p class="codetable">print(testAnnunciators)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">rem = bit.bitand(testAnnunciators, 1024)</p>
+<p class="codetable">if rem &gt; 0 then</p>
+<p class="codetable">   print(&quot;REM is on&quot;)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;REM is off&quot;)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">REM indicator is turned on.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1.28000e+03</p>
+<p class="codetable">REM is on</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">print(display.ANNUNCIATOR_EDIT)</p>
+<p class="codetable">print(display.ANNUNCIATOR_TRIGGER)</p>
+<p class="codetable">print(display.ANNUNCIATOR_AUTO)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Output:</p>
+<p class="codetable">2.56000e+02</p>
+<p class="codetable">3.20000e+01</p>
+<p class="codetable">8.00000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14645" class="jump" title="bit.bitand()" href="14632.htm" target="_self">bit.bitand()</a></p>
+
+

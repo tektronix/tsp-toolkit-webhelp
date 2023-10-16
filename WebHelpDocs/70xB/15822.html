@@ -1,0 +1,324 @@
+<html><head><title> status.condition </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14126.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15830.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">status.condition</h2>
+<p class="bodyzero">This attribute stores the status byte condition register.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">statusByte</em> = status.condition</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">statusByte</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">The byte condition register's status returned as a decimal.  A zero (0) indicates no bits set. Other decimal values indicate various bit settings.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This read-only attribute's value is returned as a decimal value. The binary equivalent of the value indicates which register bits are set. In the binary equivalent, the least significant bit is bit B0, and the most significant bit is bit B7. For example, if a value of<code class="monospace"> 1.29000e+02</code> (which is 129) is read as the value of the condition register, the binary equivalent is <code class="monospace">10000001</code>. This value indicates that bit B0 and bit B7 are set.</p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style = "border-right:1px solid #010101;border-top:1px solid #010101;" width="90"><p class="tablebodytextcenter">B7</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="82"><p class="tablebodytextcenter">B6</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="98"><p class="tablebodytextcenter">B5</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="98"><p class="tablebodytextcenter">B4</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="98"><p class="tablebodytextcenter">B3</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="105"><p class="tablebodytextcenter">B2</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="82"><p class="tablebodytextcenter">B1</p>
+</td>
+<td style = "border-left:1px solid #010101;border-top:1px solid #010101;" width="90"><p class="tablebodytextcenter">B0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border-right:1px solid #010101;" width="90"><p class="tablebodytextcenter">Most significant bit</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="82"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="98"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="98"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="98"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="105"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="82"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style = "border-left:1px solid #010101;" width="90"><p class="tablebodytextcenter">Least significant bit</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border-top:1px solid #010101;" width="90"><p class="tablebodytextcenter"><code class="monospace">1</code></p>
+</td>
+<td style = "border-top:1px solid #010101;" width="82"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style = "border-top:1px solid #010101;" width="98"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style = "border-top:1px solid #010101;" width="98"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style = "border-top:1px solid #010101;" width="98"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style = "border-top:1px solid #010101;" width="105"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style = "border-top:1px solid #010101;" width="82"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style = "border-top:1px solid #010101;" width="90"><p class="tablebodytextcenter"><code class="monospace">1</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">The returned value can indicate one or more status events occured. When an enabled status event occurs, a summary bit is set in this register to indicate the event occurrence. </p>
+<p class="iclbody">The following table contains descriptions of the bits:</p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th style = "border:1px solid #010101;" width="68"><p class="tableheadingsmall">Bit</p>
+</th>
+<th style = "border:1px solid #010101;" width="330"><p class="tableheadingsmall">Value</p>
+</th>
+<th style = "border:1px solid #010101;" width="345"><p class="tableheadingsmall">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B0</p>
+</td>
+<td style = "border:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.MEASUREMENT_SUMMARY_BIT</code><br><code class="monospace">status.MSB</code></p>
+</td>
+<td style = "border:1px solid #010101;" width="345"><p class="tablebodytextsmall">Set summary bit indicates that an enabled measurement event has occurred. </p>
+<p class="tablebodytextsmall">Bit 0 decimal value: 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B1</p>
+</td>
+<td style = "border:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.SYSTEM_SUMMARY_BIT</code></p>
+<p class="tablebodytextsmall"><code class="monospace">status.SSB</code></p>
+</td>
+<td style = "border:1px solid #010101;" width="345"><p class="tablebodytextsmall">Set summary bit indicates that an enabled system</p>
+<p class="tablebodytextsmall">event has occurred.</p>
+<p class="tablebodytextsmall">Bit 1 decimal value: 2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B2</p>
+</td>
+<td style = "border:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.ERROR_AVAILABLE</code><br><code class="monospace">status.EAV</code></p>
+</td>
+<td style = "border:1px solid #010101;" width="345"><p class="tablebodytextsmall">Set summary bit indicates that an error or status message is present in the Error Queue. </p>
+<p class="tablebodytextsmall">Bit 2 decimal value: 4</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B3</p>
+</td>
+<td style = "border:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.QUESTIONABLE_SUMMARY_BIT</code><br><code class="monospace">status.QSB</code></p>
+</td>
+<td style = "border:1px solid #010101;" width="345"><p class="tablebodytextsmall">Set summary bit indicates that an enabled questionable event has occurred. </p>
+<p class="tablebodytextsmall">Bit 3 decimal value: 8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B4</p>
+</td>
+<td style = "border:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.MESSAGE_AVAILABLE</code><br><code class="monospace">status.MAV</code></p>
+</td>
+<td style = "border:1px solid #010101;" width="345"><p class="tablebodytextsmall">Set summary bit indicates that a response message is present in the Output Queue. </p>
+<p class="tablebodytextsmall">Bit 4 decimal value: 16</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B5</p>
+</td>
+<td style = "border:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.EVENT_SUMMARY_BIT</code><br><code class="monospace">status.ESB</code></p>
+</td>
+<td style = "border:1px solid #010101;" width="345"><p class="tablebodytextsmall">Set summary bit indicates that an enabled standard event has occurred. </p>
+<p class="tablebodytextsmall">Bit 5 decimal value: 32</p>
+<p class="tablebodytextsmall">&nbsp;</p>
+<p class="tablebodytextsmall">&nbsp;</p>
+<p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="68"><p class="tablebodytextsmall">B6</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="330"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="345"><p class="tablebodytextsmall">Request Service (RQS)/Master Summary Status (MSS) - Depending on how it is used, Bit B6 of the status byte register is either the Request for Service (RQS) bit or the Master Summary Status (MSS) bit:</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="68"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.RQS</code></p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="345"><p class="tablebodytextsmall">- When using the GPIB or VXI-11 serial poll sequence of the 3700S to obtain the status byte (serial poll byte), B6 is the RQS bit. Set bit indicates that the Request Service (RQS) bit of the status byte (serial poll byte) is set and a serial poll (SRQ) has occurred. </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="68"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.MASTER_SUMMARY_STATUS</code><br><code class="monospace">status.MSS</code></p>
+<p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border-left:1px solid #010101;border-right:1px solid #010101;" width="345"><p class="tablebodytextsmall">- When using status.condition ICL or the *STB? common command to read the status byte, B6 is the MSS bit.Set bit indicates that an enabled summary bit of the status byte register is set.</p>
+<p class="tablebodytextsmall">Bit 6 decimal value: 64</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B7</p>
+</td>
+<td style = "border:1px solid #010101;" width="330"><p class="tablebodytextsmall"><code class="monospace">status.OPERATION_SUMMARY</code><br><code class="monospace">status.OSB</code></p>
+</td>
+<td style = "border:1px solid #010101;" width="345"><p class="tablebodytextsmall">Set summary bit indicates that an enabled operation event has occurred. </p>
+<p class="tablebodytextsmall">Bit 7 decimal value: 128</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">In addition to the above constants,  when more than one bit of the register is set, <span class="monospaceitalic">statusByte</span> will equal the sum of their decimal weights. For example, if 129 is returned, bits B0 and B7 are set (1 + 128).</p>
+<p class="iclspacing"></p>
+<p class="tablebodytextsmall"></p>
+<table width="728" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="188"><p class="tablebodytextsmall">Bit</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B7</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B6</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B5</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B4</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B3</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B2</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B1</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">B0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="188"><p class="tablebodytextsmall">Binary value</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">0/1</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">0/1</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">0/1</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">0/1</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">0/1</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">0/1</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">0/1</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">0/1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="188"><p class="tablebodytextsmall">Decimal</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">128</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">64</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">32</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">16</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">8</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">4</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">2</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #010101;" width="188"><p class="tablebodytextsmall">Weights</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">(2<sup class="superscript">7</sup>)</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">(2<sup class="superscript">6</sup>)</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">(2<sup class="superscript">5</sup>)</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">(2<sup class="superscript">4</sup>)</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">(2<sup class="superscript">3</sup>)</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">(2<sup class="superscript">2</sup>)</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">(2<sup class="superscript">1</sup>)</p>
+</td>
+<td style = "border:1px solid #010101;" width="68"><p class="tablebodytextsmall">(2<sup class="superscript">0</sup>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="382"><p class="codetable">statusByte = status.condition</p>
+<p class="codetable">print(statbyte)</p>
+</td>
+<td width="360"><p class="tablebodytext">Returns <code class="monospace">statusByte</code>.</p>
+<p class="tablebodytext">Sample output: <code class="monospace">1.29000e+02</code></p>
+<p class="tablebodytext">Converting this output (129) to its binary equivalent yields: <code class="monospace">1000 0001 </code></p>
+<p class="tablebodytext">Therefore, this output indicates that the set bits of the status byte condition register are presently B0 (MSS) and B7 (OSB).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody">Status model overview</p>
+<p class="iclbody">Status byte and service request (SRQ)</p>
+<p class="bodytext"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

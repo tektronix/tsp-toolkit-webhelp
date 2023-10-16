@@ -1,0 +1,240 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Understanding hardware value and pseudo line state </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12570.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12572.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12571" class="heading3">Understanding hardware value and pseudo line state</h3>
+<p class="bodytext">LAN triggering is similar to hardware synchronization except that LXI trigger packets are used instead of hardware signals. A bit in the LXI trigger packet called the hardware value simulates the state of a hardware trigger line. The 2600B stores the hardware value of the last LXI trigger packet that was sent or received as the pseudo line state.</p>
+<p class="bodytext">The stateless event flag is a bit in the LXI trigger packet that indicates if the hardware value should be ignored. If it is set, the 2600B ignores the hardware value of the packet and generates a trigger event. The 2600B always sets the stateless flag for outgoing LXI trigger packets. If the stateless event flag is not set, the hardware value indicates the state of the signal.</p>
+<p class="bodytext">Changes in the hardware value of consecutive LXI trigger packets are interpreted as edge transitions. Edge transitions generate trigger events. If the hardware value does not change between successive LXI trigger packets, the 2600B assumes an edge transition was missed and generates a trigger event. The following table illustrates edge detection in LAN triggering.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="120" height="0"></td>
+<td width="120" height="0"></td>
+<td width="120" height="0"></td>
+<td width="120" height="0"></td>
+<td width="120" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="5" width="600"><p class="tableheading">LXI trigger edge detection</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Stateless event flag</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Hardware value</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Pseudo line state</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Falling edge</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Rising edge</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Detected</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Detected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Detected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Detected</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">-</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Detected</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Detected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">-</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Detected</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Detected</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Set the LAN trigger mode to configure the edge detection method in incoming LXI trigger packets. The mode that is selected also determines the hardware value in outgoing LXI trigger packets. The following table lists the LAN trigger&nbsp;modes.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="120" height="0"></td>
+<td width="120" height="0"></td>
+<td width="120" height="0"></td>
+<td width="240" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border-bottom:1px solid #010101;" colspan="4" width="600"><p class="tableheading">LAN trigger modes</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Trigger mode</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Input detected</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Output generated</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="240"><p class="tableheading">Notes</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Either edge</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Either</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Negative</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Falling edge</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Falling</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Negative</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Rising edge</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Rising</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Positive</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">RisingA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Rising</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Positive</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Same as Rising edge</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">RisingM</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Rising</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Positive</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Same as Rising edge</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Synchronous</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Falling</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Positive</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Same as SynchronousA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">SynchronousA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Falling</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Positive</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">SynchronousM</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Rising</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Negative</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">The programming example below illustrates how to configure the LAN trigger mode.</p>
+<p class="code">-- Set LAN trigger 2 to falling edge.</p>
+<p class="code">lan.trigger[2].mode = lan.TRIG_FALLING</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12570.htm" target="_self">LAN triggering overview</a></p><p class="relateditem"><a href="12572.htm" target="_self">Understanding LXI trigger event designations</a></p><p class="relateditem"><a href="12573.htm" target="_self">Generating LXI trigger packets</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12571" />
+<input id="topicDescription" type="hidden" value="Understanding hardware value and pseudo line state" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/4/2021 4:08:57 PM" />
+</body>
+</html>

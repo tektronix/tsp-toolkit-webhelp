@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> acal.lastrun.time </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="59256.htm" target="_self"><img id="f125" src="125.gif" class="embeddediconfiletemplate" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31016.htm" target="_self"><img id="f124" src="124.gif" class="embeddedfilenoinherits" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t43636" class="heading2-icl">acal.lastrun.time</h2>
+<p class="bodyzero">This attribute returns the date and time when autocalibration was last run.</p>
+<table class="tableintopic" width="840" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="180"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="180"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="222"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="180"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="180"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="222"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">dateTime</em> = acal.lastrun.time</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="172"><p class="codetable"><em class="emphasis">dateTime</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">The date and time</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The date and time is returned in the format:</p>
+<p class="iclbody"><code class="monospace">MM/DD/YYYY HH:MM:SS.NNNNNNNNN</code></p>
+<p class="iclbody">Where:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">MM/DD/YYYY</code> is the month, date, and year</li><li class="listbullet"><code class="monospace">HH:MM:SS.NNNNNNNNN</code> is the hour, minute, second, and fractional second</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="435"><p class="codetable">print(acal.lastrun.time)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="308"><p class="tablebodytext">Returns the date and time when the autocalibration was last run.</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">08/11/2014 16:30:26.745369595</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h43943" class="jump" title="acal.run()" href="43640.htm" target="_self">acal.run()</a></p>
+
+
+<input id="topicId" type="hidden" value="43636" />
+<input id="topicDescription" type="hidden" value="acal.lastrun.time" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/13/2015 12:31:19 PM" />
+</body>
+</html>

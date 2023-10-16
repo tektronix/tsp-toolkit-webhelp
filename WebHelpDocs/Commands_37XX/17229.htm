@@ -1,0 +1,90 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17406.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17407.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17229" class="heading2-icl">channel.close()</h2>
+<p class="bodyzero">This function closes the channels, analog backplane relays, and channel patterns that are specified by the channel list parameter. </p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.close(&quot;<em class="emphasis">channelList</em>&quot;)</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels, analog backplane relays, and channel patterns to close, using standard channel naming</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"> </p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Channels closed with this command are appended to the already closed channels (no previously closed channels are opened by this command).</p>
+<p class="iclbody">The <span class="monospaceitalic">channelList</span> parameter can include channels with analog backplane relays. If this is the case, <code class="monospace">channel.close</code> closes the specified channels and any associated analog backplane relays. For channel patterns, the analog backplane relays that are closed are the ones that were specified when the pattern was created. However, for channels, they are the ones specified with the <code class="monospace">channel.setbackplane()</code> function. Another option for closing analog backplane relays with this command is to include them in the <span class="monospaceitalic">channelList </span>parameter.</p>
+<p class="iclbody">This command has no effect on how the DMM is configured.</p>
+<p class="iclbody">Actions associated with this function include:</p>
+<ul class="listbullet"><li class="listbullet">Close the specified items in <span class="monospaceitalic">channelList</span></li><li class="listbullet">Incur the settling time and any user&#8209;specified delay</li></ul><p class="iclbody">This command is not available for digital I/O, DAC, and totalizer channels. Calling on a specific channel generates an error. If the digital I/O, DAC, or totalizer channel is in the range of channels, the channel is ignored.</p>
+<ul class="listbullet"><li class="listbullet">For delay time, see <code class="monospace">channel.setdelay()</code></li><li class="listbullet">For analog backplane relays with channels, see <code class="monospace">channel.setbackplane()</code></li><li class="listbullet">For channels associated with a channel, see <code class="monospace">channel.getimage()</code></li><li class="listbullet">For channels associated with a channel pattern, see<br><code class="monospace"> channel.pattern.getimage()</code></li><li class="listbullet">For channel states (open/close), see <code class="monospace">channel.getstate()</code></li><li class="listbullet">For closed channels, see <code class="monospace">channel.getclose()</code>.</li></ul><p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">The parameter string contains <code class="monospace">slot</code><span class="monospaceitalic">X</span>, where <span class="monospaceitalic">X</span><code class="monospace"> </code>is 1 to 6, or <code class="monospace">allslots</code></li><li class="listbullet">A forbidden item is specified</li><li class="listbullet">Specified channel does not support being closed, such as a digital I/O channel</li><li class="listbullet">Channel is paired with another bank for a multiwire application</li></ul><p class="iclbody">Once an error is detected, the command stops processing and no channels are closed.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.close(&quot;1001:1005, 3003, Chans&quot;)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Close channels 1 to 5 on slot 1, channel 3 on slot 3, and the channel pattern or label <code class="monospace">Chans</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.close(&quot;2001, 2913&quot;)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Close channel 1 on slot 2 and analog backplane relay 3 in bank 1 on slot 2.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h770" class="jump" title="channel.exclusiveclose()" href="17435.htm" target="_self">channel.exclusiveclose()</a></p>
+<p class="listcommand"><a id="h777" class="jump" title="channel.exclusiveslotclose()" href="17437.htm" target="_self">channel.exclusiveslotclose()</a></p>
+<p class="listcommand"><a id="h768" class="jump" title="channel.getclose()" href="17247.htm" target="_self">channel.getclose()</a></p>
+<p class="listcommand"><a id="h771" class="jump" title="channel.open()" href="17548.htm" target="_self">channel.open()</a></p>
+<p class="listcommand"><a id="h1147" class="jump" title="channel.getimage()" href="17523.htm" target="_self">channel.getimage()</a></p>
+<p class="listcommand"><a id="h767" class="jump" title="channel.getstate()" href="17546.htm" target="_self">channel.getstate()</a></p>
+<p class="listcommand"><a id="h776" class="jump" title="channel.pattern.getimage()" href="17284.htm" target="_self">channel.pattern.getimage()</a></p>
+<p class="listcommand"><a id="h791" class="jump" title="channel.pattern.snapshot()" href="17299.htm" target="_self">channel.pattern.snapshot()</a></p>
+<p class="listcommand"><a id="h1806" class="jump" title="channel.pattern.setimage()" href="17296.htm" target="_self">channel.pattern.setimage()</a></p>
+<p class="listcommand"><a id="h766" class="jump" title="channel.setbackplane()" href="15941.htm" target="_self">channel.setbackplane()</a></p>
+<p class="listcommand"><a id="h774" class="jump" title="channel.setdelay()" href="17522.htm" target="_self">channel.setdelay()</a></p>
+<p class="listcommand"><a id="h907" class="jump" title="dmm.close()" href="16014.htm" target="_self">dmm.close()</a></p>
+
+

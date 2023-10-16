@@ -1,0 +1,136 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.load() — ConfigList </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30571.htm" target="_self"><img id="f125" src="125.gif" class="embeddediconfiletemplate" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="46033.htm" target="_self"><img id="f124" src="124.gif" class="embeddedfilenoinherits" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t46023" class="heading2-icl">trigger.model.load() — ConfigList</h2>
+<p class="bodyzero">This function loads a predefined trigger model configuration that uses a measure configuration list.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.load(&quot;ConfigList&quot;, <span class="monospaceitalic">measureConfigList</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;ConfigList&quot;, <span class="monospaceitalic">measureConfigList, delay</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;ConfigList&quot;, <span class="monospaceitalic">measureConfigList</span>, <span class="monospaceitalic">delay</span>, <span class="monospaceitalic">bufferName</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;ConfigList&quot;, <span class="monospaceitalic">measureConfigList</span>, <span class="monospaceitalic">delay</span>, <span class="monospaceitalic">bufferName, readingBlock</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">measureConfigList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">A string that contains the name of the measurement configuration list to use</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">delay</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The delay time before each measurement (167&nbsp;ns to 10,000&nbsp;s); default is 0 for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tablebodytext"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user&#8209;defined buffer; defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tablebodytext"><span class="monospaceitalic">readingBlock</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Define a measure or digitize block for the trigger model; options are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_ACTIVE</code>: Add a measure or digitize block to the trigger model based on the active function; if no option defined, <code class="monospace">trigger.READING_ACTIVE</code> is used</li><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_MEASURE</code>: Adds a measure block to the trigger model</li><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_DIGITIZE</code>: Adds a digitize block to the trigger model</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This trigger model template incorporates a configuration list.</p>
+<p class="iclbody">You must set up the configuration lists before loading the trigger model.</p>
+<p class="iclbody">You can also set a delay and change the reading buffer.</p>
+<p class="iclbody">The out line of the EXT TRIG IN/OUT rear&#8209;panel terminal is asserted at the end of each measurement.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="594"><p class="codetable">reset()</p>
+<p class="codetable">dmm.measure.func = dmm.FUNC_AC_CURRENT</p>
+<p class="codetable">dmm.measure.configlist.create(&quot;MEASURE_LIST&quot;)</p>
+<p class="codetable">dmm.measure.range = 1e-3</p>
+<p class="codetable">dmm.measure.configlist.store(&quot;MEASURE_LIST&quot;)</p>
+<p class="codetable">dmm.measure.range = 10e-3</p>
+<p class="codetable">dmm.measure.configlist.store(&quot;MEASURE_LIST&quot;)</p>
+<p class="codetable">dmm.measure.range = 100e-3</p>
+<p class="codetable">dmm.measure.configlist.store(&quot;MEASURE_LIST&quot;)</p>
+<p class="codetable">trigger.model.load(&quot;ConfigList&quot;, &quot;MEASURE_LIST&quot;)</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">printbuffer(1, defbuffer1.n, defbuffer1.readings)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="594"><p class="tablebodytext">Reset the instrument.<br>Set the measure function to AC current.</p>
+<p class="tablebodytext">Set up a configuration list named <code class="monospace">MEASURE_LIST</code>.</p>
+<p class="tablebodytext">Load the configuration list trigger model, using the points in this configuration list.</p>
+<p class="tablebodytext">Start the trigger model.</p>
+<p class="tablebodytext">Wait for the trigger model to complete.</p>
+<p class="tablebodytext">Return the results from the reading buffer.</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">9.9246953126e-07, 6.9921188254e-06, 3.8904102673e-05</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27713" class="jumptemplate" title="dmm.measure.configlist.create()" href="25691.htm" target="_self">dmm.measure.configlist.create()</a></p>
+
+
+<input id="topicId" type="hidden" value="46023" />
+<input id="topicDescription" type="hidden" value="trigger.model.load() &#0151; ConfigList" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/21/2014 1:11:21 PM" />
+</body>
+</html>

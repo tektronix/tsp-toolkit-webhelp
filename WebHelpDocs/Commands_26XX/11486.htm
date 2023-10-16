@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Contact check programming example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="92214.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="76519.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t11486" class="heading3">Contact check programming example</h3>
+<p class="bodytext">The following programming example illustrates the setup and command sequence for a typical contact check measurement. These commands set the contact check speed to fast and the threshold to 100&nbsp;Ω. Then, a contact check measurement against the threshold is made. If it fails, a more accurate contact check measurement is made, and the test is aborted. Otherwise, the output is turned on, and the test continues.</p>
+<p class="code">-- Restore defaults.</p>
+<p class="code">smua.reset()</p>
+<p class="code">-- Set contact check speed to fast.</p>
+<p class="code">smua.contact.speed = smua.CONTACT_FAST</p>
+<p class="code">-- Set the contact check threshold to 100 ohms.</p>
+<p class="code">smua.contact.threshold = 100</p>
+<p class="code">-- Check contacts against threshold.</p>
+<p class="code">if not smua.contact.check() then</p>
+<p class="code">      -- Set speed to slow.</p>
+<p class="code">   smua.contact.speed = smua.CONTACT_SLOW</p>
+<p class="code">      -- Get aggregate resistance readings.</p>
+<p class="code">      rhi, rlo = smua.contact.r()</p>
+<p class="code">      -- Return contact resistances to the host.</p>
+<p class="code">      print(rhi, rlo)</p>
+<p class="code">      -- Terminate execution.</p>
+<p class="code">      exit()</p>
+<p class="code">end</p>
+<p class="code">-- Turn output on and continue.</p>
+<p class="code">smua.source.output = smua.OUTPUT_ON</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="29274.htm" target="_self">Contact check measurements</a></p><p class="relateditem"><a href="92214.htm" target="_self">Contact check commands</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11486" />
+<input id="topicDescription" type="hidden" value="Contact check programming example" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/17/2022 2:12:30 PM" />
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+<head>
+<title> Load a script by sending commands over a remote interface </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="27085.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="33307.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h5 class="heading5">Load a script by sending commands over a remote interface</h5>
+<p class="bodytext">To load a script over the remote interface, you can use the <code class="monospace">loadscript</code> and <code class="monospace">endscript</code> commands.</p>
+<p class="bodytext">The <code class="monospace">loadscript</code> command starts the collection of messages that make up the script. When the instrument receives either of these commands, it starts collecting all subsequent messages. Without these commands, the instrument would run them immediately as individual commands.</p>
+<p class="bodytext">The <code class="monospace">endscript</code> command tells the instrument to compile the collection of messages. It compiles the messages into one group of commands. This group of commands is loaded into the run-time environment.</p>
+<p class="bodytext">An example that shows you how to load a script is described in the following.</p>
+<p class="bodytext">Send the <code class="monospace">loadscript</code> command and a script name. This tells the instrument to start collecting messag for the script named <code class="monospace">testInfo</code>:</p>
+<p class="code">loadscript testInfo</p>
+<p class="bodytext">Send the script; this example displays text on the user display when the script is run:</p>
+<p class="code">display.settext(display.TEXT1, &quot;Batch 233&quot;)</p>
+<p class="code">display.settext(display.TEXT2, &quot;Test Information&quot;)</p>
+<p class="bodytext">Send the command that tells the instrument that the script is complete:</p>
+<p class="code">endscript</p>
+<p class="bodytext">Run the script by sending the script name followed by ():</p>
+<p class="code">testInfo()</p>
+<p class="bodytext">The User Display screen on the front panel shows the text &quot;Batch 233 Test Information&quot; when you run this script.</p>
+<p class="headingprocedure">In summary, to load a named script by sending commands:</p>
+<ol class="listnumber"><li class="listnumber">Send the command <code class="monospace">loadscript</code> <span class="monospaceitalic">scriptName</span>, where <span class="monospaceitalic">scriptName</span> is the name of the script. The name must be a legal Lua variable name.</li><li class="listnumber">Send the commands that need to be included in the script.</li><li class="listnumber">Send the command <code class="monospace">endscript</code>.</li><li class="listnumber">You can now run the script. Send the script name followed by (). For more information, see <a id="h33380" class="jumptemplate" title="Running scripts using a remote interface" href="26764.html" target="_self">Running scripts using a remote interface</a>.</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="26757.html" target="_self">Working with scripts</a></p><p class="relateditem"><a href="26759.html" target="_self">Tools for managing scripts</a></p><p class="relateditem"><a href="33279.html" target="_self">Script rules</a></p><p class="relateditem"><a href="26764.html" target="_self">Running scripts using a remote interface</a></p><p class="relateditem"><a href="27065.html" target="_self">Autoexec script</a></p><p class="relateditem"><a href="26768.html" target="_self">Saving a script using the remote interface</a></p><p class="relateditem"><a href="26768.html#o33305" target="_self">Deleting a user script using a remote interface</a></p><p class="relateditem"><a href="33345.html" target="_self">Rename a script</a></p><p class="relateditem"><a href="27085.html" target="_self">Retrieve a user script from the instrument</a></p></td>
+</tr>
+</table>
+
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2013, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

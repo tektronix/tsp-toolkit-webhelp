@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Rename a script </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17259.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2405.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t16688" class="heading3">Rename a script</h3>
+<p class="bodytext">You can rename a script. You might want to rename a script if you need to name another script the same name as the existing script. You could also rename an existing script to be the autoexec script.</p>
+<p class="bodytext">To change the name of a script, use the command:</p>
+<p class="code"><em class="emphasis">scriptVar</em>.name = &quot;<em class="emphasis">renamedScript</em>&quot;</p>
+<p class="bodytext">Where: </p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="144"><p class="tablebodytext"><span class="monospaceitalic">scriptVar</span></p>
+</td>
+<td width="36"><p class="tablebodytext">=</p>
+</td>
+<td width="384"><p class="tablebodytext">The global variable name</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="144"><p class="tablebodytext"><code class="monospace">&quot;</code><span class="monospaceitalic">renamedScript</span><code class="monospace">&quot;</code></p>
+</td>
+<td width="36"><p class="tablebodytext">=</p>
+</td>
+<td width="384"><p class="tablebodytext">The new name of the user script that was referenced by the <span class="monospaceitalic">scriptVar</span> global variable</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">After changing the name, you need to save the original script to save the change to the name attribute.</p>
+<p class="bodytext">For example:</p>
+<p class="code">beepTwoSec.name = &quot;beep2sec&quot;</p>
+<p class="code">beepTwoSec.save()</p>
+<p class="bodytext">Run the <code class="monospace">beep2sec</code> script using the following command:</p>
+<p class="code">script.user.scripts.beep2sec()</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">If the new name is the same as a name that is already used for a script, the name of the existing script is removed and that script becomes unnamed. This removes the existing script if there are no other variables that reference the previous script. If variables do reference the existing script, the references remain intact.</p>
+<p class="bodytext">Changing the name of a script does not change the name of any variables that reference that script. After changing the name, the script is in the <code class="monospace">script.user.scripts</code> table under its new name.</p>
+<p class="magicfigurecenter"><img id="f17176" src="17176.png" class="linkedepsandpngtemplate50%" alt="Rename script" height="738" width="1873" vspace="0" hspace="0" align="middle" border="0"></p>
+<p class="bodytext">For example, to change the name of the script named <code class="monospace">test2</code> to be <code class="monospace">autoexec</code>:</p>
+<p class="code">test2.name = &quot;autoexec&quot;</p>
+<p class="code">test2.save()</p>
+<p class="bodytext">The <code class="monospace">autoexec</code> script runs automatically when the instrument is turned on. It runs after all the scripts have loaded and any scripts marked as autorun have run.</p>
+<p class="note"><img id="f14261_1" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You can also use the <code class="monospace">script.new()</code> and the <span class="monospaceitalic">scriptVar.</span><code class="monospace">source</code> attribute commands to create a script with a new name. For example, if you had an existing script named <code class="monospace">test1</code>, you could create a new script named <code class="monospace">test2</code> by sending the command:<br><code class="monospace">test2 = script.new(test1.source, &quot;test2&quot;)</code><br>See <a id="h15066" class="jump" title="script.new()" href="15064.htm" target="_self">script.new()</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="17051.htm" target="_self">Advanced scripting for TSP</a></p><p class="relateditem"><a href="16842.htm" target="_self">Global variables and the script.user.scripts table</a></p><p class="relateditem"><a href="17075.htm" target="_self">Create a script using the script.new() command</a></p><p class="relateditem"><a href="2405.htm" target="_self">Retrieve a user script</a></p><p class="relateditem"><a href="2408.htm" target="_self">Delete user scripts from the instrument</a></p><p class="relateditem"><a href="2409.htm" target="_self">Restore a script to the runtime environment</a></p><p class="relateditem"><a href="16810.htm" target="_self">Memory considerations for the runtime environment</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="16688" />
+<input id="topicDescription" type="hidden" value="Rename a script" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:28:07 PM" />
+</body>
+</html>

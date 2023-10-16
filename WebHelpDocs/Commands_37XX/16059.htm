@@ -1,0 +1,79 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16058.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16060.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16059" class="heading2-icl">dmm.rel.enable</h2>
+<p class="bodyzero">Enables or disables relative measurement control for the function selected by <code class="monospace">dmm.func</code>.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">0 (dmm.OFF)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.rel.enable</p>
+<p class="iclcode">dmm.rel.enable = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The setting:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Enable: <code class="monospace">dmm.ON </code>or 1</li><li class="tablelistbullet9pt">Disable: <code class="monospace">dmm.OFF </code>or 0</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is not available if <code class="monospace">dmm.func </code>is set to <code class="monospace">&quot;continuity&quot;</code> or <code class="monospace">&quot;nofunction&quot;</code>. If you query this attribute when either of these functions is selected, nil is returned.</p>
+<p class="iclbody">When relative measurements are enabled, all subsequent measured readings are offset by the relative offset specified by <code class="monospace">dmm.rel.level</code>. Each returned measured relative reading will be the result of the following calculation:</p>
+<p class="iclbody"><strong class="specialbold">Relative reading = Actual measured reading &#8211; Relative offset value</strong></p>
+<p class="iclbody">If you change functions with <code class="monospace">dmm.func</code>, the relative enable setting changes to the enable setting for that function.</p>
+<p class="iclbody">The relative enable setting is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to the previous function, the relative enable settings you set previously are retained.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">dmm.func</code> is set to <code class="monospace">&quot;continuity&quot;</code> or <code class="monospace">&quot;nofunction&quot;</code>.</li><li class="listbullet">If the value is out of range for the selected function.</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;accurrent&quot;</p>
+<p class="codetable">dmm.rel.acquire()</p>
+<p class="codetable">dmm.rel.enable = dmm.ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Enables the relative measurements for AC current and uses the acquire command to set the relative level attribute.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h1199" class="jump" title="dmm.rel.acquire()" href="16058.htm" target="_self">dmm.rel.acquire()</a></p>
+<p class="listcommand"><a id="h912" class="jump" title="dmm.rel.level" href="16060.htm" target="_self">dmm.rel.level</a></p>
+
+

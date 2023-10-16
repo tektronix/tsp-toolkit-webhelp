@@ -1,0 +1,172 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12937.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29314.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t29313" class="heading2-icl">ConfigPulseIMeasureVSweepLog()</h2>
+<p class="bodyzero">This <a id="h12919" class="jump" title="KIPulse factory script" href="12916.htm" target="_self">KIPulse factory script</a> function configures a voltage pulse train with a current measurement at each point.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseIMeasureVSweepLog(<span class="monospaceitalic">smu, bias, start, stop, limit, ton, toff, points, buffer, tag, sync_in, sync_out, sync_in_timeout, sync_in_abort</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseIMeasureVSweepLog(<span class="monospaceitalic">smu, bias, start, stop, limit, ton, toff, points, buffer, tag, sync_in, sync_out, sync_in_timeout</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseIMeasureVSweepLog(<span class="monospaceitalic">smu, bias, start, stop, limit, ton, toff, points, buffer, tag, sync_in, sync_out</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseIMeasureVSweepLog(<span class="monospaceitalic">smu, bias, start, stop, limit, ton, toff, points, buffer, tag, sync_in</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseIMeasureVSweepLog(<span class="monospaceitalic">smu, bias, start, stop, limit, ton, toff, points, buffer, tag</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="605" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">f</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">A Boolean flag; this flag is <code class="monospace">true</code> when the pulse was successfully configured, <code class="monospace">false</code> when errors were encountered </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">msg</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">A string message; if the <span class="monospaceitalic">f</span> flag is <code class="monospace">false</code>, <span class="monospaceitalic">msg</span> contains an error message; if it is <code class="monospace">true</code>, <span class="monospaceitalic">msg</span> contains a string indicating successful configuration</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">smu</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Instrument channel (for example, <code class="monospace">smua</code> refers to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bias</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Bias level in amperes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">start</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Pulse sweep start level in amperes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">stop</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Pulse sweep stop level in amperes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">limit</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Voltage limit (for example, compliance) in volts</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">ton</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Pulse on time in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">toff</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Pulse off time in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">points</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Number of pulse-measure cycles</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">buffer</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Reading buffer where pulsed measurements are stored; if this is <code class="monospace">nil</code> when the function is called, no measurements are made when the pulse train is initiated</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">tag</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Numeric identifier to be assigned to the defined pulse train</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sync_in</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Defines a digital I/O trigger input line; if programmed, the pulse train waits for a trigger input before executing each pulse</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sync_out</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Defines a digital I/O trigger output line; if programmed, the pulse train generates a trigger output immediately before the start of <span class="monospaceitalic">ton</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sync_in_timeout</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Specifies the length of time (in seconds) to wait for input trigger; default value is 10&nbsp;s</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sync_in_abort</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="466"><p class="tablebodytext">Specifies whether or not to abort pulse if input trigger is not received; if pulse aborts because of a missed trigger, a timer timeout message is returned; <code class="monospace">true</code> or <code class="monospace">false</code> </p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Data for pulsed voltage measurements are stored in the reading buffer specified by the <span class="monospaceitalic">buffer</span> input parameter.</p>
+<p class="iclbody">This function configures a logarithmic pulsed current sweep with a voltage measurement at each point. Measurements are made at the end of the <span class="monospaceitalic">ton</span> time.</p>
+<p class="iclbody">The magnitude of the first pulse is <span class="monospaceitalic">start</span> amperes; the magnitude of the last pulse is <span class="monospaceitalic">stop</span> amperes. The magnitude of each pulse in between is <code class="monospace">LogStep</code><sub class="subscript">n</sub> amperes larger than the previous pulse, where:</p>
+<p class="iclbody"><em class="emphasis">LogStepSize = (log10(stop) - log10(start)) / (points -1)</em></p>
+<p class="iclbody"><em class="emphasis">LogStepn = (n - 1) * (LogStepSize), where</em> n = [2, points]</p>
+<p class="iclbody"><em class="emphasis">SourceStepLeveln = antilog(LogStepn) * start</em></p>
+<p class="iclbody">This function does not cause the specified <span class="monospaceitalic">smu</span> to output a pulse train. It simply checks to see if all of the pulse dimensions can be achieved, and if they can, assigns the indicated <span class="monospaceitalic">tag</span> or index to the pulse train. To initiate a pulse train assigned to a valid <span class="monospaceitalic">tag</span>, use <code class="monospace">InitiatePulseTest(</code><span class="monospaceitalic">tag</span><code class="monospace">)</code> and<code class="monospace"> InitiatePulseTestDual(</code><span class="monospaceitalic">tag1, tag2</span><code class="monospace">)</code>.</p>
+<p class="magicfigurecenter"><img id="f12944" src="2600s-901-01b_kipulsetsptestscript_configpulseimeasurevsweeplog_lr.png" class="linkedepsandpngtemplate" alt="ConfigPulseIMeasureVSweepLog()" height="312" width="503" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">ConfigPulseIMeasureVSweepLog(smua, 0, 1e-3, 0.01, 1, 1e-3, 10e-3, 10,   smua.nvbuffer1, 5)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set up a pulsed logarithmic sweep that uses channel A. The pulsed sweep starts at 1&nbsp;mA, ends at 10&nbsp;mA, and returns to a 0&nbsp;A bias level between pulses. Each pulsed step is on for 1&nbsp;ms, and then at the bias level for 10 ms. The voltage limit is 1&nbsp;V during the entire pulsed sweep. The pulse train is comprised of 10 pulsed steps, and the pulse train is assigned a <span class="monospaceitalic">tag</span> index of 5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12928" class="jump" title="InitiatePulseTest()" href="12929.htm" target="_self">InitiatePulseTest()</a></p>
+<p class="listcommand"><a id="h12933" class="jump" title="InitiatePulseTestDual()" href="12934.htm" target="_self">InitiatePulseTestDual()</a></p>
+<p class="listcommand"><a id="h12919_2" class="jump" title="KIPulse factory script" href="12916.htm" target="_self">KIPulse factory script</a></p>
+
+

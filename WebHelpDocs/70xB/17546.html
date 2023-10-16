@@ -1,0 +1,103 @@
+<html><head><title> channel.getstate() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17321.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17547.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.getstate()</h2>
+<p class="bodyzero">Queries the state indicators of the channels in the instrument.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">state</em> = channel.getstate(<em class="emphasis">channelList</em>)</p>
+<p class="iclcode"><em class="emphasis">state</em> = channel.getstate(<em class="emphasis">channelList</em>, <em class="emphasis">indicatorMask</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">Return string listing the comma-delimited states for the channels in <span class="monospaceitalic">channelList</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">String specifying the channels to query, using normal channel list syntax</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">indicatorMask</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">Value to specify only certain indicators; if omitted, all indicators are returned</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Each bit in the <span class="monospaceitalic">state</span> represents a different indicator. Therefore, multiple indicators can be present (the OR operation is performed bitwise). The optional state <span class="monospaceitalic">indicatorMask</span> can be used to return only certain indicators. If there is no <span class="monospaceitalic">indicatorMask</span>, then all indicators are returned.</p>
+<p class="iclbody">Indicators can be latched or unlatched, depending on other system settings. Latched indicators mean that the condition has occurred since the last reset command (or power cycle). Unlatched indicators mean that the condition has occurred when the <code class="monospace">channel.getstate()</code> command was issued.</p>
+<p class="iclbody">Although the <code class="monospace">channel.getstate()</code> command returns a string representing a number, this can be easily changed to a number and then compared to one of the provided Lua constants.</p>
+<p class="iclbody">The only state information is an indicator of relay state (<code class="monospace">channel.IND_CLOSED</code>).</p>
+<p class="iclsubheading">Example</p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">   print(channel.getstate(&quot;4A01:4B08&quot;))</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.pattern.setimage(&quot;1A01,2B02,3C03&quot;,</p>
+<p class="codetable">   &quot;Path&quot;)</p>
+<p class="codetable">print(channel.getstate(&quot;Path&quot;))</p>
+<p class="codetable">print(channel.getstate(&quot;3C03&quot;))</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Unmasking the return value must be done</p>
+<p class="codetable">-- one channel at a time.</p>
+<p class="codetable">if bit.bitand(channel.IND_CLOSED,</p>
+<p class="codetable">   tonumber(channel.getstate(&quot;4A10&quot;))) == 1 then</p>
+<p class="codetable">   print(&quot;CLOSED&quot;)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;OPENED&quot;)</p>
+<p class="codetable">end</p>
+</td>
+<td width="338"><p class="tablebodytext">Queries the state of the first 20 channels on Slot&nbsp;4.</p>
+<p class="tablebodytext">See the state of channels in channel pattern called <code class="monospace">&quot;PathList&quot;</code>.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">The <code class="monospace">channel.IND_CLOSED</code> command equates to the number 1. Because the state is a bit-oriented value, you must perform a logical AND operation on the state to the overload constant to isolate it from other indicators.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">The <code class="monospace">tonumber()</code> command only works with a single channel. When multiple channels are returned (for example, <code class="monospace">channel.getstate(&quot;slot4&quot;)</code>), this string must be parsed by the comma delimiter to find each value.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h768" class="jumptemplate" title="channel.getclose()" href="17247.html" target="_self">channel.getclose()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

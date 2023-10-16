@@ -1,0 +1,175 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.tsplinkout[N].stimulus </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="32555.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25639.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t32558" class="heading2-icl">trigger.tsplinkout[N].stimulus</h2>
+<p class="bodyzero">This attribute specifies the event that causes the synchronization line to assert a trigger.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>TSP-Link line <em class="emphasis">N</em> reset</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">trigger.EVENT_NONE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">event</em> = trigger.tsplinkout[<em class="emphasis">N</em>].stimulus</p>
+<p class="iclcode">trigger.tsplinkout[<em class="emphasis">N</em>].stimulus = <em class="emphasis">event</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">event</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The event identifier for the triggering event (see <strong class="specialbold">Details</strong>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger line (1 to 3)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">To disable automatic trigger assertion on the synchronization line, set this attribute to <code class="monospace">trigger.EVENT_NONE</code>.</p>
+<p class="iclbody">Do not use this attribute when triggering under script control. Use <code class="monospace">trigger.tsplinkout[</code><span class="monospaceitalic">N</span><code class="monospace">].assert()</code> instead.</p>
+<p class="iclbody">The <span class="monospaceitalic">event</span><strong class="specialbold"> </strong>parameters that you can use are described in the table below.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheadingsmall">Trigger events</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="336"><p class="tableheadingsmall">Event description</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="264"><p class="tableheadingsmall">Event constant</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger event blender <span class="monospaceitalic">N</span> (1 to 2), which combines trigger&nbsp;events</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_BLENDER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">A command interface trigger:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><strong class="specialbold">Any remote interface:</strong> *<code class="monospace">TRG</code></li><li class="tablelistbullet9pt"><strong class="specialbold">GPIB only:</strong> GET bus command</li><li class="tablelistbullet9pt"><strong class="specialbold">USB only:</strong> A USBTMC TRIGGER message </li><li class="tablelistbullet9pt"><strong class="specialbold">VXI-11:</strong> VXI-11 command <code class="monospace">device_trigger</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_COMMAND</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Digital input line edge (either rising, falling, or either based on the configuration of the line) detected on digital input line&nbsp;<span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;6)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DIGIO<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Front-panel TRIGGER key press</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DISPLAY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span> (1 to 8)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_LAN<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">No trigger event</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NONE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Notify trigger block <span class="monospaceitalic">N</span> (1 to 8) generates a trigger event when the trigger model executes it</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NOTIFY<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Source limit condition occurs</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_SOURCE_LIMIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger timer <span class="monospaceitalic">N</span> (1 to 4) expired</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TIMER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Line edge detected on TSP-Link synchronization line&nbsp;<span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;3)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TSPLINK<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">print(trigger.tsplinkout[3].stimulus)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Outputs the event that will start action on TSP-Link trigger line 3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h32654" class="jump" title="trigger.tsplinkout[N].assert()" href="32549.htm" target="_self">trigger.tsplinkout[N].assert()</a></p>
+<p class="listcommand"><a id="h32657" class="jump" title="tsplink.line[N].reset()" href="32541.htm" target="_self">tsplink.line[N].reset()</a></p>
+
+
+<input id="topicId" type="hidden" value="32558" />
+<input id="topicDescription" type="hidden" value="trigger.tsplinkout[N].stimulus" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2019 11:06:11 AM" />
+</body>
+</html>

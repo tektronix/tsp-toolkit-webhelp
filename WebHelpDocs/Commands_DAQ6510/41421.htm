@@ -1,0 +1,176 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.autodelay </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41141.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41122.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41421" class="heading2-icl">dmm.measure.autodelay</h2>
+<p class="bodyzero">This attribute enables or disables the automatic delay that occurs before each measurement.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.DELAY_ON </p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = dmm.measure.autodelay</p>
+<p class="iclcode">dmm.measure.autodelay = <em class="emphasis">value</em></p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_AUTO_DELAY)</p>
+<p class="iclcode">dmm.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_AUTO_DELAY, <span class="monospaceitalic">value</span>)</p>
+<p class="iclcode">channel.setdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_MEAS_AUTO_DELAY, <span class="monospaceitalic">value</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_MEAS_AUTO_DELAY)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Enable the delay: <code class="monospace">dmm.DELAY_ON</code></p>
+<p class="tablebodytext">Disable the delay: <code class="monospace">dmm.DELAY_OFF</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81855.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_FREQUENCY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_4W_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_PERIOD</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_DIODE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_DCV_RATIO</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CAPACITANCE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_TEMPERATURE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CONTINUITY</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When this is enabled, a delay is added after a range or function change to allow the instrument to settle.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="312"><p class="codetable">dmm.measure.func = dmm.FUNC_RESISTANCE</p>
+<p class="codetable">dmm.measure.autodelay = dmm.DELAY_ON</p>
+<p class="codetable">dmm.measure.count = 10</p>
+<p class="codetable">ReadingBufferOne = buffer.make(1000)</p>
+<p class="codetable">dmm.measure.read(ReadingBufferOne)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="288"><p class="tablebodytext">Set the instrument to measure 2-wire ohms.</p>
+<p class="tablebodytext">Turn automatic delay on.</p>
+<p class="tablebodytext">Create a buffer named <code class="monospace">ReadingBufferOne</code>.</p>
+<p class="tablebodytext">Set the number of measurements to 10.</p>
+<p class="tablebodytext">Make 10 measurements and store them in the reading buffer.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_DC_VOLTAGE)</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_RANGE, 5)</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_AUTO_DELAY, dmm.DELAY_OFF)</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_DIGITS, dmm.DIGITS_5_5)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">For channels 1 through 9 on slot 1, set the DMM function to DC voltage.</p>
+<p class="tablebodytext">Set the range to 5 V, which selects the 10&nbsp;V range.</p>
+<p class="tablebodytext">Set auto delay off.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h73685" class="jump" title="channel.getdmm()" href="72238.htm" target="_self">channel.getdmm</a></p>
+<p class="listcommand"><a id="h73686" class="jump" title="channel.setdmm()" href="72237.htm" target="_self">channel.setdmm</a></p>
+<p class="listcommand"><a id="h18760" class="jump" title="delay()" href="13949.htm" target="_self">delay()</a></p>
+
+
+<input id="topicId" type="hidden" value="41421" />
+<input id="topicDescription" type="hidden" value="dmm.measure.autodelay" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/10/2019 12:09:18 PM" />
+</body>
+</html>

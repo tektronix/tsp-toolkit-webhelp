@@ -1,0 +1,138 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Measurement settling time considerations </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29098.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11974.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t11687" class="heading2">Measurement settling time considerations</h2>
+<p class="bodytext">Several outside factors can influence measurement settling times. Effects such as dielectric absorption, cable leakages, and noise can all extend the times required to make stable measurements. Be sure to use appropriate shielding, guarding, and aperture selections when making low&#8209;current measurements.</p>
+<p class="bodytext">Each current measurement range has a combination of a range resistor and a compensating capacitor that must settle to allow a stable measurement. By default (when power is turned on or after a <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.reset()</code> command), delays are enforced to account for approximately 6<span class="symbols">t</span> or 6 time constants of a given range (to reach 0.1 percent of the final value, assuming 2.3<span class="symbols">t</span> per decade). The table below lists the current ranges and associated default delays. In addition, a 1&nbsp;Hz analog filter is used by default on the 1&nbsp;nA and 100&nbsp;pA&nbsp;ranges.</p>
+<table class="tableintopic" width="408" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="181" height="0"></td>
+<td width="226" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="408"><p class="tableheading">Current measure settling time<sup class="superscript">1, 2</sup></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="2" width="408"><p class="tablebodytext">Time required to reach 0.1% of final value after source level command is processed on a fixed range.</p>
+<p class="tablebodytext">Values below for V<sub class="subscript">OUT</sub> = 2&nbsp;V unless otherwise noted.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="181"><p class="tableheading">Current range</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="227"><p class="tableheading">Settling time</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">1.5&nbsp;A to 1&nbsp;A</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;120 μs (typical) (R<sub class="subscript">LOAD</sub>&nbsp;&gt;6&nbsp;Ω)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">100 mA to 10 mA</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;80 μs (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">1 mA</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;100 μs (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">100 μA</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;150 μs (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">10 μA</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;500 μs (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">1 μA</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;2.5 ms (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">100 nA</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;15 ms (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">10 nA</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;90 ms (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">1 nA<sup class="superscript">1</sup></p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;360 ms (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="181"><p class="tablebodytext">100 pA<sup class="superscript">3</sup></p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="227"><p class="tablebodytext">&lt;360 ms (typical)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-top:1px solid #010101;" colspan="2" width="408"><p class="tablebodytext">1. Delay factor set to 1. Compliance equals 100 mA.<br>2. Time for measurement to settle after a V<sub class="subscript">STEP</sub>.<br>3. With default analog filter setting &lt;450 ms.</p>
+</td>
+</tr>
+
+</table>
+<p class="note"></p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Delays are on by default for the 2634B, 2635B, and 2636B. Delays are off by default for the 2601B, 2602B, 2604B, 2611B, 2612B, and 2614B but can be enabled.</p>
+<p class="bodytext">You can manipulate both the analog filter and the default delays to produce faster response times. Turn off the analog filter to yield faster settling times. Control the default delays by using the delay factor multiplier. The default value for delay factor multiplier is 1.0, but adjusting it to other values result in either a faster or slower response. For example, increasing the delay factor to 1.3 accounts for settling to 0.01 percent of the final value. The commands to manipulate the delay factor and analog filter are shown in the following topics.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="11974.htm" target="_self">Programming example for controlling settling time delay</a></p><p class="relateditem"><a href="11975.htm" target="_self">Programming example for controlling analog filter (2634B, 2635B, and 2636B only)</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="76461.htm" target="_self">Theory of operation</a></p><p class="relateditem"><a href="77072.htm" target="_self">Source-measure concepts</a></p><p class="relateditem"><a href="29098.htm" target="_self">Analog-to-digital converter</a></p><p class="relateditem"><a href="11976.htm" target="_self">Effects of load on current source settling time</a></p><p class="relateditem"><a href="23825.htm" target="_self">Creating pulses with the 2600B SMU</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="11687" />
+<input id="topicDescription" type="hidden" value="Measurement settling time considerations" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/30/2021 8:47:10 AM" />
+</body>
+</html>

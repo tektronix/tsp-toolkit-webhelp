@@ -1,0 +1,115 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14703.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14705.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t19382" class="heading2-icl">display.loadmenu.add()</h2>
+<p class="bodyzero">This function adds an entry to the USER menu, which can be accessed by pressing the <strong class="specialbold">LOAD</strong> key on the front&nbsp;panel.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">display.loadmenu.add(&quot;<em class="emphasis">displayName</em>&quot;, &quot;<em class="emphasis">code</em>&quot;)</p>
+<p class="iclcode">display.loadmenu.add(&quot;<em class="emphasis">displayName</em>&quot;, &quot;<em class="emphasis">code</em>&quot;, <em class="emphasis">memory</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">displayName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name that is added to the USER menu</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">code</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The code that is run from the USER menu</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">memory</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Determines if code is saved to nonvolatile memory:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">0</code> or <code class="monospace">display.DONT_SAVE</code>: Does not save the code to nonvolatile memory</li><li class="tablelistbullet9pt"><code class="monospace">1</code> or <code class="monospace">display.SAVE</code>: Saves the code to nonvolatile memory (default)</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">After adding code to the load menu, you can run it from the front panel by pressing the <strong class="specialbold">LOAD</strong> key, then selecting <strong class="specialbold">USER </strong>to select from the available code to load. Pressing the <strong class="specialbold">RUN </strong>key then runs the&nbsp;script.</p>
+<p class="iclbody">You can add items in any order. They are always displayed in alphabetical order when the menu is&nbsp;selected.</p>
+<p class="iclbody">Any Lua code can be included in the <span class="monospaceitalic">code</span> parameter. If <span class="monospaceitalic">memory</span> is set to <code class="monospace">display.SAVE</code>, the entry (name and code) is saved in nonvolatile memory. Scripts, functions, and variables used in the code are not saved by <code class="monospace">display.SAVE</code>. Functions and variables need to be saved with the code. If the code is not saved in nonvolatile memory, it is lost when the 2600B is turned off. See <strong class="specialbold">Example 2</strong> below.</p>
+<p class="iclbody">If you do not make a selection for <span class="monospaceitalic">memory</span>, the code is automatically saved to nonvolatile memory.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You can create a script that defines several functions, and then use the<code class="monospace"> display.loadmenu.add()</code> command to add items that call those individual functions. This allows the operator to run tests from the front panel.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">display.loadmenu.add(&quot;Test9&quot;, &quot;Test9()&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Assume a user script named <code class="monospace">Test9</code> is loaded into the runtime environment. Adds the menu entry to the USER menu to run the script after loading.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">display.loadmenu.add(&quot;Test&quot;, &quot;DUT1() beeper.beep(2, 500)&quot;, display.SAVE)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Assume a script with a function named &#8220;DUT1&#8221; is loaded into the instrument, and the script has not been saved in nonvolatile memory.</p>
+<p class="tablebodytext">Now assume you want to add a test named &#8220;Test&#8221; to the USER menu. You want the test to run the function named <code class="monospace">DUT1</code> and sound the beeper. This example adds <code class="monospace">Test</code> to the menu, defines the code, and then saves the <code class="monospace">displayName</code> and code in nonvolatile memory.</p>
+<p class="tablebodytext">When <code class="monospace">Test</code> is run from the front panel USER menu, the function named <code class="monospace">DUT1</code> executes and the beeper beeps for two seconds.</p>
+<p class="tablebodytext">Now assume you turn off instrument power. Because the script was not saved in nonvolatile memory, the function named <code class="monospace">DUT1</code> is lost when you turn the instrument on. When <code class="monospace">Test</code> is run again from the front panel, an error is generated because <code class="monospace">DUT1</code> no longer exists in the instrument as a function.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">display.loadmenu.add(&quot;Part1&quot;, &quot;testpart([[Part1]], 5.0)&quot;, display.SAVE)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Adds an entry called <code class="monospace">Part1</code> to the front&#8209;panel USER load menu for the code <code class="monospace">testpart([[Part1]], 5.0)</code> and saves it in nonvolatile memory.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14726" class="jump" title="display.loadmenu.delete()" href="14706.htm" target="_self">display.loadmenu.delete()</a></p>
+
+

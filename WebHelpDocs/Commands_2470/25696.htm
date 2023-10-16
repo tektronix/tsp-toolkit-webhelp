@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.source.configlist.create() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25695.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25697.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t25696" class="heading2-icl">smu.source.configlist.create()</h2>
+<p class="bodyzero">This function creates an empty source configuration list.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</th>
+<th bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Source configuration list</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu.source.configlist.create(&quot;<span class="monospaceitalic">listName</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">listName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that represents the name of a source configuration list</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command creates an empty configuration list. To add configuration indexes to this list, you need to use the store command.</p>
+<p class="iclbody">Configuration lists are not saved when the instrument is turned off. If you want to save a configuration list through a power cycle, create a configuration script to save instrument settings, including any defined configuration lists.</p>
+<p class="iclbody">Configuration list names must be unique. For example, the name of a source configuration list cannot be the same as the name of a measure configuration list.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">reset() </p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smu.source.configlist.create(&quot;MyScrList&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(smu.source.configlist.catalog())</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(smu.source.configlist.catalog())</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smu.source.configlist.store(&quot;MyScrList&quot;)</p>
+<p class="codetable">smu.source.configlist.store(&quot;MyScrList&quot;)</p>
+<p class="codetable">print(smu.source.configlist.size(&quot;MyScrList&quot;))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Create a source configuration list named <code class="monospace">MyScrLst</code>.</p>
+<p class="tablebodytext">Print the name of one configuration list stored in volatile memory.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">MyScrList</code></p>
+<p class="tablebodytext">Print the name of one configuration list.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">nil</code></p>
+<p class="tablebodytext">Nil indicates that no more configuration lists are stored.</p>
+<p class="tablebodytext">Store a configuration index in <code class="monospace">MyScrList</code>.</p>
+<p class="tablebodytext">Store a configuration index in <code class="monospace">MyScrList</code>.</p>
+<p class="tablebodytext">Print the number of configuration indexes in <code class="monospace">MyScrList</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">2</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31527" class="jump" title="smu.source.configlist.store()" href="25693.htm" target="_self">smu.source.configlist.store()</a></p>
+
+
+<input id="topicId" type="hidden" value="25696" />
+<input id="topicDescription" type="hidden" value="smu.source.configlist.create()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 12:27:30 PM" />
+</body>
+</html>

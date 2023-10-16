@@ -1,0 +1,254 @@
+<html><head><title> display.getannunciators() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14699.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14700.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">display.getannunciators()</h2>
+<p class="bodyzero">This function reads the annunciators (indicators) that are presently turned on.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">annunciators</em> = display.getannunciators()</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">annunciators</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The bitmasked value showing which indicators are turned on</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function returns a bitmasked value showing which indicators are turned on. The 16bit binary equivalent of the returned value is the bitmask. The return value is a sum of set annunciators, based on the weighted value, as shown in the table below.</p>
+<p class="magictablebody"></p>
+<table width="608" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="90" height="0"></td>
+<td width="75" height="0"></td>
+<td width="120" height="0"></td>
+<td width="15" height="0"></td>
+<td width="105" height="0"></td>
+<td width="60" height="0"></td>
+<td width="142" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" colspan="7" width="608"><p class="tableheading">Annunciator (indicator) bitmasked values</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tableheadingsmall">Indicator</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tableheadingsmall">Bit</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tableheadingsmall">Weighted value</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border:1px solid #000000;" width="15"><p class="tableheadingsmall">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tableheadingsmall">Indicator</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tableheadingsmall">Bit</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tableheadingsmall">Weighted value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tablebodytext">FILT</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tablebodytext">1</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tablebodytext">1</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #D3D3D3;border-bottom:1px solid #000000;" width="15"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tablebodytext">EDIT</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tablebodytext">9</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tablebodytext">256</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tablebodytext">MATH</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tablebodytext">2</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tablebodytext">2</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #D3D3D3;border-bottom:1px solid #000000;" width="15"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tablebodytext">ERR</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tablebodytext">10</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tablebodytext">512</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tablebodytext">4W</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tablebodytext">3</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tablebodytext">4</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #D3D3D3;border-bottom:1px solid #000000;" width="15"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tablebodytext">REM</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tablebodytext">11</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tablebodytext">1024</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tablebodytext">AUTO</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tablebodytext">4</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tablebodytext">8</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #D3D3D3;border-bottom:1px solid #000000;" width="15"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tablebodytext">TALK</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tablebodytext">12</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tablebodytext">2048</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tablebodytext">ARM</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tablebodytext">5</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tablebodytext">16</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #D3D3D3;border-bottom:1px solid #000000;" width="15"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tablebodytext">LSTN</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tablebodytext">13</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tablebodytext">4096</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tablebodytext">TRIG</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tablebodytext">6</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tablebodytext">32</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #D3D3D3;border-bottom:1px solid #000000;" width="15"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tablebodytext">SRQ</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tablebodytext">14</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tablebodytext">8192</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tablebodytext">*(star)</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tablebodytext">7</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tablebodytext">64</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #D3D3D3;border-bottom:1px solid #000000;" width="15"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tablebodytext">REAR</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tablebodytext">15</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tablebodytext">16384</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="90"><p class="tablebodytext">SMPL</p>
+</td>
+<td style = "border:1px solid #000000;" width="75"><p class="tablebodytext">8</p>
+</td>
+<td style = "border-left:1px solid #000000;border-top:1px solid #000000;border-bottom:1px solid #000000;" width="120"><p class="tablebodytext">128</p>
+</td>
+<td bgcolor="#D3D3D3" style = "border-left:1px solid #000000;border-right:1px solid #000000;border-top:1px solid #D3D3D3;border-bottom:1px solid #000000;" width="15"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style = "border:1px solid #000000;" width="105"><p class="tablebodytext">REL</p>
+</td>
+<td style = "border:1px solid #000000;" width="60"><p class="tablebodytext">16</p>
+</td>
+<td style = "border:1px solid #000000;" width="142"><p class="tablebodytext">32768</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">The following definitions exist:</p>
+<p class="iclcode">display.ANNUNCIATOR_<em class="emphasis">X</em></p>
+<p class="iclbody">Where: <span class="monospaceitalic">X</span> equals <code class="monospace">FILTER</code>, <code class="monospace">MATH</code>, <code class="monospace">4_WIRE</code>, <code class="monospace">AUTO</code>, <code class="monospace">ARM</code>, <code class="monospace">TRIG</code>, <code class="monospace">STAR</code>, <code class="monospace">SAMPLE</code>, <code class="monospace">EDIT</code>, <code class="monospace">ERROR</code>, <code class="monospace">REMOTE</code>, <code class="monospace">TALK</code>, <code class="monospace">LISTEN</code>, <code class="monospace">SRQ</code>, <code class="monospace">REAR</code>, or <code class="monospace">REL</code></p>
+<p class="iclbody">The values correspond to the indicators listed above.</p>
+<p class="iclbody">For example:</p>
+<p class="iclcode">print(display.ANNUNCIATOR_EDIT)</p>
+<p class="iclcode">2.560000000e+02</p>
+<p class="iclcode">print(display.ANNUNCIATOR_TRIGGER)</p>
+<p class="iclcode">3.200000000e+01</p>
+<p class="iclcode">print(display.ANNUNCIATOR_AUTO)</p>
+<p class="iclcode">8.000000000e+00</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">myAnnunciators = display.getannunciators()</p>
+<p class="codetable">print(myAnnunciators)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">rem = bit.bitand(myAnnunciators, 1024)</p>
+<p class="codetable">if rem &gt; 0 then</p>
+<p class="codetable">   print(&quot;REM is on&quot;)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;REM is off&quot;)</p>
+<p class="codetable">end</p>
+</td>
+<td width="338"><p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1.28000e+03</p>
+<p class="codetable">REM is on</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">REM indicator is turned on.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h14645" class="jumptemplate" title="bit.bitand()" href="14632.html" target="_self">bit.bitand()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

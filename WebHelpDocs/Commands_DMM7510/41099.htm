@@ -1,0 +1,198 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.displaydigits </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41147.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41155.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41099" class="heading2-icl">dmm.measure.displaydigits</h2>
+<p class="bodyzero">This attribute determines the number of digits that are displayed for measurements on the front panel.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">See <strong class="specialbold">Functions and defaults</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = dmm.measure.displaydigits</p>
+<p class="iclcode">dmm.measure.displaydigits = <em class="emphasis">value</em></p>
+<p class="iclcode"><em class="emphasis">value</em> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_DIGITS)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_DIGITS, <span class="monospaceitalic">value</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">3.5 digit resolution: <code class="monospace">dmm.DIGITS_3_5</code></p>
+<p class="tablebodytext">4.5 digit resolution: <code class="monospace">dmm.DIGITS_4_5</code></p>
+<p class="tablebodytext">5.5 digit resolution: <code class="monospace">dmm.DIGITS_5_5</code></p>
+<p class="tablebodytext">6.5 digit resolution: <code class="monospace">dmm.DIGITS_6_5</code></p>
+<p class="tablebodytext">7.5 digit resolution: <code class="monospace">dmm.DIGITS_7_5</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Functions and defaults</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions and defaults</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="162"><p class="tableheading">Function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="tableheading">Def</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tableheading">Function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="tableheading">Def</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tableheading">Function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="tableheading">Def</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="162"><p class="codetable">dmm.FUNC_DC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="codetable">dmm.FUNC_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="codetable">dmm.FUNC_ACV_FREQUENCY</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">6</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="162"><p class="codetable">dmm.FUNC_AC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="codetable">dmm.FUNC_4W_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="codetable">dmm.FUNC_ACV_PERIOD</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">6</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="162"><p class="codetable">dmm.FUNC_DC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="codetable">dmm.FUNC_DIODE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="codetable">dmm.FUNC_DCV_RATIO</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">7</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="162"><p class="codetable">dmm.FUNC_AC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="codetable">dmm.FUNC_CAPACITANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">4</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="198"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="30"><p class="codetable"><span class="grayedout">4</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="162"><p class="codetable">dmm.FUNC_TEMPERATURE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="codetable">dmm.FUNC_CONTINUITY</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="30"><p class="codetable">4</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="198"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="30"><p class="codetable"><span class="grayedout">4</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command affects how the reading for a measurement is displayed on the front panel of the instrument. It does not affect the number of digits returned in a remote command reading. It also does not affect the accuracy or speed of measurements.</p>
+<p class="iclbody">The display digits setting is saved with the function setting, so if you use another function, then return to the function for which you set display digits, the display digits setting you set previously is retained.</p>
+<p class="iclbody">The change in digits occurs the next time a measurement is made.</p>
+<p class="iclbody">To change the number of digits returned in a remote command reading, use <code class="monospace">format.asciiprecision</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.measure.func = dmm.FUNC_DC_VOLTAGE</p>
+<p class="codetable">dmm.measure.displaydigits = dmm.DIGITS_5_5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set the measurement function to voltage with a front-panel display resolution of 5½.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41152" class="jump" title="dmm.digitize.displaydigits" href="41150.htm" target="_self">dmm.digitize.displaydigits</a></p>
+<p class="listcommand"><a id="h29445" class="jump" title="format.asciiprecision" href="28056.htm" target="_self">format.asciiprecision</a></p>
+
+
+<input id="topicId" type="hidden" value="41099" />
+<input id="topicDescription" type="hidden" value="dmm.measure.displaydigits" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/10/2019 1:38:11 PM" />
+</body>
+</html>

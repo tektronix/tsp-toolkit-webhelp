@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Load a script by sending commands over the remote interface </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="370.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="80249.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t16481" class="heading5">Load a script by sending commands over the remote interface</h5>
+<p class="bodytext">To load a script over the remote interface, you can use the <code class="monospace">loadscript</code>,<code class="monospace"> loadandrunscript</code>, and <code class="monospace">endscript</code> commands.</p>
+<p class="bodytext">The <code class="monospace">loadscript</code> and <code class="monospace">loadandrunscript</code> commands start the collection of messages that make up the script. When the instrument receives either of these commands, it starts collecting all subsequent messages. Without these commands, the instrument runs them immediately as individual commands.</p>
+<p class="bodytext">The <code class="monospace">endscript</code> command tells the instrument to compile the collection of messages. It compiles the messages into one group of commands. This group of commands is loaded into the runtime environment.</p>
+<p class="bodytext">The following figure shows an example of how to load a script named &#8220;test.&#8221; The first command tells the instrument to start collecting the messages for the script named &#8220;test.&#8221; The last command marks the end of the script. When this script is run, the message <code class="monospace">This is a test</code> is displayed on the instrument and sent to the computer.</p>
+<p class="magicfigurecenter"><img id="f16995" src="loadscript_lr.png" class="linkedepsandpngtemplate" alt="Loadscript and endscript example" height="243" width="501" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="headingprocedure">To load a named script by sending commands:</p>
+<ol class="listnumber"><li class="listnumber">Send the command <code class="monospace">loadscript</code> <span class="monospaceitalic">scriptName</span>, where <span class="monospaceitalic">scriptName</span> is the name of the script. The name must be a legal Lua variable name.</li><li class="listnumber">Send the commands that need to be included in the script.</li><li class="listnumber">Send the command <code class="monospace">endscript</code>.</li><li class="listnumber">You can now run the script. See <a id="h17076" class="jump" title="Run scripts" href="2398.htm" target="_self">Run scripts</a>.</li></ol><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">To run the script immediately, use <code class="monospace">loadandrunscript</code> <span class="monospaceitalic">scriptName</span> instead of <code class="monospace">loadscript</code>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2583.htm" target="_self">Create and load a script</a></p><p class="relateditem"><a href="10835.htm" target="_self">Anonymous scripts</a></p><p class="relateditem"><a href="370.htm" target="_self">Named scripts</a></p><p class="relateditem"><a href="80249.htm" target="_self">Load a script from the instrument front panel</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="16481" />
+<input id="topicDescription" type="hidden" value="Load a script by sending commands over the remote interface" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:34:38 PM" />
+</body>
+</html>

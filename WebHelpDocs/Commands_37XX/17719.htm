@@ -1,0 +1,84 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14677.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="20596.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17719" class="heading2-icl">digio.trigger[N].reset()</h2>
+<p class="bodyzero">This function resets trigger values to their factory defaults. </p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">digio.trigger[<em class="emphasis">N</em>].reset()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Digital I/O trigger line (1 to 14)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function resets the following attributes to factory default settings:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].mode</code></li><li class="listbullet2"><code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].pulsewidth</code></li><li class="listbullet2"><code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].stimulus</code></li></ul><p class="iclbody">It also clears <code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].overrun</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="606" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="606"><p class="codetable">digio.trigger[3].mode = 2</p>
+<p class="codetable">digio.trigger[3].pulsewidth = 50e-6</p>
+<p class="codetable">digio.trigger[3].stimulus = digio.trigger[5].EVENT_ID</p>
+<p class="codetable">print(digio.trigger[3].mode, digio.trigger[3].pulsewidth, digio.trigger[3].stimulus)</p>
+<p class="codetable">digio.trigger[3].reset()</p>
+<p class="codetable">print(digio.trigger[3].mode, digio.trigger[3].pulsewidth, digio.trigger[3].stimulus)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="606"><p class="tablebodytext">Set the digital I/O trigger line 3 for a falling edge with a pulsewidth of 50 µs.</p>
+<p class="tablebodytext">Use digital I/O line 5 to trigger the event on line 3.</p>
+<p class="tablebodytext">Reset the line back to factory default values.</p>
+<p class="tablebodytext">Output before reset:</p>
+<p class="codetable">2.00000e+00        5.00000e-05        5.00000e+00</p>
+<p class="tablebodytext">Output after reset:</p>
+<p class="codetable">0.00000e+00        1.00000e-05        0.00000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h18569" class="jump" title="digio.trigger[N].mode" href="14674.htm" target="_self">digio.trigger[N].mode</a></p>
+<p class="listcommand"><a id="h18763" class="jump" title="digio.trigger[N].overrun" href="14675.htm" target="_self">digio.trigger[N].overrun</a></p>
+<p class="listcommand"><a id="h14690" class="jump" title="digio.trigger[N].pulsewidth" href="17691.htm" target="_self">digio.trigger[N].pulsewidth</a></p>
+<p class="listcommand"><a id="h18767" class="jump" title="digio.trigger[N].stimulus" href="20596.htm" target="_self">digio.trigger[N].stimulus</a></p>
+
+

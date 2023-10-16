@@ -1,0 +1,135 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.digin[N].edge </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31373.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31378.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31360" class="heading2-icl">trigger.digin[N].edge</h2>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>This command requires a communications accessory card to be installed in the instrument. Accessory cards include the KTTI-GPIB, KTTI-TSP, and KTTI-RS232.</p>
+<p class="bodyzero">This attribute sets the edge used by the trigger event detector on the given trigger line.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">trigger.EDGE_FALLING</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">detectedEdge</em> = trigger.digin[<em class="emphasis">N</em>].edge</p>
+<p class="iclcode">trigger.digin[<em class="emphasis">N</em>].edge = <em class="emphasis">detectedEdge</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">detectedEdge</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger logic value:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Detect falling-edge triggers as inputs: <code class="monospace">trigger.EDGE_FALLING</code></li><li class="tablelistbullet9pt">Detect rising-edge triggers as inputs: <code class="monospace">trigger.EDGE_RISING</code></li><li class="tablelistbullet9pt">Detect either falling or rising-edge triggers as inputs: <code class="monospace">trigger.EDGE_EITHER</code></li><li class="tablelistbullet9pt">See <strong class="specialbold">Details</strong> for descriptions of values</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Digital I/O trigger line (1 to 6)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets the logic on which the trigger event detector and the output trigger generator operate on the specified trigger line.</p>
+<p class="iclbody">To directly control the line state, set the mode of the line to digital and use the write command. When the digital line mode is set for open drain, the edge settings assert a TTL low-pulse.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th colspan="2" width="600"><p class="tableheading">Trigger mode values</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="192"><p class="tableheadingsmall">Value</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="408"><p class="tableheadingsmall">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">trigger.EDGE_FALLING</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Detects falling-edge triggers as input when the line is configured as an input or open drain</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">trigger.EDGE_RISING</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Detects rising-edge triggers as input when the line is configured as an open drain</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">trigger.EDGE_EITHER</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Detects rising- or falling-edge triggers as input when the line is configured as an input or open drain</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">digio.line[4].mode = digio.MODE_TRIGGER_IN</p>
+<p class="codetable">trigger.digin[4].edge = trigger.EDGE_RISING</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Sets the trigger mode for digital I/O line&nbsp;4 to detect a rising-edge trigger as an input.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h33799" class="jump" title="digio.line[N].mode" href="31363.htm" target="_self">digio.line[N].mode</a></p>
+<p class="listcommand"><a id="h34774" class="jump" title="digio.line[N].reset()" href="31393.htm" target="_self">digio.line[N].reset()</a></p>
+<p class="listcommand"><a id="h17600" class="jump" title="digio.writeport()" href="30981.htm" target="_self">digio.writeport()</a></p>
+<p class="listcommand"><a id="h34057" class="jump" title="trigger.digin[N].clear()" href="31373.htm" target="_self">trigger.digin[N].clear()</a></p>
+
+
+<input id="topicId" type="hidden" value="31360" />
+<input id="topicDescription" type="hidden" value="trigger.digin[N].edge" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2019 9:04:51 AM" />
+</body>
+</html>

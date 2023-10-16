@@ -1,0 +1,109 @@
+<html>
+<head>
+<title> Logical operators </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16449.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16450.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h6 class="heading6">Logical operators</h6>
+<p class="bodytext">The logical operators in Lua are <code class="monospace"><code class="monospace">and</code></code>, <code class="monospace"><code class="monospace">or</code></code>, and <code class="monospace"><code class="monospace">not</code></code>. All logical operators consider both <code class="monospace"><code class="monospace">false</code></code> and <code class="monospace"><code class="monospace">nil</code></code> as false and anything else as true.</p>
+<p class="bodytext">The operator <code class="monospace"><code class="monospace">not</code></code> always returns <code class="monospace"><code class="monospace">false</code></code> or <code class="monospace"><code class="monospace">true</code></code>.</p>
+<p class="bodytext">The conjunction operator <code class="monospace"><code class="monospace">and</code></code> returns its first argument if the first argument is <code class="monospace"><code class="monospace">false</code></code> or <code class="monospace"><code class="monospace">nil</code></code>; otherwise, <code class="monospace"><code class="monospace">and</code></code> returns its second argument. The disjunction operator <code class="monospace"><code class="monospace">or</code></code> returns its first argument if this value is different from <code class="monospace"><code class="monospace">nil</code></code> and <code class="monospace"><code class="monospace">false</code></code>; otherwise, <code class="monospace"><code class="monospace">or</code></code> returns its second argument. Both <code class="monospace"><code class="monospace">and</code></code> and <code class="monospace"><code class="monospace">or</code></code> use shortcut evaluation, that is, the second operand is evaluated only if necessary.</p>
+<p class="note"><img src="notehelp.png" alt="VARIABLE - NOTE" height="48" width="176" vspace="0" hspace="0" align="bottom" border="0"><br>The output you get from this example may vary depending on the instrument you are using.</p>
+<p class="bodytext"><strong class="specialbold">Example 1</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="546" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="282"><p class="codetable">print(10 or errorqueue.next())</p>
+<p class="codetable">print(nil or &quot;a&quot;)</p>
+<p class="codetable">print(nil and 10)</p>
+<p class="codetable">print(false and errorqueue.next())</p>
+<p class="codetable">print(false and nil)</p>
+<p class="codetable">print(false or nil)</p>
+<p class="codetable">print(10 and 20)</p>
+</td>
+<td width="264"><p class="codetable"><code class="monospace"><code class="monospace">1.00000e+01</code></code></p>
+<p class="codetable"><code class="monospace"><code class="monospace">a</code></code></p>
+<p class="codetable"><code class="monospace"><code class="monospace">nil</code></code></p>
+<p class="codetable"><code class="monospace"><code class="monospace">false</code></code></p>
+<p class="codetable"><code class="monospace"><code class="monospace">false</code></code></p>
+<p class="codetable"><code class="monospace"><code class="monospace">nil</code></code></p>
+<p class="codetable"><code class="monospace"><code class="monospace">2.00000e+01</code></code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example 2</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="546" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="546"><p class="codetable">hex = function (i) return &quot;0x&quot;..string.format(&quot;%X&quot;, i) end</p>
+<p class="codetable">print(hex(0x54|0x55))</p>
+<p class="codetable">print(hex(0x54&amp;0x66))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="546"><p class="tablebodytext">Set the format to return hexadecimal values, then <code class="monospace"><code class="monospace">OR</code></code> two hexadecimal values and <code class="monospace"><code class="monospace">AND</code></code> two hexadecimal values. </p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">0x55</p>
+<p class="codetable">0x44</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example 3</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="546" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="546"><p class="codetable">hex = function (i) return &quot;0x&quot;..string.format(&quot;%X&quot;, i) end</p>
+<p class="codetable">a,b= 0b01010100, 0b01100110</p>
+<p class="codetable">print(hex(a), &quot;&amp;&quot;, hex(b), &quot;=&quot;, hex(a&amp;b))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="546"><p class="tablebodytext">Set the format to return hexadecimal values, define binary values for <code class="monospace"><code class="monospace">a</code></code> and <code class="monospace"><code class="monospace">b</code></code>, then <code class="monospace"><code class="monospace">AND</code></code> <code class="monospace"><code class="monospace">a</code></code> and <code class="monospace"><code class="monospace">b</code></code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">0x54 &amp; 0x66 = 0x44</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"><strong class="specialbold"> </strong></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="16449.html" target="_self">Operators</a></p><p class="relateditem"><a href="16450.html" target="_self">String concatenation</a></p><p class="relateditem"><a href="2424.html" target="_self">Operator precedence</a></p></td>
+</tr>
+</table>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2013, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

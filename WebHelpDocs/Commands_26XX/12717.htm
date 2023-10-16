@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> display.waitkey() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="93230.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16529.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12717" class="heading4">display.waitkey()</h4>
+<p class="bodytext">The <code class="monospace">display.waitkey()</code> function captures the key code value for the next key press:</p>
+<p class="code"><span class="monospaceitalic">key</span> = display.waitkey()</p>
+<p class="bodytext">After sending the <code class="monospace">display.waitkey()</code> function, the script pauses and waits for the operator to press a front&#8209;panel key. For example, if the MENU key is pressed, the function returns the value <code class="monospace">68</code>, which is the key code for that key. The key code values are the same as listed in <a id="h14721" class="jump" title="display.getlastkey()" href="17047.htm" target="_self">display.getlastkey()</a>.</p>
+<p class="bodytext">The following programming example illustrates how to prompt the user to press the EXIT (LOCAL) key to abort the script, or any other key to continue it:</p>
+<p class="code">display.clear()</p>
+<p class="code">display.setcursor(1, 1)</p>
+<p class="code">display.settext(&quot;Press EXIT to Abort&quot;)</p>
+<p class="code">display.setcursor(2, 1)</p>
+<p class="code">display.settext(&quot;or any key to continue&quot;)</p>
+<p class="code">key = display.waitkey()</p>
+<p class="code">display.clear()</p>
+<p class="code">display.setcursor(1, 1)</p>
+<p class="code">if key == 75 then</p>
+<p class="code">	display.settext(&quot;Test Aborted&quot;)</p>
+<p class="code">	exit()</p>
+<p class="code">else </p>
+<p class="code">	display.settext(&quot;Test Continuing&quot;)</p>
+<p class="code">end</p>
+<p class="bodytext">The above code captures the key that is pressed by the operator. The key code value for the<strong class="specialbold"> </strong>EXIT (LOCAL) key is <code class="monospace">75</code>. If the EXIT (LOCAL) key is pressed, the script aborts. If any other key is pressed, the script continues.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12125.htm" target="_self">Capturing key-press codes</a></p><p class="relateditem"><a href="93230.htm" target="_self">display.getlastkey()</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12717" />
+<input id="topicDescription" type="hidden" value="display.waitkey()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/19/2022 3:28:31 PM" />
+</body>
+</html>

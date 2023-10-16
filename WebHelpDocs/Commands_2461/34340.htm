@@ -1,0 +1,199 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> bufferVar.sourcestatuses </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30538.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25707.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t34340" class="heading2-icl">bufferVar.sourcestatuses</h2>
+<p class="bodyzero">This attribute contains the source status conditions of the instrument for the reading point.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">statusInfo</span> = <span class="monospaceitalic">bufferVar</span>.sourcestatuses[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">statusInfo</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The status value when reading <span class="monospaceitalic">N</span> of the specified buffer was acquired; </p>
+<p class="tablebodytext">Source status values are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Overvoltage protection was active: <code class="monospace">buffer.STAT_PROTECTION</code></li><li class="tablelistbullet9pt">Measured source value was read: <code class="monospace">buffer.STAT_READBACK</code></li><li class="tablelistbullet9pt">Overtemperature condition was active: <code class="monospace">buffer.STAT_OVER_TEMP</code></li><li class="tablelistbullet9pt">Source function level was limited: <code class="monospace">buffer.STAT_LIMIT</code></li><li class="tablelistbullet9pt">Four-wire sense was used: <code class="monospace">buffer.STAT_SENSE</code></li><li class="tablelistbullet9pt">Output was on: <code class="monospace">buffer.STAT_OUTPUT</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading number <span class="monospaceitalic">N</span>; can be any value from 1 to the number of readings in the buffer; use the <span class="monospaceitalic">bufferVar.</span><code class="monospace">n</code> command to determine the number of readings in the&nbsp;buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This buffer recall attribute holds an array (a Lua table) of the status values for all the readings in the buffer. The status values are floating-point numbers that encode the status value for each measurement made. See the following table for values.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td colspan="4" width="558"><p class="tableheading">Buffer status bits for source function when reading was acquired</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tableheading">Bit</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tableheading">Name</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tableheading">Decimal value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="276"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext"><code class="monospace">STAT_PROTECTION</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Overvoltage protection was active</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext"><code class="monospace">STAT_READBACK</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Measured source value was read</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext"><code class="monospace">STAT_OVER_TEMP</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Overtemperature condition was active</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext"><code class="monospace">STAT_LIMIT</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Source function level was limited</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext"><code class="monospace">STAT_SENSE</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">64</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Four-wire sense was used</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext"><code class="monospace">STAT_OUTPUT</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Output was on</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset() </p>
+<p class="codetable">testData = buffer.make(50)</p>
+<p class="codetable">smu.source.output = smu.ON</p>
+<p class="codetable">trigger.model.load(&quot;SimpleLoop&quot;, 2, 0, testData)</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">printbuffer(1, 2, testData.sourcestatuses)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create a reading buffer named <code class="monospace">testData</code>, configure the instrument to make two measurements, and store the readings in the buffer.</p>
+<p class="tablebodytext">Turn on the source output.</p>
+<p class="tablebodytext">Print the source status for the readings in <code class="monospace">testData</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">136, 136</code></p>
+<p class="tablebodytext">Indicating that the status is <code class="monospace">buffer.STAT_READBACK</code> and <code class="monospace">buffer.STAT_OUTPUT</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h33664" class="jump" title="bufferVar.clear()" href="30485.htm" target="_self">bufferVar.clear()</a></p>
+<p class="listcommand"><a id="h33983" class="jump" title="buffer.delete()" href="33981.htm" target="_self">buffer.delete()</a></p>
+<p class="listcommand"><a id="h17646" class="jump" title="print()" href="17645.htm" target="_self">print()</a></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+
+
+<input id="topicId" type="hidden" value="34340" />
+<input id="topicDescription" type="hidden" value="bufferVar.sourcestatuses" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 9:44:02 AM" />
+</body>
+</html>

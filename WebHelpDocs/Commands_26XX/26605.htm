@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Ohms programming example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11941.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11580.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t26605" class="heading4">Ohms programming example</h4>
+<p class="bodytext">The following programming example illustrates the setup and command sequence of a typical ohms measurement procedure with the following&nbsp;parameters:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Source function:</strong> Current, 10&nbsp;mA range, 10&nbsp;mA output</li><li class="listbullet"><strong class="specialbold">Voltage measure range:</strong> Autorange</li><li class="listbullet"><strong class="specialbold">Voltage compliance:</strong> 10&nbsp;V</li><li class="listbullet"><strong class="specialbold">Sense mode:</strong> 4&#8209;wire</li></ul><p class="code">-- Restore 2600B defaults.</p>
+<p class="code">smua.reset()</p>
+<p class="code">-- Select the current source function.</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCAMPS</p>
+<p class="code">-- Set the source range to 10&nbsp;mA.</p>
+<p class="code">smua.source.rangei = 10e-3</p>
+<p class="code">-- Set the current source to&nbsp;10&nbsp;mA.</p>
+<p class="code">smua.source.leveli = 10e-3</p>
+<p class="code">-- Set the voltage limit to 10&nbsp;V.</p>
+<p class="code">smua.source.limitv = 10</p>
+<p class="code">-- Enable 4-wire ohms.</p>
+<p class="code">smua.sense = smua.SENSE_REMOTE</p>
+<p class="code">-- Set the voltage range to auto.</p>
+<p class="code">smua.measure.autorangev = smua.AUTORANGE_ON</p>
+<p class="code">-- Turn on output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_ON</p>
+<p class="code">-- Retrieve a resistance reading.</p>
+<p class="code">print(smua.measure.r())</p>
+<p class="code">-- Turn off output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_OFF</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="26953.htm" target="_self">Basic ohms measurement procedure</a></p><p class="relateditem"><a href="11941.htm" target="_self">Remote ohms command</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="26605" />
+<input id="topicDescription" type="hidden" value="Ohms programming example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 8:55:05 AM" />
+</body>
+</html>

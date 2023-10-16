@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Setting the password from a command or web interface </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12255.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12872.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12871" class="heading3">Setting the password from a command or web interface</h3>
+<p class="bodytext">The attribute <code class="monospace">localnode.passwordmode</code> enables passwords and sets the mode. The password mode identifies which interface to password protect.</p>
+<p class="iclbody">Set this attribute to one of the values below to enable password checking:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">localnode.PASSWORD_NONE</code> or <code class="monospace">0</code>: Disable passwords everywhere</li><li class="listbullet"><code class="monospace">localnode.PASSWORD_WEB</code> or <code class="monospace">1</code>: Use passwords on the web interface only</li><li class="listbullet"><code class="monospace">localnode.PASSWORD_LAN</code> or <code class="monospace">2</code>: Use passwords on the web interface and all LAN interfaces</li><li class="listbullet"><code class="monospace">localnode.PASSWORD_ALL</code> or <code class="monospace">3</code>: Use passwords on the web interface and all remote command interfaces</li></ul><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">When a password is set for the web interface, you cannot make changes using the web interface options Virtual Front Panel, Flash Upgrade, or TSB Embedded.</p>
+<p class="bodytext">The password lock feature on 2600B is similar to the lock feature on your computer.</p>
+<p class="note"><img id="f14261_1" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You must assign a password to use this feature. Passwords can be up to 255&nbsp;characters.</p>
+<p class="headingprocedure">To set the password using the web interface:</p>
+<ol class="listnumber"><li class="listnumber">From the web interface, select <strong class="specialbold">Set Password</strong>. <br>The LXI - Keithley Instruments - 2600B - Administration page is displayed.</li><li class="listnumber">In <strong class="specialbold">Current Password</strong>, type the existing password. The default is <code class="monospace">admin</code>.</li><li class="listnumber">In <strong class="specialbold">New Password</strong>, type the new password.</li><li class="listnumber">Retype the new password in <strong class="specialbold">Confirm New Password</strong>.</li><li class="listnumber">Select <strong class="specialbold">Submit</strong>.</li></ol><p class="bodytext">The LXI Welcome page is displayed.</p>
+<p class="headingprocedure">To enable the password from a command interface:</p>
+<p class="bodytext">To lock the instrument when you are away from the testing area, send the following&nbsp;command:</p>
+<p class="bodytext"><code class="monospace">password</code></p>
+<p class="bodytext">The remote interface is locked. The 2600B does not respond to commands issued from the command interface until you unlock the interface. This reserves the instrument and protects the test script running on the instrument.</p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12255.htm" target="_self">Password management</a></p><p class="relateditem"><a href="12872.htm" target="_self">Unlocking the remote interface</a></p><p class="relateditem"><a href="12257.htm" target="_self">Resetting the password</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12871" />
+<input id="topicDescription" type="hidden" value="Setting the password from a command or web interface" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/8/2021 1:23:16 PM" />
+</body>
+</html>

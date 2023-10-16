@@ -1,0 +1,119 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13984.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15940.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17280" class="heading2-icl">channel.reset()</h2>
+<p class="bodyzero">This function resets the specified channel list items to factory default settings.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.reset(&quot;<em class="emphasis">channelList</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that lists the items to reset; the string can include:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">allslots</code></li><li class="tablelistbullet9pt"><code class="monospace">slot</code><span class="monospaceitalic">X</span>, where <span class="monospaceitalic">X</span> is the slot number</li><li class="tablelistbullet9pt">channel patterns</li><li class="tablelistbullet9pt">channels, including a range of channels</li><li class="tablelistbullet9pt">analog backplane relays</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">For the items specified in <span class="monospaceitalic">channelList</span>, the following actions occur:</p>
+<ul class="listbullet"><li class="listbullet">Any closed channels and analog backplane relays open</li><li class="listbullet">Any 4-pole channels reset to 2&#8209;pole operation and their paired channels are changed to match</li><li class="listbullet">Additional user delay is set to zero (0)</li><li class="listbullet">Labels are removed</li><li class="listbullet">Analog backplane relays specified by the <code class="monospace">channel.setbackplane()</code>function are cleared</li><li class="listbullet">If the channel is forbidden to close, it is cleared from being forbidden to close</li><li class="listbullet">If the channels are used in channel patterns, the channel patterns that contain the channels are deleted.</li><li class="listbullet">The DMM configurations of all channels are set to <code class="monospace">nofunction</code></li></ul><p class="iclbody">Using this function to reset a channel or backplane relay involved in scanning invalidates the existing scan list. The list has to be recreated before scanning again.</p>
+<p class="iclbody">For all channels, any trigger settings are removed.</p>
+<p class="iclbody">For digital I/O channels, operation is set to input, the match is set to zero (0), and auto&#8209;protect is turned on.</p>
+<p class="iclbody">For totalizer channels, operation is set to falling edge and TTL level.</p>
+<p class="iclbody">For DAC channels, output is turned off and auto&#8209;protect is turned on. Operation is set to &#8211;12&nbsp;V to + 12&nbsp;V.</p>
+<p class="iclbody">The rest of the instrument settings are unaffected. To reset the entire system to factory default settings, use the <code class="monospace">reset()</code> command.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.reset(&quot;allslots&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Performs a reset operation on all channels on the instrument.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.reset(&quot;slot1&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Resets channels on slot 1 only.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.reset(&quot;3001:3005&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Resets only channels 1 to 5 on slot 3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 4</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.reset(&quot;5005, 5915&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Resets only channel 5 and analog backplane relay 5 in bank 1 on slot 5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Channel</p>
+<p class="listcommand"><a id="h766" class="jump" title="channel.setbackplane()" href="15941.htm" target="_self">channel.setbackplane()</a></p>
+<p class="listcommand"><a id="h881" class="jump" title="dmm.reset()" href="16061.htm" target="_self">dmm.reset()</a></p>
+<p class="listcommand"><a id="h13937" class="jump" title="reset()" href="13933.htm" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h1354" class="jump" title="scan.reset()" href="16896.htm" target="_self">scan.reset()</a></p>
+
+

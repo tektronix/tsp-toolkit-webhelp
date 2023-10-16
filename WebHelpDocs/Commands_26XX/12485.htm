@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Configuring measurements during a sweep </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12484.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12486.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12485" class="heading4">Configuring measurements during a sweep</h4>
+<p class="bodytext">You can make measurements during a sweep using the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.measure.</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> function. When sweeps are run, measurements are stored in the specified reading buffer for later recall. You can specify which reading buffer stores the readings. For example, to store the voltage readings made during the sweep, send the commands:</p>
+<p class="code">smua.trigger.measure.v(vbuffername)</p>
+<p class="code">smua.trigger.measure.action = smua.ENABLE</p>
+<p class="headingprocedure">To recall sweep data using the front panel:</p>
+<ol class="listnumber"><li class="listnumber">Press the <strong class="specialbold">RECALL</strong> key.</li><li class="listnumber">Select <strong class="specialbold">DATA</strong> or <strong class="specialbold">STATISTICS</strong>.</li><li class="listnumber"><strong class="specialbold">If you selected DATA:</strong> Select the buffer and use the navigation wheel or cursor keys to choose reading numbers to display.</li><li class="listnumber"><strong class="specialbold">If you selected STATISTICS:</strong> Select the buffer and use the navigation wheel or cursor keys to choose <strong class="specialbold">MEAN</strong>, <strong class="specialbold">STD DEV</strong>, <strong class="specialbold">SAMPLE SIZE</strong>, <strong class="specialbold">MINIMUM</strong>, <strong class="specialbold">MAXIMUM</strong>, or <strong class="specialbold">PK-PK</strong>.</li></ol><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Recalling readings from the reading buffer using the front panel can be done only if one of the dedicated reading buffers is used to store the sweep data.</p>
+<p class="headingprocedure">To recall sweep data using remote commands:</p>
+<p class="bodytext">Use the <code class="monospace">printbuffer()</code> function to request buffer readings.</p>
+<p class="bodytext">See <a id="h1380" class="jump" title="Recalling readings" href="11669.htm" target="_self">Recalling readings</a> for details about recalling data from the buffer.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12481.htm" target="_self">Configuring and running sweeps</a></p><p class="relateditem"><a href="12483.htm" target="_self">Configuring compliance limits remotely</a></p><p class="relateditem"><a href="12484.htm" target="_self">Configuring end sweep actions remotely</a></p><p class="relateditem"><a href="12486.htm" target="_self">Source and measurement delays</a></p><p class="relateditem"><a href="ID_SRC_SWEEP_BUT.htm" target="_self">Initiating and running sweeps</a></p><p class="relateditem"><a href="12488.htm" target="_self">Aborting a sweep</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12485" />
+<input id="topicDescription" type="hidden" value="Configuring measurements during a sweep" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/17/2022 2:52:37 PM" />
+</body>
+</html>

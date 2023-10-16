@@ -1,0 +1,127 @@
+<html><head><title> channel.setlabelrow() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17319.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="18501.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.setlabelrow()</h2>
+<p class="bodyzero">This function assigns a label to a row.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">Empty string or blank</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.setlabelrow(<em class="emphasis">channel</em>, <em class="emphasis">label</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channel</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string that specifies the channel that contains the row to which to apply a label</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">label</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string that lists the label for the channel row, up to eight characters</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">A row label can be applied to columns of a matrix card. The label is then used on the display and can be accessed in a channel list (see channel list overview). For <span class="monospaceitalic">channel</span>, you can specify any channel in the row. You cannot specify a channel pattern.</p>
+<p class="iclbody">The row and column <span class="monospaceitalic">label</span> parameters must be unique. In addition, they cannot be the same as the name of a channel pattern.</p>
+<p class="iclbody">You can only set labels for slots and channels that are installed in the instrument.</p>
+<p class="iclbody">After defining a row label, you can use it to specify a channel instead of the default channel designation.</p>
+<p class="iclbody">On the crosspoint display, the first four characters of the label are displayed. On the bottom display, the full label is displayed.</p>
+<p class="iclbody">Labels can only be set for matrix cards.</p>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="64" width="234" vspace="0" hspace="0" align="middle" border="0"><br>Since a row label is common to all channels in that row, you only need to assign the row label to one channel.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="412"><p class="codetable">channel.setlabelrow(&quot;1B01&quot;, &quot;SMU2&quot;)    </p>
+<p class="codetable">channel.setlabelcolumn(&quot;1B02&quot;, &quot;DUT2&quot;)  </p>
+<p class="codetable">channel.close(&quot;SMU2+DUT2&quot;)   </p>
+<p class="codetable">print(channel.getclose(&quot;allslots&quot;))</p>
+</td>
+<td width="330"><p class="tablebodytext">Sets the label for the slot 1, row 2 to &quot;SMU2&quot; and slot 1, column 2 to &quot;DUT2&quot;.</p>
+<p class="tablebodytext">Use the labels to close a channel.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1B02</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setlabelrow(&quot;1A01&quot;, &quot;&quot;)</p>
+</td>
+<td width="338"><p class="tablebodytext">Clears the label for row 1 on slot&nbsp;1 back to default.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setlabelrow(&quot;1A01&quot;, &quot; &quot;)</p>
+</td>
+<td width="338"><p class="tablebodytext">Also clears the label for row 1 on slot 1 back to default.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 4</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setlabelrow(&quot;2B01&quot;, &quot;Row2&quot;)</p>
+<p class="codetable">print(channel.getlabelrow(&quot;slot2&quot;))</p>
+</td>
+<td width="338"><p class="tablebodytext">This example assumes a 7072 in slot 2.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Set the label to be Row2, which assigns the label to all channels in the row. The output is now :</p>
+<p class="codetable">,,,,,,,,,,,,Row2,Row2,Row2,Row2,Row2,Row2,Row2,Row2,Row2,Row2,Row2,Row2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody">Errors related to channel functions and attributes</p>
+<p class="iclbody"><a id="h17322" class="jumptemplate" title="channel.getlabelcolumn()***70xB only***" href="17320.html" target="_self">channel.getlabelcolumn()</a></p>
+<p class="iclbody"><a id="h17323" class="jumptemplate" title="channel.getlabelrow()" href="17321.html" target="_self">channel.getlabelrow()</a></p>
+<p class="iclbody"><a id="h17324" class="jumptemplate" title="channel.setlabelcolumn()" href="17319.html" target="_self">channel.setlabelcolumn()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

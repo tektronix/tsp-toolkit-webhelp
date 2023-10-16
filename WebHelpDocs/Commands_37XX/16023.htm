@@ -1,0 +1,117 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16022.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16024.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16023" class="heading2-icl">dmm.displaydigits</h2>
+<p class="bodyzero">This attribute determines the number of digits that are displayed for measurements on the front panel.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="84"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="84"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.displaydigits</p>
+<p class="iclcode">dmm.displaydigits = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">7½ display digits: <code class="monospace">dmm.DIGITS_7_5</code> or <code class="monospace">7</code></p>
+<p class="tablebodytext">6½ display digits: <code class="monospace">dmm.DIGITS_6_5</code> or <code class="monospace">6</code></p>
+<p class="tablebodytext">5½ display digits: <code class="monospace">dmm.DIGITS_5_5</code> or <code class="monospace">5</code></p>
+<p class="tablebodytext">4½ display digits: <code class="monospace">dmm.DIGITS_4_5</code> or <code class="monospace">4</code> </p>
+<p class="tablebodytext">3½ display digits: <code class="monospace">dmm.DIGITS_3_5</code> or <code class="monospace">3</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This is not available for <code class="monospace">&quot;nofunction&quot;</code>. </p>
+<p class="iclbody">This command affects how the reading for a measurement is displayed on the front panel of the instrument. It does not affect the number of digits returned in a remote command reading. It also does not affect the accuracy or speed of measurements.</p>
+<p class="iclbody">The display digits setting is saved with the function setting, so if you use another function, then return to the function for which you set display digits, the display digits setting you set previously is retained.</p>
+<p class="iclbody">The change in digits occurs the next time a measurement is made.</p>
+<p class="iclbody">To change the number of digits returned in a remote command reading, use <code class="monospace">format.asciiprecision</code>.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="414" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="300" height="0"></td>
+<td width="114" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="2" width="414"><p class="tableheading">Defaults</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="300"><p class="tableheading">If <code class="monospace">dmm.func</code> is… </p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tableheading">The default is…</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="300"><p class="tablebodytext">&quot;accurrent&quot;, &quot;acvolts&quot;, &quot;temperature&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">5</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="300"><p class="tablebodytext">&quot;commonsideohms&quot;, &quot;dccurrent&quot;, &quot;dcvolts&quot;, &quot;twowireohms&quot;, &quot;fourwireohms&quot;, &quot;frequency&quot;, &quot;period&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">6</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="300"><p class="tablebodytext">&quot;continuity&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="114"><p class="tablebodytext">4</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">An error is generated:</p>
+<ul class="listbullet"><li class="listbullet">If the value is invalid</li><li class="listbullet">If <code class="monospace">dmm.func</code> is set to &quot;nofunction&quot;, if the command is queried, <code class="monospace">nil </code>is returned </li><li class="listbullet"><code class="monospace">dmm.func</code> is set to &quot;nofunction&quot; or &quot;continuity&quot;, if the command is written, error code 1114, &quot;Settings conflict with function selected,&quot; is returned</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="348"><p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.displaydigits = dmm.DIGITS_7_5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="246"><p class="tablebodytext">Enables display digits to 7½ for DC volts.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h14804" class="jump" title="format.asciiprecision" href="14797.htm" target="_self">format.asciiprecision</a></p>
+
+

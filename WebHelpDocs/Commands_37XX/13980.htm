@@ -1,0 +1,72 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14506.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14508.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t13980" class="heading2-icl">channel.calibration.save()</h2>
+<p class="bodyzero">This function saves the calibration data to the card.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.calibration.save()</p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Only one card can be calibrated at a time. Therefore, <code class="monospace">channel.calibration.save()</code> works only on the presently unlocked card. An error is generated if this command is issued when calibration is already locked. </p>
+<p class="iclbody">The system must receive this command before the <code class="monospace">channel.calibration.lock()</code> command or the calibration data will be lost. </p>
+<p class="iclbody">This command saves the present values of the calibration constants and calibration date, and increases the calibration count by one, regardless of errors in the data. You should not issue <code class="monospace">channel.calibration.save()</code> unless the calibration procedure was performed with no errors.</p>
+<p class="iclbody">If no calibration date was specified using either <code class="monospace">channel.calibration.adjustdate()</code> or <code class="monospace">channel.calibration.verifydate()</code>, the date is automatically assigned based on the system date.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.calibration.unlock(&quot;slot1&quot;,&quot;KI3706&quot;)</p>
+<p class="codetable">-- Perform operations to generate the calibration data</p>
+<p class="codetable">channel.calibration.save()</p>
+<p class="codetable">channel.calibration.lock()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Unlock the card calibration for slot 1 using the default password.</p>
+<p class="tablebodytext">Use the <code class="monospace">channel.calibration.step </code>command to generate the calibration data.</p>
+<p class="tablebodytext">Save the calibration data for the card in slot 1, if no errors occurred while generating the calibration data.</p>
+<p class="tablebodytext">Lock the calibration data for the card in slot 1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14499" class="jump" title="channel.calibration.adjustcount()" href="13975.htm" target="_self">channel.calibration.adjustcount()</a></p>
+<p class="listcommand"><a id="h14494" class="jump" title="channel.calibration.adjustdate()" href="13979.htm" target="_self">channel.calibration.adjustdate()</a></p>
+<p class="listcommand"><a id="h14490" class="jump" title="channel.calibration.lock()" href="14487.htm" target="_self">channel.calibration.lock()</a></p>
+<p class="listcommand"><a id="h14489" class="jump" title="channel.calibration.unlock()" href="14488.htm" target="_self">channel.calibration.unlock()</a></p>
+<p class="listcommand"><a id="h14501" class="jump" title="channel.calibration.verifydate()" href="14500.htm" target="_self">channel.calibration.verifydate()</a></p>
+
+

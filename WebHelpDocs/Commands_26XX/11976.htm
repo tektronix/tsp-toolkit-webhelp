@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Effects of load on current source settling time </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11975.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="23825.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t11976" class="heading2">Effects of load on current source settling time</h2>
+<p class="bodytext">The settling time of the source&#8209;measure unit (SMU) can be influenced by the impedance of the device&#8209;under&#8209;test (DUT) in several ways. One influence is caused by an interaction between the impedances of the SMU current source feedback element and the DUT. This interaction can cause a reduction in the bandwidth of the SMU. This reduction results in an increase in the settling time of the current&nbsp;source.</p>
+<p class="bodytext">There is a maximum DUT impedance for each current source range for which the specified current settling times are maintained. The following table lists the DUT impedances for each of these current source ranges. For the latest specifications, go to <a class="jumpnewwindow" title="https://www.tek.com/en/products/keithley" href="https://www.tek.com/en/products/keithley" target="_blank">tek.com/keithley</a>. The settling time on a current source range can increase significantly when measuring DUTs that have an impedance that is higher than the maximum DUT impedance listed below.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="120" height="0"></td>
+<td width="240" height="0"></td>
+<td width="240" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="3" width="600"><p class="tableheading">Maximum DUT impedances for specified settling time performance</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tableheading">Range</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tableheading">SMU feedback impedance</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tableheading">Maximum DUT impedance</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">1&nbsp;nA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">1&nbsp;GΩ</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">2&nbsp;GΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">10&nbsp;nA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">120&nbsp;MΩ</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">60&nbsp;MΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">100&nbsp;nA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">40&nbsp;MΩ</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">20&nbsp;MΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">1&nbsp;µA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">1.2&nbsp;MΩ</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">600&nbsp;kΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">10&nbsp;µA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">400&nbsp;kΩ</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">200&nbsp;kΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">100&nbsp;µA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">12&nbsp;kΩ</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">6&nbsp;kΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">1&nbsp;mA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">4&nbsp;kΩ</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">2&nbsp;kΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">10&nbsp;mA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">120&nbsp;Ω</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">60&nbsp;Ω</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">100&nbsp;mA</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">40&nbsp;Ω</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">20&nbsp;Ω</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">1&nbsp;A</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">1&nbsp;Ω</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">6&nbsp;Ω</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">1.5&nbsp;A</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">1&nbsp;Ω</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">6&nbsp;Ω</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="tablebodytext">3&nbsp;A</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">0.3 Ω</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext">1.5&nbsp;Ω</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="76461.htm" target="_self">Theory of operation</a></p><p class="relateditem"><a href="77072.htm" target="_self">Source-measure concepts</a></p><p class="relateditem"><a href="29098.htm" target="_self">Analog-to-digital converter</a></p><p class="relateditem"><a href="11687.htm" target="_self">Measurement settling time considerations</a></p><p class="relateditem"><a href="23825.htm" target="_self">Creating pulses with the 2600B SMU</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11976" />
+<input id="topicDescription" type="hidden" value="Effects of load on current source settling time" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/30/2021 3:12:59 PM" />
+</body>
+</html>

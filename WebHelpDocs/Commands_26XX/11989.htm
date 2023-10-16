@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Script example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11987.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11945.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t11989" class="heading5">Script example</h5>
+<p class="bodytext">Use the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.highc</code> attribute to set and control the options for high&#8209;capacitance&nbsp;mode.</p>
+<p class="bodytext">The programming examples and figure below illustrate how to enable high-capacitance mode on SMU&nbsp;A. </p>
+<p class="bodytext">1. To enable high-capacitance mode, send:</p>
+<p class="codelistcontinue">-- Enables high-capacitance mode.</p>
+<p class="codelistcontinue">smua.source.highc = smua.ENABLE</p>
+<p class="bodytext">2. To run the <code class="monospace">i_leakage_measure()</code> function in the KIHighC factory script, send:</p>
+<p class="codelistcontinue">-- Charges the capacitor.</p>
+<p class="codelistcontinue">smua.source.levelv = 5</p>
+<p class="codelistcontinue">smua.source.output = smua.OUTPUT_ON</p>
+<p class="codelistcontinue">delay(1)</p>
+<p class="codelistcontinue">imeas = i_leakage_measure(smua, 0, 1, 300e-3, 10e-6, 100e-3)</p>
+<p class="codelistcontinue">-- The parameters in the i_leakage_measure() function represent</p>
+<p class="codelistcontinue">-- the following:</p>
+<p class="codelistcontinue">-- smu = smua</p>
+<p class="codelistcontinue">-- levelv = 0&nbsp;V</p>
+<p class="codelistcontinue">-- limiti = 1&nbsp;A</p>
+<p class="codelistcontinue">-- sourcedelay = 300&nbsp;ms</p>
+<p class="codelistcontinue">-- measurei = 10&nbsp;uA range</p>
+<p class="codelistcontinue">-- measuredelay = 100&nbsp;ms</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Adjust the voltage level and source delays based on:</p>
+<ul class="notebullet"><li class="notebullet">The value and type of capacitor</li><li class="notebullet">The magnitude of the voltage step</li><li class="notebullet">The current measure range</li></ul><p class="bodytext"></p>
+<p class="magicfigurecenter"><img id="f13043" src="2600as-901-01b_enablinghigh-capacitancemode.png" class="linkedepsandpngtemplate" alt="Enabling high-capacitance mode" height="1707" width="3657" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11987.htm" target="_self">Measuring current using high-capacitance mode</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11989" />
+<input id="topicDescription" type="hidden" value="Script example" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/26/2021 4:37:34 PM" />
+</body>
+</html>

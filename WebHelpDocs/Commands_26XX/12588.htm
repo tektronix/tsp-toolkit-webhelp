@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Command interface interactive trigger example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12587.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12589.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12588" class="heading4">Command interface interactive trigger example</h4>
+<p class="bodytext">The programming example below illustrates how to clear triggers, turn on the SMU output, and then enable a 30&#8209;second timeout to wait for a command interface trigger. When the trigger is received, the 2600B performs a voltage reading.</p>
+<p class="code">-- Clear any previously detected command interface triggers.</p>
+<p class="code">trigger.clear()</p>
+<p class="code">-- Turn on output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_ON</p>
+<p class="code">-- Wait 30 seconds for a command interface trigger.</p>
+<p class="code">triggered = trigger.wait(30)</p>
+<p class="code">-- Get a voltage reading.</p>
+<p class="code">reading = smua.measure.v()</p>
+<p class="code">-- Send a command interface trigger to trigger the measurement.</p>
+<p class="code">*TRG</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><code class="monospace">*TRG</code> cannot be used in a script.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12587.htm" target="_self">Examples using interactive triggering</a></p><p class="relateditem"><a href="12589.htm" target="_self">Manual triggering example</a></p><p class="relateditem"><a href="12590.htm" target="_self">Digital I/O triggering interactive example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12588" />
+<input id="topicDescription" type="hidden" value="Command interface interactive trigger example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/10/2021 5:13:28 PM" />
+</body>
+</html>

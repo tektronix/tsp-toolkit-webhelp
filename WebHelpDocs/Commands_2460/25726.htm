@@ -1,0 +1,148 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> localnode.settime() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="32597.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30504.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t25726" class="heading2-icl">localnode.settime()</h2>
+<p class="bodyzero">This function sets the date and time of the instrument.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#​336699" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#​336699" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">localnode.settime()</p>
+<p class="iclcode">localnode.settime(<span class="monospaceitalic">year</span>, <span class="monospaceitalic">month</span>, <span class="monospaceitalic">day</span>, <span class="monospaceitalic">hour</span>, <span class="monospaceitalic">minute</span>, <span class="monospaceitalic">second</span>)</p>
+<p class="iclcode">localnode.settime(<span class="monospaceitalic">hour</span>, <span class="monospaceitalic">minute</span>, <span class="monospaceitalic">second</span>)</p>
+<p class="iclcode">localnode.settime(os.time(<code class="monospace">{</code><span class="monospaceitalic">year</span><code class="monospace">, </code><span class="monospaceitalic">month</span><code class="monospace">, </code><span class="monospaceitalic">day</span><code class="monospace">}</code>))</p>
+<p class="iclcode">localnode.settime(os.time(<code class="monospace">{year = </code><span class="monospaceitalic">year</span><code class="monospace">, month = </code><span class="monospaceitalic">month</span><code class="monospace">, day = </code><span class="monospaceitalic">day</span><code class="monospace">, hour = </code><span class="monospaceitalic">hour</span><code class="monospace">, min = </code><span class="monospaceitalic">minute</span><code class="monospace">, sec = </code><span class="monospaceitalic">second</span><code class="monospace">}</code>))</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">year</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Year; must be more than 1970</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">month</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Month (1 to 12)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">day</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Day (1 to 31)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">hour</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Hour in 24-hour time format (0 to 23)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">minute</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Minute (0 to 59)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">second</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Second (0 to 59)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Internally, the instrument bases time in UTC time. UTC time is specified as the number of seconds since Jan 1, 1970, UTC. You can use UTC time from a local time specification, or you can use UTC time from another source (for example, your computer).</p>
+<p class="iclbody">When called without a parameter (the first form), the function returns the current time.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">localnode.settime(2017, 12, 5, 15, 48, 20)</p>
+<p class="codetable">print(localnode.settime())</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Sets the date and time to December 5, 2017 at 3:48:20&nbsp;pm and verifies the time.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Tue Dec  5 15:48:20 2017</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="354"><p class="codetable">systemTime = os.time({year = 2018,</p>
+<p class="codetable">       month = 3,</p>
+<p class="codetable">       day = 31,</p>
+<p class="codetable">       hour = 14,</p>
+<p class="codetable">       min = 25})</p>
+<p class="codetable">localnode.settime(systemTime)</p>
+<p class="codetable">print(os.date('%c', gettime()))</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="246"><p class="tablebodytext">Sets the date and time to Mar 31, 2018 at 2:25&nbsp;pm.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Sat Mar 31 14:25:00 2018</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h33888" class="jump" title="localnode.gettime()" href="32416.htm" target="_self">localnode.gettime()</a></p>
+
+
+<input id="topicId" type="hidden" value="25726" />
+<input id="topicDescription" type="hidden" value="localnode.settime()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 8:37:04 AM" />
+</body>
+</html>

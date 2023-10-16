@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Memory considerations for the run-time environment </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="23885.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="DMM7510_TSP_command_reference.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t33306" class="heading3">Memory considerations for the run-time environment</h3>
+<p class="bodytext">The DMM7510 reserves a large amount of memory for use with interactions with the front panel, commands, and test scripts. The amount of memory usage is affected by the following product features:</p>
+<ul class="listbullet"><li class="listbullet">Reading buffers (including local default and user-created reading buffers; if they are on a remote node, they only affect the remote node).</li><li class="listbullet">Scripts that are loaded onto the instrument.</li><li class="listbullet">Applications that are loaded onto the instrument.</li><li class="listbullet">Configuration lists.</li><li class="listbullet">Scripts that are actively running.</li><li class="listbullet">Variables that reside in the run-time environment.</li><li class="listbullet">The TriggerFlow trigger model.</li><li class="listbullet">USB drives that contain files that use a lot of memory, even if the files are not related to instrument operation.</li></ul><p class="bodytext">The more a feature is used or the larger its definition, the more memory it consumes. For normal usage, reading buffers commonly reserve large amounts of memory. The amount of memory used depends on the number of readings and the buffer style.</p>
+<p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0"><br>The DMM7510 notifies you when the system runs out of memory. If the instrument encounters memory allocation errors (errors that specifically state &#8220;Out of Memory&#8221;), the state of the instrument cannot be guaranteed. After attempting to save any important data, turn off power to the instrument and turn it back on to reset the runtime environment and return the instrument to a known state. Unsaved scripts and reading buffers will be lost.</p>
+<p class="bodytext">If you encounter memory problems, examine the test script or SCPI commands that were being executed when the memory problems occurred. Take action to reduce the size of the elements that are consuming memory. If you are using TSP commands and scripting, also consider using the <code class="monospace">collectgarbage()</code> command to clean up unused memory. For information on <code class="monospace">collectgarbage()</code>, refer to <a id="h17787" class="jump" title="Base library functions" href="2430.htm" target="_self">Base library functions</a>.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>You cannot use SCPI commands with Test Script Builder (TSB) software.</p>
+<p class="bodytext">The default size settings for the default reading buffers (<code class="monospace">defbuffer1</code> and <code class="monospace">defbuffer2</code>) are large. If your application does not use these buffers, you can set them to the minimum of 10 readings to conserve space.</p>
+<p class="bodytext">The buffer style is set when you create a user-defined reading buffer. The buffer style cannot be changed after the buffer has been created, so to eliminate memory problems caused by the style, you may need to delete or adjust the capacity of the buffers.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="DMM7510_introduction_to_TSP_operation.htm" target="_self">Remote commands</a></p><p class="relateditem"><a href="17029.htm" target="_self">Introduction to TSP operation</a></p><p class="relateditem"><a href="16596.htm" target="_self">Fundamentals of scripting for TSP</a></p><p class="relateditem"><a href="33307.htm" target="_self">Fundamentals of programming for TSP</a></p><p class="relateditem"><a href="24976.htm" target="_self">Test Script Builder (TSB)</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="33306" />
+<input id="topicDescription" type="hidden" value="Memory considerations for the run-time environment" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/28/2019 12:29:22 PM" />
+</body>
+</html>

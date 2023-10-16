@@ -1,0 +1,110 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16893.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16248.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16894" class="heading2-icl">scan.list()</h2>
+<p class="bodyzero">This function queries the active scan list.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="58"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="182"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="96"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="58"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="182"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Scan reset<br>Recall setup<br>Change of channel or scan setting</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="96"><p class="tablebodytextsmall">Empty list</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">scanList</em> = scan.list()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">scanList</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that lists the existing scan step information</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When you change a channel or scan attribute for an existing scan list item, the scan list is recreated based on this change. If the scan list cannot be rebuilt, the scan list is lost.</p>
+<p class="iclbody">To avoid unintentional changes to an existing scan list, configure channel and scan settings before adding or creating a scan or step using the commands <code class="monospace">scan.add()</code>, <code class="monospace">scan.addimagestep()</code>, and <code class="monospace">scan.create()</code>.</p>
+<p class="iclbody">If the scan list is empty, the string <code class="monospace">&quot;Empty Scan&quot;</code> is returned. Otherwise, the string lists each step in the scan along with its information for step, open, measure configuration, count, and close.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">dmm.setconfig(&quot;2020, 2021&quot;, &quot;dcvolts&quot;)</p>
+<p class="codetable">dmm.nplc = 0.5</p>
+<p class="codetable">dmm.range = 10</p>
+<p class="codetable">dmm.configure.set(&quot;DCVSlot2&quot;)</p>
+<p class="codetable">dmm.setconfig(&quot;2016,2017&quot;, &quot;DCVSlot2&quot;)</p>
+<p class="codetable">scan.create(&quot;2007,2008,2020,2021,2016,2017&quot;)</p>
+<p class="codetable">print(scan.list())</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Assume a 3721 in slot 2.</p>
+<p class="tablebodytext">Configure channels 20 and 21 for DC volts on slot 2.</p>
+<p class="tablebodytext">Change the DMM settings for NPLC and range and save those DC volt settings as <code class="monospace">&quot;DCVSlot2&quot;</code>.</p>
+<p class="tablebodytext">Configure channels 16 and 17 for <code class="monospace">&quot;DCVSlot2&quot;</code> on slot 2.</p>
+<p class="tablebodytext">Populate the scan list with the function<code class="monospace"> scan.create(&quot;</code>2007,2008,2020,2021,2016,2017<code class="monospace">&quot;)</code>, then initiate the scan list to be output.</p>
+<p class="tablebodytext">Outputs the existing scan list. For example, an existing scan list may appear as follows:</p>
+<p class="codetable">Init) OPEN...</p>
+<p class="codetable">1) STEP: 2007</p>
+<p class="codetable">CLOSE: 2007</p>
+<p class="codetable">MEASURE: nofunction COUNT: 1</p>
+<p class="codetable">2) STEP: 2008</p>
+<p class="codetable">OPEN: 2007</p>
+<p class="codetable">CLOSE: 2008</p>
+<p class="codetable">MEASURE: nofunction COUNT: 1</p>
+<p class="codetable">3) STEP: 2020</p>
+<p class="codetable">OPEN: 2008</p>
+<p class="codetable">CLOSE: 2020 2911</p>
+<p class="codetable">MEASURE: dcvolts COUNT: 1</p>
+<p class="codetable">4) STEP: 2021</p>
+<p class="codetable">OPEN: 2020 2911</p>
+<p class="codetable">CLOSE: 2021 2921</p>
+<p class="codetable">MEASURE: dcvolts COUNT: 1</p>
+<p class="codetable">5) STEP: 2016</p>
+<p class="codetable">OPEN: 2021 2921</p>
+<p class="codetable">CLOSE: 2016 2911</p>
+<p class="codetable">MEASURE: DCVSlot2 COUNT: 1</p>
+<p class="codetable">6) STEP: 2017</p>
+<p class="codetable">OPEN: 2016</p>
+<p class="codetable">CLOSE: 2017</p>
+<p class="codetable">MEASURE: DCVSlot2 COUNT: 1</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1142" class="jump" title="scan.add()" href="16890.htm" target="_self">scan.add()</a></p>
+<p class="listcommand"><a id="h16634" class="jump" title="scan.addimagestep()" href="16633.htm" target="_self">scan.addimagestep()</a></p>
+<p class="listcommand"><a id="h1139" class="jump" title="scan.create()" href="16892.htm" target="_self">scan.create()</a></p>
+<p class="listcommand">Scanning and triggering</p>
+
+

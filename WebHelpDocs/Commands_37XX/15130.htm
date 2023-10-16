@@ -1,0 +1,88 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="20152.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15131.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15130" class="heading2-icl">bufferVar.clear()</h2>
+<p class="bodyzero">This function empties the buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar</span><code class="monospace">.clear()</code></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function clears all readings and statistics from the specified buffer (for example, time, status, channels, and units) from the specified buffer.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">testData = dmm.makebuffer(50)</p>
+<p class="codetable">testData.appendmode = 1</p>
+<p class="codetable">dmm.measurecount = 3</p>
+<p class="codetable">dmm.measure(testData)<br></p>
+<p class="codetable">printbuffer(1,testData.n, testData )<br></p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">testData.clear()</p>
+<p class="codetable">print(&quot;Readings in buffer after clear =&quot; <br>   .. testData.n)<br></p>
+<p class="codetable">dmm.measurecount = 3</p>
+<p class="codetable">dmm.measure(testData)</p>
+<p class="codetable">printbuffer(1,testData.n, testData )</p>
+<p class="codetable">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Create a reading buffer named <code class="monospace">testData</code> and enable append mode for it. Make three readings and store them in <code class="monospace">testData</code>, and then view the readings. </p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">3.515871341e&#8209;07, 5.596728126e&#8209;07, 3.944283032e&#8209;07</code></p>
+<p class="tablebodytext">Clear the data and verify there are no readings in buffer. </p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">Readings in buffer after clear =  0</code></p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Store three new readings in the buffer and view those when done.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">4.923509754e&#8209;07, 3.332266330e&#8209;07, 3.974883867e&#8209;07</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Reading buffers</p>
+
+

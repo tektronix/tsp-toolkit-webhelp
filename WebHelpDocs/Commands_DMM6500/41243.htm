@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.math.format </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41240.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41252.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41243" class="heading2-icl">dmm.digitize.math.format</h2>
+<p class="bodyzero">This attribute specifies which math operation is performed on measurements when math operations are enabled.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.MATH_PERCENT</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">operation</em> = <code class="monospace">dmm</code>.digitize.math.format</p>
+<p class="iclcode"><code class="monospace">dmm</code>.digitize.math.format = <em class="emphasis">operation</em></p>
+<p class="iclcode"><span class="monospaceitalic">operation</span><em class="emphasis"> </em>= dmm.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_DIGI_MATH_FORMAT)</p>
+<p class="iclcode">dmm.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_DIGI_MATH_FORMAT, <span class="monospaceitalic">operation</span>)</p>
+<p class="iclcode">channel.setdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_DIGI_MATH_FORMAT, <span class="monospaceitalic">operation</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">operation</span> = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_DIGI_MATH_FORMAT)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">operation</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Math operation to be performed on measurements:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">y = mx+b: <code class="monospace">dmm.MATH_MXB</code></li><li class="tablelistbullet9pt">Percent: <code class="monospace">dmm.MATH_PERCENT</code></li><li class="tablelistbullet9pt">Reciprocal: <code class="monospace">dmm.MATH_RECIPROCAL</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The digitize function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: <code class="monospace">dmm.FUNC_DIGITIZE_CURRENT</code></li><li class="tablelistbullet9pt">Voltage: <code class="monospace">dmm.FUNC_DIGITIZE_VOLTAGE</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81857.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This specifies which math operation is performed on measurements for the selected digitize function.</p>
+<p class="iclbody">You can choose one of the following math operations:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">y = mx+b</strong>: Manipulate normal display readings by adjusting the m and b factors.</li><li class="listbullet"><strong class="specialbold">Percent</strong>: Displays measurements as the percentage of deviation from a specified reference constant.</li><li class="listbullet"><strong class="specialbold">Reciprocal</strong>: The reciprocal math operation displays measurement values as reciprocals. The displayed value is <code class="monospace">1/X</code>, where <code class="monospace">X</code> is the measurement value (if relative offset is being used, this is the measured value with relative offset applied).</li></ul><p class="iclbody">Math calculations are applied to the input signal after relative offset and before limit tests.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">dmm</code>.digitize.func = <code class="monospace">dmm</code>.FUNC_DIGITIZE_VOLTAGE</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.math.format = <code class="monospace">dmm</code>.MATH_RECIPROCAL</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.math.enable = <code class="monospace">dmm</code>.ON</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Enables the reciprocal math operation on digitize voltage measurements.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="594"><p class="codetable">-- Set channel 1 on slot 1 to use the digitize voltage function.</p>
+<p class="codetable">channel.setdmm(&quot;1&quot;, dmm.ATTR_DIGI_FUNCTION, dmm.FUNC_DIGITIZE_VOLTAGE)</p>
+<p class="codetable">-- Set channel 1 to use the reciprocal math format and enable math.</p>
+<p class="codetable">channel.setdmm(&quot;1&quot;, dmm.ATTR_DIGI_MATH_FORMAT, dmm.MATH_RECIPROCAL, dmm.ATTR_DIGI_MATH_ENABLE, dmm.ON)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="594"><p class="tablebodytext">Enables the reciprocal math operation on digitize voltage measurements made on channel 1 of slot 1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h44524" class="jump" title="dmm.digitize.math.enable" href="41240.htm" target="_self">dmm.digitize.math.enable</a></p>
+
+
+<input id="topicId" type="hidden" value="41243" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.math.format" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/18/2019 7:17:22 AM" />
+</body>
+</html>

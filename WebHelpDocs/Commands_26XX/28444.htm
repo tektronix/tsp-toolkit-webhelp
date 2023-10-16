@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Guard connections </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11971.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29098.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t28444" class="heading4">Guard connections</h4>
+<p class="bodytext">Guard is typically used to drive the guard shields of cables and test fixtures. Guard is extended to a test fixture from the cable guard shield. Inside the test fixture, the guard can be connected to a guard plate or shield that surrounds the device&#8209;under&#8209;test (DUT).</p>
+<p class="warning"><img id="f4282" src="warninglarge_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0">A safety shield must be used whenever hazardous voltages (&gt;30&nbsp;V<sub class="subscript">RMS</sub>, 42&nbsp;V<sub class="subscript">PEAK</sub>) will be present in the test circuit. To prevent electrical shock that could cause injury or death, never use the 2600B in a test circuit that may contain hazardous voltages without a properly installed and configured safety shield. The figures in this topic show the metal case of a test fixture being used as a safety shield.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">See &#8220;Guarding and shielding&#8221; in the <em class="emphasis"><em class="emphasis">Model 2600B User's Manual</em></em> for details about guarded test connections. </p>
+<p class="bodytext">Inside the test fixture, a triaxial cable can be used to extend guard to the DUT. The center conductor of the cable is used for HI, and the inner shield is used for guard.</p>
+<p class="bodytext">The figures below show how cable guard can eliminate leakage current through the insulators in a test fixture. In this figure, leakage current (I<sub class="subscript">L</sub>) flows through the insulators (R<sub class="subscript">L1</sub> and R<sub class="subscript">L2</sub>) to LO, adversely affecting the low-current (or high-resistance) measurement of the DUT.</p>
+<p class="bodytext">Also in the figures below, the driven guard is connected to the cable shield and extended to the metal guard plate for the insulators. Since the voltage on either end of R<sub class="subscript">L1</sub> is the same (0&nbsp;V drop), no current can flow through the leakage resistance path, so the instrument only measures the current through the DUT.</p>
+<p class="magicfigurecenter"><img id="f23712" src="2657rmunguardedmeasurements_lr.png" class="linkedepsandpngtemplate8010" alt="Unguarded measurements" height="289" width="590" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="magicfigurecenter"><img id="f23713" src="265xa_rm_guarded_measurements_lr.png" class="linkedepsandpngtemplate8010" alt="Guarded measurements" height="207" width="448" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11971.htm" target="_self">Guard</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="28444" />
+<input id="topicDescription" type="hidden" value="Guard connections" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/1/2021 1:02:58 PM" />
+</body>
+</html>

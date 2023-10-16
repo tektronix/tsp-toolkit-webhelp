@@ -1,0 +1,179 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.filter.type </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41161.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41173.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41167" class="heading2-icl">dmm.measure.filter.type</h2>
+<p class="bodyzero">This attribute defines the type of averaging filter that is used for the selected measure function when the measurement filter is enabled.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.FILTER_REPEAT_AVG</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">type</span> = dmm.measure.filter.type</p>
+<p class="iclcode">dmm.measure.filter.type = <span class="monospaceitalic">type</span></p>
+<p class="iclcode"><span class="monospaceitalic">type</span> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_FILTER_TYPE)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_FILTER_TYPE, <span class="monospaceitalic">type</span>)</p>
+<p class="iclcode">channel.setdmm(&quot;<em class="emphasis">channelList</em>&quot;<em class="emphasis">, </em>dmm.ATTR_MEAS_FILTER_TYPE, <em class="emphasis">type</em>)</p>
+<p class="iclcode"><em class="emphasis">type</em> = channel.getdmm(&quot;<em class="emphasis">channelList</em>&quot;<em class="emphasis">, </em>dmm.ATTR_MEAS_FILTER_TYPE)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">type</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The filter type setting:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Repeating filter: <code class="monospace">dmm.FILTER_REPEAT_AVG</code></li><li class="tablelistbullet9pt">Moving filter: <code class="monospace">dmm.FILTER_MOVING_AVG</code> (not available for channels)</li><li class="tablelistbullet9pt">Hybrid filter: <code class="monospace">dmm.FILTER_HYBRID_AVG</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81855.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_FREQUENCY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_4W_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_PERIOD</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_DIODE </p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_DCV_RATIO</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CAPACITANCE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_TEMPERATURE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CONTINUITY</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When the repeating average filter is selected, a set of measurements are made. These measurements are stored in a measurement stack and averaged together to produce the averaged sample. Once the averaged sample is produced, the stack is flushed, and the next set of data is used to produce the next averaged sample. This type of filter is the slowest, since the stack must be completely filled before an averaged sample can be produced.</p>
+<p class="iclbody">When the moving average filter is selected, the measurements are added to the stack continuously on a first-in, first-out basis. As each measurement is made, the oldest measurement is removed from the stack. A new averaged sample is produced using the new measurement and the data that is now in the stack.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  When the moving average filter is first selected, the stack is empty. When the first measurement is made, it is copied into all the stack locations to fill the stack. A true average is not produced until the stack is filled with new measurements. The size of the stack is determined by the filter count setting.</p>
+<p class="iclbody">The repeating average filter produces slower results but produces more stable results than the moving average filter. For either method, the greater the number of measurements that are averaged, the slower the averaged sample rate, but the lower the noise error. Trade-offs between speed and noise are normally required to tailor the instrumentation to your measurement application.</p>
+<p class="bodytext">The hybrid average filter is only available when the buffer style is set to Full. It is similar to the moving average filter, except that it adds the number of measurements defined by the count to the stack before making the first averaged measurement. This ensures that the filter buffer is filled before returning the first measurement.</p>
+<p class="iclbody">The repeating average filter is the only filter option available for use with channels.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">dmm.measure.func = dmm.FUNC_DC_CURRENT</p>
+<p class="codetable">dmm.measure.filter.type = dmm.FILTER_MOVING_AVG</p>
+<p class="codetable">dmm.measure.filter.enable = dmm.ON</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Set the measurement function to DC current. Set the filter type to moving average and enable filtered measurements.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_DC_VOLTAGE)</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, <code class="monospace">dmm.</code>ATTR_MEAS_FILTER_COUNT, 10)</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, <code class="monospace">dmm.</code>ATTR_MEAS_FILTER_TYPE, dmm.FILTER_REPEAT_AVG)</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_FILTER_WINDOW, 0.25)</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_FILTER_ENABLE, dmm.ON)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">For channels 1 through 9 on slot 1, set the DMM function to DC voltage.</p>
+<p class="tablebodytext">Set the averaging filter type to repeating with a filter count of 10.</p>
+<p class="tablebodytext">Set the filter window to 0.25 and enable the averaging filter.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41906" class="jump" title="dmm.measure.filter.enable" href="41161.htm" target="_self">dmm.measure.filter.enable</a></p>
+
+
+<input id="topicId" type="hidden" value="41167" />
+<input id="topicDescription" type="hidden" value="dmm.measure.filter.type" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/7/2019 11:35:56 AM" />
+</body>
+</html>

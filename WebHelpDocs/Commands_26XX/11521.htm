@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Remote TSP-Link trigger line commands </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11719.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12459.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t11521" class="heading4">Remote TSP-Link trigger line commands</h4>
+<p class="bodytext">Commands that control and access the TSP&#8209;Link<sup class="superscript">&reg;</sup> trigger line port are summarized in the following table. See the <a id="h21768" class="jump" title="TSP command reference" href="2600B_TSP_command_reference.htm" target="_self">TSP command reference</a> for complete details on these commands. See the table in <a id="h12433" class="jump" title="Digital I/O bit weighting" href="11500.htm" target="_self">Digital I/O bit weighting</a> for the decimal and hexadecimal values used to control and access the digital I/O port and individual&nbsp;lines.</p>
+<p class="bodytext">Use the commands in following table to perform basic steady-state digital I/O operations; for example, you can program the 2600B to read and write to a specific TSP-Link trigger line or to the entire port.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The TSP-Link trigger lines can be used for both input and output. You must write a 1 to all TSP-Link trigger lines that are used as inputs.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="240" height="0"></td>
+<td width="360" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="600"><p class="tableheading">Remote trigger line commands</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tableheading">Command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">tsplink.readbit(<span class="monospaceitalic">bit</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Reads one digital I/O input line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">tsplink.readport()</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Reads the digital I/O port.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">tsplink.writebit(<span class="monospaceitalic">bit, data</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Writes data to one digital I/O line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">tsplink.writeport(<span class="monospaceitalic">data</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Writes data to the digital I/O port.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">tsplink.writeprotect = <span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Sets the write&#8209;protect mask of the digital I/O port.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="12459.htm" target="_self">Programming example</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12458.htm" target="_self">TSP-Link trigger lines</a></p><p class="relateditem"><a href="11717.htm" target="_self">Connecting to the TSP-Link system</a></p><p class="relateditem"><a href="11719.htm" target="_self">Using TSP-Link trigger lines for digital I/O</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11521" />
+<input id="topicDescription" type="hidden" value="Remote TSP-Link trigger line commands" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:28:44 PM" />
+</body>
+</html>

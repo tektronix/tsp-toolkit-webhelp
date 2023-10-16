@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> List sweeps </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="77082.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12467.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12477" class="heading4">List sweeps</h4>
+<p class="bodytext">Use a list sweep to configure a sweep with arbitrary steps. When enabled, a measurement is made at each point after source and measurement settling time.</p>
+<p class="bodytext">To configure a list sweep, use the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>function. This function configures the source values that the source&#8209;measure unit (SMU) outputs when performing a list sweep. After configuring the sweep, you must also enable the source action by setting the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.action</code> attribute.</p>
+<p class="bodytext"><strong class="specialbold">Example:</strong></p>
+<p class="code">-- Sweep through 3&nbsp;V, 1&nbsp;V, 4&nbsp;V, 5&nbsp;V, and 2&nbsp;V.</p>
+<p class="code">smua.trigger.source.listv({3, 1, 4, 5, 2})</p>
+<p class="code">-- Enable the source action.</p>
+<p class="code">smua.trigger.source.action = smua.ENABLE</p>
+<p class="bodytext">When the sweep is started, the output level goes to the first point in the sweep. The sweep continues through the steps in the order that they were programmed.</p>
+<p class="bodytext">The following figure shows a different example of a list sweep with six measurement points. When the sweep starts, the current or voltage goes to the first point in the sweep. The instrument cycles through the sweep points in the programmed order.</p>
+<p class="magicfigurecenter"><img id="f12478" src="2600as-901-01b_listsweepexample_lr.png" class="linkedepsandpngtemplate" alt="List sweep example" height="197" width="496" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12465.htm" target="_self">Sweep characteristics</a></p><p class="relateditem"><a href="12469.htm" target="_self">Linear staircase sweeps</a></p><p class="relateditem"><a href="77082.htm" target="_self">Logarithmic staircase sweeps</a></p><p class="relateditem"><a href="12467.htm" target="_self">Pulse mode sweeps</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12477" />
+<input id="topicDescription" type="hidden" value="List sweeps" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:34:44 PM" />
+</body>
+</html>

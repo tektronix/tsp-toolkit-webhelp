@@ -1,0 +1,123 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> display.waitevent() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25722.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="27637.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t33261" class="heading2-icl">display.waitevent()</h2>
+<p class="bodyzero">This function causes the instrument to wait for a user to respond to a prompt that was created with a prompt command.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#6685B9" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#6685B9" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">objectID</em>, <em class="emphasis">subID </em>= display.waitevent()</p>
+<p class="iclcode"><em class="emphasis">objectID</em>, <em class="emphasis">subID </em>= display.waitevent(<em class="emphasis">timeout</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">objectID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A number that identifies the object, such as a prompt message, that is displayed on the front panel</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">subID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The returned value after a button is pressed on the front panel:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">display.BUTTON_YES</code></li><li class="tablelistbullet9pt"><code class="monospace">display.BUTTON_NO</code></li><li class="tablelistbullet9pt"><code class="monospace">display.BUTTON_OK</code></li><li class="tablelistbullet9pt"><code class="monospace">display.BUTTON_CANCEL</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">timeout</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The amount of time to wait before timing out; time is 0 to 300 s, where the default of 0 waits indefinitely</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command waits until a user responds to a front-panel prompt that was created with the <code class="monospace">display.prompt()</code> command.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smu.source.sweeplinear(&quot;test&quot;, 1, 10, 10)</p>
+<p class="codetable">display.prompt(display.BUTTONS_YESNO, &quot;Would you like to start the sweep now?&quot;) </p>
+<p class="codetable">sweepTest, result = display.waitevent()</p>
+<p class="codetable">if result == display.BUTTON_YES then</p>
+<p class="codetable">      trigger.model.initiate()   </p>
+<p class="codetable">end</p>
+<p class="codetable">display.prompt(display.BUTTONS_YESNO, &quot;Would you like to switch to the Graph screen?&quot;)</p>
+<p class="codetable">promptID, result = display.waitevent()</p>
+<p class="codetable">if result == display.BUTTON_YES then</p>
+<p class="codetable">   display.changescreen(display.SCREEN_GRAPH)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Create a linear sweep.</p>
+<p class="tablebodytext">Display the prompt &quot;Would you like to start the sweep now?&quot;</p>
+<p class="tablebodytext">If the user presses Yes, the sweep starts.</p>
+<p class="tablebodytext">If the user presses No, the sweep does not start, and the message is removed.</p>
+<p class="tablebodytext">Display the prompt &quot;Would you like to switch to the Graph screen?&quot;</p>
+<p class="tablebodytext">If the user presses Yes, the Graph screen is displayed.</p>
+<p class="tablebodytext">If the user presses No, the user remains on the present screen.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h40058" class="jump" title="display.input.prompt()" href="40053.htm" target="_self">display.input.prompt()</a></p>
+<p class="listcommand"><a id="h39789" class="jump" title="display.prompt()" href="33260.htm" target="_self">display.prompt()</a></p>
+
+
+<input id="topicId" type="hidden" value="33261" />
+<input id="topicDescription" type="hidden" value="display.waitevent()" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/10/2019 12:55:05 PM" />
+</body>
+</html>

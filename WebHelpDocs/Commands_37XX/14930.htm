@@ -1,0 +1,78 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14929.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14931.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t14930" class="heading2-icl">lan.trigger[N].protocol</h2>
+<p class="bodyzero">This attribute sets the LAN protocol to use for sending trigger messages.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>LAN trigger N reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup </p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytext">0 (lan.TCP)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">protocol</em> = lan.trigger[<em class="emphasis">N</em>].protocol</p>
+<p class="iclcode">lan.trigger[<em class="emphasis">N</em>].protocol = <em class="emphasis">protocol</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">protocol</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The protocol to use for messages from the trigger:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">0</code> or <code class="monospace">lan.TCP</code></li><li class="tablelistbullet9pt"><code class="monospace">1</code> or <code class="monospace">lan.UDP</code></li><li class="tablelistbullet9pt"><code class="monospace">2</code> or <code class="monospace">lan.MULTICAST</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The LAN event number (1 to 8)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The LAN trigger listens for trigger messages on all supported protocols, but uses the designated protocol for sending outgoing messages. After changing this setting, <code class="monospace">lan.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].connect()</code> must be called before outgoing event messages can be&nbsp;sent.</p>
+<p class="iclbody">When the <code class="monospace">lan.MULTICAST</code> protocol is selected, the <code class="monospace">lan.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].ipaddress</code> attribute is ignored and event messages are sent to the multicast address 224.0.23.159.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">print(lan.trigger[1].protocol)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Get LAN protocol to use for sending trigger messages for LAN event 1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14968" class="jump" title="lan.trigger[N].connect()" href="14923.htm" target="_self">lan.trigger[N].connect()</a></p>
+<p class="listcommand"><a id="h14971" class="jump" title="lan.trigger[N].ipaddress" href="14927.htm" target="_self">lan.trigger[N].ipaddress</a></p>
+
+

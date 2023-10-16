@@ -1,0 +1,145 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15918.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17384.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17247" class="heading2-icl">channel.getclose()</h2>
+<p class="bodyzero">This function queries for the closed channels indicated by the channel list parameter.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">closed</em> = channel.getclose(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">closed</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string listing the channels that are presently closed in the specified channel list parameter</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string representing the channels, channel patterns, and backplane relays that will be queried</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Use this command to return a list of closed measurement channels, including the paired channel for 4-wire measurements. It does not return nonmeasurement channels.</p>
+<p class="iclbody">If more than one channel is closed, they are comma&#8209;delimited in the string. If <code class="monospace">channelList</code> equals &quot;<code class="monospace">slot</code><span class="monospaceitalic">X</span><code class="monospace">&quot;</code> (where <span class="monospaceitalic">X</span> is 1 to 6), the response indicates the channels and backplane relays that are closed on that slot. Similarly, if <span class="monospaceitalic">channelList</span> equals <code class="monospace">&quot;allslots&quot;</code>, the response indicates all channels and analog backplane relays that are closed in the instrument. The format of each channel returned is slot, row, column (matrix channels) or slot, channel (MUX channels). When the <span class="monospaceitalic">channelList</span> contains a channel pattern, only the closed channels in that image are returned.</p>
+<p class="iclbody">You can use <code class="monospace">&quot;allslots&quot;</code> to query for all channels closed. The instrument returns only information for valid slots and channels.</p>
+<p class="iclbody">An error message is generated if an empty parameter string is specified or if the specified channel list contains no valid channels that can be closed.</p>
+<p class="iclbody">If none of the channels in the channel list is closed, <code class="monospace">nil</code> is returned.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.setpole(&quot;slot5&quot;, 4)</p>
+<p class="codetable">channel.setbackplane(&quot;slot5&quot;, &quot;5911, 5922&quot;)</p>
+<p class="codetable">channel.close(&quot;5003, 5005&quot;)</p>
+<p class="codetable">closedSlot5 = channel.getclose(&quot;slot5&quot;)</p>
+<p class="codetable">print(closedSlot5)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Configure the channel on slot 5 to be four-pole.</p>
+<p class="tablebodytext">Associate the slot 5 channels with analog backplane relays 911 and 922 on slot 5.</p>
+<p class="tablebodytext">Close channels 3 and 5 on slot 5.</p>
+<p class="tablebodytext">Gets the channels and analog backplane relays that are closed on slot 5 and output the closed channels on slot 5.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">5003(5033);5055(5035);5911;5922</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">allClosed = channel.getclose(&quot;allslots&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Gets all channels and analog backplane relays that are closed in the instrument.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">closedChans = channel.getclose(&quot;Chans&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Gets all channels closed in a pattern called<code class="monospace"> &quot;Chans&quot;</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 4</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">closedRange = channel.getclose(&quot;3001:3020&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Gets all channels that are closed on channels 1 to 20 on slot 3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 5</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">closedOnes = channel.getclose(&quot;3001, 3002, </p>
+<p class="codetable">3003, 3005, 3911, 3912&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Gets all channels that are closed on channels 1, 2, 3, 5 and analog backplane relay 1 and 2 in bank 1 on slot&nbsp;3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h769" class="jump" title="channel.close()" href="17229.htm" target="_self">channel.close()</a></p>
+<p class="listcommand"><a id="h770" class="jump" title="channel.exclusiveclose()" href="17435.htm" target="_self">channel.exclusiveclose()</a></p>
+<p class="listcommand"><a id="h767" class="jump" title="channel.getstate()" href="17546.htm" target="_self">channel.getstate()</a></p>
+<p class="listcommand"><a id="h771" class="jump" title="channel.open()" href="17548.htm" target="_self">channel.open()</a></p>
+<p class="listcommand">Data retrieval commands</p>
+
+

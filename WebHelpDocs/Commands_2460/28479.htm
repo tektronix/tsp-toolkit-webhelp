@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Four-wire remote sense connections </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="40158.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="59289.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t28479" class="heading3">Four-wire remote sense connections</h3>
+<p class="bodytext">Using 4-wire remote sense connections provides the most accurate low-resistance, voltage source, and measurement accuracy. Specified accuracies for instrument source and measurement capabilities are only guaranteed when you use 4-wire remote sensing.</p>
+<p class="bodytext">By default, the Model 2460 instruments are configured to use 2-wire or local voltage sensing. If you choose to enable 4-wire or remote voltage sensing, it is critical that you establish and maintain the proper Kelvin connections between the corresponding force and sense leads to ensure the proper operation of the instrument and to make accurate voltage measurements. Sense HI must be connected to Force HI, and Sense LO must be connected to Force LO.</p>
+<p class="bodytext">When sourcing voltage with remote sense, the instrument relies on the voltage detected with the sense lines to provide the proper closed-loop control of its output voltage. If a sense line becomes disconnected from its corresponding force line, an erroneous voltage is sensed and the output voltage may be adjusted to a level that is radically different than the programmed voltage level (possibly to hazardous levels, depending on the model).</p>
+<p class="bodytext">When sourcing current with remote sense, the instrument relies on the voltage detected with the sense lines to properly limit the voltage across the device-under-test. If a sense line becomes disconnected from its corresponding force line, an erroneous voltage is sensed and the voltage across the device may exceed the programmed source limit voltage, possibly causing damage to the device or test fixture.</p>
+<p class="bodytext">In both cases, the voltage is not measured correctly if a sense lead becomes disconnected from its corresponding force lead.</p>
+<p class="warning"><img id="f4282" src="warninglarge_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0"><br>Even with the overvoltage protection set to the lowest value (2&nbsp;V), never touch anything connected to the terminals of the Model 2460 when the instrument is on. Always assume that a hazardous voltage (greater than 30&nbsp;V<sub class="subscript">RMS</sub>) is present when the instrument is on. To prevent damage to the device under test or external circuitry, do not set the voltage source to levels that exceed the value that is set for overvoltage protection.</p>
+<p class="bodytext">To prevent unexpected voltages caused by a sense lead that becomes disconnected from its corresponding force lead during remote sense operation, you can enable overvoltage protection (OVP) to restrict the maximum output voltage level of the instrument when either voltage or current is sourced. With OVP enabled, the voltage between the Force HI and the Force LO terminals will not exceed the specified overvoltage limit value regardless of the voltage present on the sense leads. Refer to <a id="h29924" class="jump" title="Overvoltage protection" href="ID_AVM_BUT.htm" target="_self">Overvoltage protection</a> for additional information.</p>
+<p class="bodytext">To make 4-wire measurements, you must set the sense mode of the instrument to 4-wire, as described in the following topics.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  When you are sourcing voltage in 4-wire remote sense, connect the sense leads to the DUT. If a sense lead is disconnected, the instrument senses 0&nbsp;V, which causes it to increase the output voltage to compensate. To further protect against overvoltage situations, you can set overvoltage protection. See <a id="h21475" class="jump" title="Overvoltage protection" href="ID_AVM_BUT.htm" target="_self">Overvoltage protection</a> for more information.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="46200.htm" target="_self">Additional Model 2460 information</a></p><p class="relateditem"><a href="59255.htm" target="_self">*OPC</a></p><p class="relateditem"><a href="59256.htm" target="_self">Aborting the trigger model</a></p><p class="relateditem"><a href="31016.htm" target="_self">Always block</a></p><p class="relateditem"><a href="31007.htm" target="_self">Branching blocks</a></p><p class="relateditem"><a href="30865.htm" target="_self">Buffer clear block</a></p><p class="relateditem"><a href="31010.htm" target="_self">Constant Limit block</a></p><p class="relateditem"><a href="33305_1.htm" target="_self">Deleting a user script using a remote interface</a></p><p class="relateditem"><a href="31015.htm" target="_self">Delta block</a></p><p class="relateditem"><a href="33036.htm" target="_self">Digital I/O</a></p><p class="relateditem"><a href="29982.htm" target="_self">Displayed measurements</a></p><p class="relateditem"><a href="31012.htm" target="_self">Dynamic Limit block</a></p><p class="relateditem"><a href="29871.htm" target="_self">Effect of GPIB line events on Model 2460</a></p><p class="relateditem"><a href="40158.htm" target="_self">Event numbers</a></p><p class="relateditem"><a href="59289.htm" target="_self">Instrument settings stored in a source configuration list</a></p><p class="relateditem"><a href="33231.htm" target="_self">Introduction to reading buffers</a></p><p class="relateditem"><a href="30143.htm" target="_self">Limit testing and binning</a></p><p class="relateditem"><a href="31008.htm" target="_self">Loop Counter block</a></p><p class="relateditem"><a href="76318.htm" target="_self">Measure/Digitize block</a></p><p class="relateditem"><a href="59291.htm" target="_self">Notify block</a></p><p class="relateditem"><a href="31009.htm" target="_self">On event block</a></p><p class="relateditem"><a href="31017.htm" target="_self">Once block</a></p><p class="relateditem"><a href="31018.htm" target="_self">Once excluded block</a></p><p class="relateditem"><a href="59267.htm" target="_self">Operation Event Register</a></p><p class="relateditem"><a href="ID_AVM_BUT.htm" target="_self">Overvoltage protection</a></p><p class="relateditem"><a href="29851.htm" target="_self">Programmable status register sets</a></p><p class="relateditem"><a href="59262.htm" target="_self">Questionable Event Register</a></p><p class="relateditem"><a href="40105.htm" target="_self">Resets</a></p><p class="relateditem"><a href="29454.htm" target="_self">Saving setups</a></p><p class="relateditem"><a href="45724.htm" target="_self">Setting reading buffer capacity</a></p><p class="relateditem"><a href="29111.htm" target="_self">Source and measure using TSP commands</a></p><p class="relateditem"><a href="59283.htm" target="_self">Standard Event Register</a></p><p class="relateditem"><a href="32518.htm" target="_self">Triggering using TSP-Link trigger lines</a></p><p class="relateditem"><a href="27120.htm" target="_self">TSP-Link System Expansion Interface</a></p><p class="relateditem"><a href="31944.htm" target="_self">Upgrading the firmware</a></p><p class="relateditem"><a href="32667.htm" target="_self">Using groups to manage nodes on a TSP-Link system</a></p><p class="relateditem"><a href="3247.htm" target="_self">Using the data queue for real-time communication</a></p><p class="relateditem"><a href="31125.htm" target="_self">Using trigger events to start actions in the trigger model</a></p><p class="relateditem"><a href="30864.htm" target="_self">Wait block</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="28479" />
+<input id="topicDescription" type="hidden" value="Four-wire remote sense connections" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/5/2018 12:12:05 PM" />
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12184.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19138.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t12181" class="heading2-icl">SweepVLinMeasureI()</h2>
+<p class="bodyzero">This KISweep factory script function performs a linear voltage sweep with current measured at every step (point).</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">SweepVLinMeasureI(smu<span class="monospaceitalic">X</span>, <span class="monospaceitalic">startv, stopv, stime, points</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace"><code class="monospace">smua.reset()</code></code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">startv</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Sweep start voltage in volts</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">stopv</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Sweep stop voltage in volts</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">stime</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Settling time in seconds; occurs after stepping the source and before making a&nbsp;measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">points</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Number of sweep points (must be ≥&nbsp;2)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Data for current measurements, voltage source values, and timestamps are stored in <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.nvbuffer1</code>.</p>
+<p class="iclbody">If all parameters are omitted when this function is called, this function is executed with the parameters set to the default values.</p>
+<p class="iclbody">Performs a linear voltage sweep with current measured at every step (point):</p>
+<ol class="listnumber"><li class="listnumber">Sets the SMU to output <span class="monospaceitalic">startv</span> amperes, allows the source to settle for <span class="monospaceitalic">stime</span> seconds, and then makes a current measurement.</li><li class="listnumber">Sets the SMU to output the next amperes step, allows the source to settle for <span class="monospaceitalic">stime</span> seconds, and then makes a voltage measurement.</li><li class="listnumber">Repeats the above sequence until the voltage is measured on the <span class="monospaceitalic">stopv</span> amperes step.</li></ol><p class="iclbody">The linear step size is automatically calculated as follows:</p>
+<p class="bodytextindent"><span class="monospaceitalic">step = (stopv &#8211; startv) / (points &#8211; 1)</span></p>
+<p class="magicfigurecenter"><img id="f12182" src="2600s-901-01b_kisweeptsptestscript_sweepvlinmeasurei_lr.png" class="linkedepsandpngtemplate" alt="SweepVLinMeasureI()" height="141" width="310" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">SweepVLinMeasureI(smua, -1, 1, 1e-3, 1000)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This function performs a 1000-point linear voltage sweep starting at -1 V and stopping at +1 V. Current is measured at every step (point) in the sweep after a 1 ms source settling period.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12178" class="jump" title="KISweep factory script" href="12175.htm" target="_self">KISweep factory script</a></p>
+
+

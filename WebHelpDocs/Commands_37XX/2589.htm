@@ -1,0 +1,88 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17785.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16856.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t2589" class="heading2-icl">scriptVar.name</h2>
+<p class="bodyzero">This attribute contains the name of a script in the runtime environment.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">scriptVar</em>.name = &quot;<em class="emphasis">scriptName</em>&quot;</p>
+<p class="iclcode"><em class="emphasis">scriptName</em><span class="monospaceitalic"> </span>= s<em class="emphasis">criptVar</em>.name</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">scriptVar</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">Name of the variable that references the script</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">scriptName</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">A string that represents the name of the script</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When setting the script name, this attribute renames the script that the variable <span class="monospaceitalic">scriptVar</span> references.</p>
+<p class="iclbody">This attribute must be either a valid Lua identifier or the empty string. Changing the name of a script changes the index that is used to access the script in the <code class="monospace">script.user.scripts</code> table. Setting the attribute to an empty string removes the script from the table completely, and the script becomes an unnamed script.</p>
+<p class="iclbody">As long as there are variables referencing an unnamed script, the script can be accessed through those variables. When all variables that reference an unnamed script are removed, the script is removed from the runtime environment.</p>
+<p class="iclbody">If the new name is the same as a name that is already used for another script, the name of the other script is set to an empty string, and that script becomes unnamed. </p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Changing the name of a script does not change the name of any variables that reference that script. The variables still reference the script, but the names of the script and variables may not match.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">test7 = script.new(&quot;display.clear() display.settext('Hello&nbsp;from&nbsp;my&nbsp;test')&quot;, &quot;&quot;)</p>
+<p class="codetable">test7()</p>
+<p class="codetable">print(test7.name)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">test7.name = &quot;test7&quot;</p>
+<p class="codetable">print(test7.name)<br></p>
+<p class="codetable">test7.save()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">This example calls the <code class="monospace">script.new()</code> function to create a script with no name, runs the script, names the script <code class="monospace">test7</code>, and then saves the script in nonvolatile memory.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Rename a script</p>
+<p class="listcommand"><a id="h15066" class="jump" title="script.new()" href="15064.htm" target="_self">script.new()</a></p>
+<p class="listcommand"><a id="h16864" class="jump" title="scriptVar.save()" href="16863.htm" target="_self">scriptVar.save()</a></p>
+
+

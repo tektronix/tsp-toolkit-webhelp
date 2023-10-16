@@ -1,0 +1,193 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> status.condition </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30567.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31639.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31635" class="heading2-icl">status.condition</h2>
+<p class="bodyzero">This attribute stores the status byte condition register.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">statusByte</em> = status.condition</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">statusByte</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The status byte</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can use this command to read the status byte, which is returned as a numeric value. </p>
+<p class="iclbody">When an enabled status event occurs, a summary bit is set in this register to indicate the event occurrence. The returned value can indicate that one or more status events occurred. If more than one bit of the register is set, <span class="monospaceitalic">statusByte</span> equals the sum of their decimal weights. For example, if 129 is returned, bits B0 and B7 are set (1 + 128).</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  If you are using the GPIB, USB, or VXI-11 serial poll sequence of the Model 2450 to get the status byte (also called a serial poll byte), B6 is the Request for Service (RQS) bit. If the bit is set, it indicates that a serial poll (SRQ) has occurred.</p>
+<p class="iclbody">The meanings of the individual bits of this register are shown in the following table.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="605" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" width="48"><p class="tableheading">Bit</p>
+</th>
+<th style="border:1px solid #010101;" width="62"><p class="tableheading">Decimal value</p>
+</th>
+<th style="border:1px solid #010101;" width="144"><p class="tableheading">Constant</p>
+</th>
+<th style="border:1px solid #010101;" width="350"><p class="tableheading">When set, indicates the following has occurred:</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="48"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #010101;" width="62"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext"><code class="monospace">status.MSB</code></p>
+</td>
+<td style="border:1px solid #010101;" width="350"><p class="tablebodytext">An enabled measurement event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="48"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="62"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="350"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="48"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="62"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext"><code class="monospace">status.EAV</code></p>
+</td>
+<td style="border:1px solid #010101;" width="350"><p class="tablebodytext">An error or status message is present in the Error Queue</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="48"><p class="tablebodytext">3</p>
+</td>
+<td style="border:1px solid #010101;" width="62"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext"><code class="monospace">status.QSB</code></p>
+</td>
+<td style="border:1px solid #010101;" width="350"><p class="tablebodytext">An enabled questionable event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="48"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="62"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext"><code class="monospace">status.MAV</code></p>
+</td>
+<td style="border:1px solid #010101;" width="350"><p class="tablebodytext">A response message is present in the Output Queue</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="48"><p class="tablebodytext">5</p>
+</td>
+<td style="border:1px solid #010101;" width="62"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext"><code class="monospace">status.ESB</code></p>
+</td>
+<td style="border:1px solid #010101;" width="350"><p class="tablebodytext">An enabled standard event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="48"><p class="tablebodytext">6</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="62"><p class="tablebodytext">64</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="144"><p class="tablebodytext"><code class="monospace">status.MSS</code></p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #010101;" width="350"><p class="tablebodytext">An enabled summary bit of the status byte register is set</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="48"><p class="tablebodytext">7</p>
+</td>
+<td style="border:1px solid #010101;" width="62"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext"><code class="monospace">status.OSB</code></p>
+</td>
+<td style="border:1px solid #010101;" width="350"><p class="tablebodytext">An enabled operation event</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">statusByte = status.condition</p>
+<p class="codetable">print(statusByte)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Returns <code class="monospace">statusByte</code>.</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">1.29000e+02</p>
+<p class="tablebodytext">Converting this output (129) to its binary equivalent yields 1000 0001 </p>
+<p class="tablebodytext">Therefore, this output indicates that the set bits of the status byte condition register are presently B0 (MSS) and B7 (OSB).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="31635" />
+<input id="topicDescription" type="hidden" value="status.condition" />
+<input id="footer-modified" type="hidden" value="Last modified: 7/17/2019 3:32:29 PM" />
+</body>
+</html>

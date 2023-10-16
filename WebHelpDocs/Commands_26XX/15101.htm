@@ -1,0 +1,74 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15100.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15102.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15101" class="heading2-icl">smuX.contact.check()</h2>
+<p class="bodyzero">This function determines if contact resistance is lower than the threshold. This command is not available on the 2604B, 2614B, or 2634B.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.contact.check()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.contact.check()</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function returns <code class="monospace">true</code> if the contact resistance is below the threshold; this function returns <code class="monospace">false</code> if it is above the threshold. The threshold value is set by the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.contact.threshold</code>&nbsp;attribute.</p>
+<p class="iclbody">An error is generated when the output is on and:</p>
+<ul class="listbullet"><li class="listbullet">SMU is a current source with current range set to less than 1&nbsp;mA (error code 5065, &quot;I range too low for contact check&quot;)</li><li class="listbullet">SMU is a voltage source with current limit set to less than 1&nbsp;mA (error code 5050, &quot;I limit too low for contact check&quot;)</li></ul><p class="iclbody">An error is generated when the output is off and:</p>
+<ul class="listbullet"><li class="listbullet">The output off mode is High-Z (error code 5048, &quot;Contact check not valid with HIGH-Z OUTPUT&nbsp;off&quot;)</li><li class="listbullet">The output off mode is Normal with the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offfunc</code> attribute set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OUTPUT_DCVOLTS</code> and the off current limit set to less than 1 mA (error code 5066, &quot;source.offlimiti too low for contact check&quot;)</li><li class="listbullet">The output off mode is Normal with the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offfunc</code> attribute set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OUTPUT_DCAMPS</code> and the source range is less than 1 mA (error code 5065, &quot;I range too low for contact check&quot;)</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">if not smua.contact.check() then</p>
+<p class="codetable">   -- take action</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Takes action if contact check on SMU channel A fails.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15400" class="jump" title="Contact check measurements" href="29274.htm" target="_self">Contact check measurements</a></p>
+<p class="listcommand"><a id="h15200" class="jump" title="smuX.contact.speed" href="15103.htm" target="_self">smuX.contact.speed</a></p>
+<p class="listcommand"><a id="h15201" class="jump" title="smuX.contact.threshold" href="15104.htm" target="_self">smuX.contact.threshold</a></p>
+<p class="listcommand"><a id="h19507" class="jump" title="smuX.source.offfunc" href="19504.htm" target="_self">smuX.source.offfunc</a></p>
+
+

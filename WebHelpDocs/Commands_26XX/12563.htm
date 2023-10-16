@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Pulse train example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="22092.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="22097.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12563" class="heading4">Pulse train example</h4>
+<p class="bodytext">The SMU programming example below illustrates how to use two timers: One to control the pulse period, a second to control the pulse width. The example configures the timers and SMU as follows:</p>
+<p class="bodytext">Timer 1: Pulse period timer</p>
+<ul class="listbullet"><li class="listbullet">Set the delay attribute to the appropriate pulse period (see the following figure).</li><li class="listbullet">Configure the timer to start when the sweep is initiated.</li><li class="listbullet">Enable the pass-through attribute so that the timer generates a trigger event at the start of the first delay.</li><li class="listbullet">Set the count equal to one less than the total number of pulses to output.<p class="magicfigurecenter"><img id="f12564" src="2600as-901-01b_pulsetrain_lr.png" class="linkedepsandpngtemplate" alt="Pulse train" height="232" width="596" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul><p class="bodytext">Timer 2: Pulse width timer</p>
+<ul class="listbullet"><li class="listbullet">Set the delay attribute to an appropriate pulse width (see the following figure).</li><li class="listbullet">Set the stimulus input to the event ID of timer 1 (the start of each pulse is the start of the pulse period).</li><li class="listbullet">Set the count equal to 1 so that only one pulse is issued per period.</li></ul><p class="bodytext">SMU A</p>
+<ul class="listbullet"><li class="listbullet">Set the source stimulus input to the event ID of timer 1 so that the source action starts when the period&nbsp;starts.</li><li class="listbullet">Set the end pulse action to <code class="monospace">smua.SOURCE_IDLE</code> so that the output is returned to the idle level after the pulse completes.</li><li class="listbullet">Set the end pulse stimulus input to the event ID of timer 2 so that the end pulse action executes when the pulse width timer expires.</li><li class="listbullet">Set the trigger count equal to the total number of pulses to output.</li><li class="listbullet">Set the arm count to 1.</li></ul><p class="bodytext">The following figure shows the trigger setup for this example.</p>
+<p class="magicfigurecenter"><img id="f12565" src="2600as-901-01b_pulsetraintriggering_lr.png" class="linkedepsandpngtemplate" alt="Pulse train triggering" height="628" width="603" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="22097.htm" target="_self">Pulse train example code</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12560.htm" target="_self">Using timers to perform pulse mode sweeps</a></p><p class="relateditem"><a href="97779.htm" target="_self">Pulsing from a positive to a negative pulse level</a></p><p class="relateditem"><a href="12561.htm" target="_self">Single pulse example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12563" />
+<input id="topicDescription" type="hidden" value="Pulse train example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 9:22:43 AM" />
+</body>
+</html>

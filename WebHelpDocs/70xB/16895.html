@@ -1,0 +1,72 @@
+<html><head><title> scan.mode </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16894.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16896.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">scan.mode</h2>
+<p class="bodyzero">This attribute controls the scan mode setting.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext">Default value</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Scan reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">scan.MODE_OPEN_ALL</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">scanModeSetting</em> = scan.mode</p>
+<p class="iclcode">scan.mode = <em class="emphasis">scanModeSetting</em></p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="codetable"><em class="emphasis">scanModeSetting</em></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">The present scan mode setting. Set to one of the following values:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="monospace">scan.MODE_OPEN_ALL</code> or <code class="monospace">0</code>: Opens all relays on all slots before a scan starts</li></ul><p class="bodytextindent"><code class="monospace">scan.MODE_OPEN_SELECTIVE</code> or <code class="monospace">1</code>: Opens relays intelligently; see <strong class="specialbold">Details </strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When this attribute is set to <code class="monospace">scan.MODE_OPEN_ALL</code>, all channels on all slots are opened before a scan starts. </p>
+<p class="iclbody">When this attribute is set to <code class="monospace">scan.MODE_OPEN_SELECTIVE</code>, an intelligent open is performed:</p>
+<ul class="listbullet"><li class="listbullet">All channels involved in scanning are opened</li><li class="listbullet">Closed channels not involved in scanning remain closed during the scan</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="435"><p class="codetable">scan.mode = scan.MODE_OPEN_SELECTIVE</p>
+</td>
+<td width="308"><p class="tablebodytext">Sets the scan mode setting to open selective.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h16281" class="jumptemplate" title="scan.reset()" href="16896.html" target="_self">scan.reset()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

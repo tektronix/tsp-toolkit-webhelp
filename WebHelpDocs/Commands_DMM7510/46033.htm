@@ -1,0 +1,123 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.load() — DurationLoop </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="46023.htm" target="_self"><img id="f125" src="125.gif" class="embeddediconfiletemplate" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="35127.htm" target="_self"><img id="f124" src="124.gif" class="embeddedfilenoinherits" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t46033" class="heading2-icl">trigger.model.load() — DurationLoop</h2>
+<p class="bodyzero">This function loads a predefined trigger model configuration that makes continuous measurements for a specified amount of time.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.load(&quot;DurationLoop&quot;, <span class="monospaceitalic">duration</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;DurationLoop&quot;, <span class="monospaceitalic">duration</span>, <span class="monospaceitalic">delay</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;DurationLoop&quot;, <span class="monospaceitalic">duration</span>, <span class="monospaceitalic">delay</span>, <span class="monospaceitalic">bufferName</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;DurationLoop&quot;, <span class="monospaceitalic">duration</span>, <span class="monospaceitalic">delay</span>, <span class="monospaceitalic">bufferName</span>, <span class="monospaceitalic">readingBlock</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">duration</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The amount of time for which to make measurements (500 ns to 100,000&nbsp;s)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">delay</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The delay time before each measurement (167&nbsp;ns to 10,000&nbsp;s); default is 0 for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user&#8209;defined buffer; defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tablebodytext"><span class="monospaceitalic">readingBlock</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Define a measure or digitize block for the trigger model; options are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_ACTIVE</code>: Add a measure or digitize block to the trigger model based on the active function; if no option defined, <code class="monospace">trigger.READING_ACTIVE</code> is used</li><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_MEASURE</code>: Adds a measure block to the trigger model</li><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_DIGITIZE</code>: Adds a digitize block to the trigger model</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When you load this predefined trigger model, you can specify amount of time to make a measurement and the length of the delay before the measurement.</p>
+<p class="iclbody">The out line of the EXT TRIG IN/OUT rear&#8209;panel terminal is asserted at the end of each measurement.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="594"><p class="codetable">reset()</p>
+<p class="codetable">-- Set up measure function</p>
+<p class="codetable">dmm.measure.func = dmm.FUNC_DC_CURRENT</p>
+<p class="codetable">-- Initiate readings</p>
+<p class="codetable">trigger.model.load(&quot;DurationLoop&quot;, 10, 0.01)</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="594"><p class="tablebodytext">Reset the instrument.</p>
+<p class="tablebodytext">Set the instrument to measure current.</p>
+<p class="tablebodytext">Load the duration loop trigger model to take measurements for 10 s with a 10&nbsp;ms delay before each measurement.</p>
+<p class="tablebodytext">Start the trigger model.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="46033" />
+<input id="topicDescription" type="hidden" value="trigger.model.load() &#0151; DurationLoop" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/14/2014 9:25:13 PM" />
+</body>
+</html>

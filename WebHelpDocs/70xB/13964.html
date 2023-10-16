@@ -1,0 +1,113 @@
+<html><head><title> slot[X].pseudocard </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16337.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14126.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">slot[X].pseudocard</h2>
+<p class="bodyzero">This attribute specifies the corresponding pseudocard to implement for the designated slot.</p>
+<table width="772" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">pseudoCard</span> = slot[<span class="monospaceitalic">X</span>].pseudocard</p>
+<p class="iclcode">slot[<span class="monospaceitalic">X</span>].pseudocard = <span class="monospaceitalic">pseudoCard</span></p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="142"><p class="codetable"><span class="monospaceitalic">pseudoCard</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="555"><p class="tablebodytext">The pseudocards available for Models 707B and 708B are:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="monospace">slot.PSEUDO_NONE</code> or <code class="monospace">0</code> for no pseudocard selection</li><li class="tablelistbullet">7072 for the Model 7072 8x12 Semiconductor Matrix Card</li><li class="tablelistbullet">70721 for the Model 7072-HV 8x12 High-Voltage Semiconductor Matrix Card</li><li class="tablelistbullet">7173 for the Model 7173-50 8x12 High-Frequency 2-Pole 4x12 Matrix Card</li><li class="tablelistbullet">7174 for the Model 7174A 8x12 Low-Current, High-Speed Matrix Card</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="142"><p class="codetable"><span class="monospaceitalic">X</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="555"><p class="tablebodytext">Slot number (1 to 6)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute only exists for a slot if that slot has no card installed in it. Trying to use this attribute for a slot with an installed card generates an error when writing and a <code class="monospace">nil</code> response when reading.</p>
+<p class="iclbody">After assigning a pseudocard, the valid commands and attributes based on that pseudocard now exist for that slot. For example, the <code class="monospace">slot[</code><span class="monospaceitalic">X</span><code class="monospace">].idn</code> attribute is valid.</p>
+<p class="iclbody">Changing the pseudocard card assignment from a card to <code class="monospace">slot.NONE</code> invalidates existing scan lists.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="338"><p class="codetable">myPseudoCard = slot[3].pseudocard</p>
+<p class="codetable">if myPseudoCard == 7072 then</p>
+<p class="codetable">   print (&quot;Pseudo-7072 in Slot #3&quot;)</p>
+<p class="codetable">end</p>
+</td>
+<td width="360"><p class="tablebodytext">If Slot 3 is configured to have a 7072 pseudocard, the following message is output:</p>
+<p class="codetable">Pseudo-7072 in Slot #3</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="300"><p class="codetable">slot[1].pseudocard = 0</p>
+<p class="codetable">print(slot[1].idn)</p>
+<p class="codetable">slot[1].pseudocard = 7072</p>
+<p class="codetable">print(slot[1].idn)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].pseudocard = 0</p>
+<p class="codetable">print(slot[1].idn)</p>
+<p class="codetable">slot[1].pseudocard = 7070</p>
+<p class="codetable">print(slot[1].idn)</p>
+</td>
+<td width="398"><p class="tablebodytext">This example requires an empty slot.</p>
+<p class="tablebodytext">The slot is set to empty and then set to a valid value.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Empty Slot</p>
+<p class="codetable">7072,Pseudo 8x12 SemiMatrix,00.00a,????????</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">To change the pseudocard, set the slot to empty again, then define the new card.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Empty Slot</p>
+<p class="codetable">7070,Universal Adapter Card,00.00a,????????</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody">slot functions and attributes</p>
+<p class="iclbody"><a id="h16355" class="jumptemplate" title="slot[X].idn" href="16328.html" target="_self">slot[X].idn</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

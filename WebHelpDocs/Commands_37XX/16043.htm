@@ -1,0 +1,86 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16042.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16044.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16043" class="heading2-icl">dmm.math.format</h2>
+<p class="bodyzero">This attribute specifies which math operation is performed on measurements when math operations are enabled.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">2 (dmm.MATH_PERCENT)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = dmm.math.format</p>
+<p class="iclcode">dmm.math.format = <span class="monospaceitalic">state</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Math operation to be performed on measurements:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">dmm.MATH_NONE</code> or <code class="monospace">0</code></li><li class="tablelistbullet9pt"><code class="monospace">dmm.MATH_MXB</code> or <code class="monospace">1</code></li><li class="tablelistbullet9pt"><code class="monospace">dmm.MATH_PERCENT</code> or <code class="monospace">2</code></li><li class="tablelistbullet9pt"><code class="monospace">dmm.MATH_RECIPROCAL</code> or <code class="monospace">3</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This is not available for <code class="monospace">&quot;nofunction&quot;</code>. If this command is queried when <code class="monospace">&quot;nofunction&quot;</code> is selected, nil is returned. If it is written when <code class="monospace">&quot;nofunction&quot;</code> is selected, an error is returned.</p>
+<p class="iclbody">If you set this attribute to <code class="monospace">dmm.MATH_NONE</code>, math operation is disabled, even if math operation (<code class="monospace">dmm.math.enable</code>) is enabled.</p>
+<p class="iclbody">Use a setting of <code class="monospace">dmm.MATH_MXB</code> to have</p>
+<p class="iclcode"><img id="f28503" src="s3700admm_math_mxb_formula_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="S3700A dmm_math_mxb_formula" height="16" width="85" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="iclbody">where:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Y</strong> is the result</li><li class="listbullet"><strong class="specialbold">X</strong> is the normal measurement</li><li class="listbullet"><strong class="specialbold">m</strong> is the user-entered constant for scale factor (<code class="monospace">dmm.math.mxb.mfactor</code>)</li><li class="listbullet"><strong class="specialbold">b</strong> is the user-entered constant for offset (<code class="monospace">dmm.math.mxb.bfactor</code>)</li></ul><p class="iclbody">If you are using relative offset measurement control (<code class="monospace">dmm.rel.enable</code>), the relative offset reading is used for <span class="monospaceitalic">X</span>.</p>
+<p class="iclbody">Use a setting of <code class="monospace">dmm.MATH_PERCENT</code> to have:</p>
+<p class="iclbody"><img id="f898" src="s3700admm_math_format_formula_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="dmm.MATH_PERCENT equation" height="37" width="220" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="iclbody">where:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Percent</strong> is the result</li><li class="listbullet"><strong class="specialbold">Input </strong>is the normal measurement (if using <code class="monospace">dmm.rel.enable</code>, it will be the relative offset value)</li><li class="listbullet"><strong class="specialbold">Reference</strong> is user entered constant (<code class="monospace">dmm.math.percent</code>)</li></ul><p class="iclbody">Use a setting of <code class="monospace">dmm.MATH_RECIPROCAL</code> for 1/X operation, where <strong class="specialbold">X</strong> is normal or the measurement value with relative offset applied.</p>
+<p class="iclbody">The math operation is performed before any of the enabled limit testing.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.math.format = dmm.MATH_RECIPROCAL</p>
+<p class="codetable">dmm.math.enable = dmm.ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Enables the reciprocal operation on measurements.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Math calculations</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h899" class="jump" title="dmm.math.enable" href="16042.htm" target="_self">dmm.math.enable</a></p>
+<p class="listcommand"><a id="h900" class="jump" title="dmm.math.percent" href="16047.htm" target="_self">dmm.math.percent</a></p>
+<p class="listcommand"><a id="h896" class="jump" title="dmm.math.mxb.bfactor" href="16044.htm" target="_self">dmm.math.mxb.bfactor</a></p>
+<p class="listcommand"><a id="h895" class="jump" title="dmm.math.mxb.mfactor" href="16045.htm" target="_self">dmm.math.mxb.mfactor</a></p>
+<p class="listcommand"><a id="h897" class="jump" title="dmm.rel.enable" href="16059.htm" target="_self">dmm.rel.enable</a></p>
+
+

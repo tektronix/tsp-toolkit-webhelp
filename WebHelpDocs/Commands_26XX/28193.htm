@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Limit principles </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="77072.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11598.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t28193" class="heading3">Limit principles</h3>
+<p class="bodytext">A limit acts as a clamp. If the output reaches the limit value, the 2600B attempts to prevent the output from exceeding that value. This action switches the source from a voltage source to a current source (or from a current source to a voltage source) when a limit is&nbsp;reached.</p>
+<p class="bodytext">As an example, assume the following:</p>
+<ul class="listbullet"><li class="listbullet">2600B instrument: V<sub class="subscript">SRC</sub> = 10 V; I<sub class="subscript">LIMIT</sub> = 10 mA</li><li class="listbullet">Device-under-test (DUT) resistance: 10 Ω</li></ul><p class="bodytext">With a source voltage of 10&nbsp;V and a DUT resistance of 10 Ω, the current through the DUT should be 10&nbsp;V&nbsp;/&nbsp;10&nbsp;Ω&nbsp;=&nbsp;1&nbsp;A. However, because the limit is set to 10&nbsp;mA, the current does not exceed that value, and the voltage across the resistance is limited to 100&nbsp;mV. In effect, the 10&nbsp;V voltage source is transformed into a 10&nbsp;mA current source.</p>
+<p class="bodytext">The 2600B SMU output does not exceed the compliance limit, except for the compliance limit conditions described in <a id="h28194" class="jump" title="Source-measure capabilities" href="11450.htm" target="_self">Source-measure capabilities</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="77072.htm" target="_self">Source-measure concepts</a></p><p class="relateditem"><a href="11598.htm" target="_self">Overheating protection</a></p><p class="relateditem"><a href="11961.htm" target="_self">Operating boundaries</a></p><p class="relateditem"><a href="11971.htm" target="_self">Guard</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="28193" />
+<input id="topicDescription" type="hidden" value="Limit principles" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:35:23 PM" />
+</body>
+</html>

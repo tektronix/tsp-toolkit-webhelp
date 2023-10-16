@@ -1,0 +1,77 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16054.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16056.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16055" class="heading2-icl">dmm.opendetector</h2>
+<p class="bodyzero">This attributes determines if the detection of open leads is enabled or disabled.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="78"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="204"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="78"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="204"><p class="tablebodytextsmall">0 (dmm.OFF) for &quot;commonsideohms&quot;</p>
+<p class="tablebodytextsmall">1 (dmm.ON) for &quot;fourwireohms&quot; and &quot;temperature&quot;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = dmm.opendetector</p>
+<p class="iclcode">dmm.opendetector = <span class="monospaceitalic">state</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Disable open lead detector: <code class="monospace">dmm.OFF</code> or <code class="monospace">0</code></p>
+<p class="tablebodytext">Enable open lead detector: <code class="monospace">dmm.ON</code> or <code class="monospace">1</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The command applies when <code class="monospace">dmm.func</code> is set to <code class="monospace">&quot;fourwireohms&quot;</code>, <code class="monospace">&quot;commonsideohms&quot;</code>, or <code class="monospace">&quot;temperature&quot;</code>.</p>
+<p class="iclbody">When <code class="monospace">dmm.func </code>is set to temperature, the open detector setting is only used when the transducer type is thermocouple. For all other transducer types, it is set, but not used until the transducer type is set to thermocouple.</p>
+<p class="iclbody">The open detector setting is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to <code class="monospace">&quot;fourwireohms&quot;</code>, <code class="monospace">&quot;commonsideohms&quot;</code>, or <code class="monospace">&quot;temperature&quot;</code>, the open detector setting you set previously is retained.</p>
+<p class="iclbody">An error is generated if <code class="monospace">dmm.func</code> is set to any function other than <code class="monospace">&quot;fourwireohms&quot;</code>, <code class="monospace">&quot;commonsideohms&quot;</code>, or <code class="monospace">&quot;temperature&quot;</code>. If you query the setting for any other function, <code class="monospace">nil </code>is returned.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;temperature&quot;</p>
+<p class="codetable">dmm.transducer = dmm.TEMP_THERMOCOUPLE</p>
+<p class="codetable">dmm.opendetector = dmm.ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Enable the thermocouple open detector.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+
+

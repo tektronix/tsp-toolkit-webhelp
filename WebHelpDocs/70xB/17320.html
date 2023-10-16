@@ -1,0 +1,84 @@
+<html><head><title> channel.getlabelcolumn()***70xB only*** </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17536.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17321.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.getlabelcolumn()***70xB only***</h2>
+<p class="bodyzero">This function retrieves the label that was assigned to a column.</p>
+<table width="818" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="240"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="240"><p class="tablebodytextsmall">Empty string or blank</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">label</em> = channel.getlabelcolumn(<em class="emphasis">channelList</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">label</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string that lists the comma-delimited labels for the items in <span class="monospaceitalic">channelList</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string that lists the channels to query for the labels associated with them</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The parameter <span class="monospaceitalic">channelList</span><strong class="specialbold"> </strong>can contain more than one channel. Use a comma to delimit the labels for the channels. The return string <span class="monospaceitalic">label</span> lists the labels in the same order that the channels are specified.</p>
+<p class="iclbody">You cannot specify a channel pattern.</p>
+<p class="iclbody">The <span class="monospaceitalic">channelList</span> parameter can contain <code class="monospace">slot</code><span class="monospaceitalic">X</span> (where <span class="monospaceitalic">X</span> equals 1 to 6 for Model 707B, or 1 for Model 708B) or <code class="monospace">allslots</code>. It can also contain a label. However, if the label exists, it is in the returned response and not the numeric channel number. </p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setlabelcolumn(&quot;1A01&quot;, &quot;DUT1&quot;)</p>
+<p class="codetable">channel.setlabelcolumn(&quot;1A03&quot;, &quot;DUT2&quot;)</p>
+<p class="codetable">print(channel.getlabelcolumn(&quot;1a01:1a12&quot;))</p>
+</td>
+<td width="338"><p class="tablebodytext">Label all the column labels on a card</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">DUT1,,DUT2,,,,,,,,,</p>
+<p class="tablebodytext">Also note the change on the display</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h17323" class="jumptemplate" title="channel.getlabelrow()" href="17321.html" target="_self">channel.getlabelrow()</a></p>
+<p class="iclbody"><a id="h17324" class="jumptemplate" title="channel.setlabelcolumn()" href="17319.html" target="_self">channel.setlabelcolumn()</a></p>
+<p class="iclbody"><a id="h17325" class="jumptemplate" title="channel.setlabelrow()" href="17318.html" target="_self">channel.setlabelrow()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

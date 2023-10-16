@@ -1,0 +1,91 @@
+<html><head><title> channel.setdelay() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17280.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17402.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.setdelay()</h2>
+<p class="bodyzero">This function sets additional delay time for specified channels.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.setdelay(<em class="emphasis">channelList</em>, <em class="emphasis">value</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string listing the channels that need modifications to their delay time.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">Desired delay time for items in <span class="monospaceitalic">channelList</span>. Minimum is 0 seconds.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The user delay is an additional delay that is added after a channel is closed. You can use this delay to allow additional settle time for a signal on that channel. For most cards, the resolution of the delay is 10&nbsp;<span class="symbols">m</span>s. However, check the documentation for your card to verify. To see if the delay value was modified after setting, use the <code class="monospace">channel.getdelay()</code> command to query.</p>
+<p class="iclbody">Channel patterns get their delay from the channels that comprise the pattern. Therefore, specify the delay for a pattern through the channels. A pattern incurs the longest delay of all channels comprising that pattern.</p>
+<p class="iclbody">An error message is generated if:</p>
+<ul class="listbullet2"><li class="listbullet2">The value is an invalid setting for the specified channel</li><li class="listbullet2">A channel pattern is specified</li><li class="listbullet2">The channel is for an empty slot</li></ul><p class="iclbody">Command processing will stop as soon as an error is detected and no delay times will be modified.</p>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="64" width="234" vspace="0" hspace="0" align="middle" border="0"><br>Pseudocards do not replicate the additional delay time.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setdelay(&quot;1A03, 1A05&quot;, 50e-6)</p>
+</td>
+<td width="338"><p class="tablebodytext">Sets row 1 and columns 3 and 5 of slot 1 for a delay time of 50 microseconds.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setdelay(&quot;slot1&quot;, 0)</p>
+</td>
+<td width="338"><p class="tablebodytext">Sets the channels on slot 1 for 0 delay time.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h792" class="jumptemplate" title="channel.getdelay()" href="17521.html" target="_self">channel.getdelay()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

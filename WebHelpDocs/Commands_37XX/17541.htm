@@ -1,0 +1,110 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15944.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15946.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17541" class="heading2-icl">channel.setmatch()</h2>
+<p class="bodyzero">This function sets the match value on a digital input or totalizer channel.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore setup<br>Instrument reset<br>Power cycle<br>Channel reset</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.setmatch(&quot;<span class="monospaceitalic">channelList</span>&quot;, <span class="monospaceitalic">matchValue</span>)</p>
+<p class="iclcode">channel.setmatch(&quot;<span class="monospaceitalic">channelList</span>&quot;, <span class="monospaceitalic">matchValue</span>, <span class="monospaceitalic">mask</span>)</p>
+<p class="iclcode">channel.setmatch(&quot;<span class="monospaceitalic">channelList</span>&quot;, <span class="monospaceitalic">matchValue</span>, <span class="monospaceitalic">mask</span>, <span class="monospaceitalic">width</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="139" height="0"></td>
+<td width="0" height="0"></td>
+<td width="460" height="0"></td>
+<td width="0" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="461"><p class="tablebodytext">String that specifies the channels to query, using normal channel list syntax</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">matchValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="461"><p class="tablebodytext">Channel value to compare on the specified channel</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="461"><p class="tablebodytext">Value to specify the bits used to mask <span class="monospaceitalic">matchValue</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="139"><p class="tablebodytext"><span class="monospaceitalic">width</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="461"><p class="tablebodytext">Value that specifies matches over multiple consecutive channels (default <code class="monospace">1</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can use matching to set a state or generate an event when the digital I/O or totalizer count matches a value, instead of continually reading the digital input or totalizer.</p>
+<p class="iclbody">The default mask is all bits.</p>
+<p class="iclbody">For digital I/O channels, a<span class="monospaceitalic"> width </span>of 1, 2, 3, or 4 channels is supported. Any bits greater than the specified<span class="monospaceitalic"> width </span>are ignored. If a<span class="monospaceitalic"> width </span>crosses channels, the match status indicator is only on the channel specified in the match value. For example, setting a value with a 2<span class="monospaceitalic"> width </span>on channel 3 drives the indicator on channel 3, not channel 4. Match values for output channels are ignored.</p>
+<p class="iclbody">Totalizer and DAC channels only support a<span class="monospaceitalic"> width </span>of 1, and <span class="monospaceitalic">mask</span> is ignored.</p>
+<p class="iclbody">Switch and backplane channels are not supported. If they are included in a range or slot specifier, they are ignored. If they are specified directly, an error is generated.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="360"><p class="codetable">channel.setmatchtype(&quot;1001&quot;, channel.MATCH_EXACT)</p>
+<p class="codetable">channel.setmatch(&quot;1001&quot;, 32)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Generates a match state event on bit B6 of digital I/O channel 1, assuming a 3750.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="360"><p class="codetable">channel.setmatchtype(&quot;6007&quot;, channel.MATCH_EXACT)</p>
+<p class="codetable">channel.setmatch(&quot;6007&quot;, 300)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Assuming a 3750, configure the totalizer channel 7 on slot 6 to generate a match state event when it reaches&nbsp;300.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h7786" class="jump" title="channel.getmatch()" href="17540.htm" target="_self">channel.getmatch()</a></p>
+
+

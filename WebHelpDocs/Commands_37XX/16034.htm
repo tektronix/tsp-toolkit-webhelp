@@ -1,0 +1,82 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16032.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16035.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16034" class="heading2-icl">dmm.limit[Y].autoclear</h2>
+<p class="bodyzero">This attribute indicates if the test result for limit <span class="monospaceitalic">Y</span> should be cleared automatically or not.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">1 (dmm.ON)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.limit[<span class="monospaceitalic">Y</span>].autoclear</p>
+<p class="iclcode">dmm.limit[<span class="monospaceitalic">Y</span>].autoclear = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The auto clear setting:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Disable: <code class="monospace">dmm.OFF</code> or <code class="monospace">0</code></li><li class="tablelistbullet9pt">Enable: <code class="monospace">dmm.ON</code> or <code class="monospace">1</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Limit number: <code class="monospace">1</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is valid for all functions except <code class="monospace">&quot;continuity&quot;</code> and <code class="monospace">&quot;nofunction&quot;</code>. A nil response and an error are generated if the command is received when <code class="monospace">dmm.func</code> is set to either of these functions.</p>
+<p class="iclbody">When auto clear is set to on, limit conditions are cleared automatically after each measurement. If you are making a series of measurements, the instrument shows the limit test result of the last measurement for the pass or fail indication for the limit.</p>
+<p class="iclbody">If you want to know if any of a series of measurements failed the limit, set the auto clear setting to off. When this is set to off, a failed indication is not cleared automatically. It remains set until it is cleared with the clear command.</p>
+<p class="iclbody">The auto clear setting affects both the high and low limits.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="348"><p class="codetable">dmm.func = &quot;twowireohms&quot;</p>
+<p class="codetable">dmm.limit[2].autoclear = dmm.ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="246"><p class="tablebodytext">Enables auto clear on limit 2 for two-wire ohms.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h1986" class="jump" title="dmm.limit[Y].clear()" href="16035.htm" target="_self">dmm.limit[Y].clear()</a></p>
+<p class="listcommand"><a id="h884" class="jump" title="dmm.measure()" href="16049.htm" target="_self">dmm.measure()</a></p>
+
+

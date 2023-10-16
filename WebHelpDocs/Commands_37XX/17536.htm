@@ -1,0 +1,89 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17523.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17540.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17536" class="heading2-icl">channel.getlabel()</h2>
+<p class="bodyzero">This function retrieves the label associated with one or more channels.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">slot, row, column  or slot, channel identifier</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">label</em> = channel.getlabel(&quot;<em class="emphasis">channelList</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">label</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string listing the comma-delimited labels for items in <span class="monospaceitalic">channelList</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string listing the channels to query for the label associated with them</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <span class="monospaceitalic">channelList</span> parameter can contain more than one channel. If it does, a comma delimits the labels for the channels. The return string lists the labels in the same order that the channels were specified. The <span class="monospaceitalic">channelList</span> parameter cannot be an empty string and must be a valid channel.</p>
+<p class="iclbody">The <span class="monospaceitalic">channelList</span> parameter can contain <code class="monospace">slot</code><span class="monospaceitalic">X</span> (where X equals 1 to 6) or <code class="monospace">allslots</code>. In this case, the channels are listed before the analog backplane relays.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet2"><li class="listbullet2">A specified channel does not exist</li><li class="listbullet2">The slot is empty</li><li class="listbullet2">The specified channel is not on the installed card</li><li class="listbullet2">A channel pattern is specified</li></ul><p class="iclbody">Command processing stops as soon as an error is detected, and then a <code class="monospace">nil</code> response is generated. No partial list of labels is returned.</p>
+<p class="iclbody">Labels are also supported for digital I/O, DAC, and totalizer channels.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.reset(&quot;5001&quot;)</p>
+<p class="codetable">print(channel.getlabel(&quot;5001&quot;))</p>
+<p class="codetable">channel.setlabel(&quot;5001&quot;, &quot;Device&quot;)</p>
+<p class="codetable">print(channel.getlabel(&quot;5001&quot;))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Reset the channel.</p>
+<p class="tablebodytext">Print the default label of the channel.</p>
+<p class="tablebodytext">Set the label to <code class="monospace">Device</code>.</p>
+<p class="tablebodytext">Return the new label.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">5001</p>
+<p class="codetable">Device</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1822" class="jump" title="channel.setlabel()" href="15944.htm" target="_self">channel.setlabel()</a></p>
+<p class="listcommand">Data retrieval commands</p>
+
+

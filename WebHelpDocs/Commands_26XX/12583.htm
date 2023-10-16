@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Using the assert function to generate output triggers </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12582.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12584.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12583" class="heading3">Using the assert function to generate output triggers</h3>
+<p class="bodytext">You can use certain trigger objects to generate output triggers on demand. These trigger objects are the digital I/O lines, TSP&#8209;Link synchronization lines, and the LAN.</p>
+<p class="bodytext">The programming example below illustrates how to generate an output trigger using the assert function of the trigger object.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Connection parameters and commands that establish a connection are not shown in this example.</p>
+<p class="code">-- Generate a falling-edge trigger on digital I/O line 3.</p>
+<p class="code">digio.trigger[3].mode = digio.TRIG_FALLING</p>
+<p class="code">digio.trigger[3].assert()</p>
+<p class="code">-- Generate a rising edge trigger on TSP-Link sync line 1.</p>
+<p class="code">tsplink.trigger[1].mode = tsplink.TRIG_RISINGM</p>
+<p class="code">tsplink.trigger[1].assert()</p>
+<p class="code">-- Generate a LAN trigger on LAN pseudo line 6. </p>
+<p class="code">lan.trigger[6].mode = lan.TRIG_EITHER</p>
+<p class="code">lan.trigger[6].assert()</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12581.htm" target="_self">Interactive triggering</a></p><p class="relateditem"><a href="12582.htm" target="_self">Detecting trigger events using the wait() function</a></p><p class="relateditem"><a href="12584.htm" target="_self">Using the release function of the hardware lines</a></p><p class="relateditem"><a href="12585.htm" target="_self">Using the set function to bypass SMU event detectors</a></p><p class="relateditem"><a href="12586.htm" target="_self">Event detector overruns</a></p><p class="relateditem"><a href="12587.htm" target="_self">Examples using interactive triggering</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12583" />
+<input id="topicDescription" type="hidden" value="Using the assert function to generate output triggers" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:32:07 PM" />
+</body>
+</html>

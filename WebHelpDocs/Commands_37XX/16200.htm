@@ -1,0 +1,98 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17546.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17547.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16200" class="heading2-icl">channel.getstatelatch()</h2>
+<p class="bodyzero">This function gets the mask representing the states that would be latched if they occurred.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">14 for overload, match, and overflow</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = channel.getstatelatch(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="139" height="0"></td>
+<td width="0" height="0"></td>
+<td width="454" height="0"></td>
+<td width="0" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="139"><p class="codetable"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="455"><p class="tablebodytext">Return string listing the comma-delimited latch states for channels in <span class="monospaceitalic">channelList:</span></p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">2</code>: Channel overload</li><li class="tablelistbullet9pt"><code class="monospace">4</code>: Channel match</li><li class="tablelistbullet9pt"><code class="monospace">8</code>: Channel overflow</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="455"><p class="tablebodytext">String specifying the channels to query, using normal channel list syntax</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Applicable to digital I/O, totalizer, and DAC channels only.</p>
+<p class="iclbody">Each indicator is represented by a bit in the mask.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">myState = channel.getstatelatch(&quot;1001&quot;)</p>
+<p class="codetable">print(myState)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Queries the state event latch on digital I/O channel 1 in slot 1 assuming a Model 3750.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.setstatelatch(&quot;6010&quot;, bit.bitor(channel.IND_OVERFLOW, channel.IND_OVERLOAD))</p>
+<p class="codetable">print(channel.getstatelatch(&quot;6010&quot;))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Generate either an overflow or overload event on DAC channel 10 in slot 6, assuming a Model&nbsp;3750.</p>
+<p class="tablebodytext">Query for the state latch for channel 10 on slot 6.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">10</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h7657" class="jump" title="channel.setstatelatch()" href="15950.htm" target="_self">channel.setstatelatch()</a></p>
+
+

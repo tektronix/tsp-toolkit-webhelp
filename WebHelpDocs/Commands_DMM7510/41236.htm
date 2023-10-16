@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.rel.acquire() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41622.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41280.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41236" class="heading2-icl">dmm.digitize.rel.acquire()</h2>
+<p class="bodyzero">This function acquires a measurement and stores it as the relative offset value for the selected digitize function.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><code class="monospace">dmm</code>.digitize.rel.acquire()</p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command triggers the instrument to make a new measurement for the selected function. This measurement is then stored as the new relative offset level.</p>
+<p class="iclbody">When you send this command, the instrument does not apply any math, limit test, or filter settings to the measurement, even if they are set. It is a measurement that is made as if these settings are disabled.</p>
+<p class="iclbody">If an error event occurs during the measurement, <code class="monospace">nil</code> is returned and the relative offset level remains at the last valid setting.</p>
+<p class="iclbody">You must change to the function for which you want to acquire a value before sending this command.</p>
+<p class="iclbody">The instrument must have relative offset enabled to use the acquired relative offset value.</p>
+<p class="iclbody">After executing this command, you can use the <code class="monospace">dmm.digitize.rel.level</code> attribute to see the last relative level value that was acquired or that was set.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">dmm</code>.digitize.func = <code class="monospace">dmm</code>.FUNC_DIGITIZE_CURRENT</p>
+<p class="codetable">rel_value = <code class="monospace">dmm</code>.digitize.rel.acquire()</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.rel.enable = <code class="monospace">dmm</code>.ON</p>
+<p class="codetable">print(rel_value)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Acquires a relative offset level value for the digitize current function and turns the relative offset feature on.</p>
+<p class="tablebodytext">Output the value of the offset.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41429" class="jump" title="dmm.digitize.func" href="41428.htm" target="_self">dmm.digitize.func</a></p>
+<p class="listcommand"><a id="h44523" class="jump" title="dmm.digitize.rel.enable" href="41280.htm" target="_self">dmm.digitize.rel.enable</a></p>
+<p class="listcommand"><a id="h41278" class="jump" title="dmm.digitize.rel.level" href="41275.htm" target="_self">dmm.digitize.rel.level</a></p>
+
+
+<input id="topicId" type="hidden" value="41236" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.rel.acquire()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 7:15:43 AM" />
+</body>
+</html>

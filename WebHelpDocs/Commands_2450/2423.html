@@ -1,0 +1,74 @@
+<html>
+<head>
+<title> Tables and arrays </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16706.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2429.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h5 class="heading5">Tables and arrays</h5>
+<p class="bodytext">Lua makes extensive use of the data type table, which is a flexible array-like data type. Table indices start with 1. Tables can be indexed not only with numbers, but with any value except <code class="monospace"><code class="monospace">nil</code></code>. Tables can be heterogeneous, which means that they can contain values of all types except <code class="monospace"><code class="monospace">nil</code></code>.</p>
+<p class="bodytext">Tables are the sole data structuring mechanism in Lua. They may be used to represent ordinary arrays, symbol tables, sets, records, graphs, trees, and so on. To represent records, Lua uses the field <code class="monospace"><code class="monospace">name</code></code> as an index. The language supports this representation by providing <code class="monospace"><code class="monospace">a.name</code></code> as an easier way to express <code class="monospace"><code class="monospace">a[&quot;name&quot;]</code></code>.</p>
+<p class="note"><img src="notehelp.png" alt="VARIABLE - NOTE" height="48" width="176" vspace="0" hspace="0" align="bottom" border="0"><br>The output you get from this example may vary depending on the instrument you are using.</p>
+<p class="bodytext"><strong class="specialbold">Example: Loop array</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="528" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="312"><p class="codetable">atable = {1, 2, 3, 4}</p>
+<p class="codetable">i = 1</p>
+<p class="codetable">while atable[i] do</p>
+<p class="codetable">   print(atable[i])</p>
+<p class="codetable">   i = i + 1</p>
+<p class="codetable">end</p>
+</td>
+<td width="216"><p class="tablebodytext">Defines a table with four numeric elements.</p>
+<p class="tablebodytext">Loops through the array and prints each element.</p>
+<p class="tablebodytext">The Boolean value of <code class="monospace"><code class="monospace">atable[index]</code></code> evaluates to <code class="monospace"><code class="monospace">true</code></code> if there is an element at that index. If there is no element at that index, <code class="monospace"><code class="monospace">nil</code></code> is returned (<code class="monospace"><code class="monospace">nil</code></code> is considered to be <code class="monospace"><code class="monospace">false</code></code>).</p>
+<p class="tableheadingsmall">Output:</p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">1.00000e+00</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">2.00000e+00</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">3.00000e+00</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">4.00000e+00</code></code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14284.html" target="_self">Lua basics</a></p><p class="relateditem"><a href="16697.html" target="_self">Comments</a></p><p class="relateditem"><a href="33325.html" target="_self">Function and variable name restrictions</a></p><p class="relateditem"><a href="2420.html" target="_self">Values and variable types</a></p><p class="relateditem"><a href="16831.html" target="_self">Variable types</a></p><p class="relateditem"><a href="16830.html" target="_self">Delete a global variable</a></p><p class="relateditem"><a href="2422.html" target="_self">Functions</a></p><p class="relateditem"><a href="16449.html" target="_self">Operators</a></p><p class="relateditem"><a href="2427.html" target="_self">Conditional branching</a></p><p class="relateditem"><a href="2428.html" target="_self">Loop control</a></p></td>
+</tr>
+</table>
+
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2013, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

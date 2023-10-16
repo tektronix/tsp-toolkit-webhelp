@@ -1,0 +1,172 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16019.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16021.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16020" class="heading2-icl">dmm.connect</h2>
+<p class="bodyzero">This attribute indicates how the DMM relays should be connected to the analog backplane.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">7 (dmm.CONNECT_ALL)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.connect</p>
+<p class="iclcode">dmm.connect = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The DMM relay connection setting. See <strong class="specialbold">Details</strong> for valid values</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Use of this command is not recommended with the exception of special cases. The default setting should handle most applications.</p>
+<p class="iclbody">This setting affects all DMM functions. Valid values are shown in the table below.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="462" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="252" height="0"></td>
+<td width="210" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="2" width="462"><p class="tableheading">Valid values</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="tableheadingsmall">Value</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tableheadingsmall">Relays connected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="codetable">dmm.CONNECT_NONE or 0</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">None</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="codetable">dmm.CONNECT_ALL or 7</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">All</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="codetable">dmm.CONNECT_TWO_WIRE or 1</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">2-wire</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="codetable">dmm.CONNECT_FOUR_WIRE or 3 </p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">2-wire and sense</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="codetable">dmm.CONNECT_TWO_WIRE_AMPS or 5</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">2-wire &amp; amp</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="252"><p class="codetable">dmm.CONNECT_AMPS or 4</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">amp</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">The relays are bitmapped into the lower 3 bits of the value as shown in the following table.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="222" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="36" height="0"></td>
+<td width="54" height="0"></td>
+<td width="132" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="3" width="222"><p class="tableheadingsmall">Relay bitmap</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="36"><p class="tableheadingsmall">Bit</p>
+</td>
+<td style="border:1px solid #010101;" width="54"><p class="tableheadingsmall">Value</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tableheadingsmall">Relays represented</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="36"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">2-wire</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="36"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">sense</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="36"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="132"><p class="tablebodytext">amp</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">To close a relay, set the appropriate bit to 1.</p>
+<p class="iclbody">To open a relay, set the appropriate bit to 0.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">The sense relay bit is set to a 1 and the sense relay with amps is selected. These two settings correspond to a value of 2 or 6, respectively.</li><li class="listbullet">The value is less than 0 or greater than 7.</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="348"><p class="codetable">dmm.connect = dmm.CONNECT_TWO_WIRE_AMPS</p>
+</td>
+<td width="246"><p class="tablebodytext">Connects the DMM 2-wire and amp relays to the analog backplane.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+

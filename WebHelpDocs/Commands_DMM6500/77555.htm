@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> slot[1].pseudocard </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="77649.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="77651.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t77555" class="heading2-icl">slot[1].pseudocard</h2>
+<p class="bodyzero">This attribute specifies a pseudocard to use.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">slot.PSEUDO_NONE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">pseudoCard</span> = slot[1].pseudocard</p>
+<p class="iclcode">slot[1].pseudocard = <span class="monospaceitalic">pseudoCard</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="115"><p class="codetable"><span class="monospaceitalic">pseudoCard</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="485"><p class="tablebodytext">The pseudocard options for the DMM6500 are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">slot.PSEUDO_NONE</code>: No pseudocard</li><li class="tablelistbullet9pt"><code class="monospace">2000</code>: 2000-SCAN and 2001-TCSCAN pseudocard</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Pseudocards allow you to configure your system without having an actual scanner card installed in your system. You can perform open, close, and scan operations and configure your system with pseudocards.</p>
+<p class="iclbody">This command is only applicable to a slot that does not have a scanner card or pseudocard installed. If a pseudocard is presently assigned to the slot, you must set the slot to no pseudocard before assigning the new pseudocard.</p>
+<p class="iclbody">After assigning a pseudocard, you can use valid commands for the scanner card for that slot.</p>
+<p class="iclbody">Changing the pseudocard assignment from a pseudocard to no pseudocard invalidates scan lists that include that slot.</p>
+<p class="iclbody">If a scanner card is installed in the slot, this command returns <code class="monospace">nil</code>. If the slot is empty and no pseudocard is installed, the return is <code class="monospace">0</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[1].pseudocard = slot.PSEUDO_NONE</p>
+<p class="codetable">slot[1].pseudocard = 2000</p>
+<p class="codetable">print(slot[1].idn)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets the slot to no pseudocard, then sets it to simulate a 2000-SCAN or 2001-TCSCAN card. Output is similar to:</p>
+<p class="codetable">2000,Pseudo 10Ch Mux,0.0.0a,???????????</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h72794" class="jump" title="Pseudocards" href="72764.htm" target="_self">Pseudocards</a></p>
+
+
+<input id="topicId" type="hidden" value="77555" />
+<input id="topicDescription" type="hidden" value="slot[1].pseudocard" />
+<input id="footer-modified" type="hidden" value="Last modified: 5/24/2019 2:56:13 PM" />
+</body>
+</html>

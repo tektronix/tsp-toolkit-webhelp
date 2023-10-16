@@ -1,0 +1,249 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Reading buffer commands </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11493.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11663.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t13519" class="heading3">Reading buffer commands</h3>
+<p class="bodytext">The following tables summarize commands associated with the reading buffers. See <a id="h21768" class="jump" title="TSP command reference" href="2600B_TSP_command_reference.htm" target="_self">TSP command reference</a> for detailed reading buffer command information.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="288" height="0"></td>
+<td width="312" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="600"><p class="tableheading">Reading buffer commands*</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheading">Commands to save and clear readings</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.savebuffer(smu<span class="monospaceitalic">X</span>.nvbuffer<span class="monospaceitalic">Y</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Saves the reading buffer to the nonvolatile memory on the 2600B.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.nvbuffer1.clear()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Clears buffer 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.nvbuffer2.clear()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Clears buffer 2.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">mybuffer = smu<span class="monospaceitalic">X</span>.makebuffer(<span class="monospaceitalic">n</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Creates a dynamically allocated buffer for <span class="monospaceitalic">n</span> readings.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">mybuffer = nil</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Deletes the dynamically allocated buffer.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">savebuffer(smu<span class="monospaceitalic">X</span>.nvbuffer1,&quot;csv&quot;,</p>
+<p class="codetable">   &quot;/usb1/mybuffer.csv&quot;)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Saves the reading buffer to a USB flash drive.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="288" height="0"></td>
+<td width="312" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Command</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheading">Commands to store readings</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.count = <span class="monospaceitalic">count</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">The number of measurements to acquire.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.overlappedi(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes current measurements; stores readings in <span class="monospaceitalic">rbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.overlappediv(<span class="monospaceitalic">ibuffer,</span></p>
+<p class="codetable"><span class="monospaceitalic">   vbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes both current and voltage measurements; stores current readings in <span class="monospaceitalic">ibuffer</span> and stores voltage readings in <span class="monospaceitalic">vbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.overlappedp(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes power measurements; stores readings in <span class="monospaceitalic">rbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.overlappedr(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes resistance measurements; stores readings in <span class="monospaceitalic">rbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.overlappedv(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes overlapped voltage measurements; stores readings in <span class="monospaceitalic">rbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.v(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes voltage measurements; stores readings in <span class="monospaceitalic">rbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.i(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes current measurements; stores readings in <span class="monospaceitalic">rbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.iv(<span class="monospaceitalic">ibuffer, vbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes both current and voltage measurements; stores current readings in <span class="monospaceitalic">ibuffer</span> and stores voltage readings in <span class="monospaceitalic">vbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.r(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes resistance measurements; stores readings in <span class="monospaceitalic">rbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.measure.p(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Makes power measurements; stores readings in <span class="monospaceitalic">rbuffer</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.trigger.measure.v(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Configures voltage measurements to be made during a sweep, including where readings are stored (<span class="monospaceitalic">rbuffer</span>).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.trigger.measure.i(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Configures current measurements to be made during a sweep, including where readings are stored (<span class="monospaceitalic">rbuffer</span>).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.trigger.measure.r(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Configures resistance measurements to be made during a sweep, including where readings are stored (<span class="monospaceitalic">rbuffer</span>).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.trigger.measure.p(<span class="monospaceitalic">rbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Configures power measurements to be made during a sweep, including where readings are stored (<span class="monospaceitalic">rbuffer</span>).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">smu<span class="monospaceitalic">X</span>.trigger.measure.iv(<span class="monospaceitalic">ibuffer,</span></p>
+<p class="codetable"><span class="monospaceitalic">   vbuffer</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Configures both current and voltage measurements to be made during a sweep, including where readings are stored; current readings are stored in <span class="monospaceitalic">ibuffer</span> and voltage readings are stored in <span class="monospaceitalic">vbuffer</span>.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="288" height="0"></td>
+<td width="312" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Command</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheading">Commands to access readings</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">printbuffer(<span class="monospaceitalic">start_index, end_index,</span></p>
+<p class="codetable"><span class="monospaceitalic">   st_1, st_2, ... st_n</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Prints data from buffer subtables:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><span class="monospaceitalic">start_index</span> (starting index of values to print)</li><li class="tablelistbullet9pt"><span class="monospaceitalic">end_index</span> (ending index of values to print)</li><li class="tablelistbullet9pt"><span class="monospaceitalic">st_1, st_2, ... st_n</span> (subtables from which to print, each separated by a comma)</li></ul></td>
+</tr>
+
+</table>
+<p class="bodytext">* <code class="monospace">smu</code><span class="monospaceitalic">X</span> can be <code class="monospace">smua</code> for channel A or <code class="monospace">smub</code> for channel B</p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="11663.htm" target="_self">Buffer storage control attributes</a></p><p class="relateditem"><a href="19420.htm" target="_self">Buffer read-only attributes</a></p><p class="relateditem"><a href="19421.htm" target="_self">Buffer storage control programming examples</a></p><p class="relateditem"><a href="19422.htm" target="_self">Buffer read-only attribute programming examples</a></p><p class="relateditem"><a href="19413.htm" target="_self">Statistic attributes</a></p><p class="relateditem"><a href="11636.htm" target="_self">Reading buffer attributes</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11655.htm" target="_self">Remote reading buffer programming</a></p><p class="relateditem"><a href="13640.htm" target="_self">Dedicated reading buffer designations</a></p><p class="relateditem"><a href="11493.htm" target="_self">Dedicated reading buffer example</a></p><p class="relateditem"><a href="11659.htm" target="_self">Buffer status</a></p><p class="relateditem"><a href="11647.htm" target="_self">Dynamic reading buffers</a></p><p class="relateditem"><a href="11650.htm" target="_self">Dynamically allocated buffer example</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="13519" />
+<input id="topicDescription" type="hidden" value="Reading buffer commands" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/17/2022 2:35:48 PM" />
+</body>
+</html>

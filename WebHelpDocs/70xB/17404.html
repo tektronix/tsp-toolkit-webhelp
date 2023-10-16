@@ -1,0 +1,89 @@
+<html><head><title> channel.getforbidden() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17521.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17536.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.getforbidden()</h2>
+<p class="bodyzero">This function returns a string listing the channels in the channel list parameter that are forbidden to close.</p>
+<table width="818" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="240"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="240"><p class="tablebodytextsmall">Permitted to close</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">forbiddenList</em> = channel.getforbidden(<em class="emphasis">channelList</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">forbiddenList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">Comma-delimited string listing channels that are forbidden to close in the channel list</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string listing the channels and channel patterns to query to see which are forbidden to close</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The<span class="monospaceitalic"> channelList </span>parameter indicates which channels to check, and may include:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="monospace">allslots </code>or <code class="monospace">slot</code><span class="monospaceitalic">X</span> (where <span class="monospaceitalic">X</span> equals 1 to 6 for Model 707B, or 1 for Model 708B)</li><li class="listbullet2">Channel ranges or individual channels</li><li class="listbullet2">Channel patterns</li></ul><p class="iclbody">If there are no channels in the scope of the <span class="monospaceitalic">channelList </span>that are on the forbidden list, the string returned is empty or <code class="monospace">nil</code>. The format of the channels in the response string is slot, row, column.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="420"><p class="codetable"><code class="monospace">channel.reset(&quot;slot1&quot;)</code></p>
+<p class="codetable"><code class="monospace">channel.setforbidden(&quot;1A01:1A05&quot;)</code></p>
+<p class="codetable"><code class="monospace">print(channel.getforbidden(&quot;allslots&quot;))</code></p>
+<p class="codetable"><code class="monospace">print(channel.getforbidden(&quot;slot1&quot;))</code></p>
+<p class="tablebodytext"><code class="monospace">print(channel.getforbidden(</code></p>
+<p class="tablebodytext"><code class="monospace">   &quot;1A01:1A03,1B04,1B08,1B12&quot;))</code></p>
+</td>
+<td width="322"><p class="tablebodytext">Reset the channels.</p>
+<p class="tablebodytext">Set channels 1A01, 1A02, 1A03, 1A04, and 1A05 to be forbidden.</p>
+<p class="tablebodytext">List the forbidden channels on all slots, slot 1, and list of channels.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1A01,1A02,1A03,1A04,1A05</p>
+<p class="codetable">1A01,1A02,1A03,1A04,1A05</p>
+<p class="codetable">1A01,1A02,1A03</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h1803" class="jumptemplate" title="channel.clearforbidden()" href="17406.html" target="_self">channel.clearforbidden()</a></p>
+<p class="iclbody"><a id="h16182" class="jumptemplate" title="channel.setforbidden()" href="17402.html" target="_self">channel.setforbidden()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

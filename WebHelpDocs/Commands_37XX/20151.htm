@@ -1,0 +1,78 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="20150.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17109.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t20151" class="heading2-icl">bufferVar.basetimeseconds</h2>
+<p class="bodyzero">When enabled by the <span class="monospaceitalic">bufferVar.</span><code class="monospace">collecttimestamps</code> attribute, this attribute represents the nonfractional seconds of the timestamp for the first reading stored in the reading buffer.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="90"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="180"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="108"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="90"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Buffer storage settings<br>Clearing the buffer<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="180"><p class="tablebodytextsmall">USB flash drive using dmm.savebuffer or dmm.appendbuffer</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="108"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = <span class="monospaceitalic">bufferVar</span>.basetimeseconds</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The nonfractional seconds of the timestamp</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The reading buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The basetime seconds information from a reading buffer is only available if the <span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps</code> attribute is set to 1 (default setting). If it is set to 0, you will not be able to access any time information from a reading buffer. You may change the collect timestamps setting when the buffer is empty (<span class="monospaceitalic">bufferVar</span><code class="monospace">.clear()</code>).</p>
+<p class="iclbody">This attribute is a read&#8209;only attribute for each existing reading buffer in the instrument. </p>
+<p class="iclbody">This attribute represents the nonfractional seconds of the timestamp when reading 1 was stored in the buffer.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="348"><p class="codetable">basedSeconds = buffer1.basetimeseconds</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="246"><p class="tablebodytext">Read the <code class="monospace">basetimeseconds</code> attribute for <code class="monospace">buffer1</code> and store in a variable called <code class="monospace">baseSeconds</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15226" class="jump" title="bufferVar.clear()" href="15130.htm" target="_self">bufferVar.clear()</a></p>
+<p class="listcommand"><a id="h15229" class="jump" title="bufferVar.collecttimestamps" href="15133.htm" target="_self">bufferVar.collecttimestamps</a></p>
+<p class="listcommand">Reading buffers</p>
+<p class="bodytext"></p>
+
+

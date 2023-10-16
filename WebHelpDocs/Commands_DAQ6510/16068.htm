@@ -1,0 +1,176 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.simreftemperature </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="91267.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41192.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t16068" class="heading2-icl">dmm.measure.simreftemperature</h2>
+<p class="bodyzero">This attribute sets the simulated reference temperature of the thermocouple reference junction.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Celsius: 23<br>Kelvin: 296.15<br>Fahrenheit: 73.4</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.measure.simreftemperature</p>
+<p class="iclcode">dmm.measure.simreftemperature = <span class="monospaceitalic">value</span></p>
+<p class="iclcode"><em class="emphasis">value</em> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.<code class="monospace">ATTR_MEAS_SIM_REF_TEMP</code>)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.<code class="monospace">ATTR_MEAS_SIM_REF_TEMP</code>, <em class="emphasis">value</em>)</p>
+<p class="iclcode">channel.setdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, <code class="monospace">dmm.ATTR_MEAS_SIM_REF_TEMP</code>, <span class="monospaceitalic">value</span>)</p>
+<p class="iclcode">value = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, <code class="monospace">dmm.ATTR_MEAS_SIM_REF_TEMP</code>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The simulated reference temperature:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Celsius: 0 to 65</li><li class="tablelistbullet9pt">Kelvin: 273.15 to 338.15</li><li class="tablelistbullet9pt">Fahrenheit: 32 to 149</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81855.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_DC_VOLTAGE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_RESISTANCE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_ACV_FREQUENCY</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_AC_VOLTAGE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_4W_RESISTANCE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_ACV_PERIOD</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_DC_CURRENT</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_DIODE </span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DCV_RATIO</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_AC_CURRENT</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_CAPACITANCE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_TEMPERATURE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_CONTINUITY</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute applies to the temperature function when the transducer type is set to thermocouple and the reference junction is set to simulated. It allows you to set the simulated reference temperature value.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">dmm.measure.func = dmm.FUNC_TEMPERATURE</p>
+<p class="codetable">dmm.measure.transducer = dmm.TRANS_THERMOCOUPLE</p>
+<p class="codetable">dmm.measure.unit = dmm.UNIT_CELSIUS</p>
+<p class="codetable">dmm.measure.simreftemperature = 30</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets 30 degrees Celsius as the simulated reference temperature for thermocouples.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">channel.setdmm(&quot;101:105&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_TEMPERATURE)</p>
+<p class="codetable">channel.setdmm(&quot;101:105&quot;, dmm.ATTR_MEAS_TRANSDUCER, dmm.TRANS_THERMOCOUPLE<code class="monospace">)</code></p>
+<p class="codetable">channel.setdmm(&quot;101:105&quot;, dmm.<code class="monospace">ATTR_MEAS_THERMOCOUPLE</code>, dmm.THERMOCOUPLE_J, dmm.<code class="monospace">ATTR_MEAS_SIM_REF_TEMP</code>, 30)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">For channels 1 through 5, set the measure function to temperature.</p>
+<p class="tablebodytext">Set the transducer type to thermocouple. Set the thermocouple type to J with a simulated reference temperature of 30.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41651" class="jump" title="dmm.measure.transducer" href="41181.htm" target="_self">dmm.measure.transducer</a></p>
+<p class="listcommand"><a id="h1877" class="jump" title="Reference junctions" href="1528.htm" target="_self">Reference junctions</a></p>
+<p class="listcommand"><a id="h46772" class="jump" title="Temperature measurements" href="80230.htm" target="_self">Temperature measurements</a></p>
+
+
+<input id="topicId" type="hidden" value="16068" />
+<input id="topicDescription" type="hidden" value="dmm.measure.simreftemperature" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/23/2019 1:32:27 PM" />
+</body>
+</html>

@@ -1,0 +1,341 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Step sequence </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="27970.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="28249.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t27971" class="heading4">Step sequence</h4>
+<p class="bodytext">Adjustment steps must be performed in a specific sequence. See the following table for your model. All steps are performed using 2-wire (local sensing) except as noted. Adjustment of each range is performed as a four-point calibration:</p>
+<ul class="listbullet2"><li class="listbullet2"><span class="symbols">+</span> ZERO</li><li class="listbullet2"><span class="symbols">+</span> FULL SCALE</li><li class="listbullet2"><span class="symbols">-</span> ZERO</li><li class="listbullet2"><span class="symbols">-</span> FULL SCALE</li></ul><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Before performing the adjustment steps, refer to <a id="h12979" class="jump" title="Parameter values" href="12980.htm" target="_self">Parameter values</a> and <a id="h12981" class="jump" title="Sense modes" href="27970.htm" target="_self">Sense modes</a>.</p>
+<table class="tableintopic" width="630" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="185" height="0"></td>
+<td width="127" height="0"></td>
+<td width="130" height="0"></td>
+<td width="187" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="4" width="630"><p class="tableheading">&nbsp;</p>
+<p class="tableheading">2601B, 2602B, or 2604B calibration steps</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="185"><p class="tableheadingsmall">Function<sup class="superscript">1</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="127"><p class="tableheadingsmall">Calibration steps<sup class="superscript">2</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="130"><p class="tableheadingsmall">Calibration points<sup class="superscript">4</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="187"><p class="tableheadingsmall">Sense mode<sup class="superscript">5</sup></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="185"><p class="tablebodytextsmall">Voltage Source</p>
+<p class="tablebodytextsmall">and Measure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="127"><p class="tablebodytextsmall">100 mV</p>
+<p class="tablebodytextsmall">100 mV</p>
+<p class="tablebodytextsmall">1 V</p>
+<p class="tablebodytextsmall">1 V</p>
+<p class="tablebodytextsmall">6 V</p>
+<p class="tablebodytextsmall">40 V</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="130"><p class="tablebodytextsmall">±1e-30, ±90 mV</p>
+<p class="tablebodytextsmall">±1e-30, ±90 mV</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 V</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 V</p>
+<p class="tablebodytextsmall">±1e-30, ±5.4 V</p>
+<p class="tablebodytextsmall">±1e-30, ±36 V</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="187"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_REMOTE</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_CALA</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="185"><p class="tablebodytextsmall">Current Source and Measure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="127"><p class="tablebodytextsmall">100 nA</p>
+<p class="tablebodytextsmall">1 μA</p>
+<p class="tablebodytextsmall">10 μA</p>
+<p class="tablebodytextsmall">100 μA</p>
+<p class="tablebodytextsmall">1 mA</p>
+<p class="tablebodytextsmall">1 mA</p>
+<p class="tablebodytextsmall">10 mA</p>
+<p class="tablebodytextsmall">100 mA</p>
+<p class="tablebodytextsmall">1 A</p>
+<p class="tablebodytextsmall">3 A</p>
+<p class="tablebodytextsmall">10 A<sup class="superscript">3</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="130"><p class="tablebodytextsmall">±1e-30, ±90 nA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±9 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±90 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±90 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 A</p>
+<p class="tablebodytextsmall">±1e-30, ±2.4 A</p>
+<p class="tablebodytextsmall">±1e-30, ±2.4 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="187"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_CALA</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="4" width="630"><p class="tablebodytextsmall">1. Calibrate only the source for the CALA sense steps.</p>
+<p class="tablebodytextsmall">2. Steps must be performed in the order shown.</p>
+<p class="tablebodytextsmall">3. 10 A range for changing calibration of range only and is not available for normal use.</p>
+<p class="tablebodytextsmall">4. Do not use actual 0 values for zero calibration points. Send very small values such as ±1e-30. Calibration polarities must also be set as shown in the procedures.</p>
+<p class="tablebodytextsmall">5. Output must be off before changing to the CALA sense mode.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<table class="tableintopic" width="630" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="186" height="0"></td>
+<td width="0" height="0"></td>
+<td width="125" height="0"></td>
+<td width="1" height="0"></td>
+<td width="130" height="0"></td>
+<td width="0" height="0"></td>
+<td width="186" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="7" width="630"><p class="tableheading">2611B, 2612B, or 2614 calibration steps</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="186"><p class="tableheadingsmall">Function<sup class="superscript">1</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="127"><p class="tableheadingsmall">Calibration steps<sup class="superscript">2</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="130"><p class="tableheadingsmall">Calibration points<sup class="superscript">3</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="186"><p class="tableheadingsmall">Sense mode<sup class="superscript">4</sup></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="186"><p class="tablebodytextsmall">Voltage Source</p>
+<p class="tablebodytextsmall">and Measure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="127"><p class="tablebodytextsmall">200 mV</p>
+<p class="tablebodytextsmall">200 mV</p>
+<p class="tablebodytextsmall">2 V</p>
+<p class="tablebodytextsmall">2 V</p>
+<p class="tablebodytextsmall">20 V</p>
+<p class="tablebodytextsmall">200 V</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="130"><p class="tablebodytextsmall">±1e-30, ±180 mV</p>
+<p class="tablebodytextsmall">±1e-30, ±180 mV</p>
+<p class="tablebodytextsmall">±1e-30, ±1.8 V</p>
+<p class="tablebodytextsmall">±1e-30, ±1.8 V</p>
+<p class="tablebodytextsmall">±1e-30, ±18 V</p>
+<p class="tablebodytextsmall">±1e-30, ±180 V</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="186"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_REMOTE</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_CALA</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="186"><p class="tablebodytextsmall">Current Source and Measure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="127"><p class="tablebodytextsmall">100 nA</p>
+<p class="tablebodytextsmall">1 μA</p>
+<p class="tablebodytextsmall">10 μA</p>
+<p class="tablebodytextsmall">100 μA</p>
+<p class="tablebodytextsmall">1 mA</p>
+<p class="tablebodytextsmall">1 mA</p>
+<p class="tablebodytextsmall">10 mA</p>
+<p class="tablebodytextsmall">100 mA</p>
+<p class="tablebodytextsmall">1 A</p>
+<p class="tablebodytextsmall">1.5 A</p>
+<p class="tablebodytextsmall">10 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="130"><p class="tablebodytextsmall">±1e-30, ±90 nA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±9 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±90 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±90 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 A</p>
+<p class="tablebodytextsmall">±1e-30, ±1.35 A</p>
+<p class="tablebodytextsmall">±1e-30, ±2.4 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="186"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_CALA</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="7" width="630"><p class="tablebodytextsmall">1. Calibrate only the source for the CALA sense steps.</p>
+<p class="tablebodytextsmall">2. Steps must be performed in the order shown.</p>
+<p class="tablebodytextsmall">3. Do not use actual 0 values for zero calibration points. Send very small values such as ±1e-30. Calibration polarities must also be set as shown in the procedures.</p>
+<p class="tablebodytextsmall">4. Output must be off before changing to the CALA sense mode.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="7" width="630"><p class="tableheading">&nbsp;</p>
+<p class="tableheading">2634B, 2635B, 2636B calibration steps</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tableheadingsmall">Function<sup class="superscript">1</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="126"><p class="tableheadingsmall">Calibration steps<sup class="superscript">2</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="3" width="132"><p class="tableheadingsmall">Calibration points<sup class="superscript">3</sup></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tableheadingsmall">Sense mode<sup class="superscript">4</sup></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tablebodytextsmall">Voltage Source</p>
+<p class="tablebodytextsmall">and Measure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="126"><p class="tablebodytextsmall">200 mV</p>
+<p class="tablebodytextsmall">200 mV</p>
+<p class="tablebodytextsmall">2 V</p>
+<p class="tablebodytextsmall">2 V</p>
+<p class="tablebodytextsmall">20 V</p>
+<p class="tablebodytextsmall">200 V</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="3" width="132"><p class="tablebodytextsmall">±1e-30, ±180 mV</p>
+<p class="tablebodytextsmall">±1e-30, ±180 mV</p>
+<p class="tablebodytextsmall">±1e-30, ±1.8 V</p>
+<p class="tablebodytextsmall">±1e-30, ±1.8 V</p>
+<p class="tablebodytextsmall">±1e-30, ±18 V</p>
+<p class="tablebodytextsmall">±1e-30, ±180 V</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_REMOTE</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_CALA</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tablebodytextsmall">Current Source and Measure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="126"><p class="tablebodytextsmall">100 pA<sup class="superscript">5, 6</sup></p>
+<p class="tablebodytextsmall">1 nA</p>
+<p class="tablebodytextsmall">10 nA</p>
+<p class="tablebodytextsmall">100 nA</p>
+<p class="tablebodytextsmall">1 μA</p>
+<p class="tablebodytextsmall">10 μA</p>
+<p class="tablebodytextsmall">100 μA</p>
+<p class="tablebodytextsmall">1 mA</p>
+<p class="tablebodytextsmall">1 mA</p>
+<p class="tablebodytextsmall">10 mA</p>
+<p class="tablebodytextsmall">100 mA</p>
+<p class="tablebodytextsmall">1 A</p>
+<p class="tablebodytextsmall">1.5 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="3" width="132"><p class="tablebodytextsmall">±1e-30, ±90 pA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 nA</p>
+<p class="tablebodytextsmall">±1e-30, ±9 nA</p>
+<p class="tablebodytextsmall">±1e-30, ±90 nA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±9 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±90 μA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±9 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±90 mA</p>
+<p class="tablebodytextsmall">±1e-30, ±0.9 A</p>
+<p class="tablebodytextsmall">±1e-30, ±1.35 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_CALA</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+<p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.SENSE_LOCAL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="7" width="630"><p class="tablebodytextsmall">1. Calibrate only the source for the CALA sense steps.</p>
+<p class="tablebodytextsmall">2. Steps must be performed in the order shown.</p>
+<p class="tablebodytextsmall">3. Do not use actual 0 values for zero calibration points. Send very small values such as ±1e-30. Calibration polarities must also be set as shown in the procedures.</p>
+<p class="tablebodytextsmall">4. Output must be off before changing to the CALA sense mode.</p>
+<p class="tablebodytextsmall">5. For Current Measure only.</p>
+<p class="tablebodytextsmall">6. This range is only available on the 2635B and 2636B.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytextsmall"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12971.htm" target="_self">Calibration adjustment overview</a></p><p class="relateditem"><a href="12980.htm" target="_self">Parameter values</a></p><p class="relateditem"><a href="27970.htm" target="_self">Sense modes</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="27971" />
+<input id="topicDescription" type="hidden" value="Step sequence" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/26/2021 4:18:04 PM" />
+</body>
+</html>

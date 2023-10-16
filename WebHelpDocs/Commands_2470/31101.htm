@@ -1,0 +1,115 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.setblock() - trigger.BLOCK_DELAY_DYNAMIC </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31347.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31102.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31101" class="heading2-icl">trigger.model.setblock() - trigger.BLOCK_DELAY_DYNAMIC</h2>
+<p class="bodyzero">This function adds a user delay to the execution of the trigger model.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="78"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.setblock(<span class="monospaceitalic"><span class="monospaceitalic">blockNumber</span></span>, trigger.BLOCK_DELAY_DYNAMIC, <code class="monospace"><code class="monospace">trigger.USER_DELAY_M</code></code><span class="monospaceitalic"><span class="monospaceitalic">n</span></span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">blockNumber</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The sequence of the block in the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">userDelay</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of the user delay:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">trigger.USER_DELAY_M</code></code><span class="monospaceitalic"><span class="monospaceitalic">n</span></span>, where <span class="monospaceitalic"><span class="monospaceitalic">n</span></span> is the number of the user delay (1 to 5) set by <code class="monospace">smu.measure.userdelay[</code><span class="monospaceitalic">N</span><code class="monospace">]</code></li><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">trigger.USER_DELAY_S</code></code><span class="monospaceitalic"><span class="monospaceitalic">n</span></span>, where <span class="monospaceitalic"><span class="monospaceitalic">n</span></span> is the number of the user delay (1 to 5) set by <code class="monospace"><code class="monospace">smu.source.userdelay[</code></code><span class="monospaceitalic"><span class="monospaceitalic">N</span></span><code class="monospace"><code class="monospace">]</code></code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">When trigger model execution reaches a dynamic delay block, it stops normal measurement and trigger model operation for the time set by the delay. Background measurements continue to be made.</p>
+<p class="iclbody">Each measure function can have up to five unique user delay times (M1 to M5). Each source function can also have up to five unique user delay times (S1 to S5). The delay time is set by the user-delay command, which is only available over a remote interface. </p>
+<p class="iclbody">Though the trigger model can be used with any function, the user delay is set per function. Make sure you are setting the delay for the function you intend to use with the trigger model.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smu.measure.userdelay[1] = 5</p>
+<p class="codetable">trigger.model.setblock(1, trigger.BLOCK_SOURCE_OUTPUT, smu.ON)</p>
+<p class="codetable">trigger.model.setblock(2, trigger.BLOCK_DELAY_DYNAMIC, trigger.USER_DELAY_M1)</p>
+<p class="codetable">trigger.model.setblock(3, trigger.BLOCK_MEASURE_DIGITIZE)</p>
+<p class="codetable">trigger.model.setblock(4, trigger.BLOCK_SOURCE_OUTPUT, smu.OFF)</p>
+<p class="codetable">trigger.model.setblock(5, trigger.BLOCK_BRANCH_COUNTER, 10, 1)</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set user delay for measure 1 to 5 s.</p>
+<p class="tablebodytext">Set trigger block 1 to turn the source output on.</p>
+<p class="tablebodytext">Set trigger block 2 to a dynamic delay that calls measure user delay 1.</p>
+<p class="tablebodytext">Set trigger block 3 to make a measurement.</p>
+<p class="tablebodytext">Set trigger block 4 to turn the source output off.</p>
+<p class="tablebodytext">Set trigger block 5 to branch to block 1 ten times.</p>
+<p class="tablebodytext">Start the trigger model.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"> </p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31442" class="jump" title="smu.measure.userdelay[N]" href="31441.htm" target="_self">smu.measure.userdelay[N]</a></p>
+<p class="listcommand"><a id="h34974" class="jump" title="smu.source.userdelay[N]" href="34973.htm" target="_self">smu.source.userdelay[N]</a></p>
+
+
+<input id="topicId" type="hidden" value="31101" />
+<input id="topicDescription" type="hidden" value="trigger.model.setblock() &#0151; trigger.BLOCK_DELAY_DYNAMIC" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2019 9:53:48 AM" />
+</body>
+</html>

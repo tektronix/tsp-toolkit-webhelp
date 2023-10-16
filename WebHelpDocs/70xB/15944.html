@@ -1,0 +1,108 @@
+<html><head><title> channel.setlabel() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17402.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17319.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.setlabel()</h2>
+<p class="bodyzero">This function sets the label associated with a channel.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">No label</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.setlabel(<em class="emphasis">channelList</em>, <em class="emphasis">label</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="135"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="608"><p class="tablebodytext">A string that lists the channel to set the label associated with it</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="135"><p class="codetable"><span class="monospaceitalic">label</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="608"><p class="tablebodytext">A string that represents the label for items in <span class="monospaceitalic">channelList</span>, up to 19 characters</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets the label of the channel specified in <span class="monospaceitalic">channelList</span> to the value specified in the <span class="monospaceitalic">label</span> parameter.</p>
+<p class="iclbody">The <span class="monospaceitalic">label</span> parameter must be unique. In addition, it cannot be the same as the name of a channel pattern, row label, or column label.</p>
+<p class="iclbody">To clear the label, set <span class="monospaceitalic">label</span> to an empty string (<code class="monospace">&quot;&quot;</code>) or to a string with a space as the first character.</p>
+<p class="iclbody">After defining a label, you can use it to specify the channel instead of using the channel specifier.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet2"><li class="listbullet2">The card in the channel slot does not support a label setting</li><li class="listbullet2">The label contains a space. However, if the first character is a space, the label is cleared</li><li class="listbullet2">The label is already used to represent a channel pattern</li></ul><p class="iclbody">The label does not persist through a power cycle.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setlabel(&quot;1A01&quot;, &quot;start&quot;)</p>
+<p class="codetable">channel.close(&quot;start&quot;)</p>
+<p class="codetable">print(channel.getclose(&quot;allslots&quot;))</p>
+</td>
+<td width="338"><p class="tablebodytext">Sets the label for channel row 1 and column&nbsp;01 on slot 1 to &quot;start&quot;.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1A01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setlabel(&quot;1A01&quot;, &quot;&quot;)</p>
+</td>
+<td width="338"><p class="tablebodytext">Clears the label for channel row 1 and column&nbsp;01, slot 1 back to &quot;1A01&quot;.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.setlabel(&quot;1A01&quot;, &quot; &quot;)</p>
+</td>
+<td width="338"><p class="tablebodytext">Also clears the label for channel row 1 and column 01, slot 1 back to &quot;1A01&quot;.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h2376" class="jumptemplate" title="channels functions and attributes" href="17223.html" target="_self">channel functions and attributes</a></p>
+<p class="iclbody"><a id="h17324" class="jumptemplate" title="channel.setlabelcolumn()" href="17319.html" target="_self">channel.setlabelcolumn()</a></p>
+<p class="iclbody"><a id="h17325" class="jumptemplate" title="channel.setlabelrow()" href="17318.html" target="_self">channel.setlabelrow()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

@@ -1,0 +1,276 @@
+<html>
+<head>
+<title> Function and variable name restrictions </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16697.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2420.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h5 class="heading5">Function and variable name restrictions</h5>
+<p class="bodytext">You cannot use Lua reserved words and top level command names for function or variable names.</p>
+<p class="bodytext">You cannot use the following Lua reserved words for function or variable names.</p>
+<table class="tableintopic" width="288" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="96" height="0"></td>
+<td width="96" height="0"></td>
+<td width="96" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #010101;" colspan="3" width="288"><p class="tableheading">Lua reserved words</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="96"><p class="codetable">and</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">for</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">or</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="96"><p class="codetable">break</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">function</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">repeat</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="96"><p class="codetable">do</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">if</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">return</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="96"><p class="codetable">else</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">in</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">then</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="96"><p class="codetable">elseif</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">local</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">true</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="96"><p class="codetable">end</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">nil</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">until</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="96"><p class="codetable">false</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">not</p>
+</td>
+<td style="border:1px solid #010101;" width="96"><p class="codetable">while</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">There are additional words you cannot use as variable names. These include top&#8209;level command names; if you use these names, it results in the loss of use of the commands. For example, if you send the command <code class="monospace">digio = 5</code>, you cannot access the <code class="monospace">digio.*</code> commands until you turn the instrument power off and then turn it on again.</p>
+<p class="bodytext">The words that cannot be used as variable names are listed in the following table.</p>
+<table class="tableintopic" width="270" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="132" height="0"></td>
+<td width="137" height="0"></td>
+<td width="0" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #010101;" colspan="2" width="270"><p class="tableheading">Words that cannot be used as variable names</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">beeper</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">opc</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">bit</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">os</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">buffer</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">print</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">channel</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">printbuffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">collectgarbage</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">printnumber</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">dataqueue</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">reset</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">delay</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">script</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">digio</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">serial</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">display</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">settime</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">errorqueue</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">settimezone</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">eventlog</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">setup</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">exit</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">smu</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">format</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">status</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">file</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">string</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">fs</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">timer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">gcinfo</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">tonumber</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">gettimezone</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">tostring</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">gpib</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">trigger</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">io</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">tsplink</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">lan</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">tspnet</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">localnode</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">type</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">makegetter</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">upgrade</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">makesetter</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">userstring</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="132"><p class="codetable">node</p>
+</td>
+<td style="border:1px solid #010101;" colspan="2" width="138"><p class="codetable">waitcomplete</p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14284.html" target="_self">Lua basics</a></p><p class="relateditem"><a href="16697.html" target="_self">Comments</a></p><p class="relateditem"><a href="2420.html" target="_self">Values and variable types</a></p><p class="relateditem"><a href="16831.html" target="_self">Variable types</a></p><p class="relateditem"><a href="16830.html" target="_self">Delete a global variable</a></p><p class="relateditem"><a href="2422.html" target="_self">Functions</a></p><p class="relateditem"><a href="16449.html" target="_self">Operators</a></p><p class="relateditem"><a href="2427.html" target="_self">Conditional branching</a></p><p class="relateditem"><a href="2428.html" target="_self">Loop control</a></p><p class="relateditem"><a href="2423.html" target="_self">Tables and arrays</a></p></td>
+</tr>
+</table>
+
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2013, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

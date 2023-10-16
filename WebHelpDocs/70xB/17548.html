@@ -1,0 +1,103 @@
+<html><head><title> channel.open() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17547.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15934.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.open()</h2>
+<p class="bodyzero">This function opens the specified channels and channel patterns.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.open(<em class="emphasis">channelList</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">String listing the channels and channel patterns to open</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function opens the specified channels for switching.</p>
+<p class="iclbody">The settling time associated with a channel must elapse before the command completes. User delay is not added when a relay opens.</p>
+<p class="iclbody"></p>
+<p class="iclsubheading">Example 1</p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.open(&quot;1A01:1A05, 3B03, Chans&quot;)</p>
+</td>
+<td width="338"><p class="tablebodytext">Opens channels in Row 1, Columns 01 to 05 on Slot 1; Row 2, Column 03 on Slot 3; and the channels in the channel pattern <code class="monospace">Chans</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.open(&quot;slot3, slot5&quot;)</p>
+</td>
+<td width="338"><p class="tablebodytext">Opens all channels on Slots 3 and 5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.open(&quot;allslots&quot;)</p>
+</td>
+<td width="338"><p class="tablebodytext">Opens all channels on all slots.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h769" class="jumptemplate" title="channel.close()" href="17229.html" target="_self">channel.close()</a></p>
+<p class="iclbody"><a id="h770" class="jumptemplate" title="channel.exclusiveclose()" href="17435.html" target="_self">channel.exclusiveclose()</a></p>
+<p class="iclbody"><a id="h769_2" class="jumptemplate" title="channel.close()" href="17229.html" target="_self">channel.close()</a></p>
+<p class="iclbody"><a id="h770_2" class="jumptemplate" title="channel.exclusiveclose()" href="17435.html" target="_self">channel.exclusiveclose()</a></p>
+<p class="iclbody"><a id="h777" class="jumptemplate" title="channel.exclusiveslotclose()" href="17437.html" target="_self">channel.exclusiveslotclose()</a></p>
+<p class="iclbody"><a id="h768" class="jumptemplate" title="channel.getclose()" href="17247.html" target="_self">channel.getclose()</a></p>
+<p class="iclbody"><a id="h792" class="jumptemplate" title="channel.getdelay()" href="17521.html" target="_self">channel.getdelay()</a></p>
+<p class="iclbody"><a id="h776" class="jumptemplate" title="channel.pattern.getimage()" href="17284.html" target="_self">channel.pattern.getimage()</a></p>
+<p class="iclbody"><a id="h767" class="jumptemplate" title="channel.getstate()" href="17546.html" target="_self">channel.getstate()</a></p>
+<p class="iclbody"><a id="h774" class="jumptemplate" title="channel.setdelay()" href="17522.html" target="_self">channel.setdelay() </a></p>
+<p class="iclbody"><a id="h16182" class="jumptemplate" title="channel.setforbidden()" href="17402.html" target="_self">channel.setforbidden()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

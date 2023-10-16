@@ -1,0 +1,102 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16050.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="20200.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16051" class="heading2-icl">dmm.measurewithtime()</h2>
+<p class="bodyzero">This function returns the last actual measurement and time information in UTC format without using the trigger model. You can also use a reading buffer to store additional information that is acquired while making a measurement.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">reading, seconds, fractional</span> = dmm.measurewithtime()</p>
+<p class="iclcode"><span class="monospaceitalic">reading, seconds, fractional</span> = dmm.measurewithtime(<span class="monospaceitalic">bufferVar</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable"><span class="monospaceitalic">reading</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">The last reading of the measurement process</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable"><span class="monospaceitalic">seconds</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">Seconds in UTC format</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable"><span class="monospaceitalic">fractional</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">Fractional seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">A previously created reading buffer variable in which all readings are stored</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This is not available for <code class="monospace">&quot;nofunction&quot;</code>. If the command is queried when <code class="monospace">&quot;nofunction&quot;</code> is selected, <code class="monospace">nil</code> is returned. If it is written when <code class="monospace">&quot;nofunction&quot;</code> is selected, an error is returned.</p>
+<p class="iclbody">When a reading buffer is used with a command or action that involves taking multiple readings, such as <code class="monospace">dmm.measure</code> or scanning, all readings are available in the reading buffer. However, only the last reading and time information (seconds and fractional seconds) is returned as a reading with the command.</p>
+<p class="iclbody">You can also use a reading buffer to store additional information that is acquired while making a measurement.</p>
+<p class="iclbody">The <code class="monospace">dmm.measurecount</code> attribute determines how many measurements are performed. When you use a buffer, it also determines if the reading buffer has enough room to store the requested readings. The amount of room is based on readings already stored in the buffer (<span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>), the capacity of the buffer (<span class="monospaceitalic">bufferVar</span><code class="monospace">.capacity</code>), and the append mode of the reading buffer (<span class="monospaceitalic">bufferVar</span><code class="monospace">.appendmode</code>). If the append mode is set to 0, any stored readings in the buffer are cleared before new ones are stored. If append mode is set to 1, any stored readings remain in the buffer and new ones are added to the buffer after the stored ones.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">DCVbuffer = dmm.makebuffer(100)</p>
+<p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.measurecount = 100</p>
+<p class="codetable">reading, seconds, fractional = dmm.measurewithtime(DCVbuffer)</p>
+<p class="codetable">print(reading, seconds, fractional)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create a reading buffer.</p>
+<p class="tablebodytext">Perform 100 DC voltage measurements.</p>
+<p class="tablebodytext">Store the measurements in a buffer called <code class="monospace">DCVbuffer</code>.</p>
+<p class="tablebodytext">Print the last measurement and time information in UTC format, which will look similar to:</p>
+<p class="codetable">-1.064005867e-02   1.779155900e+07&nbsp;&nbsp;&nbsp;1.245658350e-01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Reading buffers</p>
+<p class="listcommand"><a id="h903" class="jump" title="dmm.makebuffer()" href="16048.htm" target="_self">dmm.makebuffer()</a></p>
+<p class="listcommand"><a id="h884" class="jump" title="dmm.measure()" href="16049.htm" target="_self">dmm.measure()</a></p>
+<p class="listcommand"><a id="h904" class="jump" title="dmm.measurecount" href="16050.htm" target="_self">dmm.measurecount</a></p>
+
+

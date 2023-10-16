@@ -1,0 +1,78 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16057.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16059.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16058" class="heading2-icl">dmm.rel.acquire()</h2>
+<p class="bodyzero">This function acquires a measurement and stores it as the relative offset value.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">relativeValue</span> = dmm.rel.acquire()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">relativeValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The internal measurement acquired for the relative offset level value</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is not applicable for <code class="monospace">&quot;continuity&quot;</code> and <code class="monospace">&quot;nofunction&quot;</code>.</p>
+<p class="iclbody">This command triggers the instrument to make a new measurement for the selected function. This measurement is then stored as the new relative offset level.</p>
+<p class="iclbody">When you send this command, the instrument does not apply any math, limit test, or filter settings to the measurement, even if they are set. It is a measurement that is made as if these settings are disabled.</p>
+<p class="iclbody">If an error event occurs during the measurement, <code class="monospace">nil</code> is returned and the relative offset level remains at the last valid setting.</p>
+<p class="iclbody">You must change to the function for which you want to acquire a value before sending this command.</p>
+<p class="iclbody">The instrument must have relative offset enabled to use the acquired relative offset value.</p>
+<p class="iclbody">After executing this command, use the <code class="monospace">dmm.rel.level</code> attribute to see the last relative level value that was acquired or set by the user. </p>
+<p class="iclbody">If error occurs during the reading, nil is returned.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">dmm.func</code> is set to <code class="monospace">&quot;continuity&quot;</code> or <code class="monospace">&quot;nofunction&quot;</code>.</li><li class="listbullet">The DMM is unable to take the measurement.</li></ul><p class="iclbody">When an error occurs, the relative offset level setting maintains the last valid setting.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="324"><p class="codetable">dmm.func = &quot;temperature&quot;</p>
+<p class="codetable">rel_value = dmm.rel.acquire()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="270"><p class="tablebodytext">Acquires a relative offset level value for temperature.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h912" class="jump" title="dmm.rel.level" href="16060.htm" target="_self">dmm.rel.level</a></p>
+
+

@@ -1,0 +1,133 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17404.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17536.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17523" class="heading2-icl">channel.getimage()</h2>
+<p class="bodyzero">This function queries a channel for items associated with that channel when used in a switching operation.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="96"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="168"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup<br>Related backplane relays<br>Pole settings</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="96"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="168"><p class="tablebodytextsmall">channel identifier</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">channels</em> = channel.getimage(&quot;<em class="emphasis">channelList</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channels</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">A string listing the channels and analog backplane relays associated with the specified items</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">A string representing the channels and analog backplane relays to query</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The parameter string can contain <code class="monospace">&quot;slot</code><span class="monospaceitalic">X</span><code class="monospace">&quot;(</code>where <span class="monospaceitalic">X</span> equals 1 to 6) or <code class="monospace">&quot;allslots&quot;</code>.</p>
+<p class="iclbody">The returned string lists the channels in slot, channel format or slot, row, column format. A request for multiple channels is delimited by a semicolon. Note that commas delimit the specific channels and analog backplane relays for an individual channel in the string.</p>
+<p class="iclbody">If an error is detected, the response is <code class="monospace">nil</code>. </p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet2"><li class="listbullet2">A channel pattern is specified</li><li class="listbullet2">An empty parameter string is specified</li><li class="listbullet2"><code class="monospace">slot</code><span class="monospaceitalic">X</span> is empty or <code class="monospace">allslots</code> parses to specify no valid channels because all slots are empty</li></ul><p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.setpole(&quot;2005&quot;, 2)</p>
+<p class="codetable">channel.setbackplane(&quot;2005&quot;, &quot;2911&quot;)  </p>
+<p class="codetable">channels = channel.getimage(&quot;2005&quot;)</p>
+<p class="codetable">print(channels)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set channel 5 on slot 2 for a 2-wire switch application.</p>
+<p class="tablebodytext">Associate analog backplane relay 1 in bank 1 on slot 2 with channel 5 on slot 2.</p>
+<p class="tablebodytext">Query channel 5 on slot 2. </p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2005,2911</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.setpole(&quot;2003&quot;, 4)</p>
+<p class="codetable">channel.setbackplane(&quot;2003&quot;, &quot;2911,2922&quot;)</p>
+<p class="codetable">channels = channel.getimage(&quot;2003&quot;)</p>
+<p class="codetable">print(channels)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set channel 3 on slot 2 for a 4-wire switch application.</p>
+<p class="tablebodytext">Associate analog backplane relays 1 in bank 1 and 2 in slot 2 with channel 3 on slot 2.</p>
+<p class="tablebodytext">Query channel 3 on slot 2 (assuming channel 3 on slot 2 is on a 40-channel card).</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2003(2023),2911,2922</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channels = channel.getimage(&quot;2003, 2005&quot;)</p>
+<p class="codetable">print(channels)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Query for channels 2003 and 2005 in a single call (assuming they are configured as shown in examples 1 and 2).</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2003(2023),2911,2922;2005,2911</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 4</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channels = channel.getimage(&quot;2023&quot;)</p>
+<p class="codetable">print(channels)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Query channel 2023.</p>
+<p class="tablebodytext">Query channel 3 on slot 2 (assuming channel 23 on slot 2 is on a 40-channel card).</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">nil</p>
+<p class="codetable">2023 is paired for 4-wire operation</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Channel</p>
+<p class="listcommand"><a id="h776" class="jump" title="channel.pattern.getimage()" href="17284.htm" target="_self">channel.pattern.getimage()</a></p>
+<p class="listcommand">Data retrieval commands</p>
+
+

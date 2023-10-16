@@ -1,0 +1,160 @@
+<html><head><title> tsplink.trigger[N].stimulus </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17669.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15300.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">tsplink.trigger[N].stimulus</h2>
+<p class="bodyzero">This attribute specifies the event that causes the synchronization line to assert a trigger.</p>
+<table width="818" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="165"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="158"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="240"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="165"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="158"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">TSP-Link trigger N reset</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="240"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">eventID</em> = tsplink.trigger[<em class="emphasis">N</em>].stimulus</p>
+<p class="iclcode">tsplink.trigger[<em class="emphasis">N</em>].stimulus = <em class="emphasis">eventID</em></p>
+<p class="iclspacing"></p>
+<table width="735" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">eventID</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="562"><p class="tablebodytext">The event identifier for the triggering event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="562"><p class="tablebodytext">The trigger line (1 to 3)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">To disable automatic trigger assertion on the synchronization line, set this attribute to 0.</p>
+<p class="iclbody">Do not use this attribute when triggering under script control. Use <code class="monospace">tsplink.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].assert()</code> instead.</p>
+<p class="iclbody">The <span class="monospaceitalic">eventID</span><strong class="specialbold"> </strong>parameter may be one of the existing trigger event IDs shown in the following table.</p>
+<p class="magictablecenter"></p>
+<table width="735" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="322" height="0"></td>
+<td width="412" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="735"><p class="tableheading">Trigger event IDs</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<th width="322"><p class="tableheadingsmall">Trigger event ID</p>
+</th>
+<th width="413"><p class="tableheadingsmall">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">digio.trigger[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td width="413"><p class="tablebodytext">An edge (either rising, falling, or either based on the configuration of the line) on the digital input line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">display.trigger.EVENT_ID</p>
+</td>
+<td width="413"><p class="tablebodytext">The trigger key on the front panel is pressed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">trigger.EVENT_ID</p>
+</td>
+<td width="413"><p class="tablebodytext">A *trg message on the active command interface. If GPIB is the active command interface, a GET message also generates this event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">trigger.blender[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td width="413"><p class="tablebodytext">A combination of events has occurred</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">trigger.timer[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td width="413"><p class="tablebodytext">A delay expired</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">tsplink.trigger[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td width="413"><p class="tablebodytext">An edge (either rising, falling, or either based on the configuration of the line) on the TSPLink trigger line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">lan.trigger[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td width="413"><p class="tablebodytext">A LAN trigger event has occurred</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">scan.trigger.EVENT_SCAN_READY</p>
+</td>
+<td width="413"><p class="tablebodytext">Scan ready event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">scan.trigger.EVENT_SCAN_START</p>
+</td>
+<td width="413"><p class="tablebodytext">Scan start event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">scan.trigger.EVENT_CHANNEL_READY</p>
+</td>
+<td width="413"><p class="tablebodytext">Channel ready event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">scan.trigger.EVENT_SCAN_COMP</p>
+</td>
+<td width="413"><p class="tablebodytext">Scan complete event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="322"><p class="codetable">scan.trigger.EVENT_IDLE</p>
+</td>
+<td width="413"><p class="tablebodytext">Idle event</p>
+</td>
+</tr>
+
+</table>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="64" width="234" vspace="0" hspace="0" align="middle" border="0"><br>Use the constant for <span class="monospaceitalic">EVENT_ID</span> rather than the numeric value to set the stimulus. This will help make the code compatible for future upgrades.</p>
+<p class="iclsubheading"><strong class="specialbold"></strong></p>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h12594" class="jumptemplate" title="tsplink.trigger[N].assert()" href="15292.html" target="_self">tsplink.trigger[N].assert()</a></p>
+<p class="iclbody"><a id="h17670" class="jumptemplate" title="tsplink.trigger[N].reset()" href="17669.html" target="_self">tsplink.trigger[N].reset()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

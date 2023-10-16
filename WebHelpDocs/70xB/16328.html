@@ -1,0 +1,77 @@
+<html><head><title> slot[X].idn </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16319.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16335.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">slot[X].idn</h2>
+<p class="bodyzero">This attribute returns a string that contains information about the card in slot&nbsp;<span class="monospaceitalic">X</span>.</p>
+<table width="772" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">idnString</em> = slot[<em class="emphasis">X</em>].idn</p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">idnString</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="525"><p class="tablebodytext">The return string</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="525"><p class="tablebodytext">Slot number (1 to 6)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The information that is returned depends on whether the card in the slot is an actual card or pseudocard.</p>
+<p class="iclbody">For actual cards, this returns a commaseparated string that contains the model number, description, firmware revision, and serial number of the card installed in slot <span class="monospaceitalic">X</span>.</p>
+<p class="iclbody">For pseudocards, the response is <code class="monospace">Pseudo</code>, followed by the model number, description, firmware revision, and <code class="monospace">???</code> for the serial number.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="232"><p class="codetable">print(slot[1].idn)</p>
+</td>
+<td width="465"><p class="tablebodytext">If a Model 7173 card is installed in slot 1, the response is:</p>
+<p class="codetable">7173,4x12 Hi Freq Matrix AAAA,02.01a,99999999</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h1344" class="jumptemplate" title="slot[X] attributes" href="16319.html" target="_self">slot[X] attributes</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

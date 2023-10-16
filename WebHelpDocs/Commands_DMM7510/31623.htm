@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Questionable Event Register </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29851.htm" target="_self"><img id="f125" src="125.gif" class="embeddediconfiletemplate" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="43454.htm" target="_self"><img id="f124" src="124.gif" class="embeddedfilenoinherits" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t31623" class="heading3">Questionable Event Register</h3>
+<p class="bodytext">You can program the bits in the Questionable Event Register to be cleared or set when an event occurs.</p>
+<p class="bodytext">When an enabled Questionable Event Register bit is set (because the enabled event occurs), the corresponding bit B0 (MSB) and Bit B3 (QSB) of the Status Byte Register is set. The corresponding Questionable Event Register Condition Register reflects the present status of the instrument, so it is set while the event occurs.</p>
+<p class="bodytext">When reading a register, a numeric value is returned. The binary equivalent of this value indicates which bits in the register are set. For details, see <a id="h31622" class="jumptemplate" title="Understanding bit settings" href="31618.htm" target="_self">Understanding bit settings</a>.</p>
+<p class="bodytext">You can use the following commands to read and set bits contained in the Questionable Event Register.</p>
+<table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tableheading">Description</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tableheading">SCPI command</p>
+</td>
+<td style="border:1px solid #010101;" width="198"><p class="tableheading">TSP command</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Read the Questionable Condition Register</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">:STATus:QUEStionable:CONDition?</p>
+</td>
+<td style="border:1px solid #010101;" width="198"><p class="tablebodytext"><a id="h31634" class="jumptemplate" title="status.questionable.condition" href="31614.htm" target="_self">status.questionable.condition</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Set or read the contents of the Questionable Event Enable Register</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">:STATus:QUEStionable:ENABle</p>
+</td>
+<td style="border:1px solid #010101;" width="198"><p class="tablebodytext"><a id="h31633" class="jumptemplate" title="status.questionable.enable" href="31615.htm" target="_self">status.questionable.enable</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Read the Questionable Event Register</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">:STATus:QUEStionable[:EVENt]?</p>
+</td>
+<td style="border:1px solid #010101;" width="198"><p class="tablebodytext"><a id="h31608" class="jumptemplate" title="status.questionable.event" href="30524.htm" target="_self">status.questionable.event</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Request the mapped set event and mapped clear event status for a bit in the Questionable Event Register</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">:STATus:QUEStionable:MAP</p>
+</td>
+<td style="border:1px solid #010101;" width="198"><p class="tablebodytext"><a id="h31632" class="jumptemplate" title="status.questionable.getmap()" href="31613.htm" target="_self">status.questionable.getmap()</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="174"><p class="tablebodytext">Map event to a bit in the Questionable Event Register</p>
+</td>
+<td style="border:1px solid #010101;" width="210"><p class="tablebodytext">:STATus:QUEStionable:MAP</p>
+</td>
+<td style="border:1px solid #010101;" width="198"><p class="tablebodytext"><a id="h31631" class="jumptemplate" title="status.questionable.setmap()" href="31612.htm" target="_self">status.questionable.setmap()</a></p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="46200.htm" target="_self">Additional Model DMM7510 information</a></p><p class="relateditem"><a href="29798.htm" target="_self">*CLS</a></p><p class="relateditem"><a href="29799.htm" target="_self">*ESE</a></p><p class="relateditem"><a href="29803.htm" target="_self">*OPC</a></p><p class="relateditem"><a href="30227.htm" target="_self">Aborting the trigger model</a></p><p class="relateditem"><a href="33076.htm" target="_self">Adjust the backlight brightness and dimmer</a></p><p class="relateditem"><a href="46302.htm" target="_self">Analog triggering example with digitize function</a></p><p class="relateditem"><a href="41756.htm" target="_self">Analog triggering overview</a></p><p class="relateditem"><a href="43492.htm" target="_self">Auto calibration</a></p><p class="relateditem"><a href="29727.htm" target="_self">Automatic reference measurements</a></p><p class="relateditem"><a href="31007.htm" target="_self">Branching building blocks</a></p><p class="relateditem"><a href="30865.htm" target="_self">Buffer clear building block</a></p><p class="relateditem"><a href="30116.htm" target="_self">Calculations that you can apply to measurements</a></p><p class="relateditem"><a href="31431.htm" target="_self">Configuration lists</a></p><p class="relateditem"><a href="31010.htm" target="_self">Constant Limit building block</a></p><p class="relateditem"><a href="47132.htm" target="_self">DC and AC coupling</a></p><p class="relateditem"><a href="33305_1.htm" target="_self">Deleting a user script using a remote interface</a></p><p class="relateditem"><a href="31015.htm" target="_self">Delta building block</a></p><p class="relateditem"><a href="33036.htm" target="_self">Digital I/O</a></p><p class="relateditem"><a href="33053.htm" target="_self">Digital I/O lines</a></p><p class="relateditem"><a href="33038.htm" target="_self">Digital I/O port configuration</a></p><p class="relateditem"><a href="43529.htm" target="_self">Digitize building block</a></p><p class="relateditem"><a href="41554.htm" target="_self">Digitize functions</a></p><p class="relateditem"><a href="29982.htm" target="_self">Displayed measurements</a></p><p class="relateditem"><a href="31012.htm" target="_self">Dynamic Limits building block</a></p><p class="relateditem"><a href="29871.htm" target="_self">Effect of GPIB line events on Model DMM7510</a></p><p class="relateditem"><a href="30043.htm" target="_self">Filtering measurement data</a></p><p class="relateditem"><a href="41675.htm" target="_self">GPIB setup</a></p><p class="relateditem"><a href="41760.htm" target="_self">Grading and binning resistors</a></p><p class="relateditem"><a href="34639.htm" target="_self">Instrument access</a></p><p class="relateditem"><a href="30143.htm" target="_self">Limit testing and binning</a></p><p class="relateditem"><a href="43534.htm" target="_self">Line cycle synchronization</a></p><p class="relateditem"><a href="30866.htm" target="_self">Measure building block</a></p><p class="relateditem"><a href="1190.htm" target="_self">mx+b</a></p><p class="relateditem"><a href="30940.htm" target="_self">Notify building block</a></p><p class="relateditem"><a href="31009.htm" target="_self">On event building block</a></p><p class="relateditem"><a href="31017.htm" target="_self">Once building block</a></p><p class="relateditem"><a href="31018.htm" target="_self">Once excluded building block</a></p><p class="relateditem"><a href="47101.htm" target="_self">Open lead detection</a></p><p class="relateditem"><a href="31651.htm" target="_self">Operation Event Register</a></p><p class="relateditem"><a href="39968.htm" target="_self">Order of operations</a></p><p class="relateditem"><a href="30859.htm" target="_self">Predefined trigger models</a></p><p class="relateditem"><a href="29851.htm" target="_self">Programmable status register sets</a></p><p class="relateditem"><a href="43454.htm" target="_self">Ranges</a></p><p class="relateditem"><a href="33231.htm" target="_self">Reading buffers</a></p><p class="relateditem"><a href="29985.htm" target="_self">Relative offset</a></p><p class="relateditem"><a href="33726.htm" target="_self">Remote buffer operation</a></p><p class="relateditem"><a href="16529.htm" target="_self">Remote communications interfaces</a></p><p class="relateditem"><a href="40105.htm" target="_self">Resets</a></p><p class="relateditem"><a href="29454.htm" target="_self">Saving setups</a></p><p class="relateditem"><a href="12293.htm" target="_self">Serial polling and SRQ</a></p><p class="relateditem"><a href="38949.htm" target="_self">Setting the display format</a></p><p class="relateditem"><a href="29442.htm" target="_self">Setting the number of displayed digits</a></p><p class="relateditem"><a href="31656.htm" target="_self">Standard Event Register</a></p><p class="relateditem"><a href="19551.htm" target="_self">Status model</a></p><p class="relateditem"><a href="43355.htm" target="_self">Temperature measurements</a></p><p class="relateditem"><a href="31133.htm" target="_self">Trigger model</a></p><p class="relateditem"><a href="40093.htm" target="_self">Triggering</a></p><p class="relateditem"><a href="32518.htm" target="_self">Triggering using TSP-Link synchronization lines</a></p><p class="relateditem"><a href="27120.htm" target="_self">TSP-Link System Expansion Interface</a></p><p class="relateditem"><a href="31618.htm" target="_self">Understanding bit settings</a></p><p class="relateditem"><a href="31944.htm" target="_self">Upgrading the firmware</a></p><p class="relateditem"><a href="ID_SPEED_SLIDER.html" target="_self">Using aperture or NPLCs to adjust speed and accuracy</a></p><p class="relateditem"><a href="32667.htm" target="_self">Using groups to manage nodes on a TSP-Link system</a></p><p class="relateditem"><a href="33195.htm" target="_self">Using the event log</a></p><p class="relateditem"><a href="31125.htm" target="_self">Using trigger events to start actions in the trigger model</a></p><p class="relateditem"><a href="30864.htm" target="_self">Wait building block</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="31623" />
+<input id="topicDescription" type="hidden" value="Questionable Event Register" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/16/2014 7:42:39 AM" />
+</body>
+</html>

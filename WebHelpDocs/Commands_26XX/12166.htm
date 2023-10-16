@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Error levels </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13015.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12162.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t12166" class="heading2">Error levels</h2>
+<p class="bodytext">Error messages are listed in <a id="h12781" class="jump" title="Error summary list" href="77705.htm" target="_self">Error summary list</a>. Errors have one of the following error levels:</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Number</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Error level</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="378"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tablebodytext">NO_SEVERITY</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="378"><p class="tablebodytext">The message is information only. This level is used when the error queue is empty; the message does not represent an error.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">10</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tablebodytext">INFORMATIONAL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="378"><p class="tablebodytext">The message is information only. This level is used to indicate status changes; the message does not represent an error.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">20</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tablebodytext">RECOVERABLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="378"><p class="tablebodytext">The error was caused by improper use of the instrument or by conditions that can be corrected. This message indicates that an error occurred. The instrument is still operating normally.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">30</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tablebodytext">SERIOUS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="378"><p class="tablebodytext">There is a condition that prevents the instrument from functioning properly. The message indicates that the instrument is presently operating in an error condition. If the condition is corrected, the instrument returns to normal operation.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">40</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tablebodytext">FATAL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="378"><p class="tablebodytext">There is a condition that cannot be corrected that prevents the instrument from functioning properly. Disconnect the DUT and turn the power off and then on again. If the error is a hardware fault that persists after cycling the power, the instrument must be repaired.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13046.htm" target="_self">Troubleshooting guide</a></p><p class="relateditem"><a href="13015.htm" target="_self">Introduction</a></p><p class="relateditem"><a href="12162.htm" target="_self">Effects of errors on scripts</a></p><p class="relateditem"><a href="66582.htm" target="_self">Retrieving errors</a></p><p class="relateditem"><a href="77705.htm" target="_self">Error summary list</a></p><p class="relateditem"><a href="16537.htm" target="_self">LAN troubleshooting suggestions</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12166" />
+<input id="topicDescription" type="hidden" value="Error levels" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 9:13:27 AM" />
+</body>
+</html>

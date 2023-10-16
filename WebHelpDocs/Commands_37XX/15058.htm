@@ -1,0 +1,104 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15057.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="20216.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15058" class="heading2-icl">printnumber()</h2>
+<p class="bodyzero">This function prints numbers using the configured format.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">printnumber(<em class="emphasis">value1</em>)</p>
+<p class="iclcode">printnumber(<em class="emphasis">value1</em>, <em class="emphasis">value2</em>)</p>
+<p class="iclcode">printnumber(<em class="emphasis">value1</em>, ..., <em class="emphasis">valueN</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value1</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">First value to print in the configured format</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value2</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Second value to print in the configured format</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">valueN</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Last value to print in the configured format</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">...</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">One or more values separated with commas</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">There are multiple ways to use this function, depending on how many numbers are to be printed.</p>
+<p class="iclbody">This function prints the given numbers using the data format specified by <code class="monospace">format.data</code> and <code class="monospace">format.asciiprecision</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">format.asciiprecision = 10</p>
+<p class="codetable">x = 2.54</p>
+<p class="codetable">printnumber(x)</p>
+<p class="codetable">format.asciiprecision = 3</p>
+<p class="codetable">printnumber(x, 2.54321, 3.1)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Configure the ASCII precision to 10 and set <code class="monospace">x</code> to 2.54.</p>
+<p class="tablebodytext">Read the value of <code class="monospace">x</code> based on these settings.</p>
+<p class="tablebodytext">Change the ASCII precision to 3.</p>
+<p class="tablebodytext">View how the change affects the output of <code class="monospace">x</code> and some numbers.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2.540000000e+00</p>
+<p class="codetable">2.54e+00, 2.54e+00, 3.10e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14804" class="jump" title="format.asciiprecision" href="14797.htm" target="_self">format.asciiprecision</a></p>
+<p class="listcommand"><a id="h14805" class="jump" title="format.byteorder" href="14801.htm" target="_self">format.byteorder</a></p>
+<p class="listcommand"><a id="h14806" class="jump" title="format.data" href="14803.htm" target="_self">format.data</a></p>
+<p class="listcommand"><a id="h17646" class="jump" title="print()" href="17645.htm" target="_self">print()</a></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+
+

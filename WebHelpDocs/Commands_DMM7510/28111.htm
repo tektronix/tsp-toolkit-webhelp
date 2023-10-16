@@ -1,0 +1,138 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.lanin[N].edge </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31398.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31413.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t28111" class="heading2-icl">trigger.lanin[N].edge</h2>
+<p class="bodyzero">This attribute sets the trigger operation and detection mode of the specified LAN event.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">trigger.EDGE_EITHER</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">edgeMode</em> = trigger.lanin[<em class="emphasis">N</em>].edge</p>
+<p class="iclcode">trigger.lanin[<em class="emphasis">N</em>].edge = <em class="emphasis">edgeMode</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">edgeMode</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger mode; see the <strong class="specialbold">Details</strong> for more information</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The LAN event number (1 to 8)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command controls how the trigger event detector and the output trigger generator operate on the given trigger. These settings are intended to provide behavior similar to the digital I/O triggers.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="3" width="600"><p class="tableheading">LAN trigger mode values</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tableheading">Mode</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tableheading">Trigger packets detected as input</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tableheading">LAN trigger packet generated for output with a…</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext"><code class="monospace">trigger.EDGE_EITHER</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Rising or falling edge (positive or negative state)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">negative state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext"><code class="monospace">trigger.EDGE_FALLING</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Falling edge (negative state)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">negative state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext"><code class="monospace">trigger.EDGE_RISING</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Rising edge (positive state)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">positive state</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">trigger.lanin[1].edge = trigger.EDGE_FALLING</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set the edge state of LAN event 1 to falling.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12542" class="jump" title="Digital I/O" href="33036.htm" target="_self">Digital I/O</a></p>
+<p class="listcommand"><a id="h16986" class="jump" title="TSP-Link System Expansion Interface" href="27120.htm" target="_self">TSP-Link system expansion interface</a></p>
+
+
+<input id="topicId" type="hidden" value="28111" />
+<input id="topicDescription" type="hidden" value="trigger.lanin[N].edge" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2019 9:17:22 AM" />
+</body>
+</html>

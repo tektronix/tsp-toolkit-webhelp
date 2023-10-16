@@ -1,0 +1,155 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> scan.add() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="34054.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="72434.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t74583" class="heading2-icl">scan.add()</h2>
+<p class="bodyzero">This function adds channels to the scan list.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="78"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">scan.add(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclcode">scan.add(&quot;<span class="monospaceitalic">channelList</span>&quot;, &quot;<span class="monospaceitalic">configList</span>&quot;)</p>
+<p class="iclcode">scan.add(&quot;<span class="monospaceitalic">channelList</span>&quot;, &quot;<span class="monospaceitalic">configList</span>&quot;, <span class="monospaceitalic">index</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">List of channels to add, in the order in which they should occur in the scan</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">configList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that defines the configuration list to recall</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">index</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The index in the configuration list to recall; default is <code class="monospace">1</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Use this function to add channels to the present scan list. If the scan list does not exist, it also creates a scan list.</p>
+<p class="iclbody">Channels are added to the end of the present list in the order in which they are specified in the channel list.</p>
+<p class="iclbody">If you include a configuration list, the configuration list must exist before you send this command.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>The front-panel SCAN screen does not show settings set by this configuration list parameter. To check settings, use the command <code class="monospace">scan.list()</code>.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.create(&quot;1:4&quot;)</p>
+<p class="codetable">scan.add(&quot;10, 8, 9&quot;)</p>
+<p class="codetable">scan.add(&quot;7&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Replaces the existing scan list with a scan list that scans channels 1 to 4. Adds channels 10, 8, and 9 to the end of the scan list, to be scanned in that order.</p>
+<p class="tablebodytext">Adds channel 7 to the end of the scan list.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">dmm.measure.func = dmm.FUNC_DC_VOLTAGE</p>
+<p class="codetable">dmm.measure.range = 10</p>
+<p class="codetable">dmm.measure.nplc = 10</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">dmm.measure.configlist.create(&quot;scanconfig&quot;)</p>
+<p class="codetable">dmm.measure.configlist.store(&quot;scanconfig&quot;)</p>
+<p class="codetable">dmm.measure.nplc = 0.01</p>
+<p class="codetable">dmm.measure.configlist.store(&quot;scanconfig&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.setdmm(&quot;1:4&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_DC_VOLTAGE)</p>
+<p class="codetable">channel.setdmm(&quot;1:4&quot;, dmm.ATTR_MEAS_NPLC, 0.1)</p>
+<p class="codetable">scan.create(&quot;1:4&quot;)</p>
+<p class="codetable">scan.add(&quot;10, 8, 9&quot;)</p>
+<p class="codetable">scan.add(&quot;7&quot;, &quot;scanconfig&quot;, 2)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set up the DMM for the settings you want to use in the scan. This example shows the function set to DC voltage, with a measurement range of 10&nbsp;V and the NPLCs set to 10.</p>
+<p class="tablebodytext">Create a configuration list named <code class="monospace">scanconfig</code>.</p>
+<p class="tablebodytext">Store the present configuration to <code class="monospace">scanconfig</code>.</p>
+<p class="tablebodytext">Set NPLC to 0.01.</p>
+<p class="tablebodytext">Store the present configuration to <code class="monospace">scanconfig</code>. This configuration is stored in index 2.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Set up channels 1 to 4 on slot 1 for DC voltage with NPLC set to 0.1.</p>
+<p class="tablebodytext"> </p>
+<p class="tablebodytext">Create a scan list with a scan list that includes channels 1 to 4.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Adds channels 10, 8, and 9 to the end of the scan list, to be scanned in that order. The settings in the configuration list <code class="monospace">scanconfig</code> are used for these channels.</p>
+<p class="tablebodytext">Adds channel 7 to the end of the scan list. The settings in index 2 of <code class="monospace">scanconfig</code> are used for this channel.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27713" class="jump" title="dmm.measure.configlist.create()" href="25691.htm" target="_self">dmm.measure.configlist.create()</a></p>
+<p class="listcommand"><a id="h1139" class="jump" title="scan.create()" href="74579.htm" target="_self">scan.create()</a></p>
+<p class="listcommand"><a id="h75431" class="jump" title="scan.list()" href="74593.htm" target="_self">scan.list()</a></p>
+<p class="listcommand"><a id="h18584" class="jump" title="Scanning and triggering" href="75273.htm" target="_self">Scanning and triggering</a></p>
+
+
+<input id="topicId" type="hidden" value="74583" />
+<input id="topicDescription" type="hidden" value="scan.add()" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/5/2018 7:18:37 AM" />
+</body>
+</html>

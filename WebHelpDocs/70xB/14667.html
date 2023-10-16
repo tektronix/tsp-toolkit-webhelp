@@ -1,0 +1,66 @@
+<html><head><title> digio functions and attributes </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13949.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14668.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2">digio functions and attributes</h2>
+<p class="bodytext">The digital I/O port of the TSP can control external circuitry (such as a component handler for binning operations). The I/O port has 14 lines. Each line can be at TTL logic state 1 (high) or 0 (low). See the pinout in Rear panel summary for additional information.</p>
+<p class="bodytext">There are commands to read and write to each individual bit, and commands to read and write to the entire port. Use the following code fragment to write to one bit of the digital I/O port. The I/O bit is then read and the state is returned to the computer, where it can be processed or displayed.</p>
+<p class="magictablebody"></p>
+<table width="525" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="300" height="0"></td>
+<td width="225" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style = "border:1px solid #000000;" colspan="2" width="525"><p class="tableheading">Example: Write to one bit of the digital I/O port</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style = "border:1px solid #000000;" width="300"><p class="tableheadingsmall">Command</p>
+</th>
+<th style = "border:1px solid #000000;" width="225"><p class="tableheadingsmall">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="300"><p class="codetable">digio.writebit(4, 0)</p>
+</td>
+<td style = "border:1px solid #000000;" width="225"><p class="tablebodytext">Writes a 0 to Bit 4</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="300"><p class="codetable">data = digio.readbit(4)</p>
+</td>
+<td style = "border:1px solid #000000;" width="225"><p class="tablebodytext">Reads the value at Bit 4</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #000000;" width="300"><p class="codetable">print(data)</p>
+</td>
+<td style = "border:1px solid #000000;" width="225"><p class="tablebodytext">Generates a response message on the computer</p>
+</td>
+</tr>
+
+</table>
+<p class="code2"></p>
+<p class="code2"><a id="h14683" class="jumptemplate" title="digio.readbit()" href="14668.html" target="_self">digio.readbit()</a></p>
+<p class="code2"><a id="h18568" class="jumptemplate" title="digio.readport()" href="14669.html" target="_self">digio.readport()</a></p>
+<p class="code2"><a id="h12593" class="jumptemplate" title="digio.trigger[N].assert" href="14670.html" target="_self">digio.trigger[N].assert()</a></p>
+<p class="code2"><a id="h11090" class="jumptemplate" title="digio.trigger[N].clear()" href="14671.html" target="_self">digio.trigger[N].clear()</a></p>
+<p class="code2"><a id="h14686" class="jumptemplate" title="digio.trigger[N].EVENT_ID" href="14672.html" target="_self">digio.trigger[N].EVENT_ID</a></p>
+<p class="code2"><a id="h18569" class="jumptemplate" title="digio.trigger[N].mode" href="14674.html" target="_self">digio.trigger[N].mode</a></p>
+<p class="code2"><a id="h17603" class="jumptemplate" title="digio.trigger[N].overrun" href="14675.html" target="_self">digio.trigger[N].overrun</a></p>
+<p class="code2"><a id="h14690" class="jumptemplate" title="digio.trigger[N].pulsewidth" href="17691.html" target="_self">digio.trigger[N].pulsewidth</a></p>
+<p class="code2"><a id="h17606" class="jumptemplate" title="digio.trigger[N].release()" href="14677.html" target="_self">digio.trigger[N].release()</a></p>
+<p class="code2"><a id="h17665" class="jumptemplate" title="digio.trigger[N].reset()" href="17719.html" target="_self">digio.trigger[N].reset()</a></p>
+<p class="code2"><a id="h17720" class="jumptemplate" title="digio.trigger[N].stimulus" href="17676.html" target="_self">digio.trigger[N].stimulus</a></p>
+<p class="code2"><a id="h17605" class="jumptemplate" title="digio.trigger[N].wait()" href="14679.html" target="_self">digio.trigger[N].wait()</a></p>
+<p class="code2"><a id="h17599" class="jumptemplate" title="digio.writebit()" href="14680.html" target="_self">digio.writebit()</a></p>
+<p class="code2"><a id="h17600" class="jumptemplate" title="digio.writeport()" href="14681.html" target="_self">digio.writeport()</a></p>
+<p class="code2"><a id="h14696" class="jumptemplate" title="digio.writeprotect" href="14682.html" target="_self">digio.writeprotect</a></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

@@ -1,0 +1,138 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> eventlog.next() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30552.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="34730.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t27658" class="heading2-icl">eventlog.next()</h2>
+<p class="bodyzero">This function returns the oldest unread event message from the event log.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4a6b95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4a6b95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"> <span class="monospaceitalic">eventNumber</span>, <span class="monospaceitalic">message</span>, <span class="monospaceitalic">severity</span>, <span class="monospaceitalic">nodeID</span>, <span class="monospaceitalic">timeSeconds</span>, <span class="monospaceitalic">timeNanoSeconds </span>= eventlog.next()</p>
+<p class="iclcode"> <span class="monospaceitalic">eventNumber</span>, <span class="monospaceitalic">message</span>, <span class="monospaceitalic">severity</span>, <span class="monospaceitalic">nodeID</span>, <span class="monospaceitalic">timeSeconds</span>, <span class="monospaceitalic">timeNanoSeconds </span>= eventlog.next(<span class="monospaceitalic">eventType</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">eventNumber</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The event number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">message</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A description of the event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">severity</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The severity of the event:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Error: <code class="monospace">1</code></li><li class="tablelistbullet9pt">Warning: <code class="monospace">2</code></li><li class="tablelistbullet9pt">Information: <code class="monospace">4</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">nodeID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The TSP-Link node where the event occurred or <code class="monospace">0</code> if the event occurred on the local node</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">timeSeconds</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The seconds portion of the time when the event occurred</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">timeNanoSeconds</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The fractional seconds portion of the time when the event occurred</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">eventType</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limits the return to specific event log types; set a cumulative integer value that represents the event log types to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Errors only: <code class="monospace">eventlog.SEV_ERROR</code> or <code class="monospace">1</code></li><li class="tablelistbullet9pt">Warnings only: <code class="monospace">eventlog.SEV_WARN</code> or <code class="monospace">2</code></li><li class="tablelistbullet9pt">Errors and warnings only: <code class="monospace">eventlog.SEV_WARN|eventlog.SEV_ERROR</code> or <code class="monospace">3</code></li><li class="tablelistbullet9pt">Information only: <code class="monospace">eventlog.SEV_INFO</code> or <code class="monospace">4</code></li><li class="tablelistbullet9pt">Errors and information only: <code class="monospace">eventlog.SEV_INFO|eventlog.SEV_ERROR</code> or <code class="monospace">5</code></li><li class="tablelistbullet9pt">Warnings and information only: <code class="monospace">eventlog.SEV_INFO|eventlog.SEV_WARN</code> or <code class="monospace">6</code></li><li class="tablelistbullet9pt">All events: <code class="monospace">eventlog.SEV_ALL</code> or <code class="monospace">7</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When an event occurs on the instrument, it is placed in the event log. The <code class="monospace">eventlog.next()</code> command retrieves an unread event from the event log. Once an event is read, it can no longer be accessed remotely. However, it can be viewed on the front panel. When <code class="monospace">localnode.showevents</code> is enabled, this command never returns an event because those events are automatically read and sent to the remote interface.</p>
+<p class="iclbody">To read multiple events, execute this command multiple times.</p>
+<p class="iclbody">If there are no entries in the event log, the following is returned:</p>
+<p class="iclcode">0   No error      0      0      0      0</p>
+<p class="iclbody">If the event type is not defined, an event of any type is returned.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">print(eventlog.next(5))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Get the oldest error or information event from the event log.</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">-285 TSP Syntax error at line 1: unexpected symbol near `0' 1 0 1367806152 652040060</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1947" class="jump" title="eventlog.clear()" href="27637.htm" target="_self">eventlog.clear()</a></p>
+<p class="listcommand"><a id="h33910" class="jump" title="eventlog.getcount()" href="30552.htm" target="_self">eventlog.getcount()</a></p>
+<p class="listcommand"><a id="h27666" class="jump" title="eventlog.save()" href="25702.htm" target="_self">eventlog.save()</a></p>
+
+
+<input id="topicId" type="hidden" value="27658" />
+<input id="topicDescription" type="hidden" value="eventlog.next()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 3:31:53 PM" />
+</body>
+</html>

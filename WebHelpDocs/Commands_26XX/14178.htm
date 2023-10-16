@@ -1,0 +1,126 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> TSP advanced features </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12365.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="3240.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t14178" class="heading3">TSP advanced features</h3>
+<p class="bodytext">Use the Test Script Processor (TSP<sup class="superscript">&reg;</sup>) scripting engine's advanced features to:</p>
+<ul class="listbullet"><li class="listbullet">Run test scripts simultaneously</li><li class="listbullet">Manage resources allocated to test scripts that are running simultaneously</li><li class="listbullet">Use the data queue to facilitate real&#8209;time communication between nodes on the TSP&#8209;Link<sup class="superscript">&reg;</sup> network</li></ul><p class="bodytext">When test scripts are run simultaneously, it improves functional testing, provides higher throughput, and expands system flexibility.</p>
+<p class="bodytext">There are two methods you can use to run test scripts simultaneously:</p>
+<ul class="listbullet"><li class="listbullet">Create multiple TSP-Link networks</li><li class="listbullet">Use a single TSP-Link network with groups</li></ul><p class="bodytext">The following figure displays the first method, which consists of multiple TSP&#8209;Link networks. Each TSP&#8209;Link network has a master node and a remote connection to the computer.</p>
+<p class="magicfigurecenter"><img id="f26818" src="2600b-901-01a_multipletsp-linknetworks_lr.png" class="linkedepsandpngtemplate" alt="Multiple TSP-Link networks" height="539" width="297" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Another method you can use to run simultaneous test scripts is to use groups with a single TSP&#8209;Link network. Each group on the TSP&#8209;Link network can run a test while other groups are running different tests.</p>
+<p class="bodytext">A group consists of one or more nodes with the same group number. The following figure displays a single TSP&#8209;Link network with groups. This method requires one TSP&#8209;Link network and a single GPIB connection to the computer.</p>
+<p class="magicfigurecenter"><img id="f26819" src="2600b-901-01a_singletsp-linknetworkwithgroups_lr.png" class="linkedepsandpngtemplate" alt="Single TSP-Link network with groups" height="420" width="313" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">The following table shows an example of the functions of a single TSP&#8209;Link network. Each group in this example runs a different test script than the other groups, which allows the system to run multiple tests&nbsp;simultaneously.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="96" height="0"></td>
+<td width="144" height="0"></td>
+<td width="360" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="3" width="600"><p class="tableheading">TSP-Link network group functions</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="96"><p class="tableheading">Group number</p>
+</td>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="144"><p class="tableheading">Group members</p>
+</td>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="360"><p class="tableheading">Present function</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext">Master node 1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Initiates and runs a test script on node 2</p>
+<p class="tablebodytext">Initiates and runs a test script on node 5</p>
+<p class="tablebodytext">Initiates and runs a test script on node 6</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" rowspan="2" width="96"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext">Group leader</p>
+<p class="tablebodytext">Node 2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Runs the test script initiated by the master node</p>
+<p class="tablebodytext">Initiates remote operations on node 3</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext">Node 3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Performs remote operations initiated by node 2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" rowspan="2" width="96"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext">Group leader</p>
+<p class="tablebodytext">Node 5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Runs the test script initiated by the master node</p>
+<p class="tablebodytext">Initiates remote operations on node 4</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext">Node 4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Performs remote operations initiated by node 5</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext">Group leader</p>
+<p class="tablebodytext">Node 6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Runs the test script initiated by the master node</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14174.htm" target="_self">TSP-Link system expansion interface</a></p><p class="relateditem"><a href="12382.htm" target="_self">Master and subordinates</a></p><p class="relateditem"><a href="12904.htm" target="_self">TSP-Link nodes</a></p><p class="relateditem"><a href="26814.htm" target="_self">Connections</a></p><p class="relateditem"><a href="12380.htm" target="_self">Initialization</a></p><p class="relateditem"><a href="12389.htm" target="_self">Resetting the TSP-Link network</a></p><p class="relateditem"><a href="29297.htm" target="_self">Accessing nodes</a></p><p class="relateditem"><a href="12373.htm" target="_self">Using the reset() command</a></p><p class="relateditem"><a href="24381.htm" target="_self">Using the abort command</a></p><p class="relateditem"><a href="12365.htm" target="_self">Triggering with TSP-Link</a></p><p class="relateditem"><a href="3240.htm" target="_self">Using groups to manage nodes on TSP-Link network</a></p><p class="relateditem"><a href="3245.htm" target="_self">Running simultaneous test scripts</a></p><p class="relateditem"><a href="3247.htm" target="_self">Using the data queue for real-time communication</a></p><p class="relateditem"><a href="3248.htm" target="_self">Copying test scripts across the TSP-Link network</a></p><p class="relateditem"><a href="3249.htm" target="_self">Removing stale values from the reading buffer cache</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="14178" />
+<input id="topicDescription" type="hidden" value="TSP advanced features" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/29/2021 9:35:29 AM" />
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Advanced features for KIPulse tag parameter pulse functions </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19519.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12950.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t19514" class="heading4">Advanced features for KIPulse tag parameter pulse functions</h4>
+<p class="bodytext"><strong class="specialbold">Variable off time between pulses in a pulse train</strong></p>
+<p class="bodytext">The KIPulse &#8220;Configure&#8221; functions accept the <span class="monospaceitalic">toff</span> parameter as a table or as a number. The table allows you to define different off times to be used after each pulse. Note the following:</p>
+<ul class="listbullet"><li class="listbullet">If <span class="monospaceitalic">toff</span> is passed as a number or only a single value is used in the table, it is used for all points in a multiple point pulse.</li><li class="listbullet">The number of times specified in the table must match the number of points called for in the sweep.</li><li class="listbullet">The times used in tables must match for dual channel pulsing.</li><li class="listbullet">Each specified off time must adhere to the duty cycle limits for the specified pulsing region.</li></ul><p class="bodytext"><strong class="specialbold">Simultaneous IV measurement during pulse</strong></p>
+<p class="bodytext">The KIPulse &#8220;Configure&#8221; functions optionally accept an extra reading buffer to activate simultaneous IV measurements during pulsing. Previous usage of passing in a reading buffer or a nil (for no measurement) is still supported.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12916.htm" target="_self">KIPulse factory script</a></p><p class="relateditem"><a href="19518.htm" target="_self">KIPulse tag parameter pulse functions</a></p><p class="relateditem"><a href="19519.htm" target="_self">KIPulse simple pulse functions</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="19514" />
+<input id="topicDescription" type="hidden" value="Advanced features for KIPulse tag parameter pulse functions" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/10/2021 5:00:16 PM" />
+</body>
+</html>

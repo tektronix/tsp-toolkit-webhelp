@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Low-current measurement programming example  </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="28026.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="98311.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t21267" class="heading3">Low-current measurement programming example </h3>
+<p class="bodytext">Example code for a typical low-current measurement is shown below. This code assumes that a 100 GΩ resistor is being tested.</p>
+<p class="code">-- Restore defaults.</p>
+<p class="code">smua.reset()</p>
+<p class="code">-- Set source to dc V.</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCVOLTS</p>
+<p class="code">-- Select 200 V source range.</p>
+<p class="code">smua.source.rangev = 200</p>
+<p class="code">-- Output 100 Vdc.</p>
+<p class="code">smua.source.levelv = 100</p>
+<p class="code">-- Select 1 nA range.</p>
+<p class="code">smua.measure.rangei = 1e-9</p>
+<p class="code">-- Set current limit to 2 nA.</p>
+<p class="code">smua.source.limiti = 2e-9</p>
+<p class="code">-- Turn on output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_ON</p>
+<p class="code">-- Delay 1 second to allow for source and measure settling.</p>
+<p class="code">smua.source.delay = 1</p>
+<p class="code">-- Returns current reading.</p>
+<p class="code">print(smua.measure.i())</p>
+<p class="code">-- Returns resistance reading.</p>
+<p class="code">print(smua.measure.r())</p>
+<p class="code">-- Turn off output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_OFF</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="21266.htm" target="_self">How do I make low-current measurements?</a></p><p class="relateditem"><a href="28026.htm" target="_self">Low-current connections</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="21267" />
+<input id="topicDescription" type="hidden" value="Low-current measurement programming example " />
+<input id="footer-modified" type="hidden" value="Last modified: 9/30/2021 9:52:34 AM" />
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12918.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12949.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t12923" class="heading2-icl">PulseVMeasureI()</h2>
+<p class="bodyzero">This KIPulse factory script function performs a specified number of pulse V, measure I cycles.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">PulseVMeasureI(<span class="monospaceitalic"><span class="monospaceitalic">smu, bias, level, ton, toff, points</span></span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">smu</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Instrument channel (for example, <code class="monospace"><code class="monospace">smua</code></code> refers to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">bias</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Bias level in volts</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">level</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Pulse level in volts</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">ton</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Pulse on time in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">toff</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Pulse off time in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">points</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Number of pulse-measure cycles</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">If any parameters are omitted or <code class="monospace"><code class="monospace">nil</code></code>, the operator is prompted to enter them using the front panel. Data for pulsed current measurements, voltage levels, and timestamps are stored in <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.nvbuffer1</code>.</p>
+<p class="iclbody">To perform the specified number of pulse V, measure I cycles, this function:</p>
+<p class="list2">1. 	Sets the <span class="monospaceitalic"><span class="monospaceitalic">smu</span></span><code class="monospace"><code class="monospace"> </code></code>to output <span class="monospaceitalic"><span class="monospaceitalic">bias</span></span> volts and dwell for <span class="monospaceitalic"><span class="monospaceitalic">toff</span></span> seconds</p>
+<p class="list2">2.	Sets the <span class="monospaceitalic"><span class="monospaceitalic">smu</span></span> to output <span class="monospaceitalic"><span class="monospaceitalic">level</span></span> volts and dwell for <span class="monospaceitalic"><span class="monospaceitalic">ton</span></span> seconds</p>
+<p class="list2">3.	Performs voltage measurement with source at <span class="monospaceitalic"><span class="monospaceitalic">level</span></span> volts</p>
+<p class="list2">4.	Sets the <span class="monospaceitalic"><span class="monospaceitalic">smu</span></span> to output <span class="monospaceitalic"><span class="monospaceitalic">bias</span></span> volts for <span class="monospaceitalic"><span class="monospaceitalic">toff</span></span> seconds</p>
+<p class="list2">5.	Repeats steps 2 through 4 for the remaining <span class="monospaceitalic"><span class="monospaceitalic">points</span></span> pulse-measure cycles</p>
+<p class="magicfigurecenter"><img id="f12924" src="2600s-901-01b_kisweeptsptestscript_pulsevmeasurei_lr.png" class="linkedepsandpngtemplate" alt="PulseVMeasureI()" height="83" width="356" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="354"><p class="codetable"><code class="monospace"><code class="monospace">smua.measure.nplc = 0.001</code></code></p>
+<p class="codetable"><code class="monospace"><code class="monospace">PulseVMeasureI(smua, -1, 1, 1E-3, 2E-3, 20)</code></code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="246"><p class="tablebodytext">SMU A outputs −1&nbsp;V and dwells for 2&nbsp;ms, outputs 1&nbsp;V and dwells for 1&nbsp;ms. The current measurements occur during each 1&nbsp;ms dwell period. After the measurement, the output returns to −1&nbsp;V and dwells for 2&nbsp;ms. This pulse-measure process repeats 19 more times.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12919" class="jump" title="KIPulse factory script" href="12916.htm" target="_self">KIPulse factory script</a></p>
+
+

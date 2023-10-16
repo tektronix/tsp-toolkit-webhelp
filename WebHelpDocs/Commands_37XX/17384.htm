@@ -1,0 +1,122 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17247.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17521.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17384" class="heading2-icl">channel.getcount()</h2>
+<p class="bodyzero">This function returns the number of times the relays have been closed for the specified channels.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">counts</em> = channel.getcount(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">counts</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A comma-delimited string that lists the number of times the channel has closed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string listing the items to query, which can include:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Channels</li><li class="tablelistbullet9pt">Backplane relays</li><li class="tablelistbullet9pt">Channel patterns (channels will be listed in the order in which they are listed in the pattern)</li><li class="tablelistbullet9pt"><code class="monospace">slot</code><span class="monospaceitalic">X</span>, where <span class="monospaceitalic">X</span> is <code class="monospace">1</code> to <code class="monospace">6</code></li><li class="tablelistbullet9pt"><code class="monospace">allslots</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The Series 3700A keeps an internal count of the number of times each relay has been closed. This count can help you determine when relays require replacement. Refer to the plug-in card documentation for the contact life specifications for the relays. The closure counts for an analog backplane relay can be included in the <span class="monospaceitalic">channelList</span> parameter. </p>
+<p class="iclbody">If <span class="monospaceitalic">channelList</span> includes a pattern, you can use <code class="monospace">channel.pattern.getimage()</code> with the pattern name to see the channel order and the channels to which the close counts pertain.</p>
+<p class="iclbody">If channels are specified, the count values are returned in the order in which the channels are specified. If slots are specified, the response lists the channels starting from lowest to highest. Because each slot is processed completely before going to the next, all slot 1 channels and analog backplane relays are listed before slot 2 channels.</p>
+<p class="iclbody">Relay closures are counted only when a relay cycles from open to closed state.</p>
+<p class="iclbody">It is good practice to get the relay count at the end of a program. This saves the latest count to memory.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">A specified channel is invalid</li><li class="listbullet">The channel does not have a count closure associated with it</li></ul><p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">counts = channel.getcount(&quot;2001:2005&quot;)</p>
+<p class="codetable">print(counts)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Gets the close counts for channels 1 to 5 on slot 2.</p>
+<p class="tablebodytext">Example output for channels 2001, 2002, 2003, 2004, and 2005:</p>
+<p class="codetable">672,495,547,479,518</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">counts = channel.getcount(&quot;slot2&quot;)</p>
+<p class="codetable">print(counts)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Get the close counts for all channels and analog backplane relays on slot 2 assuming a 3721 card is installed in the slot.</p>
+<p class="tablebodytext">Sample output that shows the counts for channels 1 to 41, analog backplane relays 911 to 917, analog backplane relays 921 to 928:</p>
+<p class="codetable">672,495,547,479,518,459,522,599,452,451,464,427,426,428,426,425,428,424,424,425,5,3,3,3,4,3,3,5,3,33,33,33,33,33,33,32,32,32,32,32,119,3,56,0,0,0,0,0,0,14,68,0,0,0,0,16,0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.pattern.setimage(&quot;2003, 2005, 2023, 2915&quot;, &quot;Path&quot;)</p>
+<p class="codetable">PathList = channel.pattern.getimage(&quot;Path&quot;)</p>
+<p class="codetable">print(PathList)</p>
+<p class="codetable">print(channel.getcount(PathList))</p>
+<p class="codetable">print(channel.getcount(&quot;Path&quot;))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create a pattern called Path, then get the close counts for channels and analog backplane relays in channel pattern called <code class="monospace">&quot;Path&quot;</code></p>
+<p class="tablebodytext">Sample output:</p>
+<p class="codetable">2003, 2005,2023,2915</p>
+<p class="codetable">547,518,3,0</p>
+<p class="codetable">547,518,3,0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h776" class="jump" title="channel.pattern.getimage()" href="17284.htm" target="_self">channel.pattern.getimage()</a></p>
+<p class="listcommand"><a id="h1806" class="jump" title="channel.pattern.setimage()" href="17296.htm" target="_self">channel.pattern.setimage()</a></p>
+<p class="listcommand">Data retrieval commands</p>
+
+

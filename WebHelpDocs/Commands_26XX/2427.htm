@@ -1,0 +1,147 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Conditional branching </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2424.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2428.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t2427" class="heading4">Conditional branching</h4>
+<p class="bodytext">Lua uses the <code class="monospace">if</code>, <code class="monospace">else</code>, <code class="monospace">elseif</code>, <code class="monospace">then</code>, and <code class="monospace">end</code> keywords to do conditional branching.</p>
+<p class="bodytext">Note that in Lua, <code class="monospace">nil</code> and <code class="monospace">false</code> are <code class="monospace">false</code> and everything else is <code class="monospace">true</code>. Zero (0) is <code class="monospace">true</code> in Lua.</p>
+<p class="bodytext">The syntax of a conditional block is as follows:</p>
+<p class="code">if <em class="emphasis">expression</em> then</p>
+<p class="code"><em class="emphasis">   block</em></p>
+<p class="code">elseif <em class="emphasis">expression</em> then</p>
+<p class="code"><em class="emphasis">   block</em></p>
+<p class="code">else</p>
+<p class="code"><em class="emphasis">   block</em></p>
+<p class="code">end</p>
+<p class="bodytext">Where:</p>
+<ul class="listbullet"><li class="listbullet"><span class="monospaceitalic">expression</span> is Lua code that evaluates to either <code class="monospace">true</code> or <code class="monospace">false</code></li><li class="listbullet"><span class="monospaceitalic">block</span> consists of one or more Lua statements</li></ul><p class="bodytext"><strong class="specialbold">Example: If</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable">if 0 then</p>
+<p class="codetable">   print(&quot;Zero is true!&quot;)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;Zero is false.&quot;)</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">Zero is true!</code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<p class="bodytext"><strong class="specialbold">Example: Comparison</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable">x = 1</p>
+<p class="codetable">y = 2</p>
+<p class="codetable">if x and y then</p>
+<p class="codetable">   print(&quot;Both x and y are true&quot;)</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">Both x and y are true</code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<p class="bodytext"><strong class="specialbold">Example: If and else</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable">x = 2</p>
+<p class="codetable">if not x then</p>
+<p class="codetable">   print(&quot;This is from the if block&quot;)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;This is from the else block&quot;)</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">This is from the else block</code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Else and elseif</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">x = 1</p>
+<p class="codetable">y = 2</p>
+<p class="codetable">if x and y then</p>
+<p class="codetable">   print(&quot;'if' expression 2 was not false.&quot;)</p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if x or y then</p>
+<p class="codetable">   print(&quot;'if' expression 3 was not false.&quot;)</p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if not x then</p>
+<p class="codetable">   print(&quot;'if' expression 4 was not false.&quot;)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;'if' expression 4 was false.&quot;)</p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if x == 10 then</p>
+<p class="codetable">   print(&quot;x = 10&quot;)</p>
+<p class="codetable">elseif y &gt; 2 then</p>
+<p class="codetable">   print(&quot;y &gt; 2&quot;)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;x is not equal to 10, and y is not greater than 2.&quot;)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">'if' expression 2 was not false.</code></p>
+<p class="tablebodytext"><code class="monospace">'if' expression 3 was not false.</code></p>
+<p class="tablebodytext"><code class="monospace">'if' expression 4 was false.</code></p>
+<p class="tablebodytext"><code class="monospace">x is not equal to 10, and y is not greater than 2.</code></p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14284.htm" target="_self">Lua basics</a></p><p class="relateditem"><a href="16697.htm" target="_self">Comments</a></p><p class="relateditem"><a href="14283.htm" target="_self">Function and variable name restrictions</a></p><p class="relateditem"><a href="2420.htm" target="_self">Values and variable types</a></p><p class="relateditem"><a href="16831.htm" target="_self">Variable types</a></p><p class="relateditem"><a href="16830.htm" target="_self">Delete a global variable</a></p><p class="relateditem"><a href="2422.htm" target="_self">Functions</a></p><p class="relateditem"><a href="16449.htm" target="_self">Operators</a></p><p class="relateditem"><a href="2428.htm" target="_self">Loop control</a></p><p class="relateditem"><a href="2423.htm" target="_self">Tables and arrays</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="2427" />
+<input id="topicDescription" type="hidden" value="Conditional branching" />
+<input id="footer-modified" type="hidden" value="Last modified: 1/15/2021 2:19:19 PM" />
+</body>
+</html>

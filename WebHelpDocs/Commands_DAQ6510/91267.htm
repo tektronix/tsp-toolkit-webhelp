@@ -1,0 +1,406 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.setattribute() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="76068.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16068.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t91267" class="heading2-icl">dmm.measure.setattribute()</h2>
+<p class="bodyzero">This function allows you to set up a measure function whether or not the function is active.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">dmm.measure.setattribute(<span class="monospaceitalic">function</span>, <span class="monospaceitalic">setting</span>, <span class="monospaceitalic">value</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The function for which you are setting parameters; see <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">setting</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The parameter for the function; refer to <strong class="specialbold">Details</strong> and the tables following the examples</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The parameter value</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_FREQUENCY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_4W_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_PERIOD</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_DIODE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_DCV_RATIO</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CAPACITANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_DIGITIZE_CURRENT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_TEMPERATURE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CONTINUITY</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_DIGITIZE_VOLTAGE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The lists that follow the example and &quot;also see&quot; listings show the parameters that are available for each function. Each parameter includes a link to the descriptions of the corresponding TSP command descriptions. The options for each parameter are the same as the settings for the TSP commands.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">dmm.measure.setattribute(dmm.FUNC_DC_CURRENT, dmm.ATTR_MEAS_RANGE, 35e-6)</p>
+<p class="codetable">dmm.measure.setattribute(dmm.FUNC_DC_CURRENT, dmm.ATTR_MEAS_DIGITS, dmm.DIGITS_5_5)</p>
+<p class="codetable">dmm.measure.setattribute(dmm.FUNC_DC_CURRENT, dmm.ATTR_MEAS_NPLC, 0.5)</p>
+<p class="codetable">dmm.measure.configlist.create(&quot;measlist&quot;)</p>
+<p class="codetable">dmm.measure.configlist.storefunc(&quot;measlist&quot;, dmm.FUNC_DC_CURRENT)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Configure the DC Current function settings for the range, display resolution, and number of power line cycles (NPLCs) whether or not DC Current is the active function.</p>
+<p class="tablebodytext">Create a configuration list named <code class="monospace">measlist</code>.</p>
+<p class="tablebodytext">Save the settings into <code class="monospace">measlist</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h91518" class="jump" title="dmm.measure.configlist.storefunc()" href="91273.htm" target="_self">dmm.measure.configlist.storefunc()</a></p>
+<p class="listcommand"><a id="h91434" class="jump" title="dmm.measure.getattribute()" href="91266.htm" target="_self">dmm.measure.getattribute()</a></p>
+<a name="o73705"></a>
+<p class="iclsubheading">DC voltage (<code class="monospace">dmm.FUNC_DC_VOLTAGE</code>)</p>
+<p class="iclbody"><a id="h41143" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74389" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">Auto range</a>: <code class="monospace">dmm.ATTR_MEAS_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h74390" class="jump" title="dmm.measure.autozero.enable" href="41122.htm" target="_self">Auto zero</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_ZERO</code></p>
+<p class="iclbody"><a id="h74391" class="jump" title="dmm.measure.dbreference" href="41144.htm" target="_self">dB reference</a>: <code class="monospace">dmm.ATTR_MEAS_DB_REFERENCE</code></p>
+<p class="iclbody"><a id="h91437" class="jump" title="dmm.measure.dbmreference" href="81432.htm" target="_self">dBm reference</a>: <code class="monospace">dmm.ATTR_MEAS_DBM_REFERENCE</code></p>
+<p class="iclbody"><a id="h74392" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h44936" class="jump" title="dmm.measure.inputimpedance" href="44539.htm" target="_self">Input impedance</a>: <code class="monospace">dmm.ATTR_MEAS_INPUT_IMPEDANCE</code></p>
+<p class="iclbody"><a id="h45908" class="jump" title="dmm.measure.linesync" href="41233.htm" target="_self">Line sync</a>: <code class="monospace">dmm.ATTR_MEAS_LINE_SYNC</code></p>
+<p class="iclbody"><a id="h76413" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41894" class="jump" title="dmm.measure.nplc" href="41301.htm" target="_self">NPLC</a>: <code class="monospace">dmm.ATTR_MEAS_NPLC</code></p>
+<p class="iclbody"><a id="h74393" class="jump" title="dmm.measure.range" href="41304.htm" target="_self">Range</a>:&nbsp;<code class="monospace">dmm.ATTR_MEAS_RANGE</code></p>
+<p class="iclbody"><a id="h74394" class="jump" title="dmm.measure.unit" href="41308.htm" target="_self">Unit</a>: <code class="monospace">dmm.ATTR_MEAS_UNIT</code></p>
+<p class="iclbody"><a id="h76321" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73706"></a>
+<p class="iclsubheading">AC voltage (<code class="monospace">dmm.FUNC_AC_VOLTAGE</code>)</p>
+<p class="iclbody"><a id="h74388_2" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74389_2" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">Auto range</a>: <code class="monospace">dmm.ATTR_MEAS_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h74391_2" class="jump" title="dmm.measure.dbreference" href="41144.htm" target="_self">dB reference</a>: <code class="monospace">dmm.ATTR_MEAS_DB_REFERENCE</code></p>
+<p class="iclbody"><a id="h91437_2" class="jump" title="dmm.measure.dbmreference" href="81432.htm" target="_self">dBm reference</a>: <code class="monospace">dmm.ATTR_MEAS_DBM_REFERENCE</code></p>
+<p class="iclbody"><a id="h41149" class="jump" title="dmm.measure.detectorbandwidth" href="41147.htm" target="_self">Detector bandwidth</a>: <code class="monospace">dmm.ATTR_MEAS_DETECTBW</code></p>
+<p class="iclbody"><a id="h74392_2" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h76413_2" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h74393_2" class="jump" title="dmm.measure.range" href="41304.htm" target="_self">Range</a>:&nbsp;<code class="monospace">dmm.ATTR_MEAS_RANGE</code></p>
+<p class="iclbody"><a id="h74394_2" class="jump" title="dmm.measure.unit" href="41308.htm" target="_self">Unit</a>: <code class="monospace">dmm.ATTR_MEAS_UNIT</code></p>
+<p class="iclbody"><a id="h76321_2" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73707"></a>
+<p class="iclsubheading">DC current (<code class="monospace">dmm.FUNC_DC_CURRENT</code>)</p>
+<p class="iclbody"><a id="h41143_2" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388_3" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74389_3" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">Auto range</a>: <code class="monospace">dmm.ATTR_MEAS_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h74390_2" class="jump" title="dmm.measure.autozero.enable" href="41122.htm" target="_self">Auto zero</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_ZERO</code></p>
+<p class="iclbody"><a id="h74392_3" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h45908_2" class="jump" title="dmm.measure.linesync" href="41233.htm" target="_self">Line sync</a>: <code class="monospace">dmm.ATTR_MEAS_LINE_SYNC</code></p>
+<p class="iclbody"><a id="h76413_3" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41894_2" class="jump" title="dmm.measure.nplc" href="41301.htm" target="_self">NPLC</a>: <code class="monospace">dmm.ATTR_MEAS_NPLC</code></p>
+<p class="iclbody"><a id="h74393_3" class="jump" title="dmm.measure.range" href="41304.htm" target="_self">Range</a>:&nbsp;<code class="monospace">dmm.ATTR_MEAS_RANGE</code></p>
+<p class="iclbody"><a id="h76321_3" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73708"></a>
+<p class="iclsubheading">AC current (<code class="monospace">dmm.FUNC_AC_CURRENT</code>)</p>
+<p class="iclbody"><a id="h74388_4" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74389_4" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">Auto range</a>: <code class="monospace">dmm.ATTR_MEAS_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h41149_2" class="jump" title="dmm.measure.detectorbandwidth" href="41147.htm" target="_self">Detector bandwidth</a>: <code class="monospace">dmm.ATTR_MEAS_DETECTBW</code></p>
+<p class="iclbody"><a id="h74392_4" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h76413_4" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h74393_4" class="jump" title="dmm.measure.range" href="41304.htm" target="_self">Range</a>:&nbsp;<code class="monospace">dmm.ATTR_MEAS_RANGE</code></p>
+<p class="iclbody"><a id="h76321_4" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73709"></a>
+<p class="iclsubheading">Temperature (<code class="monospace">dmm.FUNC_TEMPERATURE</code>)</p>
+<p class="iclbody"><a id="h73704" class="jump" title="dmm.measure.twortd" href="73701.htm" target="_self">2-wire RTD type</a>: <code class="monospace">dmm.ATTR_MEAS_TWO_RTD</code></p>
+<p class="iclbody"><a id="h41180" class="jump" title="dmm.measure.threertd" href="41176.htm" target="_self">3-wire RTD type</a>: <code class="monospace">dmm.ATTR_MEAS_THREE_RTD</code></p>
+<p class="iclbody"><a id="h41178" class="jump" title="dmm.measure.fourrtd" href="41175.htm" target="_self">4-wire RTD type</a>: <code class="monospace">dmm.ATTR_MEAS_FOUR_RTD</code></p>
+<p class="iclbody"><a id="h41143_3" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388_5" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74390_3" class="jump" title="dmm.measure.autozero.enable" href="41122.htm" target="_self">Auto zero</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_ZERO</code></p>
+<p class="iclbody"><a id="h74392_5" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h45908_3" class="jump" title="dmm.measure.linesync" href="41233.htm" target="_self">Line sync</a>: <code class="monospace">dmm.ATTR_MEAS_LINE_SYNC</code></p>
+<p class="iclbody"><a id="h76413_5" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41894_3" class="jump" title="dmm.measure.nplc" href="41301.htm" target="_self">NPLC</a>: <code class="monospace">dmm.ATTR_MEAS_NPLC</code></p>
+<p class="iclbody"><a id="h41260" class="jump" title="dmm.measure.offsetcompensation.enable" href="41259.htm" target="_self">Offset Compensation</a>: <code class="monospace">dmm.ATTR_MEAS_OFFCOMP_ENABLE</code></p>
+<p class="iclbody"><a id="h46141" class="jump" title="dmm.measure.opendetector" href="41303.htm" target="_self">Open lead detector</a>: <code class="monospace">dmm.ATTR_MEAS_OPEN_DETECTOR</code></p>
+<p class="iclbody"><a id="h41200" class="jump" title="dmm.measure.refjunction" href="73436.htm" target="_self">Reference junction</a>: <code class="monospace">dmm.ATTR_MEAS_REF_JUNCTION</code></p>
+<p class="iclbody"><a id="h41184" class="jump" title="dmm.measure.rtdalpha" href="41182.htm" target="_self">RTD Alpha</a>: <code class="monospace">dmm.ATTR_MEAS_RTD_ALPHA</code></p>
+<p class="iclbody"><a id="h46136" class="jump" title="dmm.measure.rtdbeta" href="41186.htm" target="_self">RTD Beta</a>: <code class="monospace">dmm.ATTR_MEAS_RTD_BETA</code></p>
+<p class="iclbody"><a id="h41189" class="jump" title="dmm.measure.rtddelta" href="41188.htm" target="_self">RTD Delta</a>: <code class="monospace">dmm.ATTR_MEAS_RTD_DELTA</code></p>
+<p class="iclbody"><a id="h46133" class="jump" title="dmm.measure.rtdzero" href="41191.htm" target="_self">RTD Zero</a>: <code class="monospace">dmm.ATTR_MEAS_RTD_ZERO</code></p>
+<p class="iclbody"><a id="h16145" class="jump" title="dmm.measure.simreftemperature" href="16068.htm" target="_self">Simulated reference temperature</a>: <code class="monospace">dmm.ATTR_MEAS_SIM_REF_TEMP</code></p>
+<p class="iclbody"><a id="h41194" class="jump" title="dmm.measure.thermistor" href="41192.htm" target="_self">Thermistor</a>: <code class="monospace">dmm.ATTR_MEAS_THERMISTOR</code></p>
+<p class="iclbody"><a id="h46145" class="jump" title="dmm.measure.thermocouple" href="41197.htm" target="_self">Thermocouple</a>: <code class="monospace">dmm.ATTR_MEAS_THERMOCOUPLE</code></p>
+<p class="iclbody"><a id="h41651" class="jump" title="dmm.measure.transducer" href="41181.htm" target="_self">Transducer</a>:<code class="monospace"> dmm.ATTR_MEAS_TRANSDUCER</code></p>
+<p class="iclbody"><a id="h74394_3" class="jump" title="dmm.measure.unit" href="41308.htm" target="_self">Unit</a>: <code class="monospace">dmm.ATTR_MEAS_UNIT</code></p>
+<p class="iclbody"><a id="h76321_5" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73710"></a>
+<p class="iclsubheading">2-wire resistance (<code class="monospace">dmm.FUNC_RESISTANCE</code>)</p>
+<p class="iclbody"><a id="h41143_4" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388_6" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74389_5" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">Auto range</a>: <code class="monospace">dmm.ATTR_MEAS_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h74390_4" class="jump" title="dmm.measure.autozero.enable" href="41122.htm" target="_self">Auto zero</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_ZERO</code></p>
+<p class="iclbody"><a id="h74392_6" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h45908_4" class="jump" title="dmm.measure.linesync" href="41233.htm" target="_self">Line sync</a>: <code class="monospace">dmm.ATTR_MEAS_LINE_SYNC</code></p>
+<p class="iclbody"><a id="h76413_6" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41894_4" class="jump" title="dmm.measure.nplc" href="41301.htm" target="_self">NPLC</a>: <code class="monospace">dmm.ATTR_MEAS_NPLC</code></p>
+<p class="iclbody"><a id="h74393_5" class="jump" title="dmm.measure.range" href="41304.htm" target="_self">Range</a>:&nbsp;<code class="monospace">dmm.ATTR_MEAS_RANGE</code></p>
+<p class="iclbody"><a id="h76321_6" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73711"></a>
+<p class="iclsubheading">4-wire resistance (<code class="monospace">dmm.FUNC_4W_RESISTANCE</code>)</p>
+<p class="iclbody"><a id="h41143_5" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388_7" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74389_6" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">Auto range</a>: <code class="monospace">dmm.ATTR_MEAS_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h74390_5" class="jump" title="dmm.measure.autozero.enable" href="41122.htm" target="_self">Auto zero</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_ZERO</code></p>
+<p class="iclbody"><a id="h74392_7" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h45908_5" class="jump" title="dmm.measure.linesync" href="41233.htm" target="_self">Line sync</a>: <code class="monospace">dmm.ATTR_MEAS_LINE_SYNC</code></p>
+<p class="iclbody"><a id="h76413_7" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41894_5" class="jump" title="dmm.measure.nplc" href="41301.htm" target="_self">NPLC</a>: <code class="monospace">dmm.ATTR_MEAS_NPLC</code></p>
+<p class="iclbody"><a id="h41260_2" class="jump" title="dmm.measure.offsetcompensation.enable" href="41259.htm" target="_self">Offset compensation</a>: <code class="monospace">dmm.ATTR_MEAS_OFFCOMP_ENABLE</code></p>
+<p class="iclbody"><a id="h46141_2" class="jump" title="dmm.measure.opendetector" href="41303.htm" target="_self">Open lead detector</a>: <code class="monospace">dmm.ATTR_MEAS_OPEN_DETECTOR</code></p>
+<p class="iclbody"><a id="h74393_6" class="jump" title="dmm.measure.range" href="41304.htm" target="_self">Range</a>:&nbsp;<code class="monospace">dmm.ATTR_MEAS_RANGE</code></p>
+<p class="iclbody"><a id="h76321_7" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73712"></a>
+<p class="iclsubheading">Diode (<code class="monospace">dmm.FUNC_DIODE</code>)</p>
+<p class="iclbody"><a id="h41143_6" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388_8" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74390_6" class="jump" title="dmm.measure.autozero.enable" href="41122.htm" target="_self">Auto zero</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_ZERO</code></p>
+<p class="iclbody"><a id="h45986" class="jump" title="dmm.measure.bias.level" href="41438.htm" target="_self">Bias level</a>: <code class="monospace">dmm.ATTR_MEAS_BIAS_LEVEL</code></p>
+<p class="iclbody"><a id="h74392_8" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h45908_6" class="jump" title="dmm.measure.linesync" href="41233.htm" target="_self">Line sync</a>: <code class="monospace">dmm.ATTR_MEAS_LINE_SYNC</code></p>
+<p class="iclbody"><a id="h76413_8" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41894_6" class="jump" title="dmm.measure.nplc" href="41301.htm" target="_self">NPLC</a>: <code class="monospace">dmm.ATTR_MEAS_NPLC</code></p>
+<p class="iclbody"><a id="h76321_8" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73713"></a>
+<p class="iclsubheading">Capacitance (<code class="monospace">dmm.FUNC_CAPACITANCE</code>)</p>
+<p class="iclbody"><a id="h74388_9" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74389_7" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">Auto range</a>: <code class="monospace">dmm.ATTR_MEAS_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h74392_9" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h76413_9" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h74393_7" class="jump" title="dmm.measure.range" href="41304.htm" target="_self">Range</a>:&nbsp;<code class="monospace">dmm.ATTR_MEAS_RANGE</code></p>
+<p class="iclbody"><a id="h76321_9" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73714"></a>
+<p class="iclsubheading">Continuity (<code class="monospace">dmm.FUNC_CONTINUITY</code>)</p>
+<p class="iclbody"><a id="h74388_10" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74392_10" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h45908_7" class="jump" title="dmm.measure.linesync" href="41233.htm" target="_self">Line sync</a>: <code class="monospace">dmm.ATTR_MEAS_LINE_SYNC</code></p>
+<p class="iclbody"><a id="h76413_10" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h76321_10" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73715"></a>
+<p class="iclsubheading">Frequency (<code class="monospace">dmm.FUNC_ACV_FREQUENCY</code>)</p>
+<p class="iclbody"><a id="h41143_7" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388_11" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74392_11" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h76413_11" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41291" class="jump" title="dmm.measure.threshold.autorange" href="41289.htm" target="_self">Threshold autorange</a>: <code class="monospace">dmm.ATTR_MEAS_THRESHOLD_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h41285" class="jump" title="dmm.measure.threshold.range" href="41283.htm" target="_self">Threshold range</a>: <code class="monospace">dmm.ATTR_MEAS_THRESHOLD_RANGE</code></p>
+<p class="iclbody"><a id="h76321_11" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73716"></a>
+<p class="iclsubheading">Period (dmm.FUNC_ACV_PERIOD)</p>
+<p class="iclbody"><a id="h41143_8" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388_12" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h76413_12" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41291_2" class="jump" title="dmm.measure.threshold.autorange" href="41289.htm" target="_self">Threshold autorange</a>: <code class="monospace">dmm.ATTR_MEAS_THRESHOLD_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h41285_2" class="jump" title="dmm.measure.threshold.range" href="41283.htm" target="_self">Threshold range</a>: <code class="monospace">dmm.ATTR_MEAS_THRESHOLD_RANGE</code></p>
+<p class="iclbody"><a id="h76321_12" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73717"></a>
+<p class="iclsubheading">DCV ratio (<code class="monospace">dmm.FUNC_DCV_RATIO</code>)</p>
+<p class="iclbody"><a id="h41143_9" class="jump" title="dmm.measure.aperture" href="41141.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_MEAS_APERTURE</code></p>
+<p class="iclbody"><a id="h74388_13" class="jump" title="dmm.measure.autodelay" href="41421.htm" target="_self">Auto delay</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_DELAY</code></p>
+<p class="iclbody"><a id="h74389_8" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">Auto range</a>: <code class="monospace">dmm.ATTR_MEAS_RANGE_AUTO</code></p>
+<p class="iclbody"><a id="h74390_7" class="jump" title="dmm.measure.autozero.enable" href="41122.htm" target="_self">Auto zero</a>: <code class="monospace">dmm.ATTR_MEAS_AUTO_ZERO</code></p>
+<p class="iclbody"><a id="h74392_12" class="jump" title="dmm.measure.displaydigits" href="41099.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_MEAS_DIGITS</code></p>
+<p class="iclbody"><a id="h45908_8" class="jump" title="dmm.measure.linesync" href="41233.htm" target="_self">Line sync</a>: <code class="monospace">dmm.ATTR_MEAS_LINE_SYNC</code></p>
+<p class="iclbody"><a id="h76413_13" class="jump" title="dmm.measure.count" href="41296.htm" target="_self">Measure count</a>: <code class="monospace">dmm.ATTR_MEAS_COUNT</code></p>
+<p class="iclbody"><a id="h41894_7" class="jump" title="dmm.measure.nplc" href="41301.htm" target="_self">NPLC</a>: <code class="monospace">dmm.ATTR_MEAS_NPLC</code></p>
+<p class="iclbody"><a id="h74393_8" class="jump" title="dmm.measure.range" href="41304.htm" target="_self">Range</a>:&nbsp;<code class="monospace">dmm.ATTR_MEAS_RANGE</code></p>
+<p class="iclbody"><a id="h41437" class="jump" title="dmm.measure.sense.range" href="76068.htm" target="_self">Sense range (read only)</a>: <code class="monospace">dmm.ATTR_MEAS_SENSE_RANGE</code></p>
+<p class="iclbody"><a id="h76321_13" class="jump" title="dmm.measure.userdelay[N]" href="31441.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_MEAS_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73718"></a>
+<p class="iclsubheading">Digitize current (<code class="monospace">dmm.FUNC_DIGITIZE_CURRENT</code>)</p>
+<p class="iclbody"><a id="h44394" class="jump" title="dmm.digitize.aperture" href="41431.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_DIGI_APERTURE</code></p>
+<p class="iclbody"><a id="h41300" class="jump" title="dmm.digitize.count" href="41297.htm" target="_self">Count</a>: <code class="monospace">dmm.ATTR_DIGI_COUNT</code></p>
+<p class="iclbody"><a id="h41152" class="jump" title="dmm.digitize.displaydigits" href="41150.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_DIGI_DIGITS</code></p>
+<p class="iclbody"><a id="h46156" class="jump" title="dmm.digitize.range" href="41306.htm" target="_self">Range</a>: <code class="monospace">dmm.ATTR_DIGI_RANGE</code></p>
+<p class="iclbody"><a id="h41582" class="jump" title="dmm.digitize.samplerate" href="41433.htm" target="_self">Sample rate</a>: <code class="monospace">dmm.ATTR_DIGI_SAMPLE_RATE</code></p>
+<p class="iclbody"><a id="h74395" class="jump" title="dmm.digitize.unit" href="43717.htm" target="_self">Unit</a>: <code class="monospace">dmm.ATTR_DIGI_UNIT</code></p>
+<p class="iclbody"><a id="h46087" class="jump" title="dmm.digitize.userdelay[N]" href="41269.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_DIGI_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o73719"></a>
+<p class="iclsubheading">Digitize voltage (<code class="monospace">dmm.FUNC_DIGITIZE_VOLTAGE</code>)</p>
+<p class="iclbody"><a id="h44394_2" class="jump" title="dmm.digitize.aperture" href="41431.htm" target="_self">Aperture</a>: <code class="monospace">dmm.ATTR_DIGI_APERTURE</code></p>
+<p class="iclbody"><a id="h41300_2" class="jump" title="dmm.digitize.count" href="41297.htm" target="_self">Count</a>: <code class="monospace">dmm.ATTR_DIGI_COUNT</code></p>
+<p class="iclbody"><a id="h47309" class="jump" title="dmm.digitize.dbreference" href="46371.htm" target="_self">Decibel reference</a>: <code class="monospace">dmm.ATTR_DIGI_DB_REFERENCE</code></p>
+<p class="iclbody"><a id="h81886" class="jump" title="dmm.digitize.dbmreference" href="81719.htm" target="_self">Decibel-milliwatts reference</a>: <code class="monospace">dmm.ATTR_DIGI_DBM_REFERENCE</code></p>
+<p class="iclbody"><a id="h41152_2" class="jump" title="dmm.digitize.displaydigits" href="41150.htm" target="_self">Display digits</a>: <code class="monospace">dmm.ATTR_DIGI_DIGITS</code></p>
+<p class="iclbody"><a id="h45710" class="jump" title="dmm.digitize.inputimpedance" href="44541.htm" target="_self">Input impedance</a>: <code class="monospace">dmm.ATTR_DIGI_INPUT_IMPEDANCE</code></p>
+<p class="iclbody"><a id="h46156_2" class="jump" title="dmm.digitize.range" href="41306.htm" target="_self">Range</a>: <code class="monospace">dmm.ATTR_DIGI_RANGE</code></p>
+<p class="iclbody"><a id="h44523" class="jump" title="dmm.digitize.rel.enable" href="41280.htm" target="_self">Relative enable</a>: <code class="monospace">dmm.ATTR_DIGI_REL_ENABLE</code></p>
+<p class="iclbody"><a id="h41278" class="jump" title="dmm.digitize.rel.level" href="41275.htm" target="_self">Relative level</a>: <code class="monospace">dmm.ATTR_DIGI_REL_LEVEL</code></p>
+<p class="iclbody"><a id="h41582_2" class="jump" title="dmm.digitize.samplerate" href="41433.htm" target="_self">Sample rate</a>: <code class="monospace">dmm.ATTR_DIGI_SAMPLE_RATE</code></p>
+<p class="iclbody"><a id="h74395_2" class="jump" title="dmm.digitize.unit" href="43717.htm" target="_self">Unit</a>: <code class="monospace">dmm.ATTR_DIGI_UNIT</code></p>
+<p class="iclbody"><a id="h63658" class="jump" title="dmm.digitize.userdelay[N]" href="41269.htm" target="_self">User delay</a> <em class="emphasis">N</em> (where <em class="emphasis">N</em> is <code class="monospace">1</code> to <code class="monospace">5</code>): <code class="monospace">dmm.ATTR_DIGI_USER_DELAY_</code><span class="monospaceitalic">N</span></p>
+<a name="o74241"></a>
+<p class="iclsubheading">Math options (measure)</p>
+<p class="iclbody"><a id="h41241" class="jump" title="dmm.measure.math.enable" href="41235.htm" target="_self">Enable math</a>: <code class="monospace">dmm.ATTR_MEAS_MATH_ENABLE</code></p>
+<p class="iclbody"><a id="h41253" class="jump" title="dmm.measure.math.mxb.bfactor" href="41246.htm" target="_self">b (offset) value</a>: <code class="monospace">dmm.ATTR_MEAS_MATH_MXB_BF</code></p>
+<p class="iclbody"><a id="h41256" class="jump" title="dmm.measure.math.mxb.mfactor" href="41247.htm" target="_self">m (scalar) value</a>: <code class="monospace">dmm.ATTR_MEAS_MATH_MXB_MF</code></p>
+<p class="iclbody"><a id="h43461" class="jump" title="dmm.measure.math.format" href="41245.htm" target="_self">Math format</a>: <code class="monospace">dmm.ATTR_MEAS_MATH_FORMAT</code></p>
+<p class="iclbody"><a id="h43460" class="jump" title="dmm.measure.math.percent" href="41248.htm" target="_self">Percent</a>: <code class="monospace">dmm.ATTR_MEAS_MATH_PERCENT</code></p>
+<p class="iclsubheading">Math options (digitize)</p>
+<p class="iclbody"><a id="h44524" class="jump" title="dmm.digitize.math.enable" href="41240.htm" target="_self">Enable math</a>: <code class="monospace">dmm.ATTR_DIGI_MATH_ENABLE</code></p>
+<p class="iclbody"><a id="h44525" class="jump" title="dmm.digitize.math.mxb.bfactor" href="41252.htm" target="_self">b (offset) value</a>: <code class="monospace">dmm.ATTR_DIGI_MATH_MXB_BF</code></p>
+<p class="iclbody"><a id="h44528" class="jump" title="dmm.digitize.math.mxb.mfactor" href="41255.htm" target="_self">m (scalar) value</a>: <code class="monospace">dmm.ATTR_DIGI_MATH_MXB_MF</code></p>
+<p class="iclbody"><a id="h43715" class="jump" title="dmm.digitize.math.format" href="41243.htm" target="_self">Math format</a>: <code class="monospace">dmm.ATTR_DIGI_MATH_FORMAT</code></p>
+<p class="iclbody"><a id="h46130" class="jump" title="dmm.digitize.math.percent" href="41257.htm" target="_self">Percent</a>: <code class="monospace">dmm.ATTR_DIGI_MATH_PERCENT</code></p>
+<a name="o74243"></a>
+<p class="iclsubheading">Limit options (measure)</p>
+<p class="iclbody"><a id="h46127" class="jump" title="dmm.measure.limit[Y].audible" href="41684.htm" target="_self">Limit 1 audible</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_AUDIBLE_1</code></p>
+<p class="iclbody"><a id="h41211" class="jump" title="dmm.measure.limit[Y].autoclear" href="41208.htm" target="_self">Limit 1 auto clear</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_AUTO_CLEAR_1</code></p>
+<p class="iclbody"><a id="h41232" class="jump" title="dmm.measure.limit[Y].enable" href="41231.htm" target="_self">Limit 1 enable</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_ENABLE_1</code></p>
+<p class="iclbody"><a id="h41218" class="jump" title="dmm.measure.limit[Y].fail" href="41214.htm" target="_self">Limit 1 fail</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_FAIL_1</code></p>
+<p class="iclbody"><a id="h41910" class="jump" title="dmm.measure.limit[Y].high.value" href="41230.htm" target="_self">Limit 1 high value</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_HIGH_1</code></p>
+<p class="iclbody"><a id="h41911" class="jump" title="dmm.measure.limit[Y].low.value" href="41229.htm" target="_self">Limit 1 low value</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_LOW_1</code></p>
+<p class="iclbody"><a id="h46127_2" class="jump" title="dmm.measure.limit[Y].audible" href="41684.htm" target="_self">Limit 2 audible</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_AUDIBLE_2</code></p>
+<p class="iclbody"><a id="h41211_2" class="jump" title="dmm.measure.limit[Y].autoclear" href="41208.htm" target="_self">Limit 2 auto clear</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_AUTO_CLEAR_2</code></p>
+<p class="iclbody"><a id="h41232_2" class="jump" title="dmm.measure.limit[Y].enable" href="41231.htm" target="_self">Limit 2 enable</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_ENABLE_2</code></p>
+<p class="iclbody"><a id="h41218_2" class="jump" title="dmm.measure.limit[Y].fail" href="41214.htm" target="_self">Limit 2 fail</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_FAIL_2</code></p>
+<p class="iclbody"><a id="h41910_2" class="jump" title="dmm.measure.limit[Y].high.value" href="41230.htm" target="_self">Limit 2 high value</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_HIGH_2</code></p>
+<p class="iclbody"><a id="h41911_2" class="jump" title="dmm.measure.limit[Y].low.value" href="41229.htm" target="_self">Limit 2 low value</a>: <code class="monospace">dmm.ATTR_MEAS_LIMIT_LOW_2</code></p>
+<p class="iclsubheading">Limit options (digitize)</p>
+<p class="iclbody"><a id="h46128" class="jump" title="dmm.digitize.limit[Y].audible" href="41685.htm" target="_self">Limit 1 audible</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_AUDIBLE_1</code></p>
+<p class="iclbody"><a id="h44532" class="jump" title="dmm.digitize.limit[Y].autoclear" href="41210.htm" target="_self">Limit 1 auto clear</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_AUTO_CLEAR_1</code></p>
+<p class="iclbody"><a id="h41674" class="jump" title="dmm.digitize.limit[Y].enable" href="41225.htm" target="_self">Limit 1 enable</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_ENABLE_1</code></p>
+<p class="iclbody"><a id="h44534" class="jump" title="dmm.digitize.limit[Y].fail" href="41221.htm" target="_self">Limit 1 fail</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_FAIL_1</code></p>
+<p class="iclbody"><a id="h44535" class="jump" title="dmm.digitize.limit[Y].high.value" href="41227.htm" target="_self">Limit 1 high value</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_HIGH_1</code></p>
+<p class="iclbody"><a id="h41223" class="jump" title="dmm.digitize.limit[Y].low.value" href="41215.htm" target="_self">Limit 1 low value</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_LOW_1</code></p>
+<p class="iclbody"><a id="h46128_2" class="jump" title="dmm.digitize.limit[Y].audible" href="41685.htm" target="_self">Limit 2 audible</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_AUDIBLE_2</code></p>
+<p class="iclbody"><a id="h44532_2" class="jump" title="dmm.digitize.limit[Y].autoclear" href="41210.htm" target="_self">Limit 2 auto clear</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_AUTO_CLEAR_2</code></p>
+<p class="iclbody"><a id="h41674_2" class="jump" title="dmm.digitize.limit[Y].enable" href="41225.htm" target="_self">Limit 2 enable</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_ENABLE_2</code></p>
+<p class="iclbody"><a id="h44534_2" class="jump" title="dmm.digitize.limit[Y].fail" href="41221.htm" target="_self">Limit 2 fail</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_FAIL_2</code></p>
+<p class="iclbody"><a id="h44535_2" class="jump" title="dmm.digitize.limit[Y].high.value" href="41227.htm" target="_self">Limit 2 high value</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_HIGH_2</code></p>
+<p class="iclbody"><a id="h41223_2" class="jump" title="dmm.digitize.limit[Y].low.value" href="41215.htm" target="_self">Limit 2 low value</a>: <code class="monospace">dmm.ATTR_DIGI_LIMIT_LOW_2</code></p>
+<a name="o82325"></a>
+<p class="iclsubheading">Analog trigger settings (measurement functions)</p>
+<p class="iclbody"><a id="h46306" class="jump" title="dmm.measure.analogtrigger.edge.level" href="41407.htm" target="_self">Edge level</a>: <code class="monospace">dmm.ATTR_MEAS_ATRIG_EDGE_LEVEL</code></p>
+<p class="iclbody"><a id="h46305" class="jump" title="dmm.measure.analogtrigger.edge.slope" href="41410.htm" target="_self">Edge slope</a>: <code class="monospace">dmm.ATTR_MEAS_ATRIG_EDGE_SLOPE</code></p>
+<p class="iclbody"><a id="h41594" class="jump" title="dmm.digitize.analogtrigger.mode" href="41391.htm" target="_self">Mode</a>: <code class="monospace">dmm.ATTR_DIGI_ATRIG_MODE</code></p>
+<p class="iclbody"><a id="h46314" class="jump" title="dmm.measure.analogtrigger.window.direction" href="41727.htm" target="_self">Window direction</a>: <code class="monospace">dmm.ATTR_MEAS_ATRIG_WINDOW_DIRECTION</code></p>
+<p class="iclbody"><a id="h46312" class="jump" title="dmm.measure.analogtrigger.window.levelhigh" href="43709.htm" target="_self">Window level high</a>: <code class="monospace">dmm.ATTR_MEAS_ATRIG_WINDOW_LEVEL_HIGH</code></p>
+<p class="iclbody"><a id="h46313" class="jump" title="dmm.measure.analogtrigger.window.levellow" href="43710.htm" target="_self">Window level low</a>: <code class="monospace">dmm.ATTR_MEAS_ATRIG_WINDOW_LEVEL_LOW</code></p>
+<p class="iclsubheading">Analog trigger settings (digitize functions)</p>
+<p class="iclbody"><a id="h46384" class="jump" title="dmm.digitize.analogtrigger.edge.level" href="41394.htm" target="_self">Edge level</a>: <code class="monospace">dmm.ATTR_DIGI_ATRIG_EDGE_LEVEL</code></p>
+<p class="iclbody"><a id="h46315" class="jump" title="dmm.digitize.analogtrigger.edge.slope" href="43708.htm" target="_self">Edge slope</a>: <code class="monospace">dmm.ATTR_DIGI_ATRIG_EDGE_SLOPE</code></p>
+<p class="iclbody"><a id="h41594_2" class="jump" title="dmm.digitize.analogtrigger.mode" href="41391.htm" target="_self">Mode</a>: <code class="monospace">dmm.ATTR_DIGI_ATRIG_MODE</code></p>
+<p class="iclbody"><a id="h46322" class="jump" title="dmm.digitize.analogtrigger.window.direction" href="41398.htm" target="_self">Window direction</a>: <code class="monospace">dmm.ATTR_DIGI_ATRIG_WINDOW_DIRECTION</code></p>
+<p class="iclbody"><a id="h46320" class="jump" title="dmm.digitize.analogtrigger.window.levelhigh" href="41406.htm" target="_self">Window level high</a>: <code class="monospace">dmm.ATTR_DIGI_ATRIG_WINDOW_LEVEL_HIGH</code></p>
+<p class="iclbody"><a id="h46321" class="jump" title="dmm.digitize.analogtrigger.window.levellow" href="41724.htm" target="_self">Window level low</a>: <code class="monospace">dmm.ATTR_DIGI_ATRIG_WINDOW_LEVEL_LOW</code></p>
+<a name="o74242"></a>
+<p class="iclsubheading">Filter options (measure only)</p>
+<p class="iclbody"><a id="h41906" class="jump" title="dmm.measure.filter.enable" href="41161.htm" target="_self">Filter enable</a>: <code class="monospace">dmm.ATTR_MEAS_FILTER_ENABLE</code></p>
+<p class="iclbody"><a id="h41158" class="jump" title="dmm.measure.filter.count" href="41157.htm" target="_self">Filter count</a>: <code class="monospace">dmm.ATTR_MEAS_FILTER_COUNT</code></p>
+<p class="iclbody"><a id="h41168" class="jump" title="dmm.measure.filter.type" href="41167.htm" target="_self">Filter type</a>: <code class="monospace">dmm.ATTR_MEAS_FILTER_TYPE</code></p>
+<p class="iclbody"><a id="h41174" class="jump" title="dmm.measure.filter.window" href="41173.htm" target="_self">Filter window</a>: <code class="monospace">dmm.ATTR_MEAS_FILTER_WINDOW</code></p>
+<a name="o74246"></a>
+<p class="iclsubheading">Relative offset settings (measurement functions)</p>
+<p class="iclbody"><a id="h41919" class="jump" title="dmm.measure.rel.enable" href="41271.htm" target="_self">Relative offset enable</a>: <code class="monospace">dmm.ATTR_MEAS_REL_ENABLE</code></p>
+<p class="iclbody"><a id="h41921" class="jump" title="dmm.measure.rel.method" href="41691.htm" target="_self">Relative offset method</a> (DCV ratio measurements only): <code class="monospace">dmm.ATTR_MEAS_REL_METHOD</code></p>
+<p class="iclbody"><a id="h41276" class="jump" title="dmm.measure.rel.level" href="41273.htm" target="_self">Relative offset value</a>: <code class="monospace">dmm.ATTR_MEAS_REL_LEVEL</code></p>
+<p class="iclsubheading">Relative offset settings (digitize functions)</p>
+<p class="iclbody"><a id="h44523_2" class="jump" title="dmm.digitize.rel.enable" href="41280.htm" target="_self">Relative offset enable</a>: <code class="monospace">dmm.ATTR_DIGI_REL_ENABLE</code></p>
+<p class="iclbody"><a id="h41278_2" class="jump" title="dmm.digitize.rel.level" href="41275.htm" target="_self">Relative offset value</a>: <code class="monospace">dmm.ATTR_DIGI_REL_LEVEL</code></p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>When you are using relative offset on a closed channel, make sure to set the relative offset level on that channel before enabling the offset.</p>
+
+
+<input id="topicId" type="hidden" value="91267" />
+<input id="topicDescription" type="hidden" value="dmm.measure.setattribute()" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/2/2019 11:46:09 AM" />
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16067.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16069.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16068" class="heading2-icl">dmm.simreftemperature</h2>
+<p class="bodyzero">This attribute sets the simulated reference temperature of the thermocouple reference junction.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Celsius: 23<br>Kelvin: 296.15<br>Fahrenheit: 73.4</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.simreftemperature</p>
+<p class="iclcode">dmm.simreftemperature = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The simulated reference temperature:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Celsius: 0 to 65</li><li class="tablelistbullet9pt">Kelvin: 273.15 to 338.15</li><li class="tablelistbullet9pt">Fahrenheit: 32 to 149</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute applies to the temperature function when the transducer type is set to thermocouple and the reference junction is set to simulated. It allows you to set the simulated reference temperature value.</p>
+<p class="iclbody">This attribute is only valid when <code class="monospace">dmm.func</code> is set to <code class="monospace">&quot;temperature&quot;</code>. All other functions generate an error and return <code class="monospace">nil</code> when queried.</p>
+<p class="iclbody">The simulated reference temperature is only used when the transducer type is thermocouple, as set by <code class="monospace">dmm.transducer</code>. For all other transducer types, the value is set but not used until the transducer type is set for thermocouple.</p>
+<p class="iclbody">The simulated reference temperature setting is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to <code class="monospace">&quot;temperature&quot;</code> with the transducer type set to thermocouple, the simulated reference temperature setting you set previously is retained.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">dmm.func = &quot;temperature&quot;</p>
+<p class="codetable">dmm.transducer = dmm.TEMP_THERMOCOUPLE</p>
+<p class="codetable">dmm.units = dmm.UNITS_CELSIUS</p>
+<p class="codetable">dmm.simreftemperature = 30</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets 30 degrees Celsius as the simulated reference temperature for thermocouples.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h2026" class="jump" title="dmm.transducer" href="16073.htm" target="_self">dmm.transducer</a></p>
+<p class="listcommand"><a id="h16151" class="jump" title="dmm.units" href="16074.htm" target="_self">dmm.units</a></p>
+
+

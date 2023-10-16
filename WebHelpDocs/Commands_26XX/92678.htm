@@ -1,0 +1,93 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Source voltage using two 2600B instruments in series </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="92677.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="92679.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t92678" class="heading3">Source voltage using two 2600B instruments in series</h3>
+<p class="bodytext">This example shows the recommended approach for setting the source and limit ranges and levels when combining SMU voltage sources in&nbsp;series.</p>
+<p class="magicfigurecenter"><img id="f93412" src="2601b-pulse_source_voltage_using_smus_in_series_lr.png" class="linkedepsandpngtemplate" alt="Source voltage using 2600B instruments in series" height="278" width="165" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">The following values are based on the current and voltage levels available in Region 4 of a 2601B, 2602B, or 2604B SMU, as shown in the table in <a id="h19626" class="jump" title="Combining SMU outputs" href="97054.htm" target="_self">Combining SMU outputs</a>. For information about generating pulses with a 2600B, refer to <a id="h15535" class="jump" title="Using timers to perform pulse mode sweeps" href="12560.htm" target="_self">Using timers to perform pulse mode sweeps</a>.</p>
+<p class="bodytext">This configuration supplies more voltage than a single SMU voltage source can provide. In this example, SMU 1 and SMU 2 each supply one-half of the total voltage for the SMU combination. For the back-to-back series connection shown, the total voltage of the combined SMUs is V<sub class="subscript">SMU 2</sub> − V<sub class="subscript">SMU 1</sub>. To obtain a net differential voltage that is twice V<sub class="subscript">SMU&nbsp;2</sub>, the polarity of SMU 1 is set to the opposite of the polarity of SMU 2.</p>
+<p class="bodytext">In this configuration, it is best practice to use only one SMU to limit the current output of the SMU combination. In this example, SMU&nbsp;2 limits the current. A good approach for making sure that both SMUs are set to the same source limit range, which is recommended, is to set SMU&nbsp;1 to the maximum current allowed in Region 4, then set the limit for SMU&nbsp;2 ten percent lower.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">A 10% source limit margin is generally recommended, but this value can be adjusted to meet the requirements of a specific application.</p>
+<p class="bodytext"><strong class="specialbold">Configure two 2600B SMUs to get the maximum pulsed voltage level possible in Region&nbsp;4:</strong></p>
+<p class="bodytext">40&nbsp;V with 9&nbsp;A source limit</p>
+<p class="bodytext"><strong class="specialbold">SMU 1 configuration (sources one-half of the total pulse voltage):</strong></p>
+<p class="bodytext">Source function:</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCVOLTS</p>
+<p class="bodytext">Source range:</p>
+<p class="code">smua.source.rangev = 20</p>
+<p class="bodytext">Idle (bias) source level (source level at base of pulse):</p>
+<p class="code">smua.source.levelv = -1e-12</p>
+<p class="note"><img id="f14261_1" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Source polarity changes incur a 100 μs settling delay. Because the number 0 is treated as a positive value in the 2600B, negative-going pulses with a 0 V bias level require the source to change polarity. To ensure the proper pulse timing of SMU 1 and SMU 2, it is best to eliminate the SMU 1 polarity changes and avoid the associated 100 μs time penalty. The easiest way to do this is set the bias level to a negative value that is significantly less than the programming resolution of the instrument, such as −1e−12. Functionally, this value is the same as zero, but it is mathematically negative, which eliminates the polarity change. </p>
+<p class="bodytext">Idle (bias) source limit (source limit at base of pulse):</p>
+<p class="code">smua.source.limiti = 1</p>
+<p class="bodytext">Pulse source level (source level at top of pulse):</p>
+<p class="code">smua.trigger.source.listv({-20})</p>
+<p class="bodytext">As explained in the note above, the polarity of SMU 1 is generally the opposite of the voltage polarity across the device. To achieve a positive voltage across the device, program SMU 1 to a negative voltage level. For example, to output 40 V across the device, program SMU 1 to −20 V and SMU 2 to +20 V. To achieve a negative voltage across the device, program SMU 1 to a positive voltage level and SMU 2 to a negative voltage level.</p>
+<p class="bodytext">Pulse source limit. SMU 2 controls the source limit for the combined SMUs. Set the current source limit of SMU 1 to the maximum current allowed in Region 4:</p>
+<p class="code">smua.trigger.source.limiti = 10</p>
+<p class="bodytext">Output-off mode:</p>
+<p class="code">smua.source.offmode = smua.OUTPUT_NORMAL</p>
+<p class="bodytext">Output-off function:</p>
+<p class="code">smua.source.offfunc = smua.OUTPUT_DCVOLTS</p>
+<p class="bodytext">Normal output-off current limit:</p>
+<p class="code">smua.source.offlimiti = 1e-3 --(default)</p>
+<p class="bodytext"><strong class="specialbold">SMU 2 configuration (sources one-half of the total pulse voltage):</strong></p>
+<p class="bodytext">Source function:</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCVOLTS</p>
+<p class="bodytext">Source range:</p>
+<p class="code">smua.source.rangev = 20</p>
+<p class="bodytext">Idle (bias) source level (source level at base of pulse):</p>
+<p class="code">smua.source.levelv = 0</p>
+<p class="bodytext">Idle (bias) source limit (source limit at base of pulse). This is similar to the pulse source limit. Set the SMU 2 idle source limit ten percent lower than the SMU 1 limit:</p>
+<p class="code">smua.source.limiti = 0.9</p>
+<p class="bodytext">Pulse source level (source level at top of pulse):</p>
+<p class="code">smua.trigger.source.listv({-20})</p>
+<p class="bodytext">Pulse source limit. SMU 2 controls the source limit for the combined SMUs. Set the current source limit of SMU 2 ten percent lower than the source limit of SMU 1:</p>
+<p class="code">smua.trigger.source.limiti = 9</p>
+<p class="bodytext">Output-off mode:</p>
+<p class="code">smua.source.offmode = smua.OUTPUT_NORMAL</p>
+<p class="bodytext">Output-off function:</p>
+<p class="code">smua.source.offfunc = smua.OUTPUT_DCVOLTS </p>
+<p class="bodytext">Normal output-off current limit (0.9 mA, which is 10% less than the SMU&nbsp;1 output-off limit):</p>
+<p class="code">smua.source.offlimiti = 0.9e-3</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="97054.htm" target="_self">Combining SMU outputs</a></p><p class="relateditem"><a href="97055.htm" target="_self">Pulse characteristics for the 2601B, 2602B, and 2604B</a></p><p class="relateditem"><a href="97057.htm" target="_self">Pulse characteristics for the 2611B, 2612B, 2614B, 2634B, 2635B, and 2636B</a></p><p class="relateditem"><a href="97056.htm" target="_self">Guidelines for combining SMU outputs</a></p><p class="relateditem"><a href="92677.htm" target="_self">Source current using two 2600B instruments in parallel</a></p><p class="relateditem"><a href="92679.htm" target="_self">Source voltage with extended current using two 2600B instruments in parallel</a></p><p class="relateditem"><a href="29768.htm" target="_self">Combining channels in series to output higher voltage</a></p><p class="relateditem"><a href="29769.htm" target="_self">Combining channels in parallel to output higher current</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="92678" />
+<input id="topicDescription" type="hidden" value="Source voltage using two 2600B instruments in series" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/17/2021 7:47:37 AM" />
+</body>
+</html>

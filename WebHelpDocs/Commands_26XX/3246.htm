@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Coordinating overlapped operations in remote groups </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="3245.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="3247.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t3246" class="heading4">Coordinating overlapped operations in remote groups</h4>
+<p class="bodytext">All overlapped operations on all nodes in a group must have completed before the master node can send a command to the group. If you send a command to a node in a remote group when an overlapped operation is running on any node in that group, errors occur. </p>
+<p class="bodytext">You can execute the <code class="monospace">waitcomplete()</code> command on the master node or group leader to wait for overlapped operations. The action of <code class="monospace">waitcomplete()</code> depends on the parameters specified. </p>
+<p class="bodytext">If you want to wait for completion of overlapped operations for:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">All nodes in the local group:</strong> Use <code class="monospace">waitcomplete()</code> without a parameter from the master node or group leader.</li><li class="listbullet"><strong class="specialbold">A specific group:</strong> Use <code class="monospace">waitcomplete(</code><span class="monospaceitalic">N</span><code class="monospace">)</code> with a group number as the parameter from the master node. This option is not available for group leaders.</li><li class="listbullet"><strong class="specialbold">All nodes in the system:</strong> Use <code class="monospace">waitcomplete(0)</code> from the master node. This option is not available for group leaders.</li></ul><p class="bodytext">For additional information, refer to <a id="h14057" class="jump" title="waitcomplete()" href="13986.htm" target="_self">waitcomplete()</a>.</p>
+<p class="bodytext">The following code shows two examples of using the <code class="monospace">waitcomplete()</code> command from the master&nbsp;node:</p>
+<p class="code">-- Wait for each node in group <span class="monospaceitalic">N</span> to complete all overlapped operations.</p>
+<p class="code">waitcomplete(<span class="monospaceitalic">N</span>)</p>
+<p class="code">-- Wait for all groups on the TSP-Link network to complete overlapped operations.</p>
+<p class="code">waitcomplete(0)</p>
+<p class="bodytext">A group leader can issue the <code class="monospace">waitcomplete()</code> command to wait for the local group to complete all overlapped operations.</p>
+<p class="bodytext">The following code is an example of how to use the <code class="monospace">waitcomplete()</code> command from a group leader:</p>
+<p class="code">-- Wait for all nodes in the local group to complete all overlapped operations.</p>
+<p class="code">waitcomplete()</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="3245.htm" target="_self">Running simultaneous test scripts</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="3246" />
+<input id="topicDescription" type="hidden" value="Coordinating overlapped operations in remote groups" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/25/2021 12:11:17 PM" />
+</body>
+</html>

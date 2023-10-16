@@ -1,0 +1,101 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17437.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17247.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15918" class="heading2-icl">channel.getbackplane()</h2>
+<p class="bodyzero">This function returns a string that lists the analog backplane relays that are controlled when the specified channels are used with switching operations.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup<br>Pole setting change</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">None or nil</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">analogBusList</em> = channel.getbackplane(&quot;<em class="emphasis">channelList</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">analogBusList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">A string listing analog backplane relays associated with items in <span class="monospaceitalic">channelList</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">A string listing the channels being queried</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The response indicates the analog backplane relays that are used during processing of the command:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">channel.close()</code></li><li class="listbullet"><code class="monospace">channel.exclusiveclose()</code></li><li class="listbullet"><code class="monospace">channel.open()</code></li><li class="listbullet"><code class="monospace">scan.execute()</code> or <code class="monospace">scan.background()</code> if the channel is configured for switching</li></ul><p class="iclbody">The response will be changed by <code class="monospace">channel.setbackplane()</code>, replacing the analog backplane relays with the new specified list.</p>
+<p class="iclbody">The response will be cleared if <code class="monospace">channel.setpole()</code> sets a new pole selection.</p>
+<p class="iclbody">The analog backplane relays indicated by this response are not used or affected by:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">dmm.close()</code> or <code class="monospace">dmm.open()</code></li><li class="listbullet"><code class="monospace">scan.execute()</code> or <code class="monospace">scan.background()</code> if channel is configured for measuring</li></ul><p class="iclbody">The parameter string can contain <code class="monospace">&quot;slot</code><span class="monospaceitalic">X</span><code class="monospace">&quot;</code>, where <span class="monospaceitalic">X</span> equals 1 to 6, or <code class="monospace">&quot;allslots&quot;</code>.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">A specified channel does not exist for the card installed in a slot</li><li class="listbullet">A channel pattern is specified in parameter list</li><li class="listbullet">A specified channel does not have analog backplane relays associated with it, such as digital I/O</li><li class="listbullet">An analog backplane relay is specified in parameter list</li></ul><p class="iclbody">When <span class="monospaceitalic">channelList</span><strong class="specialbold"> </strong>contains multiple items, the string returned includes the analog backplane relay channels of a single channel separated by a comma. A semicolon is used to delineate channels.</p>
+<p class="iclbody">For channel patterns, the analog backplane relays must be specified when creating the pattern in the channel list parameter &#8212; see <code class="monospace">channel.pattern.setimage()</code> or <code class="monospace">channel.pattern.snapshot()</code>. Therefore, to see the channels and analog backplane relays associated with a channel pattern, use the <code class="monospace">channel.pattern.getimage()</code> function.</p>
+<p class="iclbody">Command processing stops as soon as an error is detected and a <code class="monospace">nil</code> response is then returned. No partial list is returned.</p>
+<p class="iclbody">For digital I/O, DAC, and totalizer channels, nothing is returned.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.setpole(&quot;slot5&quot;, 4)</p>
+<p class="codetable">channel.setbackplane(&quot;slot5&quot;, &quot;5911, 5922&quot;)</p>
+<p class="codetable">print(channel.getbackplane(&quot;slot5&quot;))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Assume a Model 3720 in slot 5.</p>
+<p class="tablebodytext">Set all channels on the card in slot 5 to be 4-pole, which makes the card have 30 4-pole channels.</p>
+<p class="tablebodytext">Set all channels in slot 5 to have associated analog backplane relays 911 and 922 on slot 5.</p>
+<p class="tablebodytext">Get the associated analog backplane relays for channels on slot 5.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922,5911,5922</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Data retrieval commands</p>
+<p class="listcommand"><a id="h769" class="jump" title="channel.close()" href="17229.htm" target="_self">channel.close()</a></p>
+<p class="listcommand"><a id="h770" class="jump" title="channel.exclusiveclose()" href="17435.htm" target="_self">channel.exclusiveclose()</a></p>
+<p class="listcommand"><a id="h771" class="jump" title="channel.open()" href="17548.htm" target="_self">channel.open()</a></p>
+<p class="listcommand"><a id="h776" class="jump" title="channel.pattern.getimage()" href="17284.htm" target="_self">channel.pattern.getimage()</a></p>
+<p class="listcommand"><a id="h1806" class="jump" title="channel.pattern.setimage()" href="17296.htm" target="_self">channel.pattern.setimage()</a></p>
+<p class="listcommand"><a id="h791" class="jump" title="channel.pattern.snapshot()" href="17299.htm" target="_self">channel.pattern.snapshot()</a></p>
+<p class="listcommand"><a id="h766" class="jump" title="channel.setbackplane()" href="15941.htm" target="_self">channel.setbackplane()</a></p>
+<p class="listcommand"><a id="h773" class="jump" title="channel.setpole()" href="15949.htm" target="_self">channel.setpole()</a></p>
+<p class="listcommand"><a id="h907" class="jump" title="dmm.close()" href="16014.htm" target="_self">dmm.close()</a></p>
+<p class="listcommand"><a id="h871" class="jump" title="dmm.open()" href="16054.htm" target="_self">dmm.open()</a></p>
+<p class="listcommand"><a id="h1145" class="jump" title="scan.background()" href="16891.htm" target="_self">scan.background()</a></p>
+<p class="listcommand"><a id="h1140" class="jump" title="scan.execute()" href="16893.htm" target="_self">scan.execute()</a></p>
+
+

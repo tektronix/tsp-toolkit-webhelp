@@ -1,0 +1,135 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.readwithtime() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41093.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41236.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41622" class="heading2-icl">dmm.digitize.readwithtime()</h2>
+<p class="bodyzero">This function initiates digitize measurements and returns the last actual measurement and time information in UTC format without using the trigger mode.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">reading, seconds, fractional</span> = <code class="monospace">dmm</code>.digitize.readwithtime()</p>
+<p class="iclcode"><span class="monospaceitalic">reading, seconds, fractional</span> = <code class="monospace">dmm</code>.digitize.readwithtime(<span class="monospaceitalic">bufferName</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">reading</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The last reading of the measurement process</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">seconds</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Seconds in UTC format</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">fractional</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Fractional seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer; if no buffer is specified, this parameter defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command initiates digitize measurements using the present function settings, stores the readings in a reading buffer, and returns the last reading.</p>
+<p class="iclbody">The <code class="monospace">dmm.digitize.count</code> attribute determines how many measurements are performed.</p>
+<p class="iclbody">When you use a reading buffer with a command or action that makes multiple readings, all readings are available in the reading buffer. However, only the last reading is returned as a reading with the command.</p>
+<p class="iclbody">If you define a specific reading buffer, the reading buffer must exist before you make the measurement.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">print(<code class="monospace">dmm</code>.digitize.readwithtime(defbuffer1))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Print the last digitize measurement and time information from <code class="monospace">defbuffer1</code> in UTC format, which will look similar to:</p>
+<p class="codetable">-0.0003882925875	1415795836	0.946164546</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">channel.close(&quot;101&quot;)</p>
+<p class="codetable">print(dmm.digitize.readwithtime())</p>
+<p class="codetable">channel.close(&quot;109&quot;) </p>
+<p class="codetable">print(dmm.digitize.readwithtime())</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Close channel 1 of slot 1.</p>
+<p class="tablebodytext">Print the digitize reading.</p>
+<p class="tablebodytext">Close channel 9 of slot 1.</p>
+<p class="tablebodytext">Print the digitize reading.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41300" class="jump" title="dmm.digitize.count" href="41297.htm" target="_self">dmm.digitize.count</a></p>
+<p class="listcommand"><a id="h41429" class="jump" title="dmm.digitize.func" href="41428.htm" target="_self">dmm.digitize.func</a></p>
+<p class="listcommand"><a id="h46114" class="jump" title="trigger.model.load() - SimpleLoop" href="46034.htm" target="_self">trigger.model.load() &#8212; SimpleLoop</a></p>
+
+
+<input id="topicId" type="hidden" value="41622" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.readwithtime()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/10/2019 10:22:48 AM" />
+</body>
+</html>

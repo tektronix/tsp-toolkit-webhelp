@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Reading buffer attributes </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19413.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11659.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t11636" class="heading4">Reading buffer attributes</h4>
+<p class="bodytext">Use the reading buffer attributes to access the reading buffer data. The table below displays the attributes that you can use to access the reading buffer data.</p>
+<table class="tableintopic" width="576" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="192"><p class="tableheading">Recall attribute*</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="384"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">measurefunctions</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">An array (a Lua table) of strings indicating the function measured for the reading (current, voltage, ohms, or watts).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">measureranges</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">An array (a Lua table) of full-scale range values for the measure range used when the measurement was made.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">readings</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">An array (a Lua table) of the readings stored in the reading buffer. This array holds the same data that is returned when the reading buffer is accessed directly; that is, <code class="monospace">rb[2]</code> and <code class="monospace">rb.readings[2]</code> access the same value.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">sourcefunctions</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">An array (a Lua table) of strings indicating the source function at the time of the measurement (current or voltage).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">sourceoutputstates</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">An array (a Lua table) of strings indicating the state of the source (off or on).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">sourceranges</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">An array (a Lua table) of full-scale range values for the source range used when the measurement was made.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">sourcevalues</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">If enabled, an array (a Lua table) of the sourced values in effect at the time of the reading.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">statuses</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">An array (a Lua table) of status values for all the readings in the buffer. The status values are floating-point numbers that encode the status value into a floating-point value. See <a id="h2737" class="jump" title="Buffer status" href="11659.htm" target="_self">Buffer status</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">timestamps</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">If enabled, an array (a Lua table) of timestamps, in seconds, of when each reading occurred. These are relative to the <code class="monospace">basetimestamp</code> for the buffer. See <a id="h13518" class="jump" title="Reading buffer commands" href="13519.htm" target="_self">Reading buffer commands</a>.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">* The default attribute is <code class="monospace">readings</code>, which can be omitted.</p>
+<p class="bodytext"><strong class="specialbold">Examples</strong>:</p>
+<p class="bodytext">The following programming example illustrates how to output 100 channel&nbsp;A readings from buffer 1:</p>
+<p class="code"><code class="monospace">printbuffer(1, 100, smua.nvbuffer1.readings)</code></p>
+<p class="bodytext">Similarly, the following outputs 100 channel A corresponding source values from buffer 1:</p>
+<p class="code"><code class="monospace">printbuffer(1, 100, smua.nvbuffer1.sourcevalues)</code></p>
+<p class="bodytext">The default reading attribute is <code class="monospace">readings</code>, which can be omitted. If <code class="monospace">readings</code> is omitted, the following also outputs 100 channel A readings from buffer 1:</p>
+<p class="code"><code class="monospace">printbuffer(1, 100, smua.nvbuffer1)</code></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13519.htm" target="_self">Reading buffer commands</a></p><p class="relateditem"><a href="11663.htm" target="_self">Buffer storage control attributes</a></p><p class="relateditem"><a href="19420.htm" target="_self">Buffer read-only attributes</a></p><p class="relateditem"><a href="19421.htm" target="_self">Buffer storage control programming examples</a></p><p class="relateditem"><a href="19422.htm" target="_self">Buffer read-only attribute programming examples</a></p><p class="relateditem"><a href="19413.htm" target="_self">Statistic attributes</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="11636" />
+<input id="topicDescription" type="hidden" value="Reading buffer attributes" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:25:38 PM" />
+</body>
+</html>

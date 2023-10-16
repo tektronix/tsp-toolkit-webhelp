@@ -1,0 +1,158 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Wait block </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31125.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t30864" class="heading3">Wait block</h3>
+<p class="bodytext">The wait block causes the trigger model to stop and wait for an event or set of events to occur before continuing. You can specify up to three events for each wait block.</p>
+<p class="bodytext">The event can occur before the trigger model reaches the wait block. If the event occurs after the trigger model starts but before the trigger model reaches the wait block, the trigger model records the event. By default, when the trigger model reaches the wait block, it executes the wait block without waiting for the event to happen again (the clear parameter is set to never).</p>
+<p class="bodytext">The instrument clears the memory of the recorded event when the trigger model exits the wait block. It also clears the recorded trigger event when the clear parameter is set to enter.</p>
+<p class="bodytext">All items in the list are subject to the same action &#8212; you cannot combine <code class="monospace">AND</code> and <code class="monospace">OR</code> logic in a single wait block.</p>
+<p class="bodytext">When you select the wait block, the following options are available.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Setting</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Clear</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">To clear previously detected trigger events when entering the wait block, select&nbsp;Enter.</p>
+<p class="tablebodytext">To immediately act on any previously detected triggers and not clear them, select&nbsp;Never.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Event 1</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">An event that must occur before the trigger block will continue.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Event 2</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">Optional. An event that must occur before the trigger block will continue.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Event 3</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">Optional. An event that must occur before the trigger block will continue.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Event Logic</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">Optional. Determines if all the defined events must occur or if at least one of the events must occur.</p>
+<p class="tablebodytext">Select AND if all the defined events must occur.</p>
+<p class="tablebodytext">Select OR if at least one of the events must occur.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">The event can be any of the events described in the following table.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Event</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Blender</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">Wait for the events set by an event blender.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Command</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">A command interface trigger:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><strong class="specialbold">Any remote interface:</strong> *<code class="monospace">TRG</code></li><li class="tablelistbullet9pt"><strong class="specialbold">GPIB only:</strong> GET bus command</li><li class="tablelistbullet9pt"><strong class="specialbold">USB only:</strong> A USBTMC TRIGGER message </li><li class="tablelistbullet9pt"><strong class="specialbold">VXI-11:</strong> VXI-11 command <code class="monospace">device_trigger</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Digital Input</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">Line edge detected on a digital input line. When you select this option, you select the digital input to monitor. </p>
+<p class="tablebodytext">After selecting the digital input line, choose Settings to select the type of edge (falling, rising, or either).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Display TRIGGER Key</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">Front-panel TRIGGER key press.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">LAN Input Trigger</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">An LXI trigger packet is received on the LAN trigger object. When you select this option, you select the LAN trigger to monitor.</p>
+<p class="tablebodytext">After you select the line, choose Settings to select the type of edge (falling, rising, or either).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">None</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">No trigger event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Source Limit</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">Source has reached the specified limit.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Timer</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">A trigger timer expired. When you select this option, you select the timer to monitor.</p>
+<p class="tablebodytext">After selecting the timer, choose Settings to define the timer. Refer to Trigger timers for detail on the options.</p>
+<p class="tablebodytext">For a timer to expire, you must start it. One method to start the timer in the Trigger Model is to include a Notify block before this block. Set the Notify block to use the same timer.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">TSP-Link Input</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">Line edge detected on a TSP-Link synchronization line. When you select this option, you select the TSP-Link line to monitor.</p>
+<p class="tablebodytext">After selecting the TSP-Link line, choose Settings to select the type of edge (falling, rising, or either).</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">If you need to set up the trigger model to wait for an event under some conditions but not others, you can use a branch block. For information, see <a id="h31069" class="jump" title="Branching blocks" href="31007.htm" target="_self">Branching blocks</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="46200.htm" target="_self">Additional Model 2470 information</a></p><p class="relateditem"><a href="59255.htm" target="_self">*OPC</a></p><p class="relateditem"><a href="59256.htm" target="_self">Aborting the trigger model</a></p><p class="relateditem"><a href="31016.htm" target="_self">Always block</a></p><p class="relateditem"><a href="31007.htm" target="_self">Branching blocks</a></p><p class="relateditem"><a href="30865.htm" target="_self">Buffer clear block</a></p><p class="relateditem"><a href="31010.htm" target="_self">Constant Limit block</a></p><p class="relateditem"><a href="33305_1.htm" target="_self">Deleting a user script using a remote interface</a></p><p class="relateditem"><a href="31015.htm" target="_self">Delta block</a></p><p class="relateditem"><a href="33036.htm" target="_self">Digital I/O</a></p><p class="relateditem"><a href="29982.htm" target="_self">Displayed measurements</a></p><p class="relateditem"><a href="31012.htm" target="_self">Dynamic Limit block</a></p><p class="relateditem"><a href="29871.htm" target="_self">Effect of GPIB line events on Model 2470</a></p><p class="relateditem"><a href="40158.htm" target="_self">Event numbers</a></p><p class="relateditem"><a href="28479.htm" target="_self">Four-wire remote sense connections</a></p><p class="relateditem"><a href="59289.htm" target="_self">Instrument settings stored in a source configuration list</a></p><p class="relateditem"><a href="33231.htm" target="_self">Introduction to reading buffers</a></p><p class="relateditem"><a href="30143.htm" target="_self">Limit testing and binning</a></p><p class="relateditem"><a href="31008.htm" target="_self">Loop Counter block</a></p><p class="relateditem"><a href="76318.htm" target="_self">Measure/Digitize block</a></p><p class="relateditem"><a href="59291.htm" target="_self">Notify block</a></p><p class="relateditem"><a href="31009.htm" target="_self">On event block</a></p><p class="relateditem"><a href="31017.htm" target="_self">Once block</a></p><p class="relateditem"><a href="31018.htm" target="_self">Once excluded block</a></p><p class="relateditem"><a href="59267.htm" target="_self">Operation Event Register</a></p><p class="relateditem"><a href="34868.htm" target="_self">Outputting a bit pattern</a></p><p class="relateditem"><a href="ID_AVM_BUT.htm" target="_self">Overvoltage protection</a></p><p class="relateditem"><a href="29851.htm" target="_self">Programmable status register sets</a></p><p class="relateditem"><a href="59262.htm" target="_self">Questionable Event Register</a></p><p class="relateditem"><a href="40105.htm" target="_self">Resets</a></p><p class="relateditem"><a href="29454.htm" target="_self">Saving setups</a></p><p class="relateditem"><a href="45724.htm" target="_self">Setting reading buffer capacity</a></p><p class="relateditem"><a href="29111.htm" target="_self">Source and measure using TSP commands</a></p><p class="relateditem"><a href="59283.htm" target="_self">Standard Event Register</a></p><p class="relateditem"><a href="32518.htm" target="_self">Triggering using TSP-Link trigger lines</a></p><p class="relateditem"><a href="27120.htm" target="_self">TSP-Link System Expansion Interface</a></p><p class="relateditem"><a href="31944.htm" target="_self">Upgrading the firmware</a></p><p class="relateditem"><a href="32667.htm" target="_self">Using groups to manage nodes on a TSP-Link system</a></p><p class="relateditem"><a href="3247.htm" target="_self">Using the data queue for real-time communication</a></p><p class="relateditem"><a href="31125.htm" target="_self">Using trigger events to start actions in the trigger model</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="30864" />
+<input id="topicDescription" type="hidden" value="Wait block" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/18/2019 2:06:34 PM" />
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15108.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="77107.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15109" class="heading2-icl">smuX.measure.calibrateY()</h2>
+<p class="bodyzero">This function generates and activates new measurement calibration constants.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.measure.calibrate<em class="emphasis">Y</em>(<em class="emphasis">range</em>, <em class="emphasis">cp1Measured</em>, <em class="emphasis">cp1Reference</em>, <em class="emphasis">cp2Measured</em>,<em class="emphasis"> cp2Reference</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.measure.calibratev()</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">SMU measurement function (<code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">range</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement range to adjust</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">cp1Measured</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The value measured by this SMU for point 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">cp1Reference</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reference measurement for point 1 as measured externally</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">cp2Measured </span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The value measured by this SMU for point 2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">cp2Reference </span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reference measurement for point 2 as measured externally</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function generates and activates new calibration constants for the given range.</p>
+<p class="iclbody">The positive and negative polarities of the instrument must be adjusted separately. Use a positive value for the <span class="monospaceitalic">range</span> parameter to adjust the positive polarity and a negative value for the <span class="monospaceitalic">range</span> parameter to adjust the negative polarity.</p>
+<p class="iclbody">All four measurements (<span class="monospaceitalic">cp1Measured</span>, <span class="monospaceitalic">cp1Reference</span>, <span class="monospaceitalic">cp2Measured</span>, and <span class="monospaceitalic">cp2Reference</span>) must be made with the calibration set that is active. Corruption of the calibration constants may result if this is ignored.</p>
+<p class="iclbody">The new calibration constants are activated immediately but they are not written to nonvolatile memory. Use the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.save()</code> function to save the new constants to nonvolatile memory. The active calibration constants stay in effect until the instrument is power cycled or a calibration set is loaded from nonvolatile memory with the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.restore()</code> function.</p>
+<p class="iclbody">This function is only available when calibration is unlocked using <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.unlock()</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.measure.calibratev(1, 1e-4, 1e-5, 0.92, 0.903)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Adjust SMU channel A voltage measurement using the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">1 V calibration range</li><li class="tablelistbullet9pt">1e−4 for +zero measurement reading</li><li class="tablelistbullet9pt">1e−5 for +zero DMM measurement reading</li><li class="tablelistbullet9pt">0.92 for +FS measurement reading</li><li class="tablelistbullet9pt">0.903 for the +FS DMM measurement reading</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17699" class="jump" title="Adjustment" href="13058.htm" target="_self">Adjustment</a></p>
+<p class="listcommand"><a id="h15189" class="jump" title="smuX.cal.lock()" href="15089.htm" target="_self">smuX.cal.lock()</a></p>
+<p class="listcommand"><a id="h15192" class="jump" title="smuX.cal.restore()" href="15090.htm" target="_self">smuX.cal.restore()</a></p>
+<p class="listcommand"><a id="h15193" class="jump" title="smuX.cal.save()" href="15091.htm" target="_self">smuX.cal.save()</a></p>
+<p class="listcommand"><a id="h15195" class="jump" title="smuX.cal.unlock()" href="15092.htm" target="_self">smuX.cal.unlock()</a></p>
+<p class="listcommand"><a id="h15236" class="jump" title="smuX.source.calibrateY()" href="15143.htm" target="_self">smuX.source.calibrateY()</a></p>
+
+

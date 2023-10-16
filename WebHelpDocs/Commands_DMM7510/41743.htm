@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.coupling.acfilter </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41297.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41744.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41743" class="heading2-icl">dmm.digitize.coupling.acfilter</h2>
+<p class="bodyzero">This attribute selects the instrument settling time when coupling is set to AC.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.AC_FILTER_SLOW</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">type</em> = dmm.digitize.coupling.acfilter</p>
+<p class="iclcode">dmm.digitize.coupling.acfilter = <em class="emphasis">type</em></p>
+<p class="iclcode"><span class="monospaceitalic">type</span> = dmm.measure.getattribute(dmm.FUNC_DIGITIZE_VOLTAGE, <code class="monospace">dmm</code>.ATTR_DIGI_COUPLING_AC_FILTER)</p>
+<p class="iclcode">dmm.measure.setattribute(dmm.FUNC_DIGITIZE_VOLTAGE, <code class="monospace">dmm</code>.ATTR_DIGI_COUPLING_AC_FILTER, <span class="monospaceitalic">type</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">type</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Type of AC coupling filter:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Slow (800 ms): <code class="monospace">dmm.AC_FILTER_SLOW</code></li><li class="tablelistbullet9pt">Fast (80 ms): <code class="monospace">dmm.AC_FILTER_FAST</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This option is only used when digitize signal coupling is set to AC.</p>
+<p class="iclbody">When the signal coupling is set to AC, there may still be some DC signal content that comes in with the AC signal. To allow this signal to settle out, you can set AC coupling filter to slow. When the filter is set to slow, the instrument adds an 800&nbsp;ms delay before making measurements.</p>
+<p class="iclbody">When the AC coupling filter is set to fast, the instrument adds an 80&nbsp;ms delay before making measurements. Set the AC filter to fast for faster settling when measuring rapidly changing inputs. For most digitize voltage measurements, the 80&nbsp;ms delay is enough time for the range to settle.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="594"><p class="codetable">dmm.digitize.func = dmm.FUNC_DIGITIZE_VOLTAGE</p>
+<p class="codetable">dmm.digitize.coupling.type = dmm.COUPLING_AC</p>
+<p class="codetable">dmm.digitize.coupling.acfilter = dmm.AC_FILTER_FAST</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" colspan="2" width="600"><p class="tablebodytext">Set the measure function to digitize voltage.</p>
+<p class="tablebodytext">Set the coupling type to AC.</p>
+<p class="tablebodytext">Set the filter to fast.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h47134" class="jump" title="DC and AC coupling" href="47132.htm" target="_self">DC and AC coupling</a></p>
+<p class="listcommand"><a id="h44576" class="jump" title="dmm.digitize.coupling.acfrequency" href="41744.htm" target="_self">dmm.digitize.coupling.acfrequency</a></p>
+<p class="listcommand"><a id="h41381" class="jump" title="dmm.digitize.coupling.type" href="41380.htm" target="_self">dmm.digitize.coupling.type</a></p>
+
+
+<input id="topicId" type="hidden" value="41743" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.coupling.acfilter" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 1:24:47 PM" />
+</body>
+</html>

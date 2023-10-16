@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Filter types </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11532.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11546.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t11548" class="heading3">Filter types</h3>
+<p class="bodytext">The 2600B provides two averaging filters and a median filter. The power&#8209;on default is the repeating&nbsp;filter.</p>
+<p class="bodytext">The averaging filters are repeating and moving, as shown in the following figure. For the repeating filter, the stack (filter count) is filled, and the conversions are averaged to yield a reading. The stack is then cleared, and the process starts over.</p>
+<p class="magicfigurecenter"><img id="f12435" src="2600as-901-01b_movingaverageandrepeatingfilters_lr.png" class="linkedepsandpngtemplate" alt="Repeating and moving average filters" height="494" width="532" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">The moving filter uses a first-in, first-out stack. When the stack (filter count) becomes full, the measurement conversions are averaged, yielding a reading. For each subsequent conversion placed into the stack, the oldest conversion is discarded. The stack is averaged again, yielding a new reading.</p>
+<p class="bodytext">The median filter is used to pass the reading that is nearest to the middle from a group of readings that are arranged according to size. The median filter uses a first-in, first-out stack similar to the moving filter. For each subsequent conversion placed into the stack, the oldest conversion is discarded. The median is then redetermined.</p>
+<p class="magicfigurecenter"><img id="f12436" src="2600as-901-01b_medianfilter_lr.png" class="linkedepsandpngtemplate" alt="Median filter" height="91" width="586" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">When a moving filter or a median filter is first enabled, the stack is empty. The first reading conversion is placed in the stack and is then copied to the other stack locations to fill it. Thus, the first filtered reading is the same as the first reading conversion. The normal moving filter process continues. A true average or median reading is only yielded when the stack is filled with new reading conversions (no copies in the stack). For example, in the figure for the moving filter, it makes ten filtered readings to fill the stack with new reading conversions. The first nine filtered readings are calculated using copied reading conversions.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11532.htm" target="_self">Filters</a></p><p class="relateditem"><a href="11546.htm" target="_self">Response time</a></p><p class="relateditem"><a href="11540.htm" target="_self">Enabling the filter from the front panel</a></p><p class="relateditem"><a href="17773.htm" target="_self">Configuring the filter from the front panel</a></p><p class="relateditem"><a href="13628.htm" target="_self">Setting the filter using a remote interface</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11548" />
+<input id="topicDescription" type="hidden" value="Filter types" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:16:04 PM" />
+</body>
+</html>

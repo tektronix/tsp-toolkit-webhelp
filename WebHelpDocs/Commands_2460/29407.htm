@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.measure.range </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29137.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25688.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t29407" class="heading2-icl">smu.measure.range</h2>
+<p class="bodyzero">This attribute determines the positive full-scale measure range.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list<br>Function change</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Current: 1 µA<br>Resistance: 200 MΩ<br>Voltage: 2 V</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">rangeValue</span> = smu.measure.range</p>
+<p class="iclcode">smu.measure.range<code class="monospace"> = </code><span class="monospaceitalic">rangeValue</span></p>
+<p class="iclcode"><em class="emphasis">rangeValue</em> = smu.measure.getattribute(<span class="monospaceitalic">function</span>, smu.ATTR_MEAS_RANGE)</p>
+<p class="iclcode">smu.measure.setattribute(<span class="monospaceitalic">function</span>, smu.ATTR_MEAS_RANGE, <span class="monospaceitalic">rangeValue</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">rangeValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Set to the maximum expected value to be measured:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: 1 µA to 7 A</li><li class="tablelistbullet9pt">Resistance: 2 Ω to 200 mΩ</li><li class="tablelistbullet9pt">Voltage: 0.2 V to 100 V</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage measurement: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li><li class="tablelistbullet9pt">Current measurement: <code class="monospace">smu.FUNC_DC_CURRENT</code> </li><li class="tablelistbullet9pt">Ohms measurement: <code class="monospace">smu.FUNC_RESISTANCE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can assign any real number using this command. The instrument selects the closest fixed range that is large enough to measure the entered number. For example, for current measurements, if you expect a reading of approximately 9&nbsp;mA, set the range to 9 mA to select the 10&nbsp;mA range. When you read this setting, you see the positive full-scale value of the measurement range that the instrument is presently using.</p>
+<p class="iclbody">This command is primarily intended to eliminate the time that is required by the instrument to automatically search for a range.</p>
+<p class="iclbody">When a range is fixed, any signal greater than the entered range generates an overrange condition. When an overrange condition occurs, the front panel displays &quot;Overflow&quot; and the remote interface returns <code class="monospace">9.9e+37</code>.</p>
+<p class="iclbody">If the source function is the same as the measurement function (for example, sourcing voltage and measuring voltage), the measurement range is the same as the source range, regardless of measurement range setting. However, the setting for the measure range is retained, and when the source function is changed (for example, from sourcing voltage to sourcing current), the retained measurement range is used.</p>
+<p class="iclbody">If you change the range while the output is off, the instrument does not update the hardware settings, but if you read the range setting, the return is the setting that will be used when the output is turned on. If you set a range while the output is on, the new setting takes effect immediately.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  When you set a value for the measurement range, the measurement autorange setting is automatically disabled for the selected measurement function (if supported by that function).<br><br>The range for measure functions defaults to autorange for all measure functions. If you switch from a fixed range to autorange, autorange is set to off. The range remains at the fixed range until a measurement is made, at which time the range is set to accommodate the new measurement.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smu.source.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable">smu.measure.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.measure.range = 0.5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set the source function to current.</p>
+<p class="tablebodytext">Set the measurement function to voltage.</p>
+<p class="tablebodytext">Instrument selects the 2 V measurement range.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h29421" class="jump" title="smu.measure.autorange" href="29393.htm" target="_self">smu.measure.autorange</a></p>
+
+
+<input id="topicId" type="hidden" value="29407" />
+<input id="topicDescription" type="hidden" value="smu.measure.range" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/8/2019 3:08:30 PM" />
+</body>
+</html>

@@ -1,0 +1,223 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17719.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14679.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t20596" class="heading2-icl">digio.trigger[N].stimulus</h2>
+<p class="bodyzero">This attribute selects the event that causes a trigger to be asserted on the digital output line.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="168"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Instrument reset<br>Digital I/O trigger <span class="monospaceitalic">N</span> reset<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="168"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">triggerStimulus</em> = digio.trigger[<em class="emphasis">N</em>].stimulus</p>
+<p class="iclcode">digio.trigger[<em class="emphasis">N</em>].stimulus = <em class="emphasis">triggerStimulus</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">triggerStimulus</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The event identifier for the triggering event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Digital I/O trigger line (1 to 14)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Set this attribute to zero (0) to disable the automatic trigger output.</p>
+<p class="iclbody">Do not use the stimulus attribute for generating output triggers under script control. Use<code class="monospace"> digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].assert()</code> instead.</p>
+<p class="iclbody">The trigger stimulus for a digital I/O line<strong class="specialbold"> </strong>may be set to one of the trigger event IDs, described in the following table.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="tableheading">Trigger event ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">channel.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A channel trigger event starts the scan.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">digio.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">An edge (either rising, falling, or either based on the configuration of the line) on the digital input line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">display.trigger.EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">The trigger key on the front panel is pressed.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">dmm.trigger.EVENT_LIMIT1_HIGH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A DMM trigger event that indicates a measurement has exceed the high limit value on limit 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">dmm.trigger.EVENT_LIMIT1_LOW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A DMM trigger event that indicates a measurement has exceed the low limit value on limit 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">dmm.trigger.EVENT_LIMIT2_HIGH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A DMM trigger event that indicates a measurement has exceed the high limit value on limit 2.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">dmm.trigger.EVENT_LIMIT2_LOW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A DMM trigger event that indicates a measurement has exceed the low limit value on limit 2.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">trigger.EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A *trg message on the active command interface. If GPIB is the active command interface, a GET message also generates this event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">trigger.blender[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A combination of events has occurred.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">trigger.timer[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A delay expired.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">tsplink.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">An edge (either rising, falling, or either based on the configuration of the line) on the TSP-Link trigger line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">lan.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A LAN trigger event has occurred.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">scan.trigger.EVENT_SCAN_READY</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Scan ready event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">scan.trigger.EVENT_SCAN_START</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Scan start event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">scan.trigger.EVENT_CHANNEL_READY</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Channel ready event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">scan.trigger.EVENT_MEASURE_COMP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Measure complete event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">scan.trigger.EVENT_SEQUENCE_COMP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Sequence complete event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">scan.trigger.EVENT_SCAN_COMP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Scan complete event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">scan.trigger.EVENT_IDLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Idle event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="254"><p class="codetable">schedule.alarm[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">A scan starts when alarm <span class="monospaceitalic">N</span> fires.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">digio.trigger[3].stimulus = 0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Clear the trigger stimulus of digital I/O line 3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">digio.trigger[3].stimulus = scan.trigger.EVENT_CHANNEL_READY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set the trigger stimulus of digital I/O line 3 to be the channel ready event during a scan.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12593" class="jump" title="digio.trigger[N].assert()" href="14670.htm" target="_self">digio.trigger[N].assert()</a></p>
+<p class="listcommand"><a id="h11090" class="jump" title="digio.trigger[N].clear()" href="14671.htm" target="_self">digio.trigger[N].clear()</a></p>
+<p class="listcommand"><a id="h17665" class="jump" title="digio.trigger[N].reset()" href="17719.htm" target="_self">digio.trigger[N].reset()</a></p>
+
+

@@ -1,0 +1,91 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17299.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17280.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t13984" class="heading2-icl">channel.read()</h2>
+<p class="bodyzero">This function reads a value from a totalizer, DAC, or digital I/O channel.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em><span class="monospaceitalic"> </span>= channel.read(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclcode"><em class="emphasis">value</em><span class="monospaceitalic"> </span>= channel.read(&quot;<span class="monospaceitalic">channelList</span>&quot;, <em class="emphasis">width</em>)</p>
+<p class="iclcode"><em class="emphasis">value</em><span class="monospaceitalic"> </span>= channel.read(&quot;<span class="monospaceitalic">channelList</span>&quot;, <em class="emphasis">width</em>, <em class="emphasis">readingBuffer</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Return string that lists the comma-delimited read values for the selected channels</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard channel naming</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">width</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Specifies reading over multiple consecutive channels (default 1)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">readingBuffer</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Reading buffer to store read values</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">For digital I/O channels, only a width of 1, 2, 3, or 4 is supported. Any information (bits) greater than the specified <span class="monospaceitalic">width</span> is returned as zero. For example, if channels 1 and 2 are both 255, a reading with a <span class="monospaceitalic">width</span> of 1 returns 255 and a <span class="monospaceitalic">width </span>of 2 with channel 1 returns 65535. Values read from outputs reflect their current setting. If the read channel is in the overload state, the read value is indeterminate.</p>
+<p class="iclbody">For widths greater than 1, the specified channel occupies the least significant byte. For example, reading the value 4293844224 (hex ffeedd00) from channel 1 with a <span class="monospaceitalic">width </span>of 4 indicates channel 1 is 0 (hex 0), channel 2 is 221 (hex dd), channel 3 is 238 (hex ee), and channel 4 is 255 (hex ff). Reading the value of 0 (hex 0) from channel 1 with a <span class="monospaceitalic">width </span>of 1 indicates channel 1 is 0 (hex 0) and other channels are not included. Totalizer and DAC channels do not support a <span class="monospaceitalic">width</span> other than 1 and result in an error if specified.</p>
+<p class="iclbody">Switch and backplane channels are not supported.</p>
+<p class="iclbody">For a channel with a power state of <code class="monospace">OFF</code>, the returned value is <code class="monospace">DISABLED</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">count = channel.read(&quot;1006&quot;)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Read the count from the first totalizer channel (channel 6) in slot 1, assuming a 3750.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"> </p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+

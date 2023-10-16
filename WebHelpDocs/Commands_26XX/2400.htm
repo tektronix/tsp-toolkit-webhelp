@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Run a named script </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2399.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="80248.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t2400" class="heading5">Run a named script</h5>
+<p class="bodytext">You can run any named script that is in the runtime environment using one of the following commands:</p>
+<ul class="listbullet"><li class="listbullet"><span class="monospaceitalic">scriptVar</span><code class="monospace">()</code></li><li class="listbullet"><span class="monospaceitalic">scriptVar</span><code class="monospace">.run()</code></li></ul><p class="bodytext">Where <span class="monospaceitalic">scriptVar</span> is the user-defined name of the script.</p>
+<p class="bodytext">When a script is named, it can be accessed using the global variable <span class="monospaceitalic">scriptVar</span>.</p>
+<p class="bodytext">To run a named script from TSB Embedded, select the script from the User Scripts list and select <strong class="specialbold">Run</strong>.</p>
+<p class="bodytext"><strong class="specialbold">Example: Run a named script</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="254"><p class="codetable">test3()</p>
+</td>
+<td width="346"><p class="tablebodytext">If the script <code class="monospace">test3</code> is loaded into the runtime environment, the instrument executes <code class="monospace">test3</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2398.htm" target="_self">Run scripts</a></p><p class="relateditem"><a href="2399.htm" target="_self">Run the anonymous script</a></p><p class="relateditem"><a href="80248.htm" target="_self">Run a user script from the instrument front panel</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="2400" />
+<input id="topicDescription" type="hidden" value="Run a named script" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:31:30 PM" />
+</body>
+</html>

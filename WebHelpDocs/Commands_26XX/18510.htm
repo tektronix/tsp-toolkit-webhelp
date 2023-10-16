@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Example: Using tspnet commands </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2779.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2600B_TSP_command_reference.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t18510" class="heading3">Example: Using tspnet commands</h3>
+<p class="code">function telnetConnect(ipAddress, userName, password)</p>
+<p class="code">   -- Connect through Telnet to a computer.</p>
+<p class="code">   id = tspnet.connect(ipAddress, 23, &quot;&quot;)</p>
+<p class="code">   -- Read the title and login prompt from the computer.</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%n&quot;)))</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%s&quot;)))</p>
+<p class="code">   -- Send the login name.</p>
+<p class="code">   tspnet.write(id, userName .. &quot;\r\n&quot;)</p>
+<p class="code">   -- Read the login echo and password prompt from the computer.</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%s&quot;)))</p>
+<p class="code">   -- Send the password information.</p>
+<p class="code">   tspnet.write(id, password .. &quot;\r\n&quot;)</p>
+<p class="code">   -- Read the telnet banner from the computer.</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%n&quot;)))</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%n&quot;)))</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%n&quot;)))</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%n&quot;)))</p>
+<p class="code">end</p>
+<p class="code"></p>
+<p class="code">function test_tspnet()</p>
+<p class="code">   tspnet.reset()</p>
+<p class="code">   -- Connect to a computer using Telnet.</p>
+<p class="code">   telnetConnect(&quot;192.0.2.1&quot;, &quot;my_username&quot;, &quot;my_password&quot;)</p>
+<p class="code">   -- Read the prompt back from the computer.</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%n&quot;)))</p>
+<p class="code">   -- Change directory and read the prompt back from the computer.</p>
+<p class="code">   tspnet.write(id, &quot;cd c:\\\r\n&quot;)</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%s&quot;)))</p>
+<p class="code">   -- Make a directory and read the prompt back from the computer.</p>
+<p class="code">   tspnet.write(id, &quot;mkdir TEST_TSP\r\n&quot;)</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%s&quot;)))</p>
+<p class="code">   -- Change to the newly created directory.</p>
+<p class="code">   tspnet.write(id, &quot;cd c:\\TEST_TSP\r\n&quot;)</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%s&quot;)))</p>
+<p class="code">   -- if you have data print it to the file.</p>
+<p class="code">   -- 11.2 is an example of data collected.</p>
+<p class="code">   cmd = &quot;echo &quot; .. string.format(&quot;%g&quot;, 11.2) .. &quot; &gt;&gt; datafile.dat\r\n&quot;</p>
+<p class="code">   tspnet.write(id, cmd)</p>
+<p class="code">   print(string.format(&quot;from computer--&gt; (%s)&quot;, tspnet.read(id, &quot;%s&quot;)))</p>
+<p class="code">   tspnet.disconnect(id)</p>
+<p class="code">end </p>
+<p class="code">test_tspnet()</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14184.htm" target="_self">TSP-Net</a></p><p class="relateditem"><a href="14185.htm" target="_self">TSP-Net capabilities</a></p><p class="relateditem"><a href="14186.htm" target="_self">Using TSP-Net with any ethernet-enabled instrument</a></p><p class="relateditem"><a href="3381.htm" target="_self">TSP-Net compared to TSP-Link to communicate with TSP-enabled devices</a></p><p class="relateditem"><a href="2767.htm" target="_self">TSP-Net instrument commands: General device control</a></p><p class="relateditem"><a href="2779.htm" target="_self">TSP-Net instrument commands: TSP-enabled device control</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="18510" />
+<input id="topicDescription" type="hidden" value="Example: Using tspnet commands" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/1/2021 2:31:05 PM" />
+</body>
+</html>

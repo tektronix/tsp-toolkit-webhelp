@@ -1,0 +1,100 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16065.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16067.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16066" class="heading2-icl">dmm.savebuffer()</h2>
+<p class="bodyzero">Saves data from the specified reading buffer to a USB flash drive using the specified filename.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">dmm.savebuffer(&quot;<span class="monospaceitalic">bufferVar</span>&quot;, &quot;<span class="monospaceitalic">fileName</span>&quot;)</p>
+<p class="iclcode">dmm.savebuffer(&quot;<span class="monospaceitalic">bufferVar</span>&quot;, &quot;<span class="monospaceitalic">fileName</span>&quot;, <span class="monospaceitalic">timeFormat</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that specifies the name of the DMM reading buffer that was created by <code class="monospace">dmm.makebuffer()</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">fileName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that indicates the name of the file on the USB flash drive in which to save the reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">timeFormat</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">How date and time information from the buffer is saved in the file on the USB flash drive; the values are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">dmm.buffer.SAVE_FORMAT_TIME</code>: The default. When this is selected, dates, times, and fractional seconds are saved</li><li class="tablelistbullet9pt"><code class="monospace">dmm.buffer.SAVE_RELATIVE_TIME</code>: Relative timestamps are saved</li><li class="tablelistbullet9pt"><code class="monospace">dmm.buffer.SAVE_RAW_TIME</code>: Seconds and fractional seconds are saved</li><li class="tablelistbullet9pt"><code class="monospace">dmm.buffer.SAVE_TIMESTAMP_TIME</code>: Timestamps are saved</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The file name must specify the full path (including <code class="monospace">/usb1/</code>). If included, the file extension must be set to <code class="monospace">.csv</code>. If no file extension is specified, <code class="monospace">.csv</code> is added.</p>
+<p class="iclbody">For options that save more than one item of time information, each item is comma-delimited. For example, the default format is <code class="monospace">date</code>, <code class="monospace">time</code>, and <code class="monospace">fractional seconds</code> for each reading.</p>
+<p class="iclbody">You use <code class="monospace">dmm.makebuffer()</code> to create a buffer.</p>
+<p class="iclbody"><strong class="specialbold">Examples of valid destination file names:</strong></p>
+<p class="code">dmm.savebuffer(&quot;bufferVar&quot;, &quot;/usb1/myData&quot;)</p>
+<p class="code">dmm.savebuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.csv&quot;)</p>
+<p class="iclbody"><strong class="specialbold">Invalid destination filename examples:</strong></p>
+<p class="code">dmm.savebuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.&quot;)</p>
+<p class="iclbody">&#8212; The period is not followed by the csv extension.</p>
+<p class="code">dmm.savebuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.txt&quot;)</p>
+<p class="iclbody">&#8212; The only allowed extension is .csv. If .csv is not assigned, it is automatically added.</p>
+<p class="code">dmm.savebuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.txt.csv&quot;)</p>
+<p class="iclbody">&#8212; Two periods in the file name <code class="monospace">(myData_txt.csv</code> would be correct).</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">The reading buffer does not exist or is not a DMM buffer. </li><li class="listbullet">The destination filename is not specified correctly.</li><li class="listbullet">The file extension is not .csv (or blank).</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.savebuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.csv&quot;)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Saves readings from a DMM buffer named <code class="monospace">bufferVar</code> with default time information to a file named <code class="monospace">myData.csv</code> on the USB flash drive.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.savebuffer(&quot;bufferVar&quot;, &quot;/usb1/myDataRel.csv&quot;, dmm.buffer.SAVE_RELATIVE_TIME)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Saves readings from <code class="monospace">bufferVar</code> with relative timestamps to a file named <code class="monospace">myDataRel.csv</code> on the USB flash drive.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h16078" class="jump" title="dmm.appendbuffer()" href="15970.htm" target="_self">dmm.appendbuffer()</a></p>
+<p class="listcommand"><a id="h903" class="jump" title="dmm.makebuffer()" href="16048.htm" target="_self">dmm.makebuffer()</a></p>
+
+

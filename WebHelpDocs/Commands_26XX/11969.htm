@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Load considerations (V-source) </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11968.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29084.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t11969" class="heading5">Load considerations (V-source)</h5>
+<p class="bodytext">The boundaries within which the 2600B operates depend on the load (device&#8209;under&#8209;test, or DUT) that is connected to the output. The following figures show operation examples for resistive loads that are 2&nbsp;kΩ and 800&nbsp;Ω, respectively. For these examples, the SMU is programmed to source 10&nbsp;V and limit current (10&nbsp;mA).</p>
+<p class="bodytext">In the following figure, the SMU is sourcing 10&nbsp;V to the 2&nbsp;kΩ load and subsequently measures 5&nbsp;mA. The SMU is programmed to limit power (60&nbsp;mW). As shown, the load line for 2&nbsp;kΩ intersects the 10&nbsp;V voltage source line at 5&nbsp;mA. The current compliance limit and the power compliance limit are not reached (the SMU is not limited through its compliance settings).</p>
+<p class="magicfigurecenter"><img id="f97866" src="2600b_normal_voltage_source_operation_lr.png" class="linkedepsandpngtemplate" alt="Normal voltage source operation" height="275" width="458" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="spacing"></p>
+<table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">I<sub class="subscript">M</sub></p>
+</td>
+<td width="552"><p class="tablebodytext">= V<sub class="subscript">S /</sub> R</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td width="552"><p class="tablebodytext">= 10 V&nbsp;/&nbsp;2 kΩ)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td width="552"><p class="tablebodytext">= 5 mA</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">The following figure shows what happens if the resistance of the load is decreased to 800&nbsp;Ω. The DUT load line for 800&nbsp;Ω intersects the current compliance limit line, which places the SMU in compliance. When in compliance, the SMU cannot source its programmed voltage (10&nbsp;V). For the 800&nbsp;Ω DUT, the SMU only outputs 8&nbsp;V (at the 10&nbsp;mA limit).</p>
+<p class="bodytext">Notice that as resistance decreases, the slope of the DUT load line increases. As resistance approaches infinity (open output), the SMU sources virtually 10&nbsp;V at 0&nbsp;mA. Conversely, as resistance increases, the slope of the DUT load line decreases. At zero resistance (shorted output), the SMU sources virtually 0&nbsp;V at 10&nbsp;mA.</p>
+<p class="magicfigurecenter"><img id="f97865" src="2600b_voltage_source_operation_in_current_compliance_lr.png" class="linkedepsandpngtemplate" alt="Voltage source operation in current compliance" height="260" width="451" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="spacing"></p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">V<sub class="subscript">S</sub></p>
+</td>
+<td width="480"><p class="tablebodytext">= I<sub class="subscript">M</sub> × R</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td width="480"><p class="tablebodytext">= (10 mA)(800&nbsp;Ω)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td width="480"><p class="tablebodytext">= 8 V</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">The following figure shows what happens if a power limit of 60&nbsp;mW is applied. As the SMU attempts to output the programmed source value of 10&nbsp;V, the power compliance limit line is reached, which places the SMU in power compliance. The SMU enforces the power compliance limit by setting the current compliance limit line to the new power&#8209;limited current compliance limit line setting, which in this example is 6&nbsp;mA. In compliance, the SMU cannot source its programmed voltage (10&nbsp;V). For the 800&nbsp;Ω DUT, the SMU outputs 4.8&nbsp;V&nbsp;at the 5&nbsp;mA limit. In this example, current never exceeds the programmed compliance of 10&nbsp;mA or the programmed power compliance of 60&nbsp;mW under any load.</p>
+<p class="magicfigurecenter"><img id="f97864" src="2600b_voltage_source_operation_in_power_compliance_lr.png" class="linkedepsandpngtemplate" alt="Voltage source operation in power compliance" height="270" width="469" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="spacing"></p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">V<sub class="subscript">S</sub></p>
+</td>
+<td width="480"><p class="tablebodytext">= I<sub class="subscript">M</sub> × R</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td width="480"><p class="tablebodytext">= (6 mA)(800&nbsp;Ω)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td width="480"><p class="tablebodytext">= 4.8 V</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"> </p>
+<p class="bodytext">The following figure shows a voltage sweep on a resistive load of 800&nbsp;Ω. For this example, the SMU is programmed to sweep voltage to 10&nbsp;V, limit current (6&nbsp;mA), and limit power (50&nbsp;mW). When sweeping, the actual source output varies according to the programmed source value until the current limit is reached. As the figure shows, the output sources the programmed value until placed in current compliance at the 6 mA limit. The sweep then continues (programmed current source values increase along the green sweep points line), but the output remains at the same value as when the SMU went into voltage compliance. This continues until the programmed source value sweeps to a high enough level that the power limit line is reached (50&nbsp;mW). At this point, the current and voltage start to decrease, lowering the current and voltage values along the DUT load line. When the last point is swept (10&nbsp;V), the actual output is 4&nbsp;V at 5&nbsp;mA.</p>
+<p class="magicfigurecenter"><img id="f19467" src="2651as-901-01a_model2651av-sourceloadconsiderationswhilesweepingv_lr.png" class="linkedepsandpngtemplate" alt="Programmed voltage source sweep operation in current and power compliance" height="256" width="456" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11967.htm" target="_self">V-source operating boundaries</a></p><p class="relateditem"><a href="11590.htm" target="_self">2601B and 2602B voltage source operating boundaries</a></p><p class="relateditem"><a href="11968.htm" target="_self">2611B, 2612B, 2614B, 2634B, 2635B, and 2636B voltage source operating boundaries</a></p><p class="relateditem"><a href="29084.htm" target="_self">V-source sink operating boundaries</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11969" />
+<input id="topicDescription" type="hidden" value="Load considerations (V-source)" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/27/2021 11:25:05 AM" />
+</body>
+</html>

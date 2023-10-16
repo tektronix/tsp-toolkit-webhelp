@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Programming example: Interactive script </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16805.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="97053.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t29265" class="heading3">Programming example: Interactive script</h3>
+<p class="bodytext">An interactive script prompts the operator to input values using front panel controls. The following example script uses display messages to prompt the operator to:</p>
+<ul class="listbullet"><li class="listbullet">Enter the voltage level to source</li><li class="listbullet">Enable or disable measurements</li><li class="listbullet">Set the number of readings if measurements are enabled</li></ul><p class="bodytext">After the operator completes entering values, the output turns on and sources the specified value. If measurements were enabled, a message indicates that measurements are in progress. Another message is displayed when the source-measure operation is complete. If measurements were not enabled, the message indicates that the source operation is complete.</p>
+<p class="bodytext">When an input prompt is displayed, the script waits until the operator inputs the parameter or presses the ENTER key. The example shown here assumes that you are using TSB or TSB Embedded. If you are using a remote interface, you need to add the <code class="monospace">loadscript</code> and <code class="monospace">endscript</code> commands to the example code. See <a id="h29863" class="jump" title="Load a script by sending commands over the remote interface" href="16481.htm" target="_self">Load a script by sending commands over the remote interface</a> for&nbsp;details.</p>
+<p class="code">reset()</p>
+<p class="code">-- Clear the display.</p>
+<p class="code">display.clear()</p>
+<p class="code"></p>
+<p class="code">-- Prompt the user for a voltage value to source.</p>
+<p class="code">srcVoltage = display.prompt(&quot;+000.00&quot;, &quot; V&quot;, &quot;Enter source voltage&quot;, 5, -20, 20)</p>
+<p class="code"></p>
+<p class="code">-- Prompt the user to enable measurements.</p>
+<p class="code">measEnable = display.menu(&quot;Measurements?&quot;, &quot;ENABLE DISABLE&quot;)</p>
+<p class="code">if measEnable == &quot;ENABLE&quot; then</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Prompt the user for the number of measurements.</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; numMeas = display.prompt(&quot;0000&quot;, &quot; Rdgs&quot;, &quot;Enter the number of readings&quot;, 10, </p>
+<p class="code">         0, 9999)</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smua.measure.count = numMeas</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smua.nvbuffer1.clear()</p>
+<p class="code">end</p>
+<p class="code"></p>
+<p class="code">-- Convert user input to the source level.</p>
+<p class="code">smua.source.levelv = tonumber(srcVoltage)</p>
+<p class="code">smua.source.output = smua.OUTPUT_ON</p>
+<p class="code"></p>
+<p class="code">if measEnable == &quot;ENABLE&quot; then</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Inform the user that measurements are in progress</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display.setcursor(1, 1)</p>
+<p class="code">      display.settext(&quot;$BPlease wait.$R$NMeasure operation in progress.&quot;)</p>
+<p class="code">      smua.measure.i(smua.nvbuffer1)</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display.clear()</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Inform the user that the Source Measure operation has finished</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display.settext(&quot;Operation Finished$NSource-Measure Complete&quot;)</p>
+<p class="code">else</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Inform the user that the Source operation has finished</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display.settext(&quot;Operation Finished$NSource Complete&quot;)</p>
+<p class="code">end</p>
+<p class="code"></p>
+<p class="code">-- Wait 5 seconds then return to the main screen.</p>
+<p class="code">delay(5)</p>
+<p class="code">display.screen = display.SMUA</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="16596.htm" target="_self">Fundamentals of scripting for TSP</a></p><p class="relateditem"><a href="16714.htm" target="_self">What is a script?</a></p><p class="relateditem"><a href="16453.htm" target="_self">Runtime and nonvolatile memory storage of scripts</a></p><p class="relateditem"><a href="16746.htm" target="_self">What can be included in scripts?</a></p><p class="relateditem"><a href="16716.htm" target="_self">Commands that cannot be used in scripts</a></p><p class="relateditem"><a href="379.htm" target="_self">Manage scripts</a></p><p class="relateditem"><a href="17067.htm" target="_self">Working with scripts in nonvolatile memory</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="29265" />
+<input id="topicDescription" type="hidden" value="Programming example: Interactive script" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 9:23:15 AM" />
+</body>
+</html>

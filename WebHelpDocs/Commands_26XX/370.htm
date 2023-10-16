@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Named scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="10835.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16481.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t370" class="heading5">Named scripts</h5>
+<p class="bodytext">A named script is a script with a unique name. You can have as many named scripts as needed in the instrument (within the limits of the memory available to the runtime environment). When a named script is loaded into the runtime environment with the <code class="monospace">loadscript</code> or <code class="monospace">loadandrunscript</code> commands, a global variable with the same name is created to reference the script.</p>
+<p class="bodytext">Key points regarding named scripts:</p>
+<ul class="listbullet"><li class="listbullet">If you load a new script with the same name as an existing script, the existing script becomes an unnamed script, which in effect removes the existing script if there are no variables that reference&nbsp;it.</li><li class="listbullet">Sending revised scripts with different names does not remove previously loaded scripts.</li><li class="listbullet">Named scripts can be saved to internal nonvolatile memory. Saving a named script to nonvolatile memory allows the instrument to be turned off without losing the script. See <a id="h17068" class="jump" title="Working with scripts in nonvolatile memory" href="17067.htm" target="_self">Working with scripts in nonvolatile memory</a>.</li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2583.htm" target="_self">Create and load a script</a></p><p class="relateditem"><a href="10835.htm" target="_self">Anonymous scripts</a></p><p class="relateditem"><a href="16481.htm" target="_self">Load a script by sending commands over the remote interface</a></p><p class="relateditem"><a href="80249.htm" target="_self">Load a script from the instrument front panel</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="370" />
+<input id="topicDescription" type="hidden" value="Named scripts" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:51:00 PM" />
+</body>
+</html>

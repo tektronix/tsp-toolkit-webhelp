@@ -1,0 +1,109 @@
+<html>
+<head>
+<title> For loops </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14324.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16706.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h6 class="heading6">For loops</h6>
+<p class="bodytext">There are two variations of <code class="monospace"><code class="monospace">for</code></code> statements supported in Lua: numeric and generic.</p>
+<p class="note"><img src="notehelp.png" alt="VARIABLE - NOTE" height="48" width="176" vspace="0" hspace="0" align="bottom" border="0"><br>In a <code class="monospace"><code class="monospace">for</code></code> loop, the loop expressions are evaluated once, before the loop starts.</p>
+<p class="bodytext"></p>
+<p class="note"><img src="notehelp.png" alt="VARIABLE - NOTE" height="48" width="176" vspace="0" hspace="0" align="bottom" border="0"><br>The output you get from these examples may vary depending on the instrument you are using.</p>
+<p class="bodytext"><strong class="specialbold">Example: Numeric for</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="504" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="504"><p class="codetable">list = {&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;, &quot;Four&quot;, &quot;Five&quot;, &quot;Six&quot;}</p>
+<p class="codetable">---------- For loop -----------</p>
+<p class="codetable">print(&quot;Counting from one to three:&quot;)</p>
+<p class="codetable">for element = 1, 3 do</p>
+<p class="codetable">   print(element, list[element])</p>
+<p class="codetable">end</p>
+<p class="codetable">print(&quot;Counting from one to four, in steps of two:&quot;)</p>
+<p class="codetable">for element = 1, 4, 2 do</p>
+<p class="codetable">   print(element, list[element])</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="504"><p class="tablebodytext">The numeric <code class="monospace"><code class="monospace">for</code></code> loop repeats a block of code while a control variable runs through an arithmetic progression.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Counting from one to three:</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">1.00000e+00   One</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">2.00000e+00   Two</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">3.00000e+00   Three</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Counting from one to four, in steps of two:</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">1.00000e+00   One</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">3.00000e+00   Three</code></code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Generic for</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="504" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="504"><p class="codetable">days = {&quot;Sunday&quot;, </p>
+<p class="codetable">   &quot;Monday&quot;,     &quot;Tuesday&quot;,</p>
+<p class="codetable">   &quot;Wednesday&quot;,  &quot;Thursday&quot;,</p>
+<p class="codetable">   &quot;Friday&quot;,     &quot;Saturday&quot;} </p>
+<p class="codetable"> </p>
+<p class="codetable">for i, v in ipairs(days) do </p>
+<p class="codetable">   print(days[i], i, v) </p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="504"><p class="tablebodytext">The generic <code class="monospace"><code class="monospace">for</code></code> statement works by using functions called iterators. On each iteration, the iterator function is called to produce a new value, stopping when this new value is nil.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Sunday     1.00000e+00    Sunday</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Monday     2.00000e+00    Monday</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Tuesday    3.00000e+00    Tuesday</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Wednesday  4.00000e+00    Wednesday</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Thursday   5.00000e+00    Thursday</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Friday     6.00000e+00    Friday</code></code></p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">Saturday   7.00000e+00    Saturday</code></code></p>
+</td>
+</tr>
+
+</table>
+<p class="spacing"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2428.html" target="_self">Loop control</a></p><p class="relateditem"><a href="14323.html" target="_self">While loops</a></p><p class="relateditem"><a href="14324.html" target="_self">Repeat until loops</a></p><p class="relateditem"><a href="16706.html" target="_self">Break</a></p></td>
+</tr>
+</table>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2013, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17435.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15918.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17437" class="heading2-icl">channel.exclusiveslotclose()</h2>
+<p class="bodyzero">This function closes the specified channels and channel patterns on the associated slots and opens any channels that are not specified.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><code class="monospace">channel.exclusiveslotclose(&quot;</code><em class="emphasis">channelList</em>&quot;)</p>
+<p class="iclspacing"> </p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that lists the channels and channel patterns to exclusively close on the cards in associated slots (you can specify analog backplane relays)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command allows you to bundle the closing of channels with the opening of channels. Any currently closed channels or analog backplane relays open if they are not specified to be closed on the slots related to the channels in <span class="monospaceitalic">channelList</span>. Using this command guarantees that only the specified channels and channel patterns are closed on the slots associated with channels in the <span class="monospaceitalic">channelList</span>.</p>
+<p class="iclbody">For channel patterns, the analog backplane relays that are closed or opened are the ones that were specified when the pattern was created (see <code class="monospace">channel.pattern.setimage()</code> or <code class="monospace">channel.pattern.snapshot()</code>). For channels, the analog backplane relays are the ones specified with the <code class="monospace">channel.setbackplane()</code> command. If you do not want to use the <code class="monospace">channel.setbackplane()</code> command, you can close the analog backplane relays by including them in the <span class="monospaceitalic">channelList</span> parameter. When this command is sent:</p>
+<ul class="listbullet"><li class="listbullet">Closed channels or analog backplane relays  for the associated slots are opened if they are not specified in the<span class="monospaceitalic"> channelList</span></li><li class="listbullet">Channels or analog backplane relays specified by the items in <span class="monospaceitalic">channelList</span> are closed</li><li class="listbullet">Any settling times and user&#8209;specified delay times are incurred before command processing is complete</li></ul><p class="bodytext">This function has no effect on how the DMM is configured</p>
+<p class="bodytext">For example, if channel 1 is closed on each of the six slots, specifying a <span class="monospaceitalic">channelList</span> parameter of <code class="monospace">&quot;2002, 4004&quot;</code> with this command opens channel 1 on slots 2 and 4 only. Then, channel&nbsp;2 on slot&nbsp;2 and channel&nbsp;4 on slot&nbsp;4 close. Channel 1 remains closed on slots 1, 3, 5, and&nbsp;6.</p>
+<p class="iclbody">The command is not available for digital I/O, DAC, and totalizer channels. Calling on one of these channels generates an error. If the digital I/O, DAC, or totalizer channel is in the range of channels, the channel is ignored.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">The parameter string contains slot<span class="monospaceitalic">X </span>(where <span class="monospaceitalic">X</span> = 1 to 6) or allslots</li><li class="listbullet">The parameter string is empty or parameter string with just spaces</li><li class="listbullet">A specified channel is invalid or does not exist for the slot</li><li class="listbullet">Channel pattern does not exist or the image of the pattern is an empty channel list</li><li class="listbullet">A forbidden item is specified</li><li class="listbullet">Channel is paired with another bank for a multi-wire application</li></ul><p class="iclbody">Once an error is detected, the command stops processing. Channels open or close only if no errors are found and remain unchanged with any parsing or syntax error.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.exclusiveslotclose(&quot;3003&quot;)</p>
+<p class="codetable">channel.exclusiveslotclose(&quot;1005, 2005&quot;)</p>
+<p class="codetable">channel.pattern.setimage(&quot;5007, 5017, 5027, 5915,&quot; &quot;RouteA&quot;)</p>
+<p class="codetable">channel.exclusiveslotclose(&quot;RouteA&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Close channel 3 on slot 3 and open all other channels on slot 3 without affecting any other slot.</p>
+<p class="tablebodytext">Close channel 5 on slots 1 and 2 and open all other channels on slots 1 and 2 without affecting any other slots.</p>
+<p class="tablebodytext">Create a channel pattern called <code class="monospace">RouteA</code> that includes channels 7, 17, and 27 on slot 5. Analog backplane relay&nbsp;5 in bank 1 on slot 5 is also in the pattern. Have only the RouteA channels close on slot 5 (channels 7, 17, and 27, and analog backplane relay 5 in bank 1 on slot 5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h769" class="jump" title="channel.close()" href="17229.htm" target="_self">channel.close()</a></p>
+<p class="listcommand"><a id="h1830" class="jump" title="channel.connectrule" href="17407.htm" target="_self">channel.connectrule</a></p>
+<p class="listcommand"><a id="h2375" class="jump" title="channel.connectsequential" href="17663.htm" target="_self">channel.connectsequential</a></p>
+<p class="listcommand"><a id="h770" class="jump" title="channel.exclusiveclose()" href="17435.htm" target="_self">channel.exclusiveclose()</a></p>
+<p class="listcommand"><a id="h768" class="jump" title="channel.getclose()" href="17247.htm" target="_self">channel.getclose()</a></p>
+<p class="listcommand"><a id="h1147" class="jump" title="channel.getimage()" href="17523.htm" target="_self">channel.getimage()</a></p>
+<p class="listcommand"><a id="h771" class="jump" title="channel.open()" href="17548.htm" target="_self">channel.open()</a></p>
+<p class="listcommand"><a id="h776" class="jump" title="channel.pattern.getimage()" href="17284.htm" target="_self">channel.pattern.getimage()</a></p>
+<p class="listcommand"><a id="h766" class="jump" title="channel.setbackplane()" href="15941.htm" target="_self">channel.setbackplane()</a></p>
+<p class="listcommand"><a id="h774" class="jump" title="channel.setdelay()" href="17522.htm" target="_self">channel.setdelay()</a></p>
+
+

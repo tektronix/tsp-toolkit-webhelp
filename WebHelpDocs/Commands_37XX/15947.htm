@@ -1,0 +1,87 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15946.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15948.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15947" class="heading2-icl">channel.setmode()</h2>
+<p class="bodyzero">This function sets the mode of operation of a channel.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="66"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="90"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="222"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="90"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="222"><p class="tablebodytextsmall">Digital I/O: 0 (channel.MODE_INPUT)<br>Totalizer: 3 (channel.MODE_RISING_TTL_EDGE)<br>DAC: 49 (channel.MODE_PROTECT_VOLTAGE_1)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.setmode(&quot;<span class="monospaceitalic">channelList</span>&quot;, <span class="monospaceitalic">mode</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">String specifying the channels to set, using normal channel list syntax</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">mode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The value that sets the mode of operation for a channel; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Different channel types contain additional configurable settings. These settings are grouped together by channel type as described in the following paragraphs.</p>
+<p class="iclbody">For digital I/O channels, the mode indicates the direction of the channel (input or output). The following modes are supported:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">channel.MODE_INPUT</code> (default) or <code class="monospace">0</code></li><li class="listbullet"><code class="monospace">channel.MODE_OUTPUT</code> or <code class="monospace">1</code></li><li class="listbullet"><code class="monospace">channel.MODE_PROTECT_OUTPUT</code> or <code class="monospace">3</code></li></ul><p class="iclbody">For totalizer channels, the mode indicates the configuration of the channel (edge and reset). The following modes are supported:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">channel.MODE_RISING_EDGE</code> or <code class="monospace">1</code></li><li class="listbullet"><code class="monospace">channel.MODE_FALLING_EDGE</code> or <code class="monospace">0</code></li><li class="listbullet"><code class="monospace">channel.MODE_RISING_TTL_EDGE</code> (default) or <code class="monospace">3</code></li><li class="listbullet"><code class="monospace">channel.MODE_FALLING_TTL_EDGE</code> or <code class="monospace">2</code></li><li class="listbullet"><code class="monospace">channel.MODE_RISING_EDGE_READ_RESET</code> or <code class="monospace">5</code></li><li class="listbullet"><code class="monospace">channel.MODE_FALLING_EDGE_READ_RESET</code> or <code class="monospace">4</code></li><li class="listbullet"><code class="monospace">channel.MODE_RISING_TTL_EDGE_READ_RESET</code> or <code class="monospace">7</code></li><li class="listbullet"><code class="monospace">channel.MODE_FALLING_TTL_EDGE_READ_RESET</code> or <code class="monospace">6</code></li></ul><p class="iclbody">For DAC channels, the mode indicates the output of the channel (function and range). The output is switched off before any mode change is made, and remains off after the mode has changed. The following modes are supported:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">channel.MODE_VOLTAGE_1</code> or <code class="monospace">17</code></li><li class="listbullet"><code class="monospace">channel.MODE_CURRENT_1</code> or <code class="monospace">1</code></li><li class="listbullet"><code class="monospace">channel.MODE_CURRENT_2</code> or <code class="monospace">2</code></li><li class="listbullet"><code class="monospace">channel.MODE_PROTECT_VOLTAGE_1</code> (default) or <code class="monospace">49</code></li><li class="listbullet"><code class="monospace">channel.MODE_PROTECT_CURRENT_1</code> or <code class="monospace">33</code></li><li class="listbullet"><code class="monospace">channel.MODE_PROTECT_CURRENT_2</code> or <code class="monospace">34</code></li></ul><p class="iclbody">Changing the mode setting can impact the power consumption of the card. The instrument verifies that power is available before changing the mode. If an insufficient power capability exists, the command generates an error.</p>
+<p class="iclbody">Consult the card-specific documentation for more detailed information on mode settings and functionality.</p>
+<p class="iclbody">For digital I/O channels, changing the mode from input to output adds an additional channel delay if the <code class="monospace">channel.setdelay()</code> function was used to set a user delay.</p>
+<p class="iclbody">For switch and backplane channels, there is no valid mode setting. Setting a mode on a specific switch or backplane channel generates an error. If the switch or backplane channel is in the range of channels, the switch or backplane channel is ignored.</p>
+<p class="iclbody">The specified channel list must use only one channel type. For example, channel list <code class="monospace">&quot;1001:1004&quot;</code> is only valid if channels 1, 2, 3, and 4 are of the same type. If channel 3 is a different type of channel, the channel list is invalid and an error is generated.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="408"><p class="codetable">channel.setmode(&quot;6003:6005&quot;, channel.MODE_OUTPUT)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.setmode(&quot;6007&quot;, channel.MODE_FALLING_TTL_EDGE)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Assuming a 3750, set digital I/O channels 3 to 5 to be configured for output on slot 6.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Set the totalizer channel 7 on slot 6 to count the falling edges of a TTL signal.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h774" class="jump" title="channel.setdelay()" href="17522.htm" target="_self">channel.setdelay()</a></p>
+
+

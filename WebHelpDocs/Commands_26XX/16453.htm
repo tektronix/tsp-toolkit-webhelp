@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Runtime and nonvolatile memory storage of scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16714.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16746.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t16453" class="heading3">Runtime and nonvolatile memory storage of scripts</h3>
+<p class="bodytext">Scripts are loaded into the runtime environment of the instrument. From there, they can be stored in nonvolatile memory in the instrument.</p>
+<p class="bodytext">The runtime environment is a collection of global variables, which include scripts, that the user has defined. A global variable can be used to store a value while the instrument is turned on. When you create a script, the instrument creates a global variable with the same name so that you can reference the script more conveniently. After scripts are loaded into the runtime environment, you can run and manage them from the front panel of the instrument or from a computer. Information in the runtime environment is lost when the instrument is turned off.</p>
+<p class="bodytext">Nonvolatile memory is where information is stored even when the instrument is turned off. Save scripts to nonvolatile memory to save them even if the power is cycled. The scripts that are in nonvolatile memory are loaded into the runtime environment when the instrument is turned on.</p>
+<p class="bodytext">Scripts are placed in the runtime environment when:</p>
+<ul class="listbullet"><li class="listbullet">The instrument is turned on. All scripts that are saved to nonvolatile memory are copied to the runtime environment when the instrument is turned on.</li><li class="listbullet">Loaded over a remote command interface.</li></ul><p class="bodytext">For detail on the amount of memory available in the runtime environment, see <a id="h16693" class="jump" title="Memory considerations for the runtime environment" href="16810.htm" target="_self">Memory considerations for the runtime environment</a>.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">If you make changes to a script in the runtime environment, the changes are lost when the instrument is turned off. To save the changes, you must save them to nonvolatile memory. See <a id="h17068" class="jump" title="Working with scripts in nonvolatile memory" href="17067.htm" target="_self">Working with scripts in nonvolatile memory</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="16596.htm" target="_self">Fundamentals of scripting for TSP</a></p><p class="relateditem"><a href="16714.htm" target="_self">What is a script?</a></p><p class="relateditem"><a href="16746.htm" target="_self">What can be included in scripts?</a></p><p class="relateditem"><a href="16716.htm" target="_self">Commands that cannot be used in scripts</a></p><p class="relateditem"><a href="379.htm" target="_self">Manage scripts</a></p><p class="relateditem"><a href="17067.htm" target="_self">Working with scripts in nonvolatile memory</a></p><p class="relateditem"><a href="29265.htm" target="_self">Programming example: Interactive script</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="16453" />
+<input id="topicDescription" type="hidden" value="Runtime and nonvolatile memory storage of scripts" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:30:45 PM" />
+</body>
+</html>

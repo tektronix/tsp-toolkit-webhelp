@@ -1,0 +1,166 @@
+<html>
+<head>
+<title> Commands that cannot be used in scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16746.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="26757.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h4 class="heading4">Commands that cannot be used in scripts</h4>
+<p class="bodytext">Though an instrument accepts the following commands, you cannot use these commands in scripts.</p>
+<p class="bodytext">General commands that cannot be used in scripts:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">abor</code></li><li class="listbullet"><code class="monospace">abort</code></li><li class="listbullet"><code class="monospace">endflash</code></li><li class="listbullet"><code class="monospace">endscript</code></li><li class="listbullet"><code class="monospace">flash</code></li><li class="listbullet"><code class="monospace">loadscript</code></li><li class="listbullet"><code class="monospace">loadandrunscript</code></li><li class="listbullet"><code class="monospace">login</code></li><li class="listbullet"><code class="monospace">logout</code></li><li class="listbullet"><code class="monospace">prevflash</code></li></ul><p class="bodytext">Common commands that cannot be used are shown in the following table with equivalent commands that can be used in scripts.</p>
+<table class="tableintopic" width="394" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="144" height="0"></td>
+<td width="246" height="0"></td>
+<td width="4" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="3" width="394"><p class="tableheading">Unavailable commands with TSP equivalents</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" width="144"><p class="tableheading">Common commands</p>
+</th>
+<th style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="tableheading">TSP equivalent commands</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*CLS</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">eventlog.clear() status.clear()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*ESE</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">status.standard.enable</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*ESE?</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">print(status.standard.enable)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*ESR?</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">print(status.standard.event)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*IDN?</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">print(localnode.model)</p>
+<p class="codetable">print(localnode.serialno)</p>
+<p class="codetable">print(localnode.version)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*LANG</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="tablebodytext">No equivalent</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*LANG?</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="tablebodytext">No equivalent</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*OPC</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">opc()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*OPC?</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">waitcomplete() print([[1]])</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*RST</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">reset()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*SRE</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">status.request_enable</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*SRE?</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">print(status.request_enable)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*STB?</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">print(status.condition)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*TRG</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="tablebodytext">No equivalent</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*TST?</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">print([[0]])</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-bottom:1px solid #010101;" width="144"><p class="codetable">*WAI</p>
+</td>
+<td style="border-right:1px solid #010101;border-bottom:1px solid #010101;" width="246"><p class="codetable">waitcomplete()</p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="16596.html" target="_self">Fundamentals of scripting for TSP</a></p><p class="relateditem"><a href="16714.html" target="_self">What is a script?</a></p><p class="relateditem"><a href="32425.html" target="_self">Run-time and nonvolatile memory storage of scripts</a></p><p class="relateditem"><a href="16746.html" target="_self">What can be included in scripts?</a></p><p class="relateditem"><a href="26757.html" target="_self">Working with scripts</a></p></td>
+</tr>
+</table>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2013, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

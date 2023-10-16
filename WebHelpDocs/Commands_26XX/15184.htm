@@ -1,0 +1,190 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15183.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15175.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15184" class="heading2-icl">smuX.trigger.source.stimulus</h2>
+<p class="bodyzero">This attribute defines which event causes the source event detector to enter the detected state.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">eventID</span></span> = smu<span class="monospaceitalic">X</span>.trigger.source.stimulus</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.trigger.source.stimulus<code class="monospace"> = </code><span class="monospaceitalic">eventID</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">eventID</span></span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">Set to the event that triggers the end&#8209;pulse source off action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">X</span></span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">Source&#8209;measure (SMU) channel (for example, <code class="monospace">smua.trigger.source.stimulus</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Set this attribute to the event ID of any trigger event generator to wait for that event. When set, the SMU waits for the event at the source event detector portion of the trigger model. To bypass waiting for an event, set the value of this attribute to zero (<code class="monospace">0</code>). Set <span class="monospaceitalic"><span class="monospaceitalic">eventID</span></span> to one of the existing trigger event IDs shown in the following table.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="288" height="0"></td>
+<td width="312" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheading">Trigger event IDs*</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Event ID</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Event description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.SWEEPING_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the source&#8209;measure unit (SMU) transitions from the idle state to the arm layer of the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.ARMED_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU moves from the arm layer to the trigger layer of the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.SOURCE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU completes a source&nbsp;action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.MEASURE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU completes a measurement action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.PULSE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU completes a pulse</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.SWEEP_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU completes a sweep</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.IDLE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU returns to the idle state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when an edge is detected on a digital I/O line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">tsplink.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when an edge is detected on a TSP&#8209;Link line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">lan.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">display.trigger.EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the TRIG key on the front panel is&nbsp;pressed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">trigger.EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when a <code class="monospace">*TRG</code> command is received on the remote interface</p>
+<p class="tablebodytext">GPIB only: Occurs when a <code class="monospace">GET</code> bus command is received</p>
+<p class="tablebodytext">USB only: Occurs when a USBTMC TRIGGER message is received</p>
+<p class="tablebodytext">VXI-11 only: Occurs with the VXI-11 command <code class="monospace">device_trigger</code>; reference the VXI-11 standard for additional details on the device trigger operation</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">trigger.blender[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs after a collection of events is detected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">trigger.timer[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when a delay expires</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">trigger.generator[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the <code class="monospace">trigger.generator[</code><span class="monospaceitalic">N</span><code class="monospace">].assert()</code> function is executed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tablebodytextsmall">* Use the name of the trigger event ID to set the stimulus value rather than the numeric value. Using the name makes the code compatible for future upgrades (for example, if the numeric values must change when enhancements are added to the instrument).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smua.trigger.source.stimulus = digio.trigger[2].EVENT_ID</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Configure SMU channel A to start its source action when a trigger event occurs on digital I/O line 2.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13512" class="jump" title="Triggering" href="14169.htm" target="_self">Triggering</a></p>
+
+

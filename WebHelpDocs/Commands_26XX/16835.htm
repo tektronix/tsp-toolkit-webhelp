@@ -1,0 +1,112 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Create functions using the function keyword </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2422.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16832.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t16835" class="heading5">Create functions using the function keyword</h5>
+<p class="bodytext">Functions are created with a message or in Lua code in either of the following forms:</p>
+<p class="code">function <em class="emphasis">myFunction</em>(<em class="emphasis">parameterX</em>) <em class="emphasis">functionBody</em> end</p>
+<p class="code"><em class="emphasis">myFunction</em> = function (<em class="emphasis">parameterX</em>) <em class="emphasis">functionBody</em> end</p>
+<p class="bodytext">Where:</p>
+<ul class="listbullet"><li class="listbullet"><span class="monospaceitalic">myFunction</span>: The name of the function.</li><li class="listbullet"><span class="monospaceitalic">parameterX</span>: Parameter names. To use multiple parameters, separate the names with commas.</li><li class="listbullet"><span class="monospaceitalic">functionBody</span>: The code that is executed when the function is called.</li></ul><p class="bodytext">To execute a function, substitute appropriate values for <span class="monospaceitalic">parameterX</span> and insert them into a message formatted as:</p>
+<p class="code"><span class="monospaceitalic">myFunction</span>(<span class="monospaceitalic">valueForParameterX</span>, <span class="monospaceitalic">valueForParameterY</span>)</p>
+<p class="bodytext">Where <span class="monospaceitalic">valueForParameterX</span> and <span class="monospaceitalic">valueForParameterY</span> represent the values to be passed to the function call for the given parameters.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The output you get from these examples may vary depending on the data format settings of the instrument.</p>
+<p class="bodytext"><strong class="specialbold">Example 1</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="312"><p class="codetable">function add_two(first_value, second_value)</p>
+<p class="codetable">   return first_value + second_value</p>
+<p class="codetable">end</p>
+<p class="codetable">print(add_two(3, 4))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Creates a variable named <code class="monospace">add_two</code> that has a variable type of function.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">7</code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example 2</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="312"><p class="codetable">add_three = function(first_value,</p>
+<p class="codetable">   second_value, third_value)</p>
+<p class="codetable">   return first_value + second_value +</p>
+<p class="codetable">      third_value</p>
+<p class="codetable">end</p>
+<p class="codetable">print(add_three(3, 4, 5))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Creates a variable named <code class="monospace">add_three</code> that has a variable type of function.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">12</code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example 3</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="312"><p class="codetable">function sum_diff_ratio(first_value,</p>
+<p class="codetable">   second_value)</p>
+<p class="codetable">   psum = first_value + second_value</p>
+<p class="codetable">   pdif = first_value - second_value</p>
+<p class="codetable">   prat = first_value / second_value</p>
+<p class="codetable">   return psum, pdif, prat</p>
+<p class="codetable">end</p>
+<p class="codetable">sum, diff, ratio = sum_diff_ratio(2, 3)</p>
+<p class="codetable">print(sum)</p>
+<p class="codetable">print(diff)</p>
+<p class="codetable">print(ratio)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Returns multiple parameters (sum, difference, and ratio of the two numbers passed to it).</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">5</code></p>
+<p class="tablebodytext"><code class="monospace">-1</code></p>
+<p class="codetable">0.66666666666667</p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2422.htm" target="_self">Functions</a></p><p class="relateditem"><a href="16832.htm" target="_self">Create functions using scripts</a></p><p class="relateditem"><a href="2391.htm" target="_self">Group commands using the function keyword</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="16835" />
+<input id="topicDescription" type="hidden" value="Create functions using the function keyword" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/31/2020 1:15:52 PM" />
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.breakdownprotection </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="33395.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="88873.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t88445" class="heading2-icl">smu.breakdownprotection</h2>
+<p class="bodyzero">This attribute allows you to enable the breakdown protection in situations where the current may exceed the programmed current or the limit current value due to a breakdown condition.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smu.BREAKDOWN_OFF</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">setting</em> = smu.breakdownprotection</p>
+<p class="iclcode">smu.breakdownprotection = <em class="emphasis">setting</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">setting</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The breakdown protection setting:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Operate breakdown protection automatically (see <strong class="specialbold">Details</strong>): <code class="monospace">smu.BREAKDOWN_AUTO</code></li><li class="tablelistbullet9pt">Turn breakdown protection off: <code class="monospace">smu.BREAKDOWN_OFF</code></li><li class="tablelistbullet9pt">Turn breakdown protection on (not recommended): <code class="monospace">smu.BREAKDOWN_ON</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">In some tests, the limited bandwidth of the SMU may cause current to exceed either the programmed current or the limit current value. To prevent this from occurring, you can turn on the breakdown protection function. This adds a 500&nbsp;Ω resistor in series with the SMU force lead. This resistor limits, at a wide bandwidth, the breakdown current to a maximum value of V<sub class="subscript">OUTPUT</sub>/500.</p>
+<p class="bodytext">When the breakdown protection is set for AUTO operation, the resistor is in place for the 200&nbsp;V and 1000&nbsp;V ranges and current ranges less than or equal to the 10&nbsp;mA range. Above the 10&nbsp;mA range or on lower voltage ranges, the breakdown protection resistor is automatically taken out of series with the SMU force lead.</p>
+<p class="bodytext">An example of when breakdown protection is appropriate is when you are testing components to specify the DUT breakdown voltage. One method is to test the component at the specified breakdown voltage and determine if the leakage current has exceeded a threshold level. For example, if you are testing a 1000&nbsp;V rated MOSFET, you can short the gate to the source and apply 1050&nbsp;V from the drain to the source while measuring the actual drain current. Testing at 1050&nbsp;V instead of 1000&nbsp;V provides some assurance that the component both meets and exceeds the breakdown requirement by some user-specified margin. In this test, if the breakdown protection is off, you may find that at the exact moment of component breakdown, the current may exceed the limit current value.&nbsp;With the breakdown function on, the peak current is limited to V<sub class="subscript">OUTPUT</sub>/500.</p>
+<p class="iclbody">A more comprehensive method of testing components to specify the DUT breakdown voltage is to measure the actual component breakdown voltage. To do this on a 1000&nbsp;V rated MOSFET, you need to switch the sourcing method to current and the limit voltage to 1100&nbsp;V (higher than the highest expected breakdown voltage). Sourcing the value of the breakdown current permits the SMU to measure the actual breakdown voltage of the component, which occurs precisely when the SMU reaches the programmed source current. When this operating point is reached, a voltage measurement records the actual breakdown voltage of the component, after which the small source current used to find this breakdown voltage can be reduced to zero while waiting for the next component to test.&nbsp;The entire test should be done quickly with the lowest possible breakdown current to limit device self-heating. When performing this test, if the breakdown protection is off, you may find that at the exact moment of component breakdown, the current may exceed the limit current value.&nbsp;With the breakdown function on, the peak current is limited to V<sub class="subscript">OUTPUT</sub>/500.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">selection = display.input.option(&quot;Breakdown Control&quot;, &quot;Auto&quot;, &quot;Always On&quot;, &quot;Always Off&quot;) </p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if selection ~= nil then</p>
+<p class="codetable">   if selection == display.BUTTON_OPTION1 then</p>
+<p class="codetable">      smu.breakdownprotection = smu.BREAKDOWN_AUTO</p>
+<p class="codetable">  elseif selection == display.BUTTON_OPTION2 then</p>
+<p class="codetable">      smu.breakdownprotection = smu.BREAKDOWN_ON</p>
+<p class="codetable">   elseif selection == display.BUTTON_OPTION3 then</p>
+<p class="codetable">      smu.breakdownprotection = smu.BREAKDOWN_OFF</p>
+<p class="codetable">   end</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Display a prompt that allows the user to select which type of breakdown protection to set.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="88445" />
+<input id="topicDescription" type="hidden" value="smu.breakdownprotection" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 11:17:08 AM" />
+</body>
+</html>

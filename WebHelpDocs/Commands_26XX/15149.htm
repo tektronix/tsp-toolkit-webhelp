@@ -1,0 +1,83 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19504.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15150.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15149" class="heading2-icl">smuX.source.offlimitY</h2>
+<p class="bodyzero">This attribute sets the limit (current or voltage) used when the source&#8209;measure unit (SMU) is in normal output-off mode.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Current: 1e-3 (1&nbsp;mA)<br>Voltage: 40&nbsp;(40&nbsp;V)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">sourceLimit</span><code class="monospace"> = smu</code><span class="monospaceitalic">X</span>.so<code class="monospace">urce.offlimit</code><span class="monospaceitalic">Y</span></p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.source.of<code class="monospace">flimit</code><span class="monospaceitalic">Y</span><code class="monospace"> = </code><span class="monospaceitalic">sourceLimit</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">sourceLimit</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Set to the limit to be used when the SMU is in normal output-off mode</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.source.offlimiti</code> applies to SMU channel&nbsp;A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">SMU source function (<code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Setting the current limit to lower than 1&nbsp;mA may interfere with operation of the contact check function. See <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.contact.check()</code> and <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.contact.r()</code> for details.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smua.source.offlimiti = 10e-3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Changes the normal output-off mode limit to 10&nbsp;mA for SMU channel A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15198" class="jump" title="smuX.contact.check()" href="15101.htm" target="_self">smuX.contact.check()</a></p>
+<p class="listcommand"><a id="h15199" class="jump" title="smuX.contact.r()" href="15102.htm" target="_self">smuX.contact.r()</a></p>
+<p class="listcommand"><a id="h19507" class="jump" title="smuX.source.offfunc" href="19504.htm" target="_self">smuX.source.offfunc</a></p>
+<p class="listcommand"><a id="h15245" class="jump" title="smuX.source.offmode" href="15150.htm" target="_self">smuX.source.offmode</a></p>
+
+

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.source.setattribute() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30579.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30563.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t91275" class="heading2-icl">smu.source.setattribute()</h2>
+<p class="bodyzero">This function allows you to set up a source function whether or not the function is active.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Source configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu.source.setattribute(<em class="emphasis">function</em>, <em class="emphasis">setting</em>, <em class="emphasis">value</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source function; set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current source: <code class="monospace">smu.FUNC_DC_CURRENT</code></li><li class="tablelistbullet9pt">Voltage source: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">setting</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The parameter to be set; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The function or setting value</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can set the following parameters. The links in the list below link to the descriptions of the corresponding TSP command descriptions. The settings available for each parameter are the same as the settings for the TSP commands.</p>
+<p class="iclbody">The parameters you can set are:</p>
+<ul class="listbullet"><li class="listbullet"><a id="h31486" class="jump" title="smu.source.autorange" href="29386.htm" target="_self">Autorange</a>: <code class="monospace">smu.ATTR_SRC_RANGE_AUTO</code></li><li class="listbullet"><a id="h33808" class="jump" title="smu.source.autodelay" href="33143.htm" target="_self">Autodelay</a>: <code class="monospace">smu.ATTR_SRC_DELAY_AUTO</code></li><li class="listbullet"><a id="h31490" class="jump" title="smu.source.delay" href="29079.htm" target="_self">Delay</a>: <code class="monospace">smu.ATTR_SRC_DELAY</code></li><li class="listbullet"><a id="h31485" class="jump" title="smu.source.func" href="29382.htm" target="_self">Function</a>: <code class="monospace">smu.ATTR_SRC_FUNCTION</code></li><li class="listbullet"><a id="h31491" class="jump" title="smu.source.highc" href="30580.htm" target="_self">High capacitance</a>: <code class="monospace">smu.ATTR_SRC_HIGHC</code></li><li class="listbullet"><a id="h31489" class="jump" title="smu.source.level" href="29907.htm" target="_self">Level</a>: <code class="monospace">smu.ATTR_SRC_LEVEL</code></li><li class="listbullet"><a id="h31492" class="jump" title="smu.source.xlimit.level" href="30561.htm" target="_self">Limit level</a>: <code class="monospace">smu.ATTR_SRC_LIMIT_LEVEL</code></li><li class="listbullet"><a id="h31487" class="jump" title="smu.source.offmode" href="29238.htm" target="_self">Output Off</a>: <code class="monospace">smu.ATTR_SRC_OFFMODE</code></li><li class="listbullet"><a id="h29073" class="jump" title="smu.source.protect.level" href="29072.htm" target="_self">Overvoltage protection limit</a>: <code class="monospace">smu.ATTR_SRC_PROTECT_LEVEL</code></li><li class="listbullet"><a id="h31495" class="jump" title="smu.source.protect.tripped" href="30235.htm" target="_self">Overvoltage protection limit active</a>: <code class="monospace">smu.ATTR_SRC_PROTECT_TRIPPED</code></li><li class="listbullet"><a id="h63651" class="jump" title="smu.source.pulse.level" href="63469.htm" target="_self">Pulse level</a>: <code class="monospace">smu.ATTR_SRC_PULSE_LEVEL</code></li><li class="listbullet"><a id="h63734" class="jump" title="smu.source.pulse.xlimit.level" href="63723.htm" target="_self">Pulse source limit</a>: <code class="monospace">smu.ATTR_SRC_PULSE_LIMIT</code></li><li class="listbullet"><a id="h29388" class="jump" title="smu.source.range" href="29383.htm" target="_self">Range</a>: <code class="monospace">smu.ATTR_SRC_RANGE</code></li><li class="listbullet"><a id="h31445" class="jump" title="smu.source.readback" href="30579.htm" target="_self">Readback</a>: <code class="monospace">smu.ATTR_SRC_READBACK</code></li><li class="listbullet"><a id="h31494" class="jump" title="smu.source.xlimit.tripped" href="30562.htm" target="_self">Source limit exceeded</a>: <code class="monospace">smu.ATTR_SRC_LIMIT_TRIPPED</code></li><li class="listbullet"><a id="h34974" class="jump" title="smu.source.userdelay[N]" href="34973.htm" target="_self">User delay </a><em class="emphasis"><a id="h34974_2" class="jump" title="smu.source.userdelay[N]" href="34973.htm" target="_self">N</a></em>: <code class="monospace">smu.ATTR_SRC_USER_DELAY_</code><span class="monospaceitalic">N</span>, where <span class="monospaceitalic">N</span> is the user delay, <code class="monospace">1</code> to <code class="monospace">5</code></li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smu.source.setattribute(smu.FUNC_DC_CURRENT, smu.ATTR_SRC_RANGE, 0.007)</p>
+<p class="codetable">smu.source.setattribute(smu.FUNC_DC_CURRENT, smu.ATTR_SRC_DELAY, 0.35)</p>
+<p class="codetable">smu.source.setattribute(smu.FUNC_DC_CURRENT, smu.ATTR_SRC_LEVEL, 0.035)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets the range, delay, and level settings for DC current, whether or not DC current is the active function.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h91519" class="jump" title="smu.source.configlist.storefunc()" href="91274.htm" target="_self">smu.source.configlist.storefunc()</a></p>
+<p class="listcommand"><a id="h91412" class="jump" title="smu.source.getattribute()" href="91276.htm" target="_self">smu.source.getattribute()</a></p>
+<p class="listcommand"></p>
+
+
+<input id="topicId" type="hidden" value="91275" />
+<input id="topicDescription" type="hidden" value="smu.source.setattribute()" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/9/2019 7:21:39 AM" />
+</body>
+</html>

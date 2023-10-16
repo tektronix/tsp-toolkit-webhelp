@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Triggering a scanner </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15466.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15469.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t26691" class="heading3">Triggering a scanner</h3>
+<p class="bodytext">A typical test scenario might call for using the 2600B with a scanner to test a number of devices under test (DUTs) in sequence. A basic example of this uses the 2600B digital I/O port to trigger a scanner (shown in the figure below). In this example, line 1 of the digital I/O port is used as a trigger output and connected to the scanner mainframe trigger input, and line 2 of the digital I/O port is used as a trigger input.</p>
+<p class="magicfigurecenter"><img id="f26741" src="26xxb-901-01a_triggeringascanner.png" class="linkedepsandpngtemplate" alt="Triggering a scanner" height="498" width="1808" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="15466.htm" target="_self">How do I trigger other instruments?</a></p><p class="relateditem"><a href="15469.htm" target="_self">Interactive trigger programming</a></p><p class="relateditem"><a href="19408.htm" target="_self">More information about triggering</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="26691" />
+<input id="topicDescription" type="hidden" value="Triggering a scanner" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/10/2021 11:34:07 AM" />
+</body>
+</html>

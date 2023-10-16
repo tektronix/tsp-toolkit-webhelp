@@ -1,0 +1,147 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.limit[Y].enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41212.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41214.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41231" class="heading2-icl">dmm.measure.limit[Y].enable</h2>
+<p class="bodyzero">This attribute enables or disables a limit test on the measurement from the selected measure function.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.OFF</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = dmm.measure.limit[<span class="monospaceitalic">Y</span>].enable</p>
+<p class="iclcode">dmm.measure.limit[<span class="monospaceitalic">Y</span>].enable = <span class="monospaceitalic">state</span></p>
+<p class="iclcode"><em class="emphasis">state </em>= dmm.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_LIMIT_ENABLE_<span class="monospaceitalic">Y</span>)</p>
+<p class="iclcode">dmm.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_LIMIT_ENABLE_<span class="monospaceitalic">Y</span>, <em class="emphasis">state</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limit <span class="monospaceitalic">Y</span> testing:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Disable: <code class="monospace">dmm.OFF</code></li><li class="tablelistbullet9pt">Enable: <code class="monospace">dmm.ON</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limit number: <code class="monospace">1</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_FREQUENCY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_4W_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_PERIOD</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_DIODE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_DCV_RATIO</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CAPACITANCE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_TEMPERATURE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CONTINUITY</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command enables or disables a limit test for the selected measurement function. When this attribute is enabled, the limit <span class="monospaceitalic">Y</span> testing occurs on each measurement made by the instrument. Limit <span class="monospaceitalic">Y</span> testing compares the measurements to the high-limit and low-limit values. If a measurement falls outside these limits, the test fails.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclbody">See <a id="h41911" class="jump" title="dmm.measure.limit[Y].low.value" href="41229.htm" target="_self">dmm.measure.limit[Y].low.value</a> for an example of how to use this command.</p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41674" class="jump" title="dmm.digitize.limit[Y].enable" href="41225.htm" target="_self">dmm.digitize.limit[Y].enable</a></p>
+<p class="listcommand"><a id="h41211" class="jump" title="dmm.measure.limit[Y].autoclear" href="41208.htm" target="_self">dmm.measure.limit[Y].autoclear</a></p>
+<p class="listcommand"><a id="h41217" class="jump" title="dmm.measure.limit[Y].clear()" href="41212.htm" target="_self">dmm.measure.limit[Y].clear()</a></p>
+<p class="listcommand"><a id="h41218" class="jump" title="dmm.measure.limit[Y].fail" href="41214.htm" target="_self">dmm.measure.limit[Y].fail</a></p>
+<p class="listcommand"><a id="h41910" class="jump" title="dmm.measure.limit[Y].high.value" href="41230.htm" target="_self">dmm.measure.limit[Y].high.value</a></p>
+<p class="listcommand"><a id="h41911_2" class="jump" title="dmm.measure.limit[Y].low.value" href="41229.htm" target="_self">dmm.measure.limit[Y].low.value</a></p>
+
+
+<input id="topicId" type="hidden" value="41231" />
+<input id="topicDescription" type="hidden" value="dmm.measure.limit[Y].enable" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/10/2019 2:24:06 PM" />
+</body>
+</html>

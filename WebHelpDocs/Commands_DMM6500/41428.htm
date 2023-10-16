@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.func </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41150.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="44541.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41428" class="heading2-icl">dmm.digitize.func</h2>
+<p class="bodyzero">This attribute determines which digitize function is active.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.FUNC_NONE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = <code class="monospace">dmm</code>.digitize.func</p>
+<p class="iclcode"><code class="monospace">dmm</code>.digitize.func = <em class="emphasis">value</em></p>
+<p class="iclcode">channel.setdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_DIGI_FUNCTION, <span class="monospaceitalic">value</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_DIGI_FUNCTION)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The digitize measurement function to make active:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: <code class="monospace">dmm.FUNC_DIGITIZE_CURRENT</code></li><li class="tablelistbullet9pt">Voltage: <code class="monospace">dmm.FUNC_DIGITIZE_VOLTAGE</code></li><li class="tablelistbullet9pt">No digitize function selected (read only): <code class="monospace">dmm.FUNC_NONE</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81857.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Set this command to the type of measurement you want to digitize.</p>
+<p class="iclbody">Reading this command returns the digitize function that is presently active.</p>
+<p class="iclbody">If a basic (non-digitize) measurement function is selected, this returns <code class="monospace">dmm.FUNC_NONE</code>. The none setting is automatically made if you select a function with <code class="monospace">dmm.measure.func</code> or through the options from the front-panel Measure Functions tab.</p>
+<p class="iclbody">If a channel is closed when you assign a function to the channel, all other channels are opened.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">dmm</code>.digitize.func = <code class="monospace">dmm</code>.FUNC_DIGITIZE_CURRENT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the measurement function to digitize current.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">channel.setdmm(&quot;1:3&quot;, dmm.ATTR_DIGI_FUNCTION, dmm.FUNC_DIGITIZE_VOLTAGE)</p>
+<p class="codetable">channel.setdmm(&quot;1:3&quot;, dmm.ATTR_DIGI_RANGE, 100, dmm.ATTR_DIGI_DIGITS, dmm.DIGITS_5_5, dmm.ATTR_DIGI_SAMPLE_RATE, 1000, dmm.ATTR_DIGI_COUNT, 1000)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the measurement function on channels 1 to 3 of slot 1 to digitize voltage, with a range of 100, 5½&nbsp;displayed digits, a sample rate of 1000, and a count of 1000.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h45910" class="jump" title="Digitize functions" href="74481.htm" target="_self">Digitize functions</a></p>
+<p class="listcommand"><a id="h44397" class="jump" title="dmm.measure.func" href="40942.htm" target="_self">dmm.measure.func</a></p>
+
+
+<input id="topicId" type="hidden" value="41428" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.func" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/10/2019 9:41:41 AM" />
+</body>
+</html>

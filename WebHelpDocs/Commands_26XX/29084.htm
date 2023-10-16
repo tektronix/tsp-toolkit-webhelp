@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> V-source sink operating boundaries </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11969.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11964.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t29084" class="heading5">V-source sink operating boundaries</h5>
+<p class="bodytext">The quadrant within which the 2600B operates depends on the device-under-test (DUT) that is connected to the 2600B output. The following example illustrates this operation using the 2600B configured as a voltage source to discharge a 12 V power source (a battery). </p>
+<p class="magicfigurecenter"><img id="f29085" src="2600b-901-01a_sinkingvoltageoperationexample_lr.png" class="linkedepsandpngtemplate" alt="Sourcing voltage while sinking current" height="202" width="412" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The current compliance limit applies to both positive and negative currents. For example, if you set the current compliance limit to 50 mA, the current limit applies to ±50 mA.</p>
+<p class="bodytext">For this example, the 2600B is programmed to source 2 V and to limit current to 50 mA. When the SMU turns on, the battery voltage is higher than the programmed voltage source value. Because the SMU cannot deliver the programmed voltage, the SMU is placed in current compliance and begins to sink current. Sink operation continues until the battery voltage equals the programmed voltage source level and the current in the circuit drops to nearly 0 A.</p>
+<p class="bodytext">In the following figure, as the battery drains, the battery voltage is lowered (shown by the green arrow in the figure). Operation continues in this direction until the SMU can deliver the programmed voltage source value.</p>
+<p class="note"><img id="f14261_1" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Because the battery is a power source, initial operation can occur anywhere along the initial battery voltage line. This voltage is limited only by the capability of the battery (see the following figure).</p>
+<p class="magicfigurecenter"><img id="f29086" src="2600b-901-01a_v-sinkconsiderations_lr.png" class="linkedepsandpngtemplate" alt="Considerations when sourcing voltage and sinking power" height="503" width="567" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11967.htm" target="_self">V-source operating boundaries</a></p><p class="relateditem"><a href="11590.htm" target="_self">2601B and 2602B voltage source operating boundaries</a></p><p class="relateditem"><a href="11968.htm" target="_self">2611B, 2612B, 2614B, 2634B, 2635B, and 2636B voltage source operating boundaries</a></p><p class="relateditem"><a href="11969.htm" target="_self">Load considerations (V-source)</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="29084" />
+<input id="topicDescription" type="hidden" value="V-source sink operating boundaries" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/28/2021 1:39:48 PM" />
+</body>
+</html>

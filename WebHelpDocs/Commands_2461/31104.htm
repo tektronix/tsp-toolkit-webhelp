@@ -1,0 +1,182 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.setblock() - trigger.BLOCK_BRANCH_ON_EVENT </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31114.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31108.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31104" class="heading2-icl">trigger.model.setblock() - trigger.BLOCK_BRANCH_ON_EVENT</h2>
+<p class="bodyzero">This function branches to a specified block when a specified trigger event occurs.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="78"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:1px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.setblock(<span class="monospaceitalic">blockNumber</span>, trigger.BLOCK_BRANCH_ON_EVENT, <span class="monospaceitalic">event</span>, <span class="monospaceitalic">branchToBlock)</span> </p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">blockNumber</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The sequence of the block in the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">event</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The event that must occur before the trigger model branches the specified block</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">branchToBlock</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The block number of the trigger model block to execute when the specified event occurs</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">The branch-on-event block goes to a branching block after a specified trigger event occurs. If the trigger event has not yet occurred when the trigger model reaches the branch-on-event block, the trigger model continues to execute the blocks in the normal sequence. After the trigger event occurs, the next time the trigger model reaches the branch-on-event block, it goes to the branching block.</p>
+<p class="bodytext">If you set the branch event to none, an error is generated when you run the trigger model.</p>
+<p class="iclbody">If you are using a timer, it must be started before it can expire. One method to start the timer in the trigger model is to include a Notify block before the On Event block. Set the Notify block to use the same timer as the On Event block.</p>
+<p class="iclbody">The following table shows the constants for the events.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheadingsmall">Trigger events</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="336"><p class="tableheadingsmall">Event description</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="264"><p class="tableheadingsmall">Event constant</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger event blender <span class="monospaceitalic">N</span> (1 to 2), which combines trigger&nbsp;events</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_BLENDER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">A command interface trigger:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><strong class="specialbold">Any remote interface:</strong> *<code class="monospace">TRG</code></li><li class="tablelistbullet9pt"><strong class="specialbold">GPIB only:</strong> GET bus command</li><li class="tablelistbullet9pt"><strong class="specialbold">USB only:</strong> A USBTMC TRIGGER message </li><li class="tablelistbullet9pt"><strong class="specialbold">VXI-11:</strong> VXI-11 command <code class="monospace">device_trigger</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_COMMAND</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Digital input line edge (either rising, falling, or either based on the configuration of the line) detected on digital input line&nbsp;<span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;6)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DIGIO<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Front-panel TRIGGER key press</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DISPLAY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span> (1 to 8)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_LAN<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">No trigger event</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NONE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Notify trigger block <span class="monospaceitalic">N</span> (1 to 8) generates a trigger event when the trigger model executes it</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NOTIFY<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Source limit condition occurs</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_SOURCE_LIMIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger timer <span class="monospaceitalic">N</span> (1 to 4) expired</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TIMER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Line edge detected on TSP-Link synchronization line&nbsp;<span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;3)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TSPLINK<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">trigger.model.setblock(6, trigger.BLOCK_BRANCH_ON_EVENT, trigger.EVENT_DISPLAY, 2)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">When the trigger model reaches this block, if the front-panel TRIGGER key has been pressed, the trigger model returns to block 2. If the TRIGGER key has not been pressed, the trigger model continues to block 7 (the next block in the trigger model).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31191" class="jump" title="On event block" href="31009.htm" target="_self">On event block</a></p>
+
+
+<input id="topicId" type="hidden" value="31104" />
+<input id="topicDescription" type="hidden" value="trigger.model.setblock() &#0151; trigger.BLOCK_BRANCH_ON_EVENT" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2019 9:26:47 AM" />
+</body>
+</html>

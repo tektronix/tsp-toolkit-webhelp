@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Example script </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14186.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="3381.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12884" class="heading4">Example script</h4>
+<p class="bodytext">The following example demonstrates how to connect to a remote device that is not TSP<sup class="superscript">&reg;</sup> enabled, and send and receive data from this device:</p>
+<p class="code">-- Set tspnet timeout to 5 s.</p>
+<p class="code">tspnet.timeout = 5</p>
+<p class="code">--	Establish connection to another device with IP address 192.168.1.51</p>
+<p class="code">-- at port 1394.</p>
+<p class="code">id_instr = tspnet.connect(&quot;192.168.1.51&quot;, 1394, &quot;*rst\r\n&quot;)</p>
+<p class="code">-- Print the device ID from connect string.</p>
+<p class="code">print(&quot;ID is: &quot;, id_instr)</p>
+<p class="code">-- Set the termination character to CRLF. You must do this</p>
+<p class="code">-- for each connection after the connection has been made.</p>
+<p class="code">tspnet.termination(id_instr, tspnet.TERM_CRLF)</p>
+<p class="code">-- Send the command string to the connected device.</p>
+<p class="code">tspnet.write(id_instr, &quot;login admin\r\n&quot;)</p>
+<p class="code">-- Read the data available, then print it.</p>
+<p class="code">tspnet.write(id_instr, &quot;*idn?\r\n&quot;)</p>
+<p class="code">print(&quot;instrument write/read returns: &quot;, tspnet.read(id_instr))</p>
+<p class="code">-- Disconnect all existing TSP-Net sessions.</p>
+<p class="code">tspnet.reset()</p>
+<p class="bodytext">This example produces a return such as:</p>
+<p class="code">ID is: 	1</p>
+<p class="code">instrument write/read returns: 	SUCCESS: Logged in</p>
+<p class="code">instrument write/read returns: 	KEITHLEY INSTRUMENTS,MODEL 2600B,04089762,1.6.3d</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14186.htm" target="_self">Using TSP-Net with any ethernet-enabled instrument</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12884" />
+<input id="topicDescription" type="hidden" value="Example script" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/1/2021 1:43:38 PM" />
+</body>
+</html>

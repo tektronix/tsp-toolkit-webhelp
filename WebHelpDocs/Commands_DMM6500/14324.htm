@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Repeat until loops </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14323.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14325.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h6 id="t14324" class="heading6">Repeat until loops</h6>
+<p class="bodytext">To repeat a command, you use the <code class="monospace">repeat</code> ... <code class="monospace">until</code> statement. The body of a <code class="monospace">repeat</code> statement always executes at least once. It stops repeating when the conditions of the <code class="monospace">until</code> clause are met.</p>
+<p class="code">repeat</p>
+<p class="code">   <em class="emphasis">block</em></p>
+<p class="code">until <em class="emphasis">expression</em></p>
+<p class="bodytext">Where:</p>
+<ul class="listbullet"><li class="listbullet"><span class="monospaceitalic">block</span><code class="monospace"> </code>consists of one or more Lua statements</li><li class="listbullet"><span class="monospaceitalic">expression</span> is Lua code that evaluates to either <code class="monospace">true</code> or <code class="monospace">false</code></li></ul><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  The output you get from this example may vary depending on the data format settings of the instrument.</p>
+<p class="bodytext"><strong class="specialbold">Example: Repeat until</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="588"><p class="codetable">list = {&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;, &quot;Four&quot;, &quot;Five&quot;, &quot;Six&quot;}</p>
+<p class="codetable">print(&quot;Count elements in list using repeat:&quot;)</p>
+<p class="codetable">element = 1</p>
+<p class="codetable">repeat</p>
+<p class="codetable">   print(element, list[element])</p>
+<p class="codetable">   element = element + 1</p>
+<p class="codetable">until not list[element]</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="588"><p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">Count elements in list</code></p>
+<p class="tablebodytext"><code class="monospace">   using repeat:</code></p>
+<p class="tablebodytext"><code class="monospace">1  One</code></p>
+<p class="tablebodytext"><code class="monospace">2  Two</code></p>
+<p class="tablebodytext"><code class="monospace">3  Three</code></p>
+<p class="tablebodytext"><code class="monospace">4  Four</code></p>
+<p class="tablebodytext"><code class="monospace">5  Five</code></p>
+<p class="tablebodytext"><code class="monospace">6  Six</code></p>
+</td>
+</tr>
+
+</table>
+<p class="spacing"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2428.htm" target="_self">Loop control</a></p><p class="relateditem"><a href="14323.htm" target="_self">While loops</a></p><p class="relateditem"><a href="14325.htm" target="_self">For loops</a></p><p class="relateditem"><a href="16706.htm" target="_self">Break</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="14324" />
+<input id="topicDescription" type="hidden" value="Repeat until loops" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/20/2017 12:57:37 PM" />
+</body>
+</html>

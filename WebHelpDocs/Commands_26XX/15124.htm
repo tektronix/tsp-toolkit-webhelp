@@ -1,0 +1,86 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15123.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15122.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15124" class="heading2-icl">smuX.measure.rel.levelY</h2>
+<p class="bodyzero">This attribute sets the offset value for relative measurements.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">relValue</span></span> = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.rel.level<span class="monospaceitalic">Y</span></p>
+<p class="iclcode"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.rel.level<span class="monospaceitalic">Y</span> = <span class="monospaceitalic">relValue</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">relValue</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Relative measurement offset value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">X</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.measure.rel.levelv</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">SMU measurement function (<code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current, <code class="monospace">r</code> = resistance, <code class="monospace">p</code> = power)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute specifies the offset value used for relative measurements. When relative measurements are enabled (see <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.rel.enable</code><span class="monospaceitalic">Y</span>), all subsequent measured readings are offset by the value of this attribute. Each returned measured relative reading is the result of the following calculation: </p>
+<p class="iclbody"><em class="emphasis">Relative reading = Actual measured reading - Relative offset value</em></p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.measure.rel.levelv = smua.measure.v()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Performs a voltage measurement using SMU channel A and then uses it as the relative offset value.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13595" class="jump" title="Relative offset" href="12001.htm" target="_self">Relative offset</a></p>
+<p class="listcommand"><a id="h13937" class="jump" title="reset()" href="13933.htm" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15218" class="jump" title="smuX.measure.rel.enableY" href="15123.htm" target="_self">smuX.measure.rel.enableY</a></p>
+<p class="listcommand"><a id="h15232" class="jump" title="smuX.reset()" href="15136.htm" target="_self">smuX.reset()</a></p>
+
+

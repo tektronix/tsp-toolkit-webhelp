@@ -1,0 +1,78 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15926.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15928.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15927" class="heading2-icl">channel.getmode()</h2>
+<p class="bodyzero">This function returns the present mode of digital and totalizer channels.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">mode</span> = channel.getmode(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">mode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Return string of a comma-delimited list of modes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">String that specifies the channels to query, using normal channel list syntax</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">For digital I/O channels, the following modes are supported:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">channel.MODE_INPUT</code> (default) or <code class="monospace">0</code></li><li class="listbullet"><code class="monospace">channel.MODE_OUTPUT</code> or <code class="monospace">1</code></li><li class="listbullet"><code class="monospace">channel.MODE_PROTECT_OUTPUT</code> or <code class="monospace">3</code></li></ul><p class="iclbody">For totalizer channels, the following modes are supported:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">channel.MODE_RISING_EDGE</code> or <code class="monospace">1</code></li><li class="listbullet"><code class="monospace">channel.MODE_FALLING_EDGE</code> or <code class="monospace">0</code></li><li class="listbullet"><code class="monospace">channel.MODE_RISING_TTL_EDGE</code> (default) or <code class="monospace">3</code></li><li class="listbullet"><code class="monospace">channel.MODE_FALLING_TTL_EDGE</code> or <code class="monospace">2</code></li><li class="listbullet"><code class="monospace">channel.MODE_RISING_EDGE_READ_RESET</code> or <code class="monospace">5</code></li><li class="listbullet"><code class="monospace">channel.MODE_FALLING_EDGE_READ_RESET</code> or <code class="monospace">4</code></li><li class="listbullet"><code class="monospace">channel.MODE_RISING_TTL_EDGE_READ_RESET</code> or <code class="monospace">7</code></li><li class="listbullet"><code class="monospace">channel.MODE_FALLING_TTL_EDGE_READ_RESET</code> or <code class="monospace">6</code></li></ul><p class="iclbody">For DAC channels, the following modes are supported:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">channel.MODE_VOLTAGE_1</code> or <code class="monospace">17</code></li><li class="listbullet"><code class="monospace">channel.MODE_CURRENT_1</code> or <code class="monospace">1</code></li><li class="listbullet"><code class="monospace">channel.MODE_CURRENT_2</code> or <code class="monospace">2</code></li><li class="listbullet"><code class="monospace">channel.MODE_PROTECT_VOLTAGE_1</code> (default) or <code class="monospace">49</code></li><li class="listbullet"><code class="monospace">channel.MODE_PROTECT_CURRENT_1</code> or <code class="monospace">33</code></li><li class="listbullet"><code class="monospace">channel.MODE_PROTECT_CURRENT_2</code> or <code class="monospace">34</code></li></ul><p class="iclbody">Switch and analog backplane channels do not have modes. If included in a range or slot specifier, they are ignored. If they are specified directly, an error is generated.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">print(channel.getmode(&quot;slot6&quot;))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Query the configuration of the channels on slot 6. Assuming a 3750, channels 1 to 5 are digital I/O, channels 6 to 9 are totalizers, and channels 10 to 11 are DACs.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">0,0,0,0,0,3,3,3,3,49,49</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h7579" class="jump" title="channel.setmode()" href="15947.htm" target="_self">channel.setmode()</a></p>
+
+

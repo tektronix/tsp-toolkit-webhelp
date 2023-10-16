@@ -1,0 +1,85 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15093.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15095.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15094" class="heading2-icl">smuX.cal.date</h2>
+<p class="bodyzero">This attribute stores the calibration date of the active calibration set.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU calibration restore</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU nonvolatile memory</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Initially set to factory calibration&nbsp;date</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis"><em class="emphasis">calDate</em></em> = smu<span class="monospaceitalic">X</span>.cal.date</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.cal.date = <em class="emphasis">calDate</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">calDate</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The calibration date of the active calibration set</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace"><code class="monospace">smua.cal.date</code></code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute stores the calibration date that is associated with the active calibration set. The calibration date can be read at any time but can only be assigned a new value when calibration has been enabled with the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.unlock()</code> function. It is typically set to the date when the instrument was calibrated.</p>
+<p class="iclbody">This attribute is stored with the active calibration set. If a different calibration set is restored, this attribute reflects the date stored with that set.</p>
+<p class="iclbody"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.date</code> must be set to the date the calibration was done using the UTC time and date. The date is stored as the number of seconds since UTC 12:00 am Jan 1, 1970.</p>
+<p class="iclbody">Due to the internal storage format, <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.date</code> is accurate to within a few minutes of the value set.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">smua.cal.date = os.time()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Sets calibration date for SMU channel A to the present time set on the&nbsp;instrument.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17699" class="jump" title="Adjustment" href="13058.htm" target="_self">Adjustment</a></p>
+<p class="listcommand"><a id="h29092" class="jump" title="os.time()" href="25959.htm" target="_self">os.time()</a></p>
+<p class="listcommand"><a id="h15186" class="jump" title="smuX.cal.adjustdate" href="15093.htm" target="_self">smuX.cal.adjustdate</a></p>
+<p class="listcommand"><a id="h15188" class="jump" title="smuX.cal.due" href="15095.htm" target="_self">smuX.cal.due</a></p>
+<p class="listcommand"><a id="h15189" class="jump" title="smuX.cal.lock()" href="15089.htm" target="_self">smuX.cal.lock()</a></p>
+<p class="listcommand"><a id="h15192" class="jump" title="smuX.cal.restore()" href="15090.htm" target="_self">smuX.cal.restore()</a></p>
+<p class="listcommand"><a id="h15193" class="jump" title="smuX.cal.save()" href="15091.htm" target="_self">smuX.cal.save()</a></p>
+<p class="listcommand"><a id="h15194" class="jump" title="smuX.cal.state" href="15098.htm" target="_self">smuX.cal.state</a></p>
+<p class="listcommand"><a id="h15195" class="jump" title="smuX.cal.unlock()" href="15092.htm" target="_self">smuX.cal.unlock()</a></p>
+
+

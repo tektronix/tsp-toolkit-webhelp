@@ -1,0 +1,89 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15928.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15930.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15929" class="heading2-icl">channel.getpole()</h2>
+<p class="bodyzero">This function queries the pole settings for the specified channels.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="90"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="90"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">Card dependent, typically 2</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">poles</span> = channel.getpole(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">poles</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Returns a comma&#8209;separated string of the poles, based on <span class="monospaceitalic">channelList</span>; can be:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">One-pole: <code class="monospace">1</code></li><li class="tablelistbullet9pt">Two-pole: <code class="monospace">2</code></li><li class="tablelistbullet9pt">Four-pole: <code class="monospace">4</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">A string listing the channels to query for their pole settings</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody"><span class="monospaceitalic">channelList</span> can contain <code class="monospace">&quot;slot</code><span class="monospaceitalic">X</span><code class="monospace">&quot;</code>, where <span class="monospaceitalic">X</span> is <code class="monospace">1</code> to <code class="monospace">6</code>, or <code class="monospace">&quot;allslots&quot;</code>.</p>
+<p class="iclbody">When the channel list parameter for this function is <code class="monospace">&quot;slot</code><span class="monospaceitalic">X</span><code class="monospace">&quot;</code>, the response first lists the channels starting from lowest to highest. </p>
+<p class="iclbody">When the channel list parameter for this function is <code class="monospace">&quot;allslots&quot;</code>, the response starts with slot 1 and increases to slot 6. Each slot is processed completely before going to the next. All slot&nbsp;1 channels are listed before slot&nbsp;2 channels.</p>
+<p class="iclbody">The response is the numeric value representing the pole selection and not the text. For example, 4-pole selection is 4 and not <code class="monospace">channel.POLES_FOUR</code>.</p>
+<p class="iclbody">An error message is generated if:</p>
+<ul class="listbullet"><li class="listbullet">An empty parameter string is specified.</li><li class="listbullet">The specified channel does not exist for card installed in slot.</li><li class="listbullet">Parameter syntax error such as incorrect format for <span class="monospaceitalic">channelList</span>.</li><li class="listbullet">A channel pattern was specified.</li><li class="listbullet">An analog backplane relay was specified.</li><li class="listbullet">Channel does not support pole setting like a digital I/O.</li></ul><p class="iclbody">Command processing stops as soon as an error is detected. No partial list is returned. If an error is detected or the slot is empty, the response is <code class="monospace">nil</code>. </p>
+<p class="iclbody">Digital I/O, DAC, backplane, and totalizer channels are not supported.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.reset(&quot;slot5&quot;)</p>
+<p class="codetable">channel.setpole(&quot;5003, 5007&quot;, 4)</p>
+<p class="codetable">polesSlot5 = channel.getpole(&quot;5001, 5003, 5005, 5007&quot;)</p>
+<p class="codetable">print(polesSlot5)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Reset the channels on slot 5 only.</p>
+<p class="tablebodytext">Set the pole attribute for channels 3 and 7 on slot 5 to be 4.</p>
+<p class="tablebodytext">Query channels 1, 3, 5, and 7 on slot 5 for pole settings.</p>
+<p class="tablebodytext">View the pole attribute for the specified channels.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2,4,2,4</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Data retrieval commands</p>
+<p class="listcommand"><a id="h773" class="jump" title="channel.setpole()" href="15949.htm" target="_self">channel.setpole()</a></p>
+<p class="tablebodytext"></p>
+
+

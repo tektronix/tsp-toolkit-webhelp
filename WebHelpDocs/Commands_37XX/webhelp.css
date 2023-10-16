@@ -1,0 +1,314 @@
+﻿html, body, form {
+    width: 100%;
+    height: 100%;
+    font:normal 11px verdana;
+    overflow: hidden;
+}
+
+a {
+    cursor: pointer;
+    color: #003DB2 !important;
+    text-decoration: none !important;
+}
+a:visited { color: #003DB2 !important; }
+a:hover { color: #003DB2 !important; }
+
+p { margin:5px; }
+
+#start-panel ul, #start-panel ol { padding-left: 20px; }
+
+.loading
+{
+	text-align: center;
+	vertical-align: middle;
+	font-size: 11px;
+	height: 200px;
+	background-image: url(images/loading_gray.gif); 
+	background-repeat: no-repeat; 
+	background-position: center; 
+	padding-top: 70px;
+}
+
+/*---- HEADER ---------------*/
+div#header {
+    background: #BC2A4D;
+    padding: 10px;
+    height: 50px;/*must be in px*/
+    background-image: url(images/kickstart_header.jpg);
+    font-size: 20px;
+    color: #E2E2E2;
+    white-space: nowrap;
+}
+
+.header-left { float: left; white-space: nowrap;}
+.header-right { float: right; white-space: nowrap;}
+
+/*----Top Of Page link----*/
+.topOfPage { font-size: 11px; padding-left: 10px; padding-bottom:5px; }
+
+/*------ Footer --------*/
+.footer
+{
+	background-color: #EBEBEB;
+	width: 100%;
+	height: 60px;
+	border-top-color: #AA0000;
+	border-top-width: 1px;
+	border-top-style: solid;
+	font-size: 10px;
+}
+.footer td { padding:10px; }
+.footer-left { text-align: left; white-space: nowrap; }
+.footer-right { text-align: right; white-space: nowrap; }
+.footer-center { text-align: center; }
+
+/*---- West panel ------------------ Index & Tree -----------------------*/
+/*--- Index ---*/
+#index { background-color: #DDEAFC; width: 90%; }
+.tableindexlinks td { padding-right: 5px; padding-left: 5px; }
+#index p.indexatoz {
+	background: #E2E2E2;
+	margin-top: -3px;
+	font-size: 13px;
+}
+
+td.index1 {  font-weight: bold;}
+td.indexlink { }
+td.indexlink a:hover { text-decoration: underline !important; }
+
+td.indexheading {
+	font-size: 15px;
+	padding-bottom: 2px;
+	
+}
+/*--- Adding image to west panel vertical bar (when west panel collapsed) ---*/
+.x-layout-collapsed-west {
+	background-image: url(images/toc_collapsed.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+/*--- Tree -------------*/
+/* override extjs ext-all.css for tree*/
+.x-tree .x-panel-body { background-color: #999999	; padding: 5px; }
+.x-tree-node .x-tree-selected { background-color: #EDF4FE; font-weight: bold; }
+.x-tree-node .x-tree-node-over { background-color: #EDF4FE; }
+.x-tree-node-collapsed .x-tree-node-icon { background-image: url(images/book_blue.png); }
+.x-tree-node-expanded .x-tree-node-icon { background-image: url(images/book_open.png); }
+.x-tree-node-leaf .x-tree-node-icon { background-image:url(images/leaf.gif);  }
+
+
+/*---- END West panel ------------------ Index & Tree -----------------------*/
+
+/*------- Search ------------------------------------------------------*/
+.searchResultsPanel { background-color: #999999 !important; }
+.searchResults { font-size: 8pt; background-color: #999999 !important; }
+#searchResultsPanel { background-color: #999999 !important; }
+#searchResults { font-size: 8pt; background-color: #999999 !important; }
+#searchResults a:hover { text-decoration: underline !important;	}
+
+.searchword1
+{
+	background-color: #FFD2A6;
+}/*#FFFA96*/
+
+
+/*------------------------------- breadcrumb ---------------------------------------*/
+.breadcrumb:hover { text-decoration: underline !important; }
+
+
+/*---- Topic -------------------------------------------------------*/
+div#start-panel { padding: 10px; }
+.aboveheading { display: none; }
+.belowheading { display: none; }
+
+/*--- panels header (title) ---*/
+.x-panel-header-text { font-weight: normal; }
+
+
+/*--- toolbar ---*/
+.tree-node-toolbar-no-bg-image { background-color: #003399; background-image: none; }
+.x-toolbar .ytb-text { padding: 0px;}
+.checkbox-text
+{
+	font-family: Tahoma;
+	font-size: 10pt;
+	margin-left: 3px;
+	position: relative;
+	bottom: 1px;
+}
+  * html .checkbox-text {   
+	margin-left: 0px;   
+} 
+/*--- Icons ---*/
+/*--- main toolbar ---*/
+button.homeIcon { background-image: url(images/home.gif); }
+button.upIcon { background-image: url(images/up.gif); }
+button.downIcon { background-image: url(images/down.gif); }
+
+
+button.EditIcon { background-image: url(images/edit.png); }
+button.EditLiveIcon { background-image: url(images/edit_live.png); }
+button.emailThisPageIcon { background-image: url(images/email.png); }
+button.sendFeedbackIcon { background-image: url(images/feedback.gif); }
+
+button.printIcon { background-image: url(images/printer.png); }
+button.searchIcon { background-image: url(images/search.gif); }
+
+/* tree toolbar */
+button.expand { background-image: url(images/expand_all.gif); }
+button.collapse { background-image: url(images/collapse_all.gif); }
+
+/* overwrite Author-it stylesheet.css styles */
+.tabletext 
+{	
+	PADDING-RIGHT: 0pt;	
+	PADDING-LEFT: 0pt;	
+	PADDING-BOTTOM: 0pt;	
+	MARGIN: 2px;		
+	FONT: 10pt "Tahoma", verdana, arial, helvetica, sans-serif;	
+	COLOR: #000000;	
+	PADDING-TOP: 0pt;
+}
+.relatedheading 
+{
+	font-size: 11px;
+	color: #FFFFFE;
+	background-color: #003399;
+	margin-top: 12px;
+	margin-bottom: 0px;
+	margin-left: 0%;
+	margin-right: 0%;
+}
+.relateditem 
+{	font-family: "Tahoma", verdana, arial, helvetica, sans-serif;
+    color: #FFFFFF;
+    background-color: #EBEBEB;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.bodytext 
+{	font-family: "Tahoma", verdana, arial, helvetica, sans-serif;
+    font-size: 12pt;
+}
+li.listbullet 
+{	font-family: "Tahoma", verdana, arial, helvetica, sans-serif;
+    font-size: 10pt;
+}
+li.listbullet2 { font-family: "Tahoma", verdana, arial, helvetica, sans-serif; }
+li.listalpha { font-family: "Tahoma", verdana, arial, helvetica, sans-serif; }
+li.listalpha2 { font-family: "Tahoma", verdana, arial, helvetica, sans-serif; }
+.procedureheading { color: #004080; }
+li.listnumber { font-family: "Tahoma", verdana, arial, helvetica, sans-serif; }
+li.listnumber2 { font-family: "Tahoma", verdana, arial, helvetica, sans-serif; }
+.listnote 
+{
+    font-family: "Tahoma", verdana, arial, helvetica, sans-serif;
+    border-color: #004080;
+    border-top-style: solid;
+    border-top-width: 0.3mm;
+    border-top-color: #004080;
+    border-bottom-style: solid;
+    border-bottom-width: 0.3mm;
+    border-bottom-color: #004080;
+    border-left-style: solid;
+    border-left-width: 0.3mm;
+    border-left-color: #004080;
+    border-right-style: solid;
+    border-right-width: 0.3mm;
+    border-right-color: #004080;
+}
+.tableheading 
+{
+	color: #004080;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 6pt;
+	padding-bottom: 6pt;
+	padding-left: 6pt;
+	padding-right: 6pt;
+	border-color: #FFFFFF;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #FFFFFF;
+}
+.tablebodytext 
+{
+	font-family: "Tahoma", verdana, arial, helvetica, sans-serif;
+	color: #000000;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 0pt;
+	padding-bottom: 0pt;
+	padding-left: 0pt;
+	padding-right: 0pt;
+}
+ul.tablelistbullet 
+{
+	list-style-type: Square;
+	list-style-image: none;
+	list-style-position: outside;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+li.tablelistbullet 
+{
+	font-family: "Tahoma", verdana, arial, helvetica, sans-serif;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+}
+.expandingblock 
+{
+    border-color: ##F6E3CE;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: ##F6E3CE;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: ##F6E3CE;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: ##F6E3CE;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: ##F6E3CE;
+}
+.indexlink { font-family: "Tahoma", verdana, arial, helvetica, sans-serif; }
+.heading1 
+{
+	CLEAR: none;	
+    PADDING-RIGHT: 10px;	
+    PADDING-LEFT: 10px;	
+    FLOAT: none;	
+    PADDING-BOTTOM: 4px;	
+    MARGIN: -10px -10px 0px;	
+    WORD-SPACING: normal;	
+    FONT: 14px "Verdana", verdana, arial, helvetica, sans-serif;	
+    VERTICAL-ALIGN: baseline;	
+    TEXT-TRANSFORM: none;	
+    WIDTH: auto;	
+    COLOR: #E2E2E2;	
+    TEXT-INDENT: 0cm;	
+    PADDING-TOP: 4px;	
+    WHITE-SPACE: normal;	
+    LETTER-SPACING: normal;	
+    HEIGHT: auto;	
+    BACKGROUND-COLOR: #003399;	
+    TEXT-ALIGN: left;	
+    TEXT-DECORATION: none 
+}
+.index1 { font-family: "Tahoma", verdana, arial, helvetica, sans-serif; }
+
+
+
+

@@ -1,0 +1,88 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16250.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16896.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16251" class="heading2-icl">scan.nobufferexecute()</h2>
+<p class="bodyzero">This function starts a scan immediately and specifies that no reading buffer is used during scanning.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span>, <span class="monospaceitalic">scanCount</span>, <span class="monospaceitalic">stepCount </span>= scan.nobufferbackground()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The result of scanning:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">scan.EMPTY</code> or <code class="monospace">0</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.BUILDING </code>or <code class="monospace">1</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.RUNNING</code> or <code class="monospace">2</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.ABORTED</code> or <code class="monospace">3</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.FAILED</code> or <code class="monospace">4</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.FAILED_INIT</code> or <code class="monospace">5</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.SUCCESS</code> or <code class="monospace">6</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">scanCount</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The present number of scans that have completed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">stepCount</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The present number of steps have completed</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Before using this command, use <code class="monospace">scan.create()</code>, <code class="monospace">scan.add()</code>, and <code class="monospace">scan.addimagestep()</code> to set up scan elements. If a reading buffer is specified, an error is generated.</p>
+<p class="iclbody">The command continues execution until scanning completes or is aborted by the user.</p>
+<p class="iclbody">To run a scan immediately with a reading buffer, see <a id="h1140" class="jump" title="scan.execute()" href="16893.htm" target="_self">scan.execute()</a>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">scan.nobufferexecute()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Runs the scan immediately with no reading buffer.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1142" class="jump" title="scan.add()" href="16890.htm" target="_self">scan.add()</a></p>
+<p class="listcommand"><a id="h1145" class="jump" title="scan.background()" href="16891.htm" target="_self">scan.background()</a></p>
+<p class="listcommand"><a id="h1139" class="jump" title="scan.create()" href="16892.htm" target="_self">scan.create()</a></p>
+<p class="listcommand"><a id="h1140_2" class="jump" title="scan.execute()" href="16893.htm" target="_self">scan.execute()</a></p>
+<p class="listcommand"><a id="h1975" class="jump" title="scan.list()" href="16894.htm" target="_self">scan.list()</a></p>
+<p class="listcommand"><a id="h16279" class="jump" title="scan.nobufferbackground()" href="16250.htm" target="_self">scan.nobufferbackground()</a></p>
+<p class="listcommand"><a id="h1143" class="jump" title="scan.state()" href="16254.htm" target="_self">scan.state()</a></p>
+<p class="listcommand">Scanning and triggering</p>
+
+

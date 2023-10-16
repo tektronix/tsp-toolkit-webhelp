@@ -1,0 +1,286 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> scan.export() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="74579.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="73677.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t72548" class="heading2-icl">scan.export()</h2>
+<p class="bodyzero">This command stores data from a scan to a file on a USB flash drive.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">scan.export(&quot;/usb1/<span class="monospaceitalic">filename</span>&quot;, <span class="monospaceitalic">when</span>)</p>
+<p class="iclcode">scan.export(&quot;/usb1/<span class="monospaceitalic">filename</span>&quot;, <span class="monospaceitalic">when</span>, <span class="monospaceitalic">what</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">filename</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the file to be created on the USB flash drive </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">when</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">When to write the data to the file:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">scan.WRITE_AFTER_STEP</code>: At completion of each scan step</li><li class="tablelistbullet9pt"><code class="monospace">scan.WRITE_AFTER_SCAN</code>: At completion of each scan</li><li class="tablelistbullet9pt"><code class="monospace">scan.WRITE_AT_END</code>: At completion of all scans</li><li class="tablelistbullet9pt"><code class="monospace">scan.WRITE_NEVER</code>: Do not write data to a file</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">what</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Which data to include; see <strong class="specialbold">Details</strong> for options</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets up the instrument to export scan data. If an option to export data is selected, data is sent to a USB flash drive inserted into the USB port on the front panel of the instrument. Export files are limited to 500&nbsp;MB. When data exceeds 500&nbsp;MB, another file is created with <code class="monospace">_</code><span class="monospaceitalic">n</span> added to the file name, where <span class="monospaceitalic">n</span> starts at 1 and is incremented for each additional file. </p>
+<p class="iclbody">The file name must specify the full path (including <code class="monospace">/usb1/</code>). If included, the file extension must be set to <code class="monospace">.csv</code>. If no file extension is specified, <code class="monospace">.csv</code> is added.</p>
+<p class="iclbody">The exported data is time-stamped.</p>
+<p class="iclbody">Exporting data can impact scan performance. The more often exports occur, the more the impact on performance. Therefore, exporting data at completion of each step results in the slowest performance.</p>
+<p class="iclbody">The DMM6500 does not check for existing files when you save. Verify that you are using a unique name to avoid overwriting any existing CSV files on the flash drive.</p>
+<p class="iclbody">You can OR the <code class="monospace">buffer.COL_CHANNEL</code>, <code class="monospace">buffer.COL_CSV_CHAN_COLS</code>, and <code class="monospace">buffer.COL_CSV_EASY_GRAPH</code> options with the timestamp options (<code class="monospace">buffer.COL_TIME_ABSOLUTE</code>, <code class="monospace">buffer.COL_TIME_PARTS</code>, <code class="monospace">buffer.COL_TIME_RAW</code>, <code class="monospace">buffer.COL_TIME_RELATIVE</code>, and <code class="monospace">buffer.COL_TIMESTAMP_READING</code>).</p>
+<p class="iclbody">You cannot use <code class="monospace">buffer.COL_CSV_CHAN_COLS</code> if <span class="monospaceitalic">when</span> is set to <code class="monospace">scan.WRITE_AFTER_STEP</code>.</p>
+<p class="iclbody">You cannot use <code class="monospace">buffer.COL_CSV_EASY_GRAPH</code> if <span class="monospaceitalic">when</span> is set to <code class="monospace">scan.WRITE_AFTER_STEP </code>or <code class="monospace">scan.WRITE_AFTER_SCAN</code>.</p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tableheading">Option</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tableheading">Export includes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_ALL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">All data</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_BRIEF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Reading and relative time</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_CHANNEL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Channel</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_CSV_CHAN_COLS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Ignore other columns and use special format with a column per channel</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_CSV_EASY_GRAPH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Ignore other columns and use special format that is easy to graph in Microsoft Excel</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_DISPLAY_DIGITS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The setting for the display digits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_EXTRA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Relative time and additional values if they exist (such as the sense voltage from a DC voltage ratio measurement)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_EXTRA_RANGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Extra value range digits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_EXTRA_UNIT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Extra value units</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_EXTRA_VALUE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Extra value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_INDEX</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Index into buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_LIMITS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The status of all limits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_MATH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Math enabled (<code class="monospace">F</code> is math is not enabled; <code class="monospace">T</code> if math is enabled) and relative time</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_ORIGIN</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Origin status</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_QUESTIONABLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Questionable status</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_RANGE_DIGITS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Range digits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_READING</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The measurement reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_STANDARD</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The relative time, reading, channel, and source value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_START</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Status of start group</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_STATUS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The status information associated with the measurement; see the &quot;Buffer status bits for sense measurements&quot; table in&nbsp;<a id="h20172" class="jump" title="bufferVar.statuses" href="33164.htm" target="_self">bufferVar.statuses</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TERMINAL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Terminal status</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIME_ABSOLUTE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The time when the data point was measured as an absolute&nbsp;timestamp</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIME_PARTS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Absolute time in multiple columns</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIME_RAW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Absolute time in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIME_RELATIVE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The relative time when the data point was measured in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIMESTAMP_READING</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The timestamp reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_UNIT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The reading and the unit of measure</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">scan.export(&quot;/usb1/scandata&quot;, <code class="monospace">scan.WRITE_AFTER_STEP</code>)</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set up the instrument to export data from a scan to a file named <code class="monospace">scandata</code> at the completion of each scan step.</p>
+<p class="tablebodytext">Start the scan.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="72548" />
+<input id="topicDescription" type="hidden" value="scan.export()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/25/2019 1:31:03 PM" />
+</body>
+</html>

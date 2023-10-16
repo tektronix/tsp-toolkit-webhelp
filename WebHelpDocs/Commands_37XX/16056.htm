@@ -1,0 +1,159 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16055.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16057.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16056" class="heading2-icl">dmm.range</h2>
+<p class="bodyzero">Indicates the range of DMM for the selected function.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.range</p>
+<p class="iclcode">dmm.range = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">The range for the function selected by <code class="monospace">dmm.func</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Set this value to the expected measurement value and the instrument will select the range appropriate to measure that value. Setting the range with this attribute will automatically disable the autorange setting (<code class="monospace">dmm.autorange</code> command).</p>
+<p class="iclbody">The instrument selects the range to best match the expected measure value for the functions, as shown below.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="528" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="216" height="0"></td>
+<td width="114" height="0"></td>
+<td width="198" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" colspan="3" width="528"><p class="tableheading">Ranges and defaults</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tableheadingsmall">If dmm.func is… </p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="114"><p class="tableheadingsmall">The range is…</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="198"><p class="tableheadingsmall">The default is…</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="codetable">&quot;dcvolts&quot;</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="114"><p class="tablebodytext">0 to 303</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="198"><p class="tablebodytext">303</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="codetable">&quot;acvolts&quot;</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="114"><p class="tablebodytext">0 to 303</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="198"><p class="tablebodytext">10</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="codetable">&quot;dccurrent&quot;</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="114"><p class="tablebodytext">0 to 3.1</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="198"><p class="tablebodytext">3.1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="codetable">&quot;accurrent&quot;</p>
+</td>
+<td style="border-left:1px solid #010101;border-bottom:1px solid #010101;" width="114"><p class="tablebodytext">0 to 3.1</p>
+</td>
+<td style="border-left:1px solid #010101;border-bottom:1px solid #010101;" width="198"><p class="tablebodytext">3.1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="codetable">&quot;twowireohms&quot;</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="114"><p class="tablebodytext">0 to 120e6</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="198"><p class="tablebodytext">1000</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="codetable">&quot;fourwireohms&quot;</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="114"><p class="tablebodytext">0 to 120e6</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="198"><p class="tablebodytext">1000</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="codetable">&quot;commonsideohms&quot;</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="114"><p class="tablebodytext">0 to 120e6</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="198"><p class="tablebodytext">1000</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">The range setting is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to the previous function, the range settings you set previously are retained.</p>
+<p class="iclbody">If you query the range when the selected function does not have a range associated with it, <code class="monospace">nil</code> is returned.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">The <code class="monospace">dmm.range</code> is received when <code class="monospace">dmm.func</code> is <code class="monospace">&quot;temperature&quot;</code>, <code class="monospace">&quot;frequency&quot;</code>, <code class="monospace">&quot;period&quot;</code>, <code class="monospace">&quot;continuity&quot;</code>, or <code class="monospace">&quot;nofunction&quot;</code>.</li><li class="listbullet">If <span class="monospaceitalic">value </span>does not make sense for selected function.</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.range = 5</p>
+<p class="codetable">dmm.func = &quot;twowireohms&quot;</p>
+<p class="codetable">dmm.range = 35000</p>
+<p class="codetable">print(dmm.range)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set the range for DC volts to 10. Select a range on 2-wire&nbsp;ohms suitable for measuring 35000. View the selected range.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1.000000000e+05</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1214" class="jump" title="dmm.autorange" href="15976.htm" target="_self">dmm.autorange</a></p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h881" class="jump" title="dmm.reset()" href="16061.htm" target="_self">dmm.reset()</a></p>
+
+

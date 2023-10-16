@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Measurement Event Registers </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12284.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12282.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t27620" class="heading3">Measurement Event Registers</h3>
+<p class="bodytext">As shown in the <a id="h12273" class="jump" title="Measurement event registers ***2600B***" href="12313.htm#o77088" target="_self">Measurement event registers</a> of the status model, there are eight register sets associated with measurement event status. Commands are summarized in <a id="h14248" class="jump" title="Status register set contents" href="12354.htm" target="_self">Status register set contents</a>. Note that bits can also be set by using numeric parameter values. For details, see <a id="h12276" class="jump" title="Programming enable and transition registers" href="12277.htm" target="_self">Programming enable and transition registers</a>.</p>
+<p class="bodytext">For example, either of the following commands sets the VOLTAGE_LIMIT enable bit:</p>
+<p class="code"><code class="monospace">status.measurement.enable = status.measurement.VOLTAGE_LIMIT</code></p>
+<p class="code"><code class="monospace">status.measurement.enable = 1</code></p>
+<p class="bodytext">When reading a register, a numeric value is returned. The binary equivalent of this value indicates which bits in the register are set. For details, see <a id="h12289" class="jump" title="Reading registers" href="12290.htm" target="_self">Reading registers</a>. For example, the following command reads the Measurement Event Enable Register:</p>
+<p class="bodytext"><code class="monospace">print(status.measurement.enable)</code></p>
+<p class="bodytext">This register set feeds to bit B0 (MSB) of the Status Byte. The bits used in the Measurement Event Registers are:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Bit B0, Voltage Limit (VLMT):</strong> Set bit indicates that the voltage limit was exceeded. This bit is updated only when either a measurement is made or the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.compliance</code> attribute is&nbsp;read.</li><li class="listbullet"><strong class="specialbold">Bit B1, Current Limit (ILMT):</strong> Set bit indicates that the current limit was exceeded. This bit is updated only when either a measurement is made or the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.compliance</code> attribute is&nbsp;read.</li><li class="listbullet"><strong class="specialbold">Bit B7, Reading Overflow (ROF):</strong> Set bit indicates that an overflow reading has been&nbsp;detected.</li><li class="listbullet"><strong class="specialbold">Bit B8, Buffer Available (BAV): </strong>Set bit indicates that there is at least one reading stored in either or both nonvolatile reading&nbsp;buffers.</li><li class="listbullet"><strong class="specialbold">Bit B11, Output Enable (OE):</strong> (2601B, 2602B, 2604B) Set bit indicates that output enable was asserted.<br><strong class="specialbold">Bit B11, Interlock (INT): </strong>(2611B, 2612B, 2614B, 2634B, 2635B, 2636B) Set bit indicates that interlock was asserted.</li><li class="listbullet"><strong class="specialbold">Bit B13, Instrument Summary (INST):</strong> Set bit indicates that a bit in the Measurement Instrument Summary Register is set.</li></ul><p class="bodytext">Commands to program and read the register are summarized in the <a id="h14246" class="jump" title="Status function summary" href="29523.htm" target="_self">Status function summary</a> table. For more information about the Measurement Event Registers, refer to <a id="h14248_2" class="jump" title="Status register set contents" href="12354.htm" target="_self">Status register set contents</a> and the figures in this section.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12306.htm" target="_self">Status register sets</a></p><p class="relateditem"><a href="12328.htm" target="_self">System Summary Registers</a></p><p class="relateditem"><a href="29566.htm" target="_self">Standard Event Register</a></p><p class="relateditem"><a href="12280.htm" target="_self">Operation Status Registers</a></p><p class="relateditem"><a href="13026.htm" target="_self">Questionable Status Registers</a></p><p class="relateditem"><a href="12282.htm" target="_self">Register programming example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="27620" />
+<input id="topicDescription" type="hidden" value="Measurement Event Registers" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/29/2021 8:52:33 PM" />
+</body>
+</html>

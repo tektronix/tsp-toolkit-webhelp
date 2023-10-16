@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.measure.limit[Y].fail </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29884.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25685.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t25684" class="heading2-icl">smu.measure.limit[Y].fail</h2>
+<p class="bodyzero">This attribute queries the results of a limit test.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Function change</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">result</span> = smu.measure.limit[<span class="monospaceitalic">Y</span>].fail</p>
+<p class="iclcode"><em class="emphasis">result </em>= smu.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">smu</code>.ATTR_MEAS_LIMIT_FAIL_<span class="monospaceitalic">Y</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">result</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The results of the limit test for limit <span class="monospaceitalic">Y</span>:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">smu.FAIL_NONE</code>: Test passed; measurement under or equal to the high limit</li><li class="tablelistbullet9pt"><code class="monospace">smu.FAIL_HIGH</code>: Test failed; measurement exceeded high limit</li><li class="tablelistbullet9pt"><code class="monospace">smu.FAIL_LOW</code>: Test failed; measurement exceeded low limit</li><li class="tablelistbullet9pt"><code class="monospace">smu.FAIL_BOTH</code>: Test failed; measurement exceeded both limits</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limit number: <code class="monospace">1</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage measurement: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li><li class="tablelistbullet9pt">Current measurement: <code class="monospace">smu.FUNC_DC_CURRENT</code> </li><li class="tablelistbullet9pt">Ohms measurement: <code class="monospace">smu.FUNC_RESISTANCE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command queries the result of a limit test for the selected measurement function.</p>
+<p class="iclbody">The response message indicates if the limit test passed or how it failed (on the high or low limit).</p>
+<p class="iclbody">If autoclear is set to off, reading the results of a limit test does not clear the fail indication of the test. To clear a failure, send the clear command. To automatically clear the results, set auto clear on.</p>
+<p class="iclbody">If auto clear is set to on and you are making a series of measurements, the last measurement limit determines the fail indication for the limit. If auto clear is turned off, the results return a test fail if any of one of the readings failed.</p>
+<p class="iclbody">To use this attribute, you must set the limit state to on.</p>
+<p class="iclbody">If the readings are stored in a reading buffer, you can use the <span class="monospaceitalic">bufferVar</span><code class="monospace">.statuses</code> command to see the results.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclbody">This example enables limits 1 and 2 for voltage, measurements. Limit 1 is checking for readings to be between 3 and 5 V, while limit&nbsp;2 is checking for the readings to be between 1 and 7 V. The auto clear feature is disabled, so if any reading is outside these limits, the corresponding fail is 1. Therefore, if any one of the fails is 1, analyze the reading buffer data to find out which reading failed the limits.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">-- set the instrument source current</p>
+<p class="codetable">smu.source.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable">-- set the instrument to measure voltage</p>
+<p class="codetable">smu.measure.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">-- set the range to 10 V</p>
+<p class="codetable">smu.measure.range = 10</p>
+<p class="codetable">-- set the nplc to 0.1</p>
+<p class="codetable">smu.measure.nplc = 0.1</p>
+<p class="codetable">-- disable auto clearing for limit 1</p>
+<p class="codetable">smu.measure.limit[1].autoclear = smu.OFF</p>
+<p class="codetable">-- set high limit on 1 to fail if reading exceeds 5 V</p>
+<p class="codetable">smu.measure.limit[1].high.value = 5</p>
+<p class="codetable">-- set low limit on 1 to fail if reading is less than 3 V</p>
+<p class="codetable">smu.measure.limit[1].low.value = 3</p>
+<p class="codetable">--- set the beeper to sound if the reading exceeds the limits for limit 1</p>
+<p class="codetable">smu.measure.limit[1].audible = smu<code class="monospace">.AUDIBLE_FAIL</code></p>
+<p class="codetable">-- enable limit 1 checking for voltage measurements</p>
+<p class="codetable">smu.measure.limit[1].enable = smu.ON</p>
+<p class="codetable">-- disable auto clearing for limit 2</p>
+<p class="codetable">smu.measure.limit[2].autoclear = smu.OFF</p>
+<p class="codetable">-- set high limit on 2 to fail if reading exceeds 7 V</p>
+<p class="codetable">smu.measure.limit[2].high.value = 7</p>
+<p class="codetable">-- set low limit on 2 to fail if reading is less than 1 V</p>
+<p class="codetable">smu.measure.limit[2].low.value = 1</p>
+<p class="codetable">-- enable limit 2 checking for voltage measurements</p>
+<p class="codetable">smu.measure.limit[2].enable = smu.ON</p>
+<p class="codetable">-- set the measure count to 50</p>
+<p class="codetable">smu.measure.count = 50</p>
+<p class="codetable">-- create a reading buffer that can store 100 readings</p>
+<p class="codetable">LimitBuffer = buffer.make(100)</p>
+<p class="codetable">-- make 50 readings and store them in LimitBuffer</p>
+<p class="codetable">smu.measure.read(LimitBuffer)</p>
+<p class="codetable">-- Check if any of the 50 readings were outside of the limits</p>
+<p class="codetable">print(&quot;limit 1 results = &quot; .. smu.measure.limit[1].fail)</p>
+<p class="codetable">print(&quot;limit 2 results = &quot; .. smu.measure.limit[2].fail)</p>
+<p class="codetable">-- clear limit 1 conditions</p>
+<p class="codetable">smu.measure.limit[1].clear()</p>
+<p class="codetable">-- clear limit 2 conditions</p>
+<p class="codetable">smu.measure.limit[2].clear()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Example output that shows all readings are within limit values (all readings between 3 V and 5 V):</p>
+<p class="codetable">limit 1 results = smu.FAIL_NONE</p>
+<p class="codetable">limit 2 results = smu.FAIL_NONE</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Example output showing at least one reading failed limit 1 high values (a 6&nbsp;V reading would cause this condition or a reading greater than 5 V but less than 7 V):</p>
+<p class="codetable">limit 1 results = smu.FAIL_HIGH</p>
+<p class="codetable">limit 2 results = smu.FAIL_NONE</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Example output showing at least one reading failed limit 1 and 2 low values (a 0.5 V reading would cause this condition or a reading less than 1&nbsp;V):</p>
+<p class="codetable">limit 1 results = smu.FAIL_LOW</p>
+<p class="codetable">limit 2 results = smu.FAIL_LOW</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h20172" class="jump" title="bufferVar.statuses" href="33164.htm" target="_self">bufferVar.statuses</a></p>
+<p class="listcommand"><a id="h35263" class="jump" title="Limit testing and binning" href="30143.htm" target="_self">Limit testing and binning</a></p>
+<p class="listcommand"><a id="h31338" class="jump" title="smu.measure.limit[Y].enable" href="29884.htm" target="_self">smu.measure.limit[Y].enable</a></p>
+
+
+<input id="topicId" type="hidden" value="25684" />
+<input id="topicDescription" type="hidden" value="smu.measure.limit[Y].fail" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 11:31:27 AM" />
+</body>
+</html>

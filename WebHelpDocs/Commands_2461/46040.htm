@@ -1,0 +1,203 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.load() - LoopUntilEvent </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="35128.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="46034.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t46040" class="heading2-icl">trigger.model.load() - LoopUntilEvent</h2>
+<p class="bodyzero">This function loads a trigger-model template configuration that makes continuous measurements until the specified event occurs.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.load(&quot;LoopUntilEvent&quot;, <span class="monospaceitalic">triggerEvent</span>, <span class="monospaceitalic">position, clear</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;LoopUntilEvent&quot;, <span class="monospaceitalic">triggerEvent</span>, <span class="monospaceitalic">position</span>, <span class="monospaceitalic">clear</span>, <span class="monospaceitalic">delay</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;LoopUntilEvent&quot;, <span class="monospaceitalic">triggerEvent</span>, <span class="monospaceitalic">position</span>, <span class="monospaceitalic">clear</span>, <span class="monospaceitalic">delay</span>, <span class="monospaceitalic">bufferName</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">triggerEvent</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The event that ends infinite triggering or readings set to occur before the trigger; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">position</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of readings to make in relation to the size of the reading buffer; enter as a percentage (0% to 100%)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">clear</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">To clear previously detected trigger events when entering the wait block (default): <code class="monospace">trigger.CLEAR_ENTER</code></p>
+<p class="tablebodytext">To immediately act on any previously detected triggers and not clear them: <code class="monospace">trigger.CLEAR_NEVER</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">delay</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The delay time before each measurement (167&nbsp;ns to 10&nbsp;ks); default is <code class="monospace">0</code> for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer; defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The event constant is the event that ends infinite triggering or ends readings set to occur before the trigger and start post-trigger readings. The trigger model makes readings until it detects the event constant. After the event, it makes a finite number of readings, based on the setting of the trigger position.</p>
+<p class="iclbody">The position marks the location in the reading buffer where the trigger will occur. The position is set as a percentage of the buffer capacity. The buffer captures measurements until a trigger occurs. When the trigger occurs, the buffer retains the percentage of readings specified by the position, then captures remaining readings until 100&nbsp;percent of the buffer is filled. For example, if this is set to 75 for a reading buffer that holds 10,000 readings, the trigger model makes 2500 readings after it detects the source event. There are 7500 pre-trigger readings and 2500 post-trigger readings.</p>
+<p class="iclbody">The instrument makes two sets of readings. The first set is made until the trigger event occurs. The second set is made after the trigger event occurs, up to the number of readings calculated by the position parameter.</p>
+<p class="iclbody">You cannot have the event constant set at none when you run this trigger-model template.</p>
+<p class="iclbody">The following table lists the options that are available for <span class="monospaceitalic">triggerEvent</span>.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheadingsmall">Trigger events</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="336"><p class="tableheadingsmall">Event description</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="264"><p class="tableheadingsmall">Event constant</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Front-panel TRIGGER key press</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DISPLAY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Notify trigger block <span class="monospaceitalic">N</span> (1 to 8) generates a trigger event when the trigger model executes it</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NOTIFY<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">A command interface trigger:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><strong class="specialbold">Any remote interface:</strong> *<code class="monospace">TRG</code></li><li class="tablelistbullet9pt"><strong class="specialbold">GPIB only:</strong> GET bus command</li><li class="tablelistbullet9pt"><strong class="specialbold">USB only:</strong> A USBTMC TRIGGER message </li><li class="tablelistbullet9pt"><strong class="specialbold">VXI-11:</strong> VXI-11 command <code class="monospace">device_trigger</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_COMMAND</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Line edge (either rising, falling, or either based on the configuration of the line) detected on digital input line <span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;6)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DIGIO<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Line edge detected on TSP-Link synchronization line&nbsp;<span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;3)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TSPLINK<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span> (1 to 8)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_LAN<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger event blender <span class="monospaceitalic">N</span> (1 to 2), which combines trigger events</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_BLENDER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger timer <span class="monospaceitalic">N</span> (1 to 4) expired</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TIMER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Source limit condition occurs</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_SOURCE_LIMIT</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">After selecting a trigger-model template, you can view the trigger-model blocks in a graphical format by pressing the front-panel MENU key and under Trigger, selecting Configure. You can also add or delete blocks and change trigger-model settings from this screen. You can use the <code class="monospace">trigger.model.getblocklist()</code> command to view the trigger model blocks in a list format.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable"> </p>
+<p class="codetable">-- Set up measure function</p>
+<p class="codetable">smu.measure.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable"> </p>
+<p class="codetable">-- Initiate readings</p>
+<p class="codetable">trigger.model.load(&quot;LoopUntilEvent&quot;, trigger.EVENT_DISPLAY, 50)</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Reset the instrument.</p>
+<p class="tablebodytext">Set the instrument to measure current.</p>
+<p class="tablebodytext">Load the LoopUntilEvent trigger model to make measurements until the front panel trigger key is pressed, then continue to make measurements equal to 50% of the reading buffer size.</p>
+<p class="tablebodytext">Start the trigger model.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="46040" />
+<input id="topicDescription" type="hidden" value="trigger.model.load() &#0151; LoopUntilEvent" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/28/2019 11:03:00 AM" />
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Status configuration (enable) commands </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="28357.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="13051.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t28372" class="heading4">Status configuration (enable) commands</h4>
+<p class="bodytext">For the following registers, the commands listed, which are sent from the master node, enable the appropriate register bits for the status model configuration example.</p>
+<p class="bodytext">Node 15 status registers: The following commands enable the current limit events for SMU A and B of node 15:</p>
+<p class="bodytext"><code class="monospace">node[15].status.measurement.current_limit.enable = 6</code><br><code class="monospace">node[15].status.measurement.enable = 2</code><br><code class="monospace">node[15].status.node_enable = 1</code></p>
+<p class="bodytext">The affected status registers for the above commands are indicated by labels A, B and C (see the following figure).</p>
+<p class="bodytext">Master node system summary registers: The following commands enable the required system summary bits for node 15:</p>
+<p class="bodytext"><code class="monospace">status.system2.enable = 2</code><br><code class="monospace">status.system.enable = 1</code></p>
+<p class="bodytext">The affected system summary registers for the above commands are indicated by labels D and E (see the following figure).</p>
+<p class="bodytext">Master node service request: The following command enables the service request for the measurement event:</p>
+<p class="bodytext"><code class="monospace">status.request_enable = 1</code></p>
+<p class="bodytext">The affected status register for the above command is indicated by label E (see the following figure).</p>
+<p class="magicfigurecenter"><img id="f26855" src="2600b-901-01a_tsp-linkstatusmodelconfigurationexample.png" class="linkedepsandpngtemplate" alt="TSP-Link status model configuration example" height="1508" width="1560" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="28357.htm" target="_self">Status model configuration example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="28372" />
+<input id="topicDescription" type="hidden" value="Status configuration (enable) commands" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/4/2021 4:36:55 PM" />
+</body>
+</html>

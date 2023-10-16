@@ -1,0 +1,131 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> bufferVar.sourceunits </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="34340.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30550.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t25707" class="heading2-icl">bufferVar.sourceunits</h2>
+<p class="bodyzero">This attribute contains the units of measure of the source.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="84"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="84"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">readingUnits</em> = <span class="monospaceitalic">bufferVar</span>.sourceunits[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">readingUnits</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The units of measure of the source:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">Volt DC</code></li><li class="tablelistbullet9pt"><code class="monospace">Amp DC</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading number <span class="monospaceitalic">N</span>; can be any value from 1 to the number of readings in the buffer; use the <span class="monospaceitalic">bufferVar.</span><code class="monospace">n</code> command to determine the number of readings in the&nbsp;buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The attribute is an array (a Lua table) of strings indicating the units of measure at the time of the reading.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="346"><p class="codetable">reset() </p>
+<p class="codetable">testData = buffer.make(50)</p>
+<p class="codetable">smu.source.output = smu.ON</p>
+<p class="codetable">testData.fillmode = buffer.FILL_CONTINUOUS</p>
+<p class="codetable">trigger.model.load(&quot;SimpleLoop&quot;, 3, 0, testData)</p>
+<p class="codetable">smu.source.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">printbuffer(1, testData.n, testData.sourceunits)</p>
+<p class="codetable">trigger.model.load(&quot;SimpleLoop&quot;, 3, 0, testData)</p>
+<p class="codetable">smu.source.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">printbuffer(1, testData.n, testData.sourceunits)</p>
+<p class="codetable">smu.source.output = smu.OFF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="254"><p class="tablebodytext">Create a reading buffer named <code class="monospace">testData</code>, configure the instrument to make three measurements, and store the readings in the buffer.</p>
+<p class="tablebodytext">Set the source output to ON.</p>
+<p class="tablebodytext">Set the buffer to fill continuously.</p>
+<p class="tablebodytext">Set the source function to current.</p>
+<p class="tablebodytext">Take three readings.</p>
+<p class="tablebodytext">Print the units for the first three readings in the buffer.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Amp DC, Amp DC, Amp DC</p>
+<p class="tablebodytext">Set the source function to voltage.</p>
+<p class="tablebodytext">Take three readings.</p>
+<p class="tablebodytext">Print the units for the readings in the buffer.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Volt DC, Volt DC, Volt DC</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27588" class="jump" title="bufferVar.sourceunits" href="25707.htm" target="_self">bufferVar.sourceunits</a></p>
+<p class="listcommand"><a id="h33667" class="jump" title="bufferVar.sourcevalues" href="30550.htm" target="_self">bufferVar.sourcevalues</a></p>
+<p class="listcommand"><a id="h33668" class="jump" title="bufferVar.statuses" href="33164.htm" target="_self">bufferVar.statuses</a></p>
+
+
+<input id="topicId" type="hidden" value="25707" />
+<input id="topicDescription" type="hidden" value="bufferVar.sourceunits" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 9:42:05 AM" />
+</body>
+</html>

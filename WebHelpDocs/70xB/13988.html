@@ -1,0 +1,92 @@
+<html><head><title> userstring.catalog() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13987.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="13989.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">userstring.catalog()</h2>
+<p class="bodyzero">This function creates an iterator for the user string catalog.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">No</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">for <span class="monospaceitalic">name</span> in userstring.catalog() do … end</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">name</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The name of the string; the key of the key-value pair</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The catalog provides access for <code class="monospace">userstring</code> pairs, allowing you to manipulate all the key-value pairs in nonvolatile memory. The entries are enumerated in no particular order.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="390"><p class="codetable">for name in userstring.catalog() do</p>
+<p class="codetable">   userstring.delete(name)</p>
+<p class="codetable">end</p>
+</td>
+<td width="352"><p class="tablebodytext">Deletes all user strings in nonvolatile memory.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="390"><p class="codetable">for name in userstring.catalog() do</p>
+<p class="codetable">   print(name .. &quot; = &quot; ..</p>
+<p class="codetable">      userstring.get(name))</p>
+<p class="codetable">end</p>
+</td>
+<td width="352"><p class="tablebodytext">Prints all <code class="monospace">userstring</code> keyvalue pairs.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">product = Widgets</p>
+<p class="codetable">assetnumber = 236</p>
+<p class="codetable">contact = John Doe</p>
+<p class="tablebodytext">The above output lists the user strings added in the example for the <code class="monospace">userstring.add()</code> function. Notice the key-value pairs are not listed in the order they were added.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h13994" class="jumptemplate" title="userstring.add()" href="13987.html" target="_self">userstring.add()</a></p>
+<p class="iclbody"><a id="h13993" class="jumptemplate" title="userstring.delete()" href="13989.html" target="_self">userstring.delete()</a></p>
+<p class="iclbody"><a id="h13991" class="jumptemplate" title="userstring.get()" href="13990.html" target="_self">userstring.get()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

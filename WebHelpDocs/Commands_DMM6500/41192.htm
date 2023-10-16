@@ -1,0 +1,176 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.thermistor </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16068.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41197.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41192" class="heading2-icl">dmm.measure.thermistor</h2>
+<p class="bodyzero">This attribute describes the type of thermistor.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.THERM_5000</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.measure.thermistor</p>
+<p class="iclcode">dmm.measure.thermistor = <span class="monospaceitalic">value</span></p>
+<p class="iclcode"><em class="emphasis">value</em> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.<code class="monospace">ATTR_MEAS_THERMISTOR</code>)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.<code class="monospace">ATTR_MEAS_THERMISTOR</code>, <em class="emphasis">value</em>)</p>
+<p class="iclcode">channel.setdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, <code class="monospace">dmm.ATTR_MEAS_THERMISTOR</code>, <span class="monospaceitalic">value</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, <code class="monospace">dmm.ATTR_MEAS_THERMISTOR</code>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The thermistor type in ohms:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">2252&nbsp;Ω: <code class="monospace">dmm.THERM_2252</code></li><li class="tablelistbullet9pt">5000&nbsp;Ω: <code class="monospace">dmm.THERM_5000</code></li><li class="tablelistbullet9pt">10000&nbsp;Ω: <code class="monospace">dmm.THERM_10000</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81857.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_DC_VOLTAGE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_RESISTANCE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_ACV_FREQUENCY</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_AC_VOLTAGE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_4W_RESISTANCE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_ACV_PERIOD</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_DC_CURRENT</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_DIODE </span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DCV_RATIO</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_AC_CURRENT</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_CAPACITANCE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_TEMPERATURE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_CONTINUITY</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command is only applicable when the transducer type is set to thermistor.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">dmm.measure.func = dmm.FUNC_TEMPERATURE</p>
+<p class="codetable">dmm.measure.transducer = <code class="monospace">dmm.TRANS_THERMISTOR</code></p>
+<p class="codetable">dmm.measure.thermistor = <code class="monospace">dmm.THERM_2252</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set measurement function to temperature.</p>
+<p class="tablebodytext">Set the transducer type to thermistor.</p>
+<p class="tablebodytext">Set the thermistor type to 2252.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">channel.setdmm(&quot;1:5&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_TEMPERATURE)</p>
+<p class="codetable">channel.setdmm(&quot;1:5&quot;, dmm.ATTR_MEAS_TRANSDUCER, dmm.TRANS_THERMISTOR<code class="monospace">)</code></p>
+<p class="codetable">channel.setdmm(&quot;1:5&quot;, dmm.ATTR_MEAS_THERMISTOR, dmm.THERM_2252)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">For channels 1 through 5, set the DMM function to temperature.</p>
+<p class="tablebodytext">Set the transducer type to 3-wire RTD. Set the RTD type to User. Set the alpha RTD value to 0.00385.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41651" class="jump" title="dmm.measure.transducer" href="41181.htm" target="_self">dmm.measure.transducer</a></p>
+<p class="listcommand"><a id="h46772" class="jump" title="Temperature measurements" href="80230.htm" target="_self">Temperature measurements</a></p>
+
+
+<input id="topicId" type="hidden" value="41192" />
+<input id="topicDescription" type="hidden" value="dmm.measure.thermistor" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/23/2019 1:35:03 PM" />
+</body>
+</html>

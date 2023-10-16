@@ -1,0 +1,103 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15971.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15973.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15972" class="heading2-icl">dmm.buffer.info()</h2>
+<p class="bodyzero">This function returns the size and capacity of the reading buffer parameter.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">size</span>, <span class="monospaceitalic">capacity</span> = dmm.buffer.info(<span class="monospaceitalic">bufferVar</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">size</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Number representing the <span class="monospaceitalic">N</span> (presently stored) attribute of the reading buffer parameter</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">capacity</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Number representing the overall capacity attribute of the reading buffer parameter</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">String representing the reading buffer name that you want to query for size and capacity</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function uses the specified reading buffer input parameter name to find the corresponding size and capacity to return. Use this function with the <code class="monospace">dmm.buffer.catalog()</code> function to output the size and capacity for all reading buffers in the system.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">for n in dmm.buffer.catalog() do</p>
+<p class="codetable">   print(dmm.buffer.info(n))</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Assume the system has the following reading buffers created: buffer1, buffer2, buffer3, buffer4, and buffer5.</p>
+<p class="tablebodytext">Query the system for the size and capacity of each reading buffer without formatting the results.</p>
+<p class="tablebodytext">The output is:</p>
+<p class="codetable">0.000000000e+00 2.000000000e+03</p>
+<p class="codetable">0.000000000e+00 4.000000000e+03</p>
+<p class="codetable">0.000000000e+00 5.000000000e+03</p>
+<p class="codetable">0.000000000e+00 3.000000000e+03</p>
+<p class="codetable">0.000000000e+00 1.000000000e+03</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">for n in dmm.buffer.catalog() do</p>
+<p class="codetable">  size, cap = dmm.buffer.info(n)</p>
+<p class="codetable">  print(n, 'size = ' .. size, 'capacity = ' .. cap)</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Query the system for the name, size, and capacity of each reading buffer while formatting the results.</p>
+<p class="tablebodytext">The output is:</p>
+<p class="codetable">buffer2 size = 0 capacity = 2000</p>
+<p class="codetable">buffer4 size = 0 capacity = 4000</p>
+<p class="codetable">buffer5 size = 0 capacity = 5000</p>
+<p class="codetable">buffer3 size = 0 capacity = 3000</p>
+<p class="codetable">buffer1 size = 0 capacity = 1000</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h16082" class="jump" title="dmm.buffer.catalog()" href="15971.htm" target="_self">dmm.buffer.catalog()</a></p>
+
+

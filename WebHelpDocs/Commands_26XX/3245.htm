@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Running simultaneous test scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="3243.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="3246.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t3245" class="heading3">Running simultaneous test scripts</h3>
+<p class="bodytext">You can send the <code class="monospace">execute()</code> command from the master node to initiate a test script and Lua code on a remote node. The <code class="monospace">execute()</code> command places the remote node in the overlapped operation state. As a test script runs on the remote node, the master node continues to process other commands simultaneously.</p>
+<p class="bodytext">Use the following code to send the <code class="monospace">execute()</code> command for a remote node. The <span class="monospaceitalic">N</span> parameter represents the node number that runs the test script (replace <span class="monospaceitalic">N</span> with the node number).</p>
+<p class="headingprocedure">To set the global variable &quot;setpoint&quot; on node N to 2.5:</p>
+<p class="code">node[<span class="monospaceitalic">N</span>].execute(&quot;setpoint = 2.5&quot;)</p>
+<p class="bodytext">The following code demonstrates how to run a test script that is defined on the local node. For this example, <span class="monospaceitalic">scriptVar</span> is defined on the local node, which is the node that initiates the code to run on the remote node. The local node must be the master node.</p>
+<p class="headingprocedure">To run scriptVar on node N:</p>
+<p class="code">node[<span class="monospaceitalic">N</span>].execute(<span class="monospaceitalic">scriptVar</span>.source)</p>
+<p class="bodytext">The programming example below demonstrates how to run a test script that is defined on a remote node. For this example, <span class="monospaceitalic">scriptVar</span> is defined on the remote node.</p>
+<p class="headingprocedure">To run a script defined on the remote node:</p>
+<p class="code">node[<span class="monospaceitalic">N</span>].execute(&quot;<span class="monospaceitalic">scriptVar</span>()&quot;)</p>
+<p class="bodytext">It is recommended that you copy large scripts to a remote node to improve system performance. See <a id="h3250" class="jump" title="Copying test scripts across the TSP-Link network" href="3248.htm" target="_self">Copying test scripts across the TSP-Link network</a> for more information.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="3246.htm" target="_self">Coordinating overlapped operations in remote groups</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14174.htm" target="_self">TSP-Link system expansion interface</a></p><p class="relateditem"><a href="12382.htm" target="_self">Master and subordinates</a></p><p class="relateditem"><a href="12904.htm" target="_self">TSP-Link nodes</a></p><p class="relateditem"><a href="26814.htm" target="_self">Connections</a></p><p class="relateditem"><a href="12380.htm" target="_self">Initialization</a></p><p class="relateditem"><a href="12389.htm" target="_self">Resetting the TSP-Link network</a></p><p class="relateditem"><a href="29297.htm" target="_self">Accessing nodes</a></p><p class="relateditem"><a href="12373.htm" target="_self">Using the reset() command</a></p><p class="relateditem"><a href="24381.htm" target="_self">Using the abort command</a></p><p class="relateditem"><a href="12365.htm" target="_self">Triggering with TSP-Link</a></p><p class="relateditem"><a href="14178.htm" target="_self">TSP advanced features</a></p><p class="relateditem"><a href="3240.htm" target="_self">Using groups to manage nodes on TSP-Link network</a></p><p class="relateditem"><a href="3247.htm" target="_self">Using the data queue for real-time communication</a></p><p class="relateditem"><a href="3248.htm" target="_self">Copying test scripts across the TSP-Link network</a></p><p class="relateditem"><a href="3249.htm" target="_self">Removing stale values from the reading buffer cache</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="3245" />
+<input id="topicDescription" type="hidden" value="Running simultaneous test scripts" />
+<input id="footer-modified" type="hidden" value="Last modified: 12/18/2019 3:38:38 PM" />
+</body>
+</html>

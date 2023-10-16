@@ -1,0 +1,115 @@
+<html><head><title> display.loadmenu.add() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14703.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14705.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">display.loadmenu.add()</h2>
+<p class="bodyzero">This function adds an entry to the User menu, which can be accessed using the <strong class="specialbold">LOAD</strong> key on the instrument front panel.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">display.loadmenu.add(<em class="emphasis">displayName</em>, <em class="emphasis">code</em>)</p>
+<p class="iclcode">display.loadmenu.add(<em class="emphasis">displayName</em>, <em class="emphasis">code</em>, <em class="emphasis">memory</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">displayName</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">The name that is added to the User menu.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">code</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">The code that is run from the User menu.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">memory</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">Determines if code is saved to nonvolatile memory:</p>
+<p class="tablebodytext"><code class="monospace">0</code> or <code class="monospace">display.DONT_SAVE</code>: Does not save the code to nonvolatile memory.</p>
+<p class="tablebodytext"><code class="monospace">1</code> or <code class="monospace">display.SAVE</code>: Saves the code to nonvolatile memory (default).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">After adding code to the load menu, you can run it from the front panel by pressing the <strong class="specialbold">LOAD</strong> key, then selecting <strong class="specialbold">User</strong> to select from the available code to load.</p>
+<p class="iclbody">After loading the code, you can execute it when the <strong class="specialbold">RUN </strong>key is pressed.</p>
+<p class="iclbody">You can add items in any order. They are always displayed in alphabetic order when the menu is selected.</p>
+<p class="iclbody">The code can be made up of scripts, functions, variables, and commands. If <span class="monospaceitalic">memory</span> is set to <code class="monospace">display.SAVE</code>, commands are saved with the code in nonvolatile memory. Scripts, functions, and variables used in the code are not saved by <code class="monospace">display.SAVE</code>. Functions and variables need to be saved along with the script. If the script is not saved in nonvolatile memory, it will be lost when the TSP are turned off. See Example 2 below.</p>
+<p class="iclbody">If you do not make a selection for <span class="monospaceitalic">memory</span>, the code is automatically saved to nonvolatile memory.</p>
+<p class="quicktip"><img src="quicktiphelp.png" alt="QUICK TIP" height="100" width="100" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="quicktip">You can create a script that defines several functions, and then use the <code class="monospace">display.loadmenu.add()</code> command to add items that call those individual functions. This allows the operator to run tests from the front panel.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="428"><p class="codetable">display.loadmenu.add(&quot;Test9&quot;, &quot;Test9()&quot;)</p>
+</td>
+<td width="315"><p class="tablebodytext">Assume a user script named &quot;Test9&quot; has been loaded into the runtime environment. Adds the menu entry to the User menu to run the script after loading.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="428"><p class="codetable">display.loadmenu.add(</p>
+<p class="codetable">   &quot;Test&quot;, &quot;DUT1() beeper.beep(2, 500)&quot;, display.SAVE)</p>
+</td>
+<td width="315"><p class="tablebodytext">Assume a script with a function named &quot;DUT1&quot; has already been loaded into the instrument, and the script has NOT been saved in nonvolatile memory.</p>
+<p class="tablebodytext">Now assume you want to add a test named &quot;Test&quot; to the USER TESTS menu. You want the test to run the function named &quot;DUT1&quot; and sound the beeper. This example adds &quot;Test&quot; to the menu, defines the code, and then saves the <code class="monospace">displayName</code> and code in nonvolatile memory.</p>
+<p class="tablebodytext">When &quot;Test&quot; is run from the front panel USER TESTS menu, the function named &quot;DUT1&quot; executes and the beeper beeps for two seconds.</p>
+<p class="tablebodytext">Now assume you turn off instrument power. Because the script was not saved in nonvolatile memory, the function named &quot;DUT1&quot; is lost when you turn the instrument on. When &quot;Test&quot; is again run from the front panel, an error is generated because DUT1 no longer exists in the instrument as a function.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="420"><p class="codetable">display.loadmenu.add(&quot;Part1&quot;, &quot;testpart([[Part1]], 5.0)&quot;, display.SAVE)</p>
+</td>
+<td width="322"><p class="tablebodytext">Adds an entry called &quot;Part1&quot; to the front panel &quot;USER TESTS&quot; load menu for the code <code class="monospace">testpart([[Part1]], 5.0)</code>, and saves it in nonvolatile memory.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h14726" class="jumptemplate" title="display.loadmenu.delete()" href="14706.html" target="_self">display.loadmenu.delete()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> tspnet.connect() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14073.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14076.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t14074" class="heading2-icl">tspnet.connect()</h2>
+<p class="bodyzero">This function establishes a network connection with another LAN instrument or device through the LAN interface.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#6685B9" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#6685B9" style="border:2px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">connectionID</em> = tspnet.connect(&quot;<em class="emphasis">ipAddress</em>&quot;)</p>
+<p class="iclcode"><em class="emphasis">connectionID</em> = tspnet.connect(&quot;<em class="emphasis">ipAddress</em>&quot;, <em class="emphasis">portNumber</em>, &quot;<em class="emphasis">initString</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">connectionID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The connection ID to be used as a handle in all other <code class="monospace">tspnet</code> function calls</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">ipAddress</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">IP address to which to connect in a string</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">portNumber</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Port number (default 5025)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">initString</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Initialization string to send to <span class="monospaceitalic">ipAddress</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command connects a device to another device through the LAN interface. If the <span class="monospaceitalic">portNumber</span> is 23, the interface uses the Telnet protocol and sets appropriate termination characters to communicate with the device.</p>
+<p class="iclbody">If a <span class="monospaceitalic">portNumber</span> and <span class="monospaceitalic">initString</span> are provided, it is assumed that the remote device is not TSP-enabled. The Model 2450 does not perform any extra processing, prompt handling, error handling, or sending of commands. In addition, the <code class="monospace">tspnet.tsp.*</code> commands cannot be used on devices that are not TSP-enabled.</p>
+<p class="iclbody">If neither a <span class="monospaceitalic">portNumber</span> nor an <span class="monospaceitalic">initString</span> is provided, the remote device is assumed to be a Keithley Instruments TSP-enabled device. Depending on the state of the <code class="monospace">tspnet.tsp.abortonconnect</code> attribute, the Model 2450 sends an <code class="monospace">abort</code> command to the remote device on connection. </p>
+<p class="iclbody">The Model 2450 also enables TSP prompts on the remote device and event management. The Model 2450 places remote errors and events from the TSP-enabled device in its own event queue and prefaces these events with <code class="monospace">Remote Error</code>, followed by an event description. </p>
+<p class="iclbody">Do not manually change either the prompt functionality (<code class="monospace">localnode.prompts</code>) or show events by changing <code class="monospace">localnode.showerrors</code> or <code class="monospace">localnode.showevents</code> on the remote TSP-enabled device. If you do this, subsequent <code class="monospace">tspnet.tsp.*</code> commands using the connection may fail.</p>
+<p class="iclbody">You can simultaneously connect to a maximum of 32 remote devices.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">instrumentID = tspnet.connect(&quot;192.0.2.1&quot;)</p>
+<p class="codetable">if instrumentID then</p>
+<p class="codetable">   -- Use instrumentID as needed here</p>
+<p class="codetable">   tspnet.disconnect(instrumentID)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Connect to a TSP-enabled device.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">instrumentID = tspnet.connect(&quot;192.0.2.1&quot;, 1394, &quot;*rst\r\n&quot;)</p>
+<p class="codetable">if instrumentID then</p>
+<p class="codetable">   -- Use instrumentID as needed here</p>
+<p class="codetable">   tspnet.disconnect(instrumentID)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Connect to a device that is not TSP-enabled.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15032" class="jump" title="localnode.prompts" href="33148.htm" target="_self">localnode.prompts</a></p>
+<p class="listcommand"><a id="h32645" class="jump" title="localnode.showevents" href="30504.htm" target="_self">localnode.showevents</a></p>
+<p class="listcommand"><a id="h18809" class="jump" title="tspnet.tsp.abortonconnect" href="14086.htm" target="_self">tspnet.tsp.abortonconnect</a></p>
+<p class="listcommand"><a id="h14094" class="jump" title="tspnet.disconnect()" href="14076.htm" target="_self">tspnet.disconnect()</a></p>
+
+
+<input id="topicId" type="hidden" value="14074" />
+<input id="topicDescription" type="hidden" value="tspnet.connect()" />
+<input id="footer-modified" type="hidden" value="Last modified: 5/22/2018 2:02:51 PM" />
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> IFC </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12753.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12755.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12754" class="heading3">IFC</h3>
+<p class="bodytext">The controller sends the interface clear (IFC) command to place the 2600B in the talker idle state and the listener idle state. The instrument responds to the IFC command by canceling illumination of the front-panel TALK or LSTN lights if the instrument was previously placed in one of these states.</p>
+<p class="bodytext">Transfer of command messages to the instrument and transfer of response messages from the instrument are not interrupted by the IFC command. If transfer of a response message from the instrument was suspended by IFC, transfer of the message resumes when the instrument is addressed to talk. If transfer of a command message to the instrument was suspended by the IFC command, the rest of the message can be sent when the instrument is addressed to listen.</p>
+<p class="bodytext">This command does not affect the status of the instrument. Settings, data, and event registers are not changed.</p>
+<p class="bodytext">To send the IFC command, the controller needs to set the IFC line true for a minimum of 100&nbsp;μs.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12738.htm" target="_self">General bus commands</a></p><p class="relateditem"><a href="12753.htm" target="_self">REN</a></p><p class="relateditem"><a href="12755.htm" target="_self">LLO</a></p><p class="relateditem"><a href="12756.htm" target="_self">GTL</a></p><p class="relateditem"><a href="12757.htm" target="_self">DCL</a></p><p class="relateditem"><a href="12758.htm" target="_self">SDC</a></p><p class="relateditem"><a href="12759.htm" target="_self">GET</a></p><p class="relateditem"><a href="12760.htm" target="_self">SPE, SPD</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12754" />
+<input id="topicDescription" type="hidden" value="IFC" />
+<input id="footer-modified" type="hidden" value="Last modified: 7/7/2022 12:08:12 PM" />
+</body>
+</html>

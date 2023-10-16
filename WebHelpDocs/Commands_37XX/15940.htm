@@ -1,0 +1,81 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17280.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15941.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15940" class="heading2-icl">channel.resetstatelatch()</h2>
+<p class="bodyzero">This function resets the channel state.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.resetstatelatch(&quot;<span class="monospaceitalic">channelList</span>&quot;, <span class="monospaceitalic">state</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">String that specifies the channels that need to have their states reset, using normal channel list syntax</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The comma-delimited states for channels in <span class="monospaceitalic">channelList</span> that are to have their states reset</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function is applicable to digital I/O, totalizer, and DAC channels only.</p>
+<p class="iclbody">The values for <span class="monospaceitalic">state</span> are:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">channel.IND_MATCH</code> or 4</li><li class="listbullet"><code class="monospace">channel.IND_OVERFLOW</code> or 8</li><li class="listbullet"><code class="monospace">channel.IND_OVERLOAD</code> or <code class="monospace">2</code></li></ul><p class="iclbody">Multiple states can be set by performing a logical OR operation on the values.</p>
+<p class="iclbody">For <span class="monospaceitalic">channelList</span>, use <code class="monospace">channel.ALL</code> to reset all states.</p>
+<p class="iclbody">States can be latched or unlatched, depending on other system settings. Latched states indicate that the condition occurred since the last reset (or power cycle). Unlatched states indicate that the condition has occurred when the <code class="monospace">channel.getstate()</code> command was issued. The Overflow and Overload states default to latched.</p>
+<p class="iclbody">If states are not cleared using <code class="monospace">channel.resetstatelatch()</code>, you may not be reading the present state of the channel.</p>
+<p class="iclbody">If the <span class="monospaceitalic">state</span> is reset but the condition that caused the channel state to latch still exists, the state is reset, but a second event is generated through the channel trigger model.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="365"><p class="codetable">channel.resetstatelatch(&quot;1001&quot;, channel.IND_MATCH)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="235"><p class="tablebodytext">Clears out a match indicator that was latched on digital I/O channel 1 of slot 1, assuming a Model 3750.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h767" class="jump" title="channel.getstate()" href="17546.htm" target="_self">channel.getstate()</a></p>
+<p class="listcommand"><a id="h7660" class="jump" title="channel.getstatelatch()" href="16200.htm" target="_self">channel.getstatelatch()</a></p>
+<p class="listcommand"><a id="h7657" class="jump" title="channel.setstatelatch()" href="15950.htm" target="_self">channel.setstatelatch()</a></p>
+
+

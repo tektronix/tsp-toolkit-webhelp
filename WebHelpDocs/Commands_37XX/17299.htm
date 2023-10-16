@@ -1,0 +1,86 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17296.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="13984.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17299" class="heading2-icl">channel.pattern.snapshot()</h2>
+<p class="bodyzero">This function creates a channel pattern.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup<br>Pole setting change</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.pattern.snapshot(&quot;<em class="emphasis">name</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">name</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string representing the name to associate with the present state of channels and analog backplane relays</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command stores an image of presently closed channels and analog backplane relays and associates them with the <span class="monospaceitalic">name</span> parameter.</p>
+<p class="iclbody">If <span class="monospaceitalic">name</span> is already used for an existing channel pattern, that pattern is overwritten with the new pattern channel image (if no errors occur). The DMM configuration associated with the pattern remains unchanged.</p>
+<p class="iclbody">The following restrictions exist when naming a channel pattern:</p>
+<ul class="listbullet"><li class="listbullet">The name must contain only letters, numbers, or underscores</li><li class="listbullet">The name must start with a letter</li><li class="listbullet">The name is case sensitive</li></ul><p class="iclbody">Examples of valid names:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">Channels</code></li><li class="listbullet"><code class="monospace">Chans</code></li><li class="listbullet"><code class="monospace">chans</code></li><li class="listbullet"><code class="monospace">Path1</code></li><li class="listbullet"><code class="monospace">Path20</code></li><li class="listbullet"><code class="monospace">path_3</code></li></ul><p class="iclbody">Examples of invalid names:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">1path</code> (invalid because it starts with a number)</li><li class="listbullet"><code class="monospace">my chans</code> (invalid because it contains a space)</li><li class="listbullet"><code class="monospace">My,chans</code> (invalid because it contains a comma)</li><li class="listbullet"><code class="monospace">Path1:10</code> ( invalid because it contains a colon)</li></ul><p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">The <span class="monospaceitalic">name</span> parameter already exists as a label</li><li class="listbullet">Insufficient memory exists to save the channel pattern and name in persistent memory</li><li class="listbullet">The pattern name exceeds 19 characters or contains a space</li></ul><p class="iclbody">Issuing this function on an existing pattern invalidates the existing scan list (the pattern may or may not be used in the current scan list). Creating a new pattern does not invalidate the existing scan list.</p>
+<p class="iclbody">Channels of type DAC, totalizer, and digital I/O are ignored.</p>
+<p class="iclbody">Channel patterns are stored when you run the <code class="monospace">createconfigscript()</code> command or <code class="monospace">setup.save()</code> command.</p>
+<p class="iclbody">Channel patterns are lost when power is cycled. Use <code class="monospace">setup.recall()</code> or a script created with <code class="monospace">createconfigscript()</code> to restore them.</p>
+<p class="iclbody">If you change a pole setting for a channel that is associated with a channel pattern, the channel pattern is deleted. Be sure to configure the pole setting for channels (<code class="monospace">channel.setpole</code>) before creating a channel pattern.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.pattern.snapshot(&quot;voltagePath&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Creates a pattern named <code class="monospace">voltagePath</code> that contains the presently closed channels and analog backplane relays.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h18567" class="jump" title="createconfigscript()" href="17655.htm" target="_self">createconfigscript()</a></p>
+<p class="listcommand"><a id="h780" class="jump" title="channel.pattern.catalog()" href="15934.htm" target="_self">channel.pattern.catalog()</a></p>
+<p class="listcommand"><a id="h779" class="jump" title="channel.pattern.delete()" href="15935.htm" target="_self">channel.pattern.delete()</a></p>
+<p class="listcommand"><a id="h776" class="jump" title="channel.pattern.getimage()" href="17284.htm" target="_self">channel.pattern.getimage()</a></p>
+<p class="listcommand"><a id="h1806" class="jump" title="channel.pattern.setimage()" href="17296.htm" target="_self">channel.pattern.setimage()</a></p>
+<p class="listcommand"><a id="h773" class="jump" title="channel.setpole()" href="15949.htm" target="_self">channel.setpole()</a></p>
+<p class="listcommand"><a id="h15086" class="jump" title="setup.save()" href="15083.htm" target="_self">setup.save()</a></p>
+<p class="listcommand"><a id="h15085" class="jump" title="setup.recall()" href="66566.htm" target="_self">setup.recall()</a></p>
+
+

@@ -1,0 +1,82 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17229.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17663.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17407" class="heading2-icl">channel.connectrule</h2>
+<p class="bodyzero">This attribute controls the connection rule for closing and opening channels in the instrument.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">channel.BREAK_BEFORE_MAKE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">rule</em> = channel.connectrule</p>
+<p class="iclcode">channel.connectrule = <em class="emphasis">rule</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">rule</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">channel.BREAK_BEFORE_MAKE</code> or <code class="monospace">1</code>: Break&#8209;before&#8209;make (BBM) connections for relays in the instrument</li><li class="tablelistbullet9pt"><code class="monospace">channel.MAKE_BEFORE_BREAK</code> or <code class="monospace">2</code>: Make&#8209;before&#8209;break (MBB) connections for relays in the instrument</li><li class="tablelistbullet9pt"><code class="monospace">channel.OFF</code> or <code class="monospace">0</code>: Does not guarantee a connection rule. The instrument closes relays as efficiently as possible to improve speed performance without applying a rule</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The connection rule describes the order in which switch channels are opened and closed when using <code class="monospace">channel.exclusiveclose()</code>, <code class="monospace">channel.exclusiveslotclose()</code>, <code class="monospace">dmm.close()</code>, and scanning commands like<code class="monospace"> scan.execute()</code> and <code class="monospace">scan.background()</code>. These commands may both open and close switch channels in a single command. The connection rule dictates the algorithm used by the instrument to order the opening and closing of switches.</p>
+<p class="iclbody">The connection rule affects the operating time of these commands. These commands do not allow the instrument to continue execution until the settle time of the relays has expired.</p>
+<p class="iclbody">When the connection rule is set to break before make, the instrument ensures that all switch channels open before any switch channels close. When switch channels are both opened and closed, this command executes not less than the addition of both the open and close settle times of the indicated switch channels.</p>
+<p class="iclbody">When the connection rule is set to make before break, the instrument ensures that all switch channels close before any switch channels open. This behavior should be applied with caution because it will connect two test devices together for the duration of the switch close settle time. When switch channels are both opened and closed, the command executes not less than the addition of both the open and close settle times of the indicated switch channels.</p>
+<p class="iclbody">With no connection rule (set to <code class="monospace">channel.OFF</code>), the instrument attempts to simultaneously open and close switch channels in order to minimize the command execution time. This results in faster performance at the expense of guaranteed switch position. During the operation, multiple switch channels may simultaneously be in the close position. Make sure your device under test can withstand this possible condition. When switch channels are both opened and closed, the command executes not less than the greater of either the open or close settle times of the indicated switch channels.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You cannot guarantee the sequence of open and closure operations when the channel connect rule set to OFF. It is highly recommended that you implement cold switching when the channel connect rule is set to OFF.</p>
+<p class="iclbody">In general, the settling time of single commands that open and close switch channels depends on several factors, such as card type and channel numbers. However, the opening and closing of two sequential channels including no others can be guaranteed as follows:</p>
+<ul class="listbullet2"><li class="listbullet2">Break before make: Open settle time + close settle time</li><li class="listbullet2">Make before break: Close settle time + open settle time</li><li class="listbullet2"><code class="monospace">channel.OFF</code> maximum of open settle time or close settle time</li></ul><p class="iclbody">This behavior is also affected by <code class="monospace">channel.connectsequential</code> and any additional user delay times.</p>
+<p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">Make&#8209;before&#8209;break (also known as hot switching) can dry&#8209;weld reed relays so that they will always be on. Hot switching is recommended only when external protection is provided.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.connectrule = channel.BREAK_BEFORE_MAKE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets the connect rule in the instrument to<code class="monospace"> channel.BREAK_BEFORE_MAKE</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h2375" class="jump" title="channel.connectsequential" href="17663.htm" target="_self">channel.connectsequential</a></p>
+<p class="listcommand"><a id="h770" class="jump" title="channel.exclusiveclose()" href="17435.htm" target="_self">channel.exclusiveclose()</a></p>
+<p class="listcommand"><a id="h777" class="jump" title="channel.exclusiveslotclose()" href="17437.htm" target="_self">channel.exclusiveslotclose()</a></p>
+<p class="listcommand"><a id="h907" class="jump" title="dmm.close()" href="16014.htm" target="_self">dmm.close()</a></p>
+<p class="listcommand"><a id="h1145" class="jump" title="scan.background()" href="16891.htm" target="_self">scan.background()</a></p>
+<p class="listcommand"><a id="h1140" class="jump" title="scan.execute()" href="16893.htm" target="_self">scan.execute()</a></p>
+
+

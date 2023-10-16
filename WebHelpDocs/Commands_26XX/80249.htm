@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Load a script from the instrument front panel </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16481.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2398.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t80249" class="heading5">Load a script from the instrument front panel</h5>
+<p class="bodytext">You can also load scripts from a USB flash drive to the runtime environment of the instrument. Depending on the content of the TSP file on the drive, the script can be loaded either as an anonymous script without a designated name, or as a named script with a user-defined name. Only named scripts can be saved to internal nonvolatile memory. Only one anonymous script can exist in the runtime environment.</p>
+<p class="bodytext">To load a script into the instrument with a specific name, the TSP file must include the shell keywords <code class="monospace">loadscript</code> and endscript, along with the specified script name, as shown in the example file <code class="monospace">MyScript1.tsp</code>, which contains the script:</p>
+<p class="code">loadscript Beeper</p>
+<p class="code">reset()</p>
+<p class="code">beeper.enable = beeper.ON</p>
+<p class="code">beeper.beep(2, 2400)</p>
+<p class="code">endscript</p>
+<p class="bodytext">When you load the file <code class="monospace">MyScript1.tsp</code> from the flash drive, a script named <code class="monospace">Beeper</code> is created in the runtime environment. Note that the script is named using the name that follows the <code class="monospace">loadscript</code> keyword, not the name of the TSP file on the flash drive. After the script is loaded, you can choose to save it to nonvolatile memory.</p>
+<p class="bodytext">If the loaded file does not contain <code class="monospace">loadscript</code> and <code class="monospace">endscript</code> keywords, or if no name is included after the loadscript keyword, the code is loaded as the anonymous script. Loading an unnamed script overwrites the existing anonymous script. For example, if a file named <code class="monospace">MyScript2.tsp</code> contains only the following code, the script is loaded as the anonymous script:</p>
+<p class="code">reset()</p>
+<p class="code">beeper.enable = beeper.ON</p>
+<p class="code">beeper.beep(2, 2400)</p>
+<p class="bodytext">The file must be a valid script file. If not, an error message is posted and no further action is taken. You can view the errors on the front panel of the instrument.</p>
+<p class="headingprocedure">To load a script from a USB flash drive:</p>
+<ol class="listnumber"><li class="listnumber">Insert the flash drive into the USB port on the instrument.</li><li class="listnumber">Select the <strong class="specialbold">MENU</strong> key.</li><li class="listnumber">Select the <strong class="specialbold">SCRIPT</strong> option.</li><li class="listnumber">Select the <strong class="specialbold">LOAD</strong> option.</li><li class="listnumber">Select the <strong class="specialbold">USB1</strong> option. A menu is displayed that lists the TSP files and directories on the flash&nbsp;drive.</li><li class="listnumber">If the files are in a directory, use the navigation wheel to select the directory. A new menu is displayed that lists the TSP files and directories in that&nbsp;directory.</li><li class="listnumber">Use the navigation wheel to select the TSP file you want to load.</li><li class="listnumber">If the script has the same name as a script that is already in memory, you are prompted to overwrite the script.<ul class="listbullet2"><li class="listbullet2">Select <strong class="specialbold">Yes</strong> to continue.</li><li class="listbullet2">Select <strong class="specialbold">No</strong> to return to the list of files. You must select a file to continue.</li></ul></li><li class="listnumber">The SCRIPT ACTION menu is displayed. You can select:<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">SAVE-INTERNAL:</strong> Save the file to nonvolatile memory. This is the same as sending <span class="monospaceitalic">scriptVar</span><code class="monospace">.save()</code> with no parameters.</li><li class="listbullet2"><strong class="specialbold">ACTIVE-FOR-RUN:</strong> Set the script to run from the RUN button.</li></ul></li><li class="listnumber">Loading is complete. To return to the MAIN menu, press <strong class="specialbold">EXIT (LOCAL)</strong> until the MAIN menu is displayed.</li><li class="listnumber">If you selected <strong class="specialbold">ACTIVE-FOR-RUN</strong>, you can select <strong class="specialbold">RUN</strong> to run the script.</li></ol><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The entries in the SCRIPT ACTION menu depend on whether the script that was loaded is a named script or the anonymous script. If it is a named script, both SAVE-INTERNAL and ACTIVE-FOR-RUN appear in the menu. If it is the anonymous script, then only ACTIVE-FOR-RUN appears in the menu.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2583.htm" target="_self">Create and load a script</a></p><p class="relateditem"><a href="10835.htm" target="_self">Anonymous scripts</a></p><p class="relateditem"><a href="370.htm" target="_self">Named scripts</a></p><p class="relateditem"><a href="16481.htm" target="_self">Load a script by sending commands over the remote interface</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="80249" />
+<input id="topicDescription" type="hidden" value="Load a script from the instrument front panel" />
+<input id="footer-modified" type="hidden" value="Last modified: 7/12/2021 2:22:56 PM" />
+</body>
+</html>

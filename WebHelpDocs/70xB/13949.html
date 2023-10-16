@@ -1,0 +1,94 @@
+<html><head><title> delay() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14664.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14667.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">delay()</h2>
+<p class="bodyzero">This function delays the execution of the commands that follow it.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">No</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">delay(<em class="emphasis">seconds</em>)</p>
+<p class="iclspacing"></p>
+<table width="705" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">seconds</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="531"><p class="tablebodytext">The number of seconds to delay, maximum 100,000</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">It is impossible to delay for zero seconds.</p>
+<p class="iclbody">The system delays execution of the commands for at least the specified number of seconds and fractional seconds. However, the processing time may cause the system to delay 5&nbsp;µs to 10&nbsp;µs (typical) more than the requested delay.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="705" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="345"><p class="codetable">beeper.beep(0.5, 2400)</p>
+<p class="codetable">delay(0.250)</p>
+<p class="codetable">beeper.beep(0.5, 2400)</p>
+</td>
+<td width="360"><p class="tablebodytext">Emit a doublebeep at 2400 Hz. The sequence is 0.5&nbsp;s on, 0.25&nbsp;s off, 0.5&nbsp;s on.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="705" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="345"><p class="codetable">dataqueue.clear()</p>
+<p class="codetable">dataqueue.add(35)</p>
+<p class="codetable">timer.reset()</p>
+<p class="codetable">delay(0.5)</p>
+<p class="codetable">dt = timer.measure.t()</p>
+<p class="codetable">print(&quot;Delay time was &quot; .. dt)</p>
+<p class="codetable">print(dataqueue.next())</p>
+</td>
+<td width="360"><p class="tablebodytext">Clear the data queue, add 35 to it, then delay 0.5 seconds before reading it.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Delay time was 0.500099</p>
+<p class="codetable">3.500000000e+01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody">None</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

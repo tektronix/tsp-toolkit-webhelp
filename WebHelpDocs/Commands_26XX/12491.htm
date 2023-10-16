@@ -1,0 +1,140 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Sweep programming examples </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12489.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12492.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12491" class="heading3">Sweep programming examples</h3>
+<p class="bodytext">The following topics provide procedures for programming and running a sweep. Each of these procedures includes commands for a typical sweep example. The following table summarizes parameters for each of these&nbsp;examples.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You can retrieve the source code for the factory scripts by using the <a id="h17031" class="jump" title="scriptVar.list()" href="17785.htm" target="_self">scriptVar.list()</a> or <a id="h16868" class="jump" title="scriptVar.source" href="16867.htm" target="_self">scriptVar.source</a> commands.</p>
+<p class="bodytext"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="192" height="0"></td>
+<td width="408" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="600"><p class="tableheading">Sweep example parameters</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tableheading">Sweep type</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tableheading">Parameters for sweep examples</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Linear staircase sweep</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Start current: 1 mA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Stop current: 10 mA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Settling time: 0.1 s</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Number of points: 10</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Pulse current sweep</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Bias current: 1 mA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">On current: 10 mA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Pulse on time: 10 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Pulse off time: 50 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Number of points: 10</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">List sweep</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Points: 3&nbsp;V, 1&nbsp;V, 4&nbsp;V, 5&nbsp;V, 2&nbsp;V</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Settling time 0.1 s</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="192"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Number of points: 5</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="12492.htm" target="_self">Linear staircase sweep example</a></p><p class="relateditem"><a href="12493.htm" target="_self">Pulse current sweep example</a></p><p class="relateditem"><a href="12494.htm" target="_self">List sweep example</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13524.htm" target="_self">Sweep operation</a></p><p class="relateditem"><a href="12465.htm" target="_self">Sweep characteristics</a></p><p class="relateditem"><a href="12481.htm" target="_self">Configuring and running sweeps</a></p><p class="relateditem"><a href="12489.htm" target="_self">Sweeping using factory scripts</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12491" />
+<input id="topicDescription" type="hidden" value="Sweep programming examples" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:23:04 PM" />
+</body>
+</html>

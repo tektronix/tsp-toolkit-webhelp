@@ -1,0 +1,100 @@
+<html><head><title> printbuffer() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17645.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15058.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">printbuffer()</h2>
+<p class="bodyzero">This function prints data from tables or reading buffer subtables.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">No</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">printbuffer(<span class="monospaceitalic">startIndex</span>, <span class="monospaceitalic">endIndex</span>, <span class="monospaceitalic">buffer1</span>)</p>
+<p class="iclcode">printbuffer(<span class="monospaceitalic">startIndex</span>, <span class="monospaceitalic">endIndex</span>, <span class="monospaceitalic">buffer1</span>, <span class="monospaceitalic">buffer2</span>)</p>
+<p class="iclcode">printbuffer(<span class="monospaceitalic">startIndex</span>, <span class="monospaceitalic">endIndex</span>, <span class="monospaceitalic">buffer1</span>, <span class="monospaceitalic">…</span>, <span class="monospaceitalic">bufferN</span>)</p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="292"><p class="tablebodytext"><span class="monospaceitalic">startIndex</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">Beginning index of the buffer that is to be printed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="292"><p class="tablebodytext"><span class="monospaceitalic">endIndex</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">Ending index of the buffer that is to be printed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="292"><p class="tablebodytext"><span class="monospaceitalic">buffer1, buffer2, bufferN</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">Tables or reading buffer subtables that are to be printed</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The correct usage of this function for a buffer containing <span class="monospaceitalic">n</span> elements is:</p>
+<p class="iclcode">1 = startIndex = endIndex = <span class="monospaceitalic">n</span></p>
+<p class="iclbody">Where<span class="monospaceitalic"> n </span>refers to the index of the last entry in the tables to be printed.</p>
+<p class="iclbody">If <span class="monospaceitalic">endIndex</span> <span class="symbols">&lt; </span><span class="monospaceitalic">startIndex </span>or <span class="monospaceitalic">n</span><strong class="specialbold"> </strong><span class="symbols">&lt;</span> <span class="monospaceitalic">startIndex</span>, no data is printed. If <span class="monospaceitalic">startIndex </span>= 1, 1 is used as <span class="monospaceitalic">startIndex</span>. If<strong class="specialbold"> </strong><span class="monospaceitalic">n</span><strong class="specialbold"> </strong>&lt; <span class="monospaceitalic">endIndex</span>,<strong class="specialbold"> </strong><span class="monospaceitalic">n</span><strong class="specialbold"> </strong>is used as <span class="monospaceitalic">endIndex</span>.</p>
+<p class="iclbody">When any given reading buffers are being used in overlapped commands that have not yet completed, at least to the desired index, this function returns data as it becomes available.</p>
+<p class="iclbody">When there are outstanding overlapped commands to acquire data, <span class="monospaceitalic">n</span> refers to the index that the last entry in the table will have after all the measurements have completed.</p>
+<p class="iclbody">If you do not specify a subtable in a reading buffer, default subtables are automatically used.</p>
+<p class="iclbody">At least one table or subtable must be specified.</p>
+<p class="iclbody">This command generates a single response message that contains all data. The response message is stored in the output queue.</p>
+<p class="iclbody">The <code class="monospace">format.data</code> attribute controls the format of the response message.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="750" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="750"><p class="codetable">format.data = format.ASCII</p>
+<p class="codetable">format.asciiprecision = 6</p>
+<p class="codetable">printbuffer(1, rb1.n, rb1)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="750"><p class="tablebodytext">This assumes that <code class="monospace">rb1</code> is a valid reading buffer in the runtime environment.</p>
+<p class="tablebodytext">Example of returned data (<code class="monospace">rb1.readings</code>):</p>
+<p class="codetable">4.07205e-05, 4.10966e-05, 4.06867e-05, 4.08865e-05, 4.08220e-05, 4.08988e-05, 4.08250e-05, 4.09741e-05, 4.07174e-05, 4.07881e-05</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h14804" class="jumptemplate" title="format.asciiprecision" href="14797.html" target="_self">format.asciiprecision</a></p>
+<p class="iclbody"><a id="h14805" class="jumptemplate" title="format.byteorder" href="14801.html" target="_self">format.byteorder</a></p>
+<p class="iclbody"><a id="h14806" class="jumptemplate" title="format.data" href="14803.html" target="_self">format.data</a></p>
+<p class="iclbody"><a id="h17646" class="jumptemplate" title="print()" href="17645.html" target="_self">print()</a></p>
+<p class="iclbody"><a id="h15060" class="jumptemplate" title="printnumber()" href="15058.html" target="_self">printnumber()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

@@ -1,0 +1,204 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Logarithmic staircase sweeps </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12469.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12477.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t77082" class="heading4">Logarithmic staircase sweeps</h4>
+<p class="bodytext">This type of sweep is similar to the linear staircase sweep. The steps, however, are done on a logarithmic scale. </p>
+<p class="bodytext">Like a linear staircase sweep, logarithmic sweeps are configured using a start level, a stop level, and the number of points. The step size is determined by the start and stop levels, and the number of sweep points. However, in a logarithmic sweep, the step size increases or decreases exponentially. To create an increasing logarithmic sweep, set the stop value to be greater than the start value. To create a decreasing logarithmic sweep, set the stop value to be less than the start value. When enabled, a measurement is made at each step after source and measurement settling time. An asymptote can also be used to control the inflection of a sweep.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The number of sweep steps actually performed is determined by the trigger count. See <a id="h13512" class="jump" title="Triggering" href="14169.htm" target="_self">Triggering</a> for more information.</p>
+<p class="bodytext">The formula for a logarithmic sweep is:</p>
+<p class="bodytext"><em class="emphasis">v</em><sub class="subscript">i</sub> = <em class="emphasis">A</em> + <em class="emphasis">kb</em><sup class="superscript">i</sup></p>
+<p class="bodytext">Where:</p>
+<table class="tableintopic" width="444" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext"><em class="emphasis">v</em><sub class="subscript">i</sub></p>
+</td>
+<td width="24"><p class="tablebodytext">=</p>
+</td>
+<td width="390"><p class="tablebodytext">The source value at source point <em class="emphasis">i</em></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext"><em class="emphasis">i</em></p>
+</td>
+<td width="24"><p class="tablebodytext">=</p>
+</td>
+<td width="390"><p class="tablebodytext">The index of points in the sweep (ranges from 0 to <em class="emphasis">N</em> − 1), where <em class="emphasis">N</em> is the number of points in the sweep</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext"><em class="emphasis">k</em></p>
+</td>
+<td width="24"><p class="tablebodytext">=</p>
+</td>
+<td width="390"><p class="tablebodytext">The initial source value as an offset from the asymptote</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext"><em class="emphasis">b</em></p>
+</td>
+<td width="24"><p class="tablebodytext">=</p>
+</td>
+<td width="390"><p class="tablebodytext">The step size ratio</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="30"><p class="tablebodytext"><em class="emphasis">A</em></p>
+</td>
+<td width="24"><p class="tablebodytext">=</p>
+</td>
+<td width="390"><p class="tablebodytext">The asymptote value</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">The asymptote is used to change the inflection of the sweep curve and allow it to sweep through zero. The following figures depict the effect of the asymptote on the inflection of the sweep curve.</p>
+<p class="magicfigurecenter"><img id="f12472" src="2600as-901-01b_increasinglogarithmicsweep_lr.png" class="linkedepsandpngtemplate" alt="Increasing logarithmic sweep" height="302" width="514" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="magicfigurecenter"><img id="f12473" src="2600as-901-01b_decreasinglogarithmicsweep_lr.png" class="linkedepsandpngtemplate" alt="Decreasing logarithmic sweep" height="302" width="514" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Solving for <em class="emphasis">k</em> and <em class="emphasis">b</em> provides the following formulas:</p>
+<p class="bodytext"> <img id="f12474" src="logarithmicstaircasesweepseq_12474_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="Logarithmic staircase sweeps equations" height="78" width="223" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Where:</p>
+<table class="tableintopic" width="420" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="48"><p class="tablebodytextsmall"><em class="emphasis">V</em><sub class="subscript">end</sub></p>
+</td>
+<td width="372"><p class="tablebodytext">= The source value at the end point</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="48"><p class="tablebodytextsmall"><em class="emphasis">V</em><sub class="subscript">start</sub></p>
+</td>
+<td width="372"><p class="tablebodytext">= The source value at the start point</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="48"><p class="tablebodytextsmall"><em class="emphasis">N</em></p>
+</td>
+<td width="372"><p class="tablebodytext">= The number of points in the sweep</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="48"><p class="tablebodytextsmall"><em class="emphasis">A</em></p>
+</td>
+<td width="372"><p class="tablebodytext">= The asymptote value</p>
+</td>
+</tr>
+
+</table>
+<p class="note"><img id="f14261_1" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The number of points in a sweep is one greater than the number of steps in the sweep.</p>
+<p class="bodytext">The following figure is an example of a five-point logarithmic sweep from 1&nbsp;V to 10&nbsp;V.</p>
+<p class="magicfigurecenter"><img id="f12475" src="2600as-901-01b_logarithmicstaircasesweep%281vto10v%2Cfivesteps%29.png" class="linkedepsandpngtemplate" alt="Logarithmic staircase sweep (1 V to 10 V, five steps)" height="2956" width="3578" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">In this example:</p>
+<p class="bodytext"><em class="emphasis">A</em> = 0, <em class="emphasis">V</em><sub class="subscript">start</sub> = 1, <em class="emphasis">V</em><sub class="subscript">end </sub>= 10, <em class="emphasis">N</em> = 5</p>
+<p class="bodytext">Using the formula above, <em class="emphasis">k</em> = 1</p>
+<p class="bodytext">Step size (<em class="emphasis">b</em>) for the sweep in the above figure is calculated as follows:</p>
+<p class="bodytext"><img id="f23653" src="2450logstepsizecalculation_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="Logarithmic sweep step size equation" height="152" width="262" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Therefore, <em class="emphasis">b = 10</em><sup class="superscript">(log step size)</sup> = 1.7783</p>
+<p class="bodytext">The log steps for this sweep are listed in the table below.</p>
+<table class="tableintopic" width="378" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="124" height="0"></td>
+<td width="128" height="0"></td>
+<td width="126" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="3" width="378"><p class="tableheading">Logarithmic sweep points</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="124"><p class="tableheading">Source point<em class="emphasis"> (N)</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tableheading">Source level <em class="emphasis">(V)</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="126"><p class="tableheading">Step number <em class="emphasis">(i)</em></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="124"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="126"><p class="tablebodytext">0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="124"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytext">1.7783</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="126"><p class="tablebodytext">1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="124"><p class="tablebodytext">3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytext">3.1623</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="126"><p class="tablebodytext">2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="124"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytext">5.6234</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="126"><p class="tablebodytext">3</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="124"><p class="tablebodytext">5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytext">10</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="126"><p class="tablebodytext">4</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">When this sweep starts, the output goes to the start level (1&nbsp;V) and sweeps through the symmetrical log&nbsp;points. </p>
+<p class="bodytext">To configure a logarithmic staircase sweep, use the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>function. This function configures the source values the source-measure unit (SMU) outputs when performing a logarithmic sweep. After configuring the sweep, you must also enable the source action by setting the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.action</code> attribute.</p>
+<p class="bodytext"><strong class="specialbold">Example:</strong></p>
+<p class="code">-- Configure a sweep from 1 to 10&nbsp;V in 10 steps with an asymptote of 0&nbsp;V.</p>
+<p class="code">smua.trigger.source.logv(1, 10, 11, 0)</p>
+<p class="code">-- Enable the source action.</p>
+<p class="code">smua.trigger.source.action = smua.ENABLE</p>
+<p class="bodytext">For more information, see <a id="h15273" class="jump" title="smuX.trigger.source.logY()" href="15182.htm" target="_self">smuX.trigger.source.logY()</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12465.htm" target="_self">Sweep characteristics</a></p><p class="relateditem"><a href="12469.htm" target="_self">Linear staircase sweeps</a></p><p class="relateditem"><a href="12477.htm" target="_self">List sweeps</a></p><p class="relateditem"><a href="12467.htm" target="_self">Pulse mode sweeps</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="77082" />
+<input id="topicDescription" type="hidden" value="Logarithmic staircase sweeps" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/25/2021 12:28:17 PM" />
+</body>
+</html>

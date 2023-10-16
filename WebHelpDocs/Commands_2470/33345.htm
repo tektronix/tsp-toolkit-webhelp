@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Rename a script </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="35336.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="27085.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t33345" class="heading5">Rename a script</h5>
+<p class="headingprocedure">To rename a script in the runtime environment:</p>
+<ol class="listnumber"><li class="listnumber">Load the script into the runtime environment with a different name.</li><li class="listnumber">Delete the previous version of the script.</li></ol><p class="headingprocedure">To rename a script in nonvolatile memory:</p>
+<p class="bodytext">Send the commands:</p>
+<p class="code"><span class="monospaceitalic">scriptVar</span> = script.load(<span class="monospaceitalic">file</span>)</p>
+<p class="code"><span class="monospaceitalic">scriptVar</span>.save()</p>
+<p class="bodytext">Where:</p>
+<ul class="listbullet"><li class="listbullet"><span class="monospaceitalic">scriptVar</span> is the name of variable that references the script</li><li class="listbullet"><span class="monospaceitalic">file</span> is the path and file name of the script file to load</li></ul><p class="bodytext">For example, to load a script named <code class="monospace">test8</code> from the USB flash drive and save it to nonvolatile memory, send the commands:</p>
+<p class="code">test8 = script.load(&quot;/usb1/test8.tsp&quot;)</p>
+<p class="code">test8.save()</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  If the new name is the same as a name that is already used for a script, an event message is displayed, and the script is not saved.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="26757.htm" target="_self">Working with scripts</a></p><p class="relateditem"><a href="26759.htm" target="_self">Tools for managing scripts</a></p><p class="relateditem"><a href="33279.htm" target="_self">Script rules</a></p><p class="relateditem"><a href="34459.htm" target="_self">Loading a script into the instrument</a></p><p class="relateditem"><a href="34474.htm" target="_self">Running scripts using the front-panel interface</a></p><p class="relateditem"><a href="26764.htm" target="_self">Running scripts using a remote interface</a></p><p class="relateditem"><a href="26768.htm" target="_self">Saving a script to nonvolatile memory</a></p><p class="relateditem"><a href="35336.htm" target="_self">Saving a script to a USB flash drive</a></p><p class="relateditem"><a href="27085.htm" target="_self">Retrieve a user script from the instrument</a></p><p class="relateditem"><a href="33305.htm" target="_self">Deleting a user script using a remote interface</a></p><p class="relateditem"><a href="27065.htm" target="_self">Power up script</a></p><p class="relateditem"><a href="33277.htm" target="_self">Commands that cannot be used in scripts</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="33345" />
+<input id="topicDescription" type="hidden" value="Rename a script" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/10/2019 12:44:01 PM" />
+</body>
+</html>

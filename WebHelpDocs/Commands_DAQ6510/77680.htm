@@ -1,0 +1,236 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.extout.stimulus </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41336.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31398.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t77680" class="heading2-icl">trigger.extout.stimulus</h2>
+<p class="bodyzero">This attribute selects the event that causes a trigger to be asserted on the EXTERNAL TRIGGER OUT line.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext"> Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>External I/O trigger reset</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">trigger.EVENT_NONE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">event</span> = trigger.extout.stimulus</p>
+<p class="iclcode">trigger.extout.stimulus = <em class="emphasis">event</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">event</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The event to use as a stimulus; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The trigger stimulus for the EXTERNAL TRIGGER OUT line can be set to one of the trigger events described in the following table.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheadingsmall">Trigger events</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tableheadingsmall">Event description</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tableheadingsmall">Event constant</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">No trigger event (make measurement immediately)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NONE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Front-panel TRIGGER key press</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DISPLAY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Notify trigger block <span class="monospaceitalic">N</span> (1 to 3) generates a trigger event when the trigger model executes it</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NOTIFY<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">A command interface trigger (bus trigger):</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><strong class="specialbold">Any remote interface:</strong> *<code class="monospace">TRG</code></li><li class="tablelistbullet9pt"><strong class="specialbold">GPIB only:</strong> GET bus command</li><li class="tablelistbullet9pt"><strong class="specialbold">USB only:</strong> A USBTMC TRIGGER message </li><li class="tablelistbullet9pt"><strong class="specialbold">VXI-11:</strong> VXI-11 command <code class="monospace">device_trigger</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_COMMAND</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Line edge (either rising, falling, or either based on the configuration of the line) detected on digital input line <span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;6)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DIGIO<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Line edge detected on TSP-Link synchronization line&nbsp;<span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;3)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TSPLINK<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span> (1 to 8)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_LAN<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Analog trigger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_ANALOGTRIGGER</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger event blender <span class="monospaceitalic">N</span> (1 to 2), which combines trigger events</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_BLENDER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger timer <span class="monospaceitalic">N</span> (1 to 4) expired</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TIMER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">External in trigger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_EXTERNAL</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Scan alarm limit exceeded</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_SCAN_ALARM_LIMIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Channel closed</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext"><code class="monospace">trigger.EVENT_SCAN_CHANNEL_READY</code> (returns <code class="monospace">trigger.EVENT_NOTIFY6</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Scan completed</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext"><code class="monospace">trigger.EVENT_SCAN_COMPLETE</code> (returns <code class="monospace">trigger.EVENT_NOTIFY8</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Measure completed</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_SCAN_MEASURE_COMPLETE</p>
+<p class="tablebodytext">(returns <code class="monospace">trigger.EVENT_NOTIFY7</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Limit value for scan reached</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_SCAN_ALARM_LIMIT</p>
+<p class="tablebodytext">(returns <code class="monospace">trigger.EVENT_NOTIFY3</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">trigger.extout.stimulus = trigger.EVENT_TIMER3</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the stimulus for the EXTERNAL TRIGGER OUT line to be the expiration of trigger timer&nbsp;3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_RESISTANCE)</p>
+<p class="codetable">scan.create(&quot;101:109&quot;)</p>
+<p class="codetable">scan.scancount = 10</p>
+<p class="codetable">scan.measure.stimulus = trigger.EVENT_EXTERNAL</p>
+<p class="codetable">trigger.extin.edge = trigger.EDGE_FALLING</p>
+<p class="codetable">trigger.extout.logic = trigger.LOGIC_NEGATIVE</p>
+<p class="codetable">trigger.extout.stimulus = trigger.EVENT_SCAN_MEASURE_COMPLETE</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Reset the instrument.</p>
+<p class="tablebodytext">Set channels 101 through 109 to measure 2-wire resistance.</p>
+<p class="tablebodytext">Create a scan using channels 101 through 109.</p>
+<p class="tablebodytext">Set the scan count to 10.</p>
+<p class="tablebodytext">Set the channel measurement stimulus to be triggered by a falling edge pulse on the EXTERNAL TRIGGER IN line.</p>
+<p class="tablebodytext">Set the EXTERNAL TRIGGER OUT line to generate a negative pulse each time a scan channel makes a measurement.</p>
+<p class="tablebodytext">Initiate the scan.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41340" class="jump" title="trigger.extin.edge" href="41332.htm" target="_self">trigger.extin.edge</a></p>
+<p class="listcommand"><a id="h46389" class="jump" title="trigger.extin.wait()" href="41334.htm" target="_self">trigger.extin.wait()</a></p>
+<p class="listcommand"><a id="h46390" class="jump" title="trigger.extout.assert()" href="41335.htm" target="_self">trigger.extout.assert()</a></p>
+<p class="listcommand"><a id="h41341" class="jump" title="trigger.extout.logic" href="41336.htm" target="_self">trigger.extout.logic</a></p>
+
+
+<input id="topicId" type="hidden" value="77680" />
+<input id="topicDescription" type="hidden" value="trigger.extout.stimulus" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/28/2019 10:59:20 AM" />
+</body>
+</html>

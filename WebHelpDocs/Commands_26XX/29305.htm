@@ -1,0 +1,338 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Model 2400 SCPI command compatibility </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29304.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="13056.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t29305" class="heading3">Model 2400 SCPI command compatibility</h3>
+<p class="bodytext">The following tables lists all the Model 2400 SCPI commands that are not fully supported by the Model 2400 personality script (<code class="monospace">Persona2400</code>) and specific compatibility details for each command.</p>
+<p class="bodytext"><strong class="specialbold">:CALCulate subsystem</strong></p>
+<table class="tableintopic" width="567" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:NULL:ACQuire</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Each time the personality script is run, the null offset value is reset to zero (0). Until a measurement is made, this command uses a zero (0) for the null offset value. After a measurement is made, this command uses latest measurement to set the null offset value (the same method used as a Model 2400). </p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">:DISPlay subsystem</strong></p>
+<table class="tableintopic" width="567" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:DIGits 4|5|6|7|DEFault|MINimum|MAXimum</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">When 3.5 digits or MINimum is requested, the instrument sets the resolution to 4.5 digits.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:DIGits? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">When queried for the MINimum, the instrument returns 5.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:ENABle &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The Series 2600B performance is not degraded by display operation. The instrument accepts the command but no action is performed.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:WINDow2:ATTRibutes?</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument always returns 32 zeros.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:WINDow2:TEXT:STATe &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Changing this setting also changes the&nbsp;<code class="monospace">:DISPlay[:WINDow[1]]:TEXT:STATe</code> setting to the same value.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">DISPlay[:WINDow[1]]:ATTRibutes?</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument always returns 20 zeros.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">DISPlay[:WINDow[1]]:TEXT:STATe &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Changing this setting also changes the&nbsp;<code class="monospace">:DISPlay:WINDow2:TEXT:STATe</code> setting to the same value.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">:ROUte subsystem</strong></p>
+<table class="tableintopic" width="567" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:ROUTe:TERMinals FRONt|REAR</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument accepts the command and ignores it.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:ROUTe:TERMinals?</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument always returns REAR.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">:SENSe[1] subsystem</strong></p>
+<table class="tableintopic" width="567" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:PROTection:RSYNchronize &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The measurement range only tracks the limit range when the output is on.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion:OFF:ALL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Readings are not made when all the functions are turned off.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:MODE MANual|AUTO</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Only MANual is supported. The instrument generates an error if AUTO is selected.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe:AUTO &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument ignores this command. Resistance auto range is always OFF.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:PROTection:RSYNchronize &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The measurement range only tracks the limit range when the output is on.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">:SOURce subsystem</strong></p>
+<table class="tableintopic" width="567" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CLEar:AUTO:MODE ALWays|TCOunt</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Only ALWays is supported. The instrument generates an error if TCOunt is selected.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:DELay:AUTO &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">This setting is not supported with source memory sweeps. Source memory sweeps do not use automatic delays.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:FUNCtion:SHAPe DC|PULSe</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">This setting is not supported with source memory sweeps. Source memory sweeps always use dc.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SOAK?</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Always returns 0.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:RANGing BEST|AUTO|FIXed</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">When this setting is set to AUTO, a sweep leaves the corresponding source ranging set to AUTO. This is done each time the sweep is run.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:BSIZe 3|4</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The 2499-DIGIO option is not supported. (16-bit size is not supported.)</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">:SYSTem subsystem</strong></p>
+<table class="tableintopic" width="567" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing:NPLCycles?</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Always returns 0.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing:REFResh</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">This command is accepted and ignored. Causes no action or response.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing:RESet</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">This command is accepted and ignored. Causes no action or response.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing[:STATe] &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">This command is accepted and ignored. The setting is always ON.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing[:STATe]?</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Always returns 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo[:STATe] &lt;Bool&gt;</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">When AZERO state is set to ON, reference and zero measurements are automatically made when they are out of date. If this happens, the time to make a measurement increases. This can cause sweep timing to be irregular when compared to a Model 2400 as the Model 2400 takes longer on every measurement.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:POSetup RST|PRESet|SAV0|SAV1|SAV2|SAV3|SAV4</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">SYSTem:POSetup command is accepted but has no effect, *SAV and *RCL are not supported.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">:TRIGger subsystem</strong></p>
+<table class="tableintopic" width="567" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure][:ASYNchronous]:ILINe 1|2|3|4</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument does not allow the same TLink line to be used for an input trigger and an output trigger simultaneously. Also, it does not allow the same TLink line to be used as an input trigger for both the arm and trigger layer simultaneously. The instrument generates an error when attempting to leave the idle layer if these conditions are violated. The reset default for the arm layer input line (<code class="monospace">ARM:ILINe</code>) is 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure][:ASYNchronous]:OLINe 1|2|3|4</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument does not allow the same TLink line to be used for an input trigger and an output trigger simultaneously. The instrument generates an error when attempting to leave the idle layer if this condition is violated. The reset default value for the arm layer output line (<code class="monospace">ARM:OLINe</code>) is 3.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:ILINe 1|2|3|4</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument does not allow the same TLink line to be used for an input trigger and an output trigger simultaneously nor does it allow the same TLink line to be used as an input trigger for both the arm and trigger layer simultaneously. The instrument generates an error when attempting leave the idle layer if these conditions are violated. The reset default for the trigger layer input line (<code class="monospace">TRIGger:ILINe</code>) is 2.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:INPut SOURce|DELay|SENSe|NONE</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">Only one of these options may be selected at a time.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:OLINe 1|2|3|4</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="567"><p class="tablebodytextsmall">The instrument does not allow the same TLink line to be used for an input trigger and an output trigger simultaneously. The instrument generates an error when attempting to leave the idle layer if this condition is violated. The reset default for the trigger layer output line (<code class="monospace">TRIGger:OLINe</code>) is 4.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="29276.htm" target="_self">Model 2400 compatibility</a></p><p class="relateditem"><a href="29281.htm" target="_self">General compatibility</a></p><p class="relateditem"><a href="29304.htm" target="_self">Model 2400 SCPI command support</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="29305" />
+<input id="topicDescription" type="hidden" value="Model 2400 SCPI command compatibility" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/29/2021 8:31:56 AM" />
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.measure.autozero.enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="88860.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29049.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t29048" class="heading2-icl">smu.measure.autozero.enable</h2>
+<p class="bodyzero">This attribute enables or disables automatic updates to the internal reference measurements (autozero) of the instrument.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list<br>Function change</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smu.ON</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = smu.measure.autozero.enable</p>
+<p class="iclcode">smu.measure.autozero.enable = <span class="monospaceitalic">state</span></p>
+<p class="iclcode"><em class="emphasis">state</em> = smu.measure.getattribute(<span class="monospaceitalic">function</span>, smu.ATTR_MEAS_AUTO_ZERO)</p>
+<p class="iclcode">smu.measure.setattribute(<span class="monospaceitalic">function</span>, smu.ATTR_MEAS_AUTO_ZERO, <span class="monospaceitalic">state</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The status of autozero; set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Disable autozero: <code class="monospace">smu.OFF</code></li><li class="tablelistbullet9pt">Enable autozero: <code class="monospace">smu.ON</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage measurement: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li><li class="tablelistbullet9pt">Current measurement: <code class="monospace">smu.FUNC_DC_CURRENT</code> </li><li class="tablelistbullet9pt">Ohms measurement: <code class="monospace">smu.FUNC_RESISTANCE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">To ensure the accuracy of readings, the instrument must periodically get new measurements of its internal ground and voltage reference. The time interval between updates to these reference measurements is determined by the integration aperture that is being used for measurements. The Model 2461 uses separate reference and zero measurements for each aperture.</p>
+<p class="iclbody">By default, the instrument automatically checks these reference measurements whenever a signal measurement is made.</p>
+<p class="iclbody">The time to make the reference measurements is in addition to the normal measurement time. If timing is critical, such as in sweeps, you can disable autozero to avoid this time penalty.</p>
+<p class="iclbody">When autozero is set to off, the instrument may gradually drift out of specification. To minimize the drift, you can send the once command to make a reference and zero measurement immediately before a test sequence.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smu.measure.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.measure.autozero.enable = smu.OFF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set autozero off for voltage measurements.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h29058" class="jump" title="smu.measure.autozero.once()" href="29049.htm" target="_self">smu.measure.autozero.once()</a></p>
+<p class="listcommand"><a id="h15215" class="jump" title="smu.measure.nplc" href="29064.htm" target="_self">smu.measure.nplc</a></p>
+
+
+<input id="topicId" type="hidden" value="29048" />
+<input id="topicDescription" type="hidden" value="smu.measure.autozero.enable" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 11:43:41 AM" />
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Contact check commands </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29274.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11486.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t92214" class="heading3">Contact check commands</h3>
+<p class="bodytext">The following table summarizes the contact check commands. For a more complete description of these commands, refer to the &#8220;<a id="h21768" class="jump" title="TSP command reference" href="2600B_TSP_command_reference.htm" target="_self">TSP command reference</a>&#8221; section of the <em class="emphasis"><em class="emphasis">Series 2600B Reference&nbsp;Manual</em></em>.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="288" height="0"></td>
+<td width="312" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-bottom:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheading">Basic contact check commands</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">flag = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.contact.check()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Determine if contact resistance is lower than threshold.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">rhi, rlo = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.contact.r()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Measure the aggregate contact resistance.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.contact.speed = <span class="monospaceitalic">speedSetting</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Set <span class="monospaceitalic">speedSetting</span> to one of the following:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">0</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.CONTACT_FAST</code></li><li class="tablelistbullet9pt"><code class="monospace">1</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.CONTACT_MEDIUM</code></li><li class="tablelistbullet9pt"><code class="monospace">2</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.CONTACT_SLOW</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.contact.threshold = rvalue</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Set resistance threshold for the contact check function.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="29274.htm" target="_self">Contact check measurements</a></p><p class="relateditem"><a href="11486.htm" target="_self">Contact check programming example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="92214" />
+<input id="topicDescription" type="hidden" value="Contact check commands" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/26/2021 3:01:37 PM" />
+</body>
+</html>

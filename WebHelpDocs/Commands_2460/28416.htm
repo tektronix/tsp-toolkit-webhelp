@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.measure.displaydigits </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30505.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30064.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t28416" class="heading2-icl">smu.measure.displaydigits</h2>
+<p class="bodyzero">This attribute determines the number of digits that are displayed for measurements on the front panel for the selected function.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list<br>Function change</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smu.DIGITS_5_5</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">digits</em> = smu.measure.displaydigits</p>
+<p class="iclcode">smu.measure.displaydigits = <em class="emphasis">digits</em></p>
+<p class="iclcode"><em class="emphasis">digits</em> = smu.measure.getattribute(<span class="monospaceitalic">function</span>, smu.ATTR_MEAS_DIGITS)</p>
+<p class="iclcode">smu.measure.setattribute(<span class="monospaceitalic">function</span>, smu.ATTR_MEAS_DIGITS, <span class="monospaceitalic">digits</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">digits</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">6½ display digits: <code class="monospace">smu.DIGITS_6_5</code></p>
+<p class="tablebodytext">5½ display digits: <code class="monospace">smu.DIGITS_5_5</code></p>
+<p class="tablebodytext">4½ display digits: <code class="monospace">smu.DIGITS_4_5</code></p>
+<p class="tablebodytext">3½ display digits: <code class="monospace">smu.DIGITS_3_5</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The measurement function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage measurement: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li><li class="tablelistbullet9pt">Current measurement: <code class="monospace">smu.FUNC_DC_CURRENT</code> </li><li class="tablelistbullet9pt">Ohms measurement: <code class="monospace">smu.FUNC_RESISTANCE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command affects how the reading for a measurement is displayed on the front panel of the instrument. It does not affect the number of digits returned in a remote command reading. It also does not affect the accuracy or speed of measurements.</p>
+<p class="iclbody">The display digits setting is saved with the function setting, so if you use another function, then return to the function for which you set display digits, the display digits setting you set previously is retained.</p>
+<p class="iclbody">The change in digits occurs the next time a measurement is made.</p>
+<p class="iclbody">To change the number of digits returned in a remote command reading, use <code class="monospace">format.asciiprecision</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smu.measure.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.measure.displaydigits = smu.DIGITS_6_5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set the measurement function to voltage with a front-panel display resolution of 6½.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h29445" class="jump" title="format.asciiprecision" href="28056.htm" target="_self">format.asciiprecision</a></p>
+
+
+<input id="topicId" type="hidden" value="28416" />
+<input id="topicDescription" type="hidden" value="smu.measure.displaydigits" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 11:41:03 AM" />
+</body>
+</html>

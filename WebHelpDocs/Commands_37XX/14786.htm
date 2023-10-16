@@ -1,0 +1,95 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14772.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14787.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t14786" class="heading2-icl">fileVar:flush()</h2>
+<p class="bodyzero">This function writes buffered data to a file.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">fileVar</span>:flush()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">fileVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The file descriptor variable to flush</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <span class="monospaceitalic">fileVar</span><code class="monospace">:write()</code> or <code class="monospace">io.write()</code> functions buffer data, which may not be written immediately to the USB flash drive. Use <span class="monospaceitalic">fileVar</span><code class="monospace">:flush()</code> to flush this data. Using this function removes the need to close a file after writing to it, allowing the file to be left open to write more data. Data may be lost if the file is not closed or flushed before a script ends. </p>
+<p class="iclbody">If there is going to be a time delay before more data is written to a file, and you want to keep the file open, flush the file after you write to it to prevent loss of data.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">local fileName = &quot;/usb1/myfile.txt&quot;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if fs.is_file(fileName) then</p>
+<p class="codetable">	os.remove(fileName)</p>
+<p class="codetable">	print(&quot;Removing file&quot;)</p>
+<p class="codetable">else</p>
+<p class="codetable">	print(&quot;Nothing removed&quot;)</p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">errorqueue.clear()</p>
+<p class="codetable">print(&quot;\n*** io.read&quot;)</p>
+<p class="codetable">myfile, myfile_err, myfile_errnum = io.open(fileName, &quot;w&quot;)</p>
+<p class="codetable">myfile:write(&quot;Line 1\n&quot;)</p>
+<p class="codetable">myfile:flush()</p>
+<p class="codetable">myfile:close()</p>
+<p class="codetable">do</p>
+<p class="codetable">fileHandle = io.input(fileName)</p>
+<p class="codetable">value = io.read(&quot;*a&quot;)</p>
+<p class="codetable">print(value)</p>
+<p class="codetable">end</p>
+<p class="codetable">fileHandle:close()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(errorqueue.next())</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">Writes data to a USB flash drive.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">File I/O</p>
+<p class="listcommand"><a id="h14794" class="jump" title="fileVar:write()" href="14789.htm" target="_self">fileVar:write()</a></p>
+<p class="listcommand"><a id="h14881" class="jump" title="io.open()" href="14872.htm" target="_self">io.open()</a></p>
+<p class="listcommand"><a id="h14885" class="jump" title="io.write()" href="14877.htm" target="_self">io.write()</a></p>
+
+

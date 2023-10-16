@@ -1,0 +1,92 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15935.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17296.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17284" class="heading2-icl">channel.pattern.getimage()</h2>
+<p class="bodyzero">This function queries a channel pattern for associated channels and analog backplane relays.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup<br>Pole setting change</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup<br></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">channelList</em> = channel.pattern.getimage(&quot;<em class="emphasis">name</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string specifying a list of channels and analog backplane relays that are represented by the name</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">name</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string representing the name of the channel pattern to query</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The returned string lists the channels in the slot, column or slot, row, column format, even if a channel pattern was used to create it. Results for multiple channel patterns are delimited by a semicolon (<code class="monospace">;</code>). Commas delimit the specific channels and analog backplane relays in a single channel pattern in the string.</p>
+<p class="iclbody">If you change a pole setting for a channel that is associated with a channel pattern, the channel pattern is deleted. Be sure to configure the pole setting for channels (<code class="monospace">channel.setpole</code>) before creating a channel pattern.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- Set up two patterns</p>
+<p class="codetable">channel.pattern.setimage(&quot;4001:4005&quot;, &quot;myPattern&quot;) </p>
+<p class="codetable">channel.pattern.setimage(&quot;2001,2003,2005&quot;, &quot;myRoute&quot;) </p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Print images</p>
+<p class="codetable">myImage = channel.pattern.getimage(&quot;myPattern&quot;) </p>
+<p class="codetable">print(myImage) </p>
+<p class="codetable">print(channel.pattern.getimage(&quot;myRoute&quot;))</p>
+<p class="codetable">print(channel.pattern.getimage(&quot;myRoute,</p>
+<p class="codetable">   myPattern&quot;))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Using a Model 3721 (or similar model) card in slots 2 and 4, this example creates two channel patterns and then queries these patterns.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">4001,4002,4003,4004,4005</p>
+<p class="codetable">2001,2003,2005</p>
+<p class="codetable">2001,2003,2005;4001,4002,4003,4004,4005</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h780" class="jump" title="channel.pattern.catalog()" href="15934.htm" target="_self">channel.pattern.catalog()</a></p>
+<p class="listcommand"><a id="h779" class="jump" title="channel.pattern.delete()" href="15935.htm" target="_self">channel.pattern.delete()</a></p>
+<p class="listcommand"><a id="h1806" class="jump" title="channel.pattern.setimage()" href="17296.htm" target="_self">channel.pattern.setimage()</a></p>
+<p class="listcommand"><a id="h773" class="jump" title="channel.setpole()" href="15949.htm" target="_self">channel.setpole()</a></p>
+
+

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Delete user scripts from the instrument </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16757.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2409.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t2408" class="heading3">Delete user scripts from the instrument</h3>
+<p class="bodytext">In most circumstances, you can delete a script using <code class="monospace">script.delete()</code> (as described in <a id="h17074" class="jump" title="Delete user scripts" href="16805.htm" target="_self">Delete user scripts</a>), and then turn the instrument off and back on again. However, if you cannot turn the instrument off, you can use the following steps to completely remove a script from the instrument.</p>
+<p class="bodytext">When you completely remove a script, you delete all references to the script from the runtime environment, the <code class="monospace">script.user.scripts</code> table, and nonvolatile memory.</p>
+<p class="headingprocedure">To completely remove a script:</p>
+<ol class="listnumber"><li class="listnumber"><strong class="specialbold">Remove the script from the runtime environment.</strong> Set any variables that refer to the script to <code class="monospace">nil</code> or assign the variables a different value. For example, to remove the script <code class="monospace">&quot;beepTwoSec&quot;</code> from the runtime environment, send the following code:<br><code class="monospace">beepTwoSec = nil</code></li><li class="listnumber"><strong class="specialbold">Remove the script from the script.user.scripts table.</strong> Set the name attribute to an empty string&nbsp;(<code class="monospace">&quot;&quot;</code>). This makes the script nameless, but does not make the script become the anonymous script. For example, to remove the script named <code class="monospace">&quot;beepTwoSec&quot;</code>, send the following code: <br><code class="monospace">script.user.scripts.beepTwoSec.name = &quot;&quot;</code></li><li class="listnumber"><strong class="specialbold">Remove the script from nonvolatile memory.</strong> To delete the script from nonvolatile memory, send the command:<br><code class="monospace">script.delete(&quot;</code><span class="monospaceitalic">name</span><code class="monospace">&quot;)</code><p class="listcontinue">Where <span class="monospaceitalic">name</span> is the name that the script was saved as. For example, to delete <code class="monospace">&quot;beepTwoSec&quot;</code>, send:<br><code class="monospace">script.delete(&quot;beepTwoSec&quot;)</code></p>
+</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="17051.htm" target="_self">Advanced scripting for TSP</a></p><p class="relateditem"><a href="16842.htm" target="_self">Global variables and the script.user.scripts table</a></p><p class="relateditem"><a href="17075.htm" target="_self">Create a script using the script.new() command</a></p><p class="relateditem"><a href="16688.htm" target="_self">Rename a script</a></p><p class="relateditem"><a href="2405.htm" target="_self">Retrieve a user script</a></p><p class="relateditem"><a href="2409.htm" target="_self">Restore a script to the runtime environment</a></p><p class="relateditem"><a href="16810.htm" target="_self">Memory considerations for the runtime environment</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="2408" />
+<input id="topicDescription" type="hidden" value="Delete user scripts from the instrument" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 8:59:36 AM" />
+</body>
+</html>

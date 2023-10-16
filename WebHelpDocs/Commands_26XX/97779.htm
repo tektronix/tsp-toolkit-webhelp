@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Pulsing from a positive to a negative pulse level </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12560.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12561.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t97779" class="heading4">Pulsing from a positive to a negative pulse level</h4>
+<p class="bodytext">The following single pulse and pulse train examples pulse from a zero bias level to a positive pulse level (+5&nbsp;V). If you change the pulse level to a negative value, such as −5&nbsp;V, the pulse width is nominally 100&nbsp;µs shorter than expected. The pulse width is shortened because the SMU source must change polarity when pulsing from zero to a negative level, and there is an internal 100&nbsp;µs delay associated with the change. This polarity change is required because the number zero (0) is treated as a positive value. Therefore, pulsing from zero to +5&nbsp;V does not require a polarity change, but pulsing from zero to −5&nbsp;V does. There are multiple ways to obtain the correct pulse width, but the simplest is to define a negative zero and set the bias level equal to that value.</p>
+<p class="bodytext">A negative zero is a value that is mathematically negative and functionally equivalent to zero. For a SMU, a source level setting that is functionally equivalent to zero is one that is significantly less than the programming resolution of the source range being used. Programming resolution values are listed by range in the SMU instrument specifications. A suitable value that works for all voltage and current source ranges in the 2600B instruments is −1e<sup class="superscript">−18</sup>. Therefore, to pulse from a zero bias level to a negative pulse level, make the following change to the examples:</p>
+<p class="code">-- Set the voltage source range and the bias source level and limit.</p>
+<p class="code">smua.source.rangev = 5</p>
+<p class="code">neg_zero = -1e-18</p>
+<p class="code">smua.source.levelv = neg_zero</p>
+<p class="code">smua.source.limiti = 0.1</p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12560.htm" target="_self">Using timers to perform pulse mode sweeps</a></p><p class="relateditem"><a href="12561.htm" target="_self">Single pulse example</a></p><p class="relateditem"><a href="12563.htm" target="_self">Pulse train example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="97779" />
+<input id="topicDescription" type="hidden" value="Pulsing from a positive to a negative pulse level" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/8/2022 10:51:48 AM" />
+</body>
+</html>

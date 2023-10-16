@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Notify block </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="76318.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31009.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t59291" class="heading3">Notify block</h3>
+<p class="bodytext">When trigger model execution reaches a notify block, the instrument generates a trigger event and immediately continues to the next block.</p>
+<p class="bodytext">Other commands can reference the event that the notify block generates. This assigns a stimulus somewhere else in the system. For example, you can use the notify event as the stimulus of a hardware trigger line, such as a digital I/O line.</p>
+<p class="headingprocedure">Setting up the notify block using the front panel:</p>
+<p class="bodytext">When you set up the notify blocks using the front panel, you select the line or timer to notify. You also set specifics regarding the line. The stimulus and logic for input and output lines are set up automatically. The notify event number is also set automatically and is displayed at the bottom of the Notify definition screen. </p>
+<p class="bodytext">When the trigger model executes a notify block, the instrument generates the SCPI event <code class="monospace">NOTify&lt;n&gt;</code> or TSP event <code class="monospace">trigger.EVENT_NOTIFY</code><span class="monospaceitalic">N</span>. You can assign this event to a command that takes an event. For example, if you want a notify block to trigger a digital I/O line, insert a notify block into the trigger model, assign it a notify event and then connect it to the stimulus of the digital I/O line that you want to drive with the notify event.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>You cannot use SCPI commands with Test Script Builder (TSB) software.</p>
+<p class="bodytext">If you define a LAN trigger from the front panel, you are asked if you want to initiate the LAN connection. You must initiate the connection to use the LAN triggers.</p>
+<p class="headingprocedure">Setting up the notify block using remote commands:</p>
+<p class="bodytext">When you set up the notify block using remote commands, you define the notify event number. You need to set up the lines that use the notify event as a stimulus as separate commands.</p>
+<p class="bodytext">In the following example, you define trigger model block 5 to be the notify 2 event. You can then assign the notify&nbsp;2 event to be the stimulus for digital output line 3.</p>
+<p class="bodytext">In TSP, send the commands:</p>
+<p class="code">trigger.model.setblock(5, trigger.BLOCK_NOTIFY, trigger.EVENT_NOTIFY2) </p>
+<p class="code">trigger.digout[3].stimulus = trigger.EVENT_NOTIFY2</p>
+<p class="bodytext">If digital I/O line 3 is connected to another instrument, this causes the trigger execution to wait for the other instrument to indicate that it is ready.</p>
+<p class="bodytext"><strong class="specialbold">Front panel options</strong></p>
+<p class="bodytext">When you select the Notify block from the front panel, the following options are available.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Setting</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Notify</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">The line or timer that is notified:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Digital Output Line: Select the digital output event (line 1 through line 6)</li><li class="tablelistbullet9pt">TSP-Link Output Line: Select the TSP-Link output event (line 1 through 3)</li><li class="tablelistbullet9pt">Timer: Select the timer event (timer 1 through 4)</li><li class="tablelistbullet9pt">LAN Output: Select the LAN output line (line 1 to 8)</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Settings</p>
+</td>
+<td style="border:1px solid #010101;" width="456"><p class="tablebodytext">The available settings depend on the Notify selection. For the digital, TSP-Link, and LAN output lines, select the pulse logic (negative or positive).</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="46200.htm" target="_self">Additional Model 2461 information</a></p><p class="relateditem"><a href="59256.htm" target="_self">Aborting the trigger model</a></p><p class="relateditem"><a href="31016.htm" target="_self">Always block</a></p><p class="relateditem"><a href="31007.htm" target="_self">Branching blocks</a></p><p class="relateditem"><a href="30865.htm" target="_self">Buffer clear block</a></p><p class="relateditem"><a href="31010.htm" target="_self">Constant Limit block</a></p><p class="relateditem"><a href="33305_1.htm" target="_self">Deleting a user script using a remote interface</a></p><p class="relateditem"><a href="31015.htm" target="_self">Delta block</a></p><p class="relateditem"><a href="33036.htm" target="_self">Digital I/O</a></p><p class="relateditem"><a href="41554.htm" target="_self">Digitize functions</a></p><p class="relateditem"><a href="29982.htm" target="_self">Displayed measurements</a></p><p class="relateditem"><a href="31012.htm" target="_self">Dynamic Limit block</a></p><p class="relateditem"><a href="64371.htm" target="_self">Effect of GPIB line events on Model 2461</a></p><p class="relateditem"><a href="40158.htm" target="_self">Event numbers</a></p><p class="relateditem"><a href="28479.htm" target="_self">Four-wire remote sense connections</a></p><p class="relateditem"><a href="34639.htm" target="_self">Interface access</a></p><p class="relateditem"><a href="88836.htm" target="_self">Settings stored in a source configuration index</a></p><p class="relateditem"><a href="88837.htm" target="_self">Settings stored in a measure configuration index</a></p><p class="relateditem"><a href="88839.htm" target="_self">Digitize settings stored in a measure configuration list index</a></p><p class="relateditem"><a href="30143.htm" target="_self">Limit testing and binning</a></p><p class="relateditem"><a href="31008.htm" target="_self">Loop Counter block</a></p><p class="relateditem"><a href="76318.htm" target="_self">Measure/Digitize block</a></p><p class="relateditem"><a href="31009.htm" target="_self">On event block</a></p><p class="relateditem"><a href="31017.htm" target="_self">Once block</a></p><p class="relateditem"><a href="31018.htm" target="_self">Once excluded block</a></p><p class="relateditem"><a href="59267.htm" target="_self">Operation Event Register</a></p><p class="relateditem"><a href="39968.htm" target="_self">Order of operations</a></p><p class="relateditem"><a href="34868.htm" target="_self">Outputting a bit pattern</a></p><p class="relateditem"><a href="ID_AVM_BUT.htm" target="_self">Overvoltage protection</a></p><p class="relateditem"><a href="29851.htm" target="_self">Programmable status register sets</a></p><p class="relateditem"><a href="59262.htm" target="_self">Questionable Event Register</a></p><p class="relateditem"><a href="29376.htm" target="_self">Ranges</a></p><p class="relateditem"><a href="16529.htm" target="_self">Remote communications interfaces</a></p><p class="relateditem"><a href="64372.htm" target="_self">Reset default values</a></p><p class="relateditem"><a href="40105.htm" target="_self">Resets</a></p><p class="relateditem"><a href="29454.htm" target="_self">Saving setups</a></p><p class="relateditem"><a href="29111.htm" target="_self">Source and measure using TSP commands</a></p><p class="relateditem"><a href="12760.htm" target="_self">SPE, SPD</a></p><p class="relateditem"><a href="59283.htm" target="_self">Standard Event Register</a></p><p class="relateditem"><a href="32518.htm" target="_self">Triggering using TSP-Link trigger lines</a></p><p class="relateditem"><a href="27120.htm" target="_self">TSP-Link System Expansion Interface</a></p><p class="relateditem"><a href="31944.htm" target="_self">Upgrading the firmware</a></p><p class="relateditem"><a href="32667.htm" target="_self">Using groups to manage nodes on a TSP-Link system</a></p><p class="relateditem"><a href="3247.htm" target="_self">Using the data queue for real-time communication</a></p><p class="relateditem"><a href="31125.htm" target="_self">Using trigger events to start actions in the trigger model</a></p><p class="relateditem"><a href="30864.htm" target="_self">Wait block</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="59291" />
+<input id="topicDescription" type="hidden" value="Notify block" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/25/2017 6:58:01 AM" />
+</body>
+</html>

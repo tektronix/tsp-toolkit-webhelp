@@ -1,0 +1,92 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15120.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15123.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15121" class="heading2-icl">smuX.measure.rangeY</h2>
+<p class="bodyzero">This attribute contains the positive full&#8209;scale value of the measurement range for voltage or current.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">Voltage:<br>2601B, 2602B, or 2604B: <br>100e-3 (100&nbsp;mV)<br>2611B, 2612B, 2614B, 2634B, 2635B, or 2636B:<br>200e-3 (200&nbsp;mV)</p>
+<p class="tablebodytextsmall">Current:<br>100e-3 (100 mA)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">rangeValue</span></span> = smu<span class="monospaceitalic">X</span>.measure.range<em class="emphasis">Y</em></p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.measure.range<em class="emphasis">Y</em><code class="monospace"> = </code><span class="monospaceitalic">rangeValue</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">rangeValue</span></span></p>
+</td>
+<td width="456"><p class="tablebodytext">Set to the maximum expected voltage or current to be measured</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">X</span></span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.measure.rangev</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span></p>
+</td>
+<td width="456"><p class="tablebodytext">SMU measurement function (<code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Reading this attribute returns the positive full-scale value of the measurement range that the SMU is currently using. Assigning a value to this attribute sets the SMU on a fixed range large enough to measure the assigned value. The instrument selects the best range for measuring a value of <span class="monospaceitalic"><span class="monospaceitalic">rangeValue</span></span>.</p>
+<p class="iclbody">This attribute is primarily intended to eliminate the time that is required by the automatic range selection performed by a measuring instrument. Because selecting a fixed range prevents autoranging, an overrange condition can occur. For example, measuring 10.0 V on the 2601B, 2602B, or 2604B 6 V range or measuring 5.0 V on the 2611B, 2612B, or 2614B 2 V range causes an overrange. The value 9.91000E+37 is returned when this occurs. </p>
+<p class="iclbody">If the source function is the same as the measurement function (for example, sourcing voltage and measuring voltage), the measurement range is locked to be the same as the source range. However, the setting for the measure range is retained. If the source function is changed (for example, from sourcing voltage to sourcing current), the retained measurement range is used.</p>
+<p class="iclbody">2601B, 2602B, or 2604B example: Assume the source function is voltage. The source range is 1 V and you set the measure range for 6 V. Since the source range is 1 V, the SMU performs voltage measurements on the 1 V range. If you now change the source function to current, voltage measurements are made on the 6 V range.</p>
+<p class="iclbody">Explicitly setting a measure range disables measure autoranging for that function. Autoranging is controlled separately for each source and measurement function: source voltage, source current, measure voltage and measure current. Autoranging is enabled for all four by default.</p>
+<p class="iclbody">Changing the range while the output is off does not update the hardware settings, but querying returns the range setting that is used when the output is turned on. Setting a range while the output is on takes effect immediately.</p>
+<p class="iclbody">With measure autoranging enabled, the range is changed only when a measurement is made. Querying the range after a measurement returns the range selected for that measurement.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">smua.measure.rangev = 0.5 </p>
+</td>
+<td width="324"><p class="tablebodytext">Selects the 1&nbsp;V measurement range for SMU channel A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13592" class="jump" title="Range" href="11993.htm" target="_self">Range</a></p>
+<p class="listcommand"><a id="h13937" class="jump" title="reset()" href="13933.htm" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15085" class="jump" title="setup.recall()" href="66566.htm" target="_self">setup.recall()</a></p>
+<p class="listcommand"><a id="h15204" class="jump" title="smuX.measure.autorangeY" href="15107.htm" target="_self">smuX.measure.autorangeY</a></p>
+<p class="listcommand"><a id="h15232" class="jump" title="smuX.reset()" href="15136.htm" target="_self">smuX.reset()</a></p>
+<p class="listcommand"><a id="h15248" class="jump" title="smuX.source.rangeY" href="15153.htm" target="_self">smuX.source.rangeY</a></p>
+
+

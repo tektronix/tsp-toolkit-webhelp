@@ -1,0 +1,109 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15970.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15976.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15975" class="heading2-icl">dmm.autodelay</h2>
+<p class="bodyzero">This attribute enables or disables the automatic delay that occurs before each measurement.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="78"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="168"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="78"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Function change<br>DMM close<br>Recall DMM configuration<br>Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup<br>Save DMM configuration</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="168"><p class="tablebodytextsmall">2 (<code class="monospace">dmm.AUTODELAY_ONCE</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value </span>= dmm.autodelay</p>
+<p class="iclcode">dmm.autodelay = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Enable autodelay: <code class="monospace">dmm.ON</code> or <code class="monospace">1</code></p>
+<p class="tablebodytext">Disable autodelay: <code class="monospace">dmm.OFF</code> or <code class="monospace">0</code></p>
+<p class="tablebodytext">Enable autodelay for the first measurement only: <code class="monospace">dmm.AUTODELAY_ONCE</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The autodelay setting applies to the function selected by <code class="monospace">dmm.func</code>. It is available for all functions except <code class="monospace">&quot;nofunction&quot;</code>.</p>
+<p class="iclbody">To have the DMM include a delay before each measurement, set autodelay to <code class="monospace">dmm.ON</code> or <code class="monospace">1</code>.</p>
+<p class="iclbody">To have the DMM take a measurement without an automatic delay, set autodelay to <code class="monospace">dmm.OFF</code> or <code class="monospace">0</code>.</p>
+<p class="iclbody">When this is enabled, a delay is added after a range or function change to allow the instrument to settle.   </p>
+<p class="iclbody">An error is generated if you try to set autodelay for <code class="monospace">&quot;nofunction&quot;</code>. Error code 1114, &quot;Setting conflicts with function selected,&quot; is generated. If you query autodelay for <code class="monospace">&quot;nofunction&quot;</code>, <code class="monospace">nil</code> is returned with the same error.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;twowireohms&quot;</p>
+<p class="codetable">dmm.autodelay = dmm.ON</p>
+<p class="codetable">dmm.measurecount = 10</p>
+<p class="codetable">ReadingBufferOne = dmm.makebuffer(1000)</p>
+<p class="codetable">dmm.measure(ReadingBufferOne)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">An automatic delay is applied to each measurement when the DMM is measuring two-wire ohms. Take 10 measurements and store them in a reading buffer named <code class="monospace">ReadingBufferOne</code> that can store up to 1000 readings.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.autodelay = dmm.OFF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">No delay is applied is applied to the DC volt measurements.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;fourwireohms&quot;</p>
+<p class="codetable">dmm.autodelay = dmm.AUTODELAY_ONCE</p>
+<p class="codetable">dmm.measurecount = 10</p>
+<p class="codetable">ReadingBufferTwo = dmm.makebuffer(1000)</p>
+<p class="codetable">dmm.measure(ReadingBufferTwo)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Sets an autodelay for the first of the ten four-wire ohm readings. Readings two through ten will occur as quickly as possible, with readings stored in a reading buffer called <code class="monospace">ReadingBufferTwo</code> that can store up to 1000 readings.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Autodelay</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h904" class="jump" title="dmm.measurecount" href="16050.htm" target="_self">dmm.measurecount</a></p>
+
+

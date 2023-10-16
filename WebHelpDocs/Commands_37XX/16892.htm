@@ -1,0 +1,141 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16973.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16893.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16892" class="heading2-icl">scan.create()</h2>
+<p class="bodyzero">This function deletes the existing scan list and creates a new list of channels and channel patterns to scan.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">scan.create(<em class="emphasis">channelList</em>)</p>
+<p class="iclcode">scan.create(<em class="emphasis">channelList</em>, <span class="monospaceitalic">dmmConfig</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">String specifying channels to add</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">dmmConfig</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The DMM configuration to use with items in the <span class="monospaceitalic">channelList</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The existing scan list is lost after calling this function.</p>
+<p class="iclbody">The items in the channel list are scanned in the order listed.</p>
+<p class="iclbody">Each channel or channel pattern configuration is used unless the optional <span class="monospaceitalic">dmmConfig</span> parameter is specified (see <code class="monospace">dmm.setconfig()</code> and <code class="monospace">dmm.getconfig()</code>). Specifying the <span class="monospaceitalic">dmmConfig</span> parameter temporarily overrides the configuration associated with the channel or channel pattern. Specifying <span class="monospaceitalic">dmmConfig</span> does not modify the assigned configuration of a channel or channel pattern.</p>
+<p class="iclbody">If a forbidden channel is included in a range of channels or slot parameter (such as slot 1), the forbidden channel is ignored and no error is generated. If a forbidden channel is individually specified in the channel list, an error is generated.</p>
+<p class="iclbody">If an error occurs, the scan list of channels or channel patterns is cleared, even though no new scan list is created.</p>
+<p class="iclbody">The function <code class="monospace">scan.reset()</code> clears the list. To clear the scan list without performing a scan reset, send an empty string for the <span class="monospaceitalic">channelList</span> parameter.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.create(&quot;1001:1010&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Replaces the active scan list with an empty scan list.</p>
+<p class="tablebodytext">Adds channels 1 through 10 on slot 1. Uses the existing DMM configuration (<code class="monospace">dmm.setconfig()</code>).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.create()</p>
+<p class="codetable">for chan = 1001, 1010 do</p>
+<p class="codetable">   scan.add(&quot;&quot; .. chan)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Replaces the active scan list with an empty scan list.</p>
+<p class="tablebodytext">Loops through channels 1001 to 1010, and then adds 10 channels to the scan list. The parameter (<code class="monospace">&quot;&quot;&nbsp;..&nbsp;chan</code>) converts the channel number to a string.</p>
+<p class="tablebodytext">The scan list now has, in order, channels 1 through 10 on slot 1.</p>
+<p class="tablebodytext">Uses the existing DMM configuration (<code class="monospace">dmm.setconfig()</code>).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.create(&quot;3001:3010&quot;, &quot;testDCV&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">For this example, assume <code class="monospace">testDCV</code> is a previously defined user DC volts configuration.</p>
+<p class="tablebodytext">Clears the old scan list and creates a new scan list with each channel (1 to 10 on slot&nbsp;3).</p>
+<p class="tablebodytext">Each channel uses the DMM configuration associated with <code class="monospace">testDCV</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 4</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.create(&quot;&quot;)</p>
+<p class="codetable">for chan = 3001, 3010 do</p>
+<p class="codetable">   scan.add(&quot;&quot; .. chan, &quot;testDCV&quot;)</p>
+<p class="codetable">   scan.add(&quot;&quot; .. chan, &quot;test2wire&quot;)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">For this example, assume <code class="monospace">testDCV</code> is a previously defined user DC volts configuration, and <code class="monospace">test2wire</code> is a previously defined user 2-wire ohm configuration.</p>
+<p class="tablebodytext">This loops through the channels, adding channels to the scan list. The first time, it adds <code class="monospace">&quot;testDCV&quot;</code> for a channel. The second time, it adds <code class="monospace">&quot;test2wire&quot;</code> for that channel. The first parameter <code class="monospace">(&quot;&quot; .. chan)</code> converts the chan number to a string.</p>
+<p class="tablebodytext">Clears the old scan list and creates a new scan list. </p>
+<p class="tablebodytext">Loops through channels 3001 to 3010.</p>
+<p class="tablebodytext">Adds channels 3001 through 3010 to the end of the existing scan list.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h909" class="jump" title="dmm.getconfig()" href="16031.htm" target="_self">dmm.getconfig()</a></p>
+<p class="listcommand"><a id="h883" class="jump" title="dmm.setconfig()" href="16067.htm" target="_self">dmm.setconfig()</a></p>
+<p class="listcommand"><a id="h1142" class="jump" title="scan.add()" href="16890.htm" target="_self">scan.add()</a></p>
+<p class="listcommand"><a id="h1354" class="jump" title="scan.reset()" href="16896.htm" target="_self">scan.reset()</a></p>
+<p class="listcommand">Scanning and triggering</p>
+
+

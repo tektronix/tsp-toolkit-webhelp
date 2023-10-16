@@ -1,0 +1,101 @@
+<html><head><title> channel.pattern.setimage() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17284.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17299.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.pattern.setimage()</h2>
+<p class="bodyzero">This function creates a channel pattern and associates it with the specified name.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.pattern.setimage(<em class="emphasis">channelList</em>, <em class="emphasis">name</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string listing the channels and channel patterns to use when creating the new channel pattern</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">name</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string representing the name to associate with the new channel pattern</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">If <span class="monospaceitalic">name</span> is used for an existing channel pattern, that pattern is overwritten with the new pattern channel image (if no errors occur). The previous image associated with the name is lost.</p>
+<p class="iclbody">The channel pattern is not created if an error is detected. You can create a channel pattern with an empty <span class="monospaceitalic">channelList</span> parameter.</p>
+<p class="iclbody">Once a channel pattern is created, the only way to add a channel to an existing pattern is to delete the old pattern and recreate the pattern with the new desired items. Alternatively, include the additional channels in the <span class="monospaceitalic">channelList</span> with the channel pattern when using.</p>
+<p class="iclbody">Channel patterns are lost when power is cycled. </p>
+<p class="iclbody">Channel patterns are stored when you run the <code class="monospace">createconfigscript()</code> command.</p>
+<p class="iclbody"></p>
+<p class="iclbody">The following restrictions exist when naming a channel pattern:</p>
+<ul class="listbullet2"><li class="listbullet2">The name must contain only letters, numbers, or underscores</li><li class="listbullet2">The name must start with a letter</li><li class="listbullet2">The name is case sensitive</li></ul><p class="iclbody">Examples of valid names:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="monospace">Channels</code></li><li class="listbullet2"><code class="monospace">Chans</code></li><li class="listbullet2"><code class="monospace">chans</code></li><li class="listbullet2"><code class="monospace">Path1</code></li><li class="listbullet2"><code class="monospace">Path20</code></li><li class="listbullet2"><code class="monospace">path_3</code></li></ul><p class="iclbody">Examples of invalid names:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="monospace">1path</code> (invalid because it starts with a number)</li><li class="listbullet2"><code class="monospace">my chans</code> (invalid because it contains a space)</li><li class="listbullet2"><code class="monospace">My,chans</code> (invalid because it contains a comma)</li><li class="listbullet2"><code class="monospace">Path1:10</code> ( invalid because it contains a colon)</li></ul><p class="iclbody">An error is generated if:</p>
+<ul class="listbullet2"><li class="listbullet2">The <span class="monospaceitalic">name</span> parameter already exists as a label</li><li class="listbullet2">Any channel is forbidden to close</li><li class="listbullet2">Insufficient memory exists to create the channel pattern</li><li class="listbullet2">The parameter string contains <code class="monospace">slot</code><span class="monospaceitalic">X</span> (where <em class="emphasis">X</em> equals 1 to 6 for Model 707B, or 1 for Model 708B) or <code class="monospace">allslots</code></li><li class="listbullet2">The name parameter contains a space character</li><li class="listbullet2">The pattern name exceeds 19 characters</li></ul><p class="iclsubheading">Example</p>
+<table width="758" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="458"><p class="codetable">channel.pattern.setimage(&quot;1A01:1A10&quot;, &quot;Channels&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">oldList = channel.pattern.getimage(&quot;Channels&quot;)</p>
+<p class="codetable">newList = oldList .. &quot;, 1C11&quot;</p>
+<p class="codetable">channel.pattern.delete(&quot;Channels&quot;)</p>
+<p class="codetable">channel.pattern.setimage(newList, &quot;Channels&quot;)</p>
+<p class="codetable">channel.close(&quot;Channels, 1D11&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">Items = channel.pattern.getimage(&quot;Channels&quot;)</p>
+<p class="codetable">channel.pattern.setimage(Items, &quot;Pattern&quot;)</p>
+<p class="codetable">channel.pattern.delete(&quot;Channels&quot;)</p>
+</td>
+<td width="300"><p class="tablebodytext">For this example, assume there is a Keithley Model 7174 or similar card in Slot 1. </p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Creates a pattern, appends a channel to the pattern by retrieving the pattern and recreating it, and then renames the pattern.</p>
+<p class="nooutput-paragraph">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h18567" class="jumptemplate" title="createconfigscript()" href="17655.html" target="_self">createconfigscript()</a></p>
+<p class="iclbody"><a id="h780" class="jumptemplate" title="channel.pattern.catalog()" href="15934.html" target="_self">channel.pattern.catalog()</a></p>
+<p class="iclbody"><a id="h779" class="jumptemplate" title="channel.pattern.delete()" href="15935.html" target="_self">channel.pattern.delete()</a></p>
+<p class="iclbody"><a id="h776" class="jumptemplate" title="channel.pattern.getimage()" href="17284.html" target="_self">channel.pattern.getimage()</a></p>
+<p class="iclbody"><a id="h791" class="jumptemplate" title="channel.pattern.snapshot()" href="17299.html" target="_self">channel.pattern.snapshot()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

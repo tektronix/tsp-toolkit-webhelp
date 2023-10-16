@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Assigning node numbers </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12380.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12389.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12384" class="heading4">Assigning node numbers</h4>
+<p class="bodytext">At the factory, each 2600B instrument is assigned as node 1. The node number is stored in nonvolatile memory and remains in storage when the instrument is turned off. You can assign a node number to a 2600B using the front panel or by using a remote command. There can only be 32 physical nodes, but you can assign node numbers from 1 to 64.</p>
+<p class="headingprocedure">To assign a node number from the front panel of the instrument:</p>
+<ol class="listnumber"><li class="listnumber">Press the <strong class="specialbold">MENU</strong> key, then select <strong class="specialbold">TSPLINK &gt; NODE</strong>.</li><li class="listnumber">Press the navigation wheel and select the node number.</li><li class="listnumber">Press the <strong class="specialbold">ENTER </strong>key to save the number.</li></ol><p class="headingprocedure">To assign a node number using a remote command:</p>
+<p class="bodytext">Set the <code class="monospace">tsplink.node</code> attribute of the instrument:</p>
+<p class="code"><code class="monospace">tsplink.node = </code><span class="monospaceitalic">N</span></p>
+<p class="bodytext">Where <span class="monospaceitalic">N</span> <code class="monospace">= 1</code> to <code class="monospace">64</code> </p>
+<p class="bodytext">To determine the node number of an instrument, you can read the <code class="monospace">tsplink.node</code> attribute by sending the following command:</p>
+<p class="code"><code class="monospace">print(tsplink.node)</code></p>
+<p class="bodytext">The above <code class="monospace">print</code> command outputs the node number. For example, if the node number is 1, a <code class="monospace">1</code> is displayed.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12380.htm" target="_self">Initialization</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12384" />
+<input id="topicDescription" type="hidden" value="Assigning node numbers" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/10/2021 5:04:08 PM" />
+</body>
+</html>

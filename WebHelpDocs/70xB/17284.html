@@ -1,0 +1,89 @@
+<html><head><title> channel.pattern.getimage() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15935.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17296.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.pattern.getimage()</h2>
+<p class="bodyzero">This function queries a channel pattern for associated channels.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">channelList</em> = channel.pattern.getimage(<em class="emphasis">name</em>)</p>
+<p class="iclspacing"></p>
+<table width="750" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="576"><p class="tablebodytext">A string specifying a list of channels that are represented by the name</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">name</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="576"><p class="tablebodytext">A string representing the name of the channel pattern to query</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The returned string lists the channels in the slot, row, column format, even if a channel pattern was used to create it. Results for multiple channel patterns are delimited by a semicolon (<code class="monospace">;</code>), and commas delimit the specific channels within a single channel pattern in the string.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="488"><p class="codetable">channel.pattern.setimage(&quot;1A01:1A05&quot;, &quot;myPattern&quot;)</p>
+<p class="codetable">channel.pattern.setimage(&quot;1B01,1B03,1B05&quot;, &quot;myRoute&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">myImage = channel.pattern.getimage(&quot;myPattern&quot;)</p>
+<p class="codetable">print(myImage)</p>
+<p class="codetable">print(channel.pattern.getimage(&quot;myRoute&quot;)) </p>
+<p class="codetable">print(channel.pattern.getimage(&quot;myRoute, myPattern&quot;))</p>
+</td>
+<td width="255"><p class="tablebodytext">Using a Model 7174 (or similar model) card in Slot 1, this example creates two channel patterns and then queries these patterns.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1A01,1A02,1A03,1A04,1A05</p>
+<p class="codetable">1B01,1B03,1B05</p>
+<p class="codetable">1B01,1B03,1B05;1A01,1A02,1A03,1A04,1A05</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h780" class="jumptemplate" title="channel.pattern.catalog()" href="15934.html" target="_self">channel.pattern.catalog()</a></p>
+<p class="iclbody"><a id="h779" class="jumptemplate" title="channel.pattern.delete()" href="15935.html" target="_self">channel.pattern.delete()</a></p>
+<p class="iclbody"><a id="h776" class="jumptemplate" title="channel.pattern.getimage()" href="17284.html" target="_self">channel.pattern.getimage()</a></p>
+<p class="iclbody"><a id="h1806" class="jumptemplate" title="channel.pattern.setimage()" href="17296.html" target="_self">channel.pattern.setimage()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

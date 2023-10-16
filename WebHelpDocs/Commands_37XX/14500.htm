@@ -1,0 +1,98 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14488.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17406.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t14500" class="heading2-icl">channel.calibration.verifydate()</h2>
+<p class="bodyzero">This function gets or sets the date the calibration was verified in UTC format (number of seconds since January 1, 1970).</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">returnDate</em> = channel.calibration.verifydate(&quot;slot<em class="emphasis">X</em>&quot;)</p>
+<p class="iclcode"><em class="emphasis">returnDate</em> = channel.calibration.verifydate(&quot;slot<em class="emphasis">X</em>&quot;, <span class="monospaceitalic">date</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">returnDate</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="426"><p class="tablebodytext">The verification date returned from the function call</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="426"><p class="tablebodytext">The slot number ( <code class="monospace">1</code> to <code class="monospace">6</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">date</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="426"><p class="tablebodytext">UTC formatted date to which to set the calibration verification date</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command gets the verification date whether calibration is presently locked or unlocked. If the slot is not defined, the unlocked channel is assumed.</p>
+<p class="iclbody">This command can only set the verification date on a previously unlocked card. The date is not permanently saved until <code class="monospace">channel.calibration.save()</code> is issued.</p>
+<p class="iclbody">There is only one verification date per card. If more than one slot is defined, an error is generated.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.calibration.unlock(&quot;slot1&quot;, &quot;KI3706&quot;)</p>
+<p class="codetable">print(channel.calibration.verifydate(os.time{year=2010, month=8, day=5}))</p>
+<p class="codetable">channel.calibration.save()</p>
+<p class="codetable">channel.calibration.lock()</p>
+<p class="codetable">print(os.date(&quot;%m/%d/%Y&quot;, channel.calibration.verifydate(&quot;slot1&quot;)))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Unlock the calibration for the card in slot 1 using the default password.</p>
+<p class="tablebodytext">Set the verify calibration date to August 5, 2010.</p>
+<p class="tablebodytext">Get the newly set verification date in a user-readable format.</p>
+<p class="tablebodytext">Save the new verification date.</p>
+<p class="tablebodytext">Lock the calibration.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1281009600</p>
+<p class="codetable">08/05/2010</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a class="jump" title="Lua date and time" href="http://www.lua.org/pil/22.1.html" target="_self">Lua date and time</a></p>
+<p class="listcommand"><a class="jump" title="UTC Calculator" href="http://www.mbari.org/staff/rich/utccalc.htm" target="_self">UTC calculator</a></p>
+<p class="listcommand"><a id="h14494" class="jump" title="channel.calibration.adjustdate()" href="13979.htm" target="_self">channel.calibration.adjustdate()</a></p>
+<p class="listcommand"><a id="h13981" class="jump" title="channel.calibration.save()" href="13980.htm" target="_self">channel.calibration.save()</a></p>
+
+

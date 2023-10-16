@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Reading an attribute </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="34433.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="368.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h6 id="t33274" class="heading6">Reading an attribute</h6>
+<p class="bodytext">To read an attribute, you can use the attribute as the parameter of a function or assign it to another variable.</p>
+<p class="bodytext"><strong class="specialbold">Example 1: Read an attribute using a function</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">print(display.lightstate)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Reads the status of the light state by passing the attribute to the print function. If the display light state is set to 50%, the output is:</p>
+<p class="codetable">display.STATE_LCD_50</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example 2: Read an attribute using a variable</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">light = display.lightstate</p>
+<p class="codetable">print(light)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">This reads the light state by assigning the attribute to a variable named <code class="monospace">light</code>. If the display light state is set to 25%, the output is:</p>
+<p class="codetable">display.STATE_LCD_25</p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="492.htm" target="_self">Attributes</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="33274" />
+<input id="topicDescription" type="hidden" value="Reading an attribute" />
+<input id="footer-modified" type="hidden" value="Last modified: 1/11/2019 9:56:30 AM" />
+</body>
+</html>

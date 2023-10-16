@@ -1,0 +1,117 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16041.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16042.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16048" class="heading2-icl">dmm.makebuffer()</h2>
+<p class="bodyzero">This function creates a user buffer for storing readings. Reading buffers are allocated dynamically.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">None</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar</span> = dmm.makebuffer(<span class="monospaceitalic">bufferSize</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The variable name for the buffer being created</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferSize</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Maximum number of readings that the buffer can store</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">To be able to store readings, a reading buffer needs to be created. Once created, the reading buffer can be used to store readings from <code class="monospace">dmm.measure()</code> command and from scanning (<code class="monospace">scan.execute()</code> or <code class="monospace">scan.background()</code>)</p>
+<p class="iclbody">To delete a buffer, set <span class="monospaceitalic">bufferVar</span> to <code class="monospace">nil</code>.</p>
+<p class="iclbody">Once a buffer is created, the attributes that can be accessed are:</p>
+<ul class="listbullet"><li class="listbullet"><span class="monospaceitalic">bufferVar</span><p class="bodytext">.</p><code class="monospace">appendmode</code> = <code class="monospace">1</code> (ON) or <code class="monospace">0</code> (OFF); default is zero (0) over a bus interface, and 1 for buffers created on the front panel.</li><li class="listbullet"><span class="monospaceitalic">bufferVar</span><p class="bodytext">.</p><code class="monospace">basetimeseconds</code> returns the seconds for reading buffer entry 1 (read-only attribute).</li><li class="listbullet"><span class="monospaceitalic">bufferVar</span><p class="bodytext">.</p><code class="monospace">basetimefractional</code> returns the seconds and fractional seconds for reading buffer entry 1 (read-only attribute).</li><li class="listbullet"><span class="monospaceitalic">bufferVar.</span><code class="monospace">capacity</code> returns the overall buffer size.</li><li class="listbullet"><span class="monospaceitalic">bufferVar</span><p class="bodytext">.</p><code class="monospace">collecttimestamps</code> = <code class="monospace">1</code> (ON) or <code class="monospace">0</code> (OFF); default is <code class="monospace">1</code>.</li><li class="listbullet"><span class="monospaceitalic">bufferVar</span><p class="bodytext">.</p><code class="monospace">collectchannels</code> = <code class="monospace">1</code> (ON) or <code class="monospace">0</code> (OFF); default is <code class="monospace">1</code>.</li><li class="listbullet"><span class="monospaceitalic">bufferVar</span><p class="bodytext">.</p><code class="monospace">n</code> returns the number of readings currently stored in the buffer.</li><li class="listbullet"><span class="monospaceitalic">bufferVar</span><p class="bodytext">.</p><code class="monospace">timestampresolution</code> returns the resolution of the timestamping (read-only attribute).</li></ul><p class="iclbody">The following buffer bits indicate buffer statuses:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">dmm.buffer.LIMIT1_LOW_BIT or 1</code></li><li class="listbullet"><code class="monospace">dmm.buffer.LIMIT1_HIGH_BIT or 2</code></li><li class="listbullet"><code class="monospace">dmm.buffer.LIMIT2_LOW_BIT </code>or <code class="monospace">4</code></li><li class="listbullet"><code class="monospace">dmm.buffer.LIMIT2_HIGH_BIT</code> or <code class="monospace">8</code></li><li class="listbullet"><code class="monospace">dmm.buffer.MEAS_OVERFLOW_BIT</code> or <code class="monospace">64</code></li><li class="listbullet"><code class="monospace">dmm.buffer.MEAS_CONNECT_QUESTION_BIT</code> or <code class="monospace">128</code></li></ul><p class="iclbody">To see readings in buffer:</p>
+<p class="iclcode"><code class="monospace">printbuffer(</code><span class="monospaceitalic">x</span><code class="monospace">, </code><span class="monospaceitalic">y</span><code class="monospace">, </code><span class="monospaceitalic">bufferVar</span><code class="monospace">) </code></p>
+<p class="iclbody">Where <span class="monospaceitalic">x</span> and <span class="monospaceitalic">y</span> represent the reading numbers to be returned.</p>
+<p class="iclbody">To see readings, channels, and units:</p>
+<p class="iclcode">printbuffer(<span class="monospaceitalic">x</span>, <span class="monospaceitalic">y</span>, <span class="monospaceitalic">bufferVar</span>, <span class="monospaceitalic">bufferVar</span>.channels, <span class="monospaceitalic">bufferVar</span>.units)</p>
+<p class="iclbody">Where <span class="monospaceitalic">x</span> and <span class="monospaceitalic">y</span> represent reading numbers to be returned.</p>
+<p class="iclbody">To see timestamps that are in buffer:</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar</span>.collecttimestamps = 1</p>
+<p class="iclcode">print(x, y, <span class="monospaceitalic">bufferVar</span>, <span class="monospaceitalic">bufferVar</span>.timestamps)</p>
+<p class="iclbody">Where <code class="monospace">x</code> and <code class="monospace">y</code> represent readings and timestamps for elements <code class="monospace">x</code> to <code class="monospace">y</code>.</p>
+<p class="iclbody">To see seconds, fractional seconds, and relative timestamps:</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar</span>.collecttimestamps = 1</p>
+<p class="iclcode">printbuffer(x,y, <span class="monospaceitalic">bufferVar</span>.seconds)</p>
+<p class="iclcode">printbuffer(x,y, <span class="monospaceitalic">bufferVar</span>.fractionalseconds)</p>
+<p class="iclcode">printbuffer(x,y, <span class="monospaceitalic">bufferVar</span>.relativetimestamps)</p>
+<p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">Once you create a reading buffer, using that buffer name for another buffer or variable causes access to the original data to be lost.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">bufferVar = dmm.makebuffer(300)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Creates a user reading buffer named b<code class="monospace">ufferVar</code> with a capacity of 300.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.measurecount = 10 </p>
+<p class="codetable">dmm.measure(bufferVar2)</p>
+<p class="codetable">printbuffer(1, bufferVar2.n, bufferVar2)</p>
+<p class="codetable">bufferVar2 = nil</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Take ten measurements on the active function and store them in the reading buffer <code class="monospace">bufferVar2</code>.</p>
+<p class="tablebodytext">View those ten readings.</p>
+<p class="tablebodytext">Delete <code class="monospace">bufferVar2</code>.</p>
+<p class="tablebodytext">Sample output (actual output depends on how the active function is configured and what you are measuring):</p>
+<p class="codetable">1.134154698e+01, 1.132708486e+01, 1.134213865e+01, 1.134037749e+01, 1.132735758e+01, 1.134099844e+01, 1.133705087e+01, 1.132571507e+01, 1.134000616e+01, 1.133721111e+01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Reading buffers</p>
+<p class="listcommand"><a id="h884" class="jump" title="dmm.measure()" href="16049.htm" target="_self">dmm.measure()</a><code class="monospace"> </code></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+<p class="listcommand"><a id="h1145" class="jump" title="scan.background()" href="16891.htm" target="_self">scan.background()</a></p>
+<p class="listcommand"><a id="h1140" class="jump" title="scan.execute()" href="16893.htm" target="_self">scan.execute()</a></p>
+
+

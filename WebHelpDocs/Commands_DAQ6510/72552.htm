@@ -1,0 +1,108 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> scan.monitor.mode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="72561.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="72474.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t72552" class="heading2-icl">scan.monitor.mode</h2>
+<p class="bodyzero">This attribute determines if a scan starts immediately when triggered or after measurements reach a set value.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">scan.MODE_OFF</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = scan.monitor.mode</p>
+<p class="iclcode">scan.monitor.mode = <em class="emphasis">value</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The value to use to start the scan:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">scan.MODE_OFF</code>: Start the scan without waiting for a specific value</li><li class="tablelistbullet9pt"><code class="monospace">scan.MODE_HIGH</code>: Start the scan when the measurement exceeds the value set by <code class="monospace">scan.monitor.limit.high.value</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.MODE_LOW</code>: Start the scan when the measurement is below the value set by <code class="monospace">scan.monitor.limit.low.value</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.MODE_OUTSIDE</code>: Start the scan when the measurement is less than the lower limit or more than the upper limit.</li><li class="tablelistbullet9pt"><code class="monospace">scan.MODE_WINDOW</code>: Start the scan when the measurement is between the lower limit and the upper limit</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command determines if measurements are monitored to start a scan. If measurements are monitored, it also determines if the measurement triggers the start of the scan when it reaches a high value, low value, inside the high and low values, or outside the high and low values. The scan start values are stored in defbuffer2.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">channel.setdmm(&quot;101:105&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_DC_VOLTAGE)</p>
+<p class="codetable">channel.setdmm(&quot;101:105&quot;, dmm.ATTR_MEAS_NPLC, 0.01)</p>
+<p class="codetable">channel.setdmm(&quot;201&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_TEMPERATURE)</p>
+<p class="codetable">scan.monitor.limit.high.value = 28</p>
+<p class="codetable">scan.create(&quot;101:105&quot;)</p>
+<p class="codetable">scan.monitor.mode = scan.MODE_HIGH</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">With 7700 switching modules in slot 1 and slot 2, set up channels 1 to 5 on slot 1 to measure DC voltage with an NPLC of 0.01.</p>
+<p class="tablebodytext">Set up channel 1 in slot 2 to measure temperature.</p>
+<p class="tablebodytext">Set the monitoring channel to be 201.</p>
+<p class="tablebodytext">Set the high limit to 28&nbsp;°C.</p>
+<p class="tablebodytext">Create a scan that includes data for channels 101 to 105.</p>
+<p class="tablebodytext">Set the scan monitor function to allow scanning to start when the measured value exceeds the defined high limit value (28&nbsp;°C).</p>
+<p class="tablebodytext">Initiate the scan, which starts when the temperature of channel 201 is above 28 °C.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h74624" class="jump" title="scan.monitor.limit.high.value" href="72556.htm" target="_self">scan.monitor.limit.high.value</a></p>
+<p class="listcommand"><a id="h74619" class="jump" title="scan.monitor.limit.low.value" href="72561.htm" target="_self">scan.monitor.limit.low.value</a></p>
+<p class="listcommand"><a id="h75071" class="jump" title="scan.monitor.channel" href="72565.htm" target="_self">scan.monitor.channel</a></p>
+
+
+<input id="topicId" type="hidden" value="72552" />
+<input id="topicDescription" type="hidden" value="scan.monitor.mode" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/30/2019 12:24:13 PM" />
+</body>
+</html>

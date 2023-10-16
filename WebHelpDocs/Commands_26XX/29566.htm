@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Standard Event Register </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12328.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12280.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t29566" class="heading3">Standard Event Register</h3>
+<p class="bodytext">The bits used in the Standard Event Register are described as follows:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Bit B0, Operation Complete (OPC): </strong>Set bit indicates that all pending selected device operations are completed and the 2600B instrument is ready to accept new commands. The bit is set in response to an *OPC command. The <code class="monospace">opc()</code> function can be used in place of the *OPC command. See <a id="h14247" class="jump" title="Common commands" href="19498.htm" target="_self">Common commands</a> for details on the *OPC command.</li><li class="listbullet"><strong class="specialbold">Bit B1: </strong>Not used.</li><li class="listbullet"><strong class="specialbold">Bit B2, Query Error (QYE): </strong>Set bit indicates that you attempted to read data from an empty output queue.</li><li class="listbullet"><strong class="specialbold">Bit B3, Device-Dependent Error (DDE):</strong> Set bit indicates that an instrument operation did not execute properly due to some internal condition.</li><li class="listbullet"><strong class="specialbold">Bit B4, Execution Error (EXE): </strong>Set bit indicates that the 2600B instrument detected an error while trying to execute a command.</li><li class="listbullet"><strong class="specialbold">Bit B5, Command Error (CME):</strong> Set bit indicates that a command error has occurred. Command errors include:<ul class="listbullet2"><li class="listbullet2">IEEE Std 488.2 syntax error: The 2600B instrument received a message that does not follow the defined syntax of IEEE&nbsp;Std 488.2.</li><li class="listbullet2">Semantic error: 2600B instrument received a command that was misspelled or received an optional IEEE Std 488.2 command that is not implemented.</li><li class="listbullet2">The instrument received a Group Execute Trigger (GET) inside a program message.</li></ul></li><li class="listbullet"><strong class="specialbold">Bit B6, User Request (URQ): </strong>Set bit indicates that the LOCAL key on the 2600B instrument front panel was pressed.</li><li class="listbullet"><strong class="specialbold">Bit B7, Power ON (PON): </strong>Set bit indicates that the 2600B instrument has been turned off and turned back on since the last time this register was read.</li></ul><p class="bodytext">Commands to program and read the register are summarized below and also in the <a id="h14246" class="jump" title="Status function summary" href="29523.htm" target="_self">Status function summary</a> table.</p>
+<p class="magicfigurecenter"><img id="f26854" src="2600as-901-01b_standardeventregister.png" class="linkedepsandpngtemplate" alt="Standard Event Register" height="385" width="733" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="268" height="0"></td>
+<td width="331" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="600"><p class="tableheading">Standard event commands</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="269"><p class="tableheading">Command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="331"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="269"><p class="tablebodytext"><code class="monospace">*ESR?</code></p>
+<p class="tablebodytext">or</p>
+<p class="tablebodytext"><code class="monospace">print(status.standard.event)</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="331"><p class="tablebodytext">Read Standard Event Status Register.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="269"><p class="tablebodytext"><code class="monospace">*ESE </code><span class="monospaceitalic">mask</span></p>
+<p class="tablebodytext">or</p>
+<p class="tablebodytext"><code class="monospace">status.standard.enable = </code><span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="331"><p class="tablebodytext">Program the Event Status Enable Register:</p>
+<p class="tablebodytext"><span class="monospaceitalic">mask</span><code class="monospace"> </code>= 0 to 255<br>See <a id="h14248" class="jump" title="Status register set contents" href="12354.htm" target="_self">Status register set contents</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="269"><p class="tablebodytext"><code class="monospace">*ESE?</code></p>
+<p class="tablebodytext">or</p>
+<p class="tablebodytext"><code class="monospace">print(status.standard.enable)</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="331"><p class="tablebodytext">Read Event Status Enable Register.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12306.htm" target="_self">Status register sets</a></p><p class="relateditem"><a href="12328.htm" target="_self">System Summary Registers</a></p><p class="relateditem"><a href="12280.htm" target="_self">Operation Status Registers</a></p><p class="relateditem"><a href="13026.htm" target="_self">Questionable Status Registers</a></p><p class="relateditem"><a href="27620.htm" target="_self">Measurement Event Registers</a></p><p class="relateditem"><a href="12282.htm" target="_self">Register programming example</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="29566" />
+<input id="topicDescription" type="hidden" value="Standard Event Register" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:09:10 PM" />
+</body>
+</html>

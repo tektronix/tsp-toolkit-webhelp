@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> File system navigation </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14771.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14859.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t11825" class="heading4">File system navigation</h4>
+<p class="bodytext">The 2600B can use commands from the Lua <code class="monospace">fs</code> library to navigate and list files that are available on a flash drive. These Lua commands are in the <code class="monospace">fs</code> command group in the instrument.</p>
+<p class="bodytext">The <code class="monospace">fs</code> commands make the file system of any given node available to the entire TSP-Link<sup class="superscript">&reg;</sup> system. For example, you can use the command <code class="monospace">node[5].fs.readdir(&quot;.&quot;)</code> to read the contents of the current working directory on node&nbsp;5.</p>
+<p class="bodytext">The root folder of the USB flash drive has the absolute path:</p>
+<p class="bodytext"><code class="monospace">&quot;/usb1/&quot;</code></p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You can use either the slash (<code class="monospace">/</code>) or backslash (<code class="monospace">\</code>) as a directory separator. However, the backslash is also used as an escape character, so if you use it as a directory separator, you generally need to use a double backslash (<code class="monospace">\\</code>) when you are creating scripts or sending commands to the instrument.</p>
+<p class="bodytext">The instrument supports the following Lua <code class="monospace">fs</code> commands:</p>
+<p class="listcommand"><a id="h2703" class="jump" title="fs.chdir()" href="14808.htm" target="_self">fs.chdir()</a></p>
+<p class="listcommand"><a id="h2704" class="jump" title="fs.cwd()" href="14810.htm" target="_self">fs.cwd()</a></p>
+<p class="listcommand"><a id="h14819" class="jump" title="fs.is_dir()" href="14811.htm" target="_self">fs.is_dir()</a></p>
+<p class="listcommand"><a id="h2706" class="jump" title="fs.is_file()" href="14824.htm" target="_self">fs.is_file()</a></p>
+<p class="listcommand"><a id="h14820" class="jump" title="fs.mkdir()" href="14812.htm" target="_self">fs.mkdir()</a></p>
+<p class="listcommand"><a id="h14821" class="jump" title="fs.readdir()" href="14814.htm" target="_self">fs.readdir()</a></p>
+<p class="listcommand"><a id="h14823" class="jump" title="fs.rmdir()" href="14815.htm" target="_self">fs.rmdir()</a></p>
+<p class="bodytext">The following Lua <code class="monospace">fs</code> commands are not supported:</p>
+<p class="bodytext"><code class="monospace">fs.chmod()</code><br><code class="monospace">fs.chown()</code><br><code class="monospace">fs.stat()</code></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14771.htm" target="_self">File I/O</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11825" />
+<input id="topicDescription" type="hidden" value="File system navigation" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:16:48 PM" />
+</body>
+</html>

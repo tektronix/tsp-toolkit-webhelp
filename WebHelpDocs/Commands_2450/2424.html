@@ -1,0 +1,103 @@
+<html>
+<head>
+<title> Operator precedence </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16450.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2427.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h6 class="heading6">Operator precedence</h6>
+<p class="bodytext">Operator precedence in Lua follows the order below (from higher to lower priority):</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">^ </code>(exponentiation)</li><li class="listbullet"><code class="monospace">not, - </code>(unary), ! (logical NOT)</li><li class="listbullet"><code class="monospace">*, /</code>, &lt;&lt;, &gt;&gt;</li><li class="listbullet"><code class="monospace">+, </code><span class="symbols">-</span>, &amp;, |, ^^</li><li class="listbullet"><code class="monospace">.. </code>(concatenation)</li><li class="listbullet"><code class="monospace">&lt;, &gt;, &lt;=, &gt;=, ~=, ==</code></li><li class="listbullet"><code class="monospace">and</code></li><li class="listbullet"><code class="monospace">or</code></li></ul><p class="bodytext">You can use parentheses to change the precedences in an expression. The concatenation (&quot;<code class="monospace">..</code>&quot;) and exponentiation (&quot;<code class="monospace">^</code>&quot;) operators are right associative. All other binary operators are left associative. The examples below show equivalent expressions.</p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="258" height="0"></td>
+<td width="36" height="0"></td>
+<td width="294" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #FFFFFF;border-bottom:1px solid #010101;" colspan="3" width="588"><p class="tableheading">&nbsp;</p>
+<p class="tableheading">Equivalent expressions</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">reading + offset &lt; testValue/2+0.5</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">(reading + offset) &lt; ((testValue/2)+0.5)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">3+reading^2*4</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">3+((reading^2)*4)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">Rdg &lt; maxRdg and lastRdg &lt;=</p>
+<p class="codetable">   expectedRdg</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">(Rdg &lt; maxRdg) and (lastRdg &lt;= expectedRdg)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">-reading^2</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">-(reading^2)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">reading^testAdjustment^2 </p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">reading^(testAdjustment^2)</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="16449.html" target="_self">Operators</a></p><p class="relateditem"><a href="12893.html" target="_self">Logical operators</a></p><p class="relateditem"><a href="16450.html" target="_self">String concatenation</a></p></td>
+</tr>
+</table>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2013, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

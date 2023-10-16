@@ -1,0 +1,135 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12929.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14868.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t12934" class="heading2-icl">InitiatePulseTestDual()</h2>
+<p class="bodyzero">This <a id="h12919" class="jump" title="KIPulse factory script" href="12916.htm" target="_self">KIPulse factory script</a> function initiates the pulse configuration assigned <span class="monospaceitalic">tag1</span> and <span class="monospaceitalic">tag2</span>.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = InitiatePulseTestDual(<span class="monospaceitalic">tag1, tag2</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">f</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A Boolean flag; this flag is <code class="monospace">true</code> when the pulse was successfully configured,<code class="monospace"> false</code> when errors were encountered<code class="monospace"> </code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">msg</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string message; if the <span class="monospaceitalic">f</span> flag is <code class="monospace">false</code>,<code class="monospace"> </code><span class="monospaceitalic">msg</span> contains an error message; if it is<code class="monospace"> true</code>, <code class="monospace">msg</code> contains a string indicating successful configuration</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">tag1</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Numeric identifier of the first pulse configuration to be initiated</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">tag2</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Numeric identifier of the second pulse configuration to be initiated</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The pulse trains associated with the indicated tags are generated simultaneously. This is useful when testing devices such as voltage regulators, where the input signal and output load must be applied to the instrument at the same time. </p>
+<p class="iclbody">When using this function, each <span class="monospaceitalic">tag1</span> pulse encapsulates each <span class="monospaceitalic">tag2</span> pulse in time. Specifically, the <span class="monospaceitalic">tag1</span> pulse transitions from its bias level to its pulse level before the <span class="monospaceitalic">tag2</span> pulse. Both the <span class="monospaceitalic">tag1</span> and <span class="monospaceitalic">tag2</span> pulses return to their respective bias levels at approximately the same time. Measurements for both pulse trains occur at the same time (see the waveform in the figure below).</p>
+<p class="iclbody">To provide this encapsulation, the following rules are enforced:</p>
+<ul class="listbullet2"><li class="listbullet2">The <span class="monospaceitalic">tag1</span> pulse on time, <code class="monospace">ton1</code>, must be configured to be &gt; 40 μs longer than the <span class="monospaceitalic">tag2</span> pulse on time.</li><li class="listbullet2">The <span class="monospaceitalic">tag1</span> and <span class="monospaceitalic">tag2</span> pulse off times, <code class="monospace">toff</code>, must be the same.<p class="magicfigurecenter"><img id="f12935" src="2600s-901-01b_kipulsetsptestscript_initiatepulsetestdual_lr.png" class="linkedepsandpngtemplate" alt="InitiatePulseTestDual" height="262" width="517" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.reset()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.source.rangev = 5</p>
+<p class="codetable">smua.source.rangei = 1</p>
+<p class="codetable">smua.source.levelv = 0</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.measure.rangev = 5</p>
+<p class="codetable">smua.measure.rangei = 1</p>
+<p class="codetable">smua.measure.nplc = 0.01</p>
+<p class="codetable">smua.measure.autozero = smua.AUTOZERO_ONCE</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.nvbuffer1.clear()</p>
+<p class="codetable">smua.nvbuffer1.appendmode = 1</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.source.output = smua.OUTPUT_ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smub.reset()</p>
+<p class="codetable">smub.source.func = smub.OUTPUT_DCAMPS</p>
+<p class="codetable">smub.source.rangei = 1</p>
+<p class="codetable">smub.source.rangev = 5</p>
+<p class="codetable">smub.source.leveli = 0</p>
+<p class="codetable">smub.measure.rangei = 1</p>
+<p class="codetable">smub.measure.rangev = 5</p>
+<p class="codetable">smub.measure.nplc = 0.01</p>
+<p class="codetable">smub.measure.autozero = smub.AUTOZERO_ONCE</p>
+<p class="codetable">smub.nvbuffer1.clear()</p>
+<p class="codetable">smub.nvbuffer1.appendmode = 1</p>
+<p class="codetable">smub.source.output = smub.OUTPUT_ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">f1, msg1 = ConfigPulseVMeasureI(smua, 0, 5, 1, 0.002, 0.2, 10, smua.nvbuffer1, 1)</p>
+<p class="codetable">f2, msg2 = ConfigPulseIMeasureV(smub, 0,-1, 5, 0.001, 0.2, 10, smub.nvbuffer1, 2)</p>
+<p class="codetable">if (f1 == true) and (f2 == true) then</p>
+<p class="codetable">   f3, msg3 = InitiatePulseTestDual(1, 2)</p>
+<p class="codetable">   print(&quot;Initiate message:&quot;, msg3)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;Config errors:&quot;, msg1, msg2)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set up channels A and B for pulse operation, configure pulse trains for each channel, and then initiate the pulse trains if no errors are encountered.</p>
+<p class="tablebodytext">Channel A pulses voltage from a bias level of 0&nbsp;V to pulse level of 5&nbsp;V. The pulse level is present for 2&nbsp;ms, and the bias level for 200&nbsp;ms with a 1&nbsp;A limit setting.</p>
+<p class="tablebodytext">A total of 10 pulses is generated on channel A and the measurement data is stored in<code class="monospace"> smua.nvbuffer1</code>. This pulse train is assigned to <code class="monospace">tag = 1</code>.</p>
+<p class="tablebodytext">Channel B pulses current from a bias level of 0&nbsp;A to pulse level of 1&nbsp;A. The pulse level is present for 1 ms, and the bias level for 200&nbsp;ms with a 5&nbsp;V limit setting.</p>
+<p class="tablebodytext">A total of 10 pulses is generated on channel B, and the measurement data is stored in<code class="monospace"> smub.nvbuffer1</code>. This pulse train is assigned to <code class="monospace">tag = 2</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12925" class="jump" title="ConfigPulseIMeasureV()" href="12926.htm" target="_self">ConfigPulseIMeasureV()</a></p>
+<p class="listcommand"><a id="h12936" class="jump" title="ConfigPulseIMeasureVSweepLin()" href="12937.htm" target="_self">ConfigPulseIMeasureVSweepLin()</a></p>
+<p class="listcommand"><a id="h12942" class="jump" title="ConfigPulseIMeasureVSweepLog()" href="29313.htm" target="_self">ConfigPulseIMeasureVSweepLog()</a></p>
+<p class="listcommand"><a id="h12930" class="jump" title="ConfigPulseVMeasureI()" href="29314.htm" target="_self">ConfigPulseVMeasureI()</a></p>
+<p class="listcommand"><a id="h12939" class="jump" title="ConfigPulseVMeasureISweepLin()" href="12940.htm" target="_self">ConfigPulseVMeasureISweepLin()</a></p>
+<p class="listcommand"><a id="h12945" class="jump" title="ConfigPulseVMeasureISweepLog()" href="12946.htm" target="_self">ConfigPulseVMeasureISweepLog()</a></p>
+
+

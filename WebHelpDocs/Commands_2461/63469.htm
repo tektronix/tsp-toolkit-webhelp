@@ -1,0 +1,123 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.source.pulse.level </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30235.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="63723.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t63469" class="heading2-icl">smu.source.pulse.level</h2>
+<p class="bodyzero">This attribute selects a fixed amplitude for the selected source function when pulsing.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Recall settings<br>Instrument reset<br>Power cycle<br>Source configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Save settings<br>Source configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = smu.source.pulse.level</p>
+<p class="iclcode">smu.source.pulse.level = <span class="monospaceitalic">value</span></p>
+<p class="iclcode"><span class="monospaceitalic">value</span><em class="emphasis"> </em>= smu.source.getattribute(<span class="monospaceitalic">function</span>, smu.ATTR_SRC_PULSE_LEVEL)</p>
+<p class="iclcode">smu.source.setattribute(<span class="monospaceitalic">function</span>, smu.ATTR_SRC_PULSE_LEVEL, <span class="monospaceitalic">value</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source pulse level to set:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: -10.5&nbsp;A to 10.5&nbsp;A </li><li class="tablelistbullet9pt">Voltage: -105&nbsp;V to 105&nbsp;V</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current source: <code class="monospace">smu.FUNC_DC_CURRENT</code></li><li class="tablelistbullet9pt">Voltage source: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets the output level of the voltage or current source pulse when pulsing.</p>
+<p class="iclbody">The sign of the source level dictates the polarity of the source. Positive values generate positive voltage or current from the high terminal of the source relative to the low terminal. Negative values generate negative voltage or current from the high terminal of the source relative to the low terminal.</p>
+<p class="iclbody">If a manual source range is selected, the level cannot exceed the specified range. For example, if the voltage source is on the 2&nbsp;V range, you cannot set the voltage source level to 3&nbsp;V. When autorange is selected, the amplitude can be set to any level supported by the instrument.</p>
+<p class="iclbody">Use this command with a source configuration list to build a custom pulse sweep list that has unique pulse level points. Then use that custom source configuration list as a parameter to the <code class="monospace">smu.source.pulsesweeplist()</code> command to configure the instrument for the pulse sweep.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smu.source.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.source.configlist.create(&quot;CustomVoltSweep&quot;)</p>
+<p class="codetable">smu.source.pulse.level = 1.17</p>
+<p class="codetable">smu.source.configlist.store(&quot;CustomVoltSweep&quot;)</p>
+<p class="codetable">smu.source.pulse.level = 1.27</p>
+<p class="codetable">smu.source.configlist.store(&quot;CustomVoltSweep&quot;)</p>
+<p class="codetable">smu.source.pulse.level = 1.33</p>
+<p class="codetable">smu.source.configlist.store(&quot;CustomVoltSweep&quot;)</p>
+<p class="codetable">smu.source.pulse.level = 1.39</p>
+<p class="codetable">smu.source.configlist.store(&quot;CustomVoltSweep&quot;)</p>
+<p class="codetable">smu.source.pulsesweeplist(&quot;CustomVoltSweep&quot;, 0.03, smu.OFF, defbuffer1, 1, 3, 0, .005)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the source function to voltage and create a source list called <code class="monospace">CustomVoltSweep</code>.</p>
+<p class="tablebodytext">Set the pulse level to 1.17 V and store that pulse level at the next index (1) in <code class="monospace">CustomVoltSweep</code>.</p>
+<p class="tablebodytext">Set the pulse level to 1.27 V and store that pulse level at the next index (2) in <code class="monospace">CustomVoltSweep</code>.</p>
+<p class="tablebodytext">Set the pulse level to 1.33 V and store that pulse level at the next index (3) in <code class="monospace">CustomVoltSweep</code>.</p>
+<p class="tablebodytext">Set the pulse level to 1.39 V and store that pulse level at the next index (4) in <code class="monospace">CustomVoltSweep</code>.</p>
+<p class="tablebodytext">Creates a pulse sweep using the <code class="monospace">CustomVoltSweep</code> source list that steps through four pulse levels three times, for a total of 12 pulses. Each pulse has a width of 30 ms and an off time of 5 ms.  Readings are not taken during this pulse sweep. Start the sweep at index 1. Then query the pulse list. <br>Output: <code class="monospace"> 1.17,1.270000E+00,1.330000E+00,1.390000E+00</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31486" class="jump" title="smu.source.autorange" href="29386.htm" target="_self">smu.source.autorange</a></p>
+<p class="listcommand"><a id="h31489" class="jump" title="smu.source.level" href="29907.htm" target="_self">smu.source.level</a></p>
+<p class="listcommand"><a id="h63734" class="jump" title="smu.source.pulse.xlimit.level" href="63723.htm" target="_self">smu.source.pulse.xlimit.level</a></p>
+<p class="listcommand"><a id="h29388" class="jump" title="smu.source.range" href="29383.htm" target="_self">smu.source.range</a></p>
+
+
+<input id="topicId" type="hidden" value="63469" />
+<input id="topicDescription" type="hidden" value="smu.source.pulse.level" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/10/2019 7:19:39 AM" />
+</body>
+</html>

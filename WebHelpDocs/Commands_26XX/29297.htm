@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Accessing nodes </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12724.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12373.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t29297" class="heading3">Accessing nodes</h3>
+<p class="bodytext">A TSP-Link<sup class="superscript">&reg;</sup> reset command populates the node table. Each instrument in the system corresponds to an entry in this table. Each entry is indexed by the node number of the instrument. The variable <code class="monospace">node[</code><span class="monospaceitalic">N</span><code class="monospace">]</code> (where <span class="monospaceitalic">N</span> is the node number) is used to access any node in the system. For example, node 1 is represented as entry <code class="monospace">node[1]</code> in the node table.</p>
+<p class="bodytext">You can access all the remote commands for a specific node by adding <code class="monospace">node[</code><span class="monospaceitalic">N</span><code class="monospace">].</code> to the beginning of the remote command, where <span class="monospaceitalic">N </span>is the node number. For example, to set the NPLC value for the source&#8209;measure unit (SMU) A on node 1 to 0.1, you could send this command:</p>
+<p class="code"><code class="monospace">node[1].smua.measure.nplc = 0.1</code></p>
+<p class="bodytext">The variable <code class="monospace">localnode</code> is an alias for <code class="monospace">node[</code><span class="monospaceitalic">N</span><code class="monospace">]</code>, where <span class="monospaceitalic">N</span> is the node number of the node on which the code is running. For example, if node 1 is running the code, you can use <code class="monospace">localnode</code> instead of <code class="monospace">node[1]</code>.</p>
+<p class="bodytext">The following programming examples illustrate how to access instruments in the TSP-Link system (shown in TSP&#8209;Link connections):</p>
+<ul class="listbullet"><li class="listbullet">Any one of the following commands reset SMU A of node&nbsp;1 (which, in this example, is the master). The other nodes in the system are not affected.<ul class="listbullet2"><li class="listbullet2"><code class="monospace">smua.reset()</code></li><li class="listbullet2"><code class="monospace">localnode.smua.reset()</code></li><li class="listbullet2"><code class="monospace">node[1].smua.reset()</code></li></ul></li><li class="listbullet">The following command resets SMU A of node 4, which is a subordinate. The other nodes are not affected.<ul class="listbullet2"><li class="listbullet2"><code class="monospace">node[4].smua.reset()</code></li></ul></li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14174.htm" target="_self">TSP-Link system expansion interface</a></p><p class="relateditem"><a href="12382.htm" target="_self">Master and subordinates</a></p><p class="relateditem"><a href="12904.htm" target="_self">TSP-Link nodes</a></p><p class="relateditem"><a href="26814.htm" target="_self">Connections</a></p><p class="relateditem"><a href="12380.htm" target="_self">Initialization</a></p><p class="relateditem"><a href="12389.htm" target="_self">Resetting the TSP-Link network</a></p><p class="relateditem"><a href="12373.htm" target="_self">Using the reset() command</a></p><p class="relateditem"><a href="24381.htm" target="_self">Using the abort command</a></p><p class="relateditem"><a href="12365.htm" target="_self">Triggering with TSP-Link</a></p><p class="relateditem"><a href="14178.htm" target="_self">TSP advanced features</a></p><p class="relateditem"><a href="3240.htm" target="_self">Using groups to manage nodes on TSP-Link network</a></p><p class="relateditem"><a href="3245.htm" target="_self">Running simultaneous test scripts</a></p><p class="relateditem"><a href="3247.htm" target="_self">Using the data queue for real-time communication</a></p><p class="relateditem"><a href="3248.htm" target="_self">Copying test scripts across the TSP-Link network</a></p><p class="relateditem"><a href="3249.htm" target="_self">Removing stale values from the reading buffer cache</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="29297" />
+<input id="topicDescription" type="hidden" value="Accessing nodes" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/29/2021 9:39:27 AM" />
+</body>
+</html>

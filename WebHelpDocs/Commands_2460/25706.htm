@@ -1,0 +1,132 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> bufferVar.capacity </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="76401.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30485.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t25706" class="heading2-icl">bufferVar.capacity</h2>
+<p class="bodyzero">This attribute sets the number of readings a buffer can store.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">bufferCapacity</em> = <em class="emphasis">bufferVar</em>.capacity</p>
+<p class="iclcode"><em class="emphasis">bufferVar</em>.capacity = <em class="emphasis">bufferCapacity</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferCapacity</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The maximum number of readings the buffer can store; set to <code class="monospace">0</code> to maximize the buffer size (see <strong class="specialbold">Details</strong>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command allows you to change or view how many readings a buffer can store. Changing the size of a buffer will cause any existing data in the buffer to be lost.</p>
+<p class="iclbody">If you select <code class="monospace">0</code>, the instrument creates the largest reading buffer possible based on the available memory when the buffer is created.</p>
+<p class="bodytext">The overall capacity of all buffers stored in the instrument can be up to 4,500,000 readings for standard reading buffers and 20,000,000 for compact reading buffers.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="264"><p class="codetable">reset() </p>
+<p class="codetable">testData = buffer.make(500)</p>
+<p class="codetable">capTest = buffer.make(300)</p>
+<p class="codetable">bufferCapacity = capTest.capacity</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(bufferCapacity)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(testData.capacity)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">testData.capacity = 600</p>
+<p class="codetable">print(testData.capacity)</p>
+<p class="codetable">print(defbuffer1.capacity)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Create two user-defined reading buffers: <span class="monospaceitalic">testData</span> and <span class="monospaceitalic">capTest</span>.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Create a variable called <code class="monospace">bufferCapacity</code> to hold the capacity of the <code class="monospace">capTest</code> buffer.</p>
+<p class="tablebodytext">Print <code class="monospace">bufferCapacity</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">300</code></p>
+<p class="tablebodytext">Print the capacity of <code class="monospace">testData</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">500</code></p>
+<p class="tablebodytext">Changes the capacity of <code class="monospace">testData</code> to 600.</p>
+<p class="tablebodytext">Print the capacity of <code class="monospace">testData</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">600</code></p>
+<p class="tablebodytext">Print the capacity of the default buffer <code class="monospace">defbuffer1</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">10000</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h33983" class="jump" title="buffer.delete()" href="33981.htm" target="_self">buffer.delete()</a></p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h33664" class="jump" title="bufferVar.clear()" href="30485.htm" target="_self">bufferVar.clear()</a></p>
+<p class="listcommand"><a id="h17646" class="jump" title="print()" href="17645.htm" target="_self">print()</a></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+
+
+<input id="topicId" type="hidden" value="25706" />
+<input id="topicDescription" type="hidden" value="bufferVar.capacity" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 8:02:50 AM" />
+</body>
+</html>

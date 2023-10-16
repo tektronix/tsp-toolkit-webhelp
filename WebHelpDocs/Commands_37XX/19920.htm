@@ -1,0 +1,109 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="20157.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="20158.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t19920" class="heading2-icl">bufferVar.readings</h2>
+<p class="bodyzero">This attribute contains the readings stored in a specified reading buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Clearing the buffer<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">USB flash drive using dmm.savebuffer or dmm.appendbuffer</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">reading</span> = <span class="monospaceitalic">bufferVar</span>.readings[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">reading</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The value of the reading in the specified reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading number <span class="monospaceitalic">N</span>; can be any value from 1 to the number of readings in the buffer; use the <span class="monospaceitalic">bufferVar.</span><code class="monospace">n</code> command to determine the number of readings in the&nbsp;buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <span class="monospaceitalic">bufferVar</span><code class="monospace">.readings</code> buffer recall attribute is like an array (a Lua table) of the readings stored in the reading buffer. This array holds the same data that is returned when the reading buffer is accessed directly; that is, <code class="monospace">rb[2]</code> and <code class="monospace">rb.readings[2]</code> access the same value.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">reset() </p>
+<p class="codetable">testData = dmm.makebuffer(1000)</p>
+<p class="codetable">testData.collectchannels = 1</p>
+<p class="codetable">dmm.nplc = 0.5</p>
+<p class="codetable">dmm.range = 0</p>
+<p class="codetable">dmm.configure.set(&quot;Dcv_100mV&quot;)</p>
+<p class="codetable">dmm.setconfig(&quot;slot2&quot;, &quot;Dcv_100mV&quot;)</p>
+<p class="codetable">scan.create(&quot;2035:2040&quot;)</p>
+<p class="codetable">scan.execute(testData)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(testData.readings[1])</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">printbuffer(1, 6, testData.readings)</p>
+<p class="codetable">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">This example creates a reading buffer named <code class="monospace">testData</code>, configures the buffer to collect channel data, sets and saves the DMM configuration, creates a scan list, and then runs the scan.</p>
+<p class="tablebodytext">The <code class="monospace">print()</code> command then outputs the first reading in the reading buffer. </p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">6.239269805e-07</code><br></p>
+<p class="tablebodytext">The <code class="monospace">printbuffer()</code> command then outputs the readings for measurements 1 to 6 in the reading buffer. </p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">6.239269805e&#8209;07, 6.943093615e&#8209;07, 4.954026325e&#8209;07, 7.432710179e&#8209;07, 6.943093615e&#8209;07, 6.331072911e&#8209;07</code></p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">NOTE: An alternative way to use the <code class="monospace">printbuffer()</code> command for this example is <code class="monospace">printbuffer(1, 6, testData)</code>, because &quot;<code class="monospace">readings</code>&quot; is an optional parameter and is assumed if it has not been specified.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h20227" class="jump" title="bufferVar.formattedreadings" href="20155.htm" target="_self">bufferVar.formattedreadings</a></p>
+<p class="listcommand"><a id="h20228" class="jump" title="bufferVar.fractionalseconds" href="20156.htm" target="_self">bufferVar.fractionalseconds</a></p>
+<p class="listcommand"><a id="h20230" class="jump" title="bufferVar.relativetimestamps" href="20158.htm" target="_self">bufferVar.relativetimestamps</a></p>
+<p class="listcommand"><a id="h20231" class="jump" title="bufferVar.seconds" href="20159.htm" target="_self">bufferVar.seconds</a></p>
+<p class="listcommand"><a id="h20172" class="jump" title="bufferVar.statuses" href="19921.htm" target="_self">bufferVar.statuses</a></p>
+<p class="listcommand"><a id="h20232" class="jump" title="bufferVar.times" href="20160.htm" target="_self">bufferVar.times</a></p>
+<p class="listcommand"><a id="h20233" class="jump" title="bufferVar.units" href="20161.htm" target="_self">bufferVar.units</a></p>
+<p class="listcommand">Reading buffers</p>
+
+

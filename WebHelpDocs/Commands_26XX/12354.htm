@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Status register set contents </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12445.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12350.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12354" class="heading3">Status register set contents</h3>
+<p class="bodytext">Typically, a status register set contains the following registers:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Condition</strong> (<code class="monospace">.condition</code>): A read-only register that is constantly updated to reflect the present operating conditions of the instrument.</li><li class="listbullet"><strong class="specialbold">Enable Register</strong> (<code class="monospace">.enable</code>): A read-write register that allows a summary bit to be set when an enabled event occurs.</li><li class="listbullet"><strong class="specialbold">Event Register</strong> (<code class="monospace">.event</code>): A read-only register that sets a bit to 1 when the applicable event occurs. If the enable register bit for that event is also set, the summary bit of the register is set to&nbsp;1.</li><li class="listbullet"><strong class="specialbold">Negative Transition Register (NTR) </strong>(<code class="monospace">.ntr</code>): When a bit is set in this read-write register, it enables a 1 to 0 change in the corresponding bit of the condition register to cause the corresponding bit in the event register to be set.</li><li class="listbullet"><strong class="specialbold">Positive Transition Register (PTR)</strong> (<code class="monospace">.ptr</code>): When a bit is set in this read-write register, it enables a 0 to 1 change in the corresponding bit of the condition register to cause the corresponding bit in the event register to be set.</li></ul><p class="bodytext">An event is represented by a condition register bit changing from a 1&nbsp;to&nbsp;0 or 0&nbsp;to&nbsp;1. When an event occurs and the appropriate NTR or PTR bit is set, the corresponding event register bit is set to&nbsp;1. The event bit remains latched to 1 until the event register is read or the status model is reset. When an event register bit is set and its corresponding enable bit is set, the summary bit of the register is set to&nbsp;1. This, in turn, sets a bit in a higher&#8209;level condition register, potentially cascading to the associated summary bit of the Status Byte Register.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12445.htm" target="_self">Overview</a></p><p class="relateditem"><a href="12350.htm" target="_self">Queues</a></p><p class="relateditem"><a href="29523.htm" target="_self">Status function summary</a></p><p class="relateditem"><a href="12308.htm" target="_self">Status model diagrams</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12354" />
+<input id="topicDescription" type="hidden" value="Status register set contents" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:13:55 PM" />
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> External reference junction </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="1530.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29985.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t2878" class="heading4">External reference junction</h4>
+<p class="bodytext">Thermocouple readings using the rear terminals can be configured to use an external reference junction setting. The DMM6500 assumes the external reference junction is connected to channel&nbsp;1. It is recommended that this channel be configured for thermistor or RTD temperature measurements. However, the instrument does not verify the configuration. Each time a reading is made on the external reference junction channel, it is used as the new external reference junction value in subsequent external reference readings. External reference readings work with <code class="monospace">channel.close</code> and scanning.</p>
+<p class="bodytext">For nonsimulated thermocouple measurements, first make a thermistor or RTD measurement before enabling the external reference junction.</p>
+<p class="bodytext">The following code shows how to set up an external reference junction using TSP commands.</p>
+<p class="code">reset()</p>
+<p class="code">channel.setdmm(&quot;1&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_TEMPERATURE)</p>
+<p class="code">channel.setdmm(&quot;1&quot;, dmm.ATTR_MEAS_TRANSDUCER, dmm.<code class="monospace">TRANS_THREERTD)</code></p>
+<p class="code">channel.setdmm(&quot;1&quot;, dmm.ATTR_MEAS_THREE_RTD, dmm.RTD_D100, dmm.<code class="monospace">ATTR_MEAS_SIM_REF_TEMP</code>, 30)</p>
+<p class="code">channel.setdmm(&quot;1&quot;, dmm.ATTR_MEAS_OPEN_DETECTOR, dmm.ON, dmm.ATTR_MEAS_OFFCOMP_ENABLE, dmm.ON)</p>
+<p class="code">channel.setdmm(&quot;1&quot;, dmm.ATTR_MEAS_REF_JUNCTION, dmm.REFJUNCT_EXTERNAL)</p>
+<p class="code">scan.measurecount = 1</p>
+<p class="code">extRefJunc = buffer.make(20)</p>
+<p class="code">buffer.clearstats()</p>
+<p class="code">buffer.saveappend(extRefJunc, &quot;/usb1/MyData.csv&quot;)</p>
+<p class="code">channel.close(&quot;1&quot;)</p>
+<p class="code">dmm.measure()</p>
+<p class="code">channel.close(&quot;2&quot;)</p>
+<p class="code">for i = 1, 4 do</p>
+<p class="code">   print(dmm.measure())</p>
+<p class="code">end</p>
+<p class="code">channel.open(&quot;allslots&quot;)</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="1528.htm" target="_self">Reference junctions</a></p><p class="relateditem"><a href="1529.htm" target="_self">Simulated reference junction</a></p><p class="relateditem"><a href="1530.htm" target="_self">Internal reference junction</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="2878" />
+<input id="topicDescription" type="hidden" value="External reference junction" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/27/2019 3:36:44 PM" />
+</body>
+</html>

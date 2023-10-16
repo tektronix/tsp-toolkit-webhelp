@@ -1,0 +1,72 @@
+<html><head><title> channel.connectsequential </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17407.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17222.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.connectsequential</h2>
+<p class="bodyzero">This attribute controls whether or not channels are closed sequentially.</p>
+<table width="818" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="240"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">System reset</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="240"><p class="tablebodytextsmall">channel.OFF</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">sequential</em> = channel.connectsequential</p>
+<p class="iclcode">channel.connectsequential = <em class="emphasis">sequential</em></p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">sequential</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><ul class="tablelistbullet"><li class="tablelistbullet"><code class="monospace">channel.OFF</code> or <code class="monospace">0</code>: Disable sequential connections</li><li class="tablelistbullet"><code class="monospace">channel.ON</code> or <code class="monospace">1</code>: Enable sequential connections</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">When channel.connectsequential is enabled, the list of channel actions is acted on sequentially. No two relays are opened or closed simultaneously.</p>
+<p class="bodytext">Using a sequential close allows you to determine the time for a close operation to happen. For example, if you close three channels and each takes 4 ms to closej (assuming no additional user delay times), with sequential on, it will take 12 ms. With sequential off, it may be 4, 8 or 12 ms, depending on whether or not the card can close multiple channels at once.</p>
+<p class="bodytext">The order in which channels are opened or closed is not guaranteed with sequential off.</p>
+<p class="bodytext">The sequential setting affects all channels in the instrument.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="435"><p class="codetable">channel.connectsequential = channel.ON</p>
+</td>
+<td width="308"><p class="tablebodytext">Specifies that channels close sequentially.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h1830" class="jumptemplate" title="channel.connectrule" href="17407.html" target="_self">channel.connectrule</a></p>
+<p class="iclbody">Switch operation</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

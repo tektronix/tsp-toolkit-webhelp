@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Using TSP-Net with any ethernet-enabled instrument </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14185.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12884.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t14186" class="heading3">Using TSP-Net with any ethernet-enabled instrument</h3>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Refer to <a id="h21768" class="jump" title="TSP command reference" href="2600B_TSP_command_reference.htm" target="_self">TSP command reference</a> for details about the commands presented in this&nbsp;section.</p>
+<p class="bodytext">The 2600B LAN port is auto&#8209;sensing (Auto-MDIX), so you can use either a LAN crossover cable or a LAN straight-through cable to connect directly from the 2600B to an ethernet device or to a hub.</p>
+<p class="headingprocedure">To set up communication to a remote ethernet&#8209;enabled instrument that is TSP<sup class="superscript">&reg;</sup> enabled:</p>
+<ol class="listnumber"><li class="listnumber">Send the following command to configure TSP&#8209;Net to send an abort command when a connection to a TSP instrument is established:</li></ol><p class="code">   tspnet.tsp.abortonconnect = 1</p>
+<p class="listcontinue">If the scripts are allowed to run, the connection is made, but the remote instrument may be busy.</p>
+<ol class="listnumber"><li class="listnumber">Send the command:</li></ol><p class="code"><em class="emphasis">   connectionID</em> = tspnet.connect(<em class="emphasis">ipAddress</em>)</p>
+<p class="listcontinue">Where:</p>
+<ul class="listbullet2"><li class="listbullet2"><span class="monospaceitalic">connectionID</span> is the connection ID that is used as a handle in all other TSP&#8209;Net function calls.</li><li class="listbullet2"><span class="monospaceitalic">ipAddress</span> is the IP address, entered as a string, of the remote instrument.</li></ul><p class="bodytext">See <a id="h14093" class="jump" title="tspnet.connect()" href="14074.htm" target="_self">tspnet.connect()</a> for additional detail.</p>
+<p class="headingprocedure">To set up communication to a remote ethernet&#8209;enabled device that is not TSP enabled:</p>
+<p class="bodytext">Send the command:</p>
+<p class="code"><em class="emphasis">   connectionID</em> = tspnet.connect(<em class="emphasis">ipAddress</em>, <em class="emphasis">portNumber</em>, <em class="emphasis">initString</em>)</p>
+<p class="listcontinue">Where:</p>
+<ul class="listbullet2"><li class="listbullet2"><span class="monospaceitalic">connectionID</span> is the connection ID that is used as a handle in all other <code class="monospace">tspnet</code> function calls.</li><li class="listbullet2"><span class="monospaceitalic">ipAddress</span> is the IP address, entered as a string, of the remote device.</li><li class="listbullet2"><span class="monospaceitalic">portNumber</span> is the port number of the remote device.</li><li class="listbullet2"><span class="monospaceitalic">initString</span> is the initialization string that is to be sent to <span class="monospaceitalic">ipAddress</span>.</li></ul><p class="bodytext">See <a id="h14093_2" class="jump" title="tspnet.connect()" href="14074.htm" target="_self">tspnet.connect()</a> for additional detail.</p>
+<p class="headingprocedure">To communicate to a remote ethernet device from the 2600B:</p>
+<ol class="listnumber"><li class="listnumber">Connect to the remote device using one of the above procedures. If the 2600B cannot make a connection to the remote device, it generates a timeout event. Use <code class="monospace">tspnet.timeout</code> to set the timeout value. The default timeout value is 20&nbsp;s.</li><li class="listnumber">Use <code class="monospace">tspnet.write()</code> or <code class="monospace">tspnet.execute()</code> to send strings to a remote device. If you use:<ul class="listbullet2"><li class="listbullet2"><code class="monospace">tspnet.write()</code>: Strings are sent to the device exactly as indicated, and you must supply any needed termination characters.</li><li class="listbullet2"><code class="monospace">tspnet.execute()</code>: The 2600B appends termination characters to all strings that are sent. Use <code class="monospace">tspnet.termination()</code> to specify the termination character.</li></ul></li><li class="listnumber">To retrieve responses from the remote instrument, use <code class="monospace">tspnet.read()</code>. The 2600B suspends operation until the remote device responds or a timeout event is generated. To check if data is available from the remote instrument, use <code class="monospace">tspnet.readavailable()</code>.</li><li class="listnumber">Disconnect from the remote device using the <code class="monospace">tspnet.disconnect()</code> function. Terminate all remote connections using <code class="monospace">tspnet.reset()</code>.</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="12884.htm" target="_self">Example script</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14184.htm" target="_self">TSP-Net</a></p><p class="relateditem"><a href="14185.htm" target="_self">TSP-Net capabilities</a></p><p class="relateditem"><a href="3381.htm" target="_self">TSP-Net compared to TSP-Link to communicate with TSP-enabled devices</a></p><p class="relateditem"><a href="2767.htm" target="_self">TSP-Net instrument commands: General device control</a></p><p class="relateditem"><a href="2779.htm" target="_self">TSP-Net instrument commands: TSP-enabled device control</a></p><p class="relateditem"><a href="18510.htm" target="_self">Example: Using tspnet commands</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="14186" />
+<input id="topicDescription" type="hidden" value="Using TSP-Net with any ethernet-enabled instrument" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/28/2021 8:53:26 AM" />
+</body>
+</html>

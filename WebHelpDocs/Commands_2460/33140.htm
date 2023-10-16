@@ -1,0 +1,100 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> localnode.access </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="28423.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="32416.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t33140" class="heading2-icl">localnode.access</h2>
+<p class="bodyzero">This attribute contains the type of access users have to the instrument through different interfaces.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">localnode.ACCESS_FULL</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">accessType </span>= localnode.access</p>
+<p class="iclcode">localnode.access = <em class="emphasis">accessType</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">accessType</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The type of access:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Full access for all users from all interfaces: <code class="monospace">localnode.ACCESS_FULL</code></li><li class="tablelistbullet9pt">Allows access by one remote interface at a time with logins required from other interfaces: <code class="monospace">localnode.ACCESS_EXCLUSIVE</code></li><li class="tablelistbullet9pt">Allows access by one remote interface at a time with passwords required on all interfaces: <code class="monospace">localnode.ACCESS_PROTECTED</code></li><li class="tablelistbullet9pt">Allows access by one interface (including the front panel) at a time with passwords required on all interfaces: <code class="monospace">localnode.ACCESS_LOCKOUT</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When access is set to full, the instrument accepts commands from any interface with no login or password.</p>
+<p class="iclbody">When access is set to exclusive, you must log out of one remote interface and log into another one to change interfaces. You do not need a password with this access.</p>
+<p class="iclbody">Protected access is similar to exclusive access, except that you must enter a password when logging&nbsp;in.</p>
+<p class="iclbody">When the access is set to locked out, a password is required to change interfaces, including the front-panel interface.</p>
+<p class="iclbody">Under any access type, if a script is running on one remote interface when a command comes in from another remote interface, the command is ignored and the message &quot;FAILURE: A script is running, use ABORT to stop it&quot; is generated.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">localnode.access = localnode.ACCESS_LOCKOUT</p>
+<p class="codetable"><code class="monospace">login admin</code></p>
+<p class="codetable"><code class="monospace">logout</code></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Set the instrument access to locked out.</p>
+<p class="tablebodytext">Log into the interface using the default password.</p>
+<p class="tablebodytext">Log out of the interface.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h34638" class="jump" title="localnode.password" href="34629.htm" target="_self">localnode.password</a></p>
+
+
+<input id="topicId" type="hidden" value="33140" />
+<input id="topicDescription" type="hidden" value="localnode.access" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 7:27:57 AM" />
+</body>
+</html>

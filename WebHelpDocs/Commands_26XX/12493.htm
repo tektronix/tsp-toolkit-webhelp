@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Pulse current sweep example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12492.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12494.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12493" class="heading4">Pulse current sweep example</h4>
+<p class="bodytext">The programming example below illustrates a pulse sweep.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="384"><p class="codetable">-- Restore 2600B defaults.</p>
+<p class="codetable">smua.reset()</p>
+<p class="codetable">-- Set compliance to 10 V.</p>
+<p class="codetable">smua.source.limitv = 10</p>
+</td>
+<td width="216"><p class="tablebodytext"><strong class="specialbold">1. Configure source functions.</strong></p>
+<p class="tablebodytext">Restores defaults and sets the compliance to 10&nbsp;V.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="384"><p class="codetable">-- Pulse current sweep, 1&nbsp;mA bias,</p>
+<p class="codetable">-- 10&nbsp;mA level, 10&nbsp;ms pulse on, </p>
+<p class="codetable">-- 50&nbsp;ms pulse off, 10 cycles.</p>
+<p class="codetable">PulseIMeasureV(smua, 1e-3, 10e-3, 20e-3, 50e-3, 10)</p>
+</td>
+<td width="216"><p class="tablebodytext"><strong class="specialbold">2. Configure and execute the sweep. </strong></p>
+<p class="tablebodytext">Configures a 10 mA pulse current sweep with a 10 ms pulse on time, a 50 ms pulse off time, and 10 pulse-measure cycles.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="384"><p class="codetable">printbuffer(1, 10, smua.nvbuffer1.readings)</p>
+<p class="codetable">&nbsp;</p>
+</td>
+<td width="216"><p class="tablebodytext"><strong class="specialbold">3. Request readings. </strong></p>
+<p class="tablebodytext">Requests readings from buffer 1.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12491.htm" target="_self">Sweep programming examples</a></p><p class="relateditem"><a href="12492.htm" target="_self">Linear staircase sweep example</a></p><p class="relateditem"><a href="12494.htm" target="_self">List sweep example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12493" />
+<input id="topicDescription" type="hidden" value="Pulse current sweep example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 9:23:06 AM" />
+</body>
+</html>

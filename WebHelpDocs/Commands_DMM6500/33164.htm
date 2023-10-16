@@ -1,0 +1,231 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> bufferVar.statuses </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="56793.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25715.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t33164" class="heading2-icl">bufferVar.statuses</h2>
+<p class="bodyzero">This attribute contains the status values of readings in the reading buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">statusInformation</span> = <span class="monospaceitalic">bufferVar</span>.statuses[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="codetable"><span class="monospaceitalic">statusInformation</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">The status value when reading <span class="monospaceitalic">N</span> of the specified buffer was acquired; refer to <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">The reading number <span class="monospaceitalic">N</span>; can be any value from 1 to the number of readings in the buffer; use the <span class="monospaceitalic">bufferVar.</span><code class="monospace">n</code> command to determine the number of readings in the&nbsp;buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This read-only attribute is an array of status values for the readings in the buffer. The status values are floating-point numbers that encode the status value. Refer to the following table for values.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td colspan="5" width="600"><p class="tableheading">Buffer status bits for sense measurements</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tableheading">Bit (hex)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="tableheading">Name</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tableheading">Decimal</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tableheading">Description</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="tableheading"><span class="monospaceitalic">statusInformation</span> parameter</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="codetable">0x0001</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="codetable">STAT_QUESTIONABLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tablebodytext">Measure status questionable</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="codetable"><code class="monospace">buffer.STAT_QUESTIONABLE</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="codetable">0x0006</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="codetable">STAT_ORIGIN</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tablebodytext">6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tablebodytext">A/D converter from which reading originated; for the DMM6500, this will always be 0 (main) or 2 (digitize))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="codetable"><code class="monospace">buffer.STAT_ORIGIN</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="codetable">0x0008</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="codetable">STAT_TERMINAL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tablebodytext">Measure terminal, front is 1, rear is 0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="codetable"><code class="monospace">buffer.STAT_TERMINAL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="codetable">0x0010</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="codetable">STAT_LIMIT2_LOW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tablebodytext">Measure status limit 2 low</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="codetable"><code class="monospace">buffer.STAT_LIMIT2_LOW</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="codetable">0x0020</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="codetable">STAT_LIMIT2_HIGH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tablebodytext">Measure status limit 2 high</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="codetable"><code class="monospace">buffer.STAT_LIMIT2_HIGH</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="codetable">0x0040</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="codetable">STAT_LIMIT1_LOW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tablebodytext">64</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tablebodytext">Measure status limit 1 low</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="codetable"><code class="monospace">buffer.STAT_LIMIT1_LOW</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="codetable">0x0080</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="codetable">STAT_LIMIT1_HIGH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tablebodytext">Measure status limit 1 high</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="codetable"><code class="monospace">buffer.STAT_LIMIT1_HIGH</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="58"><p class="codetable">0x0100</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="codetable">STAT_START_GROUP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="58"><p class="tablebodytext">256</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="101"><p class="tablebodytext">First reading in a group</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="206"><p class="codetable">buffer.STAT_START_GROUP</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="355"><p class="codetable">reset() </p>
+<p class="codetable">testData = buffer.make(50)</p>
+<p class="codetable">trigger.model.load(&quot;SimpleLoop&quot;, 2, 0, testData)</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">printbuffer(1, 2, testData.statuses)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="245"><p class="tablebodytext">Create a reading buffer named <code class="monospace">testData</code>, configure the instrument to make two measurements, and store the readings in the buffer.</p>
+<p class="tablebodytext">Print the status for the readings in <code class="monospace">testData</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">64, 64</code></p>
+<p class="tablebodytext">Indicating that the status is <code class="monospace">buffer.STAT_LIMIT1_LOW</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h33983" class="jump" title="buffer.delete()" href="33981.htm" target="_self">buffer.delete()</a></p>
+<p class="listcommand"><a id="h33664" class="jump" title="bufferVar.clear()" href="30485.htm" target="_self">bufferVar.clear()</a></p>
+<p class="listcommand"><a id="h17646" class="jump" title="print()" href="17645.htm" target="_self">print()</a></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+
+
+<input id="topicId" type="hidden" value="33164" />
+<input id="topicDescription" type="hidden" value="bufferVar.statuses" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 8:25:10 AM" />
+</body>
+</html>

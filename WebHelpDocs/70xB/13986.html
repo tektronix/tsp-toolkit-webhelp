@@ -1,0 +1,93 @@
+<html><head><title> waitcomplete() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14055.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">waitcomplete()</h2>
+<p class="bodyzero">This function waits for all overlapped commands in a specified group to complete.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">waitecomplete()</p>
+<p class="iclcode">waitcomplete(<em class="emphasis">group</em>)</p>
+<p class="iclspacing"></p>
+<table width="757" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="90"><p class="codetable"><span class="monospaceitalic">group</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="667"><p class="tablebodytext">Specifies which TSP-Link group on which to wait</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function will wait for all previously started overlapped commands to complete. Currently the Models 707B and 708B have no overlapped commands implemented. However, other TSPenabled products like the Models 707B and 708B have overlapped commands. Therefore, when the Model 707B or 708B is a TSP master to a slave device with overlapped commands, use this function to wait until all overlapped operations are completed.</p>
+<p class="iclbody">A group number may only be specified from the master node.</p>
+<p class="iclbody">If no <span class="monospaceitalic">group</span> is specified, the local group is used.</p>
+<p class="iclbody">If 0 is specified for the <span class="monospaceitalic">group</span>, this function waits for all nodes in the system.</p>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="64" width="234" vspace="0" hspace="0" align="middle" border="0"><strong class="specialbold"><br></strong>Any nodes that are not assigned to a group (group number is 0) are part of the master node's group.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="750" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="345"><p class="codetable">waitcomplete()</p>
+</td>
+<td width="405"><p class="tablebodytext">Waits for all nodes in the local group.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="750" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="345"><p class="codetable">waitcomplete(G)</p>
+</td>
+<td width="405"><p class="tablebodytext">Waits for all nodes in group G.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table width="750" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="345"><p class="codetable">waitcomplete(0)</p>
+</td>
+<td width="405"><p class="tablebodytext">Waits for all nodes on the TSP-Link network.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody">None</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

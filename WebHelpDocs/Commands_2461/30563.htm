@@ -1,0 +1,172 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.source.sweeplinear() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="91275.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30565.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t30563" class="heading2-icl">smu.source.sweeplinear()</h2>
+<p class="bodyzero">This function sets up a linear sweep for a fixed number of measurement points.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu.source.sweeplinear(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">start</span>, <span class="monospaceitalic">stop</span>, <span class="monospaceitalic">points</span>)</p>
+<p class="iclcode">smu.source.sweeplinear(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">start</span>, <span class="monospaceitalic">stop</span>, <span class="monospaceitalic">points</span>, <span class="monospaceitalic">sDelay</span>)</p>
+<p class="iclcode">smu.source.sweeplinear(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">start</span>, <span class="monospaceitalic">stop</span>, <span class="monospaceitalic">points</span>, <span class="monospaceitalic">sDelay</span>, <span class="monospaceitalic">count</span>)</p>
+<p class="iclcode">smu.source.sweeplinear(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">start</span>, <span class="monospaceitalic">stop</span>, <span class="monospaceitalic">points</span>, <span class="monospaceitalic">sDelay</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">rangeType</span>)</p>
+<p class="iclcode">smu.source.sweeplinear(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">start</span>, <span class="monospaceitalic">stop</span>, <span class="monospaceitalic">points</span>, <span class="monospaceitalic">sDelay</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">rangeType</span>, <span class="monospaceitalic">failAbort</span>)</p>
+<p class="iclcode">smu.source.sweeplinear(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">start</span>, <span class="monospaceitalic">stop</span>, <span class="monospaceitalic">points</span>, <span class="monospaceitalic">sDelay</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">rangeType</span>, <span class="monospaceitalic">failAbort</span>, <span class="monospaceitalic">dual</span>)</p>
+<p class="iclcode">smu.source.sweeplinear(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">start</span>, <span class="monospaceitalic">stop</span>, <span class="monospaceitalic">points</span>, <span class="monospaceitalic">sDelay</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">rangeType</span>, <span class="monospaceitalic">failAbort</span>, <span class="monospaceitalic">dual</span>, <span class="monospaceitalic">bufferName</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">configListName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that contains the name of the configuration list that the instrument will create for this sweep</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">start</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The voltage or current source level at which the sweep starts:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: -7.35&nbsp;A to 7.35&nbsp;A</li><li class="tablelistbullet9pt">Voltage: -105&nbsp;V to 105&nbsp;V</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">stop</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The voltage or current at which the sweep stops:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: -7.35&nbsp;A to 7.35&nbsp;A</li><li class="tablelistbullet9pt">Voltage: -105&nbsp;V to 105&nbsp;V</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">points</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of source-measure points between the start and stop values of the sweep (2 to 1e6); to calculate the number of source-measure points in a sweep, use the following formula:</p>
+<p class="tablebodytext">Points = [(Stop - Start) / Step] + 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sDelay</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The delay between measurement points; default is <code class="monospace">smu.DELAY_AUTO</code>, which enables autodelay, or a specific delay value from 50&nbsp;µs to 10 ks, or 0 for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">count</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of times to run the sweep; default is <code class="monospace">1</code>:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Infinite loop: <code class="monospace">smu.INFINITE</code></li><li class="tablelistbullet9pt">Finite loop: <code class="monospace">1</code> to <code class="monospace">268,435,455</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">rangeType</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source range that is used for the sweep:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Most sensitive source range for each source level in the sweep: <code class="monospace">smu.RANGE_AUTO</code></li><li class="tablelistbullet9pt">Best fixed range: <code class="monospace">smu.RANGE_BEST</code> (default)</li><li class="tablelistbullet9pt">Present source range for the entire sweep: <code class="monospace">smu.RANGE_FIXED</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">failAbort</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Complete the sweep if the source limit is exceeded: <code class="monospace">smu.OFF</code></p>
+<p class="tablebodytext">Abort the sweep if the source limit is exceeded: <code class="monospace">smu.ON</code> (default)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">dual</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Determines if the sweep runs from start to stop and then from stop to start:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Sweep from start to stop only: <code class="monospace">smu.OFF</code> (default)</li><li class="tablelistbullet9pt">Sweep from start to stop, then stop to start: <code class="monospace">smu.ON</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of a reading buffer; the default buffers (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or the name of a user-defined buffer; if no buffer is specified, this parameter defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When the sweep is started, the instrument sources a specific voltage or current value to the device under test (DUT). A measurement is made for each point of the sweep.</p>
+<p class="iclbody">When the sweep command is sent, it clears any existing trigger models, creates a source configuration list, and populates the trigger model. To run the sweep, initiate the trigger model.</p>
+<p class="iclbody">The sweep continues until the source outputs the specified stop level. At this level, the instrument performs another measurement and then stops the sweep.</p>
+<p class="iclbody">When you specify a delay, a delay block is added to the sweep trigger model. This delay is added to any source delay you may have set. For example, if you set 10&nbsp;ms for the source delay and 25&nbsp;ms for the sweep delay, the actual delay is 35&nbsp;ms.</p>
+<p class="iclbody">The range type specifies the source range that is used for the sweep. You can select the following options:</p>
+<ul class="listbullet"><li class="listbullet">Auto: The instrument automatically goes to the most sensitive source range for each source level in the sweep.</li><li class="listbullet">Best fixed: The instrument selects a single fixed source range that accommodates all the source levels in the sweep. This avoids overshoots during sweeps.</li><li class="listbullet">Fixed: The source remains on the range that is set when the sweep is started. If a sweep point that exceeds the capability of the source range, the source outputs the maximum level for that range.</li></ul><p class="iclbody">You cannot use a writable reading buffer to collect data from a sweep. </p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">smu.source.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.source.range = 20</p>
+<p class="codetable">smu.source.sweeplinear(&quot;VoltLinSweep&quot;, 0, 10, 20, 1e-3, 1, smu.RANGE_FIXED)</p>
+<p class="codetable">smu.measure.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable">smu.measure.range = 100e-6</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Reset the instrument to its defaults.</p>
+<p class="tablebodytext">Set the source function to voltage.</p>
+<p class="tablebodytext">Set the source range to 20&nbsp;V.</p>
+<p class="tablebodytext">Set up a linear sweep that sweeps from 0 to 10 V in 20 steps with a source delay of 1&nbsp;ms, a sweep count of 1, and a fixed source range. Name the configuration list that is created for this sweep <code class="monospace">VoltLinSweep</code>.</p>
+<p class="tablebodytext">Set the measure function to current.</p>
+<p class="tablebodytext">Set the current range to 100 μA.</p>
+<p class="tablebodytext">Start the sweep.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h34567" class="jump" title="trigger.model.initiate()" href="30571.htm" target="_self">trigger.model.initiate()</a></p>
+
+
+<input id="topicId" type="hidden" value="30563" />
+<input id="topicDescription" type="hidden" value="smu.source.sweeplinear()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 12:45:48 PM" />
+</body>
+</html>

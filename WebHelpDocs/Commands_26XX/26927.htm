@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Source V </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="97769.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29581.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t26927" class="heading3">Source V</h3>
+<p class="bodytext">When configured to source voltage (V-source) as shown in the figure below, the 2600B functions as a low-impedance voltage source with current limit capability and can measure current (I-meter) or voltage (V-meter).</p>
+<p class="magicfigurecenter"><img id="f12428" src="2600as-901-01b_sourcevconfiguration_lr.png" class="linkedepsandpngtemplate" alt="Source V configuration" height="447" width="533" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">Sense circuitry is used to monitor the output voltage continuously and make adjustments to the V&#8209;source as needed. The V-meter senses the voltage at the HI / LO terminals (2-wire local sense) or at the device under test (DUT) (4-wire remote sense using the sense terminals) and compares it to the programmed voltage level. If the sensed level and the programmed value are not the same, the V&#8209;source is adjusted accordingly. Remote sense eliminates the effect of voltage drops in the test leads, ensuring that the exact programmed voltage appears at the DUT. With 4-wire sensing enabled, both remote sense leads must be connected or incorrect operation occurs. For the 2601B, 2602B, 2611B, 2612B, 2635B, and 2636B, use contact check to verify that the sense leads are connected (see <a id="h15400" class="jump" title="Contact check measurements" href="29274.htm" target="_self">Contact check measurements</a>).</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="97769.htm" target="_self">Circuit configurations</a></p><p class="relateditem"><a href="29581.htm" target="_self">Source I</a></p><p class="relateditem"><a href="11694.htm" target="_self">Source I measure I, source V measure V</a></p><p class="relateditem"><a href="29583.htm" target="_self">Measure only (voltage or current)</a></p><p class="relateditem"><a href="11457.htm" target="_self">Contact check</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="26927" />
+<input id="topicDescription" type="hidden" value="Source V" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/28/2021 5:18:16 PM" />
+</body>
+</html>

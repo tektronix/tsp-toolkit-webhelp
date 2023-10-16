@@ -1,0 +1,121 @@
+<html><head><title> scan.add() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16240.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16633.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">scan.add()</h2>
+<p class="bodyzero">This function adds a scan step to the scan list.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext"><span class="grayedout">Affected by</span></p>
+</td>
+<td bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext"><span class="grayedout">Where saved</span></p>
+</td>
+<td bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheadingwhitetext"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">scan.add(<em class="emphasis">channelList</em>)</p>
+<p class="iclcode"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">String specifying channels to add using normal channel list syntax</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Use this function to add channels and channel patterns to the present scan list. If the scan list does not exist, it also creates a scan list. See <code class="monospace">scan.create()</code> for information about creating a scan list.</p>
+<p class="iclbody">Channels and channel patterns added using the <code class="monospace">scan.add()</code> function are added to the end of the present list (appended) in the same order as specified in <span class="monospaceitalic">channelList</span>. Specifying multiple channels in <span class="monospaceitalic">channelList</span> adds multiple steps to the scan.</p>
+<p class="iclbody">If an error is encountered as channels are added to the list, subsequent channels in that channel list will not be added.</p>
+<p class="iclsubheading">Example 1</p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="428"><p class="codetable">scan.create()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">for column = 1,5 do</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">   scan.add(channel.createspecifier(1,1,column))</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">end</p>
+</td>
+<td width="315"><p class="tablebodytext">Replaces the active scan list with an empty scan list.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Loops through columns 1 to 5.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Adds five channels to the scan list using the <code class="monospace">channel.createspecifier()</code> command. The scan list now has row 1, columns 1 to 5 on slot&nbsp;1 as the first five steps.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Example 2</p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="428"><p class="codetable">scan.create(&quot;1A01:1A08&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">scan.add(&quot;1A10&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">scan.add(&quot;1A09&quot;)</p>
+</td>
+<td width="315"><p class="tablebodytext">Replaces the active scan list with an empty</p>
+<p class="tablebodytext">scan list, and then adds row A, columns 1 through 8 on slot 1 to the new scan list.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Adds row A, column 10 on slot 1 to the end of the scan list.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Adds row A, column 9 on slot 1 to the end of the scan list.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Scan list now includes channels 1A01 through 1A10, with channels 1A01 through 1A08 in order, followed by channel 1A10, and then channel 1A09.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="428"><p class="codetable">scan.create(&quot;&quot;)</p>
+</td>
+<td width="270"><p class="tablebodytext">Clears the old scan list and creates a new empty scan list.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h1139" class="jumptemplate" title="scan.create()" href="16892.html" target="_self">scan.create()</a></p>
+<p class="iclbody">Scanning</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

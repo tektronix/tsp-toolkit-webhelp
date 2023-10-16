@@ -1,0 +1,123 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16890.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16242.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16633" class="heading2-icl">scan.addimagestep()</h2>
+<p class="bodyzero">This function allows you to include multiple channels in a single scan step.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">scan.addimagestep(&quot;<em class="emphasis">channelList</em>&quot;)</p>
+<p class="iclcode">scan.addimagestep(&quot;<em class="emphasis">channelList</em>&quot;, &quot;<em class="emphasis">dmmConfig</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">String specifying a list of channels</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">dmmConfig</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">String specifying a DMM configuration</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function adds a list of channels to be closed simultaneously in a single step of a scan. An optional DMM configuration can be added to force the scan to take a measurement during the same step.</p>
+<p class="iclbody">This function is an advanced command; the <span class="monospaceitalic">channelList</span> parameter must specify appropriate relays to support the requested DMM configuration, or an invalid measurement will result.</p>
+<p class="iclbody">Unlike <code class="monospace">scan.add()</code>, the paired channels and backplanes necessary for measurement are not automatically added to the step. Use the <code class="monospace">channel.setpole()</code> command to indicate if the paired channel should be added or not. Backplanes assigned to channels by the<code class="monospace"> channel.setbackplane()</code> command are not added to the image step automatically. For example, if a measurement is taken on a 4-wire ohms configuration without designating 4-pole with the <code class="monospace">channel.setpole()</code> command, the corresponding paired channels and backplanes will not be added, and the specified <span class="monospaceitalic">dmmConfig</span> will not cause additional relay closures as it normally would.</p>
+<p class="iclbody">If you have changed the pole setting on any of the channels in the list (using <code class="monospace">channel.setpole()</code>), an additional paired channel is added or removed, as appropriate. For example, to ensure that the proper channels close to enable a 4-wire measurement, set the pole setting in addition to using the 4-wire ohms DMM configuration.</p>
+<p class="iclbody">When a DMM configuration (other than <code class="monospace">&quot;nofunction&quot;</code>) is specified, the instrument will take the appropriate measurement based on the function set in the configuration; if no DMM configuration is specified with the command, no measurement will be taken.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.addimagestep(&quot;1001&quot;, &quot;dcvolts&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Adds a single step that closes channel 1001 and makes a dc voltage measurement. Note that the voltage measurement is inaccurate if this is the only step in the scan because the backplane channels are not closed.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.addimagestep(&quot;1001, 1911&quot;, &quot;dcvolts&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Adds a single step that closes channels 1001 and 1911, and then makes a dc voltage measurement.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.setpole(&quot;1001&quot;, 4)</p>
+<p class="codetable">scan.addimagestep(&quot;1001, 1911&quot;, &quot;dcvolts&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set channel 1001 to 4-pole operation.</p>
+<p class="tablebodytext">Adds a single step that closes channels 1001, 1031, and 1911, and then makes a dc voltage measurement.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.addimagestep(&quot;1101, 2202, 1911&quot;, &quot;dcvolts&quot;) </p>
+<p class="codetable">scan.addimagestep(&quot;1102, 2202, 1911&quot;, &quot;dcvolts&quot;) </p>
+<p class="codetable">scan.addimagestep (&quot;1103, 2202, 1911&quot;,&quot;dcvolts&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Adds three steps with the following actions:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Closes channels 1101, 2202, and 1911, and then makes a dc voltage measurement. </li><li class="tablelistbullet9pt">Opens channel 1101, closes 1102 and maintains 1911 and 2202 closed, and then makes a dc voltage&nbsp;measurement. </li><li class="tablelistbullet9pt">Opens channel 1102, closes 1103 and maintains 1911 and 2202 closed, and then makes a dc voltage&nbsp;measurement.</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h766" class="jump" title="channel.setbackplane()" href="15941.htm" target="_self">channel.setbackplane()</a></p>
+<p class="listcommand"><a id="h773" class="jump" title="channel.setpole()" href="15949.htm" target="_self">channel.setpole()</a></p>
+<p class="listcommand"><a id="h1142" class="jump" title="scan.add()" href="16890.htm" target="_self">scan.add()</a></p>
+<p class="listcommand">Scanning and triggering</p>
+
+

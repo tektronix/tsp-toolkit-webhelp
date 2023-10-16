@@ -1,0 +1,118 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16048.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16043.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16042" class="heading2-icl">dmm.math.enable</h2>
+<p class="bodyzero">This attribute enables or disables math operations on measurements for the selected measurement function.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">0 (dmm.OFF)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.math.enable</p>
+<p class="iclcode">dmm.math.enable = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The math enable setting:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Disable: <code class="monospace">dmm.OFF</code> or <code class="monospace">0</code></li><li class="tablelistbullet9pt">Enable: <code class="monospace">dmm.ON</code> or <code class="monospace">1</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is not available for <code class="monospace">&quot;nofunction&quot;</code>. If you write this attribute for <code class="monospace">&quot;nofunction&quot;</code>, an error message is generated.</p>
+<p class="iclbody">When this command is set to on, the math operation specified by the math format command is performed before completing a measurement.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="312"><p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.reset(&quot;active&quot;)</p>
+<p class="codetable">dmm.measurecount = 5</p>
+<p class="codetable">MathBuffer = dmm.makebuffer(100)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">MathBuffer.appendmode = 1</p>
+<p class="codetable">dmm.measure(MathBuffer)</p>
+<p class="codetable">dmm.math.format = dmm.MATH_MXB</p>
+<p class="codetable">dmm.math.mxb.mfactor = 1e6</p>
+<p class="codetable">dmm.math.mxb.bfactor = 0</p>
+<p class="codetable">dmm.math.mxb.units = &quot;[&quot;</p>
+<p class="codetable">dmm.math.enable = dmm.ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Configure the DMM for DC volts.</p>
+<p class="tablebodytext">Reset DC volts to the default settings.</p>
+<p class="tablebodytext">Set the measure count to 5.</p>
+<p class="tablebodytext">Create a reading buffer named MathBuffer that can store 100 readings.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Set the buffer to append readings.</p>
+<p class="tablebodytext">Take 5 readings and store them in MathBuffer with no math operation.</p>
+<p class="tablebodytext">Enable math operations for mx+b operation, with m set to 1e6 and b set to 0, with units set to micro.</p>
+<p class="codetable">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="312"><p class="codetable">dmm.measure(MathBuffer)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">printbuffer(1, 5, MathBuffer)</p>
+<p class="codetable">printbuffer(6, MathBuffer.n, MathBuffer)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">dmm.measurecount = 1</p>
+<p class="codetable">for x = 1, 3 do </p>
+<p class="codetable">    print(dmm.measure())</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Store the 5 additional readings in MathBuffer with math operations enabled.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">View the readings with and without math operation.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Take 3 additional math readings without using the buffer.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Sample output assuming no load was connected to DMM: </p>
+<p class="tablebodytext">Readings with no math operation:</p>
+<p class="codetable">3.898423119e-07, 4.066727213e-07,    5.122452892e-07,<br>   4.724643216e-07,<br>   4.770544332e-07</p>
+<p class="tablebodytext">Readings with math operation:</p>
+<p class="codetable">5.061251403e-01, 4.158529446e-01,    5.504962196e-01,<br>   3.821921259e-01,<br>   6.132277455e-01</p>
+<p class="codetable">5.367258847e-01</p>
+<p class="codetable">6.040475222e-01</p>
+<p class="codetable">6.132277455e-01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Math calculations</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h894" class="jump" title="dmm.math.format" href="16043.htm" target="_self">dmm.math.format</a></p>
+
+

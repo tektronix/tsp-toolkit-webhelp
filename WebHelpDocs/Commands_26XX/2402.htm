@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Autorun scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2403.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17067.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t2402" class="heading5">Autorun scripts</h5>
+<p class="bodytext">Autorun scripts run automatically when the instrument is turned on. You can set any number of scripts to autorun. The run order for autorun scripts is arbitrary, so make sure the run order is not important.</p>
+<p class="bodytext">As shown in the example below, you can set a script to run automatically by setting the <code class="monospace">.autorun</code> attribute of the script to <code class="monospace">&quot;yes&quot;</code> and then saving the script.</p>
+<p class="bodytext"><strong class="specialbold">Example:</strong></p>
+<p class="code"><span class="monospaceitalic">scriptVar</span>.autorun = &quot;yes&quot;</p>
+<p class="code"><span class="monospaceitalic">scriptVar</span>.save()</p>
+<p class="bodytext">Where: <span class="monospaceitalic">scriptVar</span> is the user-defined name of the script.</p>
+<p class="bodytext">To disable autorun, set the <code class="monospace">autorun</code> attribute of the script to <code class="monospace">no</code> and then save the script.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The <span class="monospaceitalic">scriptVar</span><code class="monospace">.save()</code> command saves the script to nonvolatile memory, which makes the change persistent through a power cycle. See <a id="h17073" class="jump" title="" href="20251.htm" target="_self">Save a user script to nonvolatile memory</a> for more detail.</p>
+<p class="bodytext"><strong class="specialbold">Example: Set a script to run automatically</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">test5.autorun = &quot;yes&quot;</p>
+<p class="codetable">test5.save()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Assume a script named <code class="monospace">test5</code> is in the runtime&nbsp;environment.</p>
+<p class="tablebodytext">The next time the instrument is turned on, <code class="monospace">test5</code> script automatically loads and runs.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="16458.htm" target="_self">Scripts that run automatically</a></p><p class="relateditem"><a href="2403.htm" target="_self">Autoexec script</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="2402" />
+<input id="topicDescription" type="hidden" value="Autorun scripts" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/10/2021 5:03:45 PM" />
+</body>
+</html>

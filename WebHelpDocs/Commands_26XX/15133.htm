@@ -1,0 +1,82 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15132.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="18551.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15133" class="heading2-icl">bufferVar.collecttimestamps</h2>
+<p class="bodyzero">This attribute sets whether or not timestamp values are stored with the readings in the buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0 (disabled)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span><code class="monospace"> = </code><span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps</code></p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps = </code><span class="monospaceitalic">state</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Timestamp value collection status; set to one of the following:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">0</code>: Timestamp value collection disabled (off)</li><li class="tablelistbullet9pt"><code class="monospace">1</code>: Timestamp value collection enabled (on)</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Assigning a value to this attribute enables or disables the storage of timestamps. Reading this attribute returns the state of timestamp collection. </p>
+<p class="iclbody">For dedicated reading buffers, all buffer attributes are saved to nonvolatile memory only when the reading buffer is saved to nonvolatile memory.</p>
+<p class="iclbody">When on, timestamp values are stored with readings in the buffer. This requires four extra bytes of storage for each reading. Turning on additional collection items, such as timestamps (this attribute) and source values, decreases the capacity of a dedicated reading buffer (for example, <code class="monospace">smua.nvbuffer1</code>), but does not change the capacity of a user-defined dynamically allocated buffer.</p>
+<p class="iclbody">The <span class="monospaceitalic">state</span> variable can only be changed when the buffer is empty. Empty the buffer using the <span class="monospaceitalic">bufferVar</span><code class="monospace">.clear()</code> function.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smua.nvbuffer1.collecttimestamps = 1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Include timestamps with readings for dedicated reading buffer 1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15226" class="jump" title="bufferVar.clear()" href="15130.htm" target="_self">bufferVar.clear()</a></p>
+<p class="listcommand"><a id="h96900" class="jump" title="Reading buffers" href="77977.htm" target="_self">Reading buffers</a></p>
+<p class="listcommand"><a id="h15216" class="jump" title="smuX.measure.overlappedY()" href="15120.htm" target="_self">smuX.measure.overlappedY()</a></p>
+<p class="listcommand"><a id="h15220" class="jump" title="smuX.measure.Y()" href="15122.htm" target="_self">smuX.measure.Y()</a></p>
+<p class="listcommand"><a id="h15222" class="jump" title="smuX.nvbufferY" href="15126.htm" target="_self">smuX.nvbufferY</a></p>
+<p class="listcommand"><a id="h15266" class="jump" title="smuX.trigger.measure.Y()" href="15172.htm" target="_self">smuX.trigger.measure.Y()</a></p>
+
+

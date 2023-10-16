@@ -1,0 +1,175 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.setblock() - trigger.BLOCK_MEASURE_DIGITIZE </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="35428.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="35431.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31094" class="heading2-icl">trigger.model.setblock() - trigger.BLOCK_MEASURE_DIGITIZE</h2>
+<p class="bodyzero">This function defines a trigger block that makes or digitizes a measurement.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="78"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.setblock(<span class="monospaceitalic">blockNumber</span>, trigger.BLOCK_MEASURE_DIGITIZE)</p>
+<p class="iclcode">trigger.model.setblock(<span class="monospaceitalic">blockNumber</span>, trigger.BLOCK_MEASURE_DIGITIZE, <span class="monospaceitalic">bufferName</span>)</p>
+<p class="iclcode">trigger.model.setblock(<span class="monospaceitalic">blockNumber</span>, trigger.BLOCK_MEASURE_DIGITIZE, <span class="monospaceitalic">bufferName</span>, <span class="monospaceitalic">count</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">blockNumber</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The sequence of the block in the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the buffer, which must be an existing buffer; if no buffer is defined, <code class="monospace"><code class="monospace">defbuffer1</code></code> is used</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">count</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of measure or digitize readings to make before moving to the next block in the trigger model; set to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">A specific value</li><li class="tablelistbullet9pt">Infinite (run continuously until stopped): <code class="monospace"><code class="monospace">trigger.COUNT_INFINITE</code></code></li><li class="tablelistbullet9pt">Stop infinite to stop the block: <code class="monospace"><code class="monospace">trigger.COUNT_STOP</code></code></li><li class="tablelistbullet9pt">Use most recent count value: <code class="monospace"><code class="monospace">trigger.COUNT_AUTO</code></code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">This block triggers measurements based on the measure function that is selected when the trigger model is initiated. When trigger model execution reaches this block:</p>
+<ol class="listnumber"><li class="listnumber">The instrument begins triggering measurements.</li><li class="listnumber">The trigger model execution waits for the measurement to be made.</li><li class="listnumber">The instrument processes the reading and places it into the specified reading buffer.</li></ol><p class="bodytext">If you are defining a user-defined reading buffer, you must create it before you define this block.</p>
+<p class="bodytext">When you set the count to a finite value, trigger model execution does not proceed until all operations are complete.</p>
+<p class="bodytext">If you set the count to infinite, the trigger model executes subsequent blocks when the measurement is made; the triggering of measurements continues in the background until the trigger model execution reaches another measure/digitize block or until the trigger model ends. To use infinite, there must be a block after the measure/digitize block in the trigger model, such as a wait block. If there is no subsequent block, the trigger model stops, which stops measurements.</p>
+<p class="iclbody">Digitized measurements are not a feature on the Model 2470. However, you can use this command to communicate with other Keithley instruments that do offer the digitized measurements feature and to share code with other Keithley instruments.</p>
+<p class="iclbody">Firmware versions of the Model 2470 before version 1.7.0 had a separate measure block. If you have code that is using that block, it works in this version of the Model 2470 firmware.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>If you bring in code that uses a measure or digitize block and does not define the count, the count is set to <code class="monospace"><code class="monospace">1</code></code>. For example, <code class="monospace"><code class="monospace">trigger.model.setblock(1, trigger.BLOCK_MEASURE)</code></code> changes to <code class="monospace"><code class="monospace">trigger.model.setblock(1, trigger.BLOCK_MEASURE_DIGITIZE, defbuffer1, 1)</code></code>.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable"><code class="monospace">smu</code>.measure.func = <code class="monospace">smu</code>.FUNC_DC_VOLTAGE</p>
+<p class="codetable">trigger.model.setblock(1, trigger.BLOCK_BUFFER_CLEAR, defbuffer1)</p>
+<p class="codetable">trigger.model.setblock(2, trigger.BLOCK_DELAY_CONSTANT, 0)</p>
+<p class="codetable">trigger.model.setblock(3, trigger.BLOCK_MEASURE_DIGITIZE, defbuffer1, trigger.COUNT_INFINITE)</p>
+<p class="codetable">trigger.model.setblock(4, trigger.BLOCK_WAIT, trigger.EVENT_DISPLAY)</p>
+<p class="codetable">trigger.model.setblock(5, trigger.BLOCK_MEASURE_DIGITIZE, defbuffer1, trigger.COUNT_STOP)</p>
+<p class="codetable">trigger.model.setblock(6, trigger.BLOCK_NOTIFY, trigger.EVENT_NOTIFY1)</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">print(defbuffer1.n)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Reset the instrument.</p>
+<p class="tablebodytext">Set the function to measure DC voltage.</p>
+<p class="tablebodytext">Set block 1 to clear <code class="monospace"><code class="monospace">defbuffer1</code></code>.</p>
+<p class="tablebodytext">Set block 2 to set a delay of <code class="monospace"><code class="monospace">0</code></code>.</p>
+<p class="tablebodytext">Set block 3 to make measurements infinitely.</p>
+<p class="tablebodytext">Set block 4 to wait until the front-panel TRIGGER key is pressed.</p>
+<p class="tablebodytext">Set block 5 to stop making measurements.</p>
+<p class="tablebodytext">Set block 6 to send a notification.</p>
+<p class="tablebodytext">Start the trigger model.</p>
+<p class="tablebodytext">You must press the front-panel TRIGGER key to stop measurements.</p>
+<p class="tablebodytext">Output the number of readings.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">smu.measure.configlist.create(&quot;countactive&quot;)</p>
+<p class="codetable">smu.measure.count = 2</p>
+<p class="codetable">smu.measure.configlist.store(&quot;countactive&quot;)  -- index1</p>
+<p class="codetable">smu.measure.count = 10</p>
+<p class="codetable">smu.measure.configlist.store(&quot;countactive&quot;)  -- index2</p>
+<p class="codetable">smu.measure.count = 3</p>
+<p class="codetable">smu.measure.configlist.store(&quot;countactive&quot;)  -- index3</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">trigger.model.setblock(1, trigger.BLOCK_CONFIG_NEXT, &quot;countactive&quot;)</p>
+<p class="codetable">trigger.model.setblock(2, trigger.BLOCK_MEASURE_DIGITIZE, defbuffer1, trigger.COUNT_AUTO)</p>
+<p class="codetable">trigger.model.setblock(3, trigger.BLOCK_DELAY_CONSTANT, 1)</p>
+<p class="codetable">trigger.model.setblock(4, trigger.BLOCK_BRANCH_COUNTER, 3, 1)</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">print(defbuffer1.n)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Reset the instrument.</p>
+<p class="tablebodytext">Set up a configuration list named <code class="monospace"><code class="monospace">countactive</code></code>.</p>
+<p class="tablebodytext">Set the measure count to <code class="monospace"><code class="monospace">2</code></code> (replace <code class="monospace">smu.measure.count</code> with <code class="monospace">smu.digitize.count</code> if using a digitize function.)</p>
+<p class="tablebodytext">Store the count in index 1.</p>
+<p class="tablebodytext">Set the measure count to 10.</p>
+<p class="tablebodytext">Store the count in index 2.</p>
+<p class="tablebodytext">Set the measure count to 3.</p>
+<p class="tablebodytext">Store the count in index 3.</p>
+<p class="tablebodytext">Set up trigger model block 1 to call the next index from the <code class="monospace"><code class="monospace">countactive</code></code> configuration list.</p>
+<p class="tablebodytext">Set block 2 to measure or digitize and store the readings in <code class="monospace"><code class="monospace">defbuffer1</code></code>, using the most recent count value.</p>
+<p class="tablebodytext">Set block 3 to add a delay of 1&nbsp;s.</p>
+<p class="tablebodytext">Set block 4 to iterate through the trigger model 3 times, returning to block 1.</p>
+<p class="tablebodytext">Start the trigger model.</p>
+<p class="tablebodytext">Output the number of readings. There should be 15 readings.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h31262" class="jump" title="Measure/Digitize block" href="76318.htm" target="_self">Measure/Digitize block</a></p>
+
+
+<input id="topicId" type="hidden" value="31094" />
+<input id="topicDescription" type="hidden" value="trigger.model.setblock() &#0151; trigger.BLOCK_MEASURE_DIGITIZE" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/1/2019 8:22:56 AM" />
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16017.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16019.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16018" class="heading2-icl">dmm.configure.recall()</h2>
+<p class="bodyzero">This function recalls a user or factory DMM configuration and replaces attributes in the present configuration with attributes from the recalled version.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">dmm.configure.recall(&quot;<span class="monospaceitalic">configuration</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="636" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="126"><p class="codetable"><span class="monospaceitalic">configuration</span></p>
+</td>
+<td width="510"><p class="tablebodytext">A string that represents the name of the DMM configuration to recall</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command recalls the DMM configuration for one function.</p>
+<p class="iclbody">When a configuration is recalled, the function associated with the configuration becomes active.</p>
+<p class="iclbody">When you recall a DMM configuration, the existing DMM configuration settings for the function are replaced by the settings in the recalled configuration. Settings for other functions are not affected. For example, if the function associated with the configuration was temperature, only temperature settings are recalled. If a factory configuration is recalled, the function's attributes are set to their factory default values.</p>
+<p class="iclbody">The DMM configuration can be user-defined or factory-defined.</p>
+<p class="iclbody">User-defined DMM configurations are set with <code class="monospace">dmm.configure.set()</code>. The factory-defined DMM configurations are:</p>
+<table class="tableintopic" width="468" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="168"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">&quot;accurrent&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;acvolts&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;commonsideohms&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;continuity&quot;</code></li></ul></td>
+<td width="144"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">&quot;dccurrent&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;dcvolts&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;fourwireohms&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;frequency&quot;</code></li></ul></td>
+<td width="156"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">&quot;nofunction&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;period&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;temperature&quot;</code></li><li class="tablelistbullet9pt"><code class="monospace">&quot;twowireohms&quot;</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.reset(&quot;active&quot;) </p>
+<p class="codetable">dmm.nplc = 0.5</p>
+<p class="codetable">dmm.range = 10</p>
+<p class="codetable">dmm.configure.set(&quot;TestDcv&quot;)</p>
+<p class="codetable">dmm.configure.recall(&quot;dcvolts&quot;)</p>
+<p class="codetable">print(dmm.func, dmm.autorange, dmm.range, dmm.nplc)</p>
+<p class="codetable">dmm.configure.recall(&quot;TestDcv&quot;)</p>
+<p class="codetable">print(dmm.func, dmm.autorange, dmm.range, dmm.nplc)</p>
+<p class="codetable">dmm.setconfig(&quot;slot1&quot;, &quot;TestDcv&quot;)</p>
+<p class="codetable">dmm.setconfig(&quot;2001:2015&quot;, &quot;TestDcv&quot;)</p>
+<p class="codetable">dmm.setconfig(&quot;3005&quot;, &quot;TestDcv&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set the DMM to the dc voltage function.</p>
+<p class="tablebodytext">Reset DC volts back to factory defaults.</p>
+<p class="tablebodytext">Set the NPLC for dc voltage volts to 0.5.</p>
+<p class="tablebodytext">Select the 10 V range for dc voltage and disable autorange.</p>
+<p class="tablebodytext">Save a user DMM configuration for dc voltage called &quot;TestDcv&quot;.</p>
+<p class="tablebodytext">Recall and configure the DMM for factory dc voltage.</p>
+<p class="tablebodytext">Output the settings for factory-defined dc voltage.</p>
+<p class="tablebodytext">Recall the user DMM configuration called &quot;TestDcv&quot;.</p>
+<p class="tablebodytext">Output the settings for TestDcv.</p>
+<p class="tablebodytext">Set the DMM configuration for slot 1, channels 2001 to 2005, and channel 3005 to TestDcv.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">dcvolts	1.000000000e+00	1.000000000e+01	1.000000000e+00</p>
+<p class="codetable">dcvolts	0.000000000e+00	1.000000000e+01	5.000000000e-01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h872" class="jump" title="dmm.configure.delete()" href="16016.htm" target="_self">dmm.configure.delete()</a></p>
+<p class="listcommand"><a id="h873" class="jump" title="dmm.configure.query()" href="16017.htm" target="_self">dmm.configure.query()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+
+

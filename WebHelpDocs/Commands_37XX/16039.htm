@@ -1,0 +1,131 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16038.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16040.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16039" class="heading2-icl">dmm.limit[Y].low.fail</h2>
+<p class="bodyzero">This attribute queries for the low test results of limit <span class="monospaceitalic">Y</span>.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="162"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="162"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.limit[<span class="monospaceitalic">Y</span>].low.fail</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The low fail indication of limit <span class="monospaceitalic">Y</span>:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Test passed: 0 (measurement above the low limit)</li><li class="tablelistbullet9pt">Test failed: 1 (measurement below the low limit)</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">1 or 2 for limit number</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is valid for all functions except <code class="monospace">&quot;continuity&quot;</code> and <code class="monospace">&quot;nofunction&quot;</code>. A nil response and an error are generated if the command is received when <code class="monospace">dmm.func</code> is set to either of these functions.</p>
+<p class="iclbody">This attribute returns the results of low limit <span class="monospaceitalic">Y</span> testing. If this is 1 (failed) is returned, the measurement was below the low limit.</p>
+<p class="iclbody">Note that if you are scanning or taking a series of measurements with auto clear (<code class="monospace">dmm.limit[</code><span class="monospaceitalic">Y</span><code class="monospace">].autoclear</code>) enabled for a limit, the last measurement limit dictates the fail indication for the limit. If autoclear is disabled, you can take a series of readings and read fails to see if any of one of the readings failed.</p>
+<p class="iclbody">To use this attribute, you must set the limit to enable.</p>
+<p class="iclbody">If autoclear and limit are not set, the low fail value indicates the results of the last limit test that occurred when limits were enabled.</p>
+<p class="iclbody">In addition to this attribute, you can see the fail indication by reading the measurement event register of the status model. If the readings are stored in a reading buffer, the values are associated with <span class="monospaceitalic">bufferVar</span><code class="monospace">.statuses</code> for the readings.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclbody">This example enables limits 1 and 2 for DC volt measurements. Limit 1 is checking for readings to be between 3 and 5 volts. Limit 2 is checking for the readings to be between 1 and 7 volts. The auto clear feature is disabled, so if any reading is outside these limits, the corresponding fail will be 1 afterwards. Therefore, if any one of the fails is 1, analyze the reading buffer data to find out which reading failed the limits.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">dmm.func = &quot;dcvolts&quot;                 -- set the DMM for DC volts functionality</p>
+<p class="codetable">dmm.reset(&quot;active&quot;)                  -- reset DC volts to default settings</p>
+<p class="codetable">dmm.range = 10                       -- set the range to 10 volts</p>
+<p class="codetable">dmm.nplc = 0.1                       -- set the nplc to 0.1</p>
+<p class="codetable">dmm.limit[1].autoclear = dmm.OFF     -- disable auto clearing for limit 1</p>
+<p class="codetable">dmm.limit[1].high.value = 5          -- set high limit on 1 to fail if reading</p>
+<p class="codetable">                                     -- exceeds 5 volts</p>
+<p class="codetable">dmm.limit[1].low.value = 3           -- set low limit on 1 to fail if reading</p>
+<p class="codetable">                                     -- is less than 3 volts</p>
+<p class="codetable">dmm.limit[1].enable = dmm.ON         -- enable limit 1 checking for DC volt</p>
+<p class="codetable">                                     -- measurements</p>
+<p class="codetable">dmm.limit[2].autoclear = dmm.OFF     -- disable auto clearing for limit 2</p>
+<p class="codetable">dmm.limit[2].high.value = 7          -- set high limit on 2 to fail if reading</p>
+<p class="codetable">                                     -- exceeds 7 volts</p>
+<p class="codetable">dmm.limit[2].low.value = 1           -- set low limit on 2 to fail if reading</p>
+<p class="codetable">                                     -- is less than 1 volts</p>
+<p class="codetable">dmm.limit[2].enable = dmm.ON         -- enable limit 2 checking for DC volt</p>
+<p class="codetable">                                     -- measurements</p>
+<p class="codetable">dmm.measurecount = 50                -- set the measure count to 50</p>
+<p class="codetable">LimitBuffer = dmm.makebuffer(100)    -- create a reading buffer that can store</p>
+<p class="codetable">                                     -- 100 readings</p>
+<p class="codetable">dmm.measure(LimitBuffer)             -- take 50 readings and store them in</p>
+<p class="codetable">                                     -- LimitBuffer</p>
+<p class="codetable">                                     -- then check if any of the 50 readings</p>
+<p class="codetable">                                     -- were outside of the limits</p>
+<p class="codetable">print(&quot;limit 1 high fail = &quot; .. dmm.limit[1].high.fail)</p>
+<p class="codetable">print(&quot;limit 1 low fail = &quot; .. dmm.limit[1].low.fail)</p>
+<p class="codetable">print(&quot;limit 2 high fail = &quot; .. dmm.limit[2].high.fail)</p>
+<p class="codetable">print(&quot;limit 2 low fail = &quot; .. dmm.limit[2].low.fail)</p>
+<p class="codetable">dmm.limit[1].clear()                 -- clear limit 1 conditions</p>
+<p class="codetable">dmm.limit[2].clear()                 -- clear limit 2 conditions</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sample output that shows all readings are within limit values (all readings between 3 and 5 volts):</p>
+<p class="codetable">limit 1 high fail = 0</p>
+<p class="codetable">limit 1 low fail = 0</p>
+<p class="codetable">limit 2 high fail = 0</p>
+<p class="codetable">limit 2 low fail = 0</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Sample output showing at least one reading failed limit 1 high values (a 6 volt reading would cause this condition or a reading greater than 5 but less than 7.):</p>
+<p class="codetable">limit 1 high fail = 1</p>
+<p class="codetable">limit 1 low fail = 0</p>
+<p class="codetable">limit 2 high fail = 0</p>
+<p class="codetable">limit 2 low fail = 0</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Sample output showing at least one reading failed limit 1 and 2 low values (a 0.5 volts reading would cause this condition or a reading less than 1):</p>
+<p class="codetable">limit 1 high fail = 0</p>
+<p class="codetable">limit 1 low fail = 1</p>
+<p class="codetable">limit 2 high fail = 0</p>
+<p class="codetable">limit 2 low fail = 1</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Reading buffers</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h16110" class="jump" title="dmm.limit[Y].autoclear" href="16034.htm" target="_self">dmm.limit[Y].autoclear</a></p>
+
+

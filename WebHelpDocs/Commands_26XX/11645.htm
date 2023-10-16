@@ -1,0 +1,77 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Dual buffer example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11643.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11655.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t11645" class="heading4">Dual buffer example</h4>
+<p class="bodytext">The programming example below shows a script that stores current and voltage readings using buffer&nbsp;1 for current and buffer 2 for voltage readings. The 2600B stores 100 current and voltage readings and then recalls all 100 sets of readings.</p>
+<p class="code">-- Restore 2600B defaults.</p>
+<p class="code">smua.reset()</p>
+<p class="code">-- Select measure I autorange.</p>
+<p class="code">smua.measure.autorangei = smua.AUTORANGE_ON</p>
+<p class="code">-- Select measure V autorange.</p>
+<p class="code">smua.measure.autorangev = smua.AUTORANGE_ON</p>
+<p class="code">-- Select ASCII data format.</p>
+<p class="code">format.data = format.ASCII</p>
+<p class="code">-- Clear buffer 1.</p>
+<p class="code">smua.nvbuffer1.clear()</p>
+<p class="code">-- Clear buffer 2.</p>
+<p class="code">smua.nvbuffer2.clear()</p>
+<p class="code">-- Set buffer count to 100.</p>
+<p class="code">smua.measure.count = 100</p>
+<p class="code">-- Set measure interval to 0.1 s.</p>
+<p class="code">smua.measure.interval = 0.1</p>
+<p class="code">-- Select source voltage function.</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCVOLTS</p>
+<p class="code">-- Output 1 V.</p>
+<p class="code">smua.source.levelv = 1 </p>
+<p class="code">-- Turn on output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_ON</p>
+<p class="code">-- Store current readings in buffer 1, voltage readings in buffer 2.</p>
+<p class="code">smua.measure.overlappediv(smua.nvbuffer1, smua.nvbuffer2)</p>
+<p class="code">-- Wait for buffer to fill.</p>
+<p class="code">waitcomplete()</p>
+<p class="code">-- Turn off output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_OFF</p>
+<p class="code">-- Output buffer 1 readings 1 to 100.</p>
+<p class="code">printbuffer(1, 100, smua.nvbuffer1)</p>
+<p class="code">-- Output buffer 2 readings 1 to 100.</p>
+<p class="code">printbuffer(1, 100, smua.nvbuffer2)</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11669.htm" target="_self">Recalling readings</a></p><p class="relateditem"><a href="11652.htm" target="_self">Buffer location number</a></p><p class="relateditem"><a href="11665.htm" target="_self">Timestamp</a></p><p class="relateditem"><a href="11643.htm" target="_self">Displaying other buffer readings and statistics</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11645" />
+<input id="topicDescription" type="hidden" value="Dual buffer example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 9:10:00 AM" />
+</body>
+</html>

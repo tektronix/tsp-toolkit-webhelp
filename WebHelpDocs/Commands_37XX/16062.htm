@@ -1,0 +1,113 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16061.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16063.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16062" class="heading2-icl">dmm.rtdalpha</h2>
+<p class="bodyzero">This attribute contains the alpha value of a user-defined RTD.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">3.850550E-03</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.rtdalpha</p>
+<p class="iclcode">dmm.rtdalpha = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The RTD alpha value; the range is 0 to 0.01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is only valid when <code class="monospace"><code class="monospace">dmm.func</code></code> is set to <code class="monospace"><code class="monospace">&quot;temperature&quot;</code></code>. All other functions generate an error and return <code class="monospace"><code class="monospace">nil</code></code> when queried.</p>
+<p class="iclbody">This setting only applies when the transducer type is set to 3 or 4-wire RTD. For other transducer types, the setting is set but not used until the transducer type is set to an RTD type.</p>
+<p class="iclbody">The RTD alpha setting is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to <code class="monospace">&quot;temperature&quot;</code>, the RTD alpha setting you set previously is retained.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The following attributes share common settings and apply to both 3 and 4-wire RTDs: <code class="monospace">dmm.rtdalpha</code>, <code class="monospace">dmm.rtdbeta</code>, <code class="monospace">dmm.rtddelta</code>, and <code class="monospace">dmm.rtdzero</code>. Therefore, when both 3 and 4-wire RTDs are set to USER type for RTD, switching transducers between 3 and 4 will cause both to use the same settings (for example, <code class="monospace">dmm.rtdalpha</code>, <code class="monospace">dmm.rtdbeta</code>). If unique settings are needed, they must be changed, or use two different DMM configurations.</p>
+<p class="iclbody">An error is generated if the value is out of range.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">dmm.func = &quot;temperature&quot;</p>
+<p class="codetable">dmm.transducer = dmm.TEMP_THREERTD</p>
+<p class="codetable">dmm.rtdalpha = 0.005</p>
+<p class="codetable">dmm.transducer = dmm.TEMP_FOURRTD</p>
+<p class="codetable">dmm.rtdalpha = 0.007</p>
+<p class="codetable">dmm.transducer = dmm.TEMP_THREERTD</p>
+<p class="codetable">print(dmm.rtdalpha)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Set an alpha constant for RTD to 0.005 for 3-wire RTD.</p>
+<p class="tablebodytext">Change to 4-wire RTD and change the alpha constant to 0.007.</p>
+<p class="tablebodytext">Switch back to 3-wire RTD. The value has been updated to 0.007.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">7.000000000e-03</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">dmm.func = &quot;temperature&quot; </p>
+<p class="codetable">dmm.transducer = dmm.TEMP_THREERTD </p>
+<p class="codetable">dmm.rtdalpha = 0.005 </p>
+<p class="codetable">dmm.configure.set(&quot;RTD_3wire&quot;)</p>
+<p class="codetable">dmm.transducer = dmm.TEMP_FOURRTD </p>
+<p class="codetable">dmm.rtdalpha = 0.007 </p>
+<p class="codetable">dmm.configure.set(&quot;RTD_4wire&quot;)</p>
+<p class="codetable">dmm.configure.recall(&quot;RTD_3wire&quot;)</p>
+<p class="codetable">print(dmm.transducer, dmm.rtdalpha) </p>
+<p class="codetable">dmm.configure.recall(&quot;RTD_4wire&quot;)</p>
+<p class="codetable">print(dmm.transducer, dmm.rtdalpha)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">This example sets unique alpha constants for 3-wire and 4-wire RTDs by creating two DMM configurations with the settings.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">3.000000000e+00	5.000000000e-03</p>
+<p class="codetable">4.000000000e+00	7.000000000e-03</p>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h1825" class="jump" title="dmm.rtdbeta" href="16063.htm" target="_self">dmm.rtdbeta</a></p>
+<p class="listcommand"><a id="h1826" class="jump" title="dmm.rtddelta" href="16064.htm" target="_self">dmm.rtddelta</a></p>
+<p class="listcommand"><a id="h1827" class="jump" title="dmm.rtdzero" href="16065.htm" target="_self">dmm.rtdzero</a></p>
+<p class="listcommand"><a id="h2026" class="jump" title="dmm.transducer" href="16073.htm" target="_self">dmm.transducer</a></p>
+
+

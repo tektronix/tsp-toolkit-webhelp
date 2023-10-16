@@ -1,0 +1,116 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16021.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16023.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16022" class="heading2-icl">dmm.detectorbandwidth</h2>
+<p class="bodyzero">This attribute sets the AC detector bandwidth setting for the DMM in Hertz.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">300</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.detectorbandwidth</p>
+<p class="iclcode">dmm.detectorbandwidth = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The detector bandwidth in Hertz</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Only applies when <code class="monospace">dmm.func</code> is set to <code class="monospace">&quot;acvolts&quot;</code> or <code class="monospace">&quot;accurrent&quot;</code>.</p>
+<p class="iclbody">If you query this value for any other function, nil is returned.</p>
+<p class="iclbody">When you send this value, the input value is adjusted as follows:</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="276" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tableheading">Write value</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tableheading">Read value </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytextcenter">&lt; 30</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytextcenter">3</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytextcenter">Between 30 and 300 </p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytextcenter">30</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="186"><p class="tablebodytextcenter"><span class="symbols">³</span> 300</p>
+</td>
+<td style="border:1px solid #010101;" width="90"><p class="tablebodytextcenter">300</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">An error is generated:</p>
+<ul class="listbullet"><li class="listbullet">If you send this command for any function other than <code class="monospace">&quot;accurrent&quot;</code> or <code class="monospace">&quot;acvolts&quot;</code></li><li class="listbullet">If you set <code class="monospace">dmm.aperture</code> and the detector bandwidth read value is 30 or less</li><li class="listbullet">If the value is below 3</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="348"><p class="codetable">reset()</p>
+<p class="codetable">dmm.func = &quot;acvolts&quot;</p>
+<p class="codetable">print(dmm.func, dmm.detectorbandwidth)</p>
+<p class="codetable">dmm.detectorbandwidth = 35</p>
+<p class="codetable">print(dmm.func, dmm.detectorbandwidth)</p>
+<p class="codetable">dmm.func = &quot;accurrent&quot;</p>
+<p class="codetable">print(dmm.func, dmm.detectorbandwidth)</p>
+<p class="codetable">dmm.func = &quot;acvolts&quot;</p>
+<p class="codetable">print(dmm.func, dmm.detectorbandwidth)</p>
+<p class="codetable">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="246"><p class="tablebodytext">Sets the detector bandwidth to 35 Hz for AC&nbsp;volts. 35 is adjusted to 30. AC current is still at 300&nbsp;Hz.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">acvolts     3.000000000e+02</p>
+<p class="codetable">acvolts     3.000000000e+01</p>
+<p class="codetable">accurrent   3.000000000e+02</p>
+<p class="codetable">acvolts     3.000000000e+01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h908" class="jump" title="dmm.aperture" href="15969.htm" target="_self">dmm.aperture</a></p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+
+

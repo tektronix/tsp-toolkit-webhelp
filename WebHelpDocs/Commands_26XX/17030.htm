@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Retrieve source code one line at a time </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2405.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16757.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t17030" class="heading4">Retrieve source code one line at a time</h4>
+<p class="bodytext">To retrieve the source code one line at a time, send the <span class="monospaceitalic">scriptVar</span><code class="monospace">.list()</code> command. When this command is received, the instrument sends the entire script. Each line of the script is sent as a separate response message. The output includes the <code class="monospace">loadscript</code> or <code class="monospace">loadandrunscript</code> and <code class="monospace">endscript</code>&nbsp;keywords.</p>
+<p class="bodytext">After retrieving the source code, you can modify and save the command lines as a user script under the same name or a new name.</p>
+<p class="bodytext">To retrieve the source code of a script one line at a time, send the command:</p>
+<p class="code"><em class="emphasis">scriptVar</em>.list()</p>
+<p class="bodytext">Where <span class="monospaceitalic">scriptVar</span> is the name of the script.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">To retrieve the commands in the anonymous script, use <code class="monospace">script.anonymous.list()</code>.</p>
+<p class="bodytext"><strong class="specialbold">Example: Retrieve source code one line at a time</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="168"><p class="codetable">test.list()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Retrieve the source of a script named &quot;<code class="monospace">test</code>&quot;.</p>
+<p class="tablebodytext">The output looks similar to:</p>
+<p class="codetable">loadscript test</p>
+<p class="codetable">display.clear()</p>
+<p class="codetable">display.settext(&quot;This is a test&quot;)</p>
+<p class="codetable">print(&quot;This is a test&quot;)</p>
+<p class="codetable">endscript </p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2405.htm" target="_self">Retrieve a user script</a></p><p class="relateditem"><a href="16757.htm" target="_self">Retrieve a script as a single string</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="17030" />
+<input id="topicDescription" type="hidden" value="Retrieve source code one line at a time" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:32:43 PM" />
+</body>
+</html>

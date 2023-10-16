@@ -1,0 +1,3273 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Model 2400 SCPI command support </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29609.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29305.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t29304" class="heading3">Model 2400 SCPI command support</h3>
+<p class="bodytext">The following table provides a listing of Model 2400 commands and emulation support for the 2600B. In the supported column: Yes indicates the command is fully supported; No indicates the command is not supported; Partially indicates the command is supported, but with stipulations as noted in <a id="h29306" class="jump" title="Model 2400 SCPI command compatibility" href="29305.htm" target="_self">Model 2400 SCPI command compatibility</a>.</p>
+<table class="tableintopic" width="606" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="66"><p class="tableheadingsmall">Subsystem</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="474"><p class="tableheadingsmall"><code class="monospace">Command</code></p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="66"><p class="tableheadingsmall">Supported</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:DATA:LATest?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:DATA?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession]:CATalog?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession][:DEFine] &lt;form&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession][:DEFine]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession]:DELete:ALL</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession]:DELete[:SELected] &lt;SPD&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession]:NAME &lt;SPD&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH[:EXPRession]:NAME?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH:UNITs &lt;name&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:MATH:UNITs?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate[1]:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:BCONtrol IMMediate|END</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:BCONtrol?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:CLEar:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:CLEar:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:CLEar[:IMMediate]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:FAIL:SMLocation &lt;NRf&gt;|NEXT</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:FAIL:SMLocation?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:FAIL:SOURce2 &lt;NRf&gt;|&lt;NDN&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:FAIL:SOURce2?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:MODE GRADing|SORTing</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:MODE?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:PASS:SMLocation &lt;NRf&gt;|NEXT</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:PASS:SMLocation?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:PASS:SOURce2 &lt;NRf&gt;|&lt;NDN&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:CLIMits:PASS:SOURce2?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:DATA?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:DATA:LATest?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:FEED CALCulate[1]|VOLTage|CURRent|RESistance</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:FEED?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[1]:COMPliance:FAIL IN|OUT</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[1]:COMPliance:FAIL?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[1]:COMPliance:SOURce2 &lt;NRf&gt;|&lt;NDN&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[1]:COMPliance:SOURce2?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[1]:FAIL?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[1]:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[1]:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:FAIL?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:LOWer[:DATA] &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:LOWer[:DATA]? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:LOWer:SOURce2 &lt;NRf&gt;|&lt;NDN&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:LOWer:SOURce2?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:PASS:SOURce2 &lt;NRf&gt;|&lt;NDN&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:PASS:SOURce2?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:UPPer[:DATA] &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:UPPer[:DATA]? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:UPPer:SOURce2 &lt;NRf&gt;|&lt;NDN&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit[2|3|5-12]:UPPer:SOURce2?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit4:FAIL?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit4:SOURce2 &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit4:SOURce2?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit4:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:LIMit4:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:NULL:ACQuire</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:NULL:OFFSet &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:NULL:OFFSet? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:NULL:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate2:NULL:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate3:DATA?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate3:FORMat MEAN|SDEViation|MAXimum|MINimum|PKPK</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:CALCulate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CALCulate3:FORMat?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:CNDisplay</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:DIGits 4|5|6|7|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:DIGits? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:ENABle &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:ENABle?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay[:WINDow[1]]:ATTRibutes?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay[:WINDow[1]]:DATA?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay[:WINDow[1]]:TEXT:DATA &lt;SPD&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay[:WINDow[1]]:TEXT:DATA?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay[:WINDow[1]]:TEXT:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay[:WINDow[1]]:TEXT:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:WINDow2:ATTRibutes?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:WINDow2:DATA?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:WINDow2:TEXT:DATA &lt;SPD&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:WINDow2:TEXT:DATA?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:WINDow2:TEXT:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partial</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:DISPlay</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:DISPlay:WINDow2:TEXT:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:BORDer NORMal|SWAPped</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:BORDer?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat[:DATA] ASCii|REAL|SREal[,&lt;NRf&gt;]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat[:DATA]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:ELEMents:CALCulate CALC|TIME|STATus</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:ELEMents:CALCulate?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:ELEMents[:SENSe[1]] VOLTage|CURRent|RESistance|TIME|STATus</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:ELEMents[:SENSe[1]]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:SOURce2 ASCii|HEXadecimal|OCTal|BINary</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:SOURce2?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:SREGister ASCii|HEXadecimal|OCTal|BINary</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:FORMat</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FORMat:SREGister?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CONFigure?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CONFigure:CURRent[:DC]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CONFigure:RESistance</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:CONFigure:VOLTage[:DC]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:FETCh?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:MEASure?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:MEASure:CURRent[:DC]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:MEASure:RESistance?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:MEASure</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:MEASure:VOLTage[:DC]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:OUTPut</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:OUTPut[1]:ENABle:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:OUTPut</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:OUTPut[1]:ENABle:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:OUTPut</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:OUTPut[1]:ENABle:TRIPped?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:OUTPut</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:OUTPut[1]:SMODe HIMPedance|NORMal|ZERO|GUARd</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:OUTPut</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:OUTPut[1]:SMODe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:OUTPut</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:OUTPut[1][:STATe] &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:OUTPut</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:OUTPut[1][:STATe]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:ROUte</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ROUTe:TERMinals FRONt|REAR</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:ROUte</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ROUTe:TERMinals?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:AVERage:COUNt &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:AVERage:COUNt? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:AVERage[:STATe] &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall"> :SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:AVERage[:STATe]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:AVERage:TCONtrol REPeat|MOVing</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:AVERage:TCONtrol?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:NPLCycles &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:NPLCycles? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:PROTection[:LEVel]</code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:PROTection[:LEVel]? </code><br><code class="monospace">   DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:PROTection:RSYNchronize &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:PROTection:RSYNchronize?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:PROTection:TRIPped?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:RANGe:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:RANGe:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:RANGe:AUTO:LLIMit &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:RANGe:AUTO:LLIMit?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:RANGe:AUTO:ULIMit?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:RANGe[:UPPer] </code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum|UP|DOWN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:CURRent[:DC]:RANGe[:UPPer]?</code><br><code class="monospace">   [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:DATA[:LATest]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion:CONCurrent &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion:CONCurrent?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion:OFF &quot;CURRent[:DC]&quot;|&quot;VOLTage[:DC]&quot;|&quot;RESistance&quot;,...</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion:OFF?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion:OFF:ALL</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion:OFF:COUNt?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion[:ON] &quot;CURRent[:DC]&quot;|&quot;VOLTage[:DC]&quot;|&quot;RESistance&quot;,...</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion[:ON]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion[:ON]:ALL</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion[:ON]:COUNt?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:FUNCtion:STATe? &quot;CURRent[:DC]&quot;|&quot;VOLTage[:DC]&quot;|&quot;RESistance&quot;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:MODE MANual|AUTO</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:MODE?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:NPLCycles &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:NPLCycles? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:OCOMpensated &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:OCOMpensated?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe:AUTO:LLIMit &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe:AUTO:LLIMit?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe:AUTO:ULIMit &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe:AUTO:ULIMit?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe[:UPPer]</code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum|UP|DOWN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:RESistance:RANGe[:UPPer]? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:NPLCycles &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:NPLCycles? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:PROTection[:LEVel]</code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:PROTection[:LEVel]? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:PROTection:RSYNchronize &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:PROTection:RSYNchronize?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:PROTection:TRIPped?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:RANGe:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:RANGe:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:RANGe:AUTO:LLIMit &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:RANGe:AUTO:LLIMit?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:RANGe:AUTO:ULIMit?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:RANGe[:UPPer]</code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum|UP|DOWN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SENSe[1]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">[:SENSe[1]]:VOLTage[:DC]:RANGe[:UPPer]? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CLEar:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CLEar:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CLEar:AUTO:MODE ALWays|TCOunt</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CLEar:AUTO:MODE?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CLEar[:IMMediate]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:CENTer &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:CENTer? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent[:LEVel][:IMMediate][:AMPLitude]</code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent[:LEVel][:IMMediate][:AMPLitude]?</code><br><code class="monospace">   [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent[:LEVel]:TRIGgered[:AMPLitude]</code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent[:LEVel]:TRIGgered[:AMPLitude]?</code><br><code class="monospace">   [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent[:LEVel]:TRIGgered:SFACtor &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent[:LEVel]:TRIGgered:SFACtor?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent[:LEVel]:TRIGgered:SFACtor:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent[:LEVel]:TRIGgered:SFACtor:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:MODE FIXed|LIST|SWEep</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:MODE?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:RANGe &lt;NRf&gt;|DEFault|MINimum|MAXimum|UP|DOWN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:RANGe? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:RANGe:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:RANGe:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:SPAN &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:SPAN? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:STARt &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:STARt? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:STEP &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:STEP? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:STOP &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:CURRent:STOP? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:DELay &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:DELay? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:DELay:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:DELay:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:FUNCtion[:MODE] VOLTage|CURRent|MEMory</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:FUNCtion[:MODE]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:FUNCtion:SHAPe DC|PULSe</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:FUNCtion:SHAPe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:CURRent &lt;NRf list&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:CURRent?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:CURRent:APPend &lt;NRf list&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:CURRent:POINts?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:CURRent:STARt &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:CURRent:STARt?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:VOLTage &lt;NRf list&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:VOLTage?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:VOLTage:APPend &lt;NRf list&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:VOLTage:POINts?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:VOLTage:STARt &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:LIST:VOLTage:STARt?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:MEMory:POINts &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:MEMory:POINts?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:MEMory:RECall &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:MEMory:SAVE &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:MEMory:STARt &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:MEMory:STARt?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:PULSe:DELay &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:PULSe:DELay?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:PULSe:WIDTh &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:PULSe:WIDTh?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SOAK &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SOAK?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:CABort &lt;name&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:CABort?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:DIRection UP|DOWN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:DIRection?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:POINts &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:POINts? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:RANGing BEST|AUTO|FIXed</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:RANGing?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:SPACing LINear|LOGarithmic</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:SWEep:SPACing?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:CENTer &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:CENTer? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage[:LEVel][:IMMediate][:AMPLitude]</code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage[:LEVel][:IMMediate][:AMPLitude]?</code><br><code class="monospace">   [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage[:LEVel]:TRIGgered[:AMPLitude]</code><br><code class="monospace">   &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage[:LEVel]:TRIGgered[:AMPLitude]?</code><br><code class="monospace">   [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage[:LEVel]:TRIGgered:SFACtor &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage[:LEVel]:TRIGgered:SFACtor?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage[:LEVel]:TRIGgered:SFACtor:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage[:LEVel]:TRIGgered:SFACtor:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:MODE FIXed|LIST|SWEep</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:MODE?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:PROTection[:LEVel] &lt;NRf&gt;|NONE|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:PROTection[:LEVel]? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:PROTection:TRIPped?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:RANGe &lt;NRf&gt;|DEFault|MINimum|MAXimum|UP|DOWN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:RANGe? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:RANGe:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:RANGe:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:SPAN &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:SPAN? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:STARt &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:STARt? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:STEP &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:STEP? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:STOP &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce[1]:VOLTage:STOP? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:BSIZe 3|4</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:BSIZe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:CLEar:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:CLEar:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:CLEar:AUTO:DELay &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:CLEar:AUTO:DELay? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:CLEar[:IMMEdiate]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:TTL[:LEVel]:ACTual?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:TTL[:LEVel][:DEFault] &lt;NDN&gt;|&lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:TTL[:LEVel][:DEFault]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:TTL4:BSTate &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:TTL4:BSTate?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:TTL4:MODE EOTest|BUSY</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SOURce</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SOURce2:TTL4:MODE?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:MEASurement:CONDition?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:MEASurement:ENABle &lt;NDN&gt;|&lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:MEASurement:ENABle?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:MEASurement[:EVENt]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:OPERation:CONDition?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:OPERation:ENABle &lt;NDN&gt;|&lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:OPERation:ENABle?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:OPERation[:EVENt]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:PRESet</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEStionable:CONDition?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEStionable:ENABle &lt;NDN&gt;|&lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEStionable:ENABle?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEStionable[:EVENt]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEue:CLEar</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEue:DISable &lt;list&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEue:DISable?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEue:ENABle &lt;list&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEue:ENABle?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:STATus</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:STATus:QUEue[:NEXT]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing:NPLCycles?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing:REFResh</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing:RESet</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing[:STATe] &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo:CACHing[:STATe]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo[:STATe] &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:AZERo[:STATe]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:BEEPer[:IMMediate] &lt;NRf&gt;,&lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:BEEPer:STATe &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:BEEPer:STATe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:CCHeck ON|OFF</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:CCHeck?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:CCHeck:RESistance &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:CCHeck:RESistance?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:CLEar</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:ERRor:ALL?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:ERRor:CODE:ALL?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:ERRor:CODE[:NEXT]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:ERRor:COUNt?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:ERRor[:NEXT]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:GUARd OHMS|CABLe</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:GUARd?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:KEY &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:KEY?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:LFRequency 50|60</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:LFRequency?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:LFRequency:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:LFRequency:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:LOCal</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:MEMory:INITialize</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:MEP:HOLDoff</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:MEP:HOLDoff?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:MEP[:STATe]?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:POSetup RST|PRESet|SAV0|SAV1|SAV2|SAV3|SAV4</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:POSetup?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:PRESet</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:RCMode SINGle|MULTiple</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:RCMode?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:RSENse &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:RSENse?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:RWLock &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:RWLock?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:TIME?</code></p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:TIME:RESet</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall"> :SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:TIME:RESet:AUTO &lt;Bool&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:TIME:RESet:AUTO?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:SYSTem</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:SYSTem:VERSion?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:CLEar</code></p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:DATA?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:FEED SENSe[1]|CALCulate[1]|CALCulate2</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:FEED?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:FEED:CONTrol NEXT|NEVer</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:FEED:CONTrol?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:FREE?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:POINts &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:POINts? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:POINts:ACTual?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:TSTamp:FORMat ABSolute|DELTa</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRACe</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRACe:TSTamp:FORMat?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ABORt</code></p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]]:COUNt &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]]:COUNt?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]]:SOURce</code><br><code class="monospace">   IMMediate|TLINk|TIMer|MANual|BUS|NSTest|PSTest|BSTest</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]]:SOURce?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure][:ASYNchronous]:ILINe 1|2|3|4</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure][:ASYNchronous]:ILINe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure][:ASYNchronous]:OLINe 1|2|3|4</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure][:ASYNchronous]:OLINe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure][:ASYNchronous]:OUTPut</code><br><code class="monospace">   TENTer|TEXit|NONE</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure][:ASYNchronous]:OUTPut?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure]:DIRection SOURce|ACCeptor</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]][:TCONfigure]:DIRection?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]]:TIMer &lt;NRf&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:ARM[:SEQuence[1]][:LAYer[1]]:TIMer?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:INITiate[:IMMediate]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:READ?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger:CLEAr</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]]:COUNt &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]]:COUNt? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]]:DELay &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]]:DELay? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]]:SOURce IMMediate|TLINk</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]]:SOURce?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:ILINe 1|2|3|4</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:ILINe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:INPut</code><br><code class="monospace">   SOURce|DELay|SENSe|NONE</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:INPut?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:OLINe 1|2|3|4</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Partially</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:OLINe?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:OUTPut</code><br><code class="monospace">   SOURce|DELay|SENSe|NONE</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure][:ASYNchronous]:OUTPut?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure]:DIRection SOURce|ACCeptor</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger[:SEQuence[1]][:TCONfigure]:DIRection?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">Yes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger:SEQuence2:SOURce &lt;name&gt;</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger:SEQuence2:SOURce?</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger:SEQuence2:TOUT &lt;NRf&gt;|DEFault|MINimum|MAXimum</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">&nbsp;:TRIGger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytextsmall"><code class="monospace">:TRIGger:SEQuence2:TOUT? [DEFault|MINimum|MAXimum]</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="66"><p class="tablebodytextsmall">No</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytextsmall"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="29276.htm" target="_self">Model 2400 compatibility</a></p><p class="relateditem"><a href="29281.htm" target="_self">General compatibility</a></p><p class="relateditem"><a href="29305.htm" target="_self">Model 2400 SCPI command compatibility</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="29304" />
+<input id="topicDescription" type="hidden" value="Model 2400 SCPI command support" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/11/2018 10:30:17 AM" />
+</body>
+</html>

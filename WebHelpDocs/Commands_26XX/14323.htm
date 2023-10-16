@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> While loops </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2428.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14324.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t14323" class="heading5">While loops</h5>
+<p class="bodytext">To use conditional expressions to determine whether to execute or end a loop, you use <code class="monospace">while</code> loops. These loops are similar to <a id="h14322" class="jump" title="Conditional branching" href="2427.htm" target="_self">Conditional branching</a> statements.</p>
+<p class="code">while <em class="emphasis">expression</em> do</p>
+<p class="code">   <em class="emphasis">block</em></p>
+<p class="code">end</p>
+<p class="bodytext">Where:</p>
+<ul class="listbullet"><li class="listbullet"><span class="monospaceitalic">expression</span> is Lua code that evaluates to either <code class="monospace">true</code> or <code class="monospace">false</code></li><li class="listbullet"><span class="monospaceitalic">block</span><code class="monospace"> </code>consists of one or more Lua statements</li></ul><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The output you get from this example may vary depending on the data format settings of the instrument.</p>
+<p class="bodytext"><strong class="specialbold">Example: While</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="360"><p class="codetable">list = {</p>
+<p class="codetable">   &quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;, &quot;Four&quot;, &quot;Five&quot;, &quot;Six&quot;}</p>
+<p class="codetable">print(&quot;Count list elements on numeric index:&quot;)</p>
+<p class="codetable">element = 1</p>
+<p class="codetable">while list[element] do</p>
+<p class="codetable">   print(element, list[element])</p>
+<p class="codetable">   element = element + 1</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">This loop exits when<code class="monospace"> list[element] = nil</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">Count list elements on</code></p>
+<p class="tablebodytext"><code class="monospace">   numeric index:</code></p>
+<p class="tablebodytext"><code class="monospace">1   One</code></p>
+<p class="tablebodytext"><code class="monospace">2   Two</code></p>
+<p class="tablebodytext"><code class="monospace">3   Three</code></p>
+<p class="tablebodytext"><code class="monospace">4   Four</code></p>
+<p class="tablebodytext"><code class="monospace">5   Five</code></p>
+<p class="tablebodytext"><code class="monospace">6   Six</code></p>
+</td>
+</tr>
+
+</table>
+<p class="spacing"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2428.htm" target="_self">Loop control</a></p><p class="relateditem"><a href="14324.htm" target="_self">Repeat until loops</a></p><p class="relateditem"><a href="14325.htm" target="_self">For loops</a></p><p class="relateditem"><a href="16706.htm" target="_self">Break</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="14323" />
+<input id="topicDescription" type="hidden" value="While loops" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/31/2020 1:19:02 PM" />
+</body>
+</html>

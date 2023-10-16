@@ -1,0 +1,127 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.setblock() - trigger.BLOCK_BRANCH_LIMIT_CONSTANT </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31107.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31114.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31105" class="heading2-icl">trigger.model.setblock() - trigger.BLOCK_BRANCH_LIMIT_CONSTANT</h2>
+<p class="bodyzero">This function defines a trigger model block that goes to a specified block if a measurement meets preset criteria.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="78"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4a6b95" style="border:1px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.setblock(<span class="monospaceitalic">blockNumber</span>, trigger.BLOCK_BRANCH_LIMIT_CONSTANT, <span class="monospaceitalic">limitType</span>, <span class="monospaceitalic">limitA</span>, <span class="monospaceitalic">limitB</span>, <span class="monospaceitalic">branchToBlock</span>)</p>
+<p class="iclcode">trigger.model.setblock(<span class="monospaceitalic">blockNumber</span>, trigger.BLOCK_BRANCH_LIMIT_CONSTANT, <span class="monospaceitalic">limitType</span>, <span class="monospaceitalic">limitA</span>, <span class="monospaceitalic">limitB</span>, <span class="monospaceitalic">branchToBlock</span>, <span class="monospaceitalic">measureBlock</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">blockNumber</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The sequence of the block in the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">limitType</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The type of limit, which can be one of the following types:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_ABOVE</code></li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_BELOW</code></li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_INSIDE</code></li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_OUTSIDE</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">limitA</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The lower limit that the measurement is tested against; if <span class="monospaceitalic">limitType</span> is set to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_ABOVE</code>: This value is ignored</li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_BELOW</code>: The measurement must be below this value</li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_INSIDE</code>: The low limit that the measurement is compared against</li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_OUTSIDE</code>: The low limit that the measurement is compared against</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">limitB</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The upper limit that the measurement is tested against; if <span class="monospaceitalic">limitType</span> is set to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_ABOVE</code>: The measurement must be above this value</li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_BELOW</code>: This value is ignored</li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_INSIDE</code>: The high limit that the measurement is compared against</li><li class="tablelistbullet9pt"><code class="monospace">trigger.LIMIT_OUTSIDE</code>: The high limit that the measurement is compared against</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">branchToBlock</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The block number of the trigger model block to execute when the measurement meets the defined criteria</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">measureBlock</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The block number of the measure/digitize block that makes the measurements to be compared; if this is <code class="monospace">0</code> or undefined, the trigger model uses the previous measure/digitize block</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">The branch-on-constant-limits block goes to a branching block if a measurement meets the criteria set by this command.</p>
+<p class="iclbody">The type of limit can be:</p>
+<ul class="listbullet"><li class="listbullet">Above: The measurement is above the value set by limit B; limit A must be set, but is ignored when this type is selected</li><li class="listbullet">Below: The measurement is below the value set by limit A; limit B must be set, but is ignored when this type is selected</li><li class="listbullet">Inside: The measurement is inside the values set by limits A and B; limit A must be the low value and Limit B must be the high value</li><li class="listbullet">Outside: The measurement is outside the values set by limits A and B; limit A must be the low value and Limit B must be the high value</li></ul><p class="iclbody">The measurement block must be a measure/digitize block that occurs in the trigger model before the branch-on-constant-limits block. The last measurement from a measure/digitize block is used.</p>
+<p class="iclbody">If the limit A is more than the limit B, the values are automatically swapped so that the lesser value is used as the lower limit.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">trigger.model.setblock(5, trigger.BLOCK_BRANCH_LIMIT_CONSTANT, trigger.LIMIT_ABOVE, 0.1, 1, 2)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets trigger block 5 to be a constant limit that branches to block 2 when the measurement is above the value set for limit B (which is set to 1). Note that limit A must be set but is ignored. </p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31227" class="jump" title="Constant Limit block" href="31010.htm" target="_self">Constant Limit block</a></p>
+
+
+<input id="topicId" type="hidden" value="31105" />
+<input id="topicDescription" type="hidden" value="trigger.model.setblock() &#0151; trigger.BLOCK_BRANCH_LIMIT_CONSTANT" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/10/2019 11:48:40 AM" />
+</body>
+</html>

@@ -1,0 +1,162 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Mode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12541.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12546.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12544" class="heading3">Mode</h3>
+<p class="bodytext">The mode indicates the type of edge the hardware lines detect as an external input trigger. Mode also indicates the type of signal generated as an external output trigger. The following table describes the hardware trigger modes for the hardware trigger lines. For additional detail, refer to <a id="h12547" class="jump" title="Hardware trigger modes" href="12548.htm" target="_self">Hardware trigger modes</a>.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">To disable triggering on the hardware trigger lines, set the mode to bypass. This allows direct control of the line.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="240" height="0"></td>
+<td width="120" height="0"></td>
+<td width="120" height="0"></td>
+<td width="120" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="4" width="600"><p class="tableheading">Hardware trigger mode summary</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" rowspan="2" width="240"><p class="tableheading">Trigger mode</p>
+</th>
+<th bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" colspan="2" width="240"><p class="tableheading">Output</p>
+</th>
+<th bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Input</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="120"><p class="tableheading">Unasserted</p>
+</th>
+<th bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="120"><p class="tableheading">Asserted</p>
+</th>
+<th bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="120"><p class="tableheading">Detects</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Bypass</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">N/A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">N/A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">N/A</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Either edge</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Either</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Falling edge</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Falling</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Rising edge</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="3" width="360"><p class="tablebodytext">The programmed state of the line determines if the behavior is similar to RisingA or RisingM:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">High similar to RisingA</li><li class="tablelistbullet9pt">Low similar to RisingM</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">RisingA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Rising</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">RisingM</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Not available</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Synchronous</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High latching</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Falling</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">SynchronousA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High latching</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Falling</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="tablebodytext">SynchronousM</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Rising</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12541.htm" target="_self">Digital I/O port and TSP-Link synchronization lines</a></p><p class="relateditem"><a href="12546.htm" target="_self">Pulse width</a></p><p class="relateditem"><a href="12549.htm" target="_self">Trigger configuration on hardware lines</a></p><p class="relateditem"><a href="12552.htm" target="_self">Action overruns on hardware lines</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12544" />
+<input id="topicDescription" type="hidden" value="Mode" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:40:21 PM" />
+</body>
+</html>

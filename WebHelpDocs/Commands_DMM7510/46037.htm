@@ -1,0 +1,129 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.load() — ExtDigTrigger </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="35127.htm" target="_self"><img id="f125" src="125.gif" class="embeddediconfiletemplate" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="46058.htm" target="_self"><img id="f124" src="124.gif" class="embeddedfilenoinherits" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t46037" class="heading2-icl">trigger.model.load() — ExtDigTrigger</h2>
+<p class="bodyzero">This function loads a predefined trigger model configuration that sets up an external trigger through the digital I/O or external I/O line.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.load(&quot;ExtDigTrigger&quot;, <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;ExtDigTrigger&quot;, <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">delay</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;ExtDigTrigger&quot;, <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">delay, bufferName</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;ExtDigTrigger&quot;, <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">delay, bufferName</span>, <span class="monospaceitalic">readingBlock</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">digInLine</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The digital input line (1 to 6) or external input line (7); also the event on which the trigger model will wait in block 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">digOutLine</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The digital output line (1 to 6) or external output line (7)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">count</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The number of measurements the instrument will make</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">delay</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The delay time before each measurement (167&nbsp;ns to 10,000&nbsp;s); default is 0 for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user&#8209;defined buffer; defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="tablebodytext"><span class="monospaceitalic">readingBlock</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Define a measure or digitize block for the trigger model; options are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_ACTIVE</code>: Add a measure or digitize block to the trigger model based on the active function; if no option defined, <code class="monospace">trigger.READING_ACTIVE</code> is used</li><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_MEASURE</code>: Adds a measure block to the trigger model</li><li class="tablelistbullet9pt"><code class="monospace">trigger.READING_DIGITIZE</code>: Adds a digitize block to the trigger model</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This trigger model waits for a digital input or external trigger input event to occur, makes a measurement, and issues a notify event. If a digital output line is selected, a notify event asserts a digital output line. A notify event asserts the external output line regardless of the line settings. You can set the line to <code class="monospace">7</code> to assert only the external output line, or to another setting to assert both a digital output line and the external output line.</p>
+<p class="iclsubheading">Example </p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="594"><p class="codetable">trigger.model.load(&quot;ExtDigTrigger&quot;, 7, 2, 10, 0.001, defbuffer1)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="594"><p class="tablebodytext">Set up the template to use the external in line and wait for a pulse from the external in to trigger measurements.</p>
+<p class="tablebodytext">Pulse digital out line 2 and external out when the measurement is complete.</p>
+<p class="tablebodytext">Make 10 measurements, with a delay of 1&nbsp;ms before each measurement.</p>
+<p class="tablebodytext">Store the measurements in <code class="monospace">defbuffer1</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="46037" />
+<input id="topicDescription" type="hidden" value="trigger.model.load() &#0151; ExtDigTrigger" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/14/2014 10:05:25 AM" />
+</body>
+</html>

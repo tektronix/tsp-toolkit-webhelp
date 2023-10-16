@@ -1,0 +1,346 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> buffer.save() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="73595.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25642.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t33210" class="heading2-icl">buffer.save()</h2>
+<p class="bodyzero">This function saves data from the specified reading buffer to a USB flash drive.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#​336699" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#​336699" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">buffer.save(<span class="monospaceitalic">bufferVar</span>,<span class="monospaceitalic"> &quot;fileName&quot;</span>)</p>
+<p class="iclcode">buffer.save(<span class="monospaceitalic">bufferVar</span>, &quot;<span class="monospaceitalic">fileName&quot;</span>, <span class="monospaceitalic">what</span>)</p>
+<p class="iclcode">buffer.save(<span class="monospaceitalic">bufferVar</span>, &quot;<span class="monospaceitalic">fileName&quot;</span>, <span class="monospaceitalic">what, start, end</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">fileName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that indicates the name of the file on the USB flash drive in which to save the reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">what</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Defines which information is saved in the file on the USB flash drive: see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">start</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Defines the starting point in the buffer to start saving data</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">end</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Defines the ending point in the buffer to stop saving data</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The file name must specify the full path (including <code class="monospace">/usb1/</code>). If included, the file extension must be set to <code class="monospace">.csv</code>. If no file extension is specified, <code class="monospace">.csv</code> is added.</p>
+<p class="iclbody">Examples of valid destination file names:</p>
+<p class="code">buffer.save(MyBuffer, &quot;/usb1/myData&quot;)</p>
+<p class="code">buffer.save(MyBuffer, &quot;/usb1/myData.csv&quot;)</p>
+<p class="iclbody">The Model 2460 does not check for existing files when you save. Verify that you are using a unique name to avoid overwriting any existing CSV files on the flash drive.</p>
+<p class="iclbody"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tableheading">Option</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tableheading">Export includes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_ALL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">All data</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_BRIEF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Reading and relative time</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_DISPLAY_DIGITS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The setting for the display digits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_EXTRA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Relative time and additional values if they exist (such as the sense voltage from a DC voltage ratio measurement)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_EXTRA_RANGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Extra value range digits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_EXTRA_UNIT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Extra value units</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_EXTRA_VALUE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Extra value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_INDEX</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Index into buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_LIMITS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The status of all limits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_MATH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Math enabled (<code class="monospace">F</code> is math is not enabled; <code class="monospace">T</code> if math is enabled) and relative time</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_ORIGIN</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Origin status</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_QUESTIONABLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Questionable status</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_RANGE_DIGITS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Range digits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_READING</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The measurement reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_STANDARD</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The relative time, reading, and source value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_START</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Status of start group</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_STATUS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The status information associated with the measurement; see the &quot;Buffer status bits for sense measurements&quot; table in&nbsp;<a id="h20172" class="jump" title="bufferVar.statuses" href="33164.htm" target="_self">bufferVar.statuses</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TERMINAL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Terminal status</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIME_ABSOLUTE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The time when the data point was measured as an absolute&nbsp;timestamp</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIME_PARTS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Absolute time in multiple columns</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIME_RAW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Absolute time in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIME_RELATIVE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The relative time when the data point was measured in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_TIMESTAMP_READING</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The timestamp reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_UNIT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The reading and the unit of measure</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_SOURCE_VALUE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Source value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_SOURCE_UNIT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Source value units</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_SOURCE_RANGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Source value range digits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_SOURCE_OUTPUT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Source output</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_SOURCE_SENSE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Source sense</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_SOURCE_LIMIT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Source limit</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="210"><p class="codetable">buffer.COL_SOURCE_OVERTEMP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Source overtemperature</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer.save(MyBuffer, &quot;/usb1/myData.csv&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Save all reading and default time information from a buffer named <code class="monospace">MyBuffer</code> to a file named <code class="monospace">myData.csv</code> on the USB flash drive.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer.save(MyBuffer, &quot;/usb1/myDataRel.csv&quot;, buffer.SAVE_RELATIVE_TIME)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Save all readings and relative timestamps from <code class="monospace">MyBuffer</code> to a file named <code class="monospace">myDataRel.csv</code> on the USB flash drive.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer.save(defbuffer1, &quot;/usb1/defbuf1data&quot;, buffer.SAVE_RAW_TIME)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Save readings and raw time stamps from <code class="monospace">defbuffer1</code> to a file named <code class="monospace">defbuf1data</code> on the USB flash drive.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h27583" class="jump" title="buffer.saveappend()" href="25642.htm" target="_self">buffer.saveappend()</a></p>
+
+
+<input id="topicId" type="hidden" value="33210" />
+<input id="topicDescription" type="hidden" value="buffer.save()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/25/2019 1:18:04 PM" />
+</body>
+</html>

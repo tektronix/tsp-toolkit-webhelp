@@ -1,0 +1,183 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Statistic attributes </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19422.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11636.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t19413" class="heading4">Statistic attributes</h4>
+<p class="bodytext">Use the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.buffer.getstats()</code> function to access the reading buffer data statistics. The table below lists the attributes that you can use to access the reading buffer statistics.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="96" height="0"></td>
+<td width="120" height="0"></td>
+<td width="384" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-bottom:1px solid #C0C0C0;" colspan="3" width="600"><p class="tableheading">Attributes for accessing reading buffer data</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tableheading">Attribute</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">When returned</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="96"><p class="codetable">n</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Always</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The number of data points on which the statistics are based</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="96"><p class="codetable">mean</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">When <code class="monospace">n</code> &gt; 0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The average of all readings added to the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="96"><p class="codetable">stddev</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">When <code class="monospace">n</code> &gt; 1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">The standard deviation of all readings (samples) added to the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="96"><p class="codetable">min</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">When <code class="monospace">n</code> &gt; 0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">A table containing data about the minimum reading value added to the&nbsp;buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="96"><p class="codetable">max</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">When <code class="monospace">n</code> &gt; 0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">A table containing data about the maximum reading value added to the&nbsp;buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">If <code class="monospace">n</code> equals zero (0), all other attributes are <code class="monospace">nil</code> because there is no data to base any statistics on. If <code class="monospace">n</code> equals 1, the <code class="monospace">stddev</code> attribute is <code class="monospace">nil</code> because the standard deviation of a sample size of 1 is&nbsp;undefined.</p>
+<p class="bodytext">The <code class="monospace">min</code> and <code class="monospace">max</code> entries have the attributes described in the following table (<span class="monospaceitalic">bufferVar</span> is the name of the buffer). See <a id="h18553" class="jump" title="smuX.buffer.getstats()" href="18554.htm" target="_self">smuX.buffer.getstats()</a> for additional information.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="192" height="0"></td>
+<td width="408" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-bottom:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheading">Min and max entry attributes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tableheading">Attribute</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">measurefunction</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">String indicating the function that was measured for the reading (current, voltage, ohms, or watts)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">measurerange</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The full-scale range value for the measurement range used when the measurement was made</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">reading</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The reading value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">sourcefunction</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">String indicating the source function at the time of the measurement (current or voltage)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">sourceoutputstate</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">String indicating the state of the source (off or on)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">sourcerange</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Full-scale range value for the source range used when the measurement was made</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">sourcevalue</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">If <span class="monospaceitalic">bufferVar</span><code class="monospace">.collectsourcevalues</code> is enabled, the sourced value in effect at the time of the reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">status</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Status value for the reading; the status value is a floating-point number that encodes the status value into a floating-point value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable">timestamp</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">If <span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps</code> is enabled, the timestamp, in seconds, between when the reading was acquired and when the first reading in the buffer was acquired; adding this value to the base timestamp produces the actual time the measurement was acquired</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example</strong>:</p>
+<p class="bodytext">The following programming example illustrates how to output mean and standard deviation statistics from buffer 1:</p>
+<p class="code">statistics = smua.buffer.getstats(smua.nvbuffer1)</p>
+<p class="code">print(statistics.mean, statistics.stddev)</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13519.htm" target="_self">Reading buffer commands</a></p><p class="relateditem"><a href="11663.htm" target="_self">Buffer storage control attributes</a></p><p class="relateditem"><a href="19420.htm" target="_self">Buffer read-only attributes</a></p><p class="relateditem"><a href="19421.htm" target="_self">Buffer storage control programming examples</a></p><p class="relateditem"><a href="19422.htm" target="_self">Buffer read-only attribute programming examples</a></p><p class="relateditem"><a href="11636.htm" target="_self">Reading buffer attributes</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="19413" />
+<input id="topicDescription" type="hidden" value="Statistic attributes" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:09:06 PM" />
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15144.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15146.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15145" class="heading2-icl">smuX.source.highc</h2>
+<p class="bodyzero">This attribute enables or disables high-capacitance mode.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0 (smu<span class="monospaceitalic">X</span>.DISABLE)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">highC</span> = smu<span class="monospaceitalic">X</span>.<code class="monospace">source.highc</code></p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.<code class="monospace">source.highc</code> = <span class="monospaceitalic">highC</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">highC</span> </p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The state of the high-capacitance mode; set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">0</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.DISABLE</code>: Disables high-capacitance mode</li><li class="tablelistbullet9pt"><code class="monospace">1</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.ENABLE</code>: Enables high-capacitance mode</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.source.highc</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When enabled, the high-capacitance mode has the following effects on the SMU settings:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.autorangei</code> is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTORANGE_FOLLOW_LIMIT</code> and cannot&nbsp;be&nbsp;changed</li><li class="listbullet">Current ranges below 1 µA are not accessible</li><li class="listbullet">If <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.limiti</code> is less than 1 µA, it is raised to 1 µA</li><li class="listbullet">If <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.rangei</code> is less than 1 µA, it is raised to 1 µA</li><li class="listbullet">If <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.lowrangei</code> is less than 1 µA, it is raised to 1 µA</li><li class="listbullet">If <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.lowrangei</code> is less than 1 µA, it is raised to 1 µA</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">smua.source.highc = smua.ENABLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Activates high-capacitance mode for SMU channel A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17786" class="jump" title="High-capacitance mode" href="29559.htm" target="_self">High-capacitance mode</a></p>
+
+

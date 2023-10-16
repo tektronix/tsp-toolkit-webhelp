@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> bufferVar.fillmode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="81090.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25640.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t30489" class="heading2-icl">bufferVar.fillmode</h2>
+<p class="bodyzero">This attribute determines if a reading buffer is filled continuously or is filled once and stops.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">User-defined buffer: buffer.FILL_ONCE (0)<br>defbuffer1: buffer.FILL_CONTINUOUS (1)<br>defbuffer2: buffer.FILL_CONTINUOUS (1)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">fillMode</span> = <span class="monospaceitalic">bufferVar</span>.fillmode</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar</span>.fillmode = <span class="monospaceitalic">fillMode</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">fillMode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Fill the buffer, then stop: <code class="monospace">buffer.FILL_ONCE</code> or <code class="monospace">0</code></p>
+<p class="tablebodytext">Fill the buffer continuously: <code class="monospace">buffer.FILL_CONTINUOUS</code> or <code class="monospace">1</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When a reading buffer is set to fill once, no data is overwritten in the buffer. When the buffer is filled, no more data is stored in that buffer and new readings are discarded.</p>
+<p class="iclbody">When a reading buffer is set to fill continuously, the oldest data is overwritten by the newest data after the buffer fills.</p>
+<p class="iclbody">When you change the fill mode of a buffer, any data in the buffer is cleared.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">testData = buffer.make(50)</p>
+<p class="codetable">print(testData.fillmode)</p>
+<p class="codetable">testData.fillmode = buffer.FILL_CONTINUOUS</p>
+<p class="codetable">print(testData.fillmode)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create a reading buffer named <code class="monospace">testData</code>, configure the instrument to make three measurements, and store the readings in the buffer. Print the fill mode setting for the <code class="monospace">testData</code> buffer.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">0</p>
+<p class="tablebodytext">Set fill mode to continuous. </p>
+<p class="tablebodytext">Print the fill mode setting for the <code class="monospace">testData</code> buffer.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h33983" class="jump" title="buffer.delete()" href="33981.htm" target="_self">buffer.delete()</a></p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h33664" class="jump" title="bufferVar.clear()" href="30485.htm" target="_self">bufferVar.clear()</a></p>
+<p class="listcommand"><a id="h17646" class="jump" title="print()" href="17645.htm" target="_self">print()</a></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+
+
+<input id="topicId" type="hidden" value="30489" />
+<input id="topicDescription" type="hidden" value="bufferVar.fillmode" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 9:54:23 AM" />
+</body>
+</html>

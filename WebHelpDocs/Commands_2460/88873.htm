@@ -1,0 +1,100 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.interlock.enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="33395.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25729.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t88873" class="heading2-icl">smu.interlock.enable</h2>
+<p class="bodyzero">This attribute determines if the output can be turned on when the interlock is not engaged.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">None</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smu.OFF</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">state</em> = smu.interlock.enable</p>
+<p class="iclcode">smu.interlock.enable = <em class="emphasis">state</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Allow the output to be turned on when the interlock is not engaged: <code class="monospace">smu.OFF</code></p>
+<p class="tablebodytext">Only allow the output to be turned on if the interlock is engaged: <code class="monospace">smu.ON</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">The instrument provides an interlock circuit on the rear panel. You must enable this circuit in order for the instrument to set source voltages greater than ±42&nbsp;V&nbsp;DC.</p>
+<p class="bodytext">When the safety interlock signal is asserted, the following actions occur:</p>
+<ul class="listbullet"><li class="listbullet">All voltage ranges of the instrument are available.</li><li class="listbullet">The green front-panel INTERLOCK indicator is on.</li></ul><p class="bodytext">The action when the interlock signal is not asserted depends on the Interlock setting. If Interlock is set to Off, if the safety interlock signal is not asserted, the following&nbsp;occurs:</p>
+<ul class="listbullet"><li class="listbullet">The nominal output is limited to less than&nbsp;±42&nbsp;V.</li><li class="listbullet">The front-panel INTERLOCK indicator is not illuminated.</li><li class="listbullet">You can output voltages less than ±42.</li></ul><p class="bodytext">If Interlock is set to On, when the safety interlock signal is not asserted, the following occurs:</p>
+<ul class="listbullet"><li class="listbullet">You cannot turn on the source output.</li><li class="listbullet">The front-panel INTERLOCK indicator is not illuminated.</li><li class="listbullet">Whenever the interlock changes state (from asserted to not asserted or vice versa), the output is turned off.</li></ul><p class="bodytext">If you try to assign a high-voltage output and turn the source on when the interlock is not asserted, event code 5074, &#8220;Output voltage limited by interlock,&#8221; is generated.</p>
+<p class="warning"><img id="f4282" src="warninglarge_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0"><br>The Model 2460 is provided with an interlock circuit that must be positively activated in order for the high voltage output to be enabled. The interlock helps facilitate safe operation of the equipment in a test system. Bypassing the interlock could expose the operator to hazardous voltages that could result in personal injury or death.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smu.interlock.enable = smu.ON</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">The source output is disabled unless the interlock is engaged.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27699" class="jump" title="smu.interlock.tripped" href="25729.htm" target="_self">smu.interlock.tripped</a></p>
+
+
+<input id="topicId" type="hidden" value="88873" />
+<input id="topicDescription" type="hidden" value="smu.interlock.enable" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/23/2019 10:06:51 AM" />
+</body>
+</html>

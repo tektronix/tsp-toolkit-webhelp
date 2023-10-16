@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Understanding high-capacitance mode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29559.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="13642.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t11495" class="heading3">Understanding high-capacitance mode</h3>
+<p class="bodytext">The source&#8209;measure unit (SMU) in the 2600B drives 10&nbsp;nF of capacitance in normal operation. Typically, an internal capacitor across the current measuring element provides phase lead to compensate for the phase lag caused by the load capacitance on the output. This internal capacitance across the range resistance limits the speed for a specific measurement range.</p>
+<p class="bodytext">The SMU in the 2600B implements frequency compensation to achieve the highest throughput possible for a 10&nbsp;nF or less load. In addition, you must consider the settling time, voltage range, measure delay, the quality of the capacitor, the current measure range resistor, and the load&nbsp;resistor.</p>
+<p class="bodytext">In normal operation, the SMU in the 2600B can drive capacitive loads as large as 10&nbsp;nF. In high-capacitance mode, the SMU can drive a maximum of 50&nbsp;μF of capacitance.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">When high-capacitance mode is enabled, a minimum load capacitance of 100&nbsp;nF is recommended. In absence of this minimum load capacitance, overshoot and ringing may occur.</p>
+<p class="bodytext">Highest throughput is achieved by using normal operation. In high&#8209;capacitance mode, the speed of the 2600B SMU is reduced to compensate for the larger load capacitance. Stability is achieved by inserting an internal capacitance across the current measuring element of the SMU. This internal capacitor limits the speed for the source and measurement ranges. Therefore, when optimizing the speed of your test configuration in high-capacitance mode, you must consider the settling time, voltage, and current ranges, measure delay, quality of the load capacitor, and load resistance.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="13642.htm" target="_self">Understanding source settling times</a></p><p class="relateditem"><a href="11980.htm" target="_self">Adjusting the voltage source</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="29559.htm" target="_self">High-capacitance mode</a></p><p class="relateditem"><a href="11559.htm" target="_self">Enabling high-capacitance mode</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11495" />
+<input id="topicDescription" type="hidden" value="Understanding high-capacitance mode" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/19/2022 2:37:01 PM" />
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Setting reading buffer capacity </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29454.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29111.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t45724" class="heading3">Setting reading buffer capacity</h3>
+<p class="bodytext">The capacity of a reading buffer determines how many readings that buffer holds. You can change the capacity of reading buffers.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>Readings and statistics that are stored in the reading buffer are deleted when you change the capacity of a buffer.</p>
+<p class="bodytext">For user-defined buffers, you assign a capacity when you create the reading buffer. For default buffers (<code class="monospace">defbuffer1</code> and <code class="monospace">defbuffer2</code>), the initial buffer size is 100,000 readings. If you specify 0 for the size of the buffer, the instrument assigns the largest buffer size possible based on the available memory.</p>
+<p class="bodytext">The buffer style you choose when you create the reading buffer affects the capacity of the reading buffer. For example, the compact buffer style stores more readings with lower resolution and less reading information than a standard or full buffer. For more information about buffer styles and their capacities, see Creating buffers.</p>
+<p class="bodytext">The available capacity for reading buffers is affected by other operations of the instrument. Factors that can affect buffer capacity include:</p>
+<ul class="listbullet"><li class="listbullet">Other reading buffers. The total capacity of the reading buffers in the instrument affects the space that can be allocated to a new buffer.</li><li class="listbullet">Scripts that are loaded onto the instrument.</li><li class="listbullet">Applications that are loaded onto the instrument.</li><li class="listbullet">Configuration lists.</li><li class="listbullet">Scripts that are actively running.</li><li class="listbullet">Variables that reside in the run-time environment.</li><li class="listbullet">The TriggerFlow<sup class="superscript">&reg;</sup> trigger model.</li><li class="listbullet">USB drives that contain files that use a lot of memory, such as image files.</li><li class="listbullet">TSP-Link nodes.</li></ul><p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0"><br>The Model 2470 notifies you when the system runs out of memory. If the instrument encounters memory allocation errors (errors that specifically state &#8220;Out of Memory&#8221;), the state of the instrument cannot be guaranteed. After attempting to save any important data, turn off power to the instrument and turn it back on to reset the runtime environment and return the instrument to a known state. Unsaved scripts and reading buffers will be lost.</p>
+<p class="bodytext">To maximize the memory available for reading buffers:</p>
+<ul class="listbullet"><li class="listbullet">Delete user-defined buffers that you are not using. If you power cycle the instrument, all user-defined buffers in the instrument are deleted.</li><li class="listbullet">If you are not using the default buffers, set them to the minimum capacity of 10.</li><li class="listbullet">Remove the USB flash drive from the USB port.</li><li class="listbullet">Reduce the number of scripts. Refer to <a id="h34055" class="jump" title="Working with scripts" href="26757.htm" target="_self">Working with scripts</a> for information on managing scripts.</li><li class="listbullet">Reduce the number of configuration lists or the number of indices stored in configuration lists. Refer to Configuration lists for information on managing configuration lists.</li><li class="listbullet">Reduce the number of TSP-Link nodes.</li><li class="listbullet">Delete unneeded global variables from the run-time environment by setting them to <code class="monospace">nil</code>.</li><li class="listbullet">Adjust the <code class="monospace">collectgarbage()</code> settings in Lua. See <a id="h16504" class="jump" title="Lua memory management" href="16503.htm" target="_self">Lua memory management</a> for more information.</li><li class="listbullet">Review scripts to improve their memory usage. In particular, you can see memory gains by changing string concatenation lines into a Lua table of string entries. You can then use the <code class="monospace">table.concat()</code> function to create the final string concatenation.</li></ul><p class="bodytext">For additional information on memory use by the instrument, refer to <a id="h16693" class="jump" title="Memory considerations for the run-time environment" href="33306.htm" target="_self">Memory considerations for the run-time environment</a>.</p>
+<p class="bodytext">The overall capacity of all buffers stored in the instrument can be up to 4,500,000 readings for standard reading buffers and 20,000,000 for compact reading buffers.</p>
+<p class="bodytext">The maximum capacity for a reading buffer that is set to the Full style is less than one set to the Standard style. Full style buffers store more data for each reading.</p>
+<p class="bodytext">The following topics describe how to set the reading buffer capacity.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="46200.htm" target="_self">Additional Model 2470 information</a></p><p class="relateditem"><a href="59255.htm" target="_self">*OPC</a></p><p class="relateditem"><a href="59256.htm" target="_self">Aborting the trigger model</a></p><p class="relateditem"><a href="31016.htm" target="_self">Always block</a></p><p class="relateditem"><a href="31007.htm" target="_self">Branching blocks</a></p><p class="relateditem"><a href="30865.htm" target="_self">Buffer clear block</a></p><p class="relateditem"><a href="31010.htm" target="_self">Constant Limit block</a></p><p class="relateditem"><a href="33305_1.htm" target="_self">Deleting a user script using a remote interface</a></p><p class="relateditem"><a href="31015.htm" target="_self">Delta block</a></p><p class="relateditem"><a href="33036.htm" target="_self">Digital I/O</a></p><p class="relateditem"><a href="29982.htm" target="_self">Displayed measurements</a></p><p class="relateditem"><a href="31012.htm" target="_self">Dynamic Limit block</a></p><p class="relateditem"><a href="29871.htm" target="_self">Effect of GPIB line events on Model 2470</a></p><p class="relateditem"><a href="40158.htm" target="_self">Event numbers</a></p><p class="relateditem"><a href="28479.htm" target="_self">Four-wire remote sense connections</a></p><p class="relateditem"><a href="59289.htm" target="_self">Instrument settings stored in a source configuration list</a></p><p class="relateditem"><a href="33231.htm" target="_self">Introduction to reading buffers</a></p><p class="relateditem"><a href="30143.htm" target="_self">Limit testing and binning</a></p><p class="relateditem"><a href="31008.htm" target="_self">Loop Counter block</a></p><p class="relateditem"><a href="76318.htm" target="_self">Measure/Digitize block</a></p><p class="relateditem"><a href="59291.htm" target="_self">Notify block</a></p><p class="relateditem"><a href="31009.htm" target="_self">On event block</a></p><p class="relateditem"><a href="31017.htm" target="_self">Once block</a></p><p class="relateditem"><a href="31018.htm" target="_self">Once excluded block</a></p><p class="relateditem"><a href="59267.htm" target="_self">Operation Event Register</a></p><p class="relateditem"><a href="34868.htm" target="_self">Outputting a bit pattern</a></p><p class="relateditem"><a href="ID_AVM_BUT.htm" target="_self">Overvoltage protection</a></p><p class="relateditem"><a href="29851.htm" target="_self">Programmable status register sets</a></p><p class="relateditem"><a href="59262.htm" target="_self">Questionable Event Register</a></p><p class="relateditem"><a href="40105.htm" target="_self">Resets</a></p><p class="relateditem"><a href="29454.htm" target="_self">Saving setups</a></p><p class="relateditem"><a href="29111.htm" target="_self">Source and measure using TSP commands</a></p><p class="relateditem"><a href="59283.htm" target="_self">Standard Event Register</a></p><p class="relateditem"><a href="32518.htm" target="_self">Triggering using TSP-Link trigger lines</a></p><p class="relateditem"><a href="27120.htm" target="_self">TSP-Link System Expansion Interface</a></p><p class="relateditem"><a href="31944.htm" target="_self">Upgrading the firmware</a></p><p class="relateditem"><a href="32667.htm" target="_self">Using groups to manage nodes on a TSP-Link system</a></p><p class="relateditem"><a href="3247.htm" target="_self">Using the data queue for real-time communication</a></p><p class="relateditem"><a href="31125.htm" target="_self">Using trigger events to start actions in the trigger model</a></p><p class="relateditem"><a href="30864.htm" target="_self">Wait block</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="45724" />
+<input id="topicDescription" type="hidden" value="Setting reading buffer capacity" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/25/2019 1:51:40 PM" />
+</body>
+</html>

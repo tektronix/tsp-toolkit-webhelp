@@ -1,0 +1,93 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Single pulse example code </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12561.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12563.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t22092" class="heading5">Single pulse example code</h5>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Even though no measurements are made in this example, a measure range is set. When sourcing voltage, it is good practice to set the current measure range equal to the triggered source limit range. This is especially important when the triggered limit is greater than 100&nbsp;mA. If the measure range is not set, it may affect the shape of the pulse. This step is not necessary when sourcing current.</p>
+<p class="code">-- Reset SourceMeter instrument to default conditions.</p>
+<p class="code">reset()</p>
+<p class="code"></p>
+<p class="code">-- Generate a single pulse with the following characteristics:</p>
+<p class="code">--      *  Bias (idle) level = 0 V</p>
+<p class="code">--      *        Pulse level = 5 V</p>
+<p class="code">--      *        Pulse width = 500 us</p>
+<p class="code"></p>
+<p class="code">-- Configure the source function.</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCVOLTS</p>
+<p class="code"></p>
+<p class="code">-- Set the voltage source range and the idle or bias source level and limit.</p>
+<p class="code">smua.source.rangev = 5</p>
+<p class="code">smua.source.levelv = 0</p>
+<p class="code">smua.source.limiti = 0.1</p>
+<p class="code"></p>
+<p class="code">-- Configure the trigger-timer parameters to output a single 500 us pulse.</p>
+<p class="code">trigger.timer[1].delay = 0.0005</p>
+<p class="code">trigger.timer[1].count = 1</p>
+<p class="code">trigger.timer[1].passthrough = false</p>
+<p class="code">-- Start the timer when the SMU moves from the ARM layer to the TRIGGER layer.</p>
+<p class="code">trigger.timer[1].stimulus = smua.trigger.ARMED_EVENT_ID</p>
+<p class="code"></p>
+<p class="code">-- Configure the trigger model to execute a single-point voltage pulse list sweep.</p>
+<p class="code">-- No measurements are made.</p>
+<p class="code">smua.trigger.source.listv({5})</p>
+<p class="code">smua.trigger.source.action = smua.ENABLE</p>
+<p class="code">smua.trigger.measure.action = smua.DISABLE</p>
+<p class="code">-- Set the trigger source limit to the same value as the bias limit.</p>
+<p class="code">smua.trigger.source.limiti = smua.LIMIT_AUTO</p>
+<p class="code">smua.measure.rangei = 0.1</p>
+<p class="code">-- Configure the source action to start immediately.</p>
+<p class="code">smua.trigger.source.stimulus = 0</p>
+<p class="code">-- Configure the endpulse action to achieve a pulse.</p>
+<p class="code">smua.trigger.endpulse.action = smua.SOURCE_IDLE</p>
+<p class="code">smua.trigger.endpulse.stimulus = trigger.timer[1].EVENT_ID</p>
+<p class="code">-- Set the appropriate counts for the trigger model.</p>
+<p class="code">smua.trigger.arm.count = 1</p>
+<p class="code">smua.trigger.count = 1</p>
+<p class="code"></p>
+<p class="code">-- Turn on the SMU output and initiate the trigger model to output a single pulse.</p>
+<p class="code">smua.source.output = smua.OUTPUT_ON</p>
+<p class="code">smua.trigger.initiate()</p>
+<p class="code">-- Wait for the sweep to complete.</p>
+<p class="code">waitcomplete()</p>
+<p class="code"></p>
+<p class="code">-- Turn off SMU output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_OFF</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12561.htm" target="_self">Single pulse example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="22092" />
+<input id="topicDescription" type="hidden" value="Single pulse example code" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:06:47 PM" />
+</body>
+</html>

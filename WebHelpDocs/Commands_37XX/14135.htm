@@ -1,0 +1,77 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15949.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15950.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t14135" class="heading2-icl">channel.setpowerstate()</h2>
+<p class="bodyzero">This function sets the power state on a channel.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="96"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="186"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="96"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="186"><p class="tablebodytextsmall">Dependent on installed card, but usually 1 (channel.ON)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.setpowerstate(&quot;<span class="monospaceitalic">channelList</span>&quot;, <span class="monospaceitalic">state</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard channel naming</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">channel.OFF</code> or <code class="monospace">0</code>: Disable the power</li><li class="tablelistbullet9pt"><code class="monospace">channel.ON</code> or <code class="monospace">1</code>: Enable the power</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When a channel that was previously off is turned on, the channel attributes are reset to their default values (except the power state attribute).</p>
+<p class="iclbody">Changing the output setting impacts the power consumption of the card. Channels with an off power state consume less power. Before enabling power, the instrument verifies that power is available before changing the state. If insufficient power capability exists, the command generates an error.</p>
+<p class="iclbody">Consult the specific card documentation for information on a channel&#8217;s power usage characteristics, including default state, possible warmup issues, especially for DAC channels, and effects on other channels.</p>
+<p class="iclbody">When a channel with an off power state is used in a scan, results are undefined. No error notification is issued.</p>
+<p class="iclbody">For switch, backplane, and digital I/O channels, there is no valid power state attribute. Setting the power state on a specific channel generates an error.</p>
+<p class="iclbody">On some cards for totalizer channels, setting the power state of a single channel can affect the power state of other channels. If a single totalizer channel is turned on, all totalizer channels are reset to their defaults.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.setpowerstate(&quot;1010&quot;, channel.ON)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Sets the power state for DAC channel 10 on the card in slot 1 to ON, assuming a&nbsp;3750.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h7631" class="jump" title="channel.getpowerstate()" href="15930.htm" target="_self">channel.getpowerstate()</a></p>
+
+

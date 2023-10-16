@@ -1,0 +1,233 @@
+<html>
+<head>
+<title> Variable types </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2420.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16830.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h5 class="heading5">Variable types</h5>
+<p class="bodytext">Variables can be one of the following types.</p>
+<table class="tableintopic" width="522" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="162" height="0"></td>
+<td width="156" height="0"></td>
+<td width="204" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="3" width="522"><p class="tableheading">Variable types and values</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th bgcolor="#E0E0E0" style="border:1px solid #010101;" width="162"><p class="tableheadingsmall">Variable type returned</p>
+</th>
+<th bgcolor="#E0E0E0" style="border:1px solid #010101;" width="156"><p class="tableheadingsmall">Value</p>
+</th>
+<th bgcolor="#E0E0E0" style="border:1px solid #010101;" width="204"><p class="tableheadingsmall">Notes</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="162"><p class="codetable">&quot;nil&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="156"><p class="tablebodytext">not declared</p>
+</td>
+<td style="border:1px solid #010101;" width="204"><p class="tablebodytext">The type of the value <code class="monospace">nil</code>, whose main property is to be different from any other value; usually it represents the absence of a useful value. </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="162"><p class="codetable">&quot;boolean&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="156"><p class="tablebodytext">true or false</p>
+</td>
+<td style="border:1px solid #010101;" width="204"><p class="tablebodytext">Boolean is the type of the values <code class="monospace">false</code> and <code class="monospace">true</code>. In Lua, both <code class="monospace">nil</code> and <code class="monospace">false</code> make a condition <code class="monospace">false</code>; any other value makes it <code class="monospace">true</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="162"><p class="codetable">&quot;number&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="156"><p class="tablebodytext">number</p>
+</td>
+<td style="border:1px solid #010101;" width="204"><p class="tablebodytext">All numbers are real numbers; there is no distinction between integers and floating-point numbers. Hexadecimal and binary values are also handled as the number type in TSP.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="162"><p class="codetable">&quot;string&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="156"><p class="tablebodytext">sequence of words or characters</p>
+</td>
+<td style="border:1px solid #010101;" width="204"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="162"><p class="codetable">&quot;function&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="156"><p class="tablebodytext">a block of code</p>
+</td>
+<td style="border:1px solid #010101;" width="204"><p class="tablebodytext">Functions perform a task or compute and return values.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="162"><p class="codetable">&quot;table&quot;</p>
+</td>
+<td style="border:1px solid #010101;" width="156"><p class="tablebodytext">an array</p>
+</td>
+<td style="border:1px solid #010101;" width="204"><p class="tablebodytext">New tables are created with {&nbsp;} braces. For example, </p>
+<p class="tablebodytext">{1, 2, 3.00e0}.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<p class="bodytext">To determine the type of a variable, you can call the <code class="monospace">type()</code> function, as shown in the examples below.</p>
+<p class="note"><img src="notehelp.png" alt="VARIABLE - NOTE" height="48" width="176" vspace="0" hspace="0" align="bottom" border="0"><br>The output you get from these examples may vary depending on the instrument you are using.</p>
+<p class="bodytext"><strong class="specialbold">Example: Nil</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="289"><p class="codetable">x = nil</p>
+<p class="codetable">print(x, type(x))</p>
+</td>
+<td width="227"><p class="codetable">nil      nil</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Boolean</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="288"><p class="codetable">y = false</p>
+<p class="codetable">print(y, type(y))</p>
+</td>
+<td width="228"><p class="codetable">false      boolean</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Hex constant </strong></p>
+<p class="bodytext">You can enter hexadecimal values, but to return a hexadecimal value, you must create a function, as shown in this example. Note that hexadecimal values are handled as a number type.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="516"><p class="codetable">hex = function (i) return &quot;0x&quot;..string.format(&quot;%X&quot;, i) end</p>
+<p class="codetable">print(hex(0x54|0x55))</p>
+<p class="codetable">print(hex(0x54&amp;0x66))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="516"><p class="tablebodytext">Set the format to return hexadecimal values, then <code class="monospace">OR</code> two hexadecimal values and <code class="monospace">AND</code> two hexadecimal values. </p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">0x55</p>
+<p class="codetable">0x44</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Binary constant</strong></p>
+<p class="bodytext">Binary values are returned as floating point decimal values. Note that binary values are handled as a number type.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="288"><p class="codetable">x = 0b0000000011111111</p>
+<p class="codetable">y = 0B1111111100000000</p>
+<p class="codetable">print(x, type(x))</p>
+<p class="codetable">print(y, type(y))</p>
+</td>
+<td width="228"><p class="codetable">2.55000e+02 number</p>
+<p class="codetable">6.528000+02 number</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: String and number</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="289"><p class="codetable">x = &quot;123&quot;</p>
+<p class="codetable">print(x, type(x))</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">x = x + 7</p>
+<p class="codetable">print(x, type(x))</p>
+</td>
+<td width="227"><p class="codetable">123      string</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="tablebodytext">Adding a number to x forces its type to number.</p>
+<p class="codetable">1.30000e+02      number</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Function</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="297"><p class="codetable">function add_two(first_value,</p>
+<p class="codetable">   second_value)</p>
+<p class="codetable">   return first_value + second_value</p>
+<p class="codetable">end</p>
+<p class="codetable">print(add_two(3, 4), type(add_two))</p>
+</td>
+<td width="220"><p class="codetable">7.00000e+00    function</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Table</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="297"><p class="codetable">atable = {1, 2, 3, 4}</p>
+<p class="codetable">print(atable, type(atable))</p>
+<p class="codetable">print(atable[1])</p>
+<p class="codetable">print(atable[4])</p>
+</td>
+<td width="219"><p class="tablebodytext">Defines a table with four numeric elements.</p>
+<p class="tablebodytext">Note that the &quot;table&quot; value (shown here as <code class="monospace">a096cd30</code>) will vary.</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">table: a096cd30      table</p>
+<p class="codetable">1.00000e+00</p>
+<p class="codetable">4.00000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14284.html" target="_self">Lua basics</a></p><p class="relateditem"><a href="16697.html" target="_self">Comments</a></p><p class="relateditem"><a href="33325.html" target="_self">Function and variable name restrictions</a></p><p class="relateditem"><a href="2420.html" target="_self">Values and variable types</a></p><p class="relateditem"><a href="16830.html" target="_self">Delete a global variable</a></p><p class="relateditem"><a href="2422.html" target="_self">Functions</a></p><p class="relateditem"><a href="16449.html" target="_self">Operators</a></p><p class="relateditem"><a href="2427.html" target="_self">Conditional branching</a></p><p class="relateditem"><a href="2428.html" target="_self">Loop control</a></p><p class="relateditem"><a href="2423.html" target="_self">Tables and arrays</a></p></td>
+</tr>
+</table>
+
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2013, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

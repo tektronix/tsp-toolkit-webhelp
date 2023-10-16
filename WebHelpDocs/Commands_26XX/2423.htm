@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Tables and arrays </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16706.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2429.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t2423" class="heading4">Tables and arrays</h4>
+<p class="bodytext">Lua makes extensive use of the data type table, which is a flexible array-like data type. Table indices start with 1. Tables can be indexed not only with numbers, but with any value except <code class="monospace">nil</code>. Tables can be heterogeneous, which means that they can contain values of all types except <code class="monospace">nil</code>.</p>
+<p class="bodytext">Tables are the sole data structuring mechanism in Lua. They may be used to represent ordinary arrays, symbol tables, sets, records, graphs, trees, and so on. To represent records, Lua uses the field <code class="monospace">name</code> as an index. The language supports this representation by providing <code class="monospace">a.name</code> as an easier way to express <code class="monospace">a[&quot;name&quot;]</code>.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The output you get from this example may vary depending on the data format settings of the instrument.</p>
+<p class="bodytext"><strong class="specialbold">Example: Loop array</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="312"><p class="codetable">atable = {1, 2, 3, 4}</p>
+<p class="codetable">i = 1</p>
+<p class="codetable">while atable[i] do</p>
+<p class="codetable">   print(atable[i])</p>
+<p class="codetable">   i = i + 1</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Defines a table with four numeric elements.</p>
+<p class="tablebodytext">Loops through the array and prints each element.</p>
+<p class="tablebodytext">The Boolean value of <code class="monospace">atable[index]</code> evaluates to <code class="monospace">true</code> if there is an element at that index. If there is no element at that index, <code class="monospace">nil</code> is returned (<code class="monospace">nil</code> is considered to be <code class="monospace">false</code>).</p>
+<p class="tableheadingsmall">Output:</p>
+<p class="tablebodytext"><code class="monospace">1</code></p>
+<p class="tablebodytext"><code class="monospace">2</code></p>
+<p class="tablebodytext"><code class="monospace">3</code></p>
+<p class="tablebodytext"><code class="monospace">4</code></p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14284.htm" target="_self">Lua basics</a></p><p class="relateditem"><a href="16697.htm" target="_self">Comments</a></p><p class="relateditem"><a href="14283.htm" target="_self">Function and variable name restrictions</a></p><p class="relateditem"><a href="2420.htm" target="_self">Values and variable types</a></p><p class="relateditem"><a href="16831.htm" target="_self">Variable types</a></p><p class="relateditem"><a href="16830.htm" target="_self">Delete a global variable</a></p><p class="relateditem"><a href="2422.htm" target="_self">Functions</a></p><p class="relateditem"><a href="16449.htm" target="_self">Operators</a></p><p class="relateditem"><a href="2427.htm" target="_self">Conditional branching</a></p><p class="relateditem"><a href="2428.htm" target="_self">Loop control</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="2423" />
+<input id="topicDescription" type="hidden" value="Tables and arrays" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/15/2020 7:37:03 PM" />
+</body>
+</html>

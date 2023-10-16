@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Suggestions for increasing the available memory </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="23885.htm" target="_self"><img id="f125" src="125.gif" class="embeddediconfiletemplate" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="39781.htm" target="_self"><img id="f124" src="124.gif" class="embeddedfilenoinherits" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t34482" class="heading3">Suggestions for increasing the available memory</h3>
+<p class="bodytext">If the amount of memory used is over 95 percent, or if you receive out&#8209;of&#8209;memory event messages, you should reduce the amount of memory that is used.</p>
+<p class="bodytext">Some suggestions for increasing the available memory:</p>
+<ul class="listbullet"><li class="listbullet">Turn the instrument off and on. This deletes scripts that have not been saved and reloads only scripts that have been stored in nonvolatile memory.</li><li class="listbullet">Consider removing unused reading buffers.</li><li class="listbullet">Consider resizing reading buffers to a smaller size.</li><li class="listbullet">Reduce the number of TSP-Link<sup class="superscript">&reg;</sup> nodes.</li><li class="listbullet">Delete unneeded global variables from the run-time environment by setting them to <code class="monospace">nil</code>.</li><li class="listbullet">Adjust the <code class="monospace">collectgarbage()</code> settings in Lua. See <a id="h16504" class="jumptemplate" title="Lua memory management" href="16503.htm" target="_self">Lua memory management</a> for more information.</li><li class="listbullet">Review scripts to improve their memory usage. In particular, you can see memory gains by changing string concatenation lines into a Lua table of string entries. You can then use the <code class="monospace">table.concat()</code> function to create the final string concatenation.</li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="28214.htm" target="_self">Remote commands</a></p><p class="relateditem"><a href="17029.htm" target="_self">Introduction to TSP operation</a></p><p class="relateditem"><a href="16596.htm" target="_self">Fundamentals of scripting for TSP</a></p><p class="relateditem"><a href="33307.htm" target="_self">Fundamentals of programming for TSP</a></p><p class="relateditem"><a href="24976.htm" target="_self">Test Script Builder (TSB)</a></p><p class="relateditem"><a href="39781.htm" target="_self">About TSP Commands</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="34482" />
+<input id="topicDescription" type="hidden" value="Suggestions for increasing the available memory" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/23/2015 3:03:56 PM" />
+</body>
+</html>

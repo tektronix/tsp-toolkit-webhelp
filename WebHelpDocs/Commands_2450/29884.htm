@@ -1,0 +1,112 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.measure.limit[Y].enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25683.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25684.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t29884" class="heading2-icl">smu.measure.limit[Y].enable</h2>
+<p class="bodyzero">This attribute enables or disables a limit test on the measurement from the selected measure function.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list<br>Function change</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smu.OFF</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">state</em> = smu.measure.limit[<span class="monospaceitalic">Y</span>].enable</p>
+<p class="iclcode">smu.measure.limit[<span class="monospaceitalic">Y</span>].enable = <em class="emphasis">state</em></p>
+<p class="iclcode"><em class="emphasis">state </em>= smu.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">smu</code>.ATTR_MEAS_LIMIT_ENABLE_<span class="monospaceitalic">Y</span>)</p>
+<p class="iclcode">smu.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">smu</code>.ATTR_MEAS_LIMIT_ENABLE_<span class="monospaceitalic">Y</span>, <em class="emphasis">state</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Disable the test: <code class="monospace">smu.OFF</code></p>
+<p class="tablebodytext">Enable the test: <code class="monospace">smu.ON</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limit number: <code class="monospace">1</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage measurement: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li><li class="tablelistbullet9pt">Current measurement: <code class="monospace">smu.FUNC_DC_CURRENT</code> </li><li class="tablelistbullet9pt">Ohms measurement: <code class="monospace">smu.FUNC_RESISTANCE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command enables or disables a limit test for the selected measurement function. When this attribute is enabled, the limit <span class="monospaceitalic">Y</span> testing occurs on each measurement made by the instrument. Limit <span class="monospaceitalic">Y</span> testing compares the measurements to the high-limit and low-limit values. If a measurement falls outside these limits, the test fails.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smu.measure.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.measure.limit[1].enable = smu.ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Enable testing for limit 1 when measuring voltage.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27718" class="jump" title="smu.measure.limit[Y].autoclear" href="25682.htm" target="_self">smu.measure.limit[Y].autoclear</a></p>
+<p class="listcommand"><a id="h27719" class="jump" title="smu.measure.limit[Y].clear()" href="25683.htm" target="_self">smu.measure.limit[Y].clear()</a></p>
+<p class="listcommand"><a id="h27720" class="jump" title="smu.measure.limit[Y].fail" href="25684.htm" target="_self">smu.measure.limit[Y].fail</a></p>
+<p class="listcommand"><a id="h27721" class="jump" title="smu.measure.limit[Y].high.value" href="25685.htm" target="_self">smu.measure.limit[Y].high.value</a></p>
+<p class="listcommand"><a id="h27722" class="jump" title="smu.measure.limit[Y].low.value" href="25686.htm" target="_self">smu.measure.limit[Y].low.value</a></p>
+
+
+<input id="topicId" type="hidden" value="29884" />
+<input id="topicDescription" type="hidden" value="smu.measure.limit[Y].enable" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 11:33:02 AM" />
+</body>
+</html>

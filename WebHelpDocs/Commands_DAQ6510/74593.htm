@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> scan.list() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="73677.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="75013.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t74593" class="heading2-icl">scan.list()</h2>
+<p class="bodyzero">This function returns a list that includes the initial open or close state of any cards installed in the instrument and the settings at each step of the scan.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">scanList</em> = scan.list()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">scanList</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that lists information for each scan step</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command lists the existing scan list, including each step in the scan and information for step, open, or close status.</p>
+<p class="iclbody">If the scan list is empty, the return is <code class="monospace">EMPTY</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.setdmm(&quot;101:105&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_DC_VOLTAGE)</p>
+<p class="codetable">channel.setdmm(&quot;101:105&quot;, dmm.ATTR_MEAS_NPLC, 0.01)</p>
+<p class="codetable">channel.setdmm(&quot;201:202&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_AC_VOLTAGE)</p>
+<p class="codetable">scan.create(&quot;101:105, 201, 202&quot;)</p>
+<p class="codetable">print(scan.list())</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">With a 7701 in slot 1 and a 7708 in slot 2, set up channels 1 to 5 on slot 1 to measure DC voltage with an NPLC of 0.01. Set up channels 1 and 2 on slot 2 to measure AC voltage.</p>
+<p class="tablebodytext">Create a scan that includes channels 101 to 105 and 201 to 202.</p>
+<p class="tablebodytext">Print the scan list. The output looks similar to the following code.</p>
+<p class="codetable">INIT:   OPEN: 101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,135,134,133,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,243,242,241	CLOSE: </p>
+<p class="codetable">1:	OPEN: 	CLOSE: 101,135	Voltage DC</p>
+<p class="codetable">2:	OPEN: 101	CLOSE: 102	Voltage DC</p>
+<p class="codetable">3:	OPEN: 102	CLOSE: 103	Voltage DC</p>
+<p class="codetable">4:	OPEN: 103	CLOSE: 104	Voltage DC</p>
+<p class="codetable">5:	OPEN: 104	CLOSE: 105	Voltage DC</p>
+<p class="codetable">6:	OPEN: 135,105	CLOSE: 201,243	Voltage AC</p>
+<p class="codetable">7:	OPEN: 201	CLOSE: 202	Voltage AC</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1142" class="jump" title="scan.add()" href="74583.htm" target="_self">scan.add()</a></p>
+<p class="listcommand"><a id="h72448" class="jump" title="scan.addsinglestep()" href="72434.htm" target="_self">scan.addsinglestep()</a></p>
+<p class="listcommand"><a id="h1139" class="jump" title="scan.create()" href="74579.htm" target="_self">scan.create()</a></p>
+<p class="listcommand"><a id="h18584" class="jump" title="Scanning and triggering" href="75273.htm" target="_self">Scanning and triggering</a></p>
+
+
+<input id="topicId" type="hidden" value="74593" />
+<input id="topicDescription" type="hidden" value="scan.list()" />
+<input id="footer-modified" type="hidden" value="Last modified: 5/24/2019 2:24:52 PM" />
+</body>
+</html>

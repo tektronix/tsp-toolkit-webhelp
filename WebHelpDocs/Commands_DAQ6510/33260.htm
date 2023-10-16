@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> display.prompt() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="33459.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25719.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t33260" class="heading2-icl">display.prompt()</h2>
+<p class="bodyzero">This function allows you to create an interactive dialog prompt that displays a custom message on the front-panel display.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">promptID</em> = display.prompt(<span class="monospaceitalic">buttonID</span>, &quot;<span class="monospaceitalic">promptText</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">promptID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A set of characters that identifies the prompt; up to 63 characters</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">buttonID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The type of prompt to display; choose one of the following options:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">display.BUTTONS_NONE</code></li><li class="tablelistbullet9pt"><code class="monospace">display.BUTTONS_OK</code></li><li class="tablelistbullet9pt"><code class="monospace">display.BUTTONS_CANCEL</code></li><li class="tablelistbullet9pt"><code class="monospace">display.BUTTONS_OKCANCEL</code></li><li class="tablelistbullet9pt"><code class="monospace">display.BUTTONS_YESNO</code></li><li class="tablelistbullet9pt"><code class="monospace">display.BUTTONS_YESNOCANCEL</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">promptText</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that contains the text that is displayed above the prompts</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command displays buttons and text on the front panel. You can set up scripts that respond to the buttons when they are selected.</p>
+<p class="iclbody">If you send <code class="monospace">display.BUTTONS_NONE</code>, the operator needs to press the EXIT key to clear the message from the front-panel display. You can also use the <code class="monospace">display.delete()</code> command to remove the prompt.</p>
+<p class="iclbody">Only one prompt can be active at a time.</p>
+<p class="iclbody">When the user presses a button, the button presses are returned as one of the following options:</p>
+<ul class="listbullet"><li class="listbullet">OK: <code class="monospace">display.BUTTON_OK</code></li><li class="listbullet">Cancel: <code class="monospace">display.BUTTON_CANCEL</code></li><li class="listbullet">Yes: <code class="monospace">display.BUTTON_YES</code></li><li class="listbullet">No: <code class="monospace">display.BUTTON_NO</code></li></ul><p class="iclbody">To capture return values, you need to use <code class="monospace">display.waitevent()</code> to wait for the user button selection.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">trigger.model.load(&quot;SimpleLoop&quot;, 10, 0, defbuffer1)</p>
+<p class="codetable">display.prompt(display.BUTTONS_YESNO, &quot;Would you like to make 10 DC voltage readings now?&quot;)</p>
+<p class="codetable">promptID, result = display.waitevent()</p>
+<p class="codetable">if result == display.BUTTON_YES then</p>
+<p class="codetable">&nbsp;&nbsp; trigger.model.initiate()</p>
+<p class="codetable">end</p>
+<p class="codetable">display.prompt(display.BUTTONS_YESNO, &quot;Would you like to switch to the Graph screen?&quot;)</p>
+<p class="codetable">promptID, result = display.waitevent()</p>
+<p class="codetable">if result == display.BUTTON_YES then</p>
+<p class="codetable">   display.changescreen(display.SCREEN_GRAPH)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Create a simple loop that will make 10 measurements and save them in default buffer 1.</p>
+<p class="tablebodytext">Display the prompt shown here:</p>
+<p class="magicfigurecenter"><img id="f46711" src="7510displayinputstringexample.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="display.prompt example" height="158" width="264" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="tablebodytext">If the user presses Yes, the measurements are made.</p>
+<p class="tablebodytext">If the user presses No, the measurements are not made, and the message is removed.</p>
+<p class="tablebodytext">Display the prompt &quot;Would you like to switch to the Graph screen?&quot;</p>
+<p class="tablebodytext">If the user presses Yes, the Graph screen is displayed.</p>
+<p class="tablebodytext">If the user presses No, the user remains on the present screen.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h39788" class="jump" title="display.delete()" href="38977.htm" target="_self">display.delete()</a></p>
+<p class="listcommand"><a id="h39790" class="jump" title="display.waitevent()" href="33261.htm" target="_self">display.waitevent()</a></p>
+
+
+<input id="topicId" type="hidden" value="33260" />
+<input id="topicDescription" type="hidden" value="display.prompt()" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/10/2019 12:54:08 PM" />
+</body>
+</html>

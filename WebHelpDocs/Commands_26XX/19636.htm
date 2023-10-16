@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Selecting the output-off function </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19634.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19635.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t19636" class="heading4">Selecting the output-off function</h4>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">This setting is used only when the output is turned off and the source&#8209;measure unit (SMU) is in NORMAL output&#8209;off mode.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="19634.htm" target="_self">Output-off function</a></p></td>
+</tr>
+</table>
+<a name="o29595"></a>
+<p class="headingprocedure">To configure the output-off function from the front panel:</p>
+<ol class="listnumber"><li class="listnumber">Press the <strong class="specialbold">CONFIG</strong> key.</li><li class="listnumber">Press the <strong class="specialbold">OUTPUT ON/OFF</strong> control. </li><li class="listnumber">Select <strong class="specialbold">OFF-STATE </strong>and then select <strong class="specialbold">FUNCTION</strong>.</li><li class="listnumber">Select <strong class="specialbold">CURRENT</strong> or <strong class="specialbold">VOLTAGE</strong>.</li><li class="listnumber">Press the <strong class="specialbold">EXIT </strong>key to return to the normal display.</li></ol>
+<a name="o19644"></a>
+<p class="headingprocedure">To configure the output-off function remotely:</p>
+<p class="bodytext">To set 0&nbsp;V output with current limit set by the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offlimiti</code> attribute:*</p>
+<p class="code"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offfunc = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.OUTPUT_DCVOLTS</p>
+<p class="bodytext">To set 0&nbsp;A output with voltage limit set by the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offlimitv</code> attribute:*</p>
+<p class="code"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offfunc = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.OUTPUT_DCAMPS</p>
+<p class="bodytext">* <code class="monospace">smu</code><span class="monospaceitalic">X</span> can be <code class="monospace">smua</code> for channel A or <code class="monospace">smub</code> for channel B</p>
+
+
+<input id="topicId" type="hidden" value="19636" />
+<input id="topicDescription" type="hidden" value="Selecting the output-off function" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:03:33 PM" />
+</body>
+</html>

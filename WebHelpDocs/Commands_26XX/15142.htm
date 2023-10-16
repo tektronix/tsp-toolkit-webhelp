@@ -1,0 +1,80 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15141.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15144.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15142" class="heading2-icl">smuX.source.delay</h2>
+<p class="bodyzero">This attribute contains the source delay.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0 (smu<span class="monospaceitalic">X</span>.DELAY_OFF)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">sDelay</span> = smu<span class="monospaceitalic">X</span>.source.delay</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.source.delay = <span class="monospaceitalic">sDelay</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">sDelay</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Set to the source delay value (for example, to specify an additional 10 ms source delay, set the value to <code class="monospace"><code class="monospace">0.010</code></code>); you can also set it one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">0</code></code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.DELAY_OFF</code>: No delay</li><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">-1</code></code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.DELAY_AUTO</code>: Automatic delay value</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace"><code class="monospace">smua.source.delay</code></code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute allows for additional delay (settling time) after an output step.</p>
+<p class="iclbody">The <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.DELAY_AUTO</code> setting causes a range-dependent delay to be inserted when the source is changed. Range-dependent delays are based on the output settling time values as defined in the 2600B specifications.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.source.delay = smua.DELAY_AUTO</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets the delay for SMU channel A to automatic (a range-dependent delay is inserted whenever the source is changed).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13937" class="jump" title="reset()" href="13933.htm" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15206" class="jump" title="smuX.measure.count" href="77107.htm" target="_self">smuX.measure.count</a></p>
+<p class="listcommand"><a id="h15208" class="jump" title="smuX.measure.delay" href="15111.htm" target="_self">smuX.measure.delay</a></p>
+<p class="listcommand"><a id="h15232" class="jump" title="smuX.reset()" href="15136.htm" target="_self">smuX.reset()</a></p>
+
+

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.load() - GradeBinning </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="35127.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="35128.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t46058" class="heading2-icl">trigger.model.load() - GradeBinning</h2>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>This command requires a communications accessory card to be installed in the instrument. Accessory cards include the KTTI-GPIB, KTTI-TSP, and KTTI-RS232.</p>
+<p class="bodyzero">This function loads a trigger-model template configuration that sets up a grading operation.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>, <em class="emphasis"><em class="emphasis">limit2Pattern</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>, <em class="emphasis"><em class="emphasis">limit2Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit3High</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>, <em class="emphasis"><em class="emphasis">limit2Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit3High</em></em>, <em class="emphasis"><em class="emphasis">limit3Low</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>, <em class="emphasis"><em class="emphasis">limit2Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit3High</em></em>, <em class="emphasis"><em class="emphasis">limit3Low</em></em>, <em class="emphasis"><em class="emphasis">limit3Pattern</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>, <em class="emphasis"><em class="emphasis">limit2Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit3High</em></em>, <em class="emphasis"><em class="emphasis">limit3Low</em></em>, <em class="emphasis"><em class="emphasis">limit3Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit4High</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>, <em class="emphasis"><em class="emphasis">limit2Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit3High</em></em>, <em class="emphasis"><em class="emphasis">limit3Low</em></em>, <em class="emphasis"><em class="emphasis">limit3Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit4High</em></em>, <em class="emphasis"><em class="emphasis">limit4Low</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>, <em class="emphasis"><em class="emphasis">limit2Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit3High</em></em>, <em class="emphasis"><em class="emphasis">limit3Low</em></em>, <em class="emphasis"><em class="emphasis">limit3Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit4High</em></em>, <em class="emphasis"><em class="emphasis">limit4Low</em></em>, <em class="emphasis"><em class="emphasis">limit4Pattern</em></em>)</p>
+<p class="iclcode">trigger.model.load(&quot;GradeBinning&quot;, <em class="emphasis"><em class="emphasis">components</em></em>, <em class="emphasis"><em class="emphasis">startInLine</em></em>, <em class="emphasis"><em class="emphasis">startDelay</em></em>, <em class="emphasis"><em class="emphasis">endDelay, limit1High</em></em>, <em class="emphasis"><em class="emphasis">limit1Low</em></em>, <em class="emphasis"><em class="emphasis">limit1Pattern</em></em>, <em class="emphasis"><em class="emphasis">allPattern</em></em>, <em class="emphasis"><em class="emphasis">limit2High</em></em>, <em class="emphasis"><em class="emphasis">limit2Low</em></em>, <em class="emphasis"><em class="emphasis">limit2Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit3High</em></em>, <em class="emphasis"><em class="emphasis">limit3Low</em></em>, <em class="emphasis"><em class="emphasis">limit3Pattern</em></em>, <em class="emphasis"><em class="emphasis">limit4High</em></em>, <em class="emphasis"><em class="emphasis">limit4Low</em></em>, <em class="emphasis"><em class="emphasis">limit4Pattern</em></em>, <em class="emphasis"><em class="emphasis">bufferName</em></em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">components</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of components to measure (1 to 268,435,455)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">startInLine</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The input line that starts the test; <code class="monospace">5</code> for digital line 5, <code class="monospace">6</code> for digital line 6, or <code class="monospace">7</code> for external in; default is <code class="monospace">5</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">startDelay</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The delay time before each measurement (167&nbsp;ns to 10&nbsp;ks); default is <code class="monospace">0</code> for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">endDelay</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The delay time after the measurement (167&nbsp;ns to 10&nbsp;ks); default is <code class="monospace">0</code> for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">limitxHigh</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext"><span class="monospaceitalic">x</span> is limit 1, 2, 3, or 4; the upper limit that the measurement is compared against</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">limitxLow</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext"><span class="monospaceitalic">x</span> is 1, 2, 3, or 4; the lower limit that the measurement is compared against</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">limit1Pattern</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The bit pattern that is sent when the measurement fails limit 1; range 1 to 15; default is&nbsp;1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">limit2Pattern</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The bit pattern that is sent when the measurement fails limit 2; range 1 to 15; default is&nbsp;2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">limit3Pattern</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The bit pattern that is sent when the measurement fails limit 3; range 1 to 15; default is&nbsp;4</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">limit4Pattern</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The bit pattern that is sent when the measurement fails limit 4; range 1 to 15; default is&nbsp;8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">allPattern</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The bit pattern that is sent when all limits have passed; 1 to 15; default is&nbsp;15</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis"><em class="emphasis">bufferName</em></em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer; defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This trigger-model template allows you to grade components and place them into up to four bins, based on the comparison to limits.</p>
+<p class="iclbody">To set a limit as unused, set the high value for the limit to be less than the low limit.</p>
+<p class="iclbody">All limit patterns and the pass pattern are sent on digital I/O lines 1 to 4, where 1 is the least significant bit.</p>
+<p class="iclbody">The rear-panel EXTERNAL TRIGGER OUT terminal is asserted at the end of each measurement.</p>
+<p class="iclbody">After selecting a trigger-model template, you can view the trigger-model blocks in a graphical format by pressing the front-panel MENU key and under Trigger, selecting Configure. You can also add or delete blocks and change trigger-model settings from this screen. You can use the <code class="monospace">trigger.model.getblocklist()</code> command to view the trigger model blocks in a list format.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclbody">For a detailed example, see the <em class="emphasis">DMM6500 User's Manual</em> section &#8220;<a id="h44517" class="jump" title="Grading and binning resistors" href="41760.htm" target="_self">Grading and binning resistors</a>.&#8221;</p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="46058" />
+<input id="topicDescription" type="hidden" value="trigger.model.load() &#0151; GradeBinning" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2019 9:39:53 AM" />
+</body>
+</html>

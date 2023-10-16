@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Multiple SMU connections </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11486.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="97054.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t76519" class="heading2">Multiple SMU connections</h2>
+<p class="warning"><img id="f4282" src="warninglarge_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0">Connections to LO on the 2600B are not necessarily at 0 V. Hazardous voltages could exist between LO and chassis ground. Make sure that high-voltage precautions are taken throughout the test system. Alternatively, limit hazardous levels by adding external protection to limit the voltage between LO and chassis. Failure to make sure high-voltage precautions are used throughout the test system or a failure to limit hazardous levels could result in severe personal injury or death from electric shock. </p>
+<p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">Carefully consider and configure the appropriate output-off state, source function, and compliance limits before connecting the 2600B to a device that can deliver energy (for example, other voltage sources, batteries, capacitors, solar cells, or other 2600B instruments). Configure recommended instrument settings before making connections to the device. Failure to consider the output-off state, source, and compliance limits may result in damage to the instrument or to the device under test (DUT).</p>
+<p class="bodytext">The following figures show how to use the SMUs of two 2600B instruments to test a 3-terminal device, such as an N-channel JFET. A typical application is for the 2600B to source a range of gate voltages, while another 2600B sources voltage to the drain of the device and measures current at each gate voltage.</p>
+<p class="magicfigurecenter"><img id="f26779" src="26xxb-901-01a_twosmusconnectedtoa3-terminaldevice%28localsensing%29_lr.png" class="linkedepsandpngtemplate" alt="Two SMUs connected to a 3-terminal device (local sensing)" height="462" width="573" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="magicfigurecenter"><img id="f27010" src="2600as-901-01b_model2636atwosmusconnectedtoa3-terminaldevice%28localsensing_floating%29.png" class="linkedepsandpngtemplate" alt="Two SMUs (Model 2634B or 2636B) connected to a 3-terminal device (local sensing, floating)" height="1856" width="1953" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="85109.htm" target="_self">Sourcing and measuring</a></p><p class="relateditem"><a href="76487.htm" target="_self">Basic operation</a></p><p class="relateditem"><a href="11450.htm" target="_self">Source-measure capabilities</a></p><p class="relateditem"><a href="97769.htm" target="_self">Circuit configurations</a></p><p class="relateditem"><a href="11921.htm" target="_self">Operation considerations for the ADC</a></p><p class="relateditem"><a href="14155.htm" target="_self">Remote source-measure commands</a></p><p class="relateditem"><a href="11930.htm" target="_self">Triggering in local mode</a></p><p class="relateditem"><a href="11932.htm" target="_self">Configuring trigger attributes in local mode</a></p><p class="relateditem"><a href="19366.htm" target="_self">Configuring for measure-only tests using the MODE key</a></p><p class="relateditem"><a href="11934.htm" target="_self">Voltmeter and ammeter measurements</a></p><p class="relateditem"><a href="11936.htm" target="_self">Ohms measurements</a></p><p class="relateditem"><a href="11942.htm" target="_self">Power measurements</a></p><p class="relateditem"><a href="29274.htm" target="_self">Contact check measurements</a></p><p class="relateditem"><a href="97054.htm" target="_self">Combining SMU outputs</a></p><p class="relateditem"><a href="28174.htm" target="_self">Output-off modes</a></p><p class="relateditem"><a href="11993.htm" target="_self">Range</a></p><p class="relateditem"><a href="11995.htm" target="_self">Digits</a></p><p class="relateditem"><a href="28175.htm" target="_self">Speed</a></p><p class="relateditem"><a href="13524.htm" target="_self">Sweep operation</a></p><p class="relateditem"><a href="12001.htm" target="_self">Relative offset</a></p><p class="relateditem"><a href="11532.htm" target="_self">Filters</a></p><p class="relateditem"><a href="29559.htm" target="_self">High-capacitance mode</a></p><p class="relateditem"><a href="11945.htm" target="_self">Saved setups</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="76519" />
+<input id="topicDescription" type="hidden" value="Multiple SMU connections" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/1/2021 1:35:58 PM" />
+</body>
+</html>

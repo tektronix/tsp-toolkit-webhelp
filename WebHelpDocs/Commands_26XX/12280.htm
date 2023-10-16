@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Operation Status Registers </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29566.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="13026.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12280" class="heading3">Operation Status Registers</h3>
+<p class="bodytext">As shown in the <a id="h19506" class="jump" title="Operation status registers ***2600B***" href="12313.htm#o77089" target="_self">Operation status registers</a> diagram of the status model, there are 22 register sets associated with operation status. Commands are summarized in <a id="h14248" class="jump" title="Status register set contents" href="12354.htm" target="_self">Status register set contents</a>. You can also set bits using numeric parameter values. For details, see <a id="h12276" class="jump" title="Programming enable and transition registers" href="12277.htm" target="_self">Programming enable and transition registers</a>.</p>
+<p class="bodytext">For example, either of the following commands sets the CAL enable bit (B0):</p>
+<p class="code"><code class="monospace">status.operation.enable = status.operation.CAL</code></p>
+<p class="code"><code class="monospace">status.operation.enable = 1</code></p>
+<p class="bodytext">When reading a register, a numeric value is returned. The binary equivalent of this value indicates which bits in the register are set. For details, see <a id="h12289" class="jump" title="Reading registers" href="12290.htm" target="_self">Reading registers</a>. For example, the following command reads the Operation Status Enable Register:</p>
+<p class="code"><code class="monospace">print(status.operation.enable)</code></p>
+<p class="bodytext">Commands to program and read the register are summarized in the table in <a id="h14246" class="jump" title="Status function summary" href="29523.htm" target="_self">Status function summary</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12306.htm" target="_self">Status register sets</a></p><p class="relateditem"><a href="12328.htm" target="_self">System Summary Registers</a></p><p class="relateditem"><a href="29566.htm" target="_self">Standard Event Register</a></p><p class="relateditem"><a href="13026.htm" target="_self">Questionable Status Registers</a></p><p class="relateditem"><a href="27620.htm" target="_self">Measurement Event Registers</a></p><p class="relateditem"><a href="12282.htm" target="_self">Register programming example</a></p></td>
+</tr>
+</table>
+
+<a name="o13025"></a>
+<p class="bodytext">This register set feeds to bit B7 (OSB) of the Status Byte. The bits used in the Operation Status Register set are described as&nbsp;follows:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Bit B0, Calibrating (CAL): </strong>Set bit indicates that one or more channels are calibrating.</li><li class="listbullet"><strong class="specialbold">Bit B3, Sweeping (SWE):</strong> Set bit indicates that one or more channels are sweeping.</li><li class="listbullet"><strong class="specialbold">Bit B4, Measuring (MEAS):</strong> Bit is set when making an overlapped measurement, but it is not set when making a normal synchronous measurement.</li><li class="listbullet"><strong class="specialbold">Bit B10, Trigger Overrun (TRGOVR): </strong>Set bit indicates that an enabled bit in the Operation Status Trigger Overrun Summary Register is&nbsp;set.</li><li class="listbullet"><strong class="specialbold">Bit B11, Remote Summary (REM):</strong> Set bit indicates that an enabled bit in the Operation Status Remote Summary Register is&nbsp;set.</li><li class="listbullet"><strong class="specialbold">Bit B12, User (USER):</strong> Set bit indicates that an enabled bit in the Operation Status User Register is set.</li><li class="listbullet"><strong class="specialbold">Bit B13, Instrument Summary (INST): </strong>Set bit indicates that an enabled bit in the Operation Status Instrument Summary Register is set.</li><li class="listbullet"><strong class="specialbold">Bit B14, Program Running (PROG): </strong>Set bit indicates that a program is running.</li></ul><p class="bodytext">For more information on the Operation Status Registers, refer to <a id="h14248_2" class="jump" title="Status register set contents" href="12354.htm" target="_self">Status register set contents</a> and the figures in this section.</p>
+
+
+<input id="topicId" type="hidden" value="12280" />
+<input id="topicDescription" type="hidden" value="Operation Status Registers" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 8:54:21 AM" />
+</body>
+</html>

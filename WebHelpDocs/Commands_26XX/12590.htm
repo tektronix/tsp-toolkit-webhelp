@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Digital I/O triggering interactive example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12589.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12548.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12590" class="heading4">Digital I/O triggering interactive example</h4>
+<p class="bodytext">The programming example below illustrates how to configure digital I/O line 2 as an input trigger and digital I/O line 14 as an output trigger. The 2600B to wait for an external input trigger on digital I/O line 2. If a trigger event occurs, the 2600B outputs an external trigger on digital I/O line 14. If no trigger event is received on digital I/O line 2, the test is aborted.</p>
+<p class="code">-- Configure digital I/O lines 2 and 14 for input trigger detection</p>
+<p class="code">-- and output trigger generation, respectively.</p>
+<p class="code">digio.trigger[2].mode = digio.TRIG_RISINGA</p>
+<p class="code">digio.trigger[2].clear()	</p>
+<p class="code">digio.trigger[14].mode = digio.TRIG_FALLING</p>
+<p class="code">digio.trigger[14].pulsewidth = 0.0001</p>
+<p class="code">-- Wait 15 seconds for a trigger event to occur on digital I/O line 2.</p>
+<p class="code">trigInput = digio.trigger[2].wait(15)</p>
+<p class="code">-- If a trigger event occurs on digital I/O line 2, assert an output</p>
+<p class="code">-- trigger on digital I/O line 14. If a trigger event does </p>
+<p class="code">-- not occur, turn off the output of smua and issue a message</p>
+<p class="code">-- on the front-panel display.</p>
+<p class="code">if trigInput == true then</p>
+<p class="code">	digio.trigger[14].assert()</p>
+<p class="code">else</p>
+<p class="code">	smua.source.output = smua.OUTPUT_OFF</p>
+<p class="code">	display.screen = display.USER</p>
+<p class="code">	display.clear()</p>
+<p class="code">	display.setcursor(1, 1)</p>
+<p class="code">	display.settext(&quot;No trigger received. Test aborted.&quot;)</p>
+<p class="code">	exit()</p>
+<p class="code">end</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12587.htm" target="_self">Examples using interactive triggering</a></p><p class="relateditem"><a href="12588.htm" target="_self">Command interface interactive trigger example</a></p><p class="relateditem"><a href="12589.htm" target="_self">Manual triggering example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12590" />
+<input id="topicDescription" type="hidden" value="Digital I/O triggering interactive example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 9:03:33 AM" />
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.contact.threshold </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="63461.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41431.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t63462" class="heading2-icl">smu.contact.threshold</h2>
+<p class="bodyzero">This attribute sets the threshold value for contact resistance for the contact check status functions.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smu.THRESHOLD_50_OHM</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu.contact.threshold = <span class="monospaceitalic">level</span></p>
+<p class="iclcode"><span class="monospaceitalic">level</span> = smu.contact.threshold</p>
+<p class="iclcode"><span class="monospaceitalic">level</span> = smu.measure.getattribute(<span class="monospaceitalic">function</span>, smu.ATTR_MEAS_CCHK_THRESHOLD)</p>
+<p class="iclcode">smu.measure.setattribute(<span class="monospaceitalic">function</span>, smu.ATTR_MEAS_CCHK_THRESHOLD, <span class="monospaceitalic">level</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">level</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The level of threshold resistance above which the contact check functions indicate a failure:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">2 Ω: <code class="monospace">smu.THRESHOLD_2_OHM</code></li><li class="tablelistbullet9pt">15 Ω: <code class="monospace">smu.THRESHOLD_15_OHM</code></li><li class="tablelistbullet9pt">50 Ω: <code class="monospace">smu.THRESHOLD_50_OHM</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage measurement: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li><li class="tablelistbullet9pt">Current measurement: <code class="monospace">smu.FUNC_DC_CURRENT</code> </li><li class="tablelistbullet9pt">Ohms measurement: <code class="monospace">smu.FUNC_RESISTANCE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The contact check functions indicate a failure when the connection path resistance exceeds the value specified by this command.</p>
+<p class="iclbody">This command can be sent when contact check isn't enabled. However, you must enable contact check before checking the status of connections.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">smu.contact.threshold = smu.THRESHOLD_15_OHM</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(smu.contact.threshold)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Set the contact check function to indicate a failure if resistance is greater than 15 Ω.<br></p>
+<p class="tablebodytext">Query the contact check threshold setting.</p>
+<p class="tablebodytext">Output: </p>
+<p class="tablebodytext"><code class="monospace">smu.THRESHOLD_15_OHM</code></p>
+<p class="tablebodytext">Indicates that the contact check threshold is set to 15&nbsp;Ω.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h63552" class="jump" title="smu.contact.check()" href="63463.htm" target="_self">smu.contact.check()</a></p>
+<p class="listcommand"><a id="h63553" class="jump" title="smu.contact.checkall()" href="63464.htm" target="_self">smu.contact.checkall()</a></p>
+<p class="listcommand"><a id="h63533" class="jump" title="smu.contact.enable" href="63461.htm" target="_self">smu.contact.enable</a></p>
+
+
+<input id="topicId" type="hidden" value="63462" />
+<input id="topicDescription" type="hidden" value="smu.contact.threshold" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 11:13:27 AM" />
+</body>
+</html>

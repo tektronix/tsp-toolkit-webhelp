@@ -1,0 +1,131 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Step 4. Contact check calibration adjustment </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="27972.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12995.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t20445" class="heading4">Step 4. Contact check calibration adjustment</h4>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Skip this step for the 2604B, 2614B, and 2634B. These models do not perform contact check measurements.</p>
+<ol class="listalpha"><li class="listalpha">As illustrated in the following figure:<ul class="listbullet2"><li class="listbullet2">Short the 2600B SENSE LO and LO terminals together.</li><li class="listbullet2">Short the SENSE HI and HI terminals together.<p class="magicfigurecenter"></p>
+<p class="magicfigurecenter"><img id="f12993" src="2600as-901-01b_connectionsforcontactcheck0ohmcalibration.png" class="linkedepsandpngtemplate" alt="Connections for contact check 0 ohm calibration" height="420" width="704" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul></li><li class="listalpha">Allow the readings to settle, then get the 2600B readings:<p class="listcontinue"><code class="monospace">r0_hi, r0_lo = smua.contact.r()</code></p>
+</li><li class="listalpha">Characterize both 50 Ω resistors using the resistance function of the digital multimeter.</li><li class="listalpha">As illustrated in the following figure:<ul class="listbullet2"><li class="listbullet2">Characterize both 50 Ω resistors using the resistance function of the digital multimeter.</li><li class="listbullet2">Connect a 50 Ω resistor between the SENSE LO and LO terminals.</li><li class="listbullet2">Connect the second 50 Ω resistor between the SENSE HI and HI terminals.<p class="magicfigurecenter"><img id="f26859" src="2600b-901-01a_connectionsforcontactcheck50ohmcalibration.png" class="linkedepsandpngtemplate" alt="Connections for contact check 50 ohm calibration" height="495" width="704" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul></li><li class="listalpha">Allow the readings to settle, then get the 2600B readings:<p class="listcontinue"><code class="monospace">r50_hi, r50_lo = smua.contact.r()</code></p>
+</li><li class="listalpha">Send the contact check low calibration adjustment command:<p class="listcontinue"><code class="monospace">smua.contact.calibratelo(</code><span class="monospaceitalic">r0_lo, Z_actual, r50_lo, 50_ohm_actual</span><code class="monospace">)</code></p>
+<p class="listcontinue"><strong class="specialbold">Where:</strong></p>
+<table class="tableintopic" width="552" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">r0_lo</span></p>
+</td>
+<td width="18"><p class="tablebodytext">=</p>
+</td>
+<td width="432"><p class="tablebodytext">2600B 0 Ω low measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">Z_actual</span></p>
+</td>
+<td width="18"><p class="tablebodytext">=</p>
+</td>
+<td width="432"><p class="tablebodytext">Actual zero value; the resistance of the short between the SENSE LO and LO terminals</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">r50_lo</span></p>
+</td>
+<td width="18"><p class="tablebodytext">=</p>
+</td>
+<td width="432"><p class="tablebodytext">2600B 50 Ω low measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">50_ohm_actual</span></p>
+</td>
+<td width="18"><p class="tablebodytext">=</p>
+</td>
+<td width="432"><p class="tablebodytext">Actual 50 Ω resistor value; the actual value of the resistor between the SENSE LO and LO terminals</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue">Typical values:</p>
+<p class="listcontinue"><code class="monospace">smua.contact.calibratelo(r0_lo, 0, r50_lo, 50.15)</code></p>
+<p class="listcontinue">Where <code class="monospace">r0_lo</code> is the same value as measured in step B, and <code class="monospace">r50_lo</code> is the same value as measured in step E.</p>
+</li><li class="listalpha">Send the contact check high calibration command:<p class="listcontinue"><code class="monospace">smua.contact.calibratehi(</code><span class="monospaceitalic">r0_hi, Z_actual, r50_hi, 50_ohm_actual</span><code class="monospace">)</code></p>
+<p class="listcontinue"><strong class="specialbold">Where:</strong></p>
+<table class="tableintopic" width="552" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">r0_hi</span></p>
+</td>
+<td width="18"><p class="tablebodytext">=</p>
+</td>
+<td width="432"><p class="tablebodytext">2600B 0 Ω high measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">Z_actual</span></p>
+</td>
+<td width="18"><p class="tablebodytext">=</p>
+</td>
+<td width="432"><p class="tablebodytext">Actual zero value; the resistance of the short between the SENSE HI and HI terminals</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">r50_hi</span></p>
+</td>
+<td width="18"><p class="tablebodytext">=</p>
+</td>
+<td width="432"><p class="tablebodytext">2600B 50 Ω high measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">50_ohm_actual</span></p>
+</td>
+<td width="18"><p class="tablebodytext">=</p>
+</td>
+<td width="432"><p class="tablebodytext">Actual 50 Ω resistor value; the value of the resistor between the SENSE HI and HI terminals</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue">Typical values:</p>
+<p class="listcontinue"><code class="monospace">smua.contact.calibratehi(r0_hi, 0, r50_hi, 50.15)</code></p>
+<p class="listcontinue">Where <code class="monospace">r0_hi</code> is the same value as measured in step B, and <code class="monospace">r50_hi</code> is the same value as measured in step&nbsp;E.</p>
+</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12984.htm" target="_self">Adjustment procedure</a></p><p class="relateditem"><a href="12985.htm" target="_self">Step 1. Prepare the 2600B for adjustment</a></p><p class="relateditem"><a href="26834.htm" target="_self">Step 2. Voltage calibration adjustment</a></p><p class="relateditem"><a href="27972.htm" target="_self">Step 3. Current calibration adjustment</a></p><p class="relateditem"><a href="12995.htm" target="_self">Step 6. Program calibration dates</a></p><p class="relateditem"><a href="12996.htm" target="_self">Step 7. Save calibration constants</a></p><p class="relateditem"><a href="12997.htm" target="_self">Step 8. Lock out calibration</a></p><p class="relateditem"><a href="12998.htm" target="_self">Step 9. Repeat calibration procedure for Channel B</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="20445" />
+<input id="topicDescription" type="hidden" value="Step 4. Contact check calibration adjustment" />
+<input id="footer-modified" type="hidden" value="Last modified: 5/26/2021 4:27:52 PM" />
+</body>
+</html>

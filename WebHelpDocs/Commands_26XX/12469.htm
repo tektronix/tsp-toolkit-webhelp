@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Linear staircase sweeps </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12465.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="77082.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12469" class="heading4">Linear staircase sweeps</h4>
+<p class="bodytext">As shown below, this sweep type steps from a start voltage or current value to an ending (stop) value. When enabled, a measurement is made at each point after the source and measurement settling time.</p>
+<p class="magicfigurecenter"><img id="f12470" src="2600as-901-01b_linearstaircasesweep.png" class="linkedepsandpngtemplate" alt="Linear staircase sweep" height="1126" width="1390" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">A linear staircase sweep is configured using a start level, a stop level, and the total number of points, including the start and stop points. The step size is determined by the start and stop levels, and the number of sweep points:</p>
+<p class="bodytextcenter"><em class="emphasis">step = (stop - start) / (points - 1)</em></p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The number of sweep steps actually performed is determined by the trigger count. Refer to <a id="h13512" class="jump" title="Triggering" href="14169.htm" target="_self">Triggering</a> for more information.</p>
+<p class="bodytext">The sweep can be either positive-going or negative-going, depending on the relative values of the start and stop parameters. When the sweep starts, the output goes to the start source level. The output then changes in equal steps until the stop level is reached. If the trigger count is greater than the number of points specified, the SMU starts over at the beginning value.</p>
+<p class="bodytext">To configure a linear staircase sweep, use the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> command. This function configures the source values the SMU outputs when performing a linear sweep. After configuring the sweep, you must also enable the source action by setting the following attribute:*</p>
+<p class="code"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.trigger.source.action</p>
+<p class="bodytext">* <code class="monospace">smu</code><span class="monospaceitalic">X</span> can be <code class="monospace">smua</code> for channel A or <code class="monospace">smub</code> for channel B</p>
+<p class="bodytext"><strong class="specialbold">Example:</strong></p>
+<p class="code">-- Configure a sweep from 0 to 10 V in 1 V steps.</p>
+<p class="code">smua.trigger.source.linearv(0, 10, 11)</p>
+<p class="code">-- Enable the source action.</p>
+<p class="code">smua.trigger.source.action = smua.ENABLE</p>
+<p class="bodytext">For more information, see <a id="h15271" class="jump" title="smuX.trigger.source.linearY()" href="15180.htm" target="_self">smuX.trigger.source.linearY()</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12465.htm" target="_self">Sweep characteristics</a></p><p class="relateditem"><a href="77082.htm" target="_self">Logarithmic staircase sweeps</a></p><p class="relateditem"><a href="12477.htm" target="_self">List sweeps</a></p><p class="relateditem"><a href="12467.htm" target="_self">Pulse mode sweeps</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12469" />
+<input id="topicDescription" type="hidden" value="Linear staircase sweeps" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:34:54 PM" />
+</body>
+</html>

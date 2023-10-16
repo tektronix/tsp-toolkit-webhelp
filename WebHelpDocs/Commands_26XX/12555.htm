@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Timer delays </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12554.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12556.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12555" class="heading4">Timer delays</h4>
+<p class="bodytext">You can configure timers to perform the same delay each time or set up a delay list that allows the timer to sequence through an array of delay values. All delay values are specified in seconds.</p>
+<p class="bodytext">A delay is the period after the timer is triggered and before the timer generates a trigger event. The programming example below illustrates how to configure timer 3 for a 10&nbsp;s delay:</p>
+<p class="code">trigger.timer[3].delay = 10</p>
+<p class="bodytext">You can configure a custom delay list to allow the timer to use a different interval each time it performs a delay. Each time the timer generates a trigger event, it uses the next delay value in the list. The timer repeats the delay list after all the elements in the delay list have been used. The programming example below illustrates how to configure timer 3 for delays of 2, 10, 15, and 7 seconds:</p>
+<p class="code">-- Configure timer 3 to complete delays of 2 s, 10 s,</p>
+<p class="code">-- 15 s, and 7 s.</p>
+<p class="code">trigger.timer[3].delaylist = {2, 10, 15, 7}</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Assigning a value to the delay attribute is the same as configuring it with a one&#8209;element delay list.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12553.htm" target="_self">Timer attributes</a></p><p class="relateditem"><a href="12554.htm" target="_self">Count</a></p><p class="relateditem"><a href="12556.htm" target="_self">Pass-through mode</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12555" />
+<input id="topicDescription" type="hidden" value="Timer delays" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:24:49 PM" />
+</body>
+</html>

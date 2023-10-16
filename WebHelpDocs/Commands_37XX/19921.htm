@@ -1,0 +1,181 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="20159.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="20160.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t19921" class="heading2-icl">bufferVar.statuses</h2>
+<p class="bodyzero">This attribute contains the status values of readings in the reading buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Clearing the buffer<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">USB flash drive using dmm.savebuffer or dmm.appendbuffer</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">statusInformation</span> = <span class="monospaceitalic">bufferVar</span>.statuses[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="154"><p class="tablebodytext"><span class="monospaceitalic">statusInformation</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="446"><p class="tablebodytext">The status value when reading <span class="monospaceitalic">N</span> of the specified buffer was acquired</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="154"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="446"><p class="tablebodytext">The reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="154"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="446"><p class="tablebodytext">The reading number <span class="monospaceitalic">N</span>; can be any value from 1 to the number of readings in the buffer; use the <span class="monospaceitalic">bufferVar.</span><code class="monospace">n</code> command to determine the number of readings in the&nbsp;buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This read&#8209;only buffer recall attribute is like an array (a Lua table) of the status values for all the readings in the buffer. The status values are floating-point numbers that encode the status value; see the following table for&nbsp;values. </p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="36" height="0"></td>
+<td width="108" height="0"></td>
+<td width="72" height="0"></td>
+<td width="342" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="4" width="558"><p class="tableheading">Buffer status bits</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="36"><p class="tableheading">Bit</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="108"><p class="tableheading">Name</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Hex value</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="342"><p class="tableheading">Remote command</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext">B0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="108"><p class="tablebodytext">Low limit 1 </p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0x01</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="342"><p class="codetable">dmm.buffer.LIMIT1_LOW_BIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext">B1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="108"><p class="tablebodytext">High limit 1 </p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0x02</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="342"><p class="codetable">dmm.buffer.LIMIT1_HIGH_BIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext">B2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="108"><p class="tablebodytext">Low limit 2 </p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0x04</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="342"><p class="codetable">dmm.buffer.LIMIT2_LOW_BIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext">B3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="108"><p class="tablebodytext">High limit 2 </p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0x08</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="342"><p class="codetable">dmm.buffer.LIMIT2_HIGH_BIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext">B6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="108"><p class="tablebodytext">Measure overflow</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0x40</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="342"><p class="codetable">dmm.buffer.MEAS_OVERFLOW_BIT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext">B7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="108"><p class="tablebodytext">Measure connect question</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0x80</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="342"><p class="codetable">dmm.buffer.MEAS_CONNECT_QUESTION_BIT</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">reset() </p>
+<p class="codetable">testData = dmm.makebuffer(1000)</p>
+<p class="codetable">testData.collectchannels = 1</p>
+<p class="codetable">dmm.nplc = 0.5</p>
+<p class="codetable">dmm.range = 0</p>
+<p class="codetable">dmm.configure.set(&quot;Dcv_100mV&quot;)</p>
+<p class="codetable">dmm.setconfig(&quot;slot2&quot;, &quot;Dcv_100mV&quot;)</p>
+<p class="codetable">scan.create(&quot;2035:2040&quot;)</p>
+<p class="codetable">scan.execute(testData)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(testData.statuses[1])</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">printbuffer(1, 6, testData.statuses)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">This example creates a reading buffer named <code class="monospace">testData</code>, configures the buffer to collect channel data, sets and saves the DMM configuration, creates a scan list, and then runs the scan.</p>
+<p class="tablebodytext">The <code class="monospace">print()</code> command then outputs the status value of the first measurement channel in the reading buffer. </p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">0.000000000e+00</code><br></p>
+<p class="tablebodytext">The <code class="monospace">printbuffer()</code> command then outputs the status values for measurements 1 to 6 in the reading buffer. </p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">0.000000000e+00, 0.000000000e+00, 0.000000000e+00, 0.000000000e+00, 0.000000000e+00, 0.000000000e+00</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h20173" class="jump" title="bufferVar.timestamps" href="19922.htm" target="_self">bufferVar.timestamps</a></p>
+<p class="listcommand">Reading buffers</p>
+
+

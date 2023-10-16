@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Turning the Model 2450 output off </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="27120.htm" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="28474.htm" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Turning the Model 2450 output off</h3>
+<p class="warning"><img src="warninglarge_lr.png" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0"><br>Turning the Model 2450 output off does not place the instrument in a safe state (an interlock is provided for this function). <br>Hazardous voltages may be present on all output and guard terminals. To prevent electrical shock that could cause injury or death, never make or break connections to the Model 2450 while the instrument is powered on. Turn off the equipment from the front panel or disconnect the main power cord from the rear of the Model 2450 before handling cables. Putting the equipment into an output-off state does not guarantee that the outputs are powered off if a hardware or software fault occurs.</p>
+<p class="bodytext">When the source of the instrument is turned off, it may not completely isolate the instrument from the external circuit. You can use the Output&#8209;Off State setting to place the Model 2450 in a known, noninteractive state during idle periods, such as when you are changing the device under test. The output&#8209;off states that can be selected for a Model 2450 are normal, high&#8209;impedance, zero, or guard.</p>
+<p class="bodytext">See <a id="h18564" class="jumptemplate" title="Output-off state" href="ID_OUTPUT_OFF_BUT.htm" target="_self">Output-off state</a> for additional detail.</p>
+<p class="headingprocedure">Using the front panel:</p>
+<p class="bodytext">Press the <strong class="specialbold">OUTPUT ON/OFF</strong> switch. The instrument is in the output&#8209;on state when the switch is illuminated. The instrument is in the output&#8209;off state when the switch is not illuminated.</p>
+<p class="headingprocedure">Using SCPI commands:</p>
+<p class="bodytext">To turn the output on, send the command:</p>
+<p class="code">:OUTPut:STATe<code class="monospace"> ON</code></p>
+<p class="bodytext">To turn the output off, send the command:</p>
+<p class="code">:OUTPut:STATe<code class="monospace"> OFF</code></p>
+<p class="headingprocedure">Using TSP commands:</p>
+<p class="bodytext">To turn the output on, send the command:</p>
+<p class="code">smu.source.output = smu.ON</p>
+<p class="bodytext">To turn the output off, send the command:</p>
+<p class="code">smu.source.output = smu.OFF</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="46200.htm" target="_self">Additional Model 2450 information</a></p><p class="relateditem"><a href="29798.htm" target="_self">*CLS</a></p><p class="relateditem"><a href="29803.htm" target="_self">*OPC</a></p><p class="relateditem"><a href="30227.htm" target="_self">Aborting the trigger model</a></p><p class="relateditem"><a href="33076.htm" target="_self">Adjusting the backlight brightness and dimmer</a></p><p class="relateditem"><a href="2430_1.htm" target="_self">Base library functions</a></p><p class="relateditem"><a href="30865.htm" target="_self">Buffer clear building block</a></p><p class="relateditem"><a href="30116.htm" target="_self">Calculations that you can apply to measurements</a></p><p class="relateditem"><a href="31431.htm" target="_self">Configuration lists</a></p><p class="relateditem"><a href="31010.htm" target="_self">Constant Limit building block</a></p><p class="relateditem"><a href="33305_1.htm" target="_self">Deleting a user script using a remote interface</a></p><p class="relateditem"><a href="31015.htm" target="_self">Delta building block</a></p><p class="relateditem"><a href="33036.htm" target="_self">Digital I/O</a></p><p class="relateditem"><a href="33053.htm" target="_self">Digital I/O lines</a></p><p class="relateditem"><a href="33038.htm" target="_self">Digital I/O port configuration</a></p><p class="relateditem"><a href="31012.htm" target="_self">Dynamic Limits building block</a></p><p class="relateditem"><a href="29871.htm" target="_self">Effect of GPIB line events on Model 2450</a></p><p class="relateditem"><a href="40158.htm" target="_self">Event numbers</a></p><p class="relateditem"><a href="30043.htm" target="_self">Filtering measurement data</a></p><p class="relateditem"><a href="28479.htm" target="_self">Four-wire remote sense connections</a></p><p class="relateditem"><a href="34814.htm" target="_self">High-capacitance operation</a></p><p class="relateditem"><a href="31434.htm" target="_self">Instrument settings stored in a source configuration list</a></p><p class="relateditem"><a href="30143.htm" target="_self">Limit testing and binning</a></p><p class="relateditem"><a href="28018.htm" target="_self">Making resistance measurements</a></p><p class="relateditem"><a href="30866.htm" target="_self">Measure building block</a></p><p class="relateditem"><a href="30940.htm" target="_self">Notify building block</a></p><p class="relateditem"><a href="31009.htm" target="_self">On event building block</a></p><p class="relateditem"><a href="31017.htm" target="_self">Once building block</a></p><p class="relateditem"><a href="31018.htm" target="_self">Once excluded building block</a></p><p class="relateditem"><a href="31651.htm" target="_self">Operation Event Register</a></p><p class="relateditem"><a href="ID_OUTPUT_OFF_BUT.htm" target="_self">Output-off state</a></p><p class="relateditem"><a href="ID_AVM_BUT.htm" target="_self">Overvoltage protection</a></p><p class="relateditem"><a href="29851.htm" target="_self">Programmable status register sets</a></p><p class="relateditem"><a href="31623.htm" target="_self">Questionable Event Register</a></p><p class="relateditem"><a href="29376.htm" target="_self">Ranges</a></p><p class="relateditem"><a href="33231.htm" target="_self">Reading buffers</a></p><p class="relateditem"><a href="29985.htm" target="_self">Relative offset</a></p><p class="relateditem"><a href="33726.htm" target="_self">Remote buffer operation</a></p><p class="relateditem"><a href="40105.htm" target="_self">Resets</a></p><p class="relateditem"><a href="29454.htm" target="_self">Saving setups</a></p><p class="relateditem"><a href="38949.htm" target="_self">Setting the display format</a></p><p class="relateditem"><a href="29111.htm" target="_self">Source and measure using TSP commands</a></p><p class="relateditem"><a href="ID_SRC_DELAY_BUT.htm" target="_self">Source delay</a></p><p class="relateditem"><a href="31656.htm" target="_self">Standard Event Register</a></p><p class="relateditem"><a href="19551.htm" target="_self">Status model</a></p><p class="relateditem"><a href="29144.htm" target="_self">Sweep operation</a></p><p class="relateditem"><a href="31133.htm" target="_self">Trigger model</a></p><p class="relateditem"><a href="32518.htm" target="_self">Triggering using TSP-Link synchronization lines</a></p><p class="relateditem"><a href="27120.htm" target="_self">TSP-Link System Expansion Interface</a></p><p class="relateditem"><a href="28474.htm" target="_self">Two-wire local sense connections</a></p><p class="relateditem"><a href="31618.htm" target="_self">Understanding bit settings</a></p><p class="relateditem"><a href="31944.htm" target="_self">Upgrading the firmware</a></p><p class="relateditem"><a href="32667.htm" target="_self">Using groups to manage nodes on a TSP-Link system</a></p><p class="relateditem"><a href="ID_SPEED_SLIDER.html" target="_self">Using NPLCs to adjust speed and accuracy</a></p><p class="relateditem"><a href="30864.htm" target="_self">Wait building block</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="29756" />
+<input id="topicDescription" type="hidden" value="Turning the Model 2450 output off" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/17/2014 10:30:23 AM" />
+</body>
+</html>

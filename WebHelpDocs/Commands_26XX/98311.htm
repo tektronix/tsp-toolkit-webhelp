@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> How can I change the line frequency or voltage? </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="21267.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="18027.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t98311" class="heading2">How can I change the line frequency or voltage?</h2>
+<p class="bodytext">The 2600B requires a line voltage of 100&nbsp;V&nbsp;ac to 240&nbsp;V&nbsp;ac (±10%) and a line frequency of 50&nbsp;Hz or 60&nbsp;Hz. The factory configures the 2600B to automatically detect and operate at the appropriate power line frequency each time the instrument power is turned on. In noisy environments, it may be necessary to manually configure the instrument to match the actual line frequency. For more information, see Line frequency configuration.</p>
+<p class="headingprocedure">To configure the line frequency from the front&nbsp;panel:</p>
+<ol class="listnumber"><li class="listnumber">Press the <strong class="specialbold">MENU</strong> key, then turn the navigation wheel to select <strong class="specialbold">LINE-FREQ</strong>,<strong class="specialbold"> </strong>and then press the <strong class="specialbold">ENTER</strong>&nbsp;key.</li><li class="listnumber">Turn the navigation wheel<strong class="specialbold"> </strong>to select the appropriate frequency and then press the <strong class="specialbold">ENTER</strong> key. To configure the instrument to automatically detect line frequency at each power-up, select&nbsp;<strong class="specialbold">AUTO</strong>.</li><li class="listnumber">Press the <strong class="specialbold">EXIT (LOCAL) </strong>key to return to the main display.</li></ol><p class="headingprocedure">To configure the line frequency from a remote interface:</p>
+<p class="bodytext">Set the <code class="monospace">localnode.linefreq</code> or the <code class="monospace">localnode.autolinefreq</code> attribute. To set the line frequency to 60&nbsp;Hz, send:</p>
+<p class="code">localnode.linefreq = 60</p>
+<p class="bodytext">To configure the instrument to automatically detect line frequency at each&nbsp;power-up:</p>
+<p class="code">localnode.autolinefreq = true</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13056.htm" target="_self">Frequently asked questions</a></p><p class="relateditem"><a href="23395.htm" target="_self">How do I display the instrument's serial number?</a></p><p class="relateditem"><a href="77707.htm" target="_self">How do I optimize performance?</a></p><p class="relateditem"><a href="47760.htm" target="_self">How do I upgrade the firmware?</a></p><p class="relateditem"><a href="15463.htm" target="_self">How do I use the digital I/O port?</a></p><p class="relateditem"><a href="15466.htm" target="_self">How do I trigger other instruments?</a></p><p class="relateditem"><a href="15470.htm" target="_self">How do I generate a GPIB service request?</a></p><p class="relateditem"><a href="15474.htm" target="_self">How do I store measurements in nonvolatile memory?</a></p><p class="relateditem"><a href="19627.htm" target="_self">When should I change the output-off state?</a></p><p class="relateditem"><a href="15496.htm" target="_self">How do I make contact check measurements?</a></p><p class="relateditem"><a href="21266.htm" target="_self">How do I make low-current measurements?</a></p><p class="relateditem"><a href="18027.htm" target="_self">Where can I get the LabVIEW driver?</a></p><p class="relateditem"><a href="21256.htm" target="_self">What should I do if I get an 802 interlock error?</a></p><p class="relateditem"><a href="21260.htm" target="_self">Why is the reading value 9.91e37?</a></p><p class="relateditem"><a href="29131.htm" target="_self">Where can I find the Model 2400 emulation script?</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="98311" />
+<input id="topicDescription" type="hidden" value="How can I change the line frequency or voltage?" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/26/2021 4:26:08 PM" />
+</body>
+</html>

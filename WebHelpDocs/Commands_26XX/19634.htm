@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Output-off function </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11885.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19636.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t19634" class="heading3">Output-off function</h3>
+<p class="bodytext">This setting is used only when the output is turned off and the 2600B is set to the normal output&#8209;off mode (<code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offmode&nbsp;=&nbsp;smu</code><span class="monospaceitalic">X</span><code class="monospace">.OUTPUT_NORMAL</code>).</p>
+<p class="bodytext">You can set the output-off function to CURRENT or VOLTAGE through the CONFIG menu on the front panel, or by using the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offfunc</code> attribute from a remote interface. VOLTAGE is the default output&#8209;off function.</p>
+<p class="bodytext">When the output is turned off and the selected output&#8209;off function is VOLTAGE (<code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offfunc&nbsp;=&nbsp;smu</code><span class="monospaceitalic">X</span><code class="monospace">.OUTPUT_DCVOLTS</code>):</p>
+<ul class="listbullet"><li class="listbullet">The source&#8209;measure unit (SMU) sources 0&nbsp;V.</li><li class="listbullet">The current limit is set by the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offlimiti</code> attribute (default 1&nbsp;mA).</li></ul><p class="bodytext">When the output is turned off and the selected output&#8209;off function is CURRENT (<code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offfunc&nbsp;=&nbsp;smu</code><span class="monospaceitalic">X</span><code class="monospace">.OUTPUT_DCAMPS</code>):</p>
+<ul class="listbullet"><li class="listbullet">The SMU sources 0&nbsp;A.</li><li class="listbullet">The voltage limit is set by the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offlimitv</code> attribute (default 40&nbsp;V).</li></ul><p class="bodytext">When the output-off function is set to either voltage or current, the SMU may source or sink a very small amount of power. In most cases, this source or sink power level is insignificant.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="19636.htm" target="_self">Selecting the output-off function</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="28174.htm" target="_self">Output-off modes</a></p><p class="relateditem"><a href="11883.htm" target="_self">Normal output-off mode</a></p><p class="relateditem"><a href="11884.htm" target="_self">High-impedance output-off mode</a></p><p class="relateditem"><a href="11885.htm" target="_self">Zero output-off mode</a></p><p class="relateditem"><a href="19635.htm" target="_self">Output-off limits (compliance)</a></p><p class="relateditem"><a href="19667.htm" target="_self">Remote programming output-off states quick reference</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="19634" />
+<input id="topicDescription" type="hidden" value="Output-off function" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 9:17:02 AM" />
+</body>
+</html>

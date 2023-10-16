@@ -1,0 +1,100 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.lanout[N].assert() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31397.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31401.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31396" class="heading2-icl">trigger.lanout[N].assert()</h2>
+<p class="bodyzero">This function simulates the occurrence of the trigger and generates the corresponding event.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#​336699" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#​336699" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.lanout[<em class="emphasis">N</em>].assert()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The LAN event number (1 to 8)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Generates and sends a LAN trigger packet for the LAN event number specified.</p>
+<p class="iclbody">Sets the pseudo line state to the appropriate state.</p>
+<p class="iclbody">The following indexes provide the listed LXI events:</p>
+<ul class="listbullet2"><li class="listbullet2">1:LAN0</li><li class="listbullet2">2:LAN1</li><li class="listbullet2">3:LAN2</li><li class="listbullet2">…</li><li class="listbullet2">8:LAN7</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">trigger.lanout[5].assert()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Creates a trigger with LAN trigger 5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h2926" class="jump" title="lan.lxidomain" href="14893.htm" target="_self">lan.lxidomain</a></p>
+<p class="listcommand"><a id="h34950" class="jump" title="trigger.lanin[N].clear()" href="31398.htm" target="_self">trigger.lanin[N].clear()</a></p>
+<p class="listcommand"><a id="h34058" class="jump" title="trigger.lanin[N].overrun" href="31413.htm" target="_self">trigger.lanin[N].overrun</a></p>
+<p class="listcommand"><a id="h34951" class="jump" title="trigger.lanin[N].wait()" href="31397.htm" target="_self">trigger.lanin[N].wait()</a></p>
+<p class="listcommand"><a id="h34952" class="jump" title="trigger.lanout[N].assert()" href="31396.htm" target="_self">trigger.lanout[N].assert()</a></p>
+<p class="listcommand"><a id="h33185" class="jump" title="trigger.lanout[N].ipaddress" href="31409.htm" target="_self">trigger.lanout[N].ipaddress</a></p>
+<p class="listcommand"><a id="h33816" class="jump" title="trigger.lanout[N].protocol" href="31416.htm" target="_self">trigger.lanout[N].protocol</a></p>
+<p class="listcommand"><a id="h33817" class="jump" title="trigger.lanout[N].stimulus" href="31419.htm" target="_self">trigger.lanout[N].stimulus</a></p>
+
+
+<input id="topicId" type="hidden" value="31396" />
+<input id="topicDescription" type="hidden" value="trigger.lanout[N].assert()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2019 9:13:52 AM" />
+</body>
+</html>

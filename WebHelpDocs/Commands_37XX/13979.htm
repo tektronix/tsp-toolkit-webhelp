@@ -1,0 +1,111 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13975.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14487.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t13979" class="heading2-icl">channel.calibration.adjustdate()</h2>
+<p class="bodyzero">This function sets or gets the adjustment date in UTC format (number of seconds since January 1, 1970) on the unlocked channel.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">returnDate</span> = channel.calibration.adjustdate(&quot;slot<span class="monospaceitalic">X</span>&quot;)</p>
+<p class="iclcode"><span class="monospaceitalic">returnDate </span>= channel.calibration.adjustdate(&quot;slot<span class="monospaceitalic">X</span>&quot;, <span class="monospaceitalic">date</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">returnDate</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The adjustment date in UTC format</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The slot number ( <code class="monospace">1</code> to <code class="monospace">6</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">date</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The date of the adjustment (UTC formatted)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command can get the adjust date whether calibration is currently locked or unlocked. If the <span class="monospaceitalic">channelList </span>parameter is not specified, it uses the currently unlocked card. </p>
+<p class="iclbody">This command can only set the adjustment date on a previously unlocked card. The date is not permanently saved until the <code class="monospace">channel.calibration.save()</code> command is sent.</p>
+<p class="iclbody">There is only one adjustment date per card. Therefore, the only acceptable values for <span class="monospaceitalic">channelList</span> are <code class="monospace">slot</code><span class="monospaceitalic">X</span>. An error is generated if any other values are used.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">adjustmentDate = channel.calibration.adjustdate(&quot;slot2&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Gets the adjustment date for the card in slot 2.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">NewAdjustDate = os.time{year=2010, month=12, day=28, hour=17, min=35, sec=0}</p>
+<p class="codetable">channel.calibration.unlock(&quot;slot5&quot;, &quot;KI3706&quot;)</p>
+<p class="codetable">myDate = channel.calibration.adjustdate(&quot;slot5&quot;, NewAdjustDate)</p>
+<p class="codetable">channel.calibration.save()</p>
+<p class="codetable">channel.calibration.lock()</p>
+<p class="codetable">print(os.date(&quot;%c&quot;, myDate))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Assign the UTC time for December 28, 2010 at 17:35:00 GMT to NewAdjustDate.</p>
+<p class="tablebodytext">Unlock the calibration for the card in slot 5, assuming the default password.</p>
+<p class="tablebodytext">Set the adjustment date using NewAdjustDate for the card in slot 5.</p>
+<p class="tablebodytext">Save the adjustment date on the card on slot 5.</p>
+<p class="tablebodytext">Lock the calibration for the card in slot 5.</p>
+<p class="tablebodytext">View the date for <code class="monospace">myDate</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a class="jump" title="Lua date and time" href="http://www.lua.org/pil/22.1.html" target="_self">Lua date and time</a></p>
+<p class="listcommand"><a class="jump" title="UTC Calculator" href="http://www.mbari.org/staff/rich/utccalc.htm" target="_self">UTC Calculator</a></p>
+<p class="listcommand"><a id="h14499" class="jump" title="channel.calibration.adjustcount()" href="13975.htm" target="_self">channel.calibration.adjustcount()</a></p>
+<p class="listcommand"><a id="h13981" class="jump" title="channel.calibration.save()" href="13980.htm" target="_self">channel.calibration.save()</a></p>
+<p class="listcommand"><a id="h14501" class="jump" title="channel.calibration.verifydate()" href="14500.htm" target="_self">channel.calibration.verifydate()</a></p>
+
+

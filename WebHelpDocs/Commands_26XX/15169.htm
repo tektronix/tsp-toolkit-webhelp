@@ -1,0 +1,83 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15168.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15170.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15169" class="heading2-icl">smuX.trigger.measure.action</h2>
+<p class="bodyzero">This attribute controls measurement actions during a sweep.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">0 (smuX.DISABLE)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">action</span></span> = smu<span class="monospaceitalic">X</span>.trigger.measure.action</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.trigger.measure.action<code class="monospace"> = </code><span class="monospaceitalic">action</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">action</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The sweep measurement action; set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">0</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.DISABLE</code>: Do not make measurements during the sweep</li><li class="tablelistbullet9pt"><code class="monospace">1</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.ENABLE</code>: Make measurements during the sweep</li><li class="tablelistbullet9pt"><code class="monospace">2</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.ASYNC</code>: Make measurements during the sweep, but asynchronously with the source area of the trigger model</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">X</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.trigger.measure.action</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">With this attribute enabled (setting <span class="monospaceitalic"><span class="monospaceitalic">action</span></span> to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.ENABLE</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.ASYNC</code>), configure the measurement with one of the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.measure.</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> functions.</p>
+<p class="iclbody">If this attribute is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.ASYNC</code>:</p>
+<ul class="listbullet"><li class="listbullet">Asynchronous sweep measurements can only be used with measure autoranging turned off. To turn measure autoranging off for all measurements during the sweep, set the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.autorange</code><span class="monospaceitalic">Y</span> attribute to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTORANGE_OFF</code>.</li><li class="listbullet">Autozero must also be turned off. To turn off autozero, set the<code class="monospace"> </code><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.autozero</code> attribute to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTOZERO_OFF</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTOZERO_ONCE</code>.</li><li class="listbullet">The reading buffer used by <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.measure.</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> must have <span class="monospaceitalic">bufferVar</span><code class="monospace">.collectsourcevalues</code> set to <code class="monospace">0</code>.</li></ul><p class="iclbody">If any of the above items is incorrectly configured, the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.initiate()</code> function generates an error.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.trigger.measure.v(smua.nvbuffer1)</p>
+<p class="codetable">smua.trigger.measure.action = smua.ENABLE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Configure sweep voltage measurements.</p>
+<p class="tablebodytext">Enable voltage measurements during the sweep.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15228" class="jump" title="bufferVar.collectsourcevalues" href="15132.htm" target="_self">bufferVar.collectsourcevalues</a></p>
+<p class="listcommand"><a id="h15255" class="jump" title="smuX.trigger.autoclear" href="15160.htm" target="_self">smuX.trigger.autoclear</a></p>
+<p class="listcommand"><a id="h15266" class="jump" title="smuX.trigger.measure.Y()" href="15172.htm" target="_self">smuX.trigger.measure.Y()</a></p>
+<p class="listcommand"><a id="h13512" class="jump" title="Triggering" href="14169.htm" target="_self">Triggering</a></p>
+
+

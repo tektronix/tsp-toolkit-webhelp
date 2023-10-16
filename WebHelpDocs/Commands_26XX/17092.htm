@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Create an unnamed script using script.new() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17075.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17259.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t17092" class="heading4">Create an unnamed script using script.new()</h4>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Unnamed scripts are not available from the front&#8209;panel display of the instrument. Only the anonymous script and named scripts are available from the front&#8209;panel display.</p>
+<p class="bodytext">When you create a script using <code class="monospace">script.new()</code>, if you do not include <span class="monospaceitalic">name</span>, the script is added to the runtime environment as an unnamed script. The <code class="monospace">script.new()</code> function returns the script. You can assign it to a global variable, a local variable, or ignore the return value. A global variable is not automatically created.</p>
+<p class="bodytext">For example, send the following command:</p>
+<p class="code">hello = script.new('display.clear() display.settext(&quot;hello&quot;)')</p>
+<p class="bodytext">A script is created in the runtime environment and a global variable is created that references the script.</p>
+<p class="bodytext">To run the script, send the command:</p>
+<p class="code">hello()</p>
+<p class="magicfigurecenter"><img id="f17090" src="17090.png" class="linkedepsandpngtemplate50%" alt="Create an unnamed script" height="418" width="1810" vspace="0" hspace="0" align="middle" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="17075.htm" target="_self">Create a script using the script.new() command</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="17092" />
+<input id="topicDescription" type="hidden" value="Create an unnamed script using script.new()" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 8:56:02 AM" />
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Communicate with the instrument </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="97810.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="35765.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t93395" class="heading4">Communicate with the instrument</h4>
+<p class="bodytext">When using Virtual Instrument Software Architecture (VISA) to communicate with the USB device, you need to use a VISA communication driver. VISA requires a resource string in the following format to connect to the correct USB instrument:</p>
+<p class="bodytext"><code class="monospace">USB[board]::manufacturer ID::model code::serial number[::USB interface number][::INSTR]</code></p>
+<p class="bodytext">This requires that you determine the parameters. You can gather this information by running a utility that automatically detects all instruments connected to the computer. If you installed the Keithley I/O Layer, the Keithley Configuration Panel is available from the Microsoft<sup class="superscript">&reg;</sup> Windows<sup class="superscript">&reg;</sup> Start menu in the Keithley Instruments menu.</p>
+<p class="headingprocedure">To use the Keithley Configuration Panel to determine the VISA resource string:</p>
+<ol class="listnumber"><li class="listnumber">Start the Keithley Configuration Panel. The Keithley Configuration Wizard opens to the Select Operation dialog box.</li><li class="listnumber">Complete the wizard.</li><li class="listnumber">Save the configuration. From the Configuration Utility, select <strong class="specialbold">File &gt; Save</strong>.</li><li class="listnumber">Open the Keithley Communicator.</li><li class="listnumber">Select <strong class="specialbold">File &gt; Open Instrument</strong> to open the instrument you named in the wizard.<p class="magicfigurecenter"><img id="f18408" src="70xbkicommunicatoropeninstrument_lr.png" class="linkedepsandpngtemplate" alt="Keithley Communicator Open an Instrument" height="275" width="321" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="listnumber">Select <strong class="specialbold">OK</strong>.</li><li class="listnumber">Send a command to the instrument and see if it responds.</li></ol><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">If you have a full version of NI&#8209;VISA on your system, you can run NI-MAX or the VISA Interactive Utility. See their documentation for information.</p>
+<p class="note">If you have the Keysight IO Libraries on your system, you can run Keysight Connection Expert to review your USB instruments. See their documentation for information.</p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="97810.htm" target="_self">USB communications</a></p><p class="relateditem"><a href="35765.htm" target="_self">Connecting multiple USB instruments to the computer</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="93395" />
+<input id="topicDescription" type="hidden" value="Communicate with the instrument" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/17/2021 3:27:43 PM" />
+</body>
+</html>

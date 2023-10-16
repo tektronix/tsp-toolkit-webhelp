@@ -1,0 +1,144 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.load() — Simple Loop </title>
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="35128.htm" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31112.htm" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">trigger.model.load() — Simple Loop</h2>
+<p class="bodyzero">This function loads a predefined trigger model configuration.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.load(&quot;SimpleLoop&quot;, <span class="monospaceitalic">count</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;SimpleLoop&quot;, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">delay</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;SimpleLoop&quot;, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">delay</span>, <span class="monospaceitalic">bufferName</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">count</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The number of measurements the instrument will make</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">delay</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">The delay time before the measurement (50&nbsp;<span class="symbols">m</span>s to 10,000&nbsp;s); default is 0 for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">A string that indicates the reading buffer; the default buffers (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or the name of a user&#8209;defined buffer; if no buffer is specified, <code class="monospace">defbuffer1</code> is used</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets up a loop that sets a delay, makes a measurement, and then repeats the loop the number of times you defined in the count parameter.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="594"><p class="codetable">reset()</p>
+<p class="codetable"> </p>
+<p class="codetable">--set up measure function</p>
+<p class="codetable">smu.measure.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable">smu.measure.terminals = smu.TERMINALS_REAR</p>
+<p class="codetable">smu.measure.autorange = smu.ON</p>
+<p class="codetable">smu.measure.nplc = 1</p>
+<p class="codetable"> </p>
+<p class="codetable">--set up source function</p>
+<p class="codetable">smu.source.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.source.ilimit.level = 0.1</p>
+<p class="codetable">smu.source.level = 20</p>
+<p class="codetable">smu.source.delay = 0.1</p>
+<p class="codetable">smu.source.highc = smu.OFF</p>
+<p class="codetable"> </p>
+<p class="codetable">--turn on output and initiate readings</p>
+<p class="codetable">smu.source.output = smu.ON</p>
+<p class="codetable">trigger.model.load(&quot;SimpleLoop&quot;, 200)</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--Parse index and data into three columns</p>
+<p class="codetable">print(&quot;Rdg #&quot;, &quot;Time (s)&quot;, &quot;Current (A)&quot;)</p>
+<p class="codetable">for i = 1, defbuffer1.n do</p>
+<p class="codetable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print(i, defbuffer1.relativetimestamps[i], defbuffer1[i])</p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--Discharge the capacitor to 0 V and turn off the output</p>
+<p class="codetable">smu.source.level = 0</p>
+<p class="codetable">delay(2)</p>
+<p class="codetable">smu.source.output = smu.OFF</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="594"><p class="tablebodytext">This example uses the Simple Loop trigger model template to do a capacitor test. This example produces 200 readings that have output similar to the following example:</p>
+<p class="codetable">Rdg #	Time (s)	Current (A)</p>
+<p class="codetable">1	0             8.5718931952528e-11</p>
+<p class="codetable">2	0.151875      1.6215984111057e-10</p>
+<p class="codetable">3	0.303727      1.5521139928865e-10</p>
+<p class="codetable">. . .</p>
+<p class="codetable">198	29.91579194	1.5521250951167e-10</p>
+<p class="codetable">199	30.067648716	1.4131290582142e-10</p>
+<p class="codetable">200	30.219497716	1.5521067764368e-10</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="35129" />
+<input id="topicDescription" type="hidden" value="trigger.model.load() &#0151; Simple Loop" />
+<input id="footer-modified" type="hidden" value="Last modified: 12/12/2013 1:54:36 PM" />
+</body>
+</html>

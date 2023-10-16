@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.source.pulse.xlimit.level </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="63469.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="63472.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t63723" class="heading2-icl">smu.source.pulse.xlimit.level</h2>
+<p class="bodyzero">This attribute sets the source limit for pulsed output for the selected function when pulsing.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Recall settings<br>Instrument reset<br>Power cycle<br>Source configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Save settings<br>Source configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Voltage: 105 µA<br>Current: 7.35 V</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu.source.pulse.<span class="monospaceitalic">x</span>limit.level = <span class="monospaceitalic">value</span></p>
+<p class="iclcode"><span class="monospaceitalic">value = </span>smu.source.pulse.<span class="monospaceitalic">x</span>limit.level</p>
+<p class="iclcode"><span class="monospaceitalic">value</span><em class="emphasis"> </em>= smu.source.getattribute(<span class="monospaceitalic">function</span>, smu.ATTR_SRC_PULSE_LIMIT)</p>
+<p class="iclcode">smu.source.setattribute(<span class="monospaceitalic">function</span>, smu.ATTR_SRC_PULSE_LIMIT, <span class="monospaceitalic">value</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The limit:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: 100 nA to 10.5 A</li><li class="tablelistbullet9pt">Voltage: 20 mV to 105 V</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">x</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The function for which to set the limit:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage: <code class="monospace">v</code></li><li class="tablelistbullet9pt">Current: <code class="monospace">i</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current source: <code class="monospace">smu.FUNC_DC_CURRENT</code></li><li class="tablelistbullet9pt">Voltage source: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets the source limit for pulse outputs. The Model 2461 cannot source pulse levels that exceed this limit.</p>
+<p class="iclbody">The values that can be set for this command are limited by the setting for the overvoltage protection limit. Also, if an interlock is not installed, the values are limited.</p>
+<p class="iclbody">This value can also be limited by the measurement range. If a specific measurement range is set, the limit must be more than 1&nbsp;percent of the measurement range. If you set the measurement range to be automatically selected, the measurement range is selected based on the pulse and bias limits.</p>
+<p class="iclbody">If you change the source range to a level that is not appropriate for this limit, the instrument changes the source limit to a limit that is appropriate to the range and a warning is generated.</p>
+<p class="iclbody">Limits are absolute values.</p>
+<p class="iclbody">You can use the <code class="monospace">smu.source.xlimit.tripped</code> command to check the limit state of the pulse source output.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">smu.source.func = smu.FUNC_DC_VOLTAGE</code></p>
+<p class="codetable"><code class="monospace">smu.source.pulse.ilimit.level = 1</code><br></p>
+<p class="codetable"><code class="monospace">print(smu.source.pulse.ilimit.level)</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the source function to voltage with the pulse current limit set to 1&nbsp;A.</p>
+<p class="tablebodytext">Query the source pulse current limit setting.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">1</code></p>
+<p class="tablebodytext">Indicates that the source pulse current limit is 1 A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31492" class="jump" title="smu.source.xlimit.level" href="30561.htm" target="_self">smu.source.xlimit.level</a></p>
+<p class="listcommand"><a id="h31494" class="jump" title="smu.source.xlimit.tripped" href="30562.htm" target="_self">smu.source.xlimit.tripped</a></p>
+
+
+<input id="topicId" type="hidden" value="63723" />
+<input id="topicDescription" type="hidden" value="smu.source.pulse.xlimit.level" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 1:08:43 PM" />
+</body>
+</html>

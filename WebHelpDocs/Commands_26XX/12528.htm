@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Configuring source and measure actions </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15446.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12529.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12528" class="heading4">Configuring source and measure actions</h4>
+<p class="bodytext">You can configure the source action using any of the following functions:</p>
+<p class="bodytext"><code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.trigger.source.linear</code></code><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span><code class="monospace"><code class="monospace">()</code></code><br><code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.trigger.source.log</code></code><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span><code class="monospace"><code class="monospace">()</code></code><br><code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.trigger.source.list</code></code><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span><code class="monospace"><code class="monospace">()</code></code></p>
+<p class="bodytext">Where:</p>
+<p class="list">	<span class="monospaceitalic"><span class="monospaceitalic">Y</span></span> = Source function (<code class="monospace"><code class="monospace">v</code></code> = voltage, <code class="monospace"><code class="monospace">i</code></code> = current)</p>
+<p class="bodytext">Source functions cannot be changed within a sweep.</p>
+<p class="bodytext">To enable the source action, set the <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.trigger.source.action</code></code> attribute to <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.ENABLE</code></code>. </p>
+<p class="bodytext">The source&#8209;measure unit (SMU) can be configured to perform any or all available measurements during a sweep using the <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.trigger.measure.</code></code><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span><code class="monospace"><code class="monospace">()</code></code> function. To enable the measure action for a simple synchronous sweep, set the <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.trigger.measure.action</code></code> attribute to <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.ENABLE</code></code>. To enable the measure action for an asynchronous sweep, set the <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.trigger.measure.action</code></code> attribute to <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic"><span class="monospaceitalic">X</span></span><code class="monospace"><code class="monospace">.ASYNC</code></code>.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">In asynchronous mode, trigger your measurements before the source completes the sweep (before the end sweep action occurs). If the source loop has completed its end sweep action, the measure loop terminates unless the measure action block is actively measuring. If this is the case, the active measurement is allowed to complete before returning to the arm layer.</p>
+<p class="note"><img id="f14261_1" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">For more information about the sweep functions, refer to <a id="h12329" class="jump" title="Sweep operation" href="13524.htm" target="_self">Sweep operations</a>.</p>
+<p class="bodytext">Configured source and measure delays are imposed when the SMU executes the source and measure action blocks. Additionally, if the measure count setting is greater than one, then the measure count is satisfied each time the measure action is performed.</p>
+<p class="bodytext">The arm and trigger counts must be set to control how many times the SMU executes the source and measure actions. The arm count indicates the number of times to execute the complete sweep. The trigger count sets the number of loops in the trigger layer. Typically, you set the trigger count to be equal to the number of points in the configured sweep. If the trigger count is not equal to the number of points configured in the sweep, then one of the following occurs:</p>
+<ul class="listbullet"><li class="listbullet">If the trigger count is greater than the number of points in a sweep, the SMU satisfies the trigger count by restarting the sweep values from the beginning. The points are configured by the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>,  <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, or<code class="monospace"> smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> command.</li><li class="listbullet">If the trigger count is less than the number of source values configured, the SMU satisfies the trigger count and ignores the remaining source values.</li></ul><p class="bodytext">For example, configure a three-point linear voltage sweep from 1&nbsp;V to 3&nbsp;V, with the trigger count set to 2. The SMU outputs 1&nbsp;V, 2&nbsp;V. If the trigger count is set to 6, the SMU outputs the values 1&nbsp;V, 2&nbsp;V, 3&nbsp;V, 1&nbsp;V, 2&nbsp;V, 3&nbsp;V, repeating the source values twice in a single sweep.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="15446.htm" target="_self">Using the remote trigger model</a></p><p class="relateditem"><a href="12529.htm" target="_self">Enabling pulse mode sweeps using the end pulse action</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12528" />
+<input id="topicDescription" type="hidden" value="Configuring source and measure actions" />
+<input id="footer-modified" type="hidden" value="Last modified: 7/22/2021 11:38:26 AM" />
+</body>
+</html>

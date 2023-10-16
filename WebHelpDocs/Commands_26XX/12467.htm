@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Pulse mode sweeps </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12477.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12480.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12467" class="heading4">Pulse mode sweeps</h4>
+<p class="bodytext">To create a pulse sweep for any of the sweep types, configure the end pulse&nbsp;action. </p>
+<p class="bodytext">To configure a pulse sweep for source&#8209;measure unit (SMU) A, send:</p>
+<p class="code">smua.trigger.endpulse.action = smua.SOURCE_IDLE</p>
+<p class="bodytext">To configure a dc sweep for SMU A, send: </p>
+<p class="code">smua.trigger.endpulse.action = smua.SOURCE_HOLD</p>
+<p class="bodytext">Timers must be used to configure the pulse width and period. Refer to <a id="h15535" class="jump" title="Using timers to perform pulse mode sweeps" href="12560.htm" target="_self">Using timers to perform pulsed sweeps</a> for&nbsp;details.</p>
+<p class="bodytext">The pulse width is managed by controlling the duration between the source stimulus event and the end pulse stimulus event. A latency exists between these stimulus events and their resulting source level transitions. This trigger latency can vary based on factors such as the source range and the electrical characteristics of the device under test (DUT).</p>
+<p class="bodytext">The figure below shows the source and end pulse stimulus events in relationship to the pulse (see <a id="h13512" class="jump" title="Triggering" href="14169.htm" target="_self">Triggering</a> for information on stimulus events). Any change in Δt results in a corresponding change in the pulse width.</p>
+<p class="magicfigurecenter"><img id="f19487" src="2650as-901-01b_pulsewidthcontrol_lr.png" class="linkedepsandpngtemplate" alt="Pulse width control" height="181" width="505" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="12480.htm" target="_self">Pulse duty cycle</a></p><p class="relateditem"><a href="12479.htm" target="_self">Pulsing in the extended operating area</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12465.htm" target="_self">Sweep characteristics</a></p><p class="relateditem"><a href="12469.htm" target="_self">Linear staircase sweeps</a></p><p class="relateditem"><a href="77082.htm" target="_self">Logarithmic staircase sweeps</a></p><p class="relateditem"><a href="12477.htm" target="_self">List sweeps</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12467" />
+<input id="topicDescription" type="hidden" value="Pulse mode sweeps" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 9:22:58 AM" />
+</body>
+</html>

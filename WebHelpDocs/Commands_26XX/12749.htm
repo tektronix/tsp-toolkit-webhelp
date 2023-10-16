@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Primary address </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12745.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12752.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12749" class="heading4">Primary address</h4>
+<p class="bodytext">The 2600B ships from the factory with a GPIB primary address of 26. If the GPIB interface is enabled, it momentarily displays the primary address on power-up. You can set the address to a value from 0 to 30, but do not assign the same address to another device or to a controller that is on the same GPIB bus (controller addresses are usually 0 or 21).</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="31293.htm" target="_self">GPIB operation</a></p><p class="relateditem"><a href="12744.htm" target="_self">GPIB standards</a></p><p class="relateditem"><a href="12745.htm" target="_self">Connect the GPIB cable</a></p><p class="relateditem"><a href="12752.htm" target="_self">GPIB terminator</a></p><p class="relateditem"><a href="12740.htm" target="_self">Front-panel GPIB operation</a></p></td>
+</tr>
+</table>
+<a name="o12750"></a>
+<p class="headingprocedure">To set or check the primary address from the front panel:</p>
+<ol class="listnumber"><li class="listnumber">Press the <strong class="specialbold">MENU</strong> key, select <strong class="specialbold">GPIB</strong>, and then press the <strong class="specialbold">ENTER</strong> key or the&nbsp;navigation wheel.</li><li class="listnumber">Select <strong class="specialbold">ADDRESS</strong>, then press the <strong class="specialbold">ENTER</strong> key or the&nbsp;navigation wheel.</li><li class="listnumber">Use the navigation wheel to set the primary address to the appropriate value, then press the <strong class="specialbold">ENTER</strong> key or the&nbsp;navigation wheel.</li><li class="listnumber">Press the <strong class="specialbold">EXIT (LOCAL) </strong>key twice to return to the normal display.</li></ol>
+<a name="o12751"></a>
+<p class="headingprocedure">To set the primary address remotely:</p>
+<p class="code">gpib.address = address</p>
+<p class="headingprocedure">To set the primary address remotely to 20:</p>
+<p class="code">gpib.address = 20</p>
+<p class="bodytext">Note that changing the GPIB address takes effect when the command is processed. Any response messages generated after processing this command are sent with the new settings. If command messages are being queued (sent before this command has executed), the new settings may take effect in the middle of a subsequent command message, so be careful when setting this attribute from the GPIB interface.</p>
+
+
+<input id="topicId" type="hidden" value="12749" />
+<input id="topicDescription" type="hidden" value="Primary address" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/15/2021 8:36:20 AM" />
+</body>
+</html>

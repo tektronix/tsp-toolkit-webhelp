@@ -1,0 +1,91 @@
+<html><head><title> channel.getcount() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17247.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17521.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.getcount()</h2>
+<p class="bodyzero">This function returns a string with the close counts for the specified channels.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">counts</em> = channel.getcount(<em class="emphasis">channelList</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">counts</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A comma-delimited string listing the channel close counts</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string listing the items to query, which can include:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Channels</li><li class="tablelistbullet">Channel patterns (channels will be listed in the order in which they are listed in the pattern)</li><li class="tablelistbullet"><code class="monospace">slot</code><span class="monospaceitalic">X</span>, where <span class="monospaceitalic">X</span> equals 1 to 6 for the Model 707B or 1 for the Model 708B</li><li class="tablelistbullet"><code class="monospace">allslots</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">A close count is the number of times a relay has been closed. The count values are returned in the order in which the channels are specified.</p>
+<p class="iclbody">If <span class="monospaceitalic">channelList</span> includes a pattern, you can use <code class="monospace">channel.pattern.getimage()</code> with the pattern name to see the channel order and the channels to which the close counts pertain.</p>
+<p class="iclbody">When the <span class="monospaceitalic">channelList</span> parameter for this function is <code class="monospace">&quot;slot</code><span class="monospaceitalic">X</span><code class="monospace">&quot;</code>, the response first lists the channels starting from lowest to highest (from slot 1 to slot 6). Because each slot is processed completely before going to the next, all slot 1 channels are listed before slot 2 channels.</p>
+<p class="iclbody">The counts reported for the following cards indicate the number of closures since the last power cycle of the card:</p>
+<ul class="listbullet2"><li class="listbullet2">7072</li><li class="listbullet2">7072HV</li><li class="listbullet2">717350</li><li class="listbullet2">7174A</li></ul><p class="iclbody">For all other cards, the number of closures is the closures that have occurred over the lifetime of the card.</p>
+<p class="iclbody">If an error is detected, a <code class="monospace">nil</code> value is returned. No partial list of close counts is returned.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="458"><p class="codetable">channel.pattern.setimage(&quot;1A01,1B02,1C01&quot;,&quot;Path&quot;)</p>
+<p class="codetable">PathList =</p>
+<p class="codetable">   channel.pattern.getimage(&quot;Path&quot;)</p>
+<p class="codetable">print(PathList)</p>
+<p class="codetable">print(channel.getcount(PathList))</p>
+<p class="codetable">print(channel.getcount(&quot;Path&quot;))</p>
+</td>
+<td width="285"><p class="tablebodytext">Gets the close counts for channels in a channel pattern called <code class="monospace">&quot;Path&quot;</code></p>
+<p class="tablebodytext">Sample output:</p>
+<p class="codetable">1A01,1B02,1C01</p>
+<p class="codetable">11001,11014,11025</p>
+<p class="codetable">11001,11014,11025</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h776" class="jumptemplate" title="channel.pattern.getimage()" href="17284.html" target="_self">channel.pattern.getimage()</a></p>
+<p class="iclbody"><a id="h1806" class="jumptemplate" title="channel.pattern.setimage()" href="17296.html" target="_self">channel.pattern.setimage()</a></p>
+<p class="iclbody">Data retrieval commands</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

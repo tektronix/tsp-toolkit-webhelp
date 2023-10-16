@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.limit[Y].fail </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41225.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41227.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41221" class="heading2-icl">dmm.digitize.limit[Y].fail</h2>
+<p class="bodyzero">This attribute queries the results of a limit test.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = <code class="monospace">dmm</code>.digitize.limit[<span class="monospaceitalic">Y]</span>.fail</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_DIGI_LIMIT_FAIL_<span class="monospaceitalic">Y</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_DIGI_LIMIT_FAIL_<span class="monospaceitalic">Y</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The results of the limit test for limit <span class="monospaceitalic">Y</span>:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">dmm.FAIL_NONE</code>: Test passed; measurement under or equal to the high limit</li><li class="tablelistbullet9pt"><code class="monospace">dmm.FAIL_HIGH</code>: Test failed; measurement exceeded high limit</li><li class="tablelistbullet9pt"><code class="monospace">dmm.FAIL_LOW</code>: Test failed; measurement exceeded low limit</li><li class="tablelistbullet9pt"><code class="monospace">dmm.FAIL_BOTH</code>: Test failed; measurement exceeded both limits</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limit number: <code class="monospace">1</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The digitize function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: <code class="monospace">dmm.FUNC_DIGITIZE_CURRENT</code></li><li class="tablelistbullet9pt">Voltage: <code class="monospace">dmm.FUNC_DIGITIZE_VOLTAGE</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81857.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command queries the result of a limit test for the selected digitize function.</p>
+<p class="iclbody">The response message indicates if the limit test passed or how it failed (on the high or low limit).</p>
+<p class="iclbody">If autoclear is set to off, reading the results of a limit test does not clear the fail indication of the test. To clear a failure, send the clear command. To automatically clear the results, set auto clear on.</p>
+<p class="iclbody">If auto clear is set to on and you are making a series of measurements, the last measurement limit determines the fail indication for the limit. If auto clear is turned off, the results return a test fail if any of one of the readings failed.</p>
+<p class="iclbody">To use this attribute, you must set the limit state to on.</p>
+<p class="iclbody">If the readings are stored in a reading buffer, you can use the <span class="monospaceitalic">bufferVar</span><code class="monospace">.statuses</code> command to see the results.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclbody">See <a id="h41223" class="jump" title="dmm.digitize.limit[Y].low.value" href="41215.htm" target="_self">dmm.digitize.limit[Y].low.value</a> for examples of how to use this command.</p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41674" class="jump" title="dmm.digitize.limit[Y].enable" href="41225.htm" target="_self">dmm.digitize.limit[Y].enable</a></p>
+
+
+<input id="topicId" type="hidden" value="41221" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.limit[Y].fail" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 6:52:48 AM" />
+</body>
+</html>

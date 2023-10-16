@@ -1,0 +1,155 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Outline view </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="416.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="417.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t23894" class="heading3">Outline view</h3>
+<p class="bodytext">The outline view allows you to navigate through the structure of the active script in the script editor. Double-clicking a variable name or icon causes the first instance of the variable in the active script to be highlighted.</p>
+<p class="bodytext">This view shows:</p>
+<ul class="listbullet"><li class="listbullet">Names of local and global variables</li><li class="listbullet">Functions referenced by the active script in the script editor</li><li class="listbullet">Parameters</li><li class="listbullet">Loop control variables</li><li class="listbullet">Table variables</li><li class="listbullet">Simple assignments to table fields</li></ul><p class="bodytext">The Outline tab is visible by default in the TSP perspective.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Icon</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tableheading">Name</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tableheading">Examples</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f24071" src="tsbglobalfunctionicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB global function icon" height="19" width="19" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Global function variable</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">function gFunction()</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f24077" src="tsblocalfunctionicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB local function variable icon" height="14" width="14" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Local function variable</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">local function lFunction()</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f24063" src="tsbanonymousfunctionicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB anonymous function icon" height="14" width="14" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Anonymous function</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext"><code class="monospace">myTest(function() return 1 end)</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f24072" src="tsbglobaltableicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB global table icon" height="20" width="19" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Global table variable</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext"><code class="monospace">gTable = { }</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f24078" src="tsblocaltableicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB local table icon" height="14" width="14" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Local table variable</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext"><code class="monospace">local lTable = { }</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f25320" src="tsbothertablefieldicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSP other table field icon" height="11" width="11" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Other table field</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">testTable.unit1 = &quot;This is unit 1&quot;</p>
+<p class="codetable">testTable.unit2 = &quot;This is unit 2&quot;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f24516" src="tsbglobalvariableicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB global variable icon" height="18" width="18" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Global variable</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext"><code class="monospace">gVariable = 3</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f24517" src="tsblocalvariableicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB local variable icon" height="14" width="14" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Local variable</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext"><code class="monospace">local lVariable = 5</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext"><img id="f24079" src="tsbtablemethodicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB table method icon" height="13" width="12" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Table method</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">gTable = { }</p>
+<p class="codetable">function gTable:testmethod()</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">   [ ]</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Nonfunction block statement (example 1)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">if true == true then</p>
+<p class="codetable">   local var</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tablebodytext">Nonfunction block statement (example 2)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">for index = 1, 10 do</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="24976.htm" target="_self">Test Script Builder</a></p><p class="relateditem"><a href="405.htm" target="_self">Installing the TSB software</a></p><p class="relateditem"><a href="407.htm" target="_self">Using Test Script Builder (TSB)</a></p><p class="relateditem"><a href="17049.htm" target="_self">Project navigator</a></p><p class="relateditem"><a href="416.htm" target="_self">Script editor</a></p><p class="relateditem"><a href="417.htm" target="_self">Programming interaction</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="23894" />
+<input id="topicDescription" type="hidden" value="Outline view" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 9:21:00 AM" />
+</body>
+</html>

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Status function summary </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12259.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12308.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t29523" class="heading3">Status function summary</h3>
+<p class="bodytext">The following functions and attributes control and read the various registers. Additional information for the various register sets is included later in this section. Also, refer to the specific command as listed in <a id="h19390" class="jump" title="TSP commands" href="19389.htm" target="_self">TSP commands</a>.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="124" height="0"></td>
+<td width="475" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="2" width="600"><p class="tableheading">Status function summary</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="125"><p class="tableheading">Type</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="475"><p class="tableheading">Function or attribute</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="125"><p class="tablebodytext">Status summary</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="475"><p class="codetable">status.condition</p>
+<p class="codetable">status.node_enable</p>
+<p class="codetable">status.node_event</p>
+<p class="codetable">status.request_enable</p>
+<p class="codetable">status.request_event</p>
+<p class="codetable">status.reset</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="125"><p class="tablebodytext">Measurement event</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="475"><p class="codetable">status.measurement.*</p>
+<p class="codetable">status.measurement.buffer_available.*</p>
+<p class="codetable">status.measurement.current_limit.*</p>
+<p class="codetable">status.measurement.instrument.*</p>
+<p class="codetable">status.measurement.instrument.smu<span class="monospaceitalic">X</span>.*</p>
+<p class="codetable">status.measurement.protection.*</p>
+<p class="codetable">status.measurement.reading_overflow.*</p>
+<p class="codetable">status.measurement.voltage_limit.*</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="125"><p class="tablebodytext">Operation status</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="475"><p class="codetable">status.operation.*</p>
+<p class="codetable">status.operation.calibrating.*</p>
+<p class="codetable">status.operation.instrument.*</p>
+<p class="codetable">status.operation.instrument.digio.*</p>
+<p class="codetable">status.operation.instrument.digio.trigger_overrun.*</p>
+<p class="codetable">status.operation.instrument.lan.*</p>
+<p class="codetable">status.operation.instrument.lan.trigger_overrun.*</p>
+<p class="codetable">status.operation.instrument.smu<span class="monospaceitalic">X</span>.*</p>
+<p class="codetable">status.operation.instrument.smu<span class="monospaceitalic">X</span>.trigger_overrun.*</p>
+<p class="codetable">status.operation.instrument.trigger_blender.*</p>
+<p class="codetable">status.operation.instrument.trigger_blender.trigger_overrun.*</p>
+<p class="codetable">status.operation.instrument.trigger_timer.*</p>
+<p class="codetable">status.operation.instrument.trigger_timer.trigger_overrun.*</p>
+<p class="codetable">status.operation.instrument.tsplink.*</p>
+<p class="codetable">status.operation.instrument.tsplink.trigger_overrun.*</p>
+<p class="codetable">status.operation.measuring.*</p>
+<p class="codetable">status.operation.remote.*</p>
+<p class="codetable">status.operation.sweeping.*</p>
+<p class="codetable">status.operation.trigger_overrun.*</p>
+<p class="codetable">status.operation.user.*</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="125"><p class="tablebodytext">Questionable status</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="475"><p class="codetable">status.questionable.*</p>
+<p class="codetable">status.questionable.calibration.*</p>
+<p class="codetable">status.questionable.instrument.*</p>
+<p class="codetable">status.questionable.instrument.<code class="monospace">smu</code><span class="monospaceitalic">X</span>.*</p>
+<p class="codetable">status.questionable.over_temperature.*</p>
+<p class="codetable">status.questionable.unstable_output.*</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="125"><p class="tablebodytext">Standard event</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="475"><p class="codetable">status.standard.*</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="125"><p class="tablebodytext">System summary</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="475"><p class="codetable">status.system.*</p>
+<p class="codetable">status.system2.*</p>
+<p class="codetable">status.system3.*</p>
+<p class="codetable">status.system4.*</p>
+<p class="codetable">status.system5.*</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #FFFFFF;border-right:1px solid #FFFFFF;" colspan="2" width="600"><p class="tablebodytext">* = <code class="monospace">.condition</code>, <code class="monospace">.event</code>, <code class="monospace">.ntr</code>, <code class="monospace">.ptr</code> and <code class="monospace">.enable</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #FFFFFF;" colspan="2" width="600"><p class="tablebodytext"><code class="monospace">smu</code><span class="monospaceitalic">X</span>: For Models 2601B, 2611B, and 2635B, this value is <code class="monospace">smua</code> (SMU Channel A); for Models 2602B, 2604B, 2612B, 2614B, 2634B, and 2636B, this value can be <code class="monospace">smua</code> (for SMU Channel A) or <code class="monospace">smub</code> (for SMU Channel B).</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12445.htm" target="_self">Overview</a></p><p class="relateditem"><a href="12354.htm" target="_self">Status register set contents</a></p><p class="relateditem"><a href="12350.htm" target="_self">Queues</a></p><p class="relateditem"><a href="12308.htm" target="_self">Status model diagrams</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="29523" />
+<input id="topicDescription" type="hidden" value="Status function summary" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/2/2021 6:57:40 PM" />
+</body>
+</html>

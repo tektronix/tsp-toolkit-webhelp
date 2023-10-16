@@ -1,0 +1,244 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> display.getlastkey() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12125.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12717.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t93230" class="heading4">display.getlastkey()</h4>
+<p class="bodytext">The <code class="monospace">display.getlastkey()</code> function immediately returns the key code for the last pressed key. The following programming example illustrates how to display the last key&nbsp;pressed:</p>
+<p class="code">key = display.getlastkey()</p>
+<p class="code">print(key)</p>
+<p class="bodytext">The above code returns the key code value (see the following table). A value of <code class="monospace">0</code>&nbsp;(<code class="monospace">display.KEY_NONE</code>) indicates that the key code history had been cleared.</p>
+<table class="tableintopic" width="576" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="72" height="0"></td>
+<td width="228" height="0"></td>
+<td width="18" height="0"></td>
+<td width="78" height="0"></td>
+<td width="180" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="5" width="576"><p class="tableheading">&nbsp;</p>
+<p class="tableheading">Key codes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tableheading">Key list</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tableheading">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tableheading">Value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tableheading">Key list</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_NONE</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">82</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_ENTER</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">65</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_RANGEUP</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">85</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_RECALL</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">68</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_MENU</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">86</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_MEASA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">69</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_MODEA</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">87</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_DIGITSA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">70</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_RELA</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">92</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_TRIG</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">71</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_RUN</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">93</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_LIMITA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">72</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_DISPLAY</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">94</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_SPEEDA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">73</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_AUTO</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">95</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_LOAD</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">75</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_EXIT</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">97</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.WHEEL_ENTER</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">77</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_FILTERA</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">103</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_RIGHT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">78</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_STORE</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">104</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.KEY_LEFT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">79</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_SRCA</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">107</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.WHEEL_LEFT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">80</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_CONFIG</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">114</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">display.WHEEL_RIGHT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">81</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="codetable">display.KEY_RANGEDOWN</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="codetable">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You cannot track the OUTPUT ON/OFF control for a source&#8209;measure unit (SMU) using this function.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12125.htm" target="_self">Capturing key-press codes</a></p><p class="relateditem"><a href="12717.htm" target="_self">display.waitkey()</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="93230" />
+<input id="topicDescription" type="hidden" value="display.getlastkey()" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/14/2020 2:30:15 PM" />
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html><head><title> lan.trigger[N].ipaddress </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14926.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14928.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">lan.trigger[N].ipaddress</h2>
+<p class="bodyzero">This attribute specifies the address (in dotteddecimal format) of UDP or TCP listeners.</p>
+<table width="772" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">LAN trigger N reset</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">&quot;0.0.0.0&quot;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">ipAddress</em> = lan.trigger[<em class="emphasis">N</em>].ipaddress</p>
+<p class="iclcode">lan.trigger[<em class="emphasis">N</em>].ipaddress = <em class="emphasis">ipAddress</em></p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">ipAddress</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="525"><p class="tablebodytext">The LAN address for this attribute as a string in dotted decimal notation</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="525"><p class="tablebodytext">A number specifying the LAN event number (1 to 8)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Sets the IP address for outgoing trigger events.</p>
+<p class="iclbody">Set to <code class="monospace">&quot;0.0.0.0&quot;</code> for multicast.</p>
+<p class="iclbody">After changing this setting, the <code class="monospace">lan.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].connect()</code> command must be called before outgoing messages can be sent.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="420" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="420"><p class="codetable">lan.trigger[3].protocol = lan.TCP</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">lan.trigger[3].ipaddress = &quot;192.168.1.100&quot;</p>
+<p class="codetable">lan.trigger[3].connect()</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="bodytext"><a id="h14968" class="jumptemplate" title="lan.trigger[N].connect()" href="14923.html" target="_self">lan.trigger[N].connect()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

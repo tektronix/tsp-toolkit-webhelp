@@ -1,0 +1,173 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Remote triggering overview </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14169.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15446.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t76541" class="heading2">Remote triggering overview</h2>
+<p class="bodytext">There are two programming methods for triggering:</p>
+<ul class="listbullet"><li class="listbullet">Using the trigger model</li><li class="listbullet">Interactive triggering</li></ul><p class="bodytext">You can obtain very precise timing and synchronization between channels of multiple instruments using the trigger model to control the actions of the source&#8209;measure unit (SMU). To achieve such precise timing, use a static trigger configuration. When a static trigger configuration is not possible, you can use the interactive triggering method to control the timing and actions of the SMU.</p>
+<p class="bodytext">Both programming methods use trigger objects. Trigger objects generate and monitor trigger events. External triggers are possible using digital I/O, TSP&#8209;Link<sup class="superscript">&reg;</sup> synchronization lines, LAN, command interface, and the manual trigger (the TRIG key).</p>
+<p class="bodytext">The following figure graphically represents all the trigger objects of the 2600B instrument.</p>
+<p class="magicfigurecenter"><img id="f26772" src="26xxb-901-01a_triggeringoverview_lr.png" class="linkedepsandpngtemplate" alt="Triggering overview" height="437" width="546" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The Models 2604B, 2614B, and 2634B do not have digital I/O lines or TSP&#8209;Link.</p>
+<p class="bodytext">Trigger events are identified by means of an event ID. The following table describes the trigger event&nbsp;IDs.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="312" height="0"></td>
+<td width="288" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheading">Trigger event IDs*</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Event ID**</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Event description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.trigger.SWEEPING_EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the source&#8209;measure unit (SMU) transitions from the idle state to the arm layer of the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.trigger.ARMED_EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the SMU moves from the arm layer to the trigger layer of the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.trigger.SOURCE_COMPLETE_EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the SMU completes a source action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.trigger.MEASURE_COMPLETE_EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the SMU completes a measure action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.trigger.PULSE_COMPLETE_EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the SMU completes a pulse</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.trigger.SWEEP_COMPLETE_EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the SMU completes a sweep</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.trigger.IDLE_EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the SMU returns to the idle state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">digio.trigger[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when an edge is detected on a digital I/O line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">tsplink.trigger[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when an edge is detected on a TSP&#8209;Link line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">lan.trigger[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">display.trigger.EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the TRIG key on the front panel is pressed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">trigger.EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when a <code class="monospace">*TRG</code> command is received on the remote interface</p>
+<p class="tablebodytext"><strong class="specialbold">GPIB only:</strong> Occurs when a <code class="monospace">GET</code> bus command is received</p>
+<p class="tablebodytext"><strong class="specialbold">USB only:</strong> Occurs when a USBTMC TRIGGER message is received</p>
+<p class="tablebodytext"><strong class="specialbold">VXI-11 only:</strong> Occurs with the VXI-11 command <code class="monospace">device_trigger</code>; reference the VXI-11 standard for additional details on the device trigger operation</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">trigger.blender[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs after a collection of events is detected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">trigger.timer[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when a delay expires</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="312"><p class="codetable">trigger.generator[<span class="monospaceitalic">N</span>].EVENT_ID</p>
+</td>
+<td style="border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the <code class="monospace">trigger.generator[</code><span class="monospaceitalic">N</span><code class="monospace">].assert()</code> function is executed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-top:1px solid #C0C0C0;" colspan="2" width="600"><p class="tablebodytext">* Use the name of the trigger event ID to set a stimulus value rather than the numeric value. Using the name makes the code compatible for future upgrades (for example, if the numeric values must change when enhancements are added to the instrument).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="600"><p class="tablebodytext">** <code class="monospace">smu</code><span class="monospaceitalic">X</span> can be <code class="monospace">smua</code> for channel A or <code class="monospace">smub</code> for channel B</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="15446.htm" target="_self">Using the remote trigger model</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="77980.htm" target="_self">Triggering</a></p><p class="relateditem"><a href="14169.htm" target="_self">Triggering</a></p><p class="relateditem"><a href="12532.htm" target="_self">SMU event detectors</a></p><p class="relateditem"><a href="16535.htm" target="_self">Using trigger events to start actions on trigger objects</a></p><p class="relateditem"><a href="12541.htm" target="_self">Digital I/O port and TSP-Link synchronization lines</a></p><p class="relateditem"><a href="ID_TIMER_GRP.htm" target="_self">Timers</a></p><p class="relateditem"><a href="12538.htm" target="_self">Event blenders</a></p><p class="relateditem"><a href="12570.htm" target="_self">LAN triggering overview</a></p><p class="relateditem"><a href="12578.htm" target="_self">Command interface triggering</a></p><p class="relateditem"><a href="29878.htm" target="_self">Trigger generator</a></p><p class="relateditem"><a href="12579.htm" target="_self">Manual triggering</a></p><p class="relateditem"><a href="12581.htm" target="_self">Interactive triggering</a></p><p class="relateditem"><a href="12548.htm" target="_self">Hardware trigger modes</a></p><p class="relateditem"><a href="12604.htm" target="_self">Understanding synchronous triggering modes</a></p><p class="relateditem"><a href="13646.htm" target="_self">Digital I/O</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="76541" />
+<input id="topicDescription" type="hidden" value="Remote triggering overview" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/15/2018 1:03:59 PM" />
+</body>
+</html>

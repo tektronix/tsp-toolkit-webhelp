@@ -1,0 +1,112 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16329.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16331.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16330" class="heading2-icl">slot[slot].interlock.state</h2>
+<p class="bodyzero">This attribute indicates the interlock state of a card.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">1</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = slot[<em class="emphasis">slot</em>].interlock.state</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Indicates whether the interlocks are engaged or not; see table below for possible return values</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">slot</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The slot (1 to 6) containing the card to which the interlock state is applied</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute will not exist for a slot if a card is not installed or the card installed does not support detecting an interlock break. In these cases, the return value is <code class="monospace">nil</code>. </p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="150" height="0"></td>
+<td width="438" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" colspan="2" width="588"><p class="tableheading">Return values for <code class="monospace">slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].interlock.state</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="150"><p class="tableheading">Return value</p>
+</td>
+<td style="border:1px solid #010101;" width="438"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="150"><p class="codetable">nil</p>
+</td>
+<td style="border:1px solid #010101;" width="438"><p class="tablebodytext">No card is installed or the installed card does not support interlocks</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="150"><p class="codetable">0</p>
+</td>
+<td style="border:1px solid #010101;" width="438"><p class="tablebodytext">Interlocks 1 and 2 are disengaged on the card</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="150"><p class="codetable">1</p>
+</td>
+<td style="border:1px solid #010101;" width="438"><p class="tablebodytext">Interlock 1 is engaged, interlock 2 (if it exists) is disengaged</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="150"><p class="codetable">2</p>
+</td>
+<td style="border:1px solid #010101;" width="438"><p class="tablebodytext">Interlock 2 in engaged, interlock 1 is disengaged</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="150"><p class="codetable">3</p>
+</td>
+<td style="border:1px solid #010101;" width="438"><p class="tablebodytext">Both interlock 1 and 2 are engaged</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">Use this attribute to query the interlock state for cards that support detecting interlock break. </p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h16373" class="jump" title="slot[slot].interlock.override" href="16329.htm" target="_self">slot[slot].interlock.override</a></p>
+
+

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.digitize.limit[Y].low.value </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41227.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41306.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41215" class="heading2-icl">smu.digitize.limit[Y].low.value</h2>
+<p class="bodyzero">This attribute specifies the lower limit for limit tests.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">-1</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">lowLimit</em> = <code class="monospace">smu</code>.digitize.limit[<span class="monospaceitalic">Y</span>].low.value</p>
+<p class="iclcode"><code class="monospace">smu</code>.digitize.limit[<span class="monospaceitalic">Y</span>].low.value = <em class="emphasis">lowLimit</em></p>
+<p class="iclcode"><span class="monospaceitalic">lowLimit</span> = <code class="monospace">smu</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">smu</code>.ATTR_DIGI_LIMIT_LOW_<span class="monospaceitalic">Y</span>)</p>
+<p class="iclcode"><code class="monospace">smu</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">smu</code>.ATTR_DIGI_LIMIT_LOW_<span class="monospaceitalic">Y</span>, <span class="monospaceitalic">lowLimit</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">lowLimit</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The low limit value of limit <span class="monospaceitalic">Y</span> (-9.99999E+11 to 9.99999E+11)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limit number: <code class="monospace">1</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The digitize function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: <code class="monospace">smu.FUNC_DIGITIZE_CURRENT</code></li><li class="tablelistbullet9pt">Voltage: <code class="monospace">smu.FUNC_DIGITIZE_VOLTAGE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets the lower limit for the limit Y test for the selected digitize function. When limit Y testing is enabled, this causes a fail indication to occur when the measurement value is less than this value.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclbody">This example enables limits 1 and 2 for digitize voltage measurements. Limit 1 is checking for readings to be between 3&nbsp;V and 5&nbsp;V, while limit&nbsp;2 is checking for the readings to be between 1&nbsp;V and 7&nbsp;V. The auto clear feature is disabled, so if any reading is outside these limits, the corresponding fail is 1. Therefore, if any one of the fails is 1, analyze the reading buffer data to find out which reading failed the limits.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">-- Set the instrument to measure digitized voltage </p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.func = <code class="monospace">smu</code>.FUNC_DIGITIZE_VOLTAGE</p>
+<p class="codetable">-- Set the range to 10 V</p>
+<p class="codetable">-- Set the instrument to source current</p>
+<p class="codetable">smu.source.func=smu.FUNC_DC_CURRENT</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.range = 10</p>
+<p class="codetable">-- Disable auto clearing for limit 1</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[1].autoclear = <code class="monospace">smu</code>.OFF</p>
+<p class="codetable">-- Set high limit on 1 to fail if reading exceeds 5 V</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[1].high.value = 5</p>
+<p class="codetable">-- Set low limit on 1 to fail if reading is less than 3 V</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[1].low.value = 3</p>
+<p class="codetable">-- Enable limit 1 checking for digitized voltage measurements</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[1].enable = <code class="monospace">smu</code>.ON</p>
+<p class="codetable">-- Disable auto clearing for limit 2</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[2].autoclear = <code class="monospace">smu</code>.OFF</p>
+<p class="codetable">-- Set high limit on 2 to fail if reading exceeds 7 V</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[2].high.value = 7</p>
+<p class="codetable">-- Set low limit on 2 to fail if reading is less than 1 V</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[2].low.value = 1</p>
+<p class="codetable">-- Set the beeper to sound if the reading exceeds the limits for limit 2</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[2].audible = <code class="monospace">smu</code>.AUDIBLE_FAIL </p>
+<p class="codetable">-- Enable limit 2 checking for digitized voltage measurements</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[2].enable = <code class="monospace">smu</code>.ON</p>
+<p class="codetable">-- Set the digitize count to 50</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.count = 50</p>
+<p class="codetable">-- Create a reading buffer that can store 100 readings</p>
+<p class="codetable">LimitBuffer = buffer.make(100)</p>
+<p class="codetable">-- Make 50 readings and store them in LimitBuffer</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.read(LimitBuffer)</p>
+<p class="codetable">-- Check if any of the 50 readings were outside of the limits</p>
+<p class="codetable">print(&quot;limit 1 results = &quot; .. <code class="monospace">smu</code>.digitize.limit[1].fail)</p>
+<p class="codetable">print(&quot;limit 2 results = &quot; .. <code class="monospace">smu</code>.digitize.limit[2].fail)</p>
+<p class="codetable">-- Clear limit 1 conditions</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[1].clear()</p>
+<p class="codetable">-- Clear limit 2 conditions</p>
+<p class="codetable"><code class="monospace">smu</code>.digitize.limit[2].clear()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Example output that shows all readings are within limit values (all readings between 3 V and 5 V):</p>
+<p class="codetable">limit 1 results = <code class="monospace">smu</code>.FAIL_NONE</p>
+<p class="codetable">limit 2 results = <code class="monospace">smu</code>.FAIL_NONE</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Example output showing at least one reading failed limit 1 high values (a 6&nbsp;V reading would cause this condition or a reading greater than 5 V but less than 7 V):</p>
+<p class="codetable">limit 1 results = <code class="monospace">smu</code>.FAIL_HIGH</p>
+<p class="codetable">limit 2 results = <code class="monospace">smu</code>.FAIL_NONE</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Example output showing at least one reading failed limit 1 and 2 low values (a 0.5 V reading would cause this condition or a reading less than 1&nbsp;V):</p>
+<p class="codetable">limit 1 results = <code class="monospace">smu</code>.FAIL_LOW</p>
+<p class="codetable">limit 2 results = <code class="monospace">smu</code>.FAIL_LOW</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h44532" class="jump" title="smu.digitize.limit[Y].autoclear" href="41210.htm" target="_self">smu.digitize.limit[Y].autoclear</a></p>
+<p class="listcommand"><a id="h44533" class="jump" title="smu.digitize.limit[Y].clear()" href="41213.htm" target="_self">smu.digitize.limit[Y].clear()</a></p>
+<p class="listcommand"><a id="h41674" class="jump" title="smu.digitize.limit[Y].enable" href="41225.htm" target="_self">smu.digitize.limit[Y].enable</a></p>
+<p class="listcommand"><a id="h44534" class="jump" title="smu.digitize.limit[Y].fail" href="41221.htm" target="_self">smu.digitize.limit[Y].fail</a></p>
+<p class="listcommand"><a id="h44535" class="jump" title="smu.digitize.limit[Y].high.value" href="41227.htm" target="_self">smu.digitize.limit[Y].high.value</a></p>
+
+
+<input id="topicId" type="hidden" value="41215" />
+<input id="topicDescription" type="hidden" value="smu.digitize.limit[Y].low.value" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/10/2019 10:09:11 AM" />
+</body>
+</html>

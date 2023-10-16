@@ -1,0 +1,99 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17384.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17404.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17521" class="heading2-icl">channel.getdelay()</h2>
+<p class="bodyzero">This function queries for the additional delay time for the specified channels.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">delayTimes</em> = channel.getdelay(&quot;<em class="emphasis">channelList</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">delayTimes</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A comma-delimited string consisting of the delay times (in seconds) for channels specified in <span class="monospaceitalic">channelList</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string listing the channels to query for their delay times</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <span class="monospaceitalic">channelList</span> parameter may contain <code class="monospace">slot</code><span class="monospaceitalic">X</span><code class="monospace"> </code>(where <span class="monospaceitalic">X</span> equals 1 to 6) or <code class="monospace">allslots</code>.</p>
+<p class="iclbody">A command, after closing the state of channels, incurs the delay time indicated in the response for a channel before it completes. However, the internal settling time must elapse before the user delay is incurred. Therefore, the sequence is:</p>
+<ol class="listnumber"><li class="listnumber">Command is processed</li><li class="listnumber">Channel closes</li><li class="listnumber">Settling time is incurred</li><li class="listnumber">User delay is incurred</li><li class="listnumber">Command completes</li></ol><p class="iclbody">The delay times are comma-delimited in the same order that the items were specified in the <span class="monospaceitalic">channelList </span>parameter. A value of zero (0) indicates that no additional delay time is incurred before a close command completes.</p>
+<p class="iclbody">An error message is generated for the following reasons:</p>
+<ul class="listbullet2"><li class="listbullet2">The specified channels do not support a delay time</li><li class="listbullet2">A channel pattern is specified</li></ul><p class="iclbody">Command processing stops as soon as an error is detected and a <code class="monospace">nil</code> response is generated.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Pseudocards do not support user delays, so this value is always zero (0) if a pseudocard is used.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">delaytime = channel.getdelay(&quot;5001, 5003&quot;)</p>
+<p class="codetable">print(delaytime)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Query channels 1 and 3 on slot 5 for their delay times.</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">0.000e+00,0.000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">patternChannels =    channel.pattern.get(&quot;chans&quot;)</p>
+<p class="codetable">DelayPatternTimes = </p>
+<p class="codetable">   channel.getdelay(patternChannels)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Gets the delay of the channels in the <code class="monospace">chans</code> channel pattern if <code class="monospace">chans</code> does not contain backplane relays. If it does contain backplane relays, you receive error code 1115, &quot;Parameter error invalid channel type in channel&nbsp;list.&quot;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h774" class="jump" title="channel.setdelay()" href="17522.htm" target="_self">channel.setdelay()</a></p>
+<p class="listcommand">Data retrieval commands</p>
+
+

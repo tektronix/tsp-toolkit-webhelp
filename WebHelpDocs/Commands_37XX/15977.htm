@@ -1,0 +1,90 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15976.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15971.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15977" class="heading2-icl">dmm.autozero</h2>
+<p class="bodyzero">This attribute enables or disables automatic updates to the internal reference measurements (autozero) of the instrument</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="162"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="84"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="174"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="162"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="84"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="174"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">dmm.ON (1)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = dmm.autozero</p>
+<p class="iclcode">dmm.autozero = <span class="monospaceitalic">state</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Enable autozero: <code class="monospace">dmm.ON</code> or <code class="monospace">1</code></p>
+<p class="tablebodytext">Disable autozero: <code class="monospace">dmm.OFF</code> or <code class="monospace">0</code></p>
+<p class="tablebodytext">Refresh the reference points once then disable: <code class="monospace">dmm.AUTOZERO_ONCE</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The autozero setting applies to the function selected by <code class="monospace">dmm.func</code>. It is available for all functions except <code class="monospace">&quot;continuity&quot;</code> and <code class="monospace">&quot;nofunction&quot;</code>.</p>
+<p class="iclbody">You can send <code class="monospace">dmm.AUTOZERO_ONCE</code> or <code class="monospace">2</code> to refresh the reference points once. When this command is sent, the reference points are refreshed, and then autozero is set to disabled (<code class="monospace">dmm.OFF</code> or <code class="monospace">0</code>). Querying <code class="monospace">dmm.autozero</code> after sending <code class="monospace">dmm.AUTOZERO_ONCE</code> generates a response of <code class="monospace">0</code>.</p>
+<p class="iclbody">For <code class="monospace">dmm.nplc</code> settings that are less than 0.2&nbsp;plc, sending <code class="monospace">dmm.AUTOZERO_ONCE</code> or <code class="monospace">2</code> results in significant delays. For example, the delay time at a NPLC of 0.0005 is 2.75&nbsp;s. The delay time at 0.199 is 5.45&nbsp;s.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">You try to set <code class="monospace">dmm.autozero</code> for <code class="monospace">&quot;continuity&quot;</code> or <code class="monospace">&quot;nofunction&quot;</code>. Error code 1114, &quot;Setting conflicts with function selected,&quot; is generated.</li><li class="listbullet">You query <code class="monospace">dmm.autozero</code> for <code class="monospace">&quot;continuity&quot;</code> or <code class="monospace">&quot;nofunction&quot;</code>. <code class="monospace">nil</code> is returned with error code 1114, &quot;Setting conflicts with function selected.&quot;</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="294"><p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.autozero = dmm.ON</p>
+<p class="codetable">dmm.autozero = dmm.AUTOZERO_ONCE</p>
+<p class="codetable">print(dmm.autozero)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable"><code class="monospace">timer.reset()</code><br><code class="monospace">dmm.autozero=2</code><br><code class="monospace">time=timer.measure.t()</code><br><code class="monospace">print(time)</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">Enables autozero for DC volts.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Refreshes the reference points once and sets autozero to <code class="monospace">dmm.OFF</code> or <code class="monospace">0</code>.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">0.000000000e+00</p>
+<p class="tablebodytext">Determines the time delay when autozero is selected.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Autozero</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h901" class="jump" title="dmm.nplc" href="16052.htm" target="_self">dmm.nplc</a></p>
+<p class="listcommand"><a id="h881" class="jump" title="dmm.reset()" href="16061.htm" target="_self">dmm.reset()</a></p>
+<p class="listcommand"><a id="h13937" class="jump" title="reset()" href="13933.htm" target="_self">reset()</a></p>
+
+

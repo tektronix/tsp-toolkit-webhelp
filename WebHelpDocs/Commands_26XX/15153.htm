@@ -1,0 +1,94 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15152.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15154.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15153" class="heading2-icl">smuX.source.rangeY</h2>
+<p class="bodyzero">This attribute contains the source range.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="84"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="90"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="90"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="264"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="84"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="90"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="90"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="264"><p class="tablebodytextsmall">Voltage:</p>
+<p class="tablebodytextsmall">2601B, 2602B, 2604B:<br>100e-3 (100&nbsp;mV)</p>
+<p class="tablebodytextsmall">2611B, 2612B, 2614B, 2634B, 2635B, 2636B: 200e-3&nbsp;(200&nbsp;mV)</p>
+<p class="tablebodytextsmall">Current:</p>
+<p class="tablebodytextsmall">2601B, 2602B, 2604B, 2611B, 2612B, 2614B:<br>100e-9 (100&nbsp;nA)<br>2634B, 2635B, 2636B:<br>1e-9 (1&nbsp;nA)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">rangeValue</span> = smu<span class="monospaceitalic">X</span>.source.range<em class="emphasis">Y</em></p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.source.range<em class="emphasis">Y</em><code class="monospace"> = </code><span class="monospaceitalic">rangeValue</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">rangeValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Set to the maximum expected voltage or current to be sourced</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.measure.rangev</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">SMU source function (<code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute contains a value that sets the source&#8209;measure unit (SMU) to a fixed range large enough to source the value. When read, the attribute contains the range the instrument is presently on when in autorange.</p>
+<p class="iclbody">Assigning a value to this attribute sets the SMU to a fixed range large enough to source the assigned value. The instrument selects the best range for sourcing a value of <span class="monospaceitalic">rangeValue</span>.</p>
+<p class="iclbody">Reading this attribute returns the positive full-scale value of the source range the SMU is currently using. With source autoranging enabled, the output level controls the range. Querying the range after the level is set returns the range the instrument chose as appropriate for that source level.</p>
+<p class="iclbody">This attribute is primarily intended to eliminate the time required by the automatic range selection performed by a sourcing instrument. Because selecting a fixed range prevents autoranging, an overrange condition can occur. For example, sourcing 10.0&nbsp;V on the Model 2601B, 2602B, or 2604B 6 V range or sourcing 5.0 V on the 2611B, 2612B, or 2614B 2 V range causes an overrange condition.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="600"><p class="codetable">smua.source.rangev = 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="600"><p class="tablebodytext">Selects the 1 V source range for SMU channel&nbsp;A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13592" class="jump" title="Range" href="11993.htm" target="_self">Range</a></p>
+<p class="listcommand"><a id="h13937" class="jump" title="reset()" href="13933.htm" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15085" class="jump" title="setup.recall()" href="66566.htm" target="_self">setup.recall()</a></p>
+<p class="listcommand"><a id="h15217" class="jump" title="smuX.measure.rangeY" href="15121.htm" target="_self">smuX.measure.rangeY</a></p>
+<p class="listcommand"><a id="h15232" class="jump" title="smuX.reset()" href="15136.htm" target="_self">smuX.reset()</a></p>
+<p class="listcommand"><a id="h15235" class="jump" title="smuX.source.autorangeY" href="15139.htm" target="_self">smuX.source.autorangeY</a></p>
+
+

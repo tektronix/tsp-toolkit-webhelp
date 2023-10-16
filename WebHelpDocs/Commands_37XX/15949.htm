@@ -1,0 +1,147 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15948.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14135.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15949" class="heading2-icl">channel.setpole()</h2>
+<p class="bodyzero">This function specifies the pole setting for a list of channels.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="96"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="186"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="96"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="186"><p class="tablebodytextsmall">Card dependent, but typically 2 (channel.POLES_TWO)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.setpole(&quot;<span class="monospaceitalic">channelList</span>&quot;, <span class="monospaceitalic">value</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">String specifying the channels to set, using normal channel list syntax</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Pole setting for the channels in <span class="monospaceitalic">channelList</span>. Use the following:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">For one-pole: <code class="monospace">channel.POLES_ONE</code> or <code class="monospace">1</code></li><li class="tablelistbullet9pt">For two-pole: <code class="monospace">channel.POLES_TWO</code> or <code class="monospace">2</code></li><li class="tablelistbullet9pt">For four-pole: <code class="monospace">channel.POLES_FOUR</code> or <code class="monospace">4</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The parameter string can contain <code class="monospace">allslots</code> or <code class="monospace">slot</code><span class="monospaceitalic">X,</span> where <span class="monospaceitalic">X</span> is <code class="monospace">1</code> to <code class="monospace">6</code>.</p>
+<p class="iclbody">Channel patterns do not have a pole setting associated with them. For channel patterns, the pole setting indicates if the paired channel should be used when the pattern is created and the analog backplane relays must be specified when creating the pattern (with <code class="monospace">channel.pattern.setimage()</code> and <code class="monospace">channel.pattern.snapshot()</code>). Channel patterns get deleted as the pole settings of the channels in the pattern image get changed.</p>
+<p class="iclbody">You manipulate the analog backplane relays after setting the pole setting by using the<code class="monospace"> channel.setbackplane()</code> function for channels. For channels, as the pole setting changes, their analog backplane relays, specified by <code class="monospace">channel.setbackplane()</code>, get cleared. Therefore, after a pole setting change, you need to add the analog backplane relays for the pole setting by using <code class="monospace">channel.setbackplane()</code>. </p>
+<p class="iclbody">When clearing the backplane channels, this can involve clearing the paired channel, whether pairing or unpairing channels. For example, on a 40-channel card, channels 1 and 21 are paired when the pole setting for channel 1 is set to 4. Therefore, when changing the pole setting on channel 1 to 4, the backplane channels for channels 1 and 21 are cleared. Likewise, they both are cleared when the pole setting is set back to 2 on channel 1.</p>
+<p class="iclbody">Calling this function on an existing channel involved in scanning invalidates the existing scan list.</p>
+<p class="iclbody">An error message is generated for the following reasons:</p>
+<ul class="listbullet"><li class="listbullet">An empty parameter string is specified.</li><li class="listbullet">The value parameter is an invalid setting for the specified channel.</li><li class="listbullet">The value parameter is invalid for command &#8211; parameter out of range error.</li><li class="listbullet">A channel pattern or analog backplane relay was specified.</li></ul><p class="iclbody">Command processing stops as soon as an error is detected and no pole settings are modified.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.setpole(channel.POLES_FOUR)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Sets channels on slot 5 to four-pole.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">channel.reset(&quot;slot2&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.setpole(channel.POLES_FOUR)</p>
+<p class="codetable">channel.close(&quot;2001, 2003&quot;)</p>
+<p class="codetable">print(channel.getclose(&quot;slot2&quot;))</p>
+<p class="codetable"> </p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.open(&quot;slot2&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.setbackplane(&quot;2001&quot;, &quot;2915&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.setbackplane(&quot;2003&quot;, &quot;2925&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.close(&quot;2001, 2003&quot;)</p>
+<p class="codetable">print(channel.getclose(&quot;slot2&quot;))</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(channel.getimage(&quot;2001, 2003&quot;))</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.open(&quot;slot2&quot;)</p>
+<p class="codetable">channel.setpole(&quot;slot2&quot;, 2)</p>
+<p class="codetable">print(channel.getimage(&quot;2001, 2003&quot;))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Assuming a 3721, reset channels on slot 2 only.</p>
+<p class="tablebodytext">Set channels on slot 2 to 4-pole.</p>
+<p class="tablebodytext">Close channels 1 and 3 on slot 2.</p>
+<p class="tablebodytext">Query slot 2 for closed channels and analog backplane relays.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2001(2021);2003(2023)</p>
+<p class="tablebodytext">Note that the channels in parentheses are the paired channels because they are in a 4-pole configuration.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Open all channels and analog backplane relays on slot 2.</p>
+<p class="tablebodytext">Associate analog backplane relay 5 in bank 1 of slot 2 with channel 1 on slot 2.</p>
+<p class="tablebodytext">Associate analog backplane relay 5 in bank 2 of slot 2 with channel 3 on slot 2.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Close channels 1 and 3 on slot 2.</p>
+<p class="tablebodytext">Query slot 2 for closed channels and analog backplane relays.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2001(2021);2003(2023);2915;2925</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Query for channels and analog backplane relays that are manipulated when open and close channels 1 and 3 on slot 2.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2001(2021),2915;2003(2023),2925 </p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Clear paired channels and analog backplane relays.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2001;2003</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Note that channels are no longer paired or have analog backplane relays associated with them.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h775" class="jump" title="channel.getbackplane()" href="15918.htm" target="_self">channel.getbackplane()</a></p>
+<p class="listcommand"><a id="h793" class="jump" title="channel.getpole()" href="15929.htm" target="_self">channel.getpole()</a></p>
+<p class="listcommand"><a id="h1806" class="jump" title="channel.pattern.setimage()" href="17296.htm" target="_self">channel.pattern.setimage()</a></p>
+<p class="listcommand"><a id="h791" class="jump" title="channel.pattern.snapshot()" href="17299.htm" target="_self">channel.pattern.snapshot()</a>)</p>
+<p class="listcommand"><a id="h766" class="jump" title="channel.setbackplane()" href="15941.htm" target="_self">channel.setbackplane()</a> </p>
+
+

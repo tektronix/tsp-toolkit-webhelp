@@ -1,0 +1,74 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16072.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16074.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16073" class="heading2-icl">dmm.transducer</h2>
+<p class="bodyzero">This attribute contains the transducer type.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="78"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="186"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="78"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="186"><p class="tablebodytextsmall">1 (dmm.TEMP_THERMOCOUPLE)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.transducer</p>
+<p class="iclcode">dmm.transducer = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The transducer type:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Thermocouple: <code class="monospace">dmm.TEMP_THERMOCOUPLE</code> or <code class="monospace">1</code></li><li class="tablelistbullet9pt">Thermistor: <code class="monospace">dmm.TEMP_THERMISTOR</code> or <code class="monospace">2</code></li><li class="tablelistbullet9pt">3&#8209;wire RTD: <code class="monospace">dmm.TEMP_THREERTD</code> or <code class="monospace">3</code></li><li class="tablelistbullet9pt">4&#8209;wire RTD: <code class="monospace">dmm.TEMP_FOURRTD</code> or <code class="monospace">4</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is only valid when <code class="monospace">dmm.func</code> is set to <code class="monospace">&quot;temperature&quot;</code>. All other functions generate an error and return nil when queried.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The setting of this attribute affects which other temperature-supported attributes get used. There are various attributes that are only applicable when the transducer type is a certain type. Although the transducer type needs to match for the attribute setting to be used, the transducer type does not need to match to change the setting or read the setting. For example, the transducer type does not need to be set to <code class="monospace">dmm.TEMP_FOURRTD</code> to change the <code class="monospace">dmm.fourrtd</code> attribute setting.</p>
+<p class="iclbody">The transducer value is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to <code class="monospace">&quot;temperature&quot;</code>, the transducer value you set previously is retained.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;temperature&quot;</p>
+<p class="codetable">dmm.transducer = dmm.TEMP_THERMISTOR</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Sets transducer to thermistor type.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h911" class="jump" title="dmm.fourrtd" href="16029.htm" target="_self">dmm.fourrtd</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+
+

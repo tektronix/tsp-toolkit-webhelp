@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Step 3: Configure the LAN settings of the instrument </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12841.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12846.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t12843" class="heading5">Step 3: Configure the LAN settings of the instrument</h5>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">These steps assume that you are making all the settings in the order shown here. If you only change one or a few settings, be aware that you need to apply the settings before they are in effect. To apply the settings, from the<strong class="specialbold"> LAN CONFIG</strong> menu, select <strong class="specialbold">APPLY_SETTINGS &gt; YES</strong>, and then press the <strong class="specialbold">ENTER</strong>&nbsp;key.</p>
+<p class="headingprocedure">To configure the 2600B using the front panel:</p>
+<ol class="listnumber"><li class="listnumber">Press the <strong class="specialbold">MENU </strong>key to display the MAIN MENU.</li><li class="listnumber">Use the navigation wheel to select <strong class="specialbold">LAN</strong>. The LAN CONFIG menu is displayed.</li><li class="listnumber">Change the IP address assignment method:<p class="list2">a.	Select <strong class="specialbold">CONFIG &gt; METHOD &gt; MANUAL</strong>, and then press the <strong class="specialbold">ENTER </strong>key.</p>
+<p class="list2">b.	Press the <strong class="specialbold">EXIT (LOCAL) </strong>key once to return to the LAN CONFIG menu.</p>
+</li><li class="listnumber">Enter the IP address using the LAN CONFIG menu:<p class="list2">a.	Select<strong class="specialbold"> CONFIG &gt; IP-ADDRESS</strong>.</p>
+<p class="list2">b.	Refer to the recorded computer's IP address (<a id="h19476" class="jump" title="Step 1: Identify and record the existing IP configuration" href="12839.htm" target="_self">Step 1: Identify and record the existing IP configuration</a>). A portion of the computer's IP address is used as a base for the instrument's unique ID. Only the last three numbers (after the last decimal point) of the IP address differ between the computer and the instrument. If the subnet mask is 255.255.255.0, the last three digits can be any value from 1 to 255.<br><br>For example, the Internet Protocol (TCP/IP) Properties dialog box shows that the computer's IP address is 192.168.1.100 (see the figure titled &quot;Internet protocol (TCP/IP) Properties dialog box&quot; in <a id="h13656" class="jump" title="Step 2: Disable DHCP to use the existing computer IP address" href="12841.htm" target="_self">Step 2: Disable DHCP to use the existing computer IP address</a>). A unique IP address for the instrument might be 192.168.001.101.</p>
+</li></ol><p class="note"><img id="f14261_1" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The IP address of the instrument can have leading zeros, but the IP address of the computer cannot.</p>
+<p class="list2">c.	Use the navigation wheel to select and enter an appropriate IP address for the instrument. Be sure to record the IP address to use in <a id="h13658" class="jump" title="Step 4: Access the web interface of the instrument" href="12846.htm" target="_self">Step 4: Access the web interface of the instrument</a>.</p>
+<p class="list2">d.	Press <strong class="specialbold">ENTER </strong>key or navigation wheel to confirm the changes.</p>
+<p class="list2">e.	Press the <strong class="specialbold">EXIT (LOCAL) </strong>key twice to return to the LAN CONFIG menu.	</p>
+<ol class="listnumber"><li class="listnumber">Change the subnet mask from the LAN CONFIG menu:<p class="list2">a.	Select <strong class="specialbold">CONFIG &gt; SUBNETMASK</strong>, and then press the <strong class="specialbold">ENTER </strong>key. The SUBNETMASK menu item is to the right of GATEWAY. Use the navigation wheel to scroll through the options.</p>
+<p class="list2">b.	Modify the SUBNETMASK value to match the computer settings recorded earlier (or <code class="monospace">255.255.255.000</code> if DHCP Enabled = YES).</p>
+<p class="list2">c.	Press the <strong class="specialbold">ENTER </strong>key or the navigation wheel when you are finished changing all the characters.</p>
+<p class="list2">d.	Press the <strong class="specialbold">EXIT (LOCAL) </strong>key twice to return to the LAN CONFIG menu.</p>
+</li><li class="listnumber">From the <strong class="specialbold">LAN CONFIG</strong> menu, select <strong class="specialbold">APPLY_SETTINGS &gt; YES</strong>, and then press the <strong class="specialbold">ENTER</strong>&nbsp;key.</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12218.htm" target="_self">Establishing a point-to-point connection</a></p><p class="relateditem"><a href="12839.htm" target="_self">Step 1: Identify and record the existing IP configuration</a></p><p class="relateditem"><a href="12841.htm" target="_self">Step 2: Disable DHCP to use the existing computer IP address</a></p><p class="relateditem"><a href="12846.htm" target="_self">Step 4: Access the web interface of the instrument</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12843" />
+<input id="topicDescription" type="hidden" value="Step 3: Configure the LAN settings of the instrument" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/28/2021 10:19:58 AM" />
+</body>
+</html>

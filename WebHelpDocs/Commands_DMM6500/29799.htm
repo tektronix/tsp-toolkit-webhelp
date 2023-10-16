@@ -1,0 +1,192 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> *ESE </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29798.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="59255.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t29799" class="heading2-icl">*ESE</h2>
+<p class="bodyzero">This command sets and queries bits in the Status Enable register of the Standard Event Register.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="168"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="168"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="168"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="168"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="168"><p class="tablebodytextsmall">Command and query</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="168"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="168"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="168"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">*ESE &lt;n&gt;</p>
+<p class="iclcode">*ESE?</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable">&lt;n&gt;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The value of the Status Enable register of the Standard Event Register (0 to 255)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When a bit in the Status Enable register is set on and the corresponding bit in the Standard Event Status register is set on, the ESB bit of the Status Byte Register is set to on.</p>
+<p class="iclbody">To set a bit on, send the constant or the value of the bit as the <code class="monospace">&lt;n&gt;</code> parameter.</p>
+<p class="iclbody">If you are using TSP, you can set the bit as a constant or a numeric value, as shown in the table below. To set more than one bit of the register, you can send multiple constants with <code class="monospace">+</code> between them. You can also set <span class="monospaceitalic">standardRegister</span> to the sum of their decimal weights. For example, to set bits B0 and B2, set <span class="monospaceitalic">standardRegister</span> to 5 (which is the sum of 1 + 4). You can also send:</p>
+<p class="iclbody"><code class="monospace">status.standard.enable = status.standard.OPC + status.standard.QYE</code></p>
+<p class="iclbody">If you are using SCPI, you can only set the bit as a numeric value.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"> <br>You cannot use SCPI commands with Test Script Builder (TSB) software.</p>
+<p class="iclbody"> When zero (0) is returned, no bits are set. You can also send 0 to clear all bits.</p>
+<p class="iclbody">The instrument returns a decimal value that corresponds to the binary-weighted sum of all bits set in the register.</p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" width="54"><p class="tableheading">Bit</p>
+</th>
+<th style="border:1px solid #010101;" width="60"><p class="tableheading">Decimal value</p>
+</th>
+<th style="border:1px solid #010101;" width="192"><p class="tableheading">Constant</p>
+</th>
+<th style="border:1px solid #010101;" width="288"><p class="tableheading">When set, indicates the following has occurred:</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="codetable">status.standard.OPC</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">All pending selected instrument operations are complete and the instrument is ready to accept new commands. The bit is set in response to an <a id="h21122" class="jump" title="*OPC" href="59255.htm" target="_self">*OPC</a> command or TSP <a id="h31654" class="jump" title="opc()" href="29846.htm" target="_self">opc()</a> function.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="codetable">status.standard.QYE</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Attempt to read data from an empty Output Queue.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">3</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">5</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">6</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">64</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">7</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="codetable">status.standard.PON</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">The instrument has been turned off and turned back on since the last time this register was read.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">Command errors include:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">IEEE Std 488.2 syntax error:</strong> The instrument received a message that does not follow the defined syntax of the IEEE Std 488.2 standard.</li><li class="listbullet"><strong class="specialbold">Semantic error:</strong> The instrument received a command that was misspelled or received an optional IEEE Std 488.2 command that is not implemented in the instrument.</li><li class="listbullet"><strong class="specialbold">GET error:</strong> The instrument received a Group Execute Trigger (GET) inside a program message.</li></ul><p class="note"><img id="f14261_1" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>Constants are only available if you are using the TSP command set. If you are using the SCPI command set, you must use the decimal values.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="204"><p class="codetable"><code class="monospace">*ESE 129</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="390"><p class="tablebodytext"><code class="monospace">*ESE 129</code> sets the Status Enable register of the Standard Event Register to binary <code class="monospace">10000001</code>, which enables the PON and OPC bits.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h36421" class="jump" title="*CLS" href="29798.htm" target="_self">*CLS</a></p>
+<p class="listcommand"><a id="h19483" class="jump" title="Standard Event Register" href="59283.htm" target="_self">Standard Event Register</a></p>
+<p class="listcommand">Status model</p>
+
+
+<input id="topicId" type="hidden" value="29799" />
+<input id="topicDescription" type="hidden" value="*ESE" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/20/2018 3:31:13 PM" />
+</body>
+</html>

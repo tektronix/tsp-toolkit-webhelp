@@ -1,0 +1,131 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> file.flush() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="27930.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="25723.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t27958" class="heading2-icl">file.flush()</h2>
+<p class="bodyzero">This function writes buffering data to a file on the USB flash drive.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">file.flush(<em class="emphasis">fileNumber</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">fileNumber</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The file number returned from the <code class="monospace"><code class="monospace">file.open()</code></code> function to flush</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <code class="monospace"><code class="monospace">file.write()</code></code> function may be buffering data instead of writing immediately to the USB flash drive. Use <code class="monospace"><code class="monospace">file.flush()</code></code> to flush this data. Data may be lost if the file is not closed or flushed before a script ends.</p>
+<p class="iclbody">If there is going to be a time delay before more data is written to a file, flush the file to prevent loss of data because of an aborted test.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Fix the range to 10 V</p>
+<p class="codetable"><code class="monospace">smu</code>.measure.range = 10</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Set the measurement count to 100</p>
+<p class="codetable"><code class="monospace">smu</code>.measure.count = 100</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Set up reading buffers</p>
+<p class="codetable">-- Ensure the default measurement buffer size matches the count</p>
+<p class="codetable">defbuffer1.capacity = 100</p>
+<p class="codetable"><code class="monospace">smu</code>.measure.read()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">testDir = &quot;TestData5&quot;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- create a directory on the USB drive for the data</p>
+<p class="codetable">file.mkdir(testDir)</p>
+<p class="codetable">fileName = &quot;/usb1/&quot; .. testDir .. &quot;/myTestData.csv&quot;</p>
+<p class="codetable">buffer.save(defbuffer1, fileName)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if file.usbdriveexists() != 0 then</p>
+<p class="codetable">   -- testDir = &quot;TestData3&quot;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">   -- Create a directory on the USB drive for the data</p>
+<p class="codetable">   -- file.mkdir(testDir)</p>
+<p class="codetable">   -- Open the file where the data will be stored</p>
+<p class="codetable">   -- fileName = &quot;/usb1/&quot; .. testDir .. &quot;/myTestData.csv&quot;</p>
+<p class="codetable">   fileNumber = file.open(fileName, file.MODE_APPEND)</p>
+<p class="codetable">-- Write header separator to file</p>
+<p class="codetable">   file.write(fileNumber, &quot;\n\n====================================================================\n&quot;)</p>
+<p class="codetable">-- Write the string data to a file</p>
+<p class="codetable">   file.write(fileNumber, &quot;Tested to Company Standard ABC.123\n&quot;)</p>
+<p class="codetable">-- Ensure a hurry-up of data written to the file before close or script end</p>
+<p class="codetable">   file.flush(fileNumber)</p>
+<p class="codetable">-- Close the data file</p>
+<p class="codetable">   file.close(fileNumber)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">This example writes a string that indicates that the readings were made for a certain reason, such as to test to a company standard.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="27958" />
+<input id="topicDescription" type="hidden" value="file.flush()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/25/2019 1:31:59 PM" />
+</body>
+</html>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> bufferVar.sourcevalues </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25707.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="56793.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t30550" class="heading2-icl">bufferVar.sourcevalues</h2>
+<p class="bodyzero">This attribute contains the source levels being output when readings in the reading buffer were acquired.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="84"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="90"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="84"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="90"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">sourceValue</em> = <span class="monospaceitalic">bufferVar</span>.sourcevalues[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sourceValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The output value of the source when reading <span class="monospaceitalic">N</span> of the specified buffer was acquired</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading number <span class="monospaceitalic">N</span>; can be any value from 1 to the number of readings in the buffer; use the <span class="monospaceitalic">bufferVar.</span><code class="monospace">n</code> command to determine the number of readings in the&nbsp;buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is like an array (a Lua table) of the sourced value in effect at the time of the reading.</p>
+<p class="iclbody">The values returned by this command depend on the source readback state:</p>
+<ul class="listbullet2"><li class="listbullet2">If readback is off, the value is the programmed value</li><li class="listbullet2">If readback is on, the value is the actual measured source value</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="365"><p class="codetable">reset() </p>
+<p class="codetable">testData = buffer.make(50)</p>
+<p class="codetable">smu.source.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable">smu.source.level = 1e-6</p>
+<p class="codetable">smu.source.output = smu.ON</p>
+<p class="codetable">trigger.model.load(&quot;SimpleLoop&quot;, 3, 0, testData)</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">printbuffer(1, 3, testData.sourcevalues)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="235"><p class="tablebodytext">Create a reading buffer named <code class="monospace">testData</code>, configure the instrument to make three measurements, and store the readings in the buffer.</p>
+<p class="tablebodytext">Set the source value to 1e-6&nbsp;A.</p>
+<p class="tablebodytext">Print the source values being output when readings in the reading buffer were acquired. </p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">9.9999874692e-07, 1.0000017028e-06, 1.0000054544e-06</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h33672" class="jump" title="bufferVar.sourcestatuses" href="34340.htm" target="_self">bufferVar.sourcestatuses</a></p>
+<p class="listcommand"><a id="h27588" class="jump" title="bufferVar.sourceunits" href="25707.htm" target="_self">bufferVar.sourceunits</a></p>
+<p class="listcommand"><a id="h33668" class="jump" title="bufferVar.statuses" href="33164.htm" target="_self">bufferVar.statuses</a></p>
+<p class="listcommand"><a id="h20227" class="jump" title="bufferVar.formattedreadings" href="25640.htm" target="_self">bufferVar.formattedreadings</a></p>
+<p class="listcommand"><a id="h33983" class="jump" title="buffer.delete()" href="33981.htm" target="_self">buffer.delete()</a></p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h33664" class="jump" title="bufferVar.clear()" href="30485.htm" target="_self">bufferVar.clear()</a></p>
+<p class="listcommand"><a id="h17646" class="jump" title="print()" href="17645.htm" target="_self">print()</a></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+<p class="listcommand"><a id="h31445" class="jump" title="smu.source.readback" href="30579.htm" target="_self">smu.source.readback</a></p>
+
+
+<input id="topicId" type="hidden" value="30550" />
+<input id="topicDescription" type="hidden" value="bufferVar.sourcevalues" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 8:27:02 AM" />
+</body>
+</html>

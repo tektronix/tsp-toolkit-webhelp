@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Status Byte Register </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12334.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12295.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12297" class="heading3">Status Byte Register</h3>
+<p class="bodytext">The summary messages from the status registers and queues are used to set or clear the appropriate bits (B0, B1, B2, B3, B4, B5, and B7) of the Status Byte Register. These summary bits do not latch, and their states (0 or 1) are dependent upon the summary messages (0 or 1). For example, if the Standard Event Register is read, its register is cleared. As a result, its summary message resets to 0, which then resets the ESB bit in the Status Byte Register.</p>
+<p class="bodytext">The Status Byte Register also receives summary bits from itself, which sets the Master Summary Status, or MSS, bit.</p>
+<p class="magicfigurecenter"><img id="f12298" src="2600as-901-01b_statusbyteandservicerequest%28srq%29_lr.png" class="linkedepsandpngtemplate" alt="Status byte and service request (SRQ)" height="508" width="620" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">The bits of the Status Byte Register are described as follows:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Bit B0, Measurement Summary Bit (MSB):</strong> Set summary bit indicates that an enabled measurement event has occurred.</li><li class="listbullet"><strong class="specialbold">Bit B1, System Summary Bit (SSB): </strong>Set summary bit indicates that an enabled system event has occurred.</li><li class="listbullet"><strong class="specialbold">Bit B2, Error Available (EAV):</strong> Set bit indicates that an error or status message is present in the error queue.</li><li class="listbullet"><strong class="specialbold">Bit B3, Questionable Summary Bit (QSB): </strong>Set summary bit indicates that an enabled questionable event has occurred.</li><li class="listbullet"><strong class="specialbold">Bit B4, Message Available (MAV): </strong>Set bit indicates that a response message is present in the output queue.</li><li class="listbullet"><strong class="specialbold">Bit B5, Event Summary Bit (ESB): </strong>Set summary bit indicates that an enabled standard event has occurred.</li><li class="listbullet"><strong class="specialbold">Bit B6, Request Service (RQS)/Master Summary Status (MSS): </strong>Set bit indicates that an enabled summary bit of the Status Byte Register is set. Depending on how it is used, bit B6 of the Status Byte Register is either the Request for Service (RQS) bit or the Master Summary Status (MSS) bit:<ul class="listbullet2"><li class="listbullet2">When using the GPIB, USB, or VXI-11 serial poll sequence of the 2600B to obtain the status byte (serial poll byte), B6 is the RQS bit. See <a id="h12299" class="jump" title="Serial polling and SRQ" href="12293.htm" target="_self">Serial polling and SRQ</a> for details on using the serial poll sequence.</li><li class="listbullet2">When using the <code class="monospace">*STB?</code> common command or status.condition <a id="h12300" class="jump" title="Status byte and service request commands" href="12301.htm" target="_self">Status byte and service request commands</a> to read the status byte, B6 is the MSS bit.</li></ul></li><li class="listbullet"><strong class="specialbold">Bit B7, Operation Summary (OSB): </strong>Set summary bit indicates that an enabled operation event has occurred.</li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12334.htm" target="_self">Status byte and service request (SRQ)</a></p><p class="relateditem"><a href="12295.htm" target="_self">Service Request Enable Register</a></p><p class="relateditem"><a href="12293.htm" target="_self">Serial polling and SRQ</a></p><p class="relateditem"><a href="13023.htm" target="_self">SPE, SPD (serial polling)</a></p><p class="relateditem"><a href="12301.htm" target="_self">Status byte and service request commands</a></p><p class="relateditem"><a href="12270.htm" target="_self">Enable and transition registers</a></p><p class="relateditem"><a href="13024.htm" target="_self">Controlling node and SRQ enable registers</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12297" />
+<input id="topicDescription" type="hidden" value="Status Byte Register" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/31/2021 10:32:47 AM" />
+</body>
+</html>

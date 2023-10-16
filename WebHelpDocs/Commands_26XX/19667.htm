@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Remote programming output-off states quick reference </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19637.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11993.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t19667" class="heading3">Remote programming output-off states quick reference</h3>
+<p class="bodytext">The content of the following table is a quick reference of commands for programming output-off states from a remote interface.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="336" height="0"></td>
+<td width="264" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="600"><p class="tableheading">Output-off state programming quick reference</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tableheadingsmall">Command*</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tableheadingsmall">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offmode = smua.OUTPUT_NORMAL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Selects normal output&#8209;off mode.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offmode = smua.OUTPUT_HIGH_Z</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Selects high&#8209;impedance output&#8209;off mode.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offmode = smua.OUTPUT_ZERO</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Selects zero output-off mode.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offfunc = smua.OUTPUT_DCVOLTS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Sets 0 V output with current limit specified by the <code class="monospace">smua.source.offlimiti</code> attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offfunc = smua.OUTPUT_DCAMPS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Sets 0 A output with voltage limit specified by the <code class="monospace">smua.source.offlimitv</code> attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offlimiti = <span class="monospaceitalic">iValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Sets current limit in normal output&#8209;off mode.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.offlimitv = <span class="monospaceitalic">vValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Sets voltage limit in normal output&#8209;off mode.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-top:1px solid #C0C0C0;" colspan="2" width="600"><p class="tablebodytext">* <code class="monospace">smu</code><span class="monospaceitalic">X</span> can be <code class="monospace">smua</code> for channel A or <code class="monospace">smub</code> for channel B</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="28174.htm" target="_self">Output-off modes</a></p><p class="relateditem"><a href="11883.htm" target="_self">Normal output-off mode</a></p><p class="relateditem"><a href="11884.htm" target="_self">High-impedance output-off mode</a></p><p class="relateditem"><a href="11885.htm" target="_self">Zero output-off mode</a></p><p class="relateditem"><a href="19634.htm" target="_self">Output-off function</a></p><p class="relateditem"><a href="19635.htm" target="_self">Output-off limits (compliance)</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="19667" />
+<input id="topicDescription" type="hidden" value="Remote programming output-off states quick reference" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:28:52 PM" />
+</body>
+</html>

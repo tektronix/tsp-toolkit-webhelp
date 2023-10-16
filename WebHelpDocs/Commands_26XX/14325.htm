@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> For loops </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14324.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16706.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t14325" class="heading5">For loops</h5>
+<p class="bodytext">There are two variations of <code class="monospace">for</code> statements supported in Lua: Numeric and generic.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">In a <code class="monospace">for</code> loop, the loop expressions are evaluated once, before the loop starts.<br><br>The output you get from these examples may vary depending on the data format settings of the instrument.</p>
+<p class="bodytext"><strong class="specialbold">Example: Numeric for</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">list = {&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;, &quot;Four&quot;, &quot;Five&quot;, &quot;Six&quot;}</p>
+<p class="codetable">---------- For loop -----------</p>
+<p class="codetable">print(&quot;Counting from one to three:&quot;)</p>
+<p class="codetable">for element = 1, 3 do</p>
+<p class="codetable">   print(element, list[element])</p>
+<p class="codetable">end</p>
+<p class="codetable">print(&quot;Counting from one to four, in steps of two:&quot;)</p>
+<p class="codetable">for element = 1, 4, 2 do</p>
+<p class="codetable">   print(element, list[element])</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="600"><p class="tablebodytext">The numeric <code class="monospace">for</code> loop repeats a block of code while a control variable runs through an arithmetic progression.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">Counting from one to three:</code></p>
+<p class="tablebodytext"><code class="monospace">1   One</code></p>
+<p class="tablebodytext"><code class="monospace">2   Two</code></p>
+<p class="tablebodytext"><code class="monospace">3   Three</code></p>
+<p class="tablebodytext"><code class="monospace">Counting from one to four, in steps of two:</code></p>
+<p class="tablebodytext"><code class="monospace">1   One</code></p>
+<p class="tablebodytext"><code class="monospace">3   Three</code></p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Generic for</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">days = {&quot;Sunday&quot;, </p>
+<p class="codetable">   &quot;Monday&quot;,     &quot;Tuesday&quot;,</p>
+<p class="codetable">   &quot;Wednesday&quot;,  &quot;Thursday&quot;,</p>
+<p class="codetable">   &quot;Friday&quot;,     &quot;Saturday&quot;} </p>
+<p class="codetable"> </p>
+<p class="codetable">for i, v in ipairs(days) do </p>
+<p class="codetable">   print(days[i], i, v) </p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="600"><p class="tablebodytext">The generic <code class="monospace">for</code> statement works by using functions called iterators. On each iteration, the iterator function is called to produce a new value, stopping when this new value is nil.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">Sunday     1    Sunday</code></p>
+<p class="tablebodytext"><code class="monospace">Monday     2    Monday</code></p>
+<p class="tablebodytext"><code class="monospace">Tuesday    3    Tuesday</code></p>
+<p class="tablebodytext"><code class="monospace">Wednesday  4    Wednesday</code></p>
+<p class="tablebodytext"><code class="monospace">Thursday   5    Thursday</code></p>
+<p class="tablebodytext"><code class="monospace">Friday     6    Friday</code></p>
+<p class="tablebodytext"><code class="monospace">Saturday   7    Saturday</code></p>
+</td>
+</tr>
+
+</table>
+<p class="spacing"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2428.htm" target="_self">Loop control</a></p><p class="relateditem"><a href="14323.htm" target="_self">While loops</a></p><p class="relateditem"><a href="14324.htm" target="_self">Repeat until loops</a></p><p class="relateditem"><a href="16706.htm" target="_self">Break</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="14325" />
+<input id="topicDescription" type="hidden" value="For loops" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/31/2020 1:19:54 PM" />
+</body>
+</html>

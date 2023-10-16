@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Range programming example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11621.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11995.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t26621" class="heading4">Range programming example</h4>
+<p class="bodytext">The programming example below illustrates how to control both source and measure ranges. The 2600B is set up as follows:</p>
+<ul class="listbullet"><li class="listbullet">Voltage source range: Autorange</li><li class="listbullet">Current measure range: 10&nbsp;mA</li><li class="listbullet">Voltage source current limit: 10&nbsp;mA</li></ul><p class="code"><code class="monospace"><code class="monospace">-- Restore 2600B defaults.</code></code></p>
+<p class="code"><code class="monospace"><code class="monospace">smua.reset()</code></code></p>
+<p class="code"><code class="monospace"><code class="monospace">-- Set V source range to autorange.</code></code></p>
+<p class="code"><code class="monospace"><code class="monospace">smua.source.autorangev = smua.AUTORANGE_ON</code></code></p>
+<p class="code"><code class="monospace"><code class="monospace">-- Select 10 mA measure range.</code></code></p>
+<p class="code"><code class="monospace"><code class="monospace">smua.measure.rangei = 10e-3</code></code></p>
+<p class="code"><code class="monospace"><code class="monospace">-- Set limit level to 10 mA.</code></code></p>
+<p class="code"><code class="monospace"><code class="monospace">smua.source.limiti = 10e-3</code></code></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11994.htm" target="_self">Range programming</a></p><p class="relateditem"><a href="11621.htm" target="_self">Range commands</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="26621" />
+<input id="topicDescription" type="hidden" value="Range programming example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:26:06 PM" />
+</body>
+</html>

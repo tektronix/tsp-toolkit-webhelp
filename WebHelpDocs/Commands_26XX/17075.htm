@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Create a script using the script.new() command </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16842.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17092.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t17075" class="heading3">Create a script using the script.new() command</h3>
+<p class="bodytext">Use the <code class="monospace">script.new()</code> function to copy an existing script from the local node to a remote node. This enables parallel script execution. </p>
+<p class="bodytext">You can create a script with the <code class="monospace">script.new()</code> function using the command:</p>
+<p class="code"><span class="monospaceitalic">scriptVar</span> = script.new(<span class="monospaceitalic">code, name</span>)</p>
+<p class="bodytext">Where:</p>
+<table class="tableintopic" width="570" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="90"><p class="codetable"><span class="monospaceitalic">scriptVar</span></p>
+</td>
+<td width="24"><p class="tablebodytext">=</p>
+</td>
+<td width="456"><p class="tablebodytext">Name of the variable created when the script is loaded into the runtime environment</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="90"><p class="codetable"><span class="monospaceitalic">code</span></p>
+</td>
+<td width="24"><p class="tablebodytext">=</p>
+</td>
+<td width="456"><p class="tablebodytext">Content of the script</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="90"><p class="codetable"><span class="monospaceitalic">name</span></p>
+</td>
+<td width="24"><p class="tablebodytext">=</p>
+</td>
+<td width="456"><p class="tablebodytext">Name that is added to the <code class="monospace">script.user.scripts</code> table</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">For example, to set up a two-second beep, you can send the command:</p>
+<p class="code">beepTwoSec = script.new(&quot;beeper.enable = 1 beeper.beep(2, 2400)&quot;, &quot;beepTwoSec&quot;)</p>
+<p class="bodytext">To run the new script, send the command:</p>
+<p class="code">beepTwoSec()</p>
+<p class="bodytext">When you add <code class="monospace">beepTwoSec</code>, the global variable and <code class="monospace">script.user.scripts</code> table entries are made to the runtime environment, as shown in the following&nbsp;figure.</p>
+<p class="magicfigurecenter"><img id="f17085" src="3700a_runtime_env_after_create_script_lr.png" class="linkedepsandpngtemplate" alt="Runtime environment after creating a script" height="249" width="558" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="17092.htm" target="_self">Create an unnamed script using script.new()</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="17051.htm" target="_self">Advanced scripting for TSP</a></p><p class="relateditem"><a href="16842.htm" target="_self">Global variables and the script.user.scripts table</a></p><p class="relateditem"><a href="16688.htm" target="_self">Rename a script</a></p><p class="relateditem"><a href="2405.htm" target="_self">Retrieve a user script</a></p><p class="relateditem"><a href="2408.htm" target="_self">Delete user scripts from the instrument</a></p><p class="relateditem"><a href="2409.htm" target="_self">Restore a script to the runtime environment</a></p><p class="relateditem"><a href="16810.htm" target="_self">Memory considerations for the runtime environment</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="17075" />
+<input id="topicDescription" type="hidden" value="Create a script using the script.new() command" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 8:56:16 AM" />
+</body>
+</html>

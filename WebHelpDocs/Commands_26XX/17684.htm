@@ -1,0 +1,203 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17666.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15790.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17684" class="heading2-icl">trigger.blender[N].stimulus[M]</h2>
+<p class="bodyzero">This attribute specifies the events that trigger the blender.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Trigger blender N reset</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">trigger.EVENT_NONE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">eventID</em> = trigger.blender[<em class="emphasis">N</em>].stimulus[<em class="emphasis">M</em>]</p>
+<p class="iclcode">trigger.blender[<em class="emphasis">N</em>].stimulus[<em class="emphasis">M</em>] = <em class="emphasis">eventID</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">eventID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The event that triggers the blender action; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">An integer representing the trigger event blender (up to six)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">M</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">An integer representing the stimulus index (1 to 4)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">There are four stimulus inputs that can each select a different event. The <span class="monospaceitalic">eventID</span> parameter can be the event ID of any trigger event.</p>
+<p class="iclbody">Use zero to disable the blender input. </p>
+<p class="iclbody">The <span class="monospaceitalic">eventID</span> parameter may be one of the existing trigger event IDs shown in the following table.</p>
+<p class="iclbody"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="288" height="0"></td>
+<td width="312" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheading">Trigger event IDs*</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Event ID</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Event description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.SWEEPING_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the source&#8209;measure unit (SMU) transitions from the idle state to the arm layer of the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.ARMED_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU moves from the arm layer to the trigger layer of the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.SOURCE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU completes a source&nbsp;action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.MEASURE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU completes a measurement action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.PULSE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU completes a pulse</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.SWEEP_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU completes a sweep</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.IDLE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the SMU returns to the idle state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when an edge is detected on a digital I/O line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">tsplink.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when an edge is detected on a TSP&#8209;Link line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">lan.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">display.trigger.EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the TRIG key on the front panel is&nbsp;pressed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">trigger.EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when a <code class="monospace">*TRG</code> command is received on the remote interface</p>
+<p class="tablebodytext">GPIB only: Occurs when a <code class="monospace">GET</code> bus command is received</p>
+<p class="tablebodytext">USB only: Occurs when a USBTMC TRIGGER message is received</p>
+<p class="tablebodytext">VXI-11 only: Occurs with the VXI-11 command <code class="monospace">device_trigger</code>; reference the VXI-11 standard for additional details on the device trigger operation</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">trigger.blender[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs after a collection of events is detected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">trigger.timer[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when a delay expires</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytextsmall"><code class="monospace">trigger.generator[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Occurs when the <code class="monospace">trigger.generator[</code><span class="monospaceitalic">N</span><code class="monospace">].assert()</code> function is executed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tablebodytextsmall">* Use the name of the trigger event ID to set the stimulus value rather than the numeric value. Using the name makes the code compatible for future upgrades (for example, if the numeric values must change when enhancements are added to the instrument).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">digio.trigger[3].mode = digio.TRIG_FALLING</p>
+<p class="codetable">digio.trigger[5].mode = digio.TRIG_FALLING</p>
+<p class="codetable">trigger.blender[1].orenable = true</p>
+<p class="codetable">trigger.blender[1].stimulus[1] = digio.trigger[3].EVENT_ID</p>
+<p class="codetable">trigger.blender[1].stimulus[2] = digio.trigger[5].EVENT_ID</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Generate a trigger blender 1 event when a digital I/O trigger happens on line 3 or 5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17667" class="jump" title="trigger.blender[N].reset()" href="17666.htm" target="_self">trigger.blender[N].reset()</a></p>
+
+

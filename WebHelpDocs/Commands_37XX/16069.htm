@@ -1,0 +1,110 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16068.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16070.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16069" class="heading2-icl">dmm.thermistor</h2>
+<p class="bodyzero">This attribute describes the type of thermistor.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="84"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="168"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="84"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="168"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">5000</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.thermistor</p>
+<p class="iclcode">dmm.thermistor = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The thermistor type in ohms, 2252, 5000 or 10000; if you enter any other value, it is converted as shown in the following table:</p>
+<p class="tablebodytext">&nbsp;</p>
+<table class="tableintopic" width="300" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tableheadingsmall">Parameter</p>
+</td>
+<td style="border:1px solid #010101;" width="120"><p class="tableheadingsmall">Converted value </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">&gt;= 1950 and &lt; 3500</p>
+</td>
+<td style="border:1px solid #010101;" width="120"><p class="tablebodytext">2252</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext">&gt;= 3500 and &lt; 7500</p>
+</td>
+<td style="border:1px solid #010101;" width="120"><p class="tablebodytext">5000</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tablebodytext"><span class="symbols">&gt;=</span> 7500 and &lt;= 10050</p>
+</td>
+<td style="border:1px solid #010101;" width="120"><p class="tablebodytext">10000</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is only valid when <code class="monospace">dmm.func</code> is set to <code class="monospace">&quot;temperature&quot;</code>. All other functions generate an error and return <code class="monospace">nil</code> when queried. If you use a parameter outside of the ranges listed in the usage table, a parameter out of range error message is generated.</p>
+<p class="iclbody">The thermistor attribute is only used when the transducer type is set for thermistor. For all other transducer types, the setting is set but not used until thermistor is selected for the transducer type (see <code class="monospace">dmm.transducer</code>).</p>
+<p class="iclbody">The thermistor setting is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to <code class="monospace">&quot;temperature&quot;</code>, the thermistor setting you set previously is retained.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;temperature&quot;</p>
+<p class="codetable">dmm.transducer = dmm.TEMP_THERMISTOR</p>
+<p class="codetable">dmm.thermistor = 3000</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Sets thermistor type to 2252. Note that the original value is set to 3000, but is automatically converted to 2252.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">print(dmm.thermistor)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">2252</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h2026" class="jump" title="dmm.transducer" href="16073.htm" target="_self">dmm.transducer</a></p>
+
+

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> String library functions </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16503.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2432.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t2431" class="heading5">String library functions</h5>
+<p class="bodytext">This library provides generic functions for string manipulation, such as finding and extracting substrings. When indexing a string in Lua, the first character is at position 1 (not 0, as in ANSI C). Indices may be negative and are interpreted as indexing backward from the end of the string. Thus, the last character is at position &#8211;1, and so on.</p>
+<table class="tableintopic" width="528" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th style="border-bottom:1px solid #010101;" colspan="2" width="528"><p class="tableheading">String library functions</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="162"><p class="tableheadingsmall">Function</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="366"><p class="tableheadingsmall">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="162"><p class="codetable">string.byte(<span class="monospaceitalic">s</span>)</p>
+<p class="codetable">string.byte(<span class="monospaceitalic">s</span>, <span class="monospaceitalic">i</span>)</p>
+<p class="codetable">string.byte(<span class="monospaceitalic">s</span>, <span class="monospaceitalic">i</span>, <span class="monospaceitalic">j</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="366"><p class="tablebodytext">Returns the internal numeric codes of the characters <span class="monospaceitalic">s</span><code class="monospace">[</code><span class="monospaceitalic">i</span><code class="monospace">], </code><span class="monospaceitalic">s</span><code class="monospace">[</code><span class="monospaceitalic">i</span><code class="monospace">+1], ···, </code><span class="monospaceitalic">s</span><code class="monospace">[</code><span class="monospaceitalic">j</span><code class="monospace">]</code>. The default value for <span class="monospaceitalic">i</span> is <code class="monospace">1</code>; the default value for <span class="monospaceitalic">j</span> is <span class="monospaceitalic">i</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="162"><p class="codetable">string.char(···)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="366"><p class="tablebodytext">Receives zero or more integers separated by commas. Returns a string with length equal to the number of arguments, in which each character has the internal numeric code equal to its corresponding argument.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="162"><p class="codetable">string.format(</p>
+<p class="codetable">   <span class="monospaceitalic">formatstring</span>, ...)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="366"><p class="tablebodytext">Returns a formatted version of its variable number of arguments following the description given in its first argument, which must be a string. The format string follows the same rules as the <code class="monospace">printf</code> family of standard C functions. The only differences are that the modifiers <code class="monospace">*</code>, <code class="monospace">l</code>, <code class="monospace">L</code>, <code class="monospace">n</code>, <code class="monospace">p</code>, and <code class="monospace">h</code> are not supported and there is an extra option, <code class="monospace">q</code>. The <code class="monospace">q</code> option formats a string in a form suitable to be safely read back by the Lua interpreter; the string is written between double quotes, and all double quotes, newlines, embedded zeros, and backslashes in the string are correctly escaped when written.</p>
+<p class="tablebodytext">For example, the call:</p>
+<p class="codetable">string.format('%q', 'a string with &quot;quotes&quot; and \n new line')</p>
+<p class="tablebodytext">will produce the string: </p>
+<p class="codetable">&quot;a string with \&quot;quotes\&quot; and \<br>new line&quot;</p>
+<p class="tablebodytext">The options <code class="monospace">c</code>, <code class="monospace">d</code>, <code class="monospace">E</code>, <code class="monospace">e</code>, <code class="monospace">f</code>, <code class="monospace">g</code>, <code class="monospace">G</code>, <code class="monospace">i</code>, <code class="monospace">o</code>, <code class="monospace">u</code>, <code class="monospace">X</code>, and <code class="monospace">x</code> all expect a number as argument. <code class="monospace">q</code> and <code class="monospace">s</code> expect a string. This function does not accept string values containing embedded zeros, except as arguments to the <code class="monospace">q</code> option.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="162"><p class="codetable">string.len(<span class="monospaceitalic">s</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="366"><p class="tablebodytext">Receives a string and returns its length. The empty string <code class="monospace">&quot;&quot;</code> has length <code class="monospace">0</code>. Embedded zeros are counted, so <code class="monospace">&quot;a\000bc\000&quot;</code> has length <code class="monospace">5</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="162"><p class="codetable">string.lower(<span class="monospaceitalic">s</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="366"><p class="tablebodytext">Receives a string and returns a copy of this string with all uppercase letters changed to lowercase. All other characters are left unchanged.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="162"><p class="codetable">string.rep(<span class="monospaceitalic">s</span>, <span class="monospaceitalic">n</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="366"><p class="tablebodytext">Returns a string that is the concatenation of <span class="monospaceitalic">n</span> copies of the string&nbsp;<span class="monospaceitalic">s</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="162"><p class="codetable">string.sub(<span class="monospaceitalic">s</span>, <span class="monospaceitalic">i</span>)</p>
+<p class="codetable">string.sub(<span class="monospaceitalic">s</span>, <span class="monospaceitalic">i</span>, <span class="monospaceitalic">j</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="366"><p class="tablebodytext">Returns the substring of <span class="monospaceitalic">s</span> that starts at <span class="monospaceitalic">i</span> and continues until <span class="monospaceitalic">j</span>; <span class="monospaceitalic">i</span> and <span class="monospaceitalic">j</span> can be negative. If <span class="monospaceitalic">j</span> is absent, it is assumed to be equal to <code class="monospace">-1</code> (which is the same as the string length). In particular, the call<code class="monospace"> string.sub(</code><span class="monospaceitalic">s</span><code class="monospace">, 1, </code><span class="monospaceitalic">j</span><code class="monospace">)</code> returns a prefix of <span class="monospaceitalic">s</span> with length <span class="monospaceitalic">j</span>, and<code class="monospace"> string.sub(</code><span class="monospaceitalic">s</span><code class="monospace">, -</code><span class="monospaceitalic">i</span><code class="monospace">)</code> returns a suffix of <span class="monospaceitalic">s</span> with length <span class="monospaceitalic">i</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="162"><p class="codetable">string.upper(<span class="monospaceitalic">s</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="366"><p class="tablebodytext">Receives a string and returns a copy of this string with all lowercase letters changed to uppercase. All other characters are left unchanged.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2429.htm" target="_self">Standard libraries</a></p><p class="relateditem"><a href="2430.htm" target="_self">Base library functions</a></p><p class="relateditem"><a href="2432.htm" target="_self">Math library functions</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="2431" />
+<input id="topicDescription" type="hidden" value="String library functions" />
+<input id="footer-modified" type="hidden" value="Last modified: 7/11/2016 8:34:42 AM" />
+</body>
+</html>

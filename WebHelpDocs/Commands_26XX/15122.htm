@@ -1,0 +1,121 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15124.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15125.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15122" class="heading2-icl">smuX.measure.Y()</h2>
+<p class="bodyzero">This function makes one or more measurements.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">reading</span></span> = smu<span class="monospaceitalic">X</span>.measure.<span class="monospaceitalic">Y()</span></p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">reading</span></span> = smu<span class="monospaceitalic">X</span>.measure.<span class="monospaceitalic">Y(readingBuffer)</span></p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">iReading</span></span>, <span class="monospaceitalic"><span class="monospaceitalic">vReading</span></span> = smu<span class="monospaceitalic">X</span>.measure.iv()</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">iReading</span></span>, <span class="monospaceitalic"><span class="monospaceitalic">vReading</span></span> = smu<span class="monospaceitalic">X</span>.measure.iv(<span class="monospaceitalic">iReadingBuffer</span>)</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">iReading, vReading </span></span>= smu<span class="monospaceitalic">X</span>.measure.iv(<span class="monospaceitalic">iReadingBuffer</span>, <span class="monospaceitalic">vReadingBuffer</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">reading</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Returned value of the last (or only) reading of the measurement process</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">X</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source-measure unit (SMU) channel (for example, <code class="monospace"><code class="monospace">smua.measure.v()</code></code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">SMU measurement function (<code class="monospace"><code class="monospace">v</code></code> = voltage, <code class="monospace"><code class="monospace">i</code></code> = current, <code class="monospace"><code class="monospace">r</code></code> = resistance, <code class="monospace"><code class="monospace">p</code></code> = power)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">readingBuffer</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A reading buffer object where all readings are stored</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">iReading</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The last reading of the current measurement process</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">vReading</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The last reading of the voltage measurement process</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">iReadingBuffer</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A reading buffer object where current readings are stored</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">vReadingBuffer</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A reading buffer object where voltage readings are stored</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">If you use this function without specifying a reading buffer, it makes one measurement and returns that measurement as <span class="monospaceitalic"><span class="monospaceitalic">reading</span></span>. To use the additional information that is acquired while making a measurement or to return multiple readings, specify a reading buffer. If the instrument is configured to return multiple readings for a measurement and <span class="monospaceitalic"><span class="monospaceitalic">readingBuffer</span></span> is specified, all readings are available in <span class="monospaceitalic"><span class="monospaceitalic">readingBuffer</span></span>, but only the last measurement is returned as <span class="monospaceitalic"><span class="monospaceitalic">reading</span></span>.</p>
+<p class="iclbody">Measurements are in the following units of measure:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace"><code class="monospace">v</code></code> = volts</li><li class="listbullet"><code class="monospace"><code class="monospace">i</code></code> = amperes</li><li class="listbullet"><code class="monospace"><code class="monospace">r</code></code> = ohms</li><li class="listbullet"><code class="monospace"><code class="monospace">p</code></code> = watts</li></ul><p class="iclbody">The <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.iv()</code> function returns the last actual current measurement and voltage measurement as <span class="monospaceitalic">iReading</span> and <span class="monospaceitalic">vReading</span>, respectively. Additionally, it can store current and voltage readings if buffers are provided (<span class="monospaceitalic">iReadingBuffer</span> and <span class="monospaceitalic">vReadingBuffer</span> ).</p>
+<p class="iclbody">The <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.count</code> attribute determines how many measurements are performed. When using a reading buffer, it also determines the number of readings to store in the buffer. If a reading buffer is not specified, the SMU ignores the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.count</code> attribute and only makes one measurement.</p>
+<p class="iclbody">The <span class="monospaceitalic"><span class="monospaceitalic">readingBuffer</span></span> is cleared before making any measurements unless the buffer is configured to append data.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">smua.measure.count = 10</p>
+<p class="codetable">smua.measure.v(smua.nvbuffer1)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Makes 10 voltage measurements using SMU channel A and stores them in a buffer.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h96900" class="jump" title="Reading buffers" href="77977.htm" target="_self">Reading buffers</a></p>
+<p class="listcommand"><a id="h15206" class="jump" title="smuX.measure.count" href="77107.htm" target="_self">smuX.measure.count</a></p>
+<p class="listcommand"><a id="h15216" class="jump" title="smuX.measure.overlappedY()" href="15120.htm" target="_self">smuX.measure.overlappedY()</a></p>
+<p class="listcommand"><a id="h15222" class="jump" title="smuX.nvbufferY" href="15126.htm" target="_self">smuX.nvbufferY</a></p>
+
+

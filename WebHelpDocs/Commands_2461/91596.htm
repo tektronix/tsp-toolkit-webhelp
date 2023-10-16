@@ -1,0 +1,181 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.priorityvoltage </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31441.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30521.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t91596" class="heading2-icl">smu.priorityvoltage</h2>
+<p class="bodyzero">This attribute changes the method the instrument uses to select the power supply rail that drives the output.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smu.OFF</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">state</em> = smu.priorityvoltage</p>
+<p class="iclcode">smu.priorityvoltage = <em class="emphasis">state</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext"><code class="monospace">smu.OFF</code>: Use the highest power supply rail that supports the output voltage for the maximum current allowed</p>
+<p class="tablebodytext"><code class="monospace">smu.ON</code>: Use the voltage range to select the power supply rail</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The Model 2461 uses three internal power supply rails to drive the output. The selection of which rail is determined by the limit range setting. To seamlessly supply the requested output voltage for the maximum current allowed, the instrument selects the highest power supply rail that supports the voltage for the current. Therefore, when the voltage priority is off, the selection of the rails is determined as shown in the following table.</p>
+<table class="tableintopic" width="240" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Current range</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Rail selected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">≤ 1 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">4 A or 5 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Middle</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">7 A or 10 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">In cases where a test sequence switches frequently between low and high current ranges, there is a lot of switching between the rails, which can slow measurement speed.</p>
+<p class="iclbody">For tests that are low voltage, the switching is not necessary. In this case, you can turn voltage priority on to change the selection of the power supply rail to be based on the voltage range instead of the current range. When voltage priority is on, the selection of the rails is determined as shown in the following table.</p>
+<table class="tableintopic" width="360" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Voltage range</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Current range</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Rail selected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">≤ 10 V</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">All</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" rowspan="2" width="120"><p class="tablebodytext">20 V</p>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">≤ 4 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Middle</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">≥ 5&nbsp;A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" rowspan="3" width="120"><p class="tablebodytext">100 V</p>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">≤ 1 A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">High</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">4&nbsp;A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Middle</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">≥ 5&nbsp;A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Low</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">This allows low voltage tests to change from low to high current ranges with no rail switching. Depending on the test sequence, this can result in significant time savings.</p>
+<p class="iclbody">Turning voltage priority on if the test sequency uses more voltage range changes could cause more rail switching, which will result in a longer test times.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smu.priorityvoltage = smu.ON</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Use the voltage range to select the rail.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="91596" />
+<input id="topicDescription" type="hidden" value="smu.priorityvoltage" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/10/2019 7:25:03 AM" />
+</body>
+</html>

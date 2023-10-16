@@ -1,0 +1,77 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13980.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14488.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t14508" class="heading2-icl">channel.calibration.step()</h2>
+<p class="bodyzero">This function sends a calibration command.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.calibration.step(<span class="monospaceitalic">channel</span>, <span class="monospaceitalic">step</span>)</p>
+<p class="iclcode">channel.calibration.step(<span class="monospaceitalic">channel</span>, <span class="monospaceitalic">step</span>, <span class="monospaceitalic">value</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channel</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="425"><p class="tablebodytext">The channel to be calibrated</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">step</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="425"><p class="tablebodytext">The number corresponding to the specified step</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="425"><p class="tablebodytext">The measured value for the specified step when the step value is even</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The specified channel must be on the unlocked slot. Only DAC and totalizer channels can be calibrated. It is best to calibrate a single channel sequentially to completion before changing channels.</p>
+<p class="iclbody">The card assumes that the given voltage or current value is exactly what it is sourcing for the given step. This command generates an error if the step is out of sequence, does not exist, or the calibration is locked. Also, an error is generated if the calibration step does not complete successfully, if the value passed is invalid or out of range for the step, or not needed.</p>
+<p class="bodytext">For DAC channels, a calibration sequence includes these steps:</p>
+<ol class="listnumber"><li class="listnumber">Set voltage, &#8211;12&nbsp;V to +12&nbsp;V range, generate negative point 1.</li><li class="listnumber">Send reading.</li><li class="listnumber">Set voltage, &#8211;12&nbsp;V to +12&nbsp;V range, generate negative point 2.</li><li class="listnumber">Send reading.</li><li class="listnumber">Set voltage, &#8211;12&nbsp;V to +12&nbsp;V range, generate positive point 1.</li><li class="listnumber">Send reading.</li><li class="listnumber">Set voltage, &#8211;12&nbsp;V to +12&nbsp;V range, generate positive point 2.</li><li class="listnumber">Send reading.</li><li class="listnumber">Set current, 0&nbsp;mA to +20&nbsp;mA range, generate point 1.</li><li class="listnumber">Send reading.</li><li class="listnumber">Set current, 0&nbsp;mA to +20&nbsp;mA range, generate point 2.</li><li class="listnumber">Send reading.</li><li class="listnumber">Set current, +4&nbsp;mA to +20&nbsp;mA range, generate point 1.</li><li class="listnumber">Send reading.</li><li class="listnumber">Set current, +4&nbsp;mA to +20&nbsp;mA range, generate point 2.</li><li class="listnumber">Send reading.</li></ol><p class="bodytext">For totalizer channels, a calibration sequence includes these steps:</p>
+<ol class="listnumber"><li class="listnumber">Calibrate 0&nbsp;V totalizer threshold</li><li class="listnumber">Calibrate 1.5&nbsp;V totalizer threshold</li></ol><p class="bodytext">You must save the calibration after calibrating and before locking. Use <code class="monospace">channel.calibration.save()</code> to save the calibration.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">All calibration progress is lost if the calibration data is not saved before you lock the channel.</p>
+<p class="bodytext">After calibration, the channel must be locked using <code class="monospace">channel.calibration.lock()</code>.</p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14490" class="jump" title="channel.calibration.lock()" href="14487.htm" target="_self">channel.calibration.lock()</a></p>
+<p class="listcommand"><a id="h13981" class="jump" title="channel.calibration.save()" href="13980.htm" target="_self">channel.calibration.save()</a></p>
+<p class="listcommand"><a id="h14489" class="jump" title="channel.calibration.unlock()" href="14488.htm" target="_self">channel.calibration.unlock()</a></p>
+
+

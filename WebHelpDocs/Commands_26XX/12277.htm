@@ -1,0 +1,219 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Programming enable and transition registers </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12344.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12290.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t12277" class="heading2">Programming enable and transition registers</h2>
+<p class="bodytext">The only registers that you can program are the enable and transition registers. All other registers in the status structure are read-only registers. The following explains how to determine the parameter values for the various commands used to program enable registers. The actual commands are summarized in <a id="h14247" class="jump" title="Common commands" href="19498.htm" target="_self">Common commands</a> and <a id="h14246" class="jump" title="Status function summary" href="29523.htm" target="_self">Status function summary</a>.</p>
+<p class="bodytext">A command to program an event enable or transition register is sent with a parameter value that determines the state (0 or 1) of each bit in the appropriate register. The bit positions of the register (see the following tables) indicate the binary parameter value and decimal equivalent. To program one of the registers, send the decimal value for the bits to be set. The registers are discussed further in <a id="h19505" class="jump" title="Enable and transition registers" href="12270.htm" target="_self">Enable and transition registers</a>.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Bit</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Binary value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Decimal</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">64</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Weights</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">7</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">6</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">5</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">4</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">3</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">2</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">1</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">0</sup>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Bit</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B15</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B14</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B13</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B12</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B11</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B10</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B9</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Binary value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Decimal</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">32,768</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">16,384</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">8,192</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">4,096</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">2,048</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">1,024</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">512</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">256</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Weights</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">15</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">14</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">13</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">12</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">11</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">10</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">9</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">8</sup>)</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">When using a numeric parameter, registers are programmed by including the appropriate <span class="monospaceitalic">mask</span> value. For example:</p>
+<p class="code"><code class="monospace">*ese 1169</code></p>
+<p class="code"><code class="monospace">status.standard.enable = 1169</code></p>
+<p class="bodytext">To convert from decimal to binary, use the information shown in the above figure. For example, to set bits B0, B4, B7, and B10, use a decimal value of 1169 for the mask parameter (1169&nbsp;=&nbsp;1&nbsp;+&nbsp;16&nbsp;+&nbsp;128&nbsp;+&nbsp;1024).</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14191.htm" target="_self">Status model</a></p><p class="relateditem"><a href="12445.htm" target="_self">Overview</a></p><p class="relateditem"><a href="12344.htm" target="_self">Clearing registers</a></p><p class="relateditem"><a href="12290.htm" target="_self">Reading registers</a></p><p class="relateditem"><a href="12334.htm" target="_self">Status byte and service request (SRQ)</a></p><p class="relateditem"><a href="12306.htm" target="_self">Status register sets</a></p><p class="relateditem"><a href="12332.htm" target="_self">TSP-Link system status</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12277" />
+<input id="topicDescription" type="hidden" value="Programming enable and transition registers" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/31/2021 10:06:35 AM" />
+</body>
+</html>

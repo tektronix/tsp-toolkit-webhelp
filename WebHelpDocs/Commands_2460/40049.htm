@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> eventlog.suppress() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25702.htm" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14769.htm" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">eventlog.suppress()</h2>
+<p class="bodyzero">This command allows you to suppress system events from generating a popup on the front&#8209;panel interface.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">eventlog.suppress(<em class="emphasis">eventType</em>)</p>
+<p class="iclcode">eventlog.suppress(<em class="emphasis">eventNumber</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable"><em class="emphasis">eventType</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="402"><p class="tablebodytext">The type of the event to be suppressed:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Errors only: <code class="monospace">eventlog.SEV_ERROR</code></li><li class="tablelistbullet9pt">Warnings only: <code class="monospace">eventlog.SEV_WARN</code></li><li class="tablelistbullet9pt">Information only: <code class="monospace">eventlog.SEV_INFO</code></li><li class="tablelistbullet9pt">All events: <code class="monospace">eventlog.SEV_ALL</code></li></ul><p class="tablebodytext">To restore system event popups, send <code class="monospace">0</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="codetable"><em class="emphasis">eventNumber</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="402"><p class="tablebodytext">The number of a specific event to be suppressed</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <span class="monospaceitalic">eventType</span> parameter allows you to suppress groups of events (errors, warnings, and information). You can combine the event types to suppress more than one type. For example, to suppress information and error events, send the command:</p>
+<p class="iclcode">eventlog.suppress(eventlog.SEV_INFO|eventlog.SEV_ERROR)</p>
+<p class="iclbody">You can use the <span class="monospaceitalic">eventNumber</span> parameter to suppress individual system events.</p>
+<p class="iclbody">This command does not prevent system events from appearing in the event log or in a file on a USB flash drive if the event log is saved.</p>
+<p class="iclbody">An event number is the number that accompanies an error, warning, or information message that is reported in the event log. For example, for the error &quot;Error -109, Missing parameter,&quot; the event number is -109. Note that some messages that are displayed on the front panel are not recorded in the event log. Only messages that include an event number can be suppressed.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="366"><p class="codetable">eventlog.suppress(-109)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext">Suppress -109, the missing parameter message, from displaying a popup on the front panel.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27666" class="jumptemplate" title="eventlog.save()" href="25702.htm" target="_self">eventlog.save()</a></p>
+
+
+<input id="topicId" type="hidden" value="40049" />
+<input id="topicDescription" type="hidden" value="eventlog.suppress()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2014 12:28:14 PM" />
+</body>
+</html>

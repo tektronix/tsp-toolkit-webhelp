@@ -1,0 +1,169 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.threshold.range </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41289.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41181.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41283" class="heading2-icl">dmm.measure.threshold.range</h2>
+<p class="bodyzero">This attribute indicates the expected input level of the voltage signal.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">10 (10 V)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">range </span>= dmm.measure.threshold.range</p>
+<p class="iclcode">dmm.measure.threshold.range = <em class="emphasis">range</em></p>
+<p class="iclcode"><em class="emphasis">range</em> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.<code class="monospace">ATTR_MEAS_THRESHOLD_RANGE</code>)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.<code class="monospace">ATTR_MEAS_THRESHOLD_RANGE</code>, <em class="emphasis">range</em>)</p>
+<p class="iclcode">channel.setdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, <code class="monospace">dmm.ATTR_MEAS_THRESHOLD_RANGE</code>, <span class="monospaceitalic">range</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">range</span> = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, <code class="monospace">dmm.ATTR_MEAS_THRESHOLD_RANGE</code>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">range</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The range: 0.1 to 750; instrument selects nearest valid range (100 mV, 1&nbsp;V, 10&nbsp;V, 100&nbsp;V, 750&nbsp;V)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81855.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_DC_VOLTAGE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_RESISTANCE</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_FREQUENCY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_AC_VOLTAGE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_4W_RESISTANCE</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_PERIOD</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_DC_CURRENT</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_DIODE </span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DCV_RATIO</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_AC_CURRENT</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_CAPACITANCE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_TEMPERATURE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_CONTINUITY</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The range setting conditions the signal. The instrument automatically selects the most sensitive threshold range for the value you enter. For example, if you specify the expected input voltage to be 90&nbsp;mV, the instrument automatically selects the&nbsp;100 mV threshold range.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">dmm.measure.func = dmm.FUNC_ACV_PERIOD</p>
+<p class="codetable">dmm.measure.threshold.range = 50</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Set the threshold range for the selected function to the nearest range of 100&nbsp;V.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_PERIOD)</p>
+<p class="codetable">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_THRESHOLD_RANGE, 50<code class="monospace">)</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">For channels 1 through 9, set the measure function to period.</p>
+<p class="tablebodytext">Set the threshold range to 50&nbsp;V, which selects the 100&nbsp;V range.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41291" class="jump" title="dmm.measure.threshold.autorange" href="41289.htm" target="_self">dmm.measure.threshold.autorange</a></p>
+
+
+<input id="topicId" type="hidden" value="41283" />
+<input id="topicDescription" type="hidden" value="dmm.measure.threshold.range" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/11/2019 6:37:00 AM" />
+</body>
+</html>

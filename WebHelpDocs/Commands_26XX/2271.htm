@@ -1,0 +1,180 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Common command summary </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19498.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2273.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t2271" class="heading2">Common command summary</h2>
+<p class="bodytext">The IEEE Std 488.2 common commands that are supported by the 2600B are summarized in the following table. Although commands are shown in uppercase, common commands are not case sensitive, so you can use either uppercase or lowercase. Although these commands are essentially the same as those defined by the IEEE Std 488.2 standard, the 2600B does not strictly conform to that standard.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Unlike other commands, like those listed in <a id="h19390" class="jump" title="TSP commands" href="19389.htm" target="_self">TSP commands</a>, each common command must be sent in a separate message.</p>
+<p class="note">The common commands cannot be used in scripts.</p>
+<table class="tableintopic" width="601" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="96" height="0"></td>
+<td width="0" height="0"></td>
+<td width="167" height="0"></td>
+<td width="0" height="0"></td>
+<td width="335" height="0"></td>
+<td width="0" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="tableheading">Command</p>
+</th>
+<th style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tableheading">Name</p>
+</th>
+<th style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*CLS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Clear status</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Clears all event registers and Error Queue. For detailed information including status commands, see the <a id="h2272" class="jump" title="Status model" href="14191.htm" target="_self">Status model</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*ESE <span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Event enable command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Program the Standard Event Status Enable Register. For detailed information including status commands, see the <a id="h2272_2" class="jump" title="Status model" href="14191.htm" target="_self">Status model</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*ESE?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Event enable query</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Read the Standard Event Status Enable Register. For detailed information including status commands, see the <a id="h2272_3" class="jump" title="Status model" href="14191.htm" target="_self">Status model</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*ESR?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Event status register query</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Read/clear the Standard Event Enable Register. For detailed information including status commands, see the <a id="h2272_4" class="jump" title="Status model" href="14191.htm" target="_self">Status model</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*IDN?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Identification query</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Returns the manufacturer, model number, serial number, and firmware revision levels of the unit. For detailed information, see <a id="h2281" class="jump" title="Identification query: *IDN?" href="2275.htm" target="_self">Identification query: *IDN?</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*OPC</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Operation complete command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Set the Operation Complete bit in the Standard Event Register after all pending commands, including overlapped commands, have completed. For detailed information, see <a id="h2282" class="jump" title="Operation complete and query: *OPC and *OPC?" href="2276.htm" target="_self">Operation complete and query: *OPC and *OPC?</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*OPC?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Operation complete query</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Places an ASCII &quot;1&quot; into the output queue when all selected device operations have completed. For detailed information, see <a id="h2282_2" class="jump" title="Operation complete and query: *OPC and *OPC?" href="2276.htm" target="_self">Operation complete and query: *OPC and *OPC?</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*RST</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Reset command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Returns the 2600B to default conditions. For detailed information, see <a id="h2283" class="jump" title="Reset: *RST" href="2277.htm" target="_self">Reset: *RST</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">&nbsp;</p>
+<p class="codetable">*SRE <span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Service request enable command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Programs the Service Request Enable Register. For detailed information including status commands, see the <a id="h2272_5" class="jump" title="Status model" href="14191.htm" target="_self">Status model</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*SRE?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Service request enable query</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Reads the Service Request Enable Register. For detailed information including status commands, see the <a id="h2272_6" class="jump" title="Status model" href="14191.htm" target="_self">Status model</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="97"><p class="codetable">*STB?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Status byte query</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Reads the status byte register. For detailed information including status commands, see the <a id="h2272_7" class="jump" title="Status model" href="14191.htm" target="_self">Status model</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*TRG</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Trigger command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Generates the <code class="monospace">trigger.EVENT_ID</code> trigger event for use with the trigger model. For detailed information, see <a id="h2286" class="jump" title="Trigger: *TRG" href="2278.htm" target="_self">Trigger: *TRG</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*TST?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Self-test query</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Returns a 0. For detailed information, see <a id="h2284" class="jump" title="Self-test query: *TST?" href="2279.htm" target="_self">Self-test query: *TST?</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="97"><p class="codetable">*WAI</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="168"><p class="tablebodytext">Wait-to-continue command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="336"><p class="tablebodytext">Waits until all previous commands have completed. For detailed information, see <a id="h2285" class="jump" title="Wait-to-continue: *WAI" href="2280.htm" target="_self">Wait-to-continue: *WAI</a>.</p>
+</td>
+</tr>
+
+</table>
+<p class="spacing"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="19498.htm" target="_self">Common commands</a></p><p class="relateditem"><a href="2273.htm" target="_self">Script command equivalents</a></p><p class="relateditem"><a href="2274.htm" target="_self">Command reference</a></p><p class="relateditem"><a href="12738.htm" target="_self">General bus commands</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="2271" />
+<input id="topicDescription" type="hidden" value="Common command summary" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/10/2021 5:15:44 PM" />
+</body>
+</html>

@@ -1,0 +1,218 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> status.request_enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31612.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30525.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t32386" class="heading2-icl">status.request_enable</h2>
+<p class="bodyzero">This attribute stores the settings of the Service Request (SRQ) Enable Register.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">status.preset()</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">SRQEnableRegister</span> = status.request_enable</p>
+<p class="iclcode">status.request_enable = <span class="monospaceitalic">SRQEnableRegister</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext"><span class="monospaceitalic">SRQEnableRegister</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The status of the service request (SRQ) enable register; a zero (0) indicates no bits set (also send 0 to clear all bits); other values indicate various bit settings (0 to 255)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets or clears the individual bits of the Status Request Enable Register.</p>
+<p class="iclbody">The Status Request Enable Register is cleared when power is cycled or when a parameter value of 0 is sent with this command.</p>
+<p class="iclbody">The instrument returns a decimal value that corresponds to the binary-weighted sum of all bits set in the register.</p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" width="30"><p class="tableheading">Bit</p>
+</th>
+<th style="border:1px solid #010101;" width="78"><p class="tableheading">Decimal value</p>
+</th>
+<th style="border:1px solid #010101;" width="162"><p class="tableheading">Constants</p>
+</th>
+<th style="border:1px solid #010101;" width="324"><p class="tableheading">When set, indicates the following has occurred:</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="30"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tablebodytext"><code class="monospace">status.MSB</code></p>
+</td>
+<td style="border:1px solid #010101;" width="324"><p class="tablebodytext">An enabled event in the Measurement Event Register has occurred.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="30"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="324"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="30"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tablebodytext"><code class="monospace">status.EAV</code></p>
+</td>
+<td style="border:1px solid #010101;" width="324"><p class="tablebodytext">An error or status message is present in the Error Queue.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="30"><p class="tablebodytext">3</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tablebodytext"><code class="monospace">status.QSB</code></p>
+</td>
+<td style="border:1px solid #010101;" width="324"><p class="tablebodytext">An enabled event in the Questionable Status Register has occurred.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="30"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tablebodytext"><code class="monospace">status.MAV</code></p>
+</td>
+<td style="border:1px solid #010101;" width="324"><p class="tablebodytext">A response message is present in the Output Queue.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="30"><p class="tablebodytext">5</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tablebodytext"><code class="monospace">status.ESB</code></p>
+</td>
+<td style="border:1px solid #010101;" width="324"><p class="tablebodytext">An enabled event in the Standard Event Status Register has occurred.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="30"><p class="tablebodytext">6</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">64</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="324"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="30"><p class="tablebodytext">7</p>
+</td>
+<td style="border:1px solid #010101;" width="78"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #010101;" width="162"><p class="tablebodytext"><code class="monospace">status.OSB</code></p>
+</td>
+<td style="border:1px solid #010101;" width="324"><p class="tablebodytext">An enabled event in the Operation Status Register has occurred.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">requestSRQEnableRegister = status.MSB + status.OSB</p>
+<p class="codetable">status.request_enable = requestSRQEnableRegister</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Uses constants to set the MSB and OSB bits of the service request (SRQ) enable register and clear all other bits.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- decimal 129 = binary 10000001</p>
+<p class="codetable">requestSRQEnableRegister = 129</p>
+<p class="codetable">status.request_enable = requestSRQEnableRegister</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Uses a decimal value to set the MSB and OSB bits and clear all other bits of the service request (SRQ) enable register.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">status.request_enable = 0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Clear the register.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="32386" />
+<input id="topicDescription" type="hidden" value="status.request_enable" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 2:02:42 PM" />
+</body>
+</html>

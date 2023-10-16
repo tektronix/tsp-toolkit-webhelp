@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Enabling high-capacitance mode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11984.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11987.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t11559" class="heading3">Enabling high-capacitance mode</h3>
+<p class="bodytext">Before enabling high-capacitance mode, note the following:</p>
+<ul class="listbullet"><li class="listbullet">It is important to read <a id="h17786" class="jump" title="High-capacitance mode" href="29559.htm" target="_self">High-capacitance mode</a> to understand the impact of high-capacitance mode.</li><li class="listbullet">Test the device under test (DUT) and the capacitor to determine the best current limit and range of output voltages.</li><li class="listbullet">The settling times can vary based on the DUT. It is important to test the limits of the DUT before you use high-capacitance mode.</li><li class="listbullet">Test the DUT for the appropriate current limit and output voltages.</li><li class="listbullet">For optimal performance, do not continuously switch between normal mode and high-capacitance mode.</li><li class="listbullet">Before you charge the capacitor, start with 0 (zero) voltage across the capacitor.</li></ul><p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">Failure to test the DUT for the appropriate current limit and output voltages can result in damage to or destruction of the DUT.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="11987.htm" target="_self">Measuring current using high-capacitance mode</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="29559.htm" target="_self">High-capacitance mode</a></p><p class="relateditem"><a href="11495.htm" target="_self">Understanding high-capacitance mode</a></p></td>
+</tr>
+</table>
+<a name="o29855"></a>
+<p class="headingprocedure">To enable high-capacitance mode from the front panel:</p>
+<ol class="listnumber"><li class="listnumber">Press the <strong class="specialbold">CONFIG</strong> key. </li><li class="listnumber">Press the <strong class="specialbold">SRC</strong> key and then select <strong class="specialbold">HIGHC-MODE</strong>.</li><li class="listnumber">Select <strong class="specialbold">SRC-ENABLE</strong> and then press the navigation wheel (or the <strong class="specialbold">ENTER </strong>key).</li><li class="listnumber">Select <strong class="specialbold">ENABLE</strong> and then press the navigation wheel (or the <strong class="specialbold">ENTER </strong>key).</li><li class="listnumber">Press the <strong class="specialbold">EXIT (LOCAL) </strong>key to back out of the menu structure.</li></ol>
+<a name="o11986"></a>
+<p class="headingprocedure">To enable high-capacitance mode using a remote interface:</p>
+<p class="bodytext">Turning on high&#8209;capacitance mode has the following effects on the SMU* settings:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.autorangei</code> is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTORANGE_FOLLOW_LIMIT</code> and cannot be changed.</li><li class="listbullet">Current ranges below 1&nbsp;µA are not accessible.</li><li class="listbullet">If <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.limiti</code> is less than 1&nbsp;µA, it is raised to 1&nbsp;µA.</li><li class="listbullet">If <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.rangei</code> is less than 1&nbsp;µA, it is raised to 1&nbsp;µA.</li><li class="listbullet">If <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.lowrangei</code> is less than 1&nbsp;µA, it is raised to 1&nbsp;µA.</li><li class="listbullet">If <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.lowrangei</code> is less than 1&nbsp;µA, it is raised to 1&nbsp;µA.</li></ul><p class="bodytext">* <code class="monospace">smu</code><span class="monospaceitalic">X</span> can be <code class="monospace">smua</code> for channel A or <code class="monospace">smub</code> for channel B</p>
+
+
+<input id="topicId" type="hidden" value="11559" />
+<input id="topicDescription" type="hidden" value="Enabling high-capacitance mode" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 9:13:53 AM" />
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html><head><title> tspnet.execute() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14076.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14078.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">tspnet.execute()</h2>
+<p class="bodyzero">This function executes a command string on the remote device.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">results</em> = tspnet.execute(<em class="emphasis">connectionID</em>, <em class="emphasis">commandString</em>)</p>
+<p class="iclcode"><em class="emphasis">results</em> = tspnet.execute(<em class="emphasis">connectionID</em>, <em class="emphasis">commandString</em>, <em class="emphasis">formatString</em>)</p>
+<p class="iclspacing"></p>
+<table width="750" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">results</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="576"><p class="tablebodytext">The results of the command execution</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">connectionID</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="576"><p class="tablebodytext">The connection ID returned from <code class="monospace">tspnet.connect()</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">commandString</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="576"><p class="tablebodytext">The command to send to the remote device</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">formatString</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="576"><p class="tablebodytext">Format string for the output</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sends <span class="monospaceitalic">commandString</span> to the remote device connection represented by <span class="monospaceitalic">connectionID</span>. The configured termination sequence is added to <span class="monospaceitalic">commandString</span> when it is sent to the device (<code class="monospace">tspnet.termination()</code>). When <span class="monospaceitalic">formatString</span> is specified, the command waits for a return string from the device. The TSP decodes the output string according to the format specified in <span class="monospaceitalic">formatString</span> and returns this output string as arguments from the function.</p>
+<p class="iclbody">When this command is sent to a TSP-enabled device, the TSP blocks operation until the device responds or until a timeout error is generated. The TSP prompt from the remote device is read and thrown away. The TSP places any remotely generated errors into its error queue. When the optional <span class="monospaceitalic">formatString</span> is not specified, this command is equivalent to <code class="monospace">tspnet.write()</code>, except that a termination is automatically added to the end of the line.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="398"><p class="codetable">tspnet.execute(myID, &quot;runScript()&quot;)</p>
+</td>
+<td width="345"><p class="tablebodytext">Command remote device to run script named <code class="monospace">runScript</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="398"><p class="codetable">tspnet.termination(myID, tspnet.TERM_CRLF)</p>
+<p class="codetable">tspnet.execute(myID, &quot;*idn?&quot;)</p>
+<p class="codetable">print(&quot;tspnet.execute returns:&quot;,</p>
+<p class="codetable">   tspnet.read(myID))</p>
+</td>
+<td width="345"><p class="tablebodytext">Print the <code class="monospace">*idn?</code> string from the remote device.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody"></p>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h14093" class="jumptemplate" title="tspnet.connect()" href="14074.html" target="_self">tspnet.connect()</a></p>
+<p class="iclbody"><a id="h14097" class="jumptemplate" title="tspnet.read()" href="14079.html" target="_self">tspnet.read()</a></p>
+<p class="iclbody"><a id="h14111" class="jumptemplate" title="tspnet.write()" href="14089.html" target="_self">tspnet.write()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

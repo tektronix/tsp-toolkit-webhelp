@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Delete user scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="80250.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29265.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t16805" class="heading4">Delete user scripts</h4>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">These steps remove a script from nonvolatile memory. To completely remove a script from the instrument, there are additional steps you must take. See <a id="h17032" class="jump" title="Delete user scripts from the instrument" href="2408.htm" target="_self">Delete user scripts from the instrument</a>.</p>
+<p class="headingprocedure">To delete a script from nonvolatile memory using a remote interface:</p>
+<p class="bodytext">You can delete the script from nonvolatile memory by sending either of the following commands:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">script.delete(&quot;</code><span class="monospaceitalic">name</span><code class="monospace">&quot;)</code></li><li class="listbullet"><code class="monospace">script.user.delete(&quot;</code><span class="monospaceitalic">name</span><code class="monospace">&quot;)</code></li></ul><p class="bodytext">Where: <span class="monospaceitalic">name</span> is the user-defined name of the script.</p>
+<p class="bodytext"><strong class="specialbold">Example: Delete a user script from nonvolatile memory</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="250"><p class="codetable">script.delete(&quot;test8&quot;)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Delete a user script named <code class="monospace">test8</code> from nonvolatile memory.</p>
+</td>
+</tr>
+
+</table>
+<p class="headingprocedure">To delete a script from nonvolatile memory using TSB Embedded:</p>
+<ol class="listnumber"><li class="listnumber">In TSB Embedded, select the script from the <strong class="specialbold">User Scripts</strong> list.</li><li class="listnumber">Select <strong class="specialbold">Delete</strong>. There is no confirmation message.</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="17067.htm" target="_self">Working with scripts in nonvolatile memory</a></p><p class="relateditem"><a href="16803.htm" target="_self">Save a user script</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="16805" />
+<input id="topicDescription" type="hidden" value="Delete user scripts" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 9:00:10 AM" />
+</body>
+</html>

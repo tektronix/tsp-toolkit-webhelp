@@ -1,0 +1,87 @@
+<html><head><title> dataqueue.count </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14655.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14658.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">dataqueue.count</h2>
+<p class="bodyzero">This attribute contains the number of items in the data queue.</p>
+<table width="818" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="172"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Power off</p>
+<p class="tablebodytextsmall">dataqueue.add()</p>
+<p class="tablebodytextsmall">dataqueue.clear()</p>
+<p class="tablebodytextsmall">dataqueue.next()</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="172"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">count</em><span class="monospaceitalic"> </span>= dataqueue.count</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">count</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">The number of items in the data queue</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The count gets updated as entries are added and read from the data queue. It is also updated when the dataqueue is cleared.</p>
+<p class="iclbody">The number of items in the data queue are controlled through <code class="monospace">dataqueue.add()</code>, <code class="monospace">dataqueue.next()</code>, and <code class="monospace">dataqueue.clear()</code>, with a maximum of <code class="monospace">dataqueue.CAPACITY</code> items.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="382"><p class="codetable">MaxCount = dataqueue.CAPACITY</p>
+<p class="codetable">while dataqueue.count &lt; MaxCount do</p>
+<p class="codetable">   dataqueue.add(1)</p>
+<p class="codetable">end</p>
+<p class="codetable">print(&quot;There are &quot; .. dataqueue.count</p>
+<p class="codetable">   .. &quot; items in the data queue&quot;)</p>
+<p class="codetable">dataqueue.clear()</p>
+<p class="codetable">print(&quot;There are &quot; .. dataqueue.count</p>
+<p class="codetable">   .. &quot; items in the data queue&quot;)</p>
+</td>
+<td width="360"><p class="tablebodytext">Add items to the data queue until it is at capacity.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">There are 128 items in the data queue</p>
+<p class="codetable">There are 0 items in the data queue</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h14659" class="jumptemplate" title="dataqueue.add()" href="14654.html" target="_self">dataqueue.add()</a></p>
+<p class="iclbody"><a id="h13379" class="jumptemplate" title="dataqueue.CAPACITY" href="14656.html" target="_self">dataqueue.CAPACITY</a></p>
+<p class="iclbody"><a id="h13380" class="jumptemplate" title="dataqueue.clear()" href="14655.html" target="_self">dataqueue.clear()</a></p>
+<p class="iclbody"><a id="h13382" class="jumptemplate" title="dataqueue.next()" href="14658.html" target="_self">dataqueue.next()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

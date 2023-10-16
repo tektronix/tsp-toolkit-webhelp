@@ -1,0 +1,184 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.source.pulsesweeplist() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="63471.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="63473.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t63474" class="heading2-icl">smu.source.pulsesweeplist()</h2>
+<p class="bodyzero">This function sets up a pulse sweep based on a configuration list, which allows you to customize the sweep.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu.source.pulsesweeplist(&quot;<span class="monospaceitalic">configListName</span>&quot;<span class="monospaceitalic">, pulseWidth</span>)</p>
+<p class="iclcode">smu.source.pulsesweeplist(&quot;<span class="monospaceitalic">configListName</span>&quot;<span class="monospaceitalic">, pulseWidth, measEnable</span>)</p>
+<p class="iclcode">smu.source.pulsesweeplist(&quot;<span class="monospaceitalic">configListName</span>&quot;<span class="monospaceitalic">, pulseWidth, measEnable, bufferName</span>)</p>
+<p class="iclcode">smu.source.pulsesweeplist(&quot;<span class="monospaceitalic">configListName</span>&quot;<span class="monospaceitalic">, pulseWidth, measEnable, bufferName, start_index</span>)</p>
+<p class="iclcode">smu.source.pulsesweeplist(&quot;<span class="monospaceitalic">configListName</span>&quot;<span class="monospaceitalic">, pulseWidth, measEnable, bufferName, start_index, count</span>)</p>
+<p class="iclcode">smu.source.pulsesweeplist(&quot;<span class="monospaceitalic">configListName</span>&quot;<span class="monospaceitalic">, pulseWidth, measEnable, bufferName, start_index, count, sDelay</span>)</p>
+<p class="iclcode">smu.source.pulsesweeplist(&quot;<span class="monospaceitalic">configListName</span>&quot;<span class="monospaceitalic">, pulseWidth, measEnable, bufferName, start_index, count, sDelay, offTime</span>)</p>
+<p class="iclcode">smu.source.pulsesweeplist(&quot;<span class="monospaceitalic">configListName</span>&quot;<span class="monospaceitalic">, pulseWidth, measEnable, bufferName, start_index, count, sDelay, offTime, failAbort</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">configListName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the source configuration list that the sweep uses; this must be defined before sending this command</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">pulseWidth</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The time at the amplitude level for each pulse:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Pulse only operating area: 10 A at 100 V, 5&nbsp;percent duty cycle, maximum pulse width: 1 ms, minimum pulse width 150&nbsp;µs (load dependent)</li><li class="tablelistbullet9pt">Normal operating area (DC): 99.99&nbsp;percent duty cycle, maximum pulse width 10,000&nbsp;s, minimum pulse width 150&nbsp;µs</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">measEnable</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Enable or disable measurements at the top of each pulse:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Enable: <code class="monospace">smu.ON</code> (default)</li><li class="tablelistbullet9pt">Disable: <code class="monospace">smu.OFF</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer; defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">startIndex</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The index in the configuration list where the pulse sweep starts; default is <code class="monospace">1</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">count</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of pulse sweeps; default is <code class="monospace">1</code>:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Infinite loop: <code class="monospace">smu.INFINITE</code></li><li class="tablelistbullet9pt">Finite loop: <code class="monospace">1</code> to <code class="monospace">268435455</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sDelay</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The amount of time that the instrument stays at bias level before each pulse (in seconds): 0 to 10,000 s</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">offTime</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The amount of time that the instrument stays at bias level after each pulse (in seconds): 0 to 10,000 s</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">failAbort</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Determines if the sweep is stopped immediately if a limit is exceeded; options are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Abort the sweep if the source pulse limit is exceeded: <code class="monospace">smu.ON</code> (default) </li><li class="tablelistbullet9pt">Complete the sweep if the source limit is exceeded: <code class="monospace">smu.OFF</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details </p>
+<p class="iclbody">This command allows you to set up a custom pulse sweep using a configuration list to specify the pulse levels.</p>
+<p class="iclbody">Before configuring a pulse operation, configure your measure settings. Pulse operations use the measure settings that were last defined before the pulse operation; you may get unexpected results if you do not define the measure settings first.</p>
+<p class="iclbody">When you specify a delay, a delay block is added to the pulse sweep trigger model. </p>
+<p class="iclbody">A source configuration list must be created before you send this command. The name of the source configuration list determines the name of the measure configuration list; <code class="monospace">Meas</code> is appended to the beginning of the name. If the name of your configuration list is greater than 28 characters, it is truncated to include only the first 28 characters (including the prefix <code class="monospace">Meas</code> that is added for the measure configuration list). For example, if the source configuration list is named <code class="monospace">CurrentPulseCustomSweepList</code> (27 characters), the resulting measure configuration list is named <code class="monospace">MeasCurrentPulseCustomSweepList</code> (31 characters). If the source configuration list is named <code class="monospace">MyLongPulseNameSweepConfigList</code> (30 characters), the resulting measure configuration list is <code class="monospace">MeasMyLongPulseNameSweepConfigLi</code> (32 characters)</p>
+<p class="iclbody">To run the pulse sweep, initiate the trigger model.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">smu.source.configlist.create(&quot;CurrPulseListSweep&quot;)</p>
+<p class="codetable">smu.source.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable">smu.source.level = 0</p>
+<p class="codetable">smu.measure.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.measure.range = 10</p>
+<p class="codetable">smu.source.pulse.vlimit.level = 10</p>
+<p class="codetable">smu.source.pulse.level = .5</p>
+<p class="codetable">smu.source.configlist.store(&quot;CurrPulseListSweep&quot;)</p>
+<p class="codetable">smu.source.pulse.level = .3</p>
+<p class="codetable">smu.source.configlist.store(&quot;CurrPulseListSweep&quot;)</p>
+<p class="codetable">smu.source.pulse.level = .7</p>
+<p class="codetable">smu.source.configlist.store(&quot;CurrPulseListSweep&quot;)</p>
+<p class="codetable">smu.source.pulse.level = .1</p>
+<p class="codetable">smu.source.configlist.store(&quot;CurrPulseListSweep&quot;)</p>
+<p class="codetable">smu.source.pulse.level = .6</p>
+<p class="codetable">smu.source.configlist.store(&quot;CurrPulseListSweep&quot;)</p>
+<p class="codetable">smu.source.pulsesweeplist(&quot;CurrPulseListSweep&quot;, 100e-3, smu.ON, defbuffer1, 1, 1,</p>
+<p class="codetable">   0, 100e-3, smu.ON)</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Reset the instrument to its default settings.</p>
+<p class="tablebodytext">Create a source configuration list called <code class="monospace">CurrPulseListSweep</code>.</p>
+<p class="tablebodytext">Set the source function to current, the source current range to 1 A.</p>
+<p class="tablebodytext">Set the measure function to voltage, the measure range to 10 V and the source pulse limit to 10&nbsp;V.</p>
+<p class="tablebodytext">Set the source current level to 500 mA and save the source settings to <code class="monospace">CurrPulseListSweep</code>.</p>
+<p class="tablebodytext">Set the source current level to 300 mA and save the source settings to <code class="monospace">CurrPulseListSweep</code>.</p>
+<p class="tablebodytext">Set the source current level to 700 mA and save the source settings to <code class="monospace">CurrPulseListSweep</code>.</p>
+<p class="tablebodytext">Set the source current level to 100 mA and save the source settings to <code class="monospace">CurrPulseListSweep</code>.</p>
+<p class="tablebodytext">Set the source current level to 600 mA and save the source settings to <code class="monospace">CurrPulseListSweep</code>.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Sets up a pulse sweep that uses the entries from <code class="monospace">CurrPulseListSweep</code>. Set a pulse width of 100 ms and an off time of 100 ms. Start the sweep at index 1 and save the measure results to <code class="monospace">defbuffer1</code>.</p>
+<p class="tablebodytext">Set a source delay of 1&nbsp;ms.</p>
+<p class="tablebodytext">Start the pulse sweep.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31500" class="jump" title="smu.source.sweeplist()" href="31499.htm" target="_self">smu.source.sweeplist()</a></p>
+<p class="listcommand"><a id="h34567" class="jump" title="trigger.model.initiate()" href="30571.htm" target="_self">trigger.model.initiate()</a></p>
+
+
+<input id="topicId" type="hidden" value="63474" />
+<input id="topicDescription" type="hidden" value="smu.source.pulsesweeplist()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 1:28:35 PM" />
+</body>
+</html>

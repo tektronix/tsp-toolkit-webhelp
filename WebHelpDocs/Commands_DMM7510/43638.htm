@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> acal.schedule() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="43640.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="89066.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t43638" class="heading2-icl">acal.schedule()</h2>
+<p class="bodyzero">This function sets how often autocalibration occurs or prompts you to run it.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Restore configuration</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Nonvolatile memory<br>Configuration script</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Run every 8 hours starting at midnight</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">acal.schedule()</p>
+<p class="iclcode">acal.schedule(<em class="emphasis">action</em>)</p>
+<p class="iclcode">acal.schedule(<em class="emphasis">action</em>, <em class="emphasis">interval</em>)</p>
+<p class="iclcode">acal.schedule(<em class="emphasis">action</em>, <em class="emphasis">interval</em>, <em class="emphasis">hour</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">action</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Determines when and if the instrument automatically runs autocalibration:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">To run autocalibration at a scheduled time: <code class="monospace">acal.ACTION_RUN</code></li><li class="tablelistbullet9pt">To notify you that the autocalibration needs to be run at the scheduled time: <code class="monospace">acal.ACTION_NOTIFY</code></li><li class="tablelistbullet9pt">To turn off scheduling: <code class="monospace">acal.ACTION_NONE</code>; no other parameters are needed if none is selected</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">interval</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Determines how often autocalibration should be run or notification should occur:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Every 8 hours: <code class="monospace">acal.INTERVAL_8HR</code></li><li class="tablelistbullet9pt">Every 16 hours: <code class="monospace">acal.INTERVAL_16HR</code></li><li class="tablelistbullet9pt">Every day: <code class="monospace">acal.INTERVAL_1DAY</code></li><li class="tablelistbullet9pt">Every 7 days: <code class="monospace">acal.INTERVAL_7DAY</code></li><li class="tablelistbullet9pt">Every 14 days: <code class="monospace">acal.INTERVAL_14DAY</code></li><li class="tablelistbullet9pt">Every 30 days (default): <code class="monospace">acal.INTERVAL_30DAY</code></li><li class="tablelistbullet9pt">Every 90 days: <code class="monospace">acal.INTERVAL_90DAY</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">hour</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Specify when the autocalibration should occur; specify in 24-hour time format (<code class="monospace">0</code> to <code class="monospace">23</code>; default is <code class="monospace">0</code>); not available for the 8-hour or 16-hour interval</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">Autocalibration does not start until all actions that are active on the instrument are complete. When the scheduled time occurs, the autocalibration run command is placed in the command queue and will be executed after any previously sent commands or actions have executed. For example, if a trigger model is running when autocalibration is scheduled to run, autocalibration does not start until the trigger model stops. </p>
+<p class="bodytext">If there is a command or action that is waiting a long time for an event, the autocalibration will not run until the event occurs, the action is aborted, or the instrument power is cycled.</p>
+<p class="bodytext">If the scheduled time for autocalibration occurs before the warm-up period completes, the instrument will not start autocalibration. The instrument waits until the warmup period is complete before starting a scheduled autocalibration. A message is displayed when warmup is complete and autocalibration is going to run.</p>
+<p class="bodytext">If the instrument is powered off when an autocalibration was scheduled, autocalibration is run as soon as the warmup period is complete when the instrument is powered on. </p>
+<p class="bodytext">You can run autocalibration manually even if a scheduled autocalibration is set.</p>
+<p class="iclbody">When autocalibration is scheduled to run at a scheduled interval, but it runs at a time other than the scheduled interval, subsequent scheduled intervals are adjusted according to the actual autocalibration start time.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">acal.schedule(acal.ACTION_RUN, acal.INTERVAL_1DAY, 8)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets autocalibration to run every day at 8&nbsp;am.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h46327" class="jump" title="Autocalibration" href="43492.htm" target="_self">Autocalibration</a></p>
+<p class="listcommand"><a id="h43943" class="jump" title="acal.run()" href="43640.htm" target="_self">acal.run()</a></p>
+
+
+<input id="topicId" type="hidden" value="43638" />
+<input id="topicDescription" type="hidden" value="acal.schedule()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 7:36:26 AM" />
+</body>
+</html>

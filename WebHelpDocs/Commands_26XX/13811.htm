@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Functions </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17268.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="492.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t13811" class="heading4">Functions</h4>
+<p class="bodytext">Function-based commands control actions or activities. A function-based command performs an immediate action on the instrument.</p>
+<p class="bodytext">Each function consists of a function name followed by a set of parentheses (&nbsp;). Only include information in the parentheses if the function takes a parameter. If the function takes one or more parameters, they are placed between the parentheses and separated by commas.</p>
+<p class="bodytext"><strong class="specialbold">Example 1</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">beeper.beep(0.5, 2400)</p>
+<p class="codetable">delay(0.250)</p>
+<p class="codetable">beeper.beep(0.5, 2400)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Emit a double beep at 2400 Hz. The sequence is 0.5&nbsp;s on, 0.25&nbsp;s off, 0.5&nbsp;s on.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example 2</strong></p>
+<p class="bodytext">You can use the results of a function-based command directly or assign the results to variables for later access. The following code defines <code class="monospace">x</code> and prints it.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">x = math.abs(-100)</p>
+<p class="codetable">print(x)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Output:</p>
+<p class="codetable">100</p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="17268.htm" target="_self">Controlling the instrument by sending individual command messages</a></p><p class="relateditem"><a href="492.htm" target="_self">Attributes</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="13811" />
+<input id="topicDescription" type="hidden" value="Functions" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/29/2021 10:59:55 AM" />
+</body>
+</html>

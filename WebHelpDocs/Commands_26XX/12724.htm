@@ -1,0 +1,79 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Remote programming </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12723.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29297.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12724" class="heading4">Remote programming</h4>
+<p class="bodytext">The commands associated with the TSP-Link<sup class="superscript">&reg;</sup> system reset are listed in the following table.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="192" height="0"></td>
+<td width="408" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="600"><p class="tableheading">TSP-Link reset commands</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tableheading">Command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="192"><p class="codetable">tsplink.reset()</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Initializes the TSP-Link network</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="192"><p class="codetable">tsplink.state</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="408"><p class="tablebodytext">Reads the state of the TSP-Link network:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">&#8220;<code class="monospace">online</code>&#8221; if the most recent TSP-Link reset was successful</li><li class="tablelistbullet9pt">&#8220;<code class="monospace">offline</code>&#8221; if the reset operation failed</li></ul></td>
+</tr>
+
+</table>
+<p class="bodytext">An attempted TSP-Link reset operation fails if any of the following conditions are true:</p>
+<ul class="listbullet"><li class="listbullet">Two or more instruments in the system have the same node number</li><li class="listbullet">There are no other instruments connected to the instrument performing the reset (only if the expected number of nodes was not provided in the reset call)</li><li class="listbullet">One or more of the instruments in the system is turned off</li><li class="listbullet">If the actual number of nodes is less than the expected number</li></ul><p class="bodytext">The programming example below illustrates a TSP-Link reset operation and displays its state:</p>
+<p class="code"><code class="monospace">tsplink.reset()</code></p>
+<p class="code"><code class="monospace">print(tsplink.state)</code></p>
+<p class="bodytext">If the reset operation is successful, <code class="monospace">online</code> is output to indicate that communications with all nodes have been established.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12389.htm" target="_self">Resetting the TSP-Link network</a></p><p class="relateditem"><a href="12723.htm" target="_self">Front-panel operation</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12724" />
+<input id="topicDescription" type="hidden" value="Remote programming" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:28:57 PM" />
+</body>
+</html>

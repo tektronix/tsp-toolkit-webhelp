@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Buffer storage control attributes </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13519.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19420.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t11663" class="heading4">Buffer storage control attributes</h4>
+<p class="bodytext">The following table contains buffer storage control attributes.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Before changing the <code class="monospace"><code class="monospace">collectsourcevalues</code></code>, <code class="monospace"><code class="monospace">collecttimestamps</code></code>, or <code class="monospace"><code class="monospace">timestampresolution</code></code> attributes, you must clear the buffer using the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.nvbuffer1.clear()</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.nvbuffer2.clear()</code>&nbsp;command.</p>
+<p class="bodytext"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="tableheading">Buffer storage attribute</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="168"><p class="codetable">appendmode</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The append mode is either off or on. When the append mode is off, a new measurement to this buffer overwrites the previous contents. When the append mode is on, the first new measurement is stored at the end of the existing data. This attribute is off when the buffer is created.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="168"><p class="codetable">cachemode</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">When this attribute is on, the reading buffer cache improves access speed to reading buffer data. When running successive operations that overwrite reading buffer data without running any commands that automatically invalidate the cache, the reading buffer may return stale cache data. This attribute is initialized to on when the buffer is&nbsp;created.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="168"><p class="codetable">collectsourcevalues</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">When this attribute is on, source values are stored with readings in the buffer. This value, off or on, can be changed only when the buffer is empty. When the buffer is created, this attribute is initialized to off.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="168"><p class="codetable">collecttimestamps</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">When this attribute is on, timestamps are stored with readings in the buffer. This value, off or on, can be changed only when the buffer is empty. When the buffer is created, this attribute is initialized to off.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="168"><p class="codetable">fillcount</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The reading buffer fill count sets the number of readings to store before restarting at index 1. If the value is 0, then the capacity of the buffer is used. This attribute is only used when the <code class="monospace">fillmode</code> attribute is set to <code class="monospace">FILL_WINDOW</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="168"><p class="codetable">fillmode</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The reading buffer fill mode controls how new data is added to the reading buffer. When this attribute is set to <code class="monospace">FILL_ONCE</code>, the reading buffer does not overwrite readings. If the buffer fills up, new readings are discarded.</p>
+<p class="tablebodytext">When this attribute is set to <code class="monospace">FILL_WINDOW</code>, new readings are added after existing data until the buffer holds <code class="monospace">fillcount</code> elements. Once there are <code class="monospace">fillcount</code> elements, new data starts overwriting data starting at index 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="168"><p class="codetable">timestampresolution</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The timestamp resolution, in seconds. When the buffer is created, its initial resolution is 0.000001 seconds. At this resolution, the reading buffer can store unique timestamps for up to 71 minutes. This value can be increased for long tests.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13519.htm" target="_self">Reading buffer commands</a></p><p class="relateditem"><a href="19420.htm" target="_self">Buffer read-only attributes</a></p><p class="relateditem"><a href="19421.htm" target="_self">Buffer storage control programming examples</a></p><p class="relateditem"><a href="19422.htm" target="_self">Buffer read-only attribute programming examples</a></p><p class="relateditem"><a href="19413.htm" target="_self">Statistic attributes</a></p><p class="relateditem"><a href="11636.htm" target="_self">Reading buffer attributes</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="11663" />
+<input id="topicDescription" type="hidden" value="Buffer storage control attributes" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/10/2021 5:06:32 PM" />
+</body>
+</html>

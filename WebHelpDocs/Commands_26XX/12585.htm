@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Using the set function to bypass SMU event detectors </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12584.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12586.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12585" class="heading3">Using the set function to bypass SMU event detectors</h3>
+<p class="bodytext">The set functions are useful whenever you want the source&#8209;measure unit (SMU) to continue operation without waiting for a programmed trigger event.</p>
+<p class="bodytext">There is a set function for each SMU event detector. When called, the function immediately satisfies the event detector, allowing the SMU to continue through the trigger model.</p>
+<p class="bodytext">For example, you can use a set function when you want the SMU to immediately perform an action the first time through the trigger model, even if a programmed trigger event does not occur. You can use a set function to start actions on the SMU if there is a missed trigger event.</p>
+<p class="bodytext">The programming example below illustrates how to have the SMU immediately perform an action the first time through the trigger model, even if a programmed trigger event does not occur.</p>
+<p class="code">-- Immediately sets the arm event detector of SMU A</p>
+<p class="code">-- to the detected state.</p>
+<p class="code">smua.trigger.arm.set()</p>
+<p class="code">-- Sets the measure event detector of SMU A.</p>
+<p class="code">smua.trigger.measure.set()</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12581.htm" target="_self">Interactive triggering</a></p><p class="relateditem"><a href="12582.htm" target="_self">Detecting trigger events using the wait() function</a></p><p class="relateditem"><a href="12583.htm" target="_self">Using the assert function to generate output triggers</a></p><p class="relateditem"><a href="12584.htm" target="_self">Using the release function of the hardware lines</a></p><p class="relateditem"><a href="12586.htm" target="_self">Event detector overruns</a></p><p class="relateditem"><a href="12587.htm" target="_self">Examples using interactive triggering</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12585" />
+<input id="topicDescription" type="hidden" value="Using the set function to bypass SMU event detectors" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:31:50 PM" />
+</body>
+</html>

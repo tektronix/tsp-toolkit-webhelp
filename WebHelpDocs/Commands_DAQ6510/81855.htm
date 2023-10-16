@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Channel naming </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="32414.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="32418.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t81855" class="heading5">Channel naming</h5>
+<p class="bodytext">In the DAQ6510, channels are named using the slot number and the channel number. The slot number is the number of the slot on the rear panel where the card is installed. The channel assignment is formatted as <code class="monospace">SCH</code>, where:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">S</code> is the slot number</li><li class="listbullet"><code class="monospace">CH</code> is a two-digit channel number</li></ul><p class="bodytext">For example:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">101</code> = slot 1, channel 1</li><li class="listbullet"><code class="monospace">210</code> = slot 2, channel 10</li></ul><p class="bodytext">If you are sending commands from a remote interface, you include the three-digit channel name, <code class="monospace">slot1</code>, <code class="monospace">slot2</code>, or <code class="monospace">allslots</code> in the channel list parameter for the commands.</p>
+<p class="bodytext">In TSP commands, the channel numbers are in quotes. To designate multiple individual channels, separate the channels with commas. In the following example, the command opens channels 1 and 3 on the card in slot 1.</p>
+<p class="code">channel.open(&quot;101, 103&quot;) </p>
+<p class="bodytext">To designate a range of channels, separate the first and last channel number with a colon. The range can be from lowest to highest numbered channel or highest to lowest. The following example sets channel 1 to 9 on slot 1 to the DC voltage measurement function and then creates a scan with those channels.</p>
+<p class="code">channel.setdmm(&quot;101:109&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_DC_VOLTAGE)</p>
+<p class="code">scan.create(&quot;101:109&quot;)</p>
+<p class="bodytext">Some commands allow you to set all channels in a slot or all channels in the instrument. In this case, you can send <code class="monospace">slot1</code> to set all channels in slot&nbsp;1, <code class="monospace">slot2</code> for all channels in slot&nbsp;2, or <code class="monospace">allslots</code> for all channels in all slots. For example, to set all channels on slot 1 to measure voltage, you can send:</p>
+<p class="code">channel.setdmm(&quot;allslots&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_DC_VOLTAGE)</p>
+<p class="bodytext">When you send <code class="monospace">slot1</code>, <code class="monospace">slot2,</code> or <code class="monospace">allslots</code> to a slot that contains channels that cannot accept that setting, the instrument generates an error, but the change is made to all channels for which the setting is allowed.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="29737.htm" target="_self">TSP syntax rules</a></p><p class="relateditem"><a href="32408.htm" target="_self">Upper and lower case</a></p><p class="relateditem"><a href="32409.htm" target="_self">White space</a></p><p class="relateditem"><a href="32413.htm" target="_self">Parameters for functions</a></p><p class="relateditem"><a href="32414.htm" target="_self">Multiple parameters</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="81855" />
+<input id="topicDescription" type="hidden" value="Channel naming" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/13/2018 2:45:34 PM" />
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Remote reading buffer programming </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11645.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="13640.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p  class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t11655" class="heading2">Remote reading buffer programming</h2>
+<p class="bodytext">You can get readings by making overlapped or sequential measurements. Overlapped commands do not finish executing before the next command starts. Sequential commands complete execution before the next command starts executing.</p>
+<p class="bodytext">The measured value is not the only component of a reading. The measurement status (for example, &#8220;In Compliance&#8221; or &#8220;Overranged&#8221;) is also an element of data associated with a particular reading.</p>
+<p class="bodytext">All routines that return measurements can store the measurements in the reading buffers. Overlapped measurements always return readings in a reading buffer. Nonoverlapped measurement functions can return single-point measurement values or store multiple values in a reading buffer.</p>
+<p class="bodytext">A reading buffer is based on a Lua table. The measurements are retrieved with ordinary array accesses. If <code class="monospace">rb</code> is a reading buffer, the first measurement is accessed as <code class="monospace">rb[1]</code> and the ninth measurement as <code class="monospace">rb[9]</code>. The additional information in the table is accessed as additional members of the&nbsp;table.</p>
+<p class="bodytext">The load, save, and write operations for reading buffers function differently in the remote state. From a remote command interface, you can extract data from reading buffers as the instrument acquires the data.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="13640.htm" target="_self">Dedicated reading buffer designations</a></p><p class="relateditem"><a href="11493.htm" target="_self">Dedicated reading buffer example</a></p><p class="relateditem"><a href="13519.htm" target="_self">Reading buffer commands</a></p><p class="relateditem"><a href="11659.htm" target="_self">Buffer status</a></p><p class="relateditem"><a href="11647.htm" target="_self">Dynamic reading buffers</a></p><p class="relateditem"><a href="11650.htm" target="_self">Dynamically allocated buffer example</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="77977.htm" target="_self">Reading buffers</a></p><p class="relateditem"><a href="13629.htm" target="_self">Overview</a></p><p class="relateditem"><a href="29553.htm" target="_self">Front-panel reading buffer control</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="11655" />
+<input id="topicDescription" type="hidden" value="Remote reading buffer programming" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:28:48 PM" />
+</body>
+</html>

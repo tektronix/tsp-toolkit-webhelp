@@ -1,0 +1,215 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17668.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15800.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t20597" class="heading2-icl">trigger.timer[N].stimulus</h2>
+<p class="bodyzero">This attribute describes the event that starts the trigger timer.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Reset<br>Recall setup<br>Trigger timer N reset</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">eventID</em> = trigger.timer[<em class="emphasis">N</em>].stimulus</p>
+<p class="iclcode">trigger.timer[<em class="emphasis">N</em>].stimulus = <em class="emphasis">eventID</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">eventID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The event that triggers the timer delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Trigger timer number (1 to 4)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <span class="monospaceitalic">eventID</span><strong class="specialbold"> </strong>parameter may be one of the trigger event IDs shown in the following table.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="252" height="0"></td>
+<td width="263" height="0"></td>
+<td width="0" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="2" width="516"><p class="tableheading">Trigger event IDs</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="tableheadingsmall">Trigger event ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tableheadingsmall">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">channel.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A channel trigger event starts the scan.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">digio.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">An edge (either rising, falling, or either based on the configuration of the line) on the digital input line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">display.trigger.EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">The trigger key on the front panel is pressed.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">dmm.trigger.EVENT_LIMIT1_HIGH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A DMM trigger event that indicates a measurement exceeded the high limit value on limit 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">dmm.trigger.EVENT_LIMIT1_LOW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A DMM trigger event that indicates a measurement exceeded the low limit value on limit 1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">dmm.trigger.EVENT_LIMIT2_HIGH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A DMM trigger event that indicates a measurement exceeded the high limit value on limit 2.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">dmm.trigger.EVENT_LIMIT2_LOW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A DMM trigger event that indicates a measurement exceeded the low limit value on limit 2.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">trigger.EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A *trg message on the active command interface. If GPIB is the active command interface, a GET message also generates this event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">trigger.blender[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A combination of events has occurred.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">trigger.timer[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A delay expired.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">tsplink.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">An edge (either rising, falling, or either based on the configuration of the line) on the TSP-Link trigger line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">lan.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A LAN trigger event occurred.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">scan.trigger.EVENT_SCAN_READY</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">Scan ready event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">scan.trigger.EVENT_SCAN_START</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">Scan start event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">scan.trigger.EVENT_CHANNEL_READY</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">Channel ready event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">scan.trigger.EVENT_MEASURE_COMP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">Measure complete event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">scan.trigger.EVENT_SEQUENCE_COMP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">Sequence complete event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">scan.trigger.EVENT_SCAN_COMP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">Scan complete event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">scan.trigger.EVENT_IDLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">Idle event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="252"><p class="codetable">schedule.alarm[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="264"><p class="tablebodytextsmall">A scan starts when alarm <span class="monospaceitalic">N</span> fires.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">Set this attribute to the <span class="monospaceitalic">eventID</span> of any trigger event to wait for that event.</p>
+<p class="iclbody">Use zero (0) to disable event processing.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="348"><p class="codetable">print(trigger.timer[1].stimulus)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="246"><p class="tablebodytext">Prints the event that will start a trigger 1 timer action.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17671" class="jump" title="trigger.timer[N].reset()" href="17668.htm" target="_self">trigger.timer[N].reset()</a></p>
+
+

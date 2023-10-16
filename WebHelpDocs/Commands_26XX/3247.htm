@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Using the data queue for real-time communication </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="3246.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="3248.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t3247" class="heading3">Using the data queue for real-time communication</h3>
+<p class="bodytext">Nodes that are running test scripts at the same time can store data in the data queue for real-time communication. Each instrument has an internal data queue that uses the first-in, first-out (FIFO) structure to store data. You can use the data queue to post numeric values, strings, and tables. </p>
+<p class="bodytext">Use the data queue commands to:</p>
+<ul class="listbullet"><li class="listbullet">Share data between test scripts running in parallel</li><li class="listbullet">Access data from a remote group or a local node on a TSP&#8209;Link network at any time</li></ul><p class="bodytext">You cannot access the reading buffers or global variables from any node in a remote group while a node in that group is performing an overlapped operation. However, you can use the data queue to retrieve data from any node in a group that is performing an overlapped operation. In addition, the master node and the group leaders can use the data queue to coordinate activities.</p>
+<p class="bodytext">Tables in the data queue consume one entry. When a node stores a table in the data queue, a copy of the data in the table is made. When the data is retrieved from the data queue, a new table is created on the node that is retrieving the data. The new table contains a separate copy of the data in the original table, with no references to the original table or any subtables.</p>
+<p class="bodytext">You can access data from the data queue even if a remote group or a node has overlapped operations in process. See the <code class="monospace">dataqueue</code> commands for more information.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14174.htm" target="_self">TSP-Link system expansion interface</a></p><p class="relateditem"><a href="12382.htm" target="_self">Master and subordinates</a></p><p class="relateditem"><a href="12904.htm" target="_self">TSP-Link nodes</a></p><p class="relateditem"><a href="26814.htm" target="_self">Connections</a></p><p class="relateditem"><a href="12380.htm" target="_self">Initialization</a></p><p class="relateditem"><a href="12389.htm" target="_self">Resetting the TSP-Link network</a></p><p class="relateditem"><a href="29297.htm" target="_self">Accessing nodes</a></p><p class="relateditem"><a href="12373.htm" target="_self">Using the reset() command</a></p><p class="relateditem"><a href="24381.htm" target="_self">Using the abort command</a></p><p class="relateditem"><a href="12365.htm" target="_self">Triggering with TSP-Link</a></p><p class="relateditem"><a href="14178.htm" target="_self">TSP advanced features</a></p><p class="relateditem"><a href="3240.htm" target="_self">Using groups to manage nodes on TSP-Link network</a></p><p class="relateditem"><a href="3245.htm" target="_self">Running simultaneous test scripts</a></p><p class="relateditem"><a href="3248.htm" target="_self">Copying test scripts across the TSP-Link network</a></p><p class="relateditem"><a href="3249.htm" target="_self">Removing stale values from the reading buffer cache</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="3247" />
+<input id="topicDescription" type="hidden" value="Using the data queue for real-time communication" />
+<input id="footer-modified" type="hidden" value="Last modified: 2/5/2021 3:18:02 PM" />
+</body>
+</html>

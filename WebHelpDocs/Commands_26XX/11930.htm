@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Triggering in local mode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11551.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11932.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t11930" class="heading2">Triggering in local mode</h2>
+<p class="bodytext">You do not need to change any trigger settings to use the basic source and measurement procedures described in the following&nbsp;topics.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Press the <strong class="specialbold">MENU</strong> key, and then select <strong class="specialbold">SETUP &gt; RECALL &gt; INTERNAL &gt; FACTORY</strong> to reset the factory default&nbsp;conditions.</p>
+<p class="bodytext">The following figure shows the general sequence for SMU measurement triggering. The basic sequence is as follows:</p>
+<ul class="listbullet"><li class="listbullet">When the output is turned on, the programmed source value is immediately applied to the device under test (DUT).</li><li class="listbullet">Through the front panel only: If the immediate trigger source is selected, a measurement is triggered immediately. However, if the manual trigger source is selected, the front&#8209;panel TRIG key must be pressed.</li><li class="listbullet">The instrument waits for the programmed delay period (if any).</li><li class="listbullet">The instrument makes one measurement.</li><li class="listbullet">If the number of measurements is less than the programmed trigger count, it cycles to make another measurement (the measurement cycle is repeated indefinitely if the infinite trigger count is selected).</li><li class="listbullet">For multiple measurements, the instrument waits for the programmed trigger interval (if any) before making the next measurement.<p class="magicfigurecenter"><img id="f11931" src="2600as-901-01b_localtriggering_lr.png" class="linkedepsandpngtemplate" alt="Local triggering" height="221" width="469" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="85109.htm" target="_self">Sourcing and measuring</a></p><p class="relateditem"><a href="76487.htm" target="_self">Basic operation</a></p><p class="relateditem"><a href="11450.htm" target="_self">Source-measure capabilities</a></p><p class="relateditem"><a href="97769.htm" target="_self">Circuit configurations</a></p><p class="relateditem"><a href="11921.htm" target="_self">Operation considerations for the ADC</a></p><p class="relateditem"><a href="14155.htm" target="_self">Remote source-measure commands</a></p><p class="relateditem"><a href="11932.htm" target="_self">Configuring trigger attributes in local mode</a></p><p class="relateditem"><a href="19366.htm" target="_self">Configuring for measure-only tests using the MODE key</a></p><p class="relateditem"><a href="11934.htm" target="_self">Voltmeter and ammeter measurements</a></p><p class="relateditem"><a href="11936.htm" target="_self">Ohms measurements</a></p><p class="relateditem"><a href="11942.htm" target="_self">Power measurements</a></p><p class="relateditem"><a href="29274.htm" target="_self">Contact check measurements</a></p><p class="relateditem"><a href="76519.htm" target="_self">Multiple SMU connections</a></p><p class="relateditem"><a href="97054.htm" target="_self">Combining SMU outputs</a></p><p class="relateditem"><a href="28174.htm" target="_self">Output-off modes</a></p><p class="relateditem"><a href="11993.htm" target="_self">Range</a></p><p class="relateditem"><a href="11995.htm" target="_self">Digits</a></p><p class="relateditem"><a href="28175.htm" target="_self">Speed</a></p><p class="relateditem"><a href="13524.htm" target="_self">Sweep operation</a></p><p class="relateditem"><a href="12001.htm" target="_self">Relative offset</a></p><p class="relateditem"><a href="11532.htm" target="_self">Filters</a></p><p class="relateditem"><a href="29559.htm" target="_self">High-capacitance mode</a></p><p class="relateditem"><a href="11945.htm" target="_self">Saved setups</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="11930" />
+<input id="topicDescription" type="hidden" value="Triggering in local mode" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/29/2021 11:17:00 AM" />
+</body>
+</html>

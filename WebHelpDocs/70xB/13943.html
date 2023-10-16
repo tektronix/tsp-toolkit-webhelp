@@ -1,0 +1,127 @@
+<html><head><title> localnode.settime() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15020.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15021.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">localnode.settime()</h2>
+<p class="bodyzero">This function sets the real-time clock (sets current time of the system).</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">result</em> = settime(<em class="emphasis">time</em>)</p>
+<p class="iclcode"><em class="emphasis">result</em> = settime(<em class="emphasis">hour</em>, <em class="emphasis">minute</em>, <em class="emphasis">second</em>)</p>
+<p class="iclcode"><em class="emphasis">result</em> = localnode.settime(<em class="emphasis">time</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">result</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext"> A string representing the current time of day</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">hour</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The desired hour from 00 to 23</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">minute</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The desired minute from 00 to 59</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">second</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The desired second from 00 to 59</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">time</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The time in seconds since January 1, 1970 UTC. Time to be passed in as:<code class="monospace"> os.time({year = </code><span class="monospaceitalic">year</span><code class="monospace">, month = </code><span class="monospaceitalic">month</span><code class="monospace">, day = </code><span class="monospaceitalic">day</span><code class="monospace">, hour = </code><span class="monospaceitalic">hour</span><code class="monospace">, min = </code><span class="monospaceitalic">min</span><code class="monospace">, sec = </code><span class="monospaceitalic">sec}</span><code class="monospace">)</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">year</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A full year (2006 or later)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">month</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The desired month from 1 to 12</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">day</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The desired day from 1 to 31</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function sets the date and time of the system based on the <code class="monospace">os.time()</code> response passed in as its parameter. Use year, month, day, hour, min, and sec to set the time as desired. The first three parameters to <code class="monospace">os.time()</code> are mandatory while the rest are optional. If the later 3 are not used, they default to noon for that day. The setting of the time and date does not take into account the time zone. Please update the time for your time zone.</p>
+<p class="iclbody">Time must be specified as UTC time. If only the time needs to be changed, the new hour, minutes, and seconds can be passed as arguments without using <code class="monospace">ostime()</code>.</p>
+<p class="iclbody">Set the time zone before reading the time using <code class="monospace">os.time()</code> or before generating a UTC time from a local time specification.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" width="398"><p class="codetable">systemTime = os.time({year = 2010,</p>
+<p class="codetable">       month = 3,</p>
+<p class="codetable">       day = 31,</p>
+<p class="codetable">       hour = 14,</p>
+<p class="codetable">       min = 25})</p>
+<p class="codetable">settime(systemTime)</p>
+<p class="codetable">print(settime())</p>
+<p class="codetable">print(setime(10, 10, 10))</p>
+</td>
+<td width="345"><p class="tablebodytext">Sets the date and time to Mar 31, 2010 at 2:25&nbsp;pm.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Wed Mar 31 14:25:05 2010</p>
+<p class="codetable">Wed Mar 31 10:10:10 2010</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h15027" class="jumptemplate" title="localnode.gettimezone()" href="15011.html" target="_self">localnode.gettimezone()</a></p>
+<p class="iclbody"><a id="h15037" class="jumptemplate" title="localnode.settimezone()" href="15021.html" target="_self">localnode.settimezone()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

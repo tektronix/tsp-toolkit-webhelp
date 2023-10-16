@@ -1,0 +1,41 @@
+<html><head><title> Return value </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="1845.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17406.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h4 class="heading4">Return value</h4>
+<p class="bodytext">Several of the channel functions return a value for specified channels and channel patterns.</p>
+<p class="bodytext">The return value for these functions is a string containing a list of comma-delimited return items. The <span class="monospaceitalic">channelList</span> argument of the ICL command determines the number and order of these returned items.</p>
+<p class="bodytext">When the <span class="monospaceitalic">channelList</span> parameter for these functions is <code class="monospace">&quot;slot</code><span class="monospaceitalic">X</span><code class="monospace">&quot;</code>, the response first lists the channels starting from lowest to highest. More specifically, the channels are returned in numeric order.</p>
+<p class="bodytext">When the <span class="monospaceitalic">channelList</span> parameter for these functions is <code class="monospace">&quot;allslots&quot;</code>, the response starts with Slot 1 and increases to Slot 6 for the Model 707B. The Model 708B has only one slot, thus <code class="monospace">&quot;allslots&quot;</code> is the same as <code class="monospace">&quot;slot1&quot;</code> for this model. Each slot is processed completely before going to the next. Therefore, all Slot 1 channels are listed before Slot 2 channels.</p>
+<p class="bodytext">When the response is numeric, but in string format, use the <code class="monospace">tonumber()</code> function to convert the string to a number. For example, sending these commands:</p>
+<p class="code">x = tonumber(&quot;1403&quot;)</p>
+<p class="code">print(x)</p>
+<p class="bodytext">Results in:</p>
+<p class="code">1.403000000e+03</p>
+<p class="bodytext">When the response is a comma-delimited string, the individual return items can be identified by iterating through the list using the comma delimiters. For example, the Lua code below will start at the beginning of a string and break the string into individual items at each comma. The <code class="monospace">tonumber()</code> function is used on each item to determine if it is a number or not. In either case, the value is printed.</p>
+<p class="code">index1 = 1</p>
+<p class="code">index2 = 1</p>
+<p class="code">text = &quot;123,abc,hello,4.56&quot;</p>
+<p class="code">endIndex = string.len(text)</p>
+<p class="code">while index2 ~= endIndex do</p>
+<p class="code">   index2 = string.find(text, &quot;,&quot;, index1)</p>
+<p class="code">   if not index2 then</p>
+<p class="code">      index2 = endIndex</p>
+<p class="code">   end</p>
+<p class="code"></p>
+<p class="code">   subString = string.sub(text, index1, index2 - 1)</p>
+<p class="code">   if not number(subString) then</p>
+<p class="code">      print(subString)</p>
+<p class="code">   else</p>
+<p class="code">      print(tonumber(subString))</p>
+<p class="code">   end</p>
+<p class="code">   index1 = index2 + 1</p>
+<p class="code">end</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

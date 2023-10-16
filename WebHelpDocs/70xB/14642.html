@@ -1,0 +1,90 @@
+<html><head><title> bit.toggle() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14641.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17223.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">bit.toggle()</h2>
+<p class="bodyzero">This function toggles the value of a bit at a specified index position.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">No</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">result</em> = bit.toggle(<em class="emphasis">value</em>, <em class="emphasis">index</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">result</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">Result of the bit manipulation</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">Specified number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">index</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">Onebased bit position within <span class="monospaceitalic">value</span> to toggle (1 to 32)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function returns <span class="monospaceitalic">result</span>, which is the result of toggling the bit <span class="monospaceitalic">index</span> in <span class="monospaceitalic">value</span>.</p>
+<p class="iclbody">Any fractional part of <span class="monospaceitalic">value</span> is truncated to make it an integer. The returned decimal value is also an integer.</p>
+<p class="iclbody">The least significant bit <span class="monospaceitalic">value</span> is at <span class="monospaceitalic">index</span> position 1; the most significant bit is at <span class="monospaceitalic">index</span> position 32.</p>
+<p class="iclbody">The indexed bit for <span class="monospaceitalic">value</span> is toggled from 0 to 1, or 1 to 0.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="735" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">myResult = bit.toggle(10, 3)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(myResult)</p>
+</td>
+<td width="330"><p class="tablebodytext">The binary equivalent of decimal 10 is 1010. Toggling the bit at <span class="monospaceitalic">index</span> position 3 returns a decimal <code class="monospace">value</code> of 14 (binary 1110).</p>
+<p class="tablebodytext">Output: <code class="monospace">1.40000e+01</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h673" class="jumptemplate" title="bit.clear()" href="14636.html" target="_self">bit.clear()</a></p>
+<p class="iclbody"><a id="h667" class="jumptemplate" title="bit.get()" href="14637.html" target="_self">bit.get()</a></p>
+<p class="iclbody"><a id="h669" class="jumptemplate" title="bit.set()" href="14639.html" target="_self">bit.set()</a></p>
+<p class="iclbody"><a id="h671" class="jumptemplate" title="bit.test()" href="14641.html" target="_self">bit.test()</a></p>
+<p class="iclbody">Logical operators</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

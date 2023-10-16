@@ -1,0 +1,89 @@
+<html><head><title> tspnet.termination() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14081.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14084.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">tspnet.termination()</h2>
+<p class="bodyzero">This function sets the device line termination sequence.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">type</em> = tspnet.termination(<em class="emphasis">connectionID</em>)</p>
+<p class="iclcode"><em class="emphasis">type</em> = tspnet.termination(<em class="emphasis">connectionID</em>, <em class="emphasis">termSequence</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">type</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">An enumerated value indicating the termination type:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="monospace">tspnet.TERM_LF</code></li><li class="tablelistbullet"><code class="monospace">tspnet.TERM_CR</code></li><li class="tablelistbullet"><code class="monospace">tspnet.TERM_CRLF</code></li><li class="tablelistbullet"><code class="monospace">tspnet.TERM_LFCR</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">connectionID</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The connection ID returned from <code class="monospace">tspnet.connect()</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">termSequence</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The termination sequence</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function sets and gets the termination character sequence that is used to indicate the end of a line for a TSP-Net connection.</p>
+<p class="iclbody">Using the <span class="monospaceitalic">termSequence </span>parameter sets the termination sequence. The present termination sequence is always returned.</p>
+<p class="iclbody">There are four possible combinations, all of which are made up of line feeds (LF or 0x10) and carriage returns (CR or 0x13). For TSP-enabled devices, the default is <code class="monospace">tspnet.TERM_LF</code>. For devices that are not TSPenabled, the default is <code class="monospace">tspnet.TERM_CRLF</code>.</p>
+<p class="iclbody">The termination sequence resets to the default value when the connection is terminated.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="735" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="435"><p class="codetable">myID = tspnet.connect(&quot;192.0.2.1&quot;)</p>
+<p class="codetable">if myID then</p>
+<p class="codetable">   tspnet.termination(myID, tspnet.TERM_LF)</p>
+<p class="codetable">   tspnet.disconnect(myID)</p>
+<p class="codetable">end</p>
+</td>
+<td width="300"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h14093" class="jumptemplate" title="tspnet.connect()" href="14074.html" target="_self">tspnet.connect()</a></p>
+<p class="iclbody"><a id="h14094" class="jumptemplate" title="tspnet.disconnect()" href="14076.html" target="_self">tspnet.disconnect()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

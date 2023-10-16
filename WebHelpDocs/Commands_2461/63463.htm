@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.contact.check() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="33395.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="63464.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t63463" class="heading2-icl">smu.contact.check()</h2>
+<p class="bodyzero">This function indicates whether one or more connections failed the contact check operation.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclbody"><code class="monospace">result = smu.contact.check()</code></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">result</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The result of the contact check operation:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">true</code>: All connections passed the contact check</li><li class="tablelistbullet9pt"><code class="monospace">false</code>: One or more connections failed the contact check</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Use this function to check for excessive contact resistance at any of the connections to the device under test (DUT).</p>
+<p class="iclbody">Use the <code class="monospace">print()</code> command to query the result of the contact check operation. The query returns <code class="monospace">false</code> if one or more connections exceed the threshold resistance level set by the <code class="monospace">smu.contact.threshold</code> attribute, or it returns <code class="monospace">true</code> if no connections exceed that value. </p>
+<p class="iclbody">If you get a failed indication when sending this function, you can use the <code class="monospace">smu.contact.checkall()</code> function to determine which connection failed the contact check test.</p>
+<p class="iclbody">Sending this command when contact check is not enabled results in an error.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="605" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="254"><p class="codetable">smu.contact.enable = smu.ON</p>
+<p class="codetable">print(smu.contact.check())</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="350"><p class="tablebodytext">Enable contact check</p>
+<p class="tablebodytext">Check connections for excessive contact resistance.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">true</p>
+<p class="tablebodytext">Indicates that all connections passed the contact check operation.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h63553" class="jump" title="smu.contact.checkall()" href="63464.htm" target="_self">smu.contact.checkall()</a></p>
+<p class="listcommand"><a id="h63533" class="jump" title="smu.contact.enable" href="63461.htm" target="_self">smu.contact.enable</a></p>
+<p class="listcommand"><a id="h63531" class="jump" title="smu.contact.threshold" href="63462.htm" target="_self">smu.contact.threshold</a></p>
+
+
+<input id="topicId" type="hidden" value="63463" />
+<input id="topicDescription" type="hidden" value="smu.contact.check()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 11:16:48 AM" />
+</body>
+</html>

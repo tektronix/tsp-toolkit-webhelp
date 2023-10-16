@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Assigning the stimulus attribute </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12557.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12566.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12558" class="heading4">Assigning the stimulus attribute</h4>
+<p class="bodytext">Assign an event ID to the <code class="monospace">trigger.timer[</code><span class="monospaceitalic">N</span><code class="monospace">].stimulus</code> attribute to configure the timer to start a delay when a specific trigger event occurs. The programming example below illustrates how to configure a source-delay-measure (SDM) cycle.</p>
+<p class="code"><code class="monospace">-- Configure the timer to begin when source action completes.</code></p>
+<p class="code"><code class="monospace">trigger.timer[1].stimulus = smua.trigger.SOURCE_COMPLETE_EVENT_ID</code></p>
+<p class="code"><code class="monospace">-- SMUA delay before a measurement begins.</code></p>
+<p class="code"><code class="monospace">smua.trigger.measure.stimulus = trigger.timer[1].EVENT_ID</code></p>
+<p class="magicfigurecenter"><img id="f12559" src="2600as-901-01b_usingatimerforansdmcycle.png" class="linkedepsandpngtemplate" alt="Using a timer for an SDM cycle" height="2327" width="3694" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12557.htm" target="_self">Triggering a timer</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12558" />
+<input id="topicDescription" type="hidden" value="Assigning the stimulus attribute" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/10/2021 5:04:03 PM" />
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> File I/O </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="10905.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11825.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t14771" class="heading3">File I/O</h3>
+<p class="bodytext">You can use the file I/O commands to open and close directories and files, write data, or to read a file on an installed USB flash drive. File I/O commands are organized into two groups:</p>
+<ul class="listbullet"><li class="listbullet">Commands that reside in the <code class="monospace">fs</code> and <code class="monospace">io</code> table, for example: <code class="monospace">io.open()</code>, <code class="monospace">io.close()</code>, <code class="monospace">io.input()</code>, and <code class="monospace">io.output()</code>. Use these commands to manage file system directories; open and close file descriptors; and perform basic I/O operations on a pair of default files (one input and one output).</li><li class="listbullet">Commands that reside in the file descriptors (for example: <span class="monospaceitalic">fileVar</span><code class="monospace">:seek()</code>, <span class="monospaceitalic">fileVar</span><code class="monospace">:write()</code>, and <span class="monospaceitalic">fileVar</span><code class="monospace">:read()</code>) operate exclusively on the file with which they are associated.</li></ul><p class="bodytext">The root folder of the USB flash drive has the absolute path:</p>
+<p class="bodytext"><code class="monospace">&quot;/usb1/&quot;</code></p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You can use either the slash (<code class="monospace">/</code>) or backslash (<code class="monospace">\</code>) as a directory separator. However, the backslash is also used as an escape character, so if you use it as a directory separator, you generally need to use a double backslash (<code class="monospace">\\</code>) when you are creating scripts or sending commands to the instrument.</p>
+<p class="bodytext">For basic information about navigation and directory listing of files on a flash drive, see <a id="h19515" class="jump" title="File system navigation" href="11825.htm" target="_self">File system navigation</a>.</p>
+<p class="bodytext">File descriptor commands for file I/O use a colon (<code class="monospace">:</code>) to separate the command parts rather than a period (<code class="monospace">.</code>), like the <code class="monospace">io</code> commands.</p>
+<p class="bodytext">File descriptors cannot be passed between nodes in a TSP-Link<sup class="superscript">&reg;</sup> system, so the <code class="monospace">io.open()</code>, <code class="monospace">fileVar::read()</code>, and <code class="monospace">fileVar::write</code> commands are not accessible to the TSP-Link system. However, the default input and output files mentioned above allow for the execution of many file I/O operations without any reference to a file descriptor.</p>
+<p class="listcommand"><a id="h19398" class="jump" title="fileVar:close()" href="14772.htm" target="_self">fileVar:close()</a></p>
+<p class="listcommand"><a id="h14791" class="jump" title="fileVar:flush()" href="14786.htm" target="_self">fileVar:flush()</a></p>
+<p class="listcommand"><a id="h14792" class="jump" title="fileVar:read()" href="14787.htm" target="_self">fileVar:read()</a></p>
+<p class="listcommand"><a id="h14793" class="jump" title="fileVar:seek()" href="14788.htm" target="_self">fileVar:seek()</a></p>
+<p class="listcommand"><a id="h14794" class="jump" title="fileVar:write()" href="14789.htm" target="_self">fileVar:write()</a></p>
+<p class="listcommand"><a id="h2703" class="jump" title="fs.chdir()" href="14808.htm" target="_self">fs.chdir()</a></p>
+<p class="listcommand"><a id="h2704" class="jump" title="fs.cwd()" href="14810.htm" target="_self">fs.cwd()</a></p>
+<p class="listcommand"><a id="h14819" class="jump" title="fs.is_dir()" href="14811.htm" target="_self">fs.is_dir()</a></p>
+<p class="listcommand"><a id="h2706" class="jump" title="fs.is_file()" href="14824.htm" target="_self">fs.is_file()</a></p>
+<p class="listcommand"><a id="h14820" class="jump" title="fs.mkdir()" href="14812.htm" target="_self">fs.mkdir()</a></p>
+<p class="listcommand"><a id="h14821" class="jump" title="fs.readdir()" href="14814.htm" target="_self">fs.readdir()</a></p>
+<p class="listcommand"><a id="h14823" class="jump" title="fs.rmdir()" href="14815.htm" target="_self">fs.rmdir()</a></p>
+<p class="listcommand"><a id="h14878" class="jump" title="io.close()" href="14868.htm" target="_self">io.close()</a></p>
+<p class="listcommand"><a id="h14879" class="jump" title="io.flush()" href="14870.htm" target="_self">io.flush()</a></p>
+<p class="listcommand"><a id="h19308" class="jump" title="io.input()" href="66560.htm" target="_self">io.input()</a></p>
+<p class="listcommand"><a id="h14881" class="jump" title="io.open()" href="14872.htm" target="_self">io.open()</a></p>
+<p class="listcommand"><a id="h14882" class="jump" title="io.output()" href="14873.htm" target="_self">io.output()</a></p>
+<p class="listcommand"><a id="h14883" class="jump" title="io.read()" href="14874.htm" target="_self">io.read()</a></p>
+<p class="listcommand"><a id="h14884" class="jump" title="io.type()" href="14875.htm" target="_self">io.type()</a></p>
+<p class="listcommand"><a id="h14885" class="jump" title="io.write()" href="14877.htm" target="_self">io.write()</a></p>
+<p class="listcommand"><a id="h20189" class="jump" title="os.remove()" href="19929.htm" target="_self">os.remove()</a></p>
+<p class="listcommand"><a id="h20190" class="jump" title="os.rename()" href="19930.htm" target="_self">os.rename()</a></p>
+<p class="bodytext">The following standard I/O commands are not supported:</p>
+<table class="tableintopic" width="414" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="204"><p class="tableheading">File</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tableheading">I/O</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="204"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><span class="monospaceitalic">fileVar</span><code class="monospace">:lines()</code></li><li class="tablelistbullet9pt"><span class="monospaceitalic">fileVar</span><code class="monospace">:setvbuf()</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="210"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">io.lines()</code></li><li class="tablelistbullet9pt"><code class="monospace">io.popen()</code></li></ul></td>
+</tr>
+
+</table>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"></li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="11825.htm" target="_self">File system navigation</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13401.htm" target="_self">About TSP commands</a></p><p class="relateditem"><a href="14127.htm" target="_self">Beeper control</a></p><p class="relateditem"><a href="11382.htm" target="_self">Bit manipulation and logic operations</a></p><p class="relateditem"><a href="14653.htm" target="_self">Data queue</a></p><p class="relateditem"><a href="14667.htm" target="_self">Digital I/O</a></p><p class="relateditem"><a href="15965.htm" target="_self">Display</a></p><p class="relateditem"><a href="14748.htm" target="_self">Error queue</a></p><p class="relateditem"><a href="10905.htm" target="_self">Event log</a></p><p class="relateditem"><a href="14859.htm" target="_self">GPIB</a></p><p class="relateditem"><a href="19423.htm" target="_self">Instrument identification</a></p><p class="relateditem"><a href="14129.htm" target="_self">LAN and LXI</a></p><p class="relateditem"><a href="19424.htm" target="_self">Miscellaneous</a></p><p class="relateditem"><a href="19425.htm" target="_self">Parallel script execution</a></p><p class="relateditem"><a href="14795.htm" target="_self">Queries and response messages</a></p><p class="relateditem"><a href="17112.htm" target="_self">Reading buffer</a></p><p class="relateditem"><a href="15061.htm" target="_self">Reset</a></p><p class="relateditem"><a href="15067.htm" target="_self">RS-232</a></p><p class="relateditem"><a href="19516.htm" target="_self">Saved setups</a></p><p class="relateditem"><a href="15062.htm" target="_self">Scripting</a></p><p class="relateditem"><a href="28523.htm" target="_self">SMU</a></p><p class="relateditem"><a href="19430.htm" target="_self">SMU calibration</a></p><p class="relateditem"><a href="14126.htm" target="_self">Status model</a></p><p class="relateditem"><a href="19432.htm" target="_self">Time</a></p><p class="relateditem"><a href="29269.htm" target="_self">Triggering</a></p><p class="relateditem"><a href="14123.htm" target="_self">TSP-Link</a></p><p class="relateditem"><a href="14072.htm" target="_self">TSP-Net</a></p><p class="relateditem"><a href="72522.htm" target="_self">Userstrings</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="14771" />
+<input id="topicDescription" type="hidden" value="File I/O" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:12:04 PM" />
+</body>
+</html>

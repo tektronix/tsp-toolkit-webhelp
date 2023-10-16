@@ -1,0 +1,172 @@
+<html><head><title> display.prompt() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14708.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14741.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">display.prompt()</h2>
+<p class="bodyzero">This function prompts the user to enter a parameter from the front panel of the instrument.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">display.prompt(<em class="emphasis">format</em>, <em class="emphasis">units</em>, <em class="emphasis">help</em>)</p>
+<p class="iclcode">display.prompt(<em class="emphasis">format</em>, <em class="emphasis">units</em>, <em class="emphasis">help</em>, <em class="emphasis">default</em>)</p>
+<p class="iclcode">display.prompt(<em class="emphasis">format</em>, <em class="emphasis">units</em>, <em class="emphasis">help</em>, <em class="emphasis">default</em>, <em class="emphasis">minimum</em>)</p>
+<p class="iclcode">display.prompt(<em class="emphasis">format</em>, <em class="emphasis">units</em>, <em class="emphasis">help</em>, <em class="emphasis">default</em>, <em class="emphasis">minimum</em>, <em class="emphasis">maximum</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="98"><p class="tablebodytext"><span class="monospaceitalic">format</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="645"><p class="tablebodytext">A string that defines how the input field is formatted. See <strong class="specialbold">Details</strong> for more information</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="98"><p class="tablebodytext"><span class="monospaceitalic">units</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="645"><p class="tablebodytext">Set the units text string for the top line (eight characters maximum). This is intended to indicate the units (for example, &quot;V&quot; or &quot;A&quot;) for the value.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="98"><p class="tablebodytext"><span class="monospaceitalic">help</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="645"><p class="tablebodytext">Text string to display on the bottom line (32 characters maximum).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="98"><p class="tablebodytext"><span class="monospaceitalic">default</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="645"><p class="tablebodytext">The value that is shown when the value is first displayed.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="98"><p class="tablebodytext"><span class="monospaceitalic">minimum</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="645"><p class="tablebodytext">The minimum input value that can be entered.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="98"><p class="tablebodytext"><span class="monospaceitalic">maximum</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="645"><p class="tablebodytext">The maximum input value that can be entered (must be more than minimum)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function creates an editable input field at the present cursor position, and an input prompt message on the bottom line. Example of a displayed input field and prompt:</p>
+<p class="code">0.00V</p>
+<p class="code">Input 0 to +2V</p>
+<p class="iclbody"><span class="monospaceitalic">format</span> uses 0s, the decimal point, polarity sign and exponents to define how the input field is formatted.</p>
+<p class="iclbody"><span class="monospaceitalic">format</span> can include the options shown in the following table.</p>
+<p class="magictablebody"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="120"><p class="tableheading"><span class="monospaceitalic">format</span> options</p>
+</td>
+<td width="446"><p class="iclbody">&nbsp;</p>
+</td>
+<td width="177"><p class="iclbody">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tableheadingsmall">Option</p>
+</td>
+<td width="446"><p class="tableheadingsmall">Description</p>
+</td>
+<td width="177"><p class="tableheadingsmall">Examples</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tablebodytextcenter">E</p>
+</td>
+<td width="446"><p class="tablebodytext">Include the E to display the value exponentially. Include a &quot;+&quot; sign for positive/negative exponent entry. Do not include the &quot;+&quot; sign to prevent negative value entry. 0 defines the digit positions for the exponent.</p>
+</td>
+<td width="177"><p class="codetable">&nbsp;</p>
+<p class="codetable">0.00000E+0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tablebodytextcenter">+</p>
+</td>
+<td width="446"><p class="tablebodytext">Allows operators to enter positive or negative values. If the &quot;+&quot; sign is not included, the operator cannot enter a negative value.</p>
+</td>
+<td width="177"><p class="codetable">+0.00</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tablebodytextcenter">0</p>
+</td>
+<td width="446"><p class="tablebodytext">Defines the digit positions for the value. You can use up to six 0s.</p>
+</td>
+<td width="177"><p class="codetable">+00.0000E+00</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tablebodytextcenter">.</p>
+</td>
+<td width="446"><p class="tablebodytext">The decimal point where needed for the value.</p>
+</td>
+<td width="177"><p class="codetable">+0.00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody"><span class="monospaceitalic">minimum</span> and <span class="monospaceitalic">maximum</span> can be used to limit the values that can be entered. When + is selected for <span class="monospaceitalic">format</span>, the minimum limit must be more than or equal to zero. When limits are used, the operator cannot enter values above or below these limits.</p>
+<p class="iclbody">After the instrument is turned on, the first time you use a display command to write to the display, the message &quot;USER SCREEN&quot; is cleared. After the first write, you need to use <code class="monospace">display.clear</code> to clear the message.</p>
+<p class="iclbody">The input value is limited to ±1e37.</p>
+<p class="iclbody">After sending this command, script execution pauses for the operator to enter a value and press <strong class="specialbold">ENTER</strong>.</p>
+<p class="iclbody">For positive and negative entry (&quot;+&quot; sign used for the value field and/or the exponent field), polarity of a non-zero value or exponent can be toggled by positioning the cursor on the polarity sign and turning the navigation wheel. Polarity will also toggle when using the navigation wheel to decrease or increase the value or exponent past zero. A zero value or exponent (for example, +00) is always positive and cannot be toggled to negative polarity.</p>
+<p class="iclbody">After you send this command and press the <strong class="specialbold">EXIT (LOCAL) </strong>key, the value returns nil.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="750" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="750"><p class="codetable">value = display.prompt(&quot;0.00&quot;, &quot;V&quot;, &quot;Input 0 to +2V&quot;, 0.5, 0, 2)</p>
+<p class="codetable">print(value)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="750"><p class="tablebodytext">The above command prompts the operator to enter a voltage value. The valid input range is 0 to +2.00, with a default of 0.50:</p>
+<p class="codetable">0.50V</p>
+<p class="codetable">Input 0 to +2V</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">If the operator enters 0.70, the output is:</p>
+<p class="codetable">7.000000000e-01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h14723" class="jumptemplate" title="display.inputvalue()" href="14703.html" target="_self">display.inputvalue()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

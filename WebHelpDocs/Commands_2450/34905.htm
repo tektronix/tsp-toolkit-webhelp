@@ -1,0 +1,129 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> file.usbdriveexists()  </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="27929.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="27934.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t34905" class="heading2-icl">file.usbdriveexists() </h2>
+<p class="bodyzero">This function detects if a USB flash drive is inserted into the front-panel USB port.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#6685B9" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#6685B9" style="border:2px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">driveInserted</span> = file.usbdriveexists()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">driveInserted</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext"><code class="monospace"><code class="monospace">0</code></code>: No flash drive is detected</p>
+<p class="tablebodytext"><code class="monospace"><code class="monospace">1</code></code>: Flash drive is detected</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can call this command from a script to verify that a USB flash drive is inserted before attempting to write data to it.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">local response</p>
+<p class="codetable">local xMax = 10</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">for x = 1, xMax do</p>
+<p class="codetable"> -- Make xMax readings and store them in defbuffer1.</p>
+<p class="codetable"> <code class="monospace">smu</code>.measure.read()</p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if (file.usbdriveexists() == 1) then </p>
+<p class="codetable">   response = display.BUTTON_YES</p>
+<p class="codetable">else</p>
+<p class="codetable">   response = display.input.prompt(display.BUTTONS_YESNO, &quot;Insert a USB flash drive.\nPress Yes to write data or No to not write data.&quot;) </p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if (response == display.BUTTON_YES) then</p>
+<p class="codetable">   if (file.usbdriveexists() == 1) then </p>
+<p class="codetable">   FileNumber = file.open(&quot;/usb1/TenReadings.csv&quot;, file.MODE_WRITE)</p>
+<p class="codetable"> file.write(FileNumber,&quot;Reading,Seconds\n&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable"> -- Print out the measured values in a two-column format.</p>
+<p class="codetable"> print(&quot;\nIteration:\tReading:\tTime:\n&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable"> for i = 1, xMax do</p>
+<p class="codetable"> print(i, defbuffer1[i], defbuffer1.relativetimestamps[i])</p>
+<p class="codetable"> file.write(FileNumber, string.format(&quot;%g, %g\r\n&quot;,defbuffer1.readings[i], defbuffer1.relativetimestamps[i]))</p>
+<p class="codetable"> end</p>
+<p class="codetable"> file.close(FileNumber)</p>
+<p class="codetable">   else</p>
+<p class="codetable">      response = display.input.prompt(display.BUTTONS_OK,</p>
+<p class="codetable">      &quot;No drive detected. Allow more time after inserting a drive.&quot;) </p>
+<p class="codetable">   end</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Make measurements.</p>
+<p class="tablebodytext">Verify that a flash drive is inserted into the instrument.</p>
+<p class="tablebodytext">If the flash drive is inserted, write the data to the flash drive.</p>
+<p class="tablebodytext">Print data into a two-column format.</p>
+<p class="tablebodytext">If the flash drive is not inserted after selecting <code class="monospace"><code class="monospace">Yes</code></code>, another prompt is displayed.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+
+<input id="topicId" type="hidden" value="34905" />
+<input id="topicDescription" type="hidden" value="file.usbdriveexists() " />
+<input id="footer-modified" type="hidden" value="Last modified: 10/10/2019 12:59:15 PM" />
+</body>
+</html>

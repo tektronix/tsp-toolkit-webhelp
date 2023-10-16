@@ -1,0 +1,77 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16891.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16892.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16973" class="heading2-icl">scan.bypass</h2>
+<p class="bodyzero">This attribute indicates whether the first channel of the scan waits for the channel stimulus event to be satisfied before closing.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Reset<br>Scan reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">1 (scan.ON)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">bypass</em> = scan.bypass</p>
+<p class="iclcode">scan.bypass = <em class="emphasis">bypass</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bypass</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Enable or disable the bypass:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">scan.OFF</code> or <code class="monospace">0</code>: Disabled</li><li class="tablelistbullet9pt"><code class="monospace">scan.ON</code> or <code class="monospace">1</code>: Enabled</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When <span class="monospaceitalic">bypass</span> is set to on and the <code class="monospace">scan.trigger.arm.stimulus</code> is set to a nonzero value, the first channel of the scan closes (the <code class="monospace">scan.trigger.channel.stimulus</code> setting is ignored).</p>
+<p class="iclbody">For other channels (other than the first), the channel stimulus must be satisfied before the channel action takes place.</p>
+<p class="iclbody">When <span class="monospaceitalic">bypass</span> is set to off, every channel (including the first) must satisfy the<code class="monospace"> scan.trigger.channel.stimulus</code> setting before the channel action occurs for that step.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.bypass = scan.OFF</p>
+<p class="codetable">print(scan.bypass)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Disables the bypass option for scanning and displays the present bypass state.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">0.000000000e+000</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h16287" class="jump" title="scan.trigger.arm.stimulus" href="16258.htm" target="_self">scan.trigger.arm.stimulus</a></p>
+<p class="listcommand"><a id="h16290" class="jump" title="scan.trigger.channel.stimulus" href="16976.htm" target="_self">scan.trigger.channel.stimulus</a></p>
+<p class="listcommand">Scanning and triggering</p>
+
+

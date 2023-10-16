@@ -1,0 +1,105 @@
+<html><head><title> dataqueue.add() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14653.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14656.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">dataqueue.add()</h2>
+<p class="bodyzero">This function adds an entry to the data queue.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">results</em> = dataqueue.add(<em class="emphasis">value</em>)</p>
+<p class="iclcode"><em class="emphasis">results</em> = dataqueue.add(<em class="emphasis">value</em>, <em class="emphasis">timeout</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">results</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The resulting value of <code class="monospace">true</code> or <code class="monospace">false</code> based on the success of the function</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The data item to add; <span class="monospaceitalic">value</span> can be of any type </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">timeout</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">The maximum number of seconds to wait for space in the data queue</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can only use the <code class="monospace">timeout</code> value while adding data to the local data queue.</p>
+<p class="iclbody">The <code class="monospace">timeout</code> value is ignored if the data queue is not full.</p>
+<p class="iclbody">The <code class="monospace">dataqueue.add()</code> function returns <code class="monospace">false</code>:</p>
+<ul class="listbullet2"><li class="listbullet2">If the timeout expires before space is available in the data queue</li><li class="listbullet2">If the data queue is full and a <code class="monospace">timeout</code> value is not specified</li></ul><p class="iclbody">If the value is a table, a duplicate of the table and any subtables is made. The duplicate table does not contain any references to the original table or to any subtables.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="442"><p class="codetable">dataqueue.clear()</p>
+<p class="codetable">dataqueue.add(10)</p>
+<p class="codetable">dataqueue.add(11, 2)</p>
+<p class="codetable">result = dataqueue.add(12, 3)</p>
+<p class="codetable">if result == false then</p>
+<p class="codetable">   print(&quot;Failed to add 12 to the dataqueue&quot;)</p>
+<p class="codetable">end</p>
+<p class="codetable">print(&quot;The dataqueue contains:&quot;)</p>
+<p class="codetable">while dataqueue.count &gt; 0 do</p>
+<p class="codetable">   print(dataqueue.next())</p>
+<p class="codetable">end</p>
+</td>
+<td width="300"><p class="tablebodytext">Clear the data queue.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Each line adds one item to the data queue.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">The dataqueue contains:</p>
+<p class="codetable">1.00000e+01</p>
+<p class="codetable">1.10000e+01</p>
+<p class="codetable">1.20000e+01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h13379" class="jumptemplate" title="dataqueue.CAPACITY" href="14656.html" target="_self">dataqueue.CAPACITY</a></p>
+<p class="iclbody"><a id="h13380" class="jumptemplate" title="dataqueue.clear()" href="14655.html" target="_self">dataqueue.clear()</a></p>
+<p class="iclbody"><a id="h13381" class="jumptemplate" title="dataqueue.count" href="14657.html" target="_self">dataqueue.count</a></p>
+<p class="iclbody"><a id="h13382" class="jumptemplate" title="dataqueue.next()" href="14658.html" target="_self">dataqueue.next()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

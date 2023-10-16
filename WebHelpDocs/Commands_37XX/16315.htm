@@ -1,0 +1,101 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15021.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15081.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16315" class="heading2-icl">setup.cards()</h2>
+<p class="bodyzero">This function returns the card model numbers that are defined for each slot in a saved setup.</p>
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext"><span class="grayedout">Affected by</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext"><span class="grayedout">Where saved</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="162"><p class="tableheadingwhitetext"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="162"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">CardModels</span> = setup.cards() </p>
+<p class="iclcode"><span class="monospaceitalic">CardModels</span> = setup.cards(&quot;/<span class="monospaceitalic">path</span>/<span class="monospaceitalic">filename</span>.set&quot;) </p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">CardModels</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="425"><p class="tablebodytext">A comma-delimited string listing the card model numbers for each slot</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">path/filename</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="425"><p class="tablebodytext">The path and name of the file on the flash drive; the path may be absolute or relative to the current working directory; the <code class="monospace">.set</code> extension must be on the filename</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function returns a comma-delimited string that lists the card model for each slot in the instrument (from 1 to 6) for the specified saved setup. If no card was installed in the slot when the setup was saved, a 0 is returned as the card model number.</p>
+<p class="iclbody">Use <span class="monospaceitalic">CardModels</span> <code class="monospace">= setup.cards()</code> to return cards associated with the internally saved setup.</p>
+<p class="iclbody">Use <span class="monospaceitalic">CardModels</span> =<code class="monospace"> setup.cards(&quot;/</code><span class="monospaceitalic">path</span><code class="monospace">/</code><span class="monospaceitalic">filename</span><code class="monospace">.set&quot;)</code> to return cards associated with the setup saved on the USB flash drive.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="350"><p class="codetable">CardModels = setup.cards()</p>
+<p class="codetable">print(CardModels)</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="250"><p class="tablebodytext">Query the cards associated with the internal saved setup.</p>
+<p class="tablebodytext">Output, assuming a 3722 card in slot&nbsp;1:</p>
+<p class="codetable">3722,0,0,0,0,0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="350"><p class="codetable">print(setup.card(&quot;/usb1/mysetup.set&quot;))</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="250"><p class="tablebodytext">Query the cards associated with <code class="monospace">mysetup.set</code> on the root directory on the flash drive.</p>
+<p class="tablebodytext">Output, assuming a 3723 on slot&nbsp;2, 3722 on slot 3, and 3720 on slot 4:</p>
+<p class="codetable">0,3723,3722,3720,0,0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="595" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="346"><p class="codetable">print(setup.card(&quot;/usb1/mysetup.set&quot;))</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="250"><p class="tablebodytext">Query the cards associated with setup saved as <code class="monospace">JulySetup.set</code> on the thumb drive.</p>
+<p class="tablebodytext">The following example of output shows that slots 1, 5, and 6 are empty, slot 2 has a 3723 installed, slot&nbsp;3 has a 3722 installed and slot 4 has a 3720 installed:</p>
+<p class="codetable">0,3723,3722,3720,0,0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15085" class="jump" title="setup.recall()" href="66566.htm" target="_self">setup.recall()</a></p>
+<p class="listcommand"><a id="h15086" class="jump" title="setup.save()" href="15083.htm" target="_self">setup.save()</a></p>
+
+

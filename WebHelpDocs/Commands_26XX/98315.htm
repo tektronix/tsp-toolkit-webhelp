@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> SRQ </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12765.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12767.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h6 id="t98315" class="heading6">SRQ</h6>
+<p class="bodytext">You can program the instrument to generate a service request (SRQ) when one or more errors or conditions occur. When this indicator is on, a service request was generated. This indicator stays on until all conditions that caused the SRQ are cleared.</p>
+<p class="bodytext">Note that while the SRQ indicator turns on when a service request is generated, it reflects the state of the master summary status (MSS) bit and not the request for service (RQS) bit. Therefore, performing a serial poll does not turn off the indicator. To turn off the indicator, you must use <code class="monospace">*CLS</code> or <code class="monospace">status.reset()</code> to clear all the conditions that caused the MSS bit to be set.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The SRQ applies to all available communication buses. However, actual service requests only apply to GPIB, USB, and VXI-11.</p>
+<p class="bodytext">For additional information on using the SRQ, refer to <a id="h12333" class="jump" title="Status byte and service request (SRQ)" href="12334.htm" target="_self">Status byte and service request (SRQ)</a>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="97976.htm" target="_self">Communication status indicators</a></p><p class="relateditem"><a href="12763.htm" target="_self">REM</a></p><p class="relateditem"><a href="12764.htm" target="_self">TALK</a></p><p class="relateditem"><a href="12765.htm" target="_self">LSTN</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="98315" />
+<input id="topicDescription" type="hidden" value="SRQ" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/27/2021 1:10:51 PM" />
+</body>
+</html>

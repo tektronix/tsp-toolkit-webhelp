@@ -1,0 +1,99 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="20153.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="20154.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15133" class="heading2-icl">bufferVar.collecttimestamps</h2>
+<p class="bodyzero">This attribute sets whether or not timestamp values are stored with the readings in the buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">1 (enabled)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span><code class="monospace"> = </code><span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps</code></p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps = </code><span class="monospaceitalic">state</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Timestamp value collection status; set to one of the following:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">0</code>: Timestamp value collection disabled (off)</li><li class="tablelistbullet9pt"><code class="monospace">1</code>: Timestamp value collection enabled (on)</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Assigning a value to this attribute enables or disables the storage of timestamps. Reading this attribute returns the state of timestamp collection. </p>
+<p class="iclbody">When on, timestamp values are stored with readings in the buffer. This requires four extra bytes of storage for each reading. </p>
+<p class="iclbody">The <span class="monospaceitalic">state</span> variable can only be changed when the buffer is empty. Empty the buffer using the <span class="monospaceitalic">bufferVar</span><code class="monospace">.clear()</code> function.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">reset() </p>
+<p class="codetable">testData = dmm.makebuffer(1000)</p>
+<p class="codetable">testData.collecttimestamps = 1</p>
+<p class="codetable">dmm.nplc = 0.5</p>
+<p class="codetable">dmm.range = 0</p>
+<p class="codetable">dmm.configure.set(&quot;Dcv_100mV&quot;)</p>
+<p class="codetable">dmm.setconfig(&quot;slot2&quot;, &quot;Dcv_100mV&quot;)</p>
+<p class="codetable">scan.create(&quot;2035:2040&quot;)</p>
+<p class="codetable">scan.execute(testData)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(testData.timestamps[1])</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">printbuffer(1, 6, testData.timestamps)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">This example creates a reading buffer named <code class="monospace">testData</code>, configures the buffer to collect timestamp data, sets and saves the DMM configuration, creates a scan list, and then runs the scan. </p>
+<p class="tablebodytext"><br>The <code class="monospace">print()</code> command then outputs the first measurement timestamp. </p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytextsmall"><code class="monospace">07/11/2011 09:14:48.509762161</code></p>
+<p class="tablebodytext">The <code class="monospace">printbuffer()</code> command then outputs the timestamps for measurements 1 to 6 in the reading buffer. </p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytextsmall"><code class="monospace">07/11/2011 09:14:48.509762161, 07/11/2011 09:14:48.528708001, 07/11/2011 09:14:48.547659196, 07/11/2011 09:14:48.566612446, 07/11/2011 09:14:48.585565606, 07/11/2011 09:14:48.681325966</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15226" class="jump" title="bufferVar.clear()" href="15130.htm" target="_self">bufferVar.clear()</a></p>
+<p class="listcommand"><a id="h20173" class="jump" title="bufferVar.timestamps" href="19922.htm" target="_self">bufferVar.timestamps</a></p>
+<p class="listcommand">Reading buffers</p>
+
+

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Source voltage with extended current using two 2600B instruments in parallel </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="92678.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29768.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t92679" class="heading3">Source voltage with extended current using two 2600B instruments in parallel</h3>
+<p class="bodytext">This example shows the recommended approach for setting the source and limit ranges and levels when combining a SMU voltage source in parallel with a SMU current source.</p>
+<p class="magicfigurecenter"><img id="f93413" src="2601b-pulse_source_voltage_extended_current_using_parallel_smus_lr.png" class="linkedepsandpngtemplate" alt="Source voltage with extended current using parallel SMUs" height="157" width="258" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">The values are based on the current and voltage levels available in Region 4 of a 2601B, 2602B, or 2604B SMU, as shown in the table in <a id="h19626" class="jump" title="Combining SMU outputs" href="97054.htm" target="_self">Combining SMU outputs</a>. For information about generating pulses with a 2600B, refer to <a id="h15535" class="jump" title="Using timers to perform pulse mode sweeps" href="12560.htm" target="_self">Using timers to perform pulse mode sweeps</a>.</p>
+<p class="bodytext">The purpose of this configuration is to supply more current than a single SMU voltage source can provide. In this example, SMU 2 controls the voltage applied to a device-under-test (DUT). At full power, SMU 1 supplies 47% of the current required by the load and SMU 2 supplies 53%. SMU2 sinks excess current from SMU&nbsp;1 when DUT current draw is less than the maximum current of the SMU combination.</p>
+<p class="bodytext">Proper operation of this configuration requires that SMU&nbsp;1 does not limit the voltage from SMU&nbsp;2 and that SMU&nbsp;2 does not limit the current from SMU&nbsp;1. To accomplish this:</p>
+<ul class="listbullet"><li class="listbullet">Set the voltage source level of SMU 2 ten percent lower than voltage source limit of SMU 1.</li><li class="listbullet">Set the current source level of SMU 1 ten percent lower than the current source limit of SMU 2.</li><li class="listbullet">Set the voltage source limit of SMU 1 to the maximum voltage allowed in Region 4.</li><li class="listbullet">Set the current source limit of SMU 2 to the maximum current allowed in Region 4.</li></ul><p class="bodytext">These settings ensure that both SMUs are set to the same source and limit ranges, as recommended.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">A 10% source limit margin is generally recommended, but this value can be adjusted to meet the requirements of a specific application.</p>
+<p class="bodytext"><strong class="specialbold">Configure two 2600B SMUs to obtain the maximum pulsed voltage level possible in Region 4:</strong></p>
+<p class="bodytext">18&nbsp;V with 19&nbsp;A capacity</p>
+<p class="bodytext"><strong class="specialbold">SMU 1 configuration (supplies additional current that SMU&nbsp;2 alone cannot provide):</strong></p>
+<p class="bodytext">Source function:</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCAMPS</p>
+<p class="bodytext">Source range:</p>
+<p class="code">smua.source.rangei = 10</p>
+<p class="bodytext">Idle (bias) source level (source level at base of pulse):</p>
+<p class="code">smua.source.leveli = 0</p>
+<p class="bodytext">Idle (bias) source limit (source limit at base of pulse):</p>
+<p class="code">smua.source.limitv = 6</p>
+<p class="bodytext">Pulse source level (source level at top of pulse). Set the pulse source level ten percent lower than the current source limit of SMU 2:</p>
+<p class="code">smua.trigger.source.listi({9})</p>
+<p class="bodytext">Pulse source limit. SMU 1 voltage source limit must be greater than the maximum voltage supplied by SMU 2. Set the voltage source limit of SMU 1 to the maximum voltage allowed in Region 4:</p>
+<p class="code">smua.trigger.source.limitv = 20</p>
+<p class="bodytext">Output-off mode:</p>
+<p class="code">smua.source.offmode = smua.OUTPUT_NORMAL</p>
+<p class="bodytext">Output-off function:</p>
+<p class="code">smua.source.offfunc = smua.OUTPUT_DCAMPS</p>
+<p class="bodytext">Normal output-off voltage limit (40 V maximum):</p>
+<p class="code">smua.source.offlimitv = 20</p>
+<p class="bodytext"><strong class="specialbold">SMU 2 configuration (SMU 2 controls the voltage applied to the device&#8209;under&#8209;test):</strong></p>
+<p class="bodytext">Source function:</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCVOLTS</p>
+<p class="bodytext">Source range:</p>
+<p class="code">smua.source.rangev = 20</p>
+<p class="bodytext">Idle (bias) source level (source level at base of pulse):</p>
+<p class="code">smua.source.levelv = 0</p>
+<p class="bodytext">Idle (bias) source limit (source limit at base of pulse):</p>
+<p class="code">smua.source.limiti = 1</p>
+<p class="bodytext">Pulse source level (source level at top of pulse). Set the source level of SMU 2 ten percent lower than the voltage source limit of SMU 1:</p>
+<p class="code">smua.trigger.source.listv({18})</p>
+<p class="bodytext">Pulse source limit. The pulse current source limit of SMU 2 must be greater than the maximum current supplied by SMU 1. Set the current source limit of SMU 2 to the maximum current level allowed in Region 4:</p>
+<p class="code">smua.trigger.source.limiti = 10</p>
+<p class="bodytext">Output-off mode:</p>
+<p class="code">smua.source.offmode = smua.OUTPUT_NORMAL</p>
+<p class="bodytext">Output-off function:</p>
+<p class="code">smua.source.offfunc = smua.OUTPUT_DCVOLTS</p>
+<p class="bodytext">Normal output-off current limit:</p>
+<p class="code">smua.source.offlimiti = 1e-3</p>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="97054.htm" target="_self">Combining SMU outputs</a></p><p class="relateditem"><a href="97055.htm" target="_self">Pulse characteristics for the 2601B, 2602B, and 2604B</a></p><p class="relateditem"><a href="97057.htm" target="_self">Pulse characteristics for the 2611B, 2612B, 2614B, 2634B, 2635B, and 2636B</a></p><p class="relateditem"><a href="97056.htm" target="_self">Guidelines for combining SMU outputs</a></p><p class="relateditem"><a href="92677.htm" target="_self">Source current using two 2600B instruments in parallel</a></p><p class="relateditem"><a href="92678.htm" target="_self">Source voltage using two 2600B instruments in series</a></p><p class="relateditem"><a href="29768.htm" target="_self">Combining channels in series to output higher voltage</a></p><p class="relateditem"><a href="29769.htm" target="_self">Combining channels in parallel to output higher current</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="92679" />
+<input id="topicDescription" type="hidden" value="Source voltage with extended current using two 2600B instruments in parallel" />
+<input id="footer-modified" type="hidden" value="Last modified: 5/25/2021 9:37:06 AM" />
+</body>
+</html>

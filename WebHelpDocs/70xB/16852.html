@@ -1,0 +1,80 @@
+<html><head><title> scriptVar.autorun </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16851.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16853.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">scriptVar.autorun</h2>
+<p class="bodyzero">This attribute sets a script to autorun.</p>
+<table width="818" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="240"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">No</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="240"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">scriptVar</em>.autorun = <em class="emphasis">state</em></p>
+<p class="iclcode"><em class="emphasis">state = scriptVar.</em>autorun</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">scriptVar</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">The name of the variable that references the script</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">Whether or not the script runs automatically when powered on:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="monospace">&quot;yes&quot;</code>: Script runs automatically</li><li class="tablelistbullet"><code class="monospace">&quot;no&quot;</code>: Script does not run automatically</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Autorun scripts run automatically when the instrument is turned on. You can set any number of scripts to autorun.</p>
+<p class="iclbody">The run order for autorun scripts is arbitrary, so make sure the run order is not important.</p>
+<p class="iclbody">The default value for <span class="monospaceitalic">scriptVar</span><code class="monospace">.autorun</code> depends on how the script was loaded. The default is <code class="monospace">&quot;no&quot;</code> if the script was loaded with <code class="monospace">loadscript</code> or <code class="monospace">script.new()</code>. It is <code class="monospace">&quot;yes&quot;</code> for scripts loaded with <code class="monospace">loadandrunscript</code> or <code class="monospace">script.newautorun()</code>.</p>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="64" width="234" vspace="0" hspace="0" align="middle" border="0"><br>Save the script in nonvolatile memory after setting the <code class="monospace">autorun</code> attribute to save the change when the instrument is turned off.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="705" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="345"><p class="codetable">test5.autorun = &quot;yes&quot;</p>
+<p class="codetable">test5.save()</p>
+</td>
+<td width="360"><p class="tablebodytext">Assume a script named &quot;test5&quot; is in the runtime environment.</p>
+<p class="tablebodytext">The next time the instrument is turned on, &quot;test5&quot; script automatically loads and runs.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody">None</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

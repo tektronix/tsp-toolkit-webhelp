@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Create functions using scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16835.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2391.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t16832" class="heading5">Create functions using scripts</h5>
+<p class="bodytext">You can use scripts to define functions. Scripts that define a function are like any other script: They do not cause any action to be performed on the instrument until they are executed. The global variable of the function does not exist until the script that created the function is executed.</p>
+<p class="bodytext">A script can consist of one or more functions. Once a script has been run, the computer can call functions that are in the script directly.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The following steps use TSB Embedded. You can also use the <code class="monospace">loadscript</code> and <code class="monospace">endscript</code> commands to create the script over the remote interface. See <a id="h18795" class="jump" title="Load a script by sending commands over the remote interface" href="16481.htm" target="_self">Load a script by sending commands over the remote interface</a>.</p>
+<p class="headingprocedure">Steps to create a function using a script:</p>
+<ol class="listnumber"><li class="listnumber">In TSB Embedded, enter a name into the TSP Script box. For example, type <code class="monospace">MakeMyFunction</code>.</li><li class="listnumber">Enter the function as the body of the script. This example concatenates two strings:<p class="listcontinue"><code class="monospace">MyFunction = function (who)</code></p>
+<p class="listcontinue"><code class="monospace">     print (&quot;Hello&quot;.. who)</code></p>
+<p class="listcontinue"><code class="monospace">end</code></p>
+</li><li class="listnumber">Select <strong class="specialbold">Save Script</strong>.</li><li class="listnumber"><code class="monospace">MakeMyFunction</code> is now on the instrument in a global variable with the same name as the script (<code class="monospace">MakeMyFunction</code>). However, the function defined in the script does not yet exist because the script has not been executed.</li><li class="listnumber">Run the script as a function. For this example, send:<p class="listcontinue"><code class="monospace">MakeMyFunction()</code></p>
+<p class="listcontinue">This instructs the instrument to run the script, which creates the <code class="monospace">MyFunction</code> global variable. This variable is of the type &quot;<code class="monospace">function</code>&quot; (see <a id="h25313" class="jump" title="Variable types" href="16831.htm" target="_self">Variable types</a>).</p>
+</li><li class="listnumber">Run the new function with a value.<p class="listcontinue"><code class="monospace">MyFunction(&quot;world&quot;)</code></p>
+<p class="listcontinue">The response message is:</p>
+<p class="listcontinue"><code class="monospace">Hello world.</code></p>
+</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="2422.htm" target="_self">Functions</a></p><p class="relateditem"><a href="16835.htm" target="_self">Create functions using the function keyword</a></p><p class="relateditem"><a href="2391.htm" target="_self">Group commands using the function keyword</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="16832" />
+<input id="topicDescription" type="hidden" value="Create functions using scripts" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 8:55:52 AM" />
+</body>
+</html>

@@ -1,0 +1,287 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.limit[Y].low.value </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41230.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41233.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41229" class="heading2-icl">dmm.measure.limit[Y].low.value</h2>
+<p class="bodyzero">This attribute specifies the lower limit for limit tests.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">-1 for most functions; see <strong class="specialbold">Details</strong> </p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">lowLimit</em> = dmm.measure.limit[<span class="monospaceitalic">Y</span>].low.value</p>
+<p class="iclcode">dmm.measure.limit[<span class="monospaceitalic">Y</span>].low.value = <em class="emphasis">lowLimit</em></p>
+<p class="iclcode"><em class="emphasis">lowLimit </em>= dmm.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_LIMIT_LOW_<span class="monospaceitalic">Y</span>)</p>
+<p class="iclcode">dmm.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_LIMIT_LOW_<span class="monospaceitalic">Y</span>, <em class="emphasis">lowLimit</em>)</p>
+<p class="iclcode">channel.setdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.<code class="monospace">ATTR_MEAS_LIMIT_LOW_</code><span class="monospaceitalic">Y</span>, <em class="emphasis">lowLimit</em>)</p>
+<p class="iclcode"><span class="monospaceitalic">lowLimit</span> = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.<code class="monospace">ATTR_MEAS_LIMIT_LOW_</code><span class="monospaceitalic">Y</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">lowLimit</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The low limit value of limit <span class="monospaceitalic">Y</span> (u1E+12 to 1E+12)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limit number: <code class="monospace">1</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81857.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_FREQUENCY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_4W_RESISTANCE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_ACV_PERIOD</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_DIODE </p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_DCV_RATIO</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CAPACITANCE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_TEMPERATURE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CONTINUITY</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command sets the lower limit for the limit <span class="monospaceitalic">Y</span> test for the selected measure function. When limit <span class="monospaceitalic">Y</span> testing is enabled, this causes a fail indication to occur when the measurement value is less than this value.</p>
+<p class="iclbody">Default is 0.3 for limit 1 when the diode function is selected. The default for limit 2 for the diode function is &#8211;1.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclbody">This example enables limits 1 and 2 for voltage measurements. Limit 1 is checking for readings to be between 3 and 5 V, while limit&nbsp;2 is checking for the readings to be between 1 and 7 V. The auto clear feature is disabled, so if any reading is outside these limits, the corresponding fail is 1. Therefore, if any one of the fails is 1, analyze the reading buffer data to determine which reading failed the limits.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">-- Set the instrument to measure voltage </p>
+<p class="codetable">dmm.measure.func = dmm.FUNC_DC_VOLTAGE</p>
+<p class="codetable">-- Set the range to 10 V</p>
+<p class="codetable">dmm.measure.range = 10</p>
+<p class="codetable">-- Set the nplc to 0.1</p>
+<p class="codetable">dmm.measure.nplc = 0.1</p>
+<p class="codetable">-- Disable auto clearing for limit 1</p>
+<p class="codetable">dmm.measure.limit[1].autoclear = dmm.OFF</p>
+<p class="codetable">-- Set high limit on 1 to fail if reading exceeds 5 V</p>
+<p class="codetable">dmm.measure.limit[1].high.value = 5</p>
+<p class="codetable">-- Set low limit on 1 to fail if reading is less than 3 V</p>
+<p class="codetable">dmm.measure.limit[1].low.value = 3</p>
+<p class="codetable">--- Set the beeper to sound if the reading exceeds the limits for limit 1</p>
+<p class="codetable">dmm.measure.limit[1].audible = <code class="monospace">dmm.AUDIBLE_FAIL</code></p>
+<p class="codetable">-- Enable limit 1 checking for voltage measurements</p>
+<p class="codetable">dmm.measure.limit[1].enable = dmm.ON</p>
+<p class="codetable">-- Disable auto clearing for limit 2</p>
+<p class="codetable">dmm.measure.limit[2].autoclear = dmm.OFF</p>
+<p class="codetable">-- Set high limit on 2 to fail if reading exceeds 7 V</p>
+<p class="codetable">dmm.measure.limit[2].high.value = 7</p>
+<p class="codetable">-- Set low limit on 2 to fail if reading is less than 1 V</p>
+<p class="codetable">dmm.measure.limit[2].low.value = 1</p>
+<p class="codetable">-- Enable limit 2 checking for voltage measurements</p>
+<p class="codetable">dmm.measure.limit[2].enable = dmm.ON</p>
+<p class="codetable">-- Set the measure count to 50</p>
+<p class="codetable">dmm.measure.count = 50</p>
+<p class="codetable">-- Create a reading buffer that can store 100 readings</p>
+<p class="codetable">LimitBuffer = buffer.make(100)</p>
+<p class="codetable">-- Make 50 readings and store them in LimitBuffer</p>
+<p class="codetable">dmm.measure.read(LimitBuffer)</p>
+<p class="codetable">-- Check if any of the 50 readings were outside of the limits</p>
+<p class="codetable">print(&quot;limit 1 results = &quot; .. dmm.measure.limit[1].fail)</p>
+<p class="codetable">print(&quot;limit 2 results = &quot; .. dmm.measure.limit[2].fail)</p>
+<p class="codetable">-- Clear limit 1 conditions</p>
+<p class="codetable">dmm.measure.limit[1].clear()</p>
+<p class="codetable">-- Clear limit 2 conditions</p>
+<p class="codetable">dmm.measure.limit[2].clear()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Example output that shows all readings are within limit values (all readings between 3 V and 5 V):</p>
+<p class="codetable">limit 1 results = dmm.FAIL_NONE</p>
+<p class="codetable">limit 2 results = dmm.FAIL_NONE</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Example output showing at least one reading failed limit 1 high values (a 6&nbsp;V reading would cause this condition or a reading greater than 5 V but less than 7 V):</p>
+<p class="codetable">limit 1 results = dmm.FAIL_HIGH</p>
+<p class="codetable">limit 2 results = dmm.FAIL_NONE</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Example output showing at least one reading failed limit 1 and 2 low values (a 0.5 V reading would cause this condition or a reading less than 1&nbsp;V):</p>
+<p class="codetable">limit 1 results = dmm.FAIL_LOW</p>
+<p class="codetable">limit 2 results = dmm.FAIL_LOW</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclbody">This example enables limits 1 and 2 for voltage measurements on channels 1 and 2 of slot 1. Limit 1 is checking for readings to be between 3 and 5 V, while limit&nbsp;2 is checking for the readings to be between 1 and 7 V. The auto clear feature is disabled, so if any reading is outside these limits, the corresponding fail is 1. Therefore, if any one of the fails is 1, analyze the reading buffer data to find out which reading failed the limits.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">sampleCount = 50</p>
+<p class="codetable">scanCount = 25</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Set channels 1 and 2 to measure DC voltage.</p>
+<p class="codetable">-- Each has a sample count of 50.</p>
+<p class="codetable">channel.setdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_FUNCTION, dmm.FUNC_DC_VOLTAGE, dmm.ATTR_MEAS_COUNT, sampleCount)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Set the range to 10 V.</p>
+<p class="codetable">channel.setdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_RANGE, 10)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Set up limit 1: Disable auto clearing, set the high limit</p>
+<p class="codetable">-- to fail if reading exceeds 5 V, set low limit to fail if</p>
+<p class="codetable">-- reading is less than 3 V, and enable limit checking.</p>
+<p class="codetable">channel.setdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_LIMIT_AUTO_CLEAR_1, dmm.OFF, dmm.ATTR_MEAS_LIMIT_HIGH_1, 5, dmm.ATTR_MEAS_LIMIT_LOW_1, 3, dmm.ATTR_MEAS_LIMIT_ENABLE_1, dmm.ON)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Set up limit 2: Disable auto clearing, set the high limit</p>
+<p class="codetable">-- to fail if reading exceeds 7 V, set low limit to fail if</p>
+<p class="codetable">-- reading is less than 1 V, and enable limit checking.</p>
+<p class="codetable">channel.setdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_LIMIT_AUTO_CLEAR_2, dmm.OFF, dmm.ATTR_MEAS_LIMIT_HIGH_2, 7, dmm.ATTR_MEAS_LIMIT_LOW_2, 1, dmm.ATTR_MEAS_LIMIT_ENABLE_2, dmm.ON)</p>
+<p class="codetable">-- Set the beeper to sound if the reading exceeds the limits for limit 2.</p>
+<p class="codetable">channel.setdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_LIMIT_AUDIBLE_2, dmm.AUDIBLE_FAIL)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Set the measure count to 50.</p>
+<p class="codetable">channel.setdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_COUNT, 50)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create a standard reading buffer that can store 2500 readings.</p>
+<p class="codetable">LimitBuffer = buffer.make(2 * sampleCount * scanCount, buffer.STYLE_STANDARD)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Make 2500 readings and store them in LimitBuffer.</p>
+<p class="codetable">scan.create(&quot;1:2&quot;)</p>
+<p class="codetable">scan.buffer = LimitBuffer</p>
+<p class="codetable">LimitBuffer.clear()</p>
+<p class="codetable">scan.scancount = scanCount</p>
+<p class="codetable">scan.scaninterval = 1.0</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">trigger.model.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Check to see if any of the readings were outside of the limits.</p>
+<p class="codetable">print(channel.getdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_LIMIT_FAIL_1))</p>
+<p class="codetable">print(channel.getdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_LIMIT_FAIL_2))</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Clear limit 1 conditions</p>
+<p class="codetable">channel.setdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_LIMIT_FAIL_1, dmm.FAIL_NONE)</p>
+<p class="codetable">-- Clear limit 2 conditions</p>
+<p class="codetable">channel.setdmm(&quot;1:2&quot;, dmm.ATTR_MEAS_LIMIT_FAIL_2, dmm.FAIL_NONE)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">printbuffer(1, LimitBuffer.n, LimitBuffer)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Example output that shows all readings are within limit values (all readings between 3 V and 5 V):</p>
+<p class="codetable">limit 1 results = <code class="monospace">dmm</code>.FAIL_NONE</p>
+<p class="codetable">limit 2 results = <code class="monospace">dmm</code>.FAIL_NONE</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Example output showing at least one reading failed limit 1 high values (a 6&nbsp;V reading would cause this condition or a reading greater than 5 V but less than 7 V):</p>
+<p class="codetable">limit 1 results = <code class="monospace">dmm</code>.FAIL_HIGH</p>
+<p class="codetable">limit 2 results = <code class="monospace">dmm</code>.FAIL_NONE</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Example output showing at least one reading failed limit 1 and 2 low values (a 0.5 V reading would cause this condition or a reading less than 1&nbsp;V):</p>
+<p class="codetable">limit 1 results = <code class="monospace">dmm</code>.FAIL_LOW</p>
+<p class="codetable">limit 2 results = <code class="monospace">dmm</code>.FAIL_LOW</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41223" class="jump" title="dmm.digitize.limit[Y].low.value" href="41215.htm" target="_self">dmm.digitize.limit[Y].low.value</a></p>
+<p class="listcommand"><a id="h41211" class="jump" title="dmm.measure.limit[Y].autoclear" href="41208.htm" target="_self">dmm.measure.limit[Y].autoclear</a></p>
+<p class="listcommand"><a id="h41217" class="jump" title="dmm.measure.limit[Y].clear()" href="41212.htm" target="_self">dmm.measure.limit[Y].clear()</a></p>
+<p class="listcommand"><a id="h41232" class="jump" title="dmm.measure.limit[Y].enable" href="41231.htm" target="_self">dmm.measure.limit[Y].enable</a></p>
+<p class="listcommand"><a id="h41218" class="jump" title="dmm.measure.limit[Y].fail" href="41214.htm" target="_self">dmm.measure.limit[Y].fail</a></p>
+<p class="listcommand"><a id="h41910" class="jump" title="dmm.measure.limit[Y].high.value" href="41230.htm" target="_self">dmm.measure.limit[Y].high.value</a></p>
+
+
+<input id="topicId" type="hidden" value="41229" />
+<input id="topicDescription" type="hidden" value="dmm.measure.limit[Y].low.value" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/28/2019 12:26:10 PM" />
+</body>
+</html>

@@ -1,0 +1,153 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.measure.setattribute() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25730.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30560.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t91445" class="heading2-icl">smu.measure.setattribute()</h2>
+<p class="bodyzero">This function allows you to set up a measure function whether or not the function is active.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu.measure.setattribute(<span class="monospaceitalic">function</span>, <span class="monospaceitalic">setting</span>, <span class="monospaceitalic">value</span>)</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage measurement: <code class="monospace"><code class="monospace">smu.FUNC_DC_VOLTAGE</code></code></li><li class="tablelistbullet9pt">Current measurement: <code class="monospace"><code class="monospace">smu.FUNC_DC_CURRENT</code></code> </li><li class="tablelistbullet9pt">Ohms measurement: <code class="monospace"><code class="monospace">smu.FUNC_RESISTANCE</code></code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">setting</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The attribute for the function; refer to <strong class="specialbold">Details</strong> and the tables following the examples</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The attribute value</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The lists following the Example and Also See information show the attributes that are available for each function, with links to the descriptions of the corresponding TSP command descriptions. The options for each attribute are the same as the settings for the TSP commands.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smu.measure.setattribute(smu.FUNC_DC_VOLTAGE, smu.ATTR_MEAS_REL_LEVEL, 0.55)</p>
+<p class="codetable">smu.measure.setattribute(smu.FUNC_DC_VOLTAGE, smu.ATTR_MEAS_LIMIT_HIGH_1, 0.64)</p>
+<p class="codetable">smu.measure.setattribute(smu.FUNC_DC_VOLTAGE, smu.ATTR_MEAS_LIMIT_LOW_1, 0.32)</p>
+<p class="codetable">smu.measure.configlist.create(&quot;MyMeasList&quot;)</p>
+<p class="codetable">smu.measure.configlist.storefunc(&quot;MyMeasList&quot;, <code class="monospace">smu</code>.FUNC_DC_VOLTAGE)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Configure the DC Voltage function settings for the relative offset level, limit 1 high value, and limit 1 low value whether or not DC Voltage is the active function.</p>
+<p class="tablebodytext">Create a configuration list named <code class="monospace"><code class="monospace">MyMeasList</code></code>.</p>
+<p class="tablebodytext">Store the settings for the DC Voltage function in <code class="monospace"><code class="monospace">MyMeasList</code></code> at index 1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h91434" class="jump" title="smu.measure.getattribute()" href="91266.htm" target="_self">smu.measure.getattribute()</a></p>
+<a name="o91279"></a>
+<p class="iclsubheading">Measure options</p>
+<p class="bodytext"><a id="h29421" class="jump" title="smu.measure.autorange" href="29393.htm" target="_self">Autorange</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_RANGE_AUTO</code></code></p>
+<p class="bodytext"><a id="h29433" class="jump" title="smu.measure.autorangehigh" href="29432.htm" target="_self">Autorange high limit</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_RANGE_HIGH</code></code></p>
+<p class="bodytext"><a id="h31440" class="jump" title="smu.measure.autorangelow" href="29423.htm" target="_self">Autorange low limit</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_RANGE_LOW</code></code></p>
+<p class="bodytext"><a id="h91280" class="jump" title="smu.measure.autorangerebound" href="88860.htm" target="_self">Autorange rebound</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_RANGE_REBOUND</code></code></p>
+<p class="bodytext"><a id="h57505" class="jump" title="smu.measure.autozero.enable" href="29048.htm" target="_self">Autozero enable</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_AUTO_ZERO</code></code></p>
+<p class="bodytext"><a id="h41298" class="jump" title="smu.measure.count" href="30505.htm" target="_self">Count</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_COUNT</code></code></p>
+<p class="bodytext"><a id="h31455" class="jump" title="smu.measure.displaydigits" href="28416.htm" target="_self">Display digits</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_DIGITS</code></code></p>
+<p class="bodytext"><a id="h31436" class="jump" title="smu.measure.nplc" href="29064.htm" target="_self">NPLC</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_NPLC</code></code></p>
+<p class="bodytext"><a id="h31450" class="jump" title="smu.measure.offsetcompensation" href="29137.htm" target="_self">Offset compensation</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_OFFSET_COMP</code></code></p>
+<p class="bodytext"><a id="h43458" class="jump" title="smu.measure.range" href="29407.htm" target="_self">Range</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_RANGE</code></code></p>
+<p class="bodytext"><a id="h29991" class="jump" title="smu.measure.rel.enable" href="29986.htm" target="_self">Relative offset enable</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_REL_ENABLE</code></code></p>
+<p class="bodytext"><a id="h29992" class="jump" title="smu.measure.rel.level" href="29987.htm" target="_self">Relative offset level</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_REL_LEVEL</code></code></p>
+<p class="bodytext"><a id="h27725" class="jump" title="smu.measure.sense" href="25730.htm" target="_self">Sense (2-wire or 4-wire)</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_SENSE</code></code></p>
+<p class="bodytext"><a id="h32907" class="jump" title="smu.measure.unit" href="30560.htm" target="_self">Unit</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_UNIT</code></code></p>
+<p class="bodytext"><a id="h31442" class="jump" title="smu.measure.userdelay[N]" href="31441.htm" target="_self">User delays</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_USER_DELAY_</code></code><span class="monospaceitalic">N</span>, where <span class="monospaceitalic">N</span> is <code class="monospace"><code class="monospace">1</code></code> to <code class="monospace"><code class="monospace">5</code></code></p>
+<a name="o91446"></a>
+<p class="iclsubheading">Filter options</p>
+<p class="bodytext"><a id="h30079" class="jump" title="smu.measure.filter.count" href="30064.htm" target="_self">Filter count</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_FILTER_COUNT</code></code></p>
+<p class="bodytext"><a id="h30073" class="jump" title="smu.measure.filter.enable" href="30066.htm" target="_self">Filter enable</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_FILTER_ENABLE</code></code></p>
+<p class="bodytext"><a id="h30074" class="jump" title="smu.measure.filter.type" href="30065.htm" target="_self">Filter type</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_FILTER_TYPE</code></code></p>
+<a name="o91447"></a>
+<p class="iclsubheading">Math options (measure)</p>
+<p class="bodytext"><a id="h30181" class="jump" title="smu.measure.math.enable" href="25644.htm" target="_self">Enable math</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_MATH_ENABLE</code></code></p>
+<p class="bodytext"><a id="h41253" class="jump" title="smu.measure.math.mxb.bfactor" href="30107.htm" target="_self">b (offset) value</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_MATH_MXB_BF</code></code></p>
+<p class="bodytext"><a id="h30190" class="jump" title="smu.measure.math.mxb.mfactor" href="30108.htm" target="_self">m (scalar) value</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_MATH_MXB_MF</code></code></p>
+<p class="bodytext"><a id="h27701" class="jump" title="smu.measure.math.format" href="25687.htm" target="_self">Math format</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_MATH_FORMAT</code></code></p>
+<p class="bodytext"><a id="h30202" class="jump" title="smu.measure.math.percent" href="30109.htm" target="_self">Percent</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_MATH_PERCENT</code></code></p>
+<a name="o91449"></a>
+<p class="iclsubheading">Limit options (measure)</p>
+<p class="iclbody"><a id="h46127" class="jump" title="smu.measure.limit[Y].audible" href="41684.htm" target="_self">Limit 1 audible</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_AUDIBLE_1</code></code></p>
+<p class="iclbody"><a id="h41211" class="jump" title="smu.measure.limit[Y].autoclear" href="25682.htm" target="_self">Limit 1 auto clear</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_AUTO_CLEAR_1</code></code></p>
+<p class="iclbody"><a id="h41232" class="jump" title="smu.measure.limit[Y].enable" href="29884.htm" target="_self">Limit 1 enable</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_ENABLE_1</code></code></p>
+<p class="iclbody"><a id="h41218" class="jump" title="smu.measure.limit[Y].fail" href="25684.htm" target="_self">Limit 1 fail</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_FAIL_1</code></code></p>
+<p class="iclbody"><a id="h41910" class="jump" title="smu.measure.limit[Y].high.value" href="25685.htm" target="_self">Limit 1 high value</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_HIGH_1</code></code></p>
+<p class="iclbody"><a id="h41911" class="jump" title="smu.measure.limit[Y].low.value" href="25686.htm" target="_self">Limit 1 low value</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_LOW_1</code></code></p>
+<p class="iclbody"><a id="h46127_2" class="jump" title="smu.measure.limit[Y].audible" href="41684.htm" target="_self">Limit 2 audible</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_AUDIBLE_2</code></code></p>
+<p class="iclbody"><a id="h41211_2" class="jump" title="smu.measure.limit[Y].autoclear" href="25682.htm" target="_self">Limit 2 auto clear</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_AUTO_CLEAR_2</code></code></p>
+<p class="iclbody"><a id="h41232_2" class="jump" title="smu.measure.limit[Y].enable" href="29884.htm" target="_self">Limit 2 enable</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_ENABLE_2</code></code></p>
+<p class="iclbody"><a id="h41218_2" class="jump" title="smu.measure.limit[Y].fail" href="25684.htm" target="_self">Limit 2 fail</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_FAIL_2</code></code></p>
+<p class="iclbody"><a id="h41910_2" class="jump" title="smu.measure.limit[Y].high.value" href="25685.htm" target="_self">Limit 2 high value</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_HIGH_2</code></code></p>
+<p class="iclbody"><a id="h41911_2" class="jump" title="smu.measure.limit[Y].low.value" href="25686.htm" target="_self">Limit 2 low value</a>: <code class="monospace"><code class="monospace">smu.ATTR_MEAS_LIMIT_LOW_2</code></code></p>
+
+
+<input id="topicId" type="hidden" value="91445" />
+<input id="topicDescription" type="hidden" value="smu.measure.setattribute()" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/1/2019 11:36:04 AM" />
+</body>
+</html>

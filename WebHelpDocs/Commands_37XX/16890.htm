@@ -1,0 +1,137 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16240.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16633.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16890" class="heading2-icl">scan.add()</h2>
+<p class="bodyzero">This function adds channels to the scan list.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">scan.add(&quot;<em class="emphasis">channelList</em>&quot;)</p>
+<p class="iclcode">scan.add(&quot;<em class="emphasis">channelList</em>&quot;, &quot;<em class="emphasis">dmmConfig</em>&quot;)</p>
+<p class="iclcode">scan.add(&quot;<em class="emphasis">channelList</em>&quot;, <em class="emphasis">width</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">String specifying channels to add using normal channel list syntax</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">dmmConfig</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">String listing the DMM configuration to use with items in <span class="monospaceitalic">channelList</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">width</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Value that specifies the width of the channel read to use with items in<span class="monospaceitalic"> channelList</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Use this function to add channels and channel patterns to the present scan list. If the scan list does not exist, it also creates a scan list. See <code class="monospace">scan.create()</code> for information about creating a scan list.</p>
+<p class="iclbody">Channels and channel patterns added using this command are added to the end of the present list (appended) in the same order as specified in the channel list. In addition, the added channels are scanned in the order specified in <span class="monospaceitalic">channelList</span>. Specifying multiple channels adds multiple steps to the scan.</p>
+<p class="iclbody">The configuration of each channel or channel pattern, which is associated with <code class="monospace">dmm.setconfig()</code> and <code class="monospace">dmm.getconfig()</code>, is used unless the optional <span class="monospaceitalic">dmmConfig</span> parameter is specified. Specifying the <span class="monospaceitalic">dmmConfig</span> parameter temporarily overrides the configuration associated with the channel or channel pattern. Specifying <span class="monospaceitalic">dmmConfig</span> does not modify the assigned configuration of a channel or channel pattern.</p>
+<p class="iclbody">The scan list of channels (or channel patterns) is not updated if an error occurs during processing of the function. However, steps that were already added to the scan list are updated even if an error is detected, because each channel is added as a separate step when you add multiple channels to <span class="monospaceitalic">channelList</span>.</p>
+<p class="iclbody">For digital I/O or totalizer channels, each created scan step instructs the scan to read the selected channel and then save the value into the specified reading buffer. If you do not specify a reading buffer, the channel is read but the value is not saved.</p>
+<p class="iclbody">The <span class="monospaceitalic">width</span> parameter is valid for digital I/O type channels. Widths of 1, 2, 3, or 4 are supported. If specified, the scan can read up to four consecutive channels simultaneously, and then saves the resulting value into the specified reading buffer.</p>
+<p class="iclbody">DAC channels are not supported.</p>
+<p class="iclbody">Measurement timestamps may vary from channel read timestamps because of the way different channel types generate reading buffer timestamps.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.create(&quot;3001:3010&quot;, &quot;DCV&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">For this example, assume <code class="monospace">DCV</code> is a previously defined user configuration for dc volts. Clears the old scan list and creates a new scan list with each channel (1 to 10 on slot 3) using DCV as the overriding DMM configuration.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.add(&quot;3001:3010&quot;, &quot;2wire&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">For this example, assume <code class="monospace">2wire</code> is a previously defined user configuration for 2-wire ohms. Uses <code class="monospace">2wire</code> for all 10 channels and adds them to the end of the existing scan list.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.create(&quot;&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Clears the old scan list and creates a new empty scan list.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 4</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">for chan = 3001, 3010 do</p>
+<p class="codetable">   scan.add(&quot;&quot; .. chan, &quot;DCV&quot;)</p>
+<p class="codetable">   scan.add(&quot;&quot; .. chan, &quot;2wire&quot;)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">For this example, assume <code class="monospace">DCV</code> is a previously defined user dc volts configuration and <code class="monospace">2wire</code> is a previously defined user 2-wire ohms configuration. </p>
+<p class="tablebodytext">Adds channels 3001 through 3010 to the end of the existing scan list. This loops through the channels twice, adding channels to the scan list twice. The first time, it adds <code class="monospace">DCV</code> for a channel. The second time, it adds <code class="monospace">2wire</code> for that channel. The first parameter <code class="monospace">(&quot;&quot; .. chan)</code> converts the <code class="monospace">chan</code> number to a string.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1139" class="jump" title="scan.create()" href="16892.htm" target="_self">scan.create()</a></p>
+<p class="listcommand"><a id="h909" class="jump" title="dmm.getconfig()" href="16031.htm" target="_self">dmm.getconfig()</a></p>
+<p class="listcommand"><a id="h883" class="jump" title="dmm.setconfig()" href="16067.htm" target="_self">dmm.setconfig()</a></p>
+<p class="listcommand">Reading buffers</p>
+<p class="listcommand">Scanning and triggering</p>
+
+

@@ -1,0 +1,79 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="20200.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16053.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16052" class="heading2-icl">dmm.nplc</h2>
+<p class="bodyzero">This attribute sets the integration rate in line cycles for the DMM for the function selected by <code class="monospace">dmm.func</code>.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">1.000000E+000</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.nplc</p>
+<p class="iclcode">dmm.nplc = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The integration rate in line cycles:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">60 Hz: 0.0005 to 15</li><li class="tablelistbullet9pt">50 Hz: 0.0005 to 12</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is not applicable for <code class="monospace">&quot;frequency&quot;</code>, <code class="monospace">&quot;period</code>&quot;, and <code class="monospace">&quot;nofunction&quot;</code>. If you query this attribute for one of these functions, <code class="monospace">nil</code> is returned. Note that &quot;continuity&quot; is fixed at 6.000000E-003 and cannot be changed.</p>
+<p class="iclbody">The setting for NPLC may be adjusted based on what the DMM supports. Therefore, after setting the NPLC, query the value to see if it was adjusted.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">For <code class="monospace">dmm.nplc</code> settings that are less than 0.2, sending <code class="monospace">dmm.AUTOZERO_ONCE</code> results in significant delays. For example, the delay time at an NPLC of 0.0005 is 2.75&nbsp;s. The delay time at 0.199 is 5.45&nbsp;s.</p>
+<p class="iclbody">An error is generated if the command is used when <code class="monospace">dmm.func</code> is set to <code class="monospace">&quot;frequency&quot;</code>, <code class="monospace">&quot;period&quot;</code>, <code class="monospace">&quot;continuity&quot;</code>, or <code class="monospace">&quot;nofunction&quot;</code>.</p>
+<p class="iclbody">The NPLC setting is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to the previous function, the NPLC setting you set previously is retained.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.func = &quot;twowireohms&quot;</p>
+<p class="codetable">dmm.nplc = 0.5</p>
+<p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.nplc = 0.1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set the NPLC for 2-wire ohms to 0.5, then set the NPLC for DC volts to 0.1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h908" class="jump" title="dmm.aperture" href="15969.htm" target="_self">dmm.aperture</a></p>
+<p class="listcommand"><a id="h1420" class="jump" title="dmm.autozero" href="15977.htm" target="_self">dmm.autozero</a></p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+
+

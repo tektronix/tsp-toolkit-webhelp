@@ -1,0 +1,76 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16044.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16046.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16045" class="heading2-icl">dmm.math.mxb.mfactor</h2>
+<p class="bodyzero">This attribute specifies the scale factor, m, for the y = mx + b math operation.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">1.000000E+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">scaleFactor</span> = dmm.math.mxb.mfactor</p>
+<p class="iclcode">dmm.math.mxb.mfactor = <span class="monospaceitalic">scaleFactor</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">scaleFactor</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The scale factor; valid range is <span class="symbols">-</span>4294967295 to <span class="symbols">+</span>4294967295</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This is not available for <code class="monospace">&quot;nofunction&quot;</code>. If command is queried when <code class="monospace">&quot;nofunction&quot;</code> is selected, nil is returned. If it is written when <code class="monospace">&quot;nofunction&quot;</code> is selected, an error is returned.</p>
+<p class="iclbody">This command sets the scale factor (m) for an mx + b operation for the selected measurement function.</p>
+<p class="iclbody">The mx + b math operation lets you manipulate normal display readings (x) mathematically according to the following calculation:</p>
+<p class="bodytextindent"><em class="emphasis">y = mx + b</em></p>
+<p class="iclbody">Where: </p>
+<ul class="listbullet"><li class="listbullet"><em class="emphasis">y</em> is the displayed result</li><li class="listbullet"><em class="emphasis">m</em> is a user-defined constant for the scale factor</li><li class="listbullet"><em class="emphasis">x</em> is the measurement reading (if you are using a relative offset, this is the measurement with relative offset applied)</li><li class="listbullet"><em class="emphasis">b</em> is the user-defined constant for the offset factor</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="348"><p class="codetable">dmm.math.mxb.mfactor = 0.80</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="246"><p class="tablebodytext">Sets the scale factor for the mx +b operation to 0.80.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Math calculations</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h894" class="jump" title="dmm.math.format" href="16043.htm" target="_self">dmm.math.format</a></p>
+<p class="listcommand"><a id="h896" class="jump" title="dmm.math.mxb.bfactor" href="16044.htm" target="_self">dmm.math.mxb.bfactor</a></p>
+
+

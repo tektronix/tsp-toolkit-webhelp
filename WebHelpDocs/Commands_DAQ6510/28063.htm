@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> format.data </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="28048.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14808.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t28063" class="heading2-icl">format.data</h2>
+<p class="bodyzero">This attribute sets the data format for data that is printed using the <code class="monospace">printnumber()</code> and <code class="monospace">printbuffer()</code> functions.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">format.ASCII</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = format.data</p>
+<p class="iclcode">format.data = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The format to use for data, set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">ASCII format: <code class="monospace">format.ASCII</code></li><li class="tablelistbullet9pt">Single-precision IEEE Std 754 binary format: <code class="monospace">format.REAL32</code></li><li class="tablelistbullet9pt">Double-precision IEEE Std 754 binary format: <code class="monospace">format.REAL64</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can control the precision of numeric values with the <code class="monospace">format.asciiprecision</code> attribute. If <code class="monospace">format.REAL32</code> or <code class="monospace">format.REAL64</code> is selected, you can select the byte order with the <code class="monospace">format.byteorder</code> attribute.</p>
+<p class="iclbody">The IEEE Std 754 binary formats use four bytes for single-precision values and eight bytes for double-precision values.</p>
+<p class="iclbody">When data is written with any of the binary formats, the response message starts with <code class="monospace">#0</code> and ends with a new line. When data is written with the ASCII format, elements are separated with a comma and space.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">format.asciiprecision = 10</p>
+<p class="codetable">x = 3.14159265</p>
+<p class="codetable">format.data = format.ASCII</p>
+<p class="codetable">printnumber(x)</p>
+<p class="codetable">format.data = format.REAL64</p>
+<p class="codetable">printnumber(x)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Output a number represented by <span class="monospaceitalic">x</span> in ASCII using a precision of 10, then output the same number in binary using double precision format.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">3.141592650e+00</p>
+<p class="codetable">#0ñÔÈSû!   @</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14804" class="jump" title="format.asciiprecision" href="28056.htm" target="_self">format.asciiprecision</a></p>
+<p class="listcommand"><a id="h14805" class="jump" title="format.byteorder" href="28048.htm" target="_self">format.byteorder</a></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+<p class="listcommand"><a id="h15060" class="jump" title="printnumber()" href="15058.htm" target="_self">printnumber()</a></p>
+
+
+<input id="topicId" type="hidden" value="28063" />
+<input id="topicDescription" type="hidden" value="format.data" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 3:19:05 PM" />
+</body>
+</html>

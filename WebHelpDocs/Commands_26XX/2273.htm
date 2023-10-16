@@ -1,0 +1,139 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Script command equivalents </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2271.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2274.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t2273" class="heading2">Script command equivalents</h2>
+<p class="bodytext">The TSP commands that can be included in scripts that are equivalent to the common commands are defined in the table&nbsp;below.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="120"><p class="tableheading">Common command</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="480"><p class="tableheading">Script command equivalent</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*CLS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">status.reset()</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*ESE?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">print(tostring(status.standard.enable))</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*ESE <span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">status.standard.enable = </code><span class="monospaceitalic">mask</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*ESR?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">print(tostring(status.standard.event))</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*IDN?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">print([[Keithley Instruments, Model]]..localnode.model..[[, ]]..localnode.serialno.. [[, ]]..localnode.revision)</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*OPC?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">waitcomplete() print([[1]])</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*OPC</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">opc()</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*RST</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">reset()</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*SRE?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">print(tostring(status.request_enable))</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*SRE <span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">status.request_enable = </code><span class="monospaceitalic">mask</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*STB?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">print(tostring(status.condition))</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*TRG</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext">Not available</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*TST?</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">print([[0]])</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">*WAI</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="480"><p class="tablebodytext"><code class="monospace">waitcomplete()</code></p>
+</td>
+</tr>
+
+</table>
+<p class="spacing"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="19498.htm" target="_self">Common commands</a></p><p class="relateditem"><a href="2271.htm" target="_self">Common command summary</a></p><p class="relateditem"><a href="2274.htm" target="_self">Command reference</a></p><p class="relateditem"><a href="12738.htm" target="_self">General bus commands</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="2273" />
+<input id="topicDescription" type="hidden" value="Script command equivalents" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:01:33 PM" />
+</body>
+</html>

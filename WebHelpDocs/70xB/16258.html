@@ -1,0 +1,97 @@
+<html><head><title> scan.trigger.arm.stimulus </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16257.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16259.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">scan.trigger.arm.stimulus</h2>
+<p class="bodyzero">This attribute determines which event starts the scan.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="202"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="172"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Scan reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="202"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="172"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">eventID</em> = scan.trigger.arm.stimulus</p>
+<p class="iclcode">scan.trigger.arm.stimulus = <em class="emphasis">eventID</em></p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="codetable"><span class="monospaceitalic">eventID</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="570"><p class="tablebodytext">Trigger stimulus used for the channel action (arm layer); see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute selects which events cause the arm event detector to enter the detected state.</p>
+<p class="iclbody">Set this attribute to 0 to start the scan without waiting for an event. <span class="monospaceitalic">eventID</span> may be one of the following trigger event IDs:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code>: An edge (either rising, falling, or either based on the configuration of the line) on the digital input line</li><li class="listbullet2"><code class="monospace">display.trigger.EVENT_ID</code>: The trigger key on the front panel is pressed</li><li class="listbullet2"><code class="monospace">trigger.EVENT_ID</code>: A *trg message on the active command interface. If GPIB is the active command interface, a GET message will also generate this event</li><li class="listbullet2"><code class="monospace">trigger.blender[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code>: A combination of configured events has occurred</li><li class="listbullet2"><code class="monospace">trigger.timer[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code>: A delay expired</li><li class="listbullet2"><code class="monospace">tsplink.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID</code>: An edge (either rising, falling, or either based on the configuration of the line) on the tsplink trigger line</li><li class="listbullet2"><code class="monospace">lan.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].EVENT_ID:</code> Event identifier use to route the LAN trigger to other subsystems (using stimulus properties)</li><li class="listbullet2"><code class="monospace">scan.trigger.EVENT_SCAN_READY</code>: Scan Ready Event.</li><li class="listbullet2"><code class="monospace">scan.trigger.EVENT_SCAN_START</code>: Scan Start Event</li><li class="listbullet2"><code class="monospace">scan.trigger.EVENT_CHANNEL_READY</code>: Channel Ready Event</li><li class="listbullet2"><code class="monospace">scan.trigger.EVENT_SCAN_COMP</code>: Scan Complete Event</li><li class="listbullet2"><code class="monospace">scan.trigger.EVENT_IDLE</code>: Idle Event<p class="note"><img src="notehelp.png" alt="NOTE" height="64" width="234" vspace="0" hspace="0" align="middle" border="0"></p>
+<p class="note">Use one of the text trigger event IDs (for example, <code class="monospace">digio.trigger[N].EVENT_ID)</code> to set the stimulus value rather than the numeric value. Doing this will make the code compatible for future upgrades.</p>
+</li></ul><p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="488"><p class="codetable">scan.trigger.arm.stimulus =    scan.trigger.EVENT_SCAN_READY</p>
+</td>
+<td width="255"><p class="tablebodytext">Sets trigger stimulus of the arm event detector to scan ready event.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="495"><p class="codetable">scan.trigger.arm.stimulus = 0</p>
+</td>
+<td width="248"><p class="tablebodytext">The scan begins immediately.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="495"><p class="codetable">scan.trigger.arm.stimulus = digio.trigger[3].EVENT_ID</p>
+</td>
+<td width="248"><p class="tablebodytext">The scan begins when the instrument receives a signal from digital I/O line 3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h16285" class="jumptemplate" title="scan.trigger.arm.clear()" href="16256.html" target="_self">scan.trigger.arm.clear()</a></p>
+<p class="iclbody"><a id="h16286" class="jumptemplate" title="scan.trigger.arm.set()" href="16257.html" target="_self">scan.trigger.arm.set()</a></p>
+<p class="iclbody">Trigger model</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

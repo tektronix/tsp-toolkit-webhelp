@@ -1,0 +1,113 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16012.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16014.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16013" class="heading2-icl">dmm.calibration.verifydate</h2>
+<p class="bodyzero">This attribute sets or queries the calibration verification date in UTC format (number of seconds since January 1, 1970).</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">DMM nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">calibrationVerificationDate</span> = dmm.calibration.verifydate</p>
+<p class="iclcode">dmm.calibration.verifydate = <span class="monospaceitalic">os.time()</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="342"><p class="codetable"><span class="monospaceitalic">calibrationVerificationDate</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="252"><p class="tablebodytext">The number of seconds since January 1, 1970 when the last calibration verify date was set</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="342"><p class="codetable"><span class="monospaceitalic">os.time({year=yyyy, month=m, day=d})</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="252"><p class="tablebodytext">Specifies the date; if a value is not specified, sets the verification date to the present date of the instrument</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When using the <code class="monospace">os.time()</code> function:</p>
+<ul class="listbullet"><li class="listbullet">If no parameters are specified, the current date and time of the instrument is used. See example&nbsp;4 below.</li><li class="listbullet">Use a table with entries for year as <span class="monospaceitalic">yyyy</span>, month as <span class="monospaceitalic">mm</span> and day as <span class="monospaceitalic">dd</span> to specify a date. See example&nbsp;3 below.</li></ul><p class="iclbody">See <a class="jump" title="" href="https://www.lua.org" target="_self">Lua documentation</a> for the formatting options that are available for <code class="monospace">os.date</code>. </p>
+<p class="iclbody">This command can only be set when calibration is unlocked.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="396"><p class="codetable">print(os.date(&quot;%m/%d/%Y&quot;, dmm.calibration.verifydate))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Assume the system date is July 4, 2007 for this example; queries the calibration verification date and formats the response as mm/dd/yyyy:</p>
+<p class="tablebodytext"><code class="monospace">07/04/2007</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="396"><p class="codetable">print(os.date(&quot;%x&quot;, dmm.calibration.verifydate))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Assume the system date is July 4, 2007 for this example; queries the date and formats the response as mm/dd/yy:</p>
+<p class="tablebodytext"><code class="monospace">07/04/07</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="396"><p class="codetable">dmm.calibration.verifydate = os.time{year=2007, month=7, day = 4}</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Set the calibration verification date to July 4, 2007.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 4</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="396"><p class="codetable">dmm.calibration.verifydate = os.time()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Set the calibration verification to the present date of the instrument.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h16076" class="jump" title="dmm.adjustment.date" href="15968.htm" target="_self">dmm.adjustment.date</a></p>
+<p class="listcommand"><a id="h16091" class="jump" title="dmm.calibration.unlock()" href="16012.htm" target="_self">dmm.calibration.unlock()</a></p>
+<p class="listcommand"><a class="jump" title="" href="https://www.lua.org" target="_self">Lua documentation</a></p>
+
+

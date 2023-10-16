@@ -1,0 +1,209 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> status.standard.enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="32386.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31653.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t30525" class="heading2-icl">status.standard.enable</h2>
+<p class="bodyzero">This attribute reads or sets the bits in the Status Enable register of the Standard Event Register.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">status.preset()</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">standardRegister</em> = status.standard.enable</p>
+<p class="iclcode">status.standard.enable = <em class="emphasis">standardRegister</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">standardRegister</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The value of the Status Enable register of the Standard Event Register (0 to 255)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When a bit in the Status Enable register is set on and the corresponding bit in the Standard Event Status register is set on, the ESB bit of the Status Byte Register is set to on.</p>
+<p class="iclbody">To set a bit on, send the constant or value of the bit as the <span class="monospaceitalic">standardRegister</span> parameter.</p>
+<p class="iclbody">You can set the bit as a constant or a numeric value, as shown in the table below. To set more than one bit of the register, you can send multiple constants with + between them. You can also set <span class="monospaceitalic">standardRegister</span> to the sum of their decimal weights. For example, to set bits B0 and B2, set <span class="monospaceitalic">standardRegister</span> to 5 (which is the sum of 1 + 4). You can also send:</p>
+<p class="iclbody"><code class="monospace">status.standard.enable = status.standard.OPC + status.standard.QYE</code></p>
+<p class="iclbody">When zero (0) is returned, no bits are set. You can also send 0 to clear all bits.</p>
+<p class="iclbody">The instrument returns a decimal value that corresponds to the binary-weighted sum of all bits set in the register.</p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" width="54"><p class="tableheading">Bit</p>
+</th>
+<th style="border:1px solid #010101;" width="60"><p class="tableheading">Decimal value</p>
+</th>
+<th style="border:1px solid #010101;" width="192"><p class="tableheading">Constant</p>
+</th>
+<th style="border:1px solid #010101;" width="288"><p class="tableheading">When set, indicates the following has occurred:</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="codetable">status.standard.OPC</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">All pending selected instrument operations are complete and the instrument is ready to accept new commands. The bit is set in response to an <a id="h21122" class="jump" title="*OPC" href="59255.htm" target="_self">*OPC</a> command or TSP <a id="h31654" class="jump" title="opc()" href="29846.htm" target="_self">opc()</a> function.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">1</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="codetable">status.standard.QYE</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Attempt to read data from an empty Output Queue.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">3</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">5</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">6</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">64</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="tablebodytext">Not used</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytext">7</p>
+</td>
+<td style="border:1px solid #010101;" width="60"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #010101;" width="192"><p class="codetable">status.standard.PON</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">The instrument has been turned off and turned back on since the last time this register was read.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">Command errors include:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">IEEE Std 488.2 syntax error:</strong> The instrument received a message that does not follow the defined syntax of the IEEE Std 488.2 standard.</li><li class="listbullet"><strong class="specialbold">Semantic error:</strong> The instrument received a command that was misspelled or received an optional IEEE Std 488.2 command that is not implemented in the instrument.</li><li class="listbullet"><strong class="specialbold">GET error:</strong> The instrument received a Group Execute Trigger (GET) inside a program message.</li></ul><p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">standardRegister = status.standard.OPC + status.standard.QYE</p>
+<p class="codetable">status.standard.enable = standardRegister</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Uses constants to set the OPC and QYE bits of the standard event status enable register.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">-- decimal 5 = binary 0000 0101</p>
+<p class="codetable">standardRegister = 5</p>
+<p class="codetable">status.standard.enable = standardRegister</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Uses a decimal value to set the OPC and QYE bits of the standard event status enable register.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h19483" class="jump" title="Standard Event Register" href="59283.htm" target="_self">Standard Event Register</a></p>
+
+
+<input id="topicId" type="hidden" value="30525" />
+<input id="topicDescription" type="hidden" value="status.standard.enable" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 2:01:56 PM" />
+</body>
+</html>

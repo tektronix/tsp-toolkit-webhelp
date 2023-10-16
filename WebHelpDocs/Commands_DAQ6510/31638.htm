@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> status.operation.event </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="31637.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30523.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31638" class="heading2-icl">status.operation.event</h2>
+<p class="bodyzero">This attribute reads the Operation Event Register of the status model.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">operationRegister</em> = status.operation.event</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext"><span class="monospaceitalic">operationRegister</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The status of the operation status register</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute reads the operation event register of the status model.</p>
+<p class="iclbody">The instrument returns a decimal value that corresponds to the binary-weighted sum of all bits set in the register.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">status.request_enable = status.OSB </p>
+<p class="codetable">status.operation.setmap(0, 4918, 4917)</p>
+<p class="codetable">status.operation.enable = 1</p>
+<p class="codetable">defbuffer1.clear()</p>
+<p class="codetable">defbuffer1.fillmode = buffer.FILL_ONCE</p>
+<p class="codetable">defbuffer1.capacity = 10</p>
+<p class="codetable">dmm.measure.count = 10</p>
+<p class="codetable">dmm.measure.read()</p>
+<p class="codetable">print(status.operation.event)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set bits in the Status Request Enable Register to record an enabled event in the Operation Status Register.</p>
+<p class="tablebodytext">Map event number 4918 (a default buffer is full) to set bit 0 in the Operation Event Register and event number 4917 (a default buffer is empty) to clear bit 0.</p>
+<p class="tablebodytext">Clear <code class="monospace">defbuffer1</code>.</p>
+<p class="tablebodytext">Set <code class="monospace">defbuffer1</code> to fill once.</p>
+<p class="tablebodytext">Resizes <code class="monospace">defbuffer1</code> to 10 readings. </p>
+<p class="tablebodytext">Sets the measure count to 10 readings and makes a measurement. </p>
+<p class="tablebodytext">Reads the operation event register.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31904" class="jump" title="Operation Event Register" href="59267.htm" target="_self">Operation Event Register</a></p>
+
+
+<input id="topicId" type="hidden" value="31638" />
+<input id="topicDescription" type="hidden" value="status.operation.event" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 1:42:44 PM" />
+</body>
+</html>

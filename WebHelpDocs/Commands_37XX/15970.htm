@@ -1,0 +1,102 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15969.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15975.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15970" class="heading2-icl">dmm.appendbuffer()</h2>
+<p class="bodyzero">This function appends data from the reading buffer to a file on the USB flash drive. If no file exists, this function creates a file.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">dmm.appendbuffer(&quot;<span class="monospaceitalic">bufferVar</span>&quot;, &quot;<span class="monospaceitalic">fileName</span>&quot;)</p>
+<p class="iclcode">dmm.appendbuffer(&quot;<span class="monospaceitalic">bufferVar</span>&quot;, &quot;<span class="monospaceitalic">fileName</span>&quot;, timeFormat)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="438"><p class="tablebodytext">A string with the name of a DMM reading buffer from which you want to append data to the specified file</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">fileName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="438"><p class="tablebodytext">A string with the file name of the file on the USB flash drive to which reading buffer data will be appended</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">timeFormat</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="438"><p class="tablebodytext">How the date and time information should be saved. The values for <span class="monospaceitalic">timeFormat</span> are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">dmm.buffer.SAVE_RELATIVE_TIME:</code> Saves relative timestamps only</li><li class="tablelistbullet9pt"><code class="monospace">dmm.buffer.SAVE_FORMAT_TIME:</code> Saves dates, times and fractional seconds. This is the default if no time format is specified</li><li class="tablelistbullet9pt"><code class="monospace">dmm.buffer.SAVE_RAW_TIME:</code> Saves seconds and fractional seconds only</li><li class="tablelistbullet9pt"><code class="monospace">dmm.buffer.SAVE_TIMESTAMP_TIME:</code> Saves only timestamps</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">For options that save more than one item of time information, each item is comma delimited. For example, the default format is <code class="monospace">&lt;date&gt;</code>, <code class="monospace">&lt;time&gt;</code>, and <code class="monospace">&lt;fractional seconds&gt;</code> for each reading, separated by commas.</p>
+<p class="iclbody">The file extension <code class="monospace">.csv</code> is appended to the filename if necessary. Any file extension other than <code class="monospace">.csv</code> generates errors.</p>
+<p class="iclbody">Because <code class="monospace">dmm.appendbuffer()</code> appends data, it does not include header information. The <code class="monospace">dmm.savebuffer()</code> function does included header information.</p>
+<p class="iclbody">The index column entry starts at 1 for each append operation, which is also what the <code class="monospace">dmm.savebuffer()</code> command does.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The reading buffer files saved to the USB flash drive will always have an extension of <code class="monospace">.csv</code>.</p>
+<p class="iclbody">Errors are generated:</p>
+<ul class="listbullet"><li class="listbullet">If the reading buffer does not exist.</li><li class="listbullet">If the reading buffer is not a DMM buffer.</li><li class="listbullet">If the destination filename is not specified correctly.</li><li class="listbullet">If the file extension is not set to <code class="monospace">.csv</code>. (You can leave the file extension blank.)</li></ul><p class="iclbody">Examples of valid destination file names:</p>
+<p class="code">dmm.appendbuffer(&quot;bufferVar&quot;, &quot;/usb1/myData&quot;)</p>
+<p class="code">dmm.appendbuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.csv&quot;)</p>
+<p class="iclbody">Invalid destination filename examples:</p>
+<p class="code">dmm.appendbuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.&quot;)</p>
+<p class="iclbody">&#8212; The period is not followed by the <code class="monospace">.csv</code> extension.</p>
+<p class="code">dmm.appendbuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.txt&quot;)</p>
+<p class="iclbody">&#8212; The only allowed extension is <code class="monospace">.csv</code>. If <code class="monospace">.csv</code> is not assigned, it is automatically added.</p>
+<p class="code">dmm.appendbuffer(&quot;bufferVar&quot;, &quot;/usb1/myData.txt.csv&quot;)</p>
+<p class="iclbody">&#8212; Two periods in the file name <code class="monospace">(myData_txt.csv</code> would be correct).</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.<code class="monospace">append</code>buffer(&quot;bufferVar&quot;, &quot;/usb1/myData.csv&quot;)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Appends readings from a valid DMM buffer named <code class="monospace">bufferVar</code> with default time information to a file named <code class="monospace">myData.csv </code>on the USB flash drive.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.appendbuffer(&quot;bufferVar&quot;, &quot;/usb1/myDataRel.csv&quot;, dmm.buffer.SAVE_RELATIVE_TIME)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Appends readings from <code class="monospace">bufferVar</code> with relative timestamps to a file named <code class="monospace">myDataRel.csv</code> on the USB flash drive.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h903" class="jump" title="dmm.makebuffer()" href="16048.htm" target="_self">dmm.makebuffer()</a></p>
+<p class="listcommand"><a id="h2463" class="jump" title="dmm.savebuffer()" href="16066.htm" target="_self">dmm.savebuffer()</a></p>
+
+

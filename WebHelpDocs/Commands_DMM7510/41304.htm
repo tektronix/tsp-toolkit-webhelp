@@ -1,0 +1,243 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.measure.range </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41303.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="40948.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41304" class="heading2-icl">dmm.measure.range</h2>
+<p class="bodyzero">This attribute determines the positive full-scale measure range.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">rangeValue</span> = dmm.measure.range</p>
+<p class="iclcode">dmm.measure.range<code class="monospace"><code class="monospace"> = </code></code><span class="monospaceitalic">rangeValue</span></p>
+<p class="iclcode"><span class="monospaceitalic">rangeValue</span> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_RANGE)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_MEAS_RANGE, <span class="monospaceitalic">rangeValue</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">rangeValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">See <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Functions</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_RESISTANCE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_ACV_FREQUENCY</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_VOLTAGE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_4W_RESISTANCE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_ACV_PERIOD</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_DC_CURRENT</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_DIODE</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable">dmm.FUNC_DCV_RATIO</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable">dmm.FUNC_AC_CURRENT</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="186"><p class="codetable">dmm.FUNC_CAPACITANCE</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_CURRENT</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="grayedout">dmm.FUNC_TEMPERATURE</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="186"><p class="codetable"><span class="grayedout">dmm.FUNC_CONTINUITY</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="grayedout">dmm.FUNC_DIGITIZE_VOLTAGE</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can assign any real number using this command. The instrument selects the closest fixed range that is large enough to measure the entered number. For example, for current measurements, if you expect a reading of approximately 9&nbsp;mA, set the range to 9 mA to select the 10&nbsp;mA range. When you read this setting, you see the positive full-scale value of the measurement range that the instrument is presently using.</p>
+<p class="iclbody">This command is primarily intended to eliminate the time that is required by the instrument to automatically search for a range.</p>
+<p class="iclbody">When a range is fixed, any signal greater than the entered range generates an overrange condition. When an overrange condition occurs, the front panel displays &quot;Overflow&quot; and the remote interface returns <code class="monospace"><code class="monospace">9.9e+37</code></code>.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  When you set a value for the measurement range, the measurement autorange setting is automatically disabled for the selected measurement function (if supported by that function).<br><br>The range for measure functions defaults to autorange for all measure functions. If you switch from a fixed range to autorange, autorange is set to off. The range remains at the fixed range until a measurement is made, at which time the range is set to accommodate the new measurement.</p>
+<p class="iclbody">The following table lists the ranges for each function.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tableheading">If the measurement function is… </p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tableheading">The available ranges are…</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">DC voltage</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">100 mV, 1&nbsp;V, 10&nbsp;V, 100&nbsp;V, 1000&nbsp;V</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">AC voltage</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">100 mV, 1&nbsp;V, 10&nbsp;V, 100&nbsp;V, 700&nbsp;V</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">DC current</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">10 uA, 100 uA, 1&nbsp;mA, 10&nbsp;mA, 100&nbsp;mA, 1&nbsp;A, 3&nbsp;A</p>
+<p class="tablebodytext">10&nbsp;A available for rear terminals</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">AC current</p>
+</td>
+<td style="border-left:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">1&nbsp;mA, 10&nbsp;mA, 100&nbsp;mA, 1&nbsp;A, 3&nbsp;A</p>
+<p class="tablebodytext">10&nbsp;A available for rear terminals</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">2-wire resistance</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">10 Ω, 100 Ω, 1&nbsp;kΩ, 10&nbsp;kΩ, 100&nbsp;kΩ, 1&nbsp;MΩ, 10&nbsp;MΩ, 100&nbsp;MΩ, 1&nbsp;GΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">4-wire resistance with offset compensation off and dry circuit off</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">1 Ω, 10 Ω, 100 Ω, 1&nbsp;kΩ, 10&nbsp;kΩ, 100&nbsp;kΩ, 1&nbsp;MΩ, 10&nbsp;MΩ, 100&nbsp;MΩ, 1&nbsp;GΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">4-wire resistance with offset compensation off and dry circuit on</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">1 Ω, 10 Ω, 100 Ω, 1&nbsp;kΩ, 10&nbsp;kΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">4-wire resistance with offset compensation on and dry circuit off</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">1 Ω, 10&nbsp;Ω, 100 Ω, 1&nbsp;kΩ, 10&nbsp;kΩ, 100&nbsp;kΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">4-wire resistance with offset compensation on and dry circuit on</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">1 Ω, 10 Ω, 100 Ω, 1&nbsp;kΩ, 10&nbsp;kΩ</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">Continuity</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">1&nbsp;kΩ (fixed)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">Diode</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">10&nbsp;V (fixed)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">Capacitance</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">1&nbsp;nF, 10&nbsp;nF, 100&nbsp;nF, 1&nbsp;µF, 10&nbsp;µF, 100&nbsp;µF, 1&nbsp;mF</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="216"><p class="tablebodytext">DC voltage ratio</p>
+</td>
+<td style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="384"><p class="tablebodytext">100 mV, 1&nbsp;V, 10&nbsp;V, 100&nbsp;V, 1000&nbsp;V</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading"> Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">dmm.measure.func = dmm.FUNC_AC_VOLTAGE</p>
+<p class="codetable">dmm.measure.range = 90</p>
+<p class="codetable">print(dmm.measure.range)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Set the range to 90&nbsp;V, which selects the 100&nbsp;V range.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">100</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h46156" class="jump" title="dmm.digitize.range" href="41306.htm" target="_self">dmm.digitize.range</a></p>
+<p class="listcommand"><a id="h43459" class="jump" title="dmm.measure.autorange" href="41117.htm" target="_self">dmm.measure.autorange</a></p>
+
+
+<input id="topicId" type="hidden" value="41304" />
+<input id="topicDescription" type="hidden" value="dmm.measure.range" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 3:06:00 PM" />
+</body>
+</html>

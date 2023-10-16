@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Creating a run configuration </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="24519.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="33306.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t23885" class="heading4">Creating a run configuration</h4>
+<p class="bodytext">A run configuration allows you to download multiple script files to an instrument and execute them as a single script. </p>
+<p class="headingprocedure">To create a run configuration:</p>
+<ol class="listnumber"><li class="listnumber">On the <strong class="specialbold">Run</strong> menu, select <strong class="specialbold">Run Configurations</strong>. The Run Configurations dialog box opens.</li><li class="listnumber">The left pane of the dialog box lists existing run and debug configurations. Select the script where the Run Configuration will be saved.</li><li class="listnumber">Select the <strong class="specialbold">New launch configuration</strong> icon <img id="f24152" src="tsbnewconfigurationicon_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB new configuration icon" height="14" width="14" vspace="0" hspace="0" align="bottom" border="0"> at the top left of the dialog box. By default, a new configuration is created with the name <code class="monospace">New_configuration</code>.<p class="magicfigurecenter"><img id="f24149" src="tsbrunconfigurationsdialogbox_lr.png" class="linkedepsandpngtemplate" alt="Run Configurations dialog box" height="273" width="419" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="listnumber">In the <strong class="specialbold">Name</strong> box, enter the name of your new run configuration.</li><li class="listnumber">Select the <strong class="specialbold">Browse</strong> button next the Project box.</li><li class="listnumber">Select a project from the list of available projects</li><li class="listnumber">Select <strong class="specialbold">OK</strong>.<p class="magicfigurecenter"><img id="f24419" src="tsbprojectselectiondialogbox_lr.png" class="linkedepsandpngtemplate" alt="Project Selection dialog box" height="251" width="220" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="listcontinue">The TSP files for the selected project are added to the Available Project Files list on the Main tab.</p>
+<p class="magicfigurecenter"><img id="f24154" src="tsbavailableprojectfiles_lr.png" class="linkedepsandpngtemplate" alt="Available files for selected project" height="329" width="424" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="listnumber">Select the files you want to add to the run configuration and select <strong class="specialbold">Add</strong> to add them to the Load Order list.<p class="listcontinue">To change the load order of the TSP files, choose the files you want to move and select <strong class="specialbold">Up</strong> or <strong class="specialbold">Down</strong> until the files are in the correct order.</p>
+<p class="magicfigurecenter"><img id="f24156" src="tsbselectfilesloadorder_lr.png" class="linkedepsandpngtemplate" alt="Selected TSP files load order" height="330" width="423" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="listnumber">Select <strong class="specialbold">Apply</strong>.</li><li class="listnumber">Select the <strong class="specialbold">Script Attributes</strong> tab.</li><li class="listnumber">Select one of the following:<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Load and Execute:</strong> If you select this option, which is the default selection, the script automatically loads into the instrument's volatile memory (run-time environment) and executes when you select <strong class="specialbold">Run</strong>.</li><li class="listbullet2"><strong class="specialbold">Load:</strong> If you select this option, the script is loaded into the instrument's volatile memory when you select <strong class="specialbold">Run</strong> but is not executed until you manually run it. To manually run it from the command line in the Instrument Console, type <span class="monospaceitalic">MyConfiguration</span><code class="monospace">.run()</code> (where <span class="monospaceitalic">MyConfiguration</span> is the name of your configuration).<p class="magicfigurecenter"><img id="f24159" src="tsbscriptattributestab_lr.png" class="linkedepsandpngtemplate" alt="Script Attributes tab" height="244" width="290" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul></li><li class="listnumber">In the Storage area of the Script Attributes tab, select <strong class="specialbold">Volatile</strong> or <strong class="specialbold">Non-volatile</strong>. For products that support autorun scripts, if you select Non-volatile, you can select <strong class="specialbold">Auto Run</strong> to have the script run automatically when the instrument is turned on.<br>Note that all scripts are initially stored in the volatile (runtime) memory of the instrument memory and are lost if you turn the instrument power off and then on again. If you want to keep the script on the instrument through a power cycle, select <strong class="specialbold">Non-volatile</strong> storage.</li><li class="listnumber">In the Debug area of the Script Attributes tab, you can select <strong class="specialbold">Generate Debug File</strong>.<br>When you select this option, a Debug subfolder is created in your test folder, and a file with a <code class="monospace">.DBG</code> extension is created in that folder. Note that this is a feature of the Eclipse platform, and you will not use this file to debug your script. It contains all the scripts in your run configuration, so that you can see them together in the order in which they will load.</li><li class="listnumber">Select <strong class="specialbold">Close</strong> or <strong class="specialbold">Run</strong>. The run configuration is added to the run configurations list.</li></ol><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  To run the last used run configuration, select the <strong class="specialbold">Run</strong> icon <img id="f24546" src="tsbruniconsmall_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="TSB Run icon small" height="11" width="11" vspace="0" hspace="0" align="bottom" border="0"> in the main TSB toolbar. To run a different run configuration, right-click in the script editor area and select <strong class="specialbold">Run As &gt; Run Configurations</strong>. Select a different run configuration, and then select <strong class="specialbold">Run </strong>in the Run Configurations dialog box.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="24976.htm" target="_self">Test Script Builder (TSB)</a></p><p class="relateditem"><a href="405.htm" target="_self">Installing the TSB software</a></p><p class="relateditem"><a href="24700.htm" target="_self">Installing the TSB add-in</a></p><p class="relateditem"><a href="407.htm" target="_self">Using Test Script Builder (TSB)</a></p><p class="relateditem"><a href="17049.htm" target="_self">Project navigator</a></p><p class="relateditem"><a href="23845.htm" target="_self">Script editor</a></p><p class="relateditem"><a href="33264.htm" target="_self">Outline view</a></p><p class="relateditem"><a href="417.htm" target="_self">Programming interaction</a></p><p class="relateditem"><a href="23859.htm" target="_self">Connecting an instrument in TSB</a></p><p class="relateditem"><a href="23939.htm" target="_self">Creating a new TSP project</a></p><p class="relateditem"><a href="24592.htm" target="_self">Adding a new TSP file to a project</a></p><p class="relateditem"><a href="24519.htm" target="_self">Running a script</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="23885" />
+<input id="topicDescription" type="hidden" value="Creating a run configuration" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/10/2019 11:44:02 AM" />
+</body>
+</html>

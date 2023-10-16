@@ -1,0 +1,86 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15151.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15153.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15152" class="heading2-icl">smuX.source.outputenableaction</h2>
+<p class="bodyzero">This attribute controls output enable action of the source.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">0 (smu<span class="monospaceitalic">X</span>.OE_NONE)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">outputAction</span><code class="monospace"><code class="monospace"> = </code></code>smu<span class="monospaceitalic">X</span>.<code class="monospace"><code class="monospace">source.outputenableaction</code></code></p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.source.o<code class="monospace"><code class="monospace">utputenableaction = </code></code><span class="monospaceitalic">outputAction</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">outputAction</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The output enable action of the source; set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">0</code></code> or <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic">X</span><code class="monospace"><code class="monospace">.OE_NONE</code></code>: No action</li><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">1</code></code> or <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic">X</span><code class="monospace"><code class="monospace">.OE_OUTPUT_OFF</code></code>: Turns the source output off</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace"><code class="monospace">smua.source.outputenableaction</code></code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">For 2601B, 2602B, or 2604B, this attribute controls the action the SMU takes when the output enable line is deasserted.</p>
+<p class="iclbody">When set to <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic">X</span><code class="monospace"><code class="monospace">.OE_NONE</code></code>, the SMU takes no action when the output enable line goes low (deasserted).</p>
+<p class="iclbody">When set to <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic">X</span><code class="monospace"><code class="monospace">.OE_OUTPUT_OFF</code></code> and the output enable line is de-asserted, the SMU turns its output off as if the <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic">X</span><code class="monospace"><code class="monospace">.source.output = smu</code></code><span class="monospaceitalic">X</span><code class="monospace"><code class="monospace">.OUTPUT_OFF</code></code> command had been received.</p>
+<p class="iclbody">The SMU does not automatically turn its output on when the output enable line returns to the high state.</p>
+<p class="iclbody">If the output enable line is not asserted when this attribute is set to <code class="monospace"><code class="monospace">smu</code></code><span class="monospaceitalic">X</span><code class="monospace"><code class="monospace">.OE_OUTPUT_OFF</code></code> and the output is on, the output turns off immediately.</p>
+<p class="iclbody">Detection of the output enable line going low does not abort any running scripts. This may cause execution errors.</p>
+<p class="iclbody">For models that have a safety interlock (2611B, 2612B, 2614B, 2635B, 2636B, and 2634B), this attribute dictates the source output behavior when the interlock line is not engaged and the source is configured for safe operation. </p>
+<p class="iclbody">In the following situations, source output automatically turns off when the interlock is disengaged and the output cannot be turned on unless the interlock is engaged:</p>
+<ul class="listbullet"><li class="listbullet">When sourcing voltage on the 20 V range or lower.</li><li class="listbullet">When sourcing current with a limit of 20 V or less and the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.outputenableaction</code> attribute is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OE_OUTPUT_OFF</code>.</li></ul><p class="iclbody">In the following situations, the source ignores the state of the interlock signal and the output can be turned on regardless of the interlock state:</p>
+<ul class="listbullet"><li class="listbullet">When sourcing voltage on the 20 V range or lower.</li><li class="listbullet">When sourcing current with a limit of 20 V or less and the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.outputenableaction</code> attribute is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OE_NONE</code>.</li></ul><p class="iclbody">In the following situations, the source output automatically turns off when the interlock is disengaged, the output cannot be turned on unless the interlock is engaged, and the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.outputenableaction</code> attribute is ignored:</p>
+<ul class="listbullet"><li class="listbullet">When sourcing voltage on the 200 V range.</li><li class="listbullet">When sourcing current with a limit greater than 20 V.</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="600"><p class="codetable">smua.source.outputenableaction = smua.OE_OUTPUT_OFF</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="600"><p class="tablebodytext">Sets SMU channel A to turn off the output if the output enable line goes low (deasserted).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15245" class="jump" title="smuX.source.offmode" href="15150.htm" target="_self">smuX.source.offmode</a></p>
+<p class="listcommand"><a id="h15246" class="jump" title="smuX.source.output" href="15151.htm" target="_self">smuX.source.output</a></p>
+
+

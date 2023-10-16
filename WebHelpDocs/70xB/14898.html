@@ -1,0 +1,84 @@
+<html><head><title> lan.config.dns.address[N] </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14890.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14899.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">lan.config.dns.address[N]</h2>
+<p class="bodyzero">Configures DNS server IP addresses.</p>
+<table width="772" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="180"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="135"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="180"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="180"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">LAN restore defaults</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="135"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="180"><p class="tablebodytextsmall">&quot;0.0.0.0&quot;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">dnsAddress</em> = lan.config.dns.address[<em class="emphasis">N</em>]</p>
+<p class="iclcode">lan.config.dns.address[<em class="emphasis">N</em>] = <em class="emphasis">dnsAddress</em></p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">dnsAddress</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="525"><p class="tablebodytext">DNS server IP address</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="525"><p class="tablebodytext">Entry index (1 or 2)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is an array of DNS (domain name system) server addresses. These addresses take priority for DNS lookups and are consulted before any server addresses that are obtained using DHCP. This allows local DNS servers to be specified that take priority over DHCPconfigured global DNS servers.</p>
+<p class="iclbody">You can specify up to two addresses. The address specified by 1 is consulted first for DNS lookups.</p>
+<p class="iclbody">Unused entries will be returned as &quot;<code class="monospace">0.0.0.0</code>&quot; when read. <span class="monospaceitalic">dnsAddress</span> must be a string specifying the DNS server's IP address in dotted decimal notation. To disable an entry, set its value to <code class="monospace">&quot;0.0.0.0&quot;</code> or the empty string&nbsp;<code class="monospace">&quot;&quot;</code>.</p>
+<p class="iclbody">Although only two address may be manually specified here, the instrument will use up to three DNS server addresses. If two are specified here, only one that is given by a DHCP server is used. If no entries are specified here, up to three addresses that are given by a DHCP server are used. The IP address obtained from the DHCP server takes priority for all DNS lookups.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="382"><p class="codetable">dnsaddress = &quot;164.109.48.173&quot;</p>
+<p class="codetable">lan.config.dns.address[1] = dnsaddress</p>
+</td>
+<td width="315"><p class="tablebodytext">Write a DNS address of 164.109.48.173 as address 1.</p>
+<p class="tablebodytext">Set the DNS address to <code class="monospace">dnsaddress</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h1899" class="jumptemplate" title="lan.config.dns.domain" href="14899.html" target="_self">lan.config.dns.domain</a></p>
+<p class="iclbody"><a id="h1900" class="jumptemplate" title="lan.config.dns.dynamic" href="14900.html" target="_self">lan.config.dns.dynamic</a></p>
+<p class="iclbody"><a id="h1897" class="jumptemplate" title="lan.config.dns.hostname" href="14901.html" target="_self">lan.config.dns.hostname</a></p>
+<p class="iclbody"><a id="h1901" class="jumptemplate" title="lan.config.dns.verify" href="14902.html" target="_self">lan.config.dns.verify</a></p>
+<p class="iclbody"><a id="h14951" class="jumptemplate" title="lan.restoredefaults()" href="14896.html" target="_self">lan.restoredefaults()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.source.range </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30235.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30579.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t29383" class="heading2-icl">smu.source.range</h2>
+<p class="bodyzero">This attribute selects the range for the source for the selected source function.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#6685B9" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Source configuration list<br>Function change</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Source configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Current: 1e-8&nbsp;A<br>Voltage: 0.02&nbsp;V</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">rangeValue</span> = smu.source.range</p>
+<p class="iclcode">smu.source.range<code class="monospace"> = </code><span class="monospaceitalic">rangeValue</span></p>
+<p class="iclcode"><span class="monospaceitalic">rangeValue</span> = smu.source.getattribute(<span class="monospaceitalic">function</span>, smu.ATTR_SRC_RANGE)</p>
+<p class="iclcode">smu.source.setattribute(<span class="monospaceitalic">function</span>, smu.ATTR_SRC_RANGE, <span class="monospaceitalic">rangeValue</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">rangeValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Set to the maximum expected voltage or current to be sourced; see <strong class="specialbold">Details</strong> for values; the ranges are:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: -1&nbsp;A to 1&nbsp;A</li><li class="tablelistbullet9pt">Voltage: -200&nbsp;V to 200&nbsp;V</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current source: <code class="monospace">smu.FUNC_DC_CURRENT</code></li><li class="tablelistbullet9pt">Voltage source: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command manually selects the measurement range for the specified source.</p>
+<p class="iclbody">To select the range, specify the approximate source value that you will use. The instrument selects the lowest range that can accommodate that level. For example, if you expect to source levels around 3&nbsp;V, set the source level to 3. The Model 2450 selects the 20&nbsp;V range.</p>
+<p class="iclbody">If you select a specific source range, the range must be large enough to source the value. If not, an overrange condition can occur.</p>
+<p class="iclbody">If an overrange condition occurs, an event is displayed and the change to the setting is ignored.</p>
+<p class="iclbody">The fixed current source ranges are 10&nbsp;nA, 100&nbsp;nA, 1&nbsp;µA, 10&nbsp;µA, 100&nbsp;µA, 1&nbsp;mA, 10&nbsp;mA, 100&nbsp;mA, and 1&nbsp;A.</p>
+<p class="iclbody">The fixed voltage source ranges are 20&nbsp;mV, 200&nbsp;mV, 2&nbsp;V, 20&nbsp;V, and 200&nbsp;V.</p>
+<p class="iclbody">When you read this value, the instrument returns the positive full-scale value that the instrument is presently using.</p>
+<p class="iclbody">This command is intended to eliminate the time required by the automatic range selection.</p>
+<p class="iclbody">To select the range, you can specify the approximate source value that you will use. The instrument  selects the lowest range that can accommodate that level. For example, if you expect to source levels around 50&nbsp;mV, send 0.05 (or 50e-3) to select the 200&nbsp;mV range.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>  If automatic range selection is set to on, when you select a specific range, automatic is set to off. To set the range to automatic selection, use the source autorange command. </p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smu.source.func = smu.FUNC_DC_CURRENT</p>
+<p class="codetable">smu.source.autorange = smu.OFF</p>
+<p class="codetable">smu.source.range = 1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Set the instrument to source current.</p>
+<p class="tablebodytext">Turn autorange off.</p>
+<p class="tablebodytext">Set the source range to 1&nbsp;A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h31486" class="jump" title="smu.source.autorange" href="29386.htm" target="_self">smu.source.autorange</a></p>
+
+
+<input id="topicId" type="hidden" value="29383" />
+<input id="topicDescription" type="hidden" value="smu.source.range" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 12:48:41 PM" />
+</body>
+</html>

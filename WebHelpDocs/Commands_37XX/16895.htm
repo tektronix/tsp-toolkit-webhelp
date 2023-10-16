@@ -1,0 +1,74 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16248.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16250.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16895" class="heading2-icl">scan.mode</h2>
+<p class="bodyzero">This attribute sets the relay action when the scan starts.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Reset<br>Scan reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0 (scan.MODE_OPEN_ALL)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">scanModeSetting</em> = scan.mode</p>
+<p class="iclcode">scan.mode = <em class="emphasis">scanModeSetting</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">scanModeSetting</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The present scan mode setting. Set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">scan.MODE_OPEN_ALL</code> or <code class="monospace">0</code></li><li class="tablelistbullet9pt"><code class="monospace">scan.MODE_OPEN_SELECTIVE</code> or <code class="monospace">1</code>: See <strong class="specialbold">Details</strong></li><li class="tablelistbullet9pt"><code class="monospace">scan.MODE_FIXED_ABR</code> or <code class="monospace">2</code>: See <strong class="specialbold">Details</strong></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When this attribute is set to open all, channels on all slots are opened before a scan starts. </p>
+<p class="iclbody">When this attribute is set to <code class="monospace">scan.MODE_OPEN_SELECTIVE</code>, an intelligent open is performed. Assuming all steps being scanned have a function value of &quot;<code class="monospace">nofunction</code>&quot; with their DMM configuration then:</p>
+<ul class="listbullet"><li class="listbullet">All channels and analog backplane relays used in scanning are opened</li><li class="listbullet">Closed channels and backplane relays not used in scanning remain closed during the scan</li></ul><p class="iclbody">If any step has a DMM configuration with a function set to any other value than<code class="monospace"> &quot;nofunction&quot;</code>:</p>
+<ul class="listbullet"><li class="listbullet">Analog backplane relays 1 and 2 are opened on all slots</li><li class="listbullet">Any commonside ohms backplane relays are opened on all slots</li><li class="listbullet">Any amp channels are opened on all slots</li><li class="listbullet">All channels and backplane relays involved in scanning are opened</li><li class="listbullet">If a closed channel or backplane relay is not involved in scanning, it remains closed during the scan</li><li class="listbullet">All channels are opened on any bank that contains backplane relays that are involved in scanning</li></ul><p class="iclbody">When this attribute is set to <code class="monospace">scan.MODE_FIXED_ABR</code>, it is equivalent to setting <code class="monospace">MODE_OPEN_SELECTIVE</code>, except:</p>
+<ul class="listbullet"><li class="listbullet">All required backplane relays are closed before the start of the scan</li><li class="listbullet">These backplane relays are not opened or closed during the scan</li><li class="listbullet">These backplane relays do not open at the end of scan</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.mode = scan.MODE_OPEN_SELECTIVE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets the scan mode setting to open channels that are used in the scan.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1354" class="jump" title="scan.reset()" href="16896.htm" target="_self">scan.reset()</a></p>
+<p class="listcommand">Scanning and triggering</p>
+
+

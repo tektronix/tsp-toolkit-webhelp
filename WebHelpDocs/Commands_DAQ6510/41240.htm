@@ -1,0 +1,172 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.math.enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41215.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41243.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41240" class="heading2-icl">dmm.digitize.math.enable</h2>
+<p class="bodyzero">This attribute enables or disables math operations on measurements for the selected digitize function.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.OFF</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = <code class="monospace">dmm</code>.digitize.math.enable</p>
+<p class="iclcode"><code class="monospace">dmm</code>.digitize.math.enable = <em class="emphasis">value</em></p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_DIGI_MATH_ENABLE)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_DIGI_MATH_ENABLE, <span class="monospaceitalic">value</span>)</p>
+<p class="iclcode">channel.setdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_DIGI_MATH_ENABLE, <span class="monospaceitalic">value</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = channel.getdmm(&quot;<span class="monospaceitalic">channelList</span>&quot;, dmm.ATTR_DIGI_MATH_ENABLE)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The math enable setting:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Disable: <code class="monospace">dmm.OFF</code></li><li class="tablelistbullet9pt">Enable: <code class="monospace">dmm.ON</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="462"><p class="tablebodytext">The digitize function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: <code class="monospace">dmm.FUNC_DIGITIZE_CURRENT</code></li><li class="tablelistbullet9pt">Voltage: <code class="monospace">dmm.FUNC_DIGITIZE_VOLTAGE</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The channels to set, using standard <a id="h81856" class="jump" title="Channel naming" href="81855.htm" target="_self">channel naming</a></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When this command is set to on, the math operation specified by the math format command is performed before completing a measurement.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">dmm</code>.digitize.func = <code class="monospace">dmm</code>.FUNC_DIGITIZE_VOLTAGE</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.math.format = <code class="monospace">dmm</code>.MATH_PERCENT</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.count = 1</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.math.percent = <code class="monospace">dmm</code>.digitize.read()</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.math.enable = <code class="monospace">dmm</code>.ON</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.count = 5</p>
+<p class="codetable">MathBuffer = buffer.make(100)</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.read(MathBuffer)</p>
+<p class="codetable">printbuffer(1, MathBuffer.n, MathBuffer.formattedreadings)</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.count = 1</p>
+<p class="codetable">for x = 1, 3 do </p>
+<p class="codetable">    print(<code class="monospace">dmm</code>.digitize.read(MathBuffer))</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Configure the instrument for digitize voltage.</p>
+<p class="tablebodytext">Set math format to percent. </p>
+<p class="tablebodytext">Acquire 1 reading to use as the relative percent value.</p>
+<p class="tablebodytext">Take 5 readings with percent math enabled and store them in a buffer called <code class="monospace">MathBuffer</code> that can store 100 readings.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Take three additional readings.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Sample output assuming no load was connected to the instrument:</p>
+<p class="codetable">-100.00 %, -100.00 %, -100.00 %, -100.00 %, -100.00 %</p>
+<p class="codetable">-100.00058257</p>
+<p class="codetable">-99.999126228</p>
+<p class="codetable">-99.998932056</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="594"><p class="codetable">-- Set channel 1 on slot 1 to use the digitize voltage function.</p>
+<p class="codetable">channel.setdmm(&quot;101&quot;, dmm.ATTR_DIGI_FUNCTION, dmm.FUNC_DIGITIZE_VOLTAGE)</p>
+<p class="codetable">-- Set channel 1 to use the percentage math format and enable math.</p>
+<p class="codetable">channel.setdmm(&quot;101&quot;, dmm.ATTR_DIGI_MATH_FORMAT, dmm.MATH_PERCENT, dmm.ATTR_DIGI_MATH_ENABLE, dmm.ON )</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Acquire one reading to use as the relative percent value.</p>
+<p class="codetable">channel.close(&quot;101&quot;)</p>
+<p class="codetable">dmm.digitize.count = 1</p>
+<p class="codetable">dmm.digitize.math.percent = dmm.digitize.read()</p>
+<p class="codetable">channel.setdmm(&quot;101&quot;, dmm.ATTR_DIGI_MATH_PERCENT, dmm.digitize.read())</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create a buffer named MathBuffer that holds 100 readings.</p>
+<p class="codetable">MathBuffer = buffer.make(100)</p>
+<p class="codetable">-- Set the measure count to 100</p>
+<p class="codetable">channel.setdmm(&quot;101&quot;, dmm.ATTR_DIGI_COUNT, 100)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">dmm.digitize.read(MathBuffer)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">printbuffer(1, MathBuffer.n, MathBuffer.formattedreadings)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="594"><p class="tablebodytext">Set the instrument to digitize voltage.</p>
+<p class="tablebodytext">Set math format to percent for channel 1 on slot 1. </p>
+<p class="tablebodytext">Acquire 1 reading to use as the relative percent value.</p>
+<p class="tablebodytext">Close channel 1. </p>
+<p class="tablebodytext">Set channel 1 to use the math format percent.</p>
+<p class="tablebodytext">Create a buffer.</p>
+<p class="tablebodytext">Set the measure count for channel 1 to 100.</p>
+<p class="tablebodytext">Make readings.</p>
+<p class="tablebodytext">Output the data.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h43715" class="jump" title="dmm.digitize.math.format" href="41243.htm" target="_self">dmm.digitize.math.format</a></p>
+
+
+<input id="topicId" type="hidden" value="41240" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.math.enable" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/10/2019 2:30:40 PM" />
+</body>
+</html>

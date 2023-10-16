@@ -1,0 +1,225 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Step 2. Voltage calibration adjustment </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12985.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="27972.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t26834" class="heading4">Step 2. Voltage calibration adjustment</h4>
+<ol class="listalpha"><li class="listalpha">Connect the 2600B SMU to the digital multimeter using the 4-wire connections shown in the figure below. Select the multimeter dc voltage function.<p class="magicfigurecenter"><img id="f26835" src="2600b-901-01a_connectionsforvoltageverification.png" class="linkedepsandpngtemplate" alt="Connections for voltage calibration" height="911" width="526" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li><li class="listalpha">Send the following commands to initialize voltage calibration:<p class="listcontinue"><code class="monospace">smua.cal.unlock(&quot;KI0026XX&quot;)</code></p>
+<p class="listcontinue"><code class="monospace">smua.reset()</code></p>
+<p class="listcontinue"><code class="monospace">smua.source.func = smua.OUTPUT_DCVOLTS</code></p>
+</li></ol><p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">It is not necessary to set the measure range when following this procedure for calibration because the measure range is locked to the source range when measuring the source function.</p>
+<ol class="listalpha"><li class="listalpha">Perform each calibration adjustment for the voltage source and measure function step listed in <a id="h18938" class="jump" title="Step sequence" href="27971.htm" target="_self">Step sequence</a> as follows:<ol class="listnumber2"><li class="listnumber2">Select the range being calibrated with this command:<p class="listcontinue2"><code class="monospace">smua.source.rangev = </code><span class="monospaceitalic">range</span></p>
+</li><li class="listnumber2">Select the correct sense mode based on the calibration step for the voltage source and measure function from the <a id="h18938_2" class="jump" title="Step sequence" href="27971.htm" target="_self">Step sequence</a>, for example:<p class="listcontinue2"><code class="monospace">smua.sense = smua.SENSE_LOCAL</code></p>
+</li><li class="listnumber2">Select positive polarity, and then set the source output to the positive zero value. For example:<p class="listcontinue2"><code class="monospace">smua.cal.polarity = smua.CAL_POSITIVE</code><br><code class="monospace">smua.source.levelv = 1e&#8209;30</code></p>
+</li><li class="listnumber2">Turn on the output:<p class="listcontinue2"><code class="monospace">smua.source.output = smua.OUTPUT_ON</code></p>
+</li><li class="listnumber2">Allow the readings to settle, then get both the multimeter and 2600B voltage readings at the positive zero value (the 2600B measurement is not necessary if this calibration step is being done on the CALA sense mode). The two measurements should be made as close as possible in time. Use this command for the 2600B:<p class="listcontinue2"><code class="monospace">Z_rdg = smua.measure.v()</code></p>
+</li><li class="listnumber2">Turn off the output:<p class="listcontinue2"><code class="monospace">smua.source.output = smua.OUTPUT_OFF</code></p>
+</li><li class="listnumber2">Set the source output to the positive full-scale value for the present range, for example:<p class="listcontinue2"><code class="monospace">smua.source.levelv = 0.9</code> (Model 2601B, 2602B, or 2604B)<br><code class="monospace">smua.source.levelv = 1.8</code> (Model 2611B, 2612B, 2614B, 2634B, 2635B, 2636B)</p>
+</li><li class="listnumber2">Turn on the output:<p class="listcontinue2"><code class="monospace">smua.source.output = smua.OUTPUT_ON</code></p>
+</li><li class="listnumber2">Allow the readings to settle, then get both the multimeter and 2600B voltage readings at the positive full-scale output value (the 2600B measurement is not necessary if this calibration step is being done on the CALA sense mode). The two measurements should be made as close as possible in time. Use this command for the 2600B:<p class="listcontinue2"><code class="monospace">FS_rdg = smua.measure.v()</code></p>
+</li><li class="listnumber2">Turn off the output:<p class="listcontinue2"><code class="monospace">smua.source.output = smua.OUTPUT_OFF</code></p>
+</li><li class="listnumber2">Send the source calibration command using the range, +zero and +FS multimeter readings, and +zero and +FS source values for the parameters:<p class="listcontinue2"><code class="monospace">smua.source.calibratev(</code><span class="monospaceitalic">range, src_Z, DMM_Z_rdg, src_FS, DMM_FS_rdg</span><code class="monospace">)</code></p>
+<p class="listcontinue2"><strong class="specialbold">Where:</strong></p>
+<table class="tableintopic" width="576" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">range</span></p>
+</td>
+<td width="474"><p class="tablebodytext">= The present calibration range</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">src_Z</span></p>
+</td>
+<td width="474"><p class="tablebodytext">= The +zero 2600B programmed source output value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">DMM_Z_rdg</span></p>
+</td>
+<td width="474"><p class="tablebodytext">= The +zero DMM measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">src_FS</span></p>
+</td>
+<td width="474"><p class="tablebodytext">= The +FS 2600B programmed source output value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">DMM_FS_rdg</span></p>
+</td>
+<td width="474"><p class="tablebodytext">= The +FS DMM measurement</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue2">Typical values for the 2601B, 2602B, or 2604B 1 V range:</p>
+<p class="listcontinue2"><code class="monospace">smua.source.calibratev(1, 1e-30, 1e-5, 0.9, 0.903)</code></p>
+<p class="listcontinue2">Typical values for the 2611B, 2612B, 2614B, 2634B, 2635B, or 2636B 2&nbsp;V range:</p>
+<p class="listcontinue2"><code class="monospace">smua.source.calibratev(2, 1e-30, 1e-5, 1.8, 1.802)</code></p>
+</li><li class="listnumber2">If this step is not on the CALA sense mode, send the measure calibration command using the multimeter and 2600B readings, and the range setting for the parameters. For example:<p class="listcontinue2"><code class="monospace">smua.measure.calibratev(</code><span class="monospaceitalic">range, Z_rdg, DMM_Z_rdg, FS_rdg, DMM_FS_rdg</span><code class="monospace">)</code></p>
+<p class="listcontinue2"><strong class="specialbold">Where:</strong></p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">range</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The present calibration range</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">Z_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The +zero 2600B measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">DMM_Z_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The +zero DMM measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">FS_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The +FS 2600B measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">DMM_FS_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The +FS DMM measurement</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue2">Typical 2601B, 2602B, or 2604B 1 V range values:</p>
+<p class="listcontinue2"><code class="monospace">smua.measure.calibratev(1, 1e-4, 1e-5, 0.92, 0.903)</code></p>
+<p class="listcontinue2">Typical 2611B, 2612B, 2614B, 2634B, 2635B, or 2636B 2 V range values:</p>
+<p class="listcontinue2"><code class="monospace">smua.measure.calibratev(2, 1e-4, 1e-5, 1.82, 1.802)</code></p>
+</li><li class="listnumber2">Select negative polarity, then set the source output to the negative zero value, for example:<p class="listcontinue2"><code class="monospace">smua.cal.polarity = smua.CAL_NEGATIVE</code><br><code class="monospace">smua.source.levelv = -1e-30</code></p>
+</li><li class="listnumber2">Turn on the output:<p class="listcontinue2"><code class="monospace">smua.source.output = smua.OUTPUT_ON</code></p>
+</li><li class="listnumber2">Allow the readings to settle, then get both the multimeter and 2600B voltage readings at the negative zero value (the 2600B measurement is not necessary if this calibration step is being done on the CALA sense mode). The two measurements should be made as close as possible in time. Use this command for the 2600B:<p class="listcontinue2"><code class="monospace">Z_rdg = smua.measure.v()</code></p>
+</li><li class="listnumber2">Turn off the output:<p class="listcontinue2"><code class="monospace">smua.source.output = smua.OUTPUT_OFF</code></p>
+</li><li class="listnumber2">Set the source output to the negative full-scale value, for example:<p class="listcontinue2"><code class="monospace">smua.source.levelv = -0.9</code> (Models 2601B, 2602B, or 2604B)<br><code class="monospace">smua.source.levelv = -1.8</code> (Models 2611B, 2612B, 2614B, 2634B, 2635B, or 2636B)</p>
+</li><li class="listnumber2">Turn on the output:<p class="listcontinue2"><code class="monospace">smua.source.output = smua.OUTPUT_ON</code></p>
+</li><li class="listnumber2">Allow the readings to settle, then get both the multimeter and 2600B voltage readings at the negative full-scale output value (the 2600B measurement is not necessary if this calibration step is being done on the CALA sense mode). The two measurements should be made as close as possible in time. Use this command for the 2600B:<p class="listcontinue2"><code class="monospace">FS_rdg = smua.measure.v()</code></p>
+</li><li class="listnumber2">Turn off the output:<p class="listcontinue2"><code class="monospace">smua.source.output = smua.OUTPUT_OFF</code></p>
+</li><li class="listnumber2">Send the source calibration command using the range, −zero and −FS multimeter readings, and −zero and −FS source values for the parameters:<p class="listcontinue2"><code class="monospace">smua.source.calibratev(</code><span class="monospaceitalic">-range, src_Z, DMM_Z_rdg,</span> <span class="monospaceitalic">src_FS, DMM_FS_rdg</span><code class="monospace">)</code></p>
+<p class="listcontinue2"><strong class="specialbold">Where:</strong></p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">-range</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The negative of the present calibration range</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">src_Z</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The −zero 2600B programmed source output value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">DMM_Z_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The −zero DMM measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">src_FS</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The −FS 2600B programmed source output value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">DMM_FS_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The −FS DMM measurement</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue2">Typical values for the 2601B, 2602B, or 2604B 1 V range:</p>
+<p class="listcontinue2"><code class="monospace">smua.source.calibratev(-1, -1e-30, -1e-4, -0.9, -0.896)</code></p>
+<p class="listcontinue2">Typical values for the 2611B, 2612B, 2614B, 2634B, 2635B, or 2636B 2&nbsp;V range:</p>
+<p class="listcontinue2"><code class="monospace">smua.source.calibratev(-2, -1e-30, -1e-4, -1.8, -1.805)</code></p>
+</li><li class="listnumber2">If this step is not on the CALA sense mode, send the measure calibration command using the multimeter and 2600B readings and range setting for the parameters:<p class="listcontinue2"><code class="monospace">smua.measure.calibratev(</code><span class="monospaceitalic">-range, Z_rdg, DMM_Z_rdg, FS_rdg, DMM_FS_rdg</span><code class="monospace">)</code></p>
+<p class="listcontinue2"><strong class="specialbold">Where:</strong></p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">-range</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The negative of the present calibration range</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">Z_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The −zero 2600B measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">DMM_Z_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The −zero DMM measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">FS_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The −FS 2600B measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="102"><p class="tablebodytext"><span class="monospaceitalic">DMM_FS_rdg</span></p>
+</td>
+<td width="408"><p class="tablebodytext">= The −FS DMM measurement</p>
+</td>
+</tr>
+
+</table>
+<p class="listcontinue2">Typical 2601B, 2602B, or 2604B 1 V range values:</p>
+<p class="listcontinue2"><code class="monospace">smua.measure.calibratev(-1, -1e-4, -1e-6, -0.89, -0.896)</code></p>
+<p class="listcontinue2">Typical 2611B, 2612B, 2614B, 2634B, 2635B, or 2636B 2 V range values:</p>
+<p class="listcontinue2"><code class="monospace">smua.measure.calibratev(-2, -1e-4, -1e-6, -1.81, -1.805)</code></p>
+</li></ol></li><li class="listalpha">Be sure to complete each of the 22 steps of C for all six voltage steps in <a id="h18938_3" class="jump" title="Step sequence" href="27971.htm" target="_self">Step sequence</a> before performing current calibration.</li><li class="listalpha">Select automatic polarity mode:<p class="listcontinue"><code class="monospace">smua.cal.polarity = smua.CAL_AUTO</code></p>
+</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12984.htm" target="_self">Adjustment procedure</a></p><p class="relateditem"><a href="12985.htm" target="_self">Step 1. Prepare the 2600B for adjustment</a></p><p class="relateditem"><a href="27972.htm" target="_self">Step 3. Current calibration adjustment</a></p><p class="relateditem"><a href="20445.htm" target="_self">Step 4. Contact check calibration adjustment</a></p><p class="relateditem"><a href="12995.htm" target="_self">Step 6. Program calibration dates</a></p><p class="relateditem"><a href="12996.htm" target="_self">Step 7. Save calibration constants</a></p><p class="relateditem"><a href="12997.htm" target="_self">Step 8. Lock out calibration</a></p><p class="relateditem"><a href="12998.htm" target="_self">Step 9. Repeat calibration procedure for Channel B</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="26834" />
+<input id="topicDescription" type="hidden" value="Step 2. Voltage calibration adjustment" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/8/2022 12:46:05 PM" />
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16013.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16015.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16014" class="heading2-icl">dmm.close()</h2>
+<p class="bodyzero">This function closes the specified channel or channel pattern to prepare for a measurement.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">dmm.close(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td width="455"><p class="tablebodytext">A string that lists the channel or channel pattern to close</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When you close a channel or channel pattern:</p>
+<ul class="listbullet"><li class="listbullet">Channels on all slots are opened if they interfere with measurement, including analog backplane relays 1 and 2 and commonside ohm backplane relays. The opening and closing of channels mimics that of <code class="monospace">channel.exclusiveslotclose(</code>). Therefore, when using a for-loop with <code class="monospace">dmm.close()</code> command, the last channel on each slot is closed at the end of the for loop execution.</li><li class="listbullet">To have additional analog backplane relays 3 through 6 close, use them on an alternate slot. If they need to be on same slot, create a channel pattern.</li><li class="listbullet">To have additional channels close, use patterns. When you use patterns, you must specify all items to close, including analog backplane relays. With patterns, there is no auto manipulation of analog backplane relays 1 and 2 as there is with channels.</li><li class="listbullet">Any amp channels will open. If you need to have multiple amp channels closed, create a channel pattern.</li><li class="listbullet">Associated channels and analog backplane relays will close, which include analog backplane relay 1 and 2, as needed based on configuration associated with channel (see <code class="monospace">dmm.getconfig()</code>). Analog backplane relays specified by <code class="monospace">channel.setbackplane()</code> are not used.</li></ul><p class="iclbody">The DMM configuration is determined by the configuration associated with the channel or channel pattern being closed. If the configuration is a default name, the function of that configuration will be reset to factory default settings. You must create a unique DMM configuration to avoid using factory default settings when assigning to a channel. For more information on setting DMM configuration, see <a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a>, <a id="h883" class="jump" title="dmm.setconfig()" href="16067.htm" target="_self">dmm.setconfig()</a>, and <a id="h909" class="jump" title="dmm.getconfig()" href="16031.htm" target="_self">dmm.getconfig()</a>.</p>
+<p class="iclbody">This command allows you to separate the closing of channels from measuring. Therefore, you may execute any number of commands between the close and measure commands to satisfy your application needs.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet"><li class="listbullet">The specified channel or channel pattern is invalid.</li><li class="listbullet">The channel number does not exist for the slot specified.</li><li class="listbullet">The channel pattern does not exist.</li><li class="listbullet">The specified channel does not support being closed (like a digital I/O channel).</li><li class="listbullet">More than one channel or channel pattern is specified.</li><li class="listbullet">The channel is paired with another bank for a multi-wire application.</li><li class="listbullet">The channel is an analog backplane relay.</li><li class="listbullet">The channel configuration is set to nofunction.</li></ul><p class="iclbody">Once an error is detected, the command stops processing. Channels and DMM settings remain unchanged.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.setconfig(&quot;3003&quot;, &quot;tempMeasure&quot;)</p>
+<p class="codetable">dmm.close('3003')</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Close channel 3 on slot 3 and prepare the DMM for measuring temperature with<code class="monospace"> tempMeasure</code> settings.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">dmm.setconfig(&quot;channelDCV&quot;, &quot;dcvolts&quot;)</p>
+<p class="codetable">dmm.close(&quot;channelDCV&quot;)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Close a channel pattern called <code class="monospace">channelDCV</code> and prepare DMM for measuring DC volts at factory default settings.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h777" class="jump" title="channel.exclusiveslotclose()" href="17437.htm" target="_self">channel.exclusiveslotclose()</a></p>
+<p class="listcommand"><a id="h768" class="jump" title="channel.getclose()" href="17247.htm" target="_self">channel.getclose()</a></p>
+<p class="listcommand"><a id="h767" class="jump" title="channel.getstate()" href="17546.htm" target="_self">channel.getstate()</a></p>
+<p class="listcommand"><a id="h766" class="jump" title="channel.setbackplane()" href="15941.htm" target="_self">channel.setbackplane()</a></p>
+<p class="listcommand"><a id="h909_2" class="jump" title="dmm.getconfig()" href="16031.htm" target="_self">dmm.getconfig()</a></p>
+<p class="listcommand"><a id="h871" class="jump" title="dmm.open()" href="16054.htm" target="_self">dmm.open()</a></p>
+
+

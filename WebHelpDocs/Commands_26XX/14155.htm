@@ -1,0 +1,238 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Remote source-measure commands </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11567.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11929.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t14155" class="heading2">Remote source-measure commands</h2>
+<p class="bodytext">Basic source-measurement procedures can also be performed through a remote interface. To do this, send the appropriate commands. The following table summarizes basic source-measure commands. See <a id="h12115" class="jump" title="Introduction to TSP operation" href="17029.htm" target="_self">Introduction to TSP operation</a> for more information on using these commands.</p>
+<table class="tableintopic" width="612" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="390" height="0"></td>
+<td width="222" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border-bottom:1px solid #C0C0C0;" colspan="2" width="612"><p class="tableheading">Basic source-measure commands</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="390"><p class="tableheading">Command* </p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="222"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.autorangei = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.AUTORANGE_ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Enable current measure autorange.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.autorangev = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.AUTORANGE_ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Enable voltage measure autorange.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.autorangei = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.AUTORANGE_OFF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Disable current measure autorange.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.autorangev = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.AUTORANGE_OFF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Disable voltage measure autorange.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.rangei = rangeval</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set current measure range.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.rangev = rangeval</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set voltage measure range.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable">reading = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.i()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Request a current reading.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable">reading = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.v()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Request a voltage reading.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable">iReading, vReading = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.iv()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Request a current and voltage reading.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable">reading = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.r()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Request a resistance reading.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable">reading = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.measure.p()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Request a power reading.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.autorangei = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.AUTORANGE_ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Enable current source autorange.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.autorangev = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.AUTORANGE_ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Enable voltage source autorange.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.autorangei = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.AUTORANGE_OFF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Disable current source autorange.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.autorangev = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.AUTORANGE_OFF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Disable voltage source autorange.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.func = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.OUTPUT_DCVOLTS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Select voltage source function.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.func = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.OUTPUT_DCAMPS</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Select current source function.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.leveli = sourceval</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set current source value.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.levelv = sourceval</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set voltage source value.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.limiti = level</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set current limit.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.limitv = level</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set voltage limit.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.limitp = level</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set power limit.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.output = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.OUTPUT_ON</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Turn on source output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.output = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.OUTPUT_OFF</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Turn off source output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.rangei = rangeval</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set current source range.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.source.rangev = rangeval</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Set voltage source range.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.sense = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.SENSE_LOCAL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Select local sense (2-wire).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="390"><p class="codetable"><code class="monospace">smu</code><span class="monospaceitalic">X</span>.sense = <code class="monospace">smu</code><span class="monospaceitalic">X</span>.SENSE_REMOTE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="222"><p class="tablebodytext">Select remote sense (4-wire).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-top:1px solid #C0C0C0;" colspan="2" width="612"><p class="tablebodytextsmall">* <code class="monospace">smu</code><span class="monospaceitalic">X</span> can be <code class="monospace">smua</code> for channel A or <code class="monospace">smub</code> for channel B</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytextsmall"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="11929.htm" target="_self">Requesting readings</a></p><p class="relateditem"><a href="11551.htm" target="_self">Source-measure programming example</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="85109.htm" target="_self">Sourcing and measuring</a></p><p class="relateditem"><a href="76487.htm" target="_self">Basic operation</a></p><p class="relateditem"><a href="11450.htm" target="_self">Source-measure capabilities</a></p><p class="relateditem"><a href="97769.htm" target="_self">Circuit configurations</a></p><p class="relateditem"><a href="11921.htm" target="_self">Operation considerations for the ADC</a></p><p class="relateditem"><a href="11930.htm" target="_self">Triggering in local mode</a></p><p class="relateditem"><a href="11932.htm" target="_self">Configuring trigger attributes in local mode</a></p><p class="relateditem"><a href="19366.htm" target="_self">Configuring for measure-only tests using the MODE key</a></p><p class="relateditem"><a href="11934.htm" target="_self">Voltmeter and ammeter measurements</a></p><p class="relateditem"><a href="11936.htm" target="_self">Ohms measurements</a></p><p class="relateditem"><a href="11942.htm" target="_self">Power measurements</a></p><p class="relateditem"><a href="29274.htm" target="_self">Contact check measurements</a></p><p class="relateditem"><a href="76519.htm" target="_self">Multiple SMU connections</a></p><p class="relateditem"><a href="97054.htm" target="_self">Combining SMU outputs</a></p><p class="relateditem"><a href="28174.htm" target="_self">Output-off modes</a></p><p class="relateditem"><a href="11993.htm" target="_self">Range</a></p><p class="relateditem"><a href="11995.htm" target="_self">Digits</a></p><p class="relateditem"><a href="28175.htm" target="_self">Speed</a></p><p class="relateditem"><a href="13524.htm" target="_self">Sweep operation</a></p><p class="relateditem"><a href="12001.htm" target="_self">Relative offset</a></p><p class="relateditem"><a href="11532.htm" target="_self">Filters</a></p><p class="relateditem"><a href="29559.htm" target="_self">High-capacitance mode</a></p><p class="relateditem"><a href="11945.htm" target="_self">Saved setups</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="14155" />
+<input id="topicDescription" type="hidden" value="Remote source-measure commands" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/27/2022 11:18:09 AM" />
+</body>
+</html>

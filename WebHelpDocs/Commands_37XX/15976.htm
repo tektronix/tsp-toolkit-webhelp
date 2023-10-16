@@ -1,0 +1,97 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15975.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15977.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15976" class="heading2-icl">dmm.autorange</h2>
+<p class="bodyzero">This attribute specifies the autorange setting for the active function</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Reset<br>DMM reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">1 (dmm.ON)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = dmm.autorange</p>
+<p class="iclcode">dmm.autorange = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Autorange:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Enable: <code class="monospace">dmm.ON</code> or <code class="monospace">1</code></li><li class="tablelistbullet9pt">Disable: <code class="monospace">dmm.OFF</code> or <code class="monospace">0</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Autorange selects the best range in which to measure the signal that is applied to the input terminals of the instrument. When autorange is enabled, the range increases at percent of range. The range decreases occur when the reading is &lt;10&nbsp;percent of nominal range.</p>
+<p class="iclbody">The autorange setting applies to the function selected by <code class="monospace">dmm.func</code>. Autorange is available for the following functions:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">&quot;accurrent&quot;</code> or <code class="monospace">dmm.AC_CURRENT</code></li><li class="listbullet"><code class="monospace">&quot;acvolts&quot;</code> or <code class="monospace">dmm.AC_VOLTS</code></li><li class="listbullet"><code class="monospace">&quot;commonsideohms&quot;</code> or <code class="monospace">dmm.COMMON_SIDE_OHMS</code></li><li class="listbullet"><code class="monospace">&quot;dccurrent&quot;</code> or <code class="monospace">dmm.DC_CURRENT</code></li><li class="listbullet"><code class="monospace">&quot;dcvolts&quot;</code> or <code class="monospace">dmm.DC_VOLTS</code></li><li class="listbullet"><code class="monospace">&quot;fourwireohms&quot;</code> or <code class="monospace">dmm.FOUR_WIRE_OHMS</code></li><li class="listbullet"><code class="monospace">&quot;twowireohms&quot;</code> or <code class="monospace">dmm.TWO_WIRE_OHMS</code></li></ul><p class="iclbody">Autorange is not available for any other functions. If you try to set autorange for any other function, an error is returned. If you query the autorange for any other function, nil is returned and an error is generated.</p>
+<p class="iclbody">The autorange value is saved with the <code class="monospace">dmm.func</code> function setting, so if you use another function, then return to the previous setting, such as <code class="monospace">&quot;dcvolts&quot;</code> or <code class="monospace">&quot;fourwireohms&quot;</code>, the autorange setting you set previously is retained. With autorange enabled, you can use the <code class="monospace">dmm.range</code> command to view the range that is presently being used. Using <code class="monospace">dmm.range</code> to select a fixed range disables autorange.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="250"><p class="codetable">dmm.func = &quot;twowireohms&quot;</p>
+<p class="codetable">dmm.autorange = dmm.ON</p>
+</td>
+<td width="350"><p class="tablebodytext">Enable autoranging for 2-wire ohms.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="250"><p class="codetable">dmm.func = &quot;dcvolts&quot;</p>
+<p class="codetable">dmm.reset(&quot;active&quot;)</p>
+<p class="codetable">print(dmm.autorange, dmm.range)</p>
+<p class="codetable">dmm.range = 50e-3</p>
+<p class="codetable">print(dmm.autorange, dmm.range)</p>
+</td>
+<td width="350"><p class="tablebodytext">Set DMM function to be DC volts.</p>
+<p class="tablebodytext">Reset only the active DMM function (DC volts).</p>
+<p class="tablebodytext">View the default autorange and range selection.</p>
+<p class="tablebodytext">Select a range suitable for a 50&nbsp;mV reading.</p>
+<p class="tablebodytext">View the default autorange and range selection.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1.000000000e+00        1.000000000e+01</p>
+<p class="codetable">0.000000000e+00        1.000000000e-01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h874" class="jump" title="dmm.configure.recall()" href="16018.htm" target="_self">dmm.configure.recall()</a></p>
+<p class="listcommand"><a id="h876" class="jump" title="dmm.configure.set()" href="16019.htm" target="_self">dmm.configure.set()</a></p>
+<p class="listcommand"><a id="h882" class="jump" title="dmm.func" href="16030.htm" target="_self">dmm.func</a></p>
+<p class="listcommand"><a id="h1213" class="jump" title="dmm.range" href="16056.htm" target="_self">dmm.range</a></p>
+
+

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Queues </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12354.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="23337.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12350" class="heading3">Queues</h3>
+<p class="bodytext">The 2600B uses queues to store messages. The queues include:</p>
+<ul class="listbullet"><li class="listbullet">Command queue: Holds commands that are available for execution.</li><li class="listbullet">Output queue: Holds response messages.</li><li class="listbullet">Error queue: Holds error and status messages.</li></ul><p class="bodytext">When a queue contains data, it sets the condition bit for that queue in one of the registers. The condition bits are:</p>
+<ul class="listbullet"><li class="listbullet">Command queue: CAV in the Operation Status Remote Summary Register</li><li class="listbullet">Output queue: MAV in the Status Byte Register</li><li class="listbullet">Error queue: EAV in the Status Byte Register</li></ul><p class="bodytext">The CAV, MAV, and EAV bits in the registers are cleared when the queue is empty. Queues empty&nbsp;when:</p>
+<ul class="listbullet"><li class="listbullet">Commands are executed</li><li class="listbullet">Errors are read from the error queue</li><li class="listbullet">Response messages are read from the instrument</li></ul><p class="bodytext">All 2600B queues are first-in, first-out (FIFO).</p>
+<p class="bodytext">The <a id="h12307" class="jump" title="Status model diagrams" href="12308.htm" target="_self">Status model diagrams</a> shows how the queues are structured with the other&nbsp;registers.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="23337.htm" target="_self">Command queue</a></p><p class="relateditem"><a href="12743_1.htm" target="_self">Output queue</a></p><p class="relateditem"><a href="12259.htm" target="_self">Error queue</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12445.htm" target="_self">Overview</a></p><p class="relateditem"><a href="12354.htm" target="_self">Status register set contents</a></p><p class="relateditem"><a href="29523.htm" target="_self">Status function summary</a></p><p class="relateditem"><a href="12308.htm" target="_self">Status model diagrams</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12350" />
+<input id="topicDescription" type="hidden" value="Queues" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/15/2021 8:40:31 AM" />
+</body>
+</html>

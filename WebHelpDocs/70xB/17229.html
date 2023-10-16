@@ -1,0 +1,79 @@
+<html><head><title> channel.close() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17406.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17407.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.close()</h2>
+<p class="bodyzero">This function closes channels and channel patterns specified by the channel list parameter without opening any channels.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.close(<em class="emphasis">channelList</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string that lists the channels and channel patterns to close</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">These closures are appended to the already closed channels (no previously closed channels are opened by this command).</p>
+<p class="iclbody">Actions associated with this function include:</p>
+<ul class="listbullet2"><li class="listbullet2">Close the specified items in <span class="monospaceitalic">channelList</span></li><li class="listbullet2">Incur the settling time and any userspecified delay</li></ul><p class="iclbody">An error is generated if:</p>
+<ul class="listbullet2"><li class="listbullet2">The parameter string contains <code class="monospace">slot</code><span class="monospaceitalic">X</span>, where <span class="monospaceitalic">X</span><code class="monospace"> </code>is 1 to 6, or <code class="monospace">allslots</code></li><li class="listbullet2">A forbidden item is specified</li><li class="listbullet2">Specified channel does not support being closed</li></ul><p class="iclbody">Once an error is detected, the command stops processing and no channels are closed. </p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.open(&quot;allslots&quot;)</p>
+<p class="codetable">channel.pattern.setimage(&quot;1B02,1B04,1B06&quot;, &quot;Chans&quot;)</p>
+<p class="codetable">channel.close(&quot;1A01:1A05, 1C03, Chans&quot;)</p>
+<p class="codetable">print(channel.getclose(&quot;slot1&quot;))</p>
+</td>
+<td width="338"><p class="tablebodytext">Close a variety of channels, directly and with a channel pattern; note that the output sorts the channels</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1A01;1A02;1A03;1A04;1A05;1B02;1B04;1B06;1C03</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h770" class="jumptemplate" title="channel.exclusiveclose()" href="17435.html" target="_self">channel.exclusiveclose()</a></p>
+<p class="iclbody"><a id="h777" class="jumptemplate" title="channel.exclusiveslotclose()" href="17437.html" target="_self">channel.exclusiveslotclose()</a></p>
+<p class="iclbody"><a id="h768" class="jumptemplate" title="channel.getclose()" href="17247.html" target="_self">channel.getclose()</a></p>
+<p class="iclbody"><a id="h771" class="jumptemplate" title="channel.open()" href="17548.html" target="_self">channel.open()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

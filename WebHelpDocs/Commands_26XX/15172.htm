@@ -1,0 +1,103 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15171.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15173.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15172" class="heading2-icl">smuX.trigger.measure.Y()</h2>
+<p class="bodyzero">This function configures the measurements that are to be made in a subsequent sweep.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.trigger.measure.<em class="emphasis">Y</em>(<span class="monospaceitalic">rbuffer</span>)</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.trigger.measure.iv(<span class="monospaceitalic">ibuffer</span>, <span class="monospaceitalic">vbuffer</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace"><code class="monospace">smua.trigger.measure.v()</code></code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">SMU measurement type (<code class="monospace"><code class="monospace">v</code></code> = voltage, <code class="monospace"><code class="monospace">i</code></code> = current, <code class="monospace"><code class="monospace">r</code></code> = resistance, <code class="monospace"><code class="monospace">p</code></code> = power)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">rbuffer</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A reading buffer object where the readings are stored</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">ibuffer</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A reading buffer object where current readings are stored</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">vbuffer</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A reading buffer object where voltage readings are stored</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">As measurements are made, they are stored in a reading buffer. If the instrument is configured to return multiple readings where one is requested, the readings are available as they are made. Measurements are in the following units of measure: <code class="monospace"><code class="monospace">v</code></code> = volts, <code class="monospace"><code class="monospace">i</code></code> = amperes, <code class="monospace"><code class="monospace">r</code></code> = ohms, <code class="monospace"><code class="monospace">p</code></code> = watts.</p>
+<p class="iclbody">The <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.measure.iv()</code> function stores current readings in <span class="monospaceitalic">ibuffer</span> and voltage readings in <span class="monospaceitalic">vbuffer</span>.</p>
+<p class="iclbody">If a given reading buffer contains any data, it is cleared before making any measurements, unless the reading buffer has been configured to append&nbsp;data.</p>
+<p class="iclbody">The SMU only retains the last call to any one of these functions and only that measurement action is performed.</p>
+<p class="iclbody">After configuring the measurements to make with this function, enable the measurement action.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smua.trigger.measure.v(vbuffername)</p>
+<p class="codetable">smua.trigger.measure.action = smua.ENABLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Stores voltage readings during the sweep for SMU channel A in buffer<code class="monospace"><code class="monospace"> vbuffername</code></code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h96900" class="jump" title="Reading buffers" href="77977.htm" target="_self">Reading buffers</a></p>
+<p class="listcommand"><a id="h15220" class="jump" title="smuX.measure.Y()" href="15122.htm" target="_self">smuX.measure.Y()</a></p>
+<p class="listcommand"><a id="h15222" class="jump" title="smuX.nvbufferY" href="15126.htm" target="_self">smuX.nvbufferY</a></p>
+<p class="listcommand"><a id="h15262" class="jump" title="smuX.trigger.measure.action" href="15169.htm" target="_self">smuX.trigger.measure.action</a></p>
+<p class="listcommand"><a id="h12329" class="jump" title="Sweep operation" href="13524.htm" target="_self">Sweep Operation</a></p>
+<p class="listcommand"><a id="h13512" class="jump" title="Triggering" href="14169.htm" target="_self">Triggering</a></p>
+<p class="listcommand"><a id="h14057" class="jump" title="waitcomplete()" href="13986.htm" target="_self">waitcomplete()</a></p>
+
+

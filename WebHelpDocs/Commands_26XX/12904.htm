@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> TSP-Link nodes </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12382.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="26814.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12904" class="heading3">TSP-Link nodes</h3>
+<p class="bodytext">Each instrument (node) attached to the TSP-Link<sup class="superscript">&reg;</sup> network must be identified by assigning it a unique TSP-Link node number.</p>
+<p class="bodytext">Commands for remote nodes are stored in the <code class="monospace">node</code> table. An individual node is accessed as <code class="monospace">node[</code><span class="monospaceitalic">N</span><code class="monospace">]</code>, where <span class="monospaceitalic">N</span> is the node number assigned to the node. </p>
+<p class="bodytext">All TSP-accessible remote commands can be accessed as elements of the specific node. The following attributes are examples of items you can access:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">node[</code><span class="monospaceitalic">N</span><code class="monospace">].model</code>: The product model number string of the node.</li><li class="listbullet"><code class="monospace">node[</code><span class="monospaceitalic">N</span><code class="monospace">].revision</code>: The product revision string of the node.</li><li class="listbullet"><code class="monospace">node[</code><span class="monospaceitalic">N</span><code class="monospace">].serialno</code>: The product serial number string of the node.</li></ul><p class="bodytext">You do not need to know the node number of the node that is running a script. The variable <code class="monospace">localnode</code> is an alias for the node entry of the node where the script is running. For example, if a script is running on node 5, you can use the global variable <code class="monospace">localnode</code> as an alias for <code class="monospace">node[5]</code>. To access the product model number for this example, use <code class="monospace">localnode.model</code>.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14174.htm" target="_self">TSP-Link system expansion interface</a></p><p class="relateditem"><a href="12382.htm" target="_self">Master and subordinates</a></p><p class="relateditem"><a href="26814.htm" target="_self">Connections</a></p><p class="relateditem"><a href="12380.htm" target="_self">Initialization</a></p><p class="relateditem"><a href="12389.htm" target="_self">Resetting the TSP-Link network</a></p><p class="relateditem"><a href="29297.htm" target="_self">Accessing nodes</a></p><p class="relateditem"><a href="12373.htm" target="_self">Using the reset() command</a></p><p class="relateditem"><a href="24381.htm" target="_self">Using the abort command</a></p><p class="relateditem"><a href="12365.htm" target="_self">Triggering with TSP-Link</a></p><p class="relateditem"><a href="14178.htm" target="_self">TSP advanced features</a></p><p class="relateditem"><a href="3240.htm" target="_self">Using groups to manage nodes on TSP-Link network</a></p><p class="relateditem"><a href="3245.htm" target="_self">Running simultaneous test scripts</a></p><p class="relateditem"><a href="3247.htm" target="_self">Using the data queue for real-time communication</a></p><p class="relateditem"><a href="3248.htm" target="_self">Copying test scripts across the TSP-Link network</a></p><p class="relateditem"><a href="3249.htm" target="_self">Removing stale values from the reading buffer cache</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12904" />
+<input id="topicDescription" type="hidden" value="TSP-Link nodes" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 4:28:26 PM" />
+</body>
+</html>

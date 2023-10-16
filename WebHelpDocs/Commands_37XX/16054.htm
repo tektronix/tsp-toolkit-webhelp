@@ -1,0 +1,118 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16053.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16055.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16054" class="heading2-icl">dmm.open()</h2>
+<p class="bodyzero">Opens the specified channel or channel pattern.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">dmm.open(&quot;<span class="monospaceitalic">channelList</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">A string that lists the channel or channel pattern to open</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command allows you to separate the opening and closing of channels and analog backplane relays when measuring. You can execute any number of commands between the open and close commands to meet your application needs.</p>
+<p class="iclbody">The configuration (<code class="monospace">dmm.getconfig()</code>) associated with the specified channel dictates whether a paired channel is open or not. For channel patterns, the channels associated with it are opened. A channel pattern includes a paired channel for multi-wire measurement if a channel is configured that way when the pattern is created (see commands <code class="monospace">channel.setpole()</code> and <code class="monospace">channel.pattern.setimage()</code>).</p>
+<p class="iclbody">The configuration (<code class="monospace">dmm.getconfig()</code>) dictates whether analog backplane relays 1 and 2 are opened and if a paired channel is opened. The <code class="monospace">dmm.open()</code> function does not use the analog backplane relays specified by the <code class="monospace">channel.setbackplane()</code> function or pole settings set by the <code class="monospace">channel.setpole()</code> function.</p>
+<p class="iclbody">An error is generated and the channels do not open if:</p>
+<ul class="listbullet"><li class="listbullet">An empty parameter string is specified.</li><li class="listbullet">The specified channel or channel pattern is invalid.</li><li class="listbullet">A channel number does not exist for installed card in slot specified.</li><li class="listbullet">A slot is empty.</li><li class="listbullet">The channel pattern does not exist.</li><li class="listbullet">The channel does not support being closed (for example, a digital I/O channel).</li><li class="listbullet">The channel is paired with another bank for a multi-wire application.</li><li class="listbullet">The channel configuration is &quot;nofunction&quot;.</li><li class="listbullet">More than one channel or channel pattern is specified in the parameter.</li></ul><p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="594"><p class="codetable">reset()                                                         </p>
+<p class="codetable">channel.setpole(&quot;slot2&quot; , 4)  </p>
+<p class="codetable">channel.pattern.setimage(&quot;2005, 2911, 2922&quot;, &quot;Chan5_4W&quot;)  </p>
+<p class="codetable">dmm.setconfig(&quot;Chan5_4W&quot;, &quot;fourwireohms&quot;)  </p>
+<p class="codetable">dmm.open(&quot;Chan5_4W&quot;)  </p>
+<p class="codetable">print(channel.pattern.getimage(&quot;Chan5_4W&quot;))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="594"><p class="tablebodytext">Assume a Model 3721 is installed in slot 2.</p>
+<p class="tablebodytext">Reset the instrument.</p>
+<p class="tablebodytext">Configure the slot 2 channels for 4-pole operation.</p>
+<p class="tablebodytext">Create a pattern called Chan5_4W.</p>
+<p class="tablebodytext">Assign 4-wire ohms configuration to the Chan5_4W pattern.</p>
+<p class="tablebodytext">Open the channels associated with Chan5_4W and display image of the Chan5_4W.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">2005(2025),2911,2922</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="594"><p class="codetable">dmm.setconfig(&quot;slot3&quot;, &quot;dcvolts&quot;) </p>
+<p class="codetable">dmm.close(&quot;3030&quot;) </p>
+<p class="codetable">print(channel.getclose(&quot;slot3&quot;)) </p>
+<p class="codetable">dmm.open(&quot;3030&quot;) </p>
+<p class="codetable">print(channel.getclose(&quot;slot3&quot;)) </p>
+<p class="codetable">dmm.close(&quot;3031&quot;) </p>
+<p class="codetable">print(channel.getclose(&quot;slot3&quot;)) </p>
+<p class="codetable">dmm.open(&quot;3031&quot;) </p>
+<p class="codetable">print(channel.getclose(&quot;slot3&quot;))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="594"><p class="tablebodytext">Assume a 3720 installed in slot 3.</p>
+<p class="tablebodytext">Set the configuration for DC volts.</p>
+<p class="tablebodytext">Close and open the channels.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">3030;3911</p>
+<p class="codetable">nil</p>
+<p class="codetable">3031;3921</p>
+<p class="codetable">nil</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h768" class="jump" title="channel.getclose()" href="17247.htm" target="_self">channel.getclose()</a></p>
+<p class="listcommand"><a id="h776" class="jump" title="channel.pattern.getimage()" href="17284.htm" target="_self">channel.pattern.getimage()</a></p>
+<p class="listcommand"><a id="h1806" class="jump" title="channel.pattern.setimage()" href="17296.htm" target="_self">channel.pattern.setimage()</a></p>
+<p class="listcommand"><a id="h766" class="jump" title="channel.setbackplane()" href="15941.htm" target="_self">channel.setbackplane()</a></p>
+<p class="listcommand"><a id="h773" class="jump" title="channel.setpole()" href="15949.htm" target="_self">channel.setpole()</a></p>
+<p class="listcommand"><a id="h907" class="jump" title="dmm.close()" href="16014.htm" target="_self">dmm.close()</a></p>
+<p class="listcommand"><a id="h909" class="jump" title="dmm.getconfig()" href="16031.htm" target="_self">dmm.getconfig()</a></p>
+
+

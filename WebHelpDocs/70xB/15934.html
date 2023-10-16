@@ -1,0 +1,87 @@
+<html><head><title> channel.pattern.catalog() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17548.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15935.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.pattern.catalog()</h2>
+<p class="bodyzero">This function creates a list of the user-created channel patterns.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">for <em class="emphasis">name</em> in channel.pattern.catalog() do</p>
+<p class="iclcode">   ...</p>
+<p class="iclcode">end</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">name</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">String representing the userdefined name of the channel pattern.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function allows you to print or delete all user-created channel patterns in the runtime environment. The entries that are returned are listed in random order.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.pattern.setimage(&quot;1A01,1A02&quot;,</p>
+<p class="codetable">   &quot;patternA&quot;)</p>
+<p class="codetable">channel.pattern.setimage(&quot;1B01,1B02&quot;,</p>
+<p class="codetable">   &quot;patternB&quot;)</p>
+<p class="codetable">channel.pattern.setimage(&quot;1C01,1C02&quot;,</p>
+<p class="codetable">   &quot;patternC&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">for name in channel.pattern.catalog() do</p>
+<p class="codetable">   print(name .. &quot; = &quot; ..</p>
+<p class="codetable">      channel.pattern.getimage(name))</p>
+<p class="codetable">   channel.pattern.delete(name)</p>
+<p class="codetable">end</p>
+</td>
+<td width="338"><p class="tablebodytext">This example prints the names and items associated with all user-created channel patterns. It then deletes the channel pattern.</p>
+<p class="codetable">patternC = 1C01,1C02</p>
+<p class="codetable">patternA = 1A01,1A02</p>
+<p class="codetable">patternB = 1B01,1B02</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h779" class="jumptemplate" title="channel.pattern.delete()" href="15935.html" target="_self">channel.pattern.delete()</a></p>
+<p class="iclbody"><a id="h776" class="jumptemplate" title="channel.pattern.getimage()" href="17284.html" target="_self">channel.pattern.getimage()</a></p>
+<p class="iclbody"><a id="h1806" class="jumptemplate" title="channel.pattern.setimage()" href="17296.html" target="_self">channel.pattern.setimage()</a></p>
+<p class="iclbody"><a id="h791" class="jumptemplate" title="channel.pattern.snapshot()" href="17299.html" target="_self">channel.pattern.snapshot()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

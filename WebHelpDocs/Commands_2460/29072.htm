@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.source.protect.level </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="28022.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30235.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t29072" class="heading2-icl">smu.source.protect.level</h2>
+<p class="bodyzero">This attribute sets the overvoltage protection setting of the source output.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#​336699" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Source configuration list<br>Function change</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Configuration script<br>Source configuration list</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">smu.PROTECT_NONE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu.PROTECT_<span class="monospaceitalic">x</span> = smu.source.protect.level</p>
+<p class="iclcode">smu.source.protect.level = smu.PROTECT_<span class="monospaceitalic">x</span></p>
+<p class="iclcode">smu.PROTECT_<span class="monospaceitalic">x</span><em class="emphasis"> </em>= smu.source.getattribute(<span class="monospaceitalic">function</span>, smu.ATTR_SRC_PROTECT_LEVEL)</p>
+<p class="iclcode">smu.source.setattribute(<span class="monospaceitalic">function</span>, smu.ATTR_SRC_PROTECT_LEVEL, smu.PROTECT_<span class="monospaceitalic">x</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">x</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The overvoltage protection level, <code class="monospace">2V</code>, <code class="monospace">5V</code>, <code class="monospace">10V</code>, <code class="monospace">20V</code>, <code class="monospace">40V</code>, <code class="monospace">60V</code>, <code class="monospace">80V</code>, or <code class="monospace">NONE</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">sourceOffMode</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The output-off setting; set to one of the following values (see the <strong class="specialbold">Details</strong> below for specifics regarding each option):</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">smu.OFFMODE_NORMAL</code></li><li class="tablelistbullet9pt"><code class="monospace">smu.OFFMODE_ZERO</code></li><li class="tablelistbullet9pt"><code class="monospace">smu.OFFMODE_HIGHZ</code></li><li class="tablelistbullet9pt"><code class="monospace">smu.OFFMODE_GUARD</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The source function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current source: <code class="monospace">smu.FUNC_DC_CURRENT</code></li><li class="tablelistbullet9pt">Voltage source: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Overvoltage protection restricts the maximum voltage level that the instrument can source. It is in effect when either current or voltage is sourced.</p>
+<p class="iclbody">This protection is in effect for both positive and negative output voltages.</p>
+<p class="iclbody">When this attribute is used in a test sequence, it should be set before turning the source on.</p>
+<p class="warning"><img id="f4282" src="warninglarge_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0"><br>Even with the overvoltage protection set to the lowest value (2&nbsp;V), never touch anything connected to the terminals of the Model 2460 when the instrument is on. Always assume that a hazardous voltage (greater than 30&nbsp;V<sub class="subscript">RMS</sub>) is present when the instrument is on. To prevent damage to the device under test or external circuitry, do not set the voltage source to levels that exceed the value that is set for overvoltage protection.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smu.source.func = smu.FUNC_DC_VOLTAGE</p>
+<p class="codetable">smu.source.protect.level = <code class="monospace">smu.PROTECT_40V</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Sets the maximum voltage limit of the instrument to 40&nbsp;V.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h29924" class="jump" title="Overvoltage protection" href="ID_AVM_BUT.htm" target="_self">Overvoltage protection</a></p>
+
+
+<input id="topicId" type="hidden" value="29072" />
+<input id="topicDescription" type="hidden" value="smu.source.protect.level" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 1:13:19 PM" />
+</body>
+</html>

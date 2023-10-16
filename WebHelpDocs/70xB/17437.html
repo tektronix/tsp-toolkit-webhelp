@@ -1,0 +1,84 @@
+<html><head><title> channel.exclusiveslotclose() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17435.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17247.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.exclusiveslotclose()</h2>
+<p class="bodyzero">This function exclusively closes the specified channels and channel patterns on the defined slot.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><code class="monospace">channel.exclusiveslotclose(</code><em class="emphasis">channelList</em><code class="monospace">)</code></p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string that lists the channels and channel patterns to exclusively close on the card in an associated slot</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command allows you to bundle the closing of channels with the opening of a channel. Any currently closed channel opens if not specified for closure on the slots defined in the parameter. Using this command guarantees that only the specified channels and channel patterns are closed on the slots associated with the <span class="monospaceitalic">channelList</span>.</p>
+<p class="iclbody">When this command is sent:</p>
+<ul class="listbullet2"><li class="listbullet2">Closed channels for the defined slots are opened if they are not specified in the <span class="monospaceitalic">channelList</span></li><li class="listbullet2">Channels specified by the items in <span class="monospaceitalic">channelList</span> are closed</li><li class="listbullet2">Any settling times and userspecified delay times are incurred</li></ul><p class="iclbody">For example, if row 1, column 1 channels are closed on each of the six slots, specifying a <span class="monospaceitalic">channelList</span> parameter of <code class="monospace">&quot;2A02,&nbsp;4A04&quot;</code> opens the row 1, column 1 channels (slots 2 and 4 only). Then, the row 1, column 2 channel on slot 2, and the row 1, column 4 channel on slot 4 close. The row 1, column 2 channels remain closed on slots 1, 3, 5, and 6.</p>
+<p class="iclbody">An error is generated if:</p>
+<ul class="listbullet2"><li class="listbullet2">The parameter string contains <code class="monospace">slot</code><span class="monospaceitalic">X</span><code class="monospace">, </code>where <span class="monospaceitalic">X</span> equals 1 to 6 for Model 707B, or 1 for Model 708B, or <code class="monospace">allslots</code></li><li class="listbullet2">A forbidden item is specified</li></ul><p class="iclbody">Once an error is detected, the command stops processing.</p>
+<p class="iclsubheading">Example</p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="435"><p class="codetable">channel.open(&quot;allslots&quot;)</p>
+<p class="codetable">channel.close(&quot;1A01,2A01,3A01,4A01,5A01,6A01&quot;)</p>
+<p class="codetable">channel.exclusiveslotclose(&quot;3A03&quot;)</p>
+<p class="codetable">print(channel.getclose(&quot;allslots&quot;))</p>
+</td>
+<td width="308"><p class="tablebodytext">Open all channels on all slots.</p>
+<p class="tablebodytext">Close row A column 1 channels on all slots.</p>
+<p class="tablebodytext">Open row A column 1 on slot 3 and close row A column 3 on slot 3 without affecting any other slot with closed channels.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1A01;2A01;3A03;4A01;5A01;6A01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h1803" class="jumptemplate" title="channel.clearforbidden()" href="17406.html" target="_self">channel.clearforbidden()</a></p>
+<p class="iclbody"><a id="h769" class="jumptemplate" title="channel.close()" href="17229.html" target="_self">channel.close()</a></p>
+<p class="iclbody"><a id="h770" class="jumptemplate" title="channel.exclusiveclose()" href="17435.html" target="_self">channel.exclusiveclose()</a></p>
+<p class="iclbody"><a id="h768" class="jumptemplate" title="channel.getclose()" href="17247.html" target="_self">channel.getclose()</a></p>
+<p class="iclbody"><a id="h1804" class="jumptemplate" title="channel.getforbidden()" href="17404.html" target="_self">channel.getforbidden()</a></p>
+<p class="iclbody"><a id="h771" class="jumptemplate" title="channel.open()" href="17548.html" target="_self">channel.open()</a></p>
+<p class="iclbody"><a id="h16182" class="jumptemplate" title="channel.setforbidden()" href="17402.html" target="_self">channel.setforbidden()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

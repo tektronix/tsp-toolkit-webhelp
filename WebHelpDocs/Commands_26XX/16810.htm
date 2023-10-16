@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Memory considerations for the runtime environment </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2409.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14174.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t16810" class="heading3">Memory considerations for the runtime environment</h3>
+<p class="bodytext">The 2600B reserves 32&nbsp;MB of memory for dynamic runtime use. Approximate allocation of this memory is shown below:</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">5 MB</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext">Firmware general operation</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">1 MB</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext">Reserve for instrument internal operation</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">2 MB</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext">Reserve for future firmware updates</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">24 MB</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext">Runtime environment, user&#8209;created reading buffers, and active sweep configuration</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Note that the runtime environment, user-created reading buffers, and active sweep configuration must fit in the 24&nbsp;MB of memory that is available. The amount of memory used by a reading buffer is approximately 15 bytes for each entry requested.</p>
+<p class="bodytext">Reading buffers also use a small amount of memory for reading buffer management, which is not significant when making memory utilization calculations. For example, assume two reading buffers were created. One of them was created to store up to 1,000 readings and the other to store up to 2,500 readings. The memory reserved for the reading buffers is calculated as follows:</p>
+<p class="bodytext">(1000 * 15) + (2500 * 15) = 52,500 bytes or 52.5 kilobytes</p>
+<p class="bodytext">Note that the dedicated reading buffers do not consume memory that is needed by the runtime environment; do not include them in your memory consumption calculations. Also, reading buffers for remote nodes consume memory on the remote node, not the local node. Make sure the total reading buffer memory for any particular remote node does not exceed 24&nbsp;MB, but do not include that amount in your local memory consumption calculations. </p>
+<p class="bodytext">The amount of memory used by a sweep configuration is based on the number of source points. The actual memory consumption can vary greatly depending on the source&#8209;measure unit (SMU) settings, but as a general rule, each source point can be expected to consume at least 24 bytes.</p>
+<p class="bodytext">It is possible for the memory used for the runtime environment, sweep configuration and reading buffers to exceed 24&nbsp;MB. When this occurs, there is a risk that memory allocation errors will occur and commands will not be executed as expected. </p>
+<p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">If the instrument encounters memory allocation errors when the memory used is above 95 percent, the state of the instrument cannot be guaranteed. After attempting to save any important data, turn off power to the instrument and turn it back on to reset the runtime environment and return the instrument to a known state. Unsaved scripts and data in reading buffers will be lost.</p>
+<p class="bodytext">The amount of memory in use can be checked using the <code class="monospace">meminfo()</code> function. The first value returned by <code class="monospace">meminfo()</code> is the number of kilobytes of memory in&nbsp;use.</p>
+<p class="bodytext">If the amount of memory used is over 95 percent or if you receive out&#8209;of&#8209;memory errors, you should reduce the amount of memory that is used.</p>
+<p class="bodytext">Some suggestions for increasing the available memory:</p>
+<ul class="listbullet"><li class="listbullet">Turn the instrument off and on. This deletes scripts that have not been saved and reloads only scripts that have been stored in nonvolatile memory.</li><li class="listbullet">Remove unneeded scripts from nonvolatile memory. Scripts are loaded from nonvolatile memory into the runtime environment when the instrument is turned on. See <a id="h17032" class="jump" title="Delete user scripts from the instrument" href="2408.htm" target="_self">Delete user scripts from the instrument</a>.</li><li class="listbullet">Reduce the number of TSP-Link<sup class="superscript">&reg;</sup> nodes.</li><li class="listbullet">Delete unneeded global variables from the runtime environment by setting them to <code class="monospace">nil</code>.</li><li class="listbullet">Set the source attribute of all scripts to <code class="monospace">nil</code>.</li><li class="listbullet">Adjust the <code class="monospace">collectgarbage()</code> settings in Lua. See <a id="h16504" class="jump" title="Lua memory management" href="16503.htm" target="_self">Lua memory management</a> for more information.</li><li class="listbullet">Review scripts to optimize their memory usage. In particular, you can see memory gains by changing string concatenation lines into a Lua table of string entries. You can then use the <code class="monospace">table.concat()</code> function to create the final string concatenation.</li></ul><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="17051.htm" target="_self">Advanced scripting for TSP</a></p><p class="relateditem"><a href="16842.htm" target="_self">Global variables and the script.user.scripts table</a></p><p class="relateditem"><a href="17075.htm" target="_self">Create a script using the script.new() command</a></p><p class="relateditem"><a href="16688.htm" target="_self">Rename a script</a></p><p class="relateditem"><a href="2405.htm" target="_self">Retrieve a user script</a></p><p class="relateditem"><a href="2408.htm" target="_self">Delete user scripts from the instrument</a></p><p class="relateditem"><a href="2409.htm" target="_self">Restore a script to the runtime environment</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="16810" />
+<input id="topicDescription" type="hidden" value="Memory considerations for the runtime environment" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:41:27 PM" />
+</body>
+</html>

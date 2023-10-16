@@ -1,0 +1,86 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14508.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14500.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t14488" class="heading2-icl">channel.calibration.unlock()</h2>
+<p class="bodyzero">This function unlocks calibration functionality for a card so that calibration operations can be performed.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.calibration.unlock(&quot;slot<span class="monospaceitalic">X</span>&quot;, <span class="monospaceitalic">password</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="449"><p class="tablebodytext">The slot number ( <code class="monospace">1</code> to <code class="monospace">6</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">password</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="449"><p class="tablebodytext">The password that unlocks calibration</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Calibration data is locked during normal operation. This command enables calibration functionality.  When calibration is completed, calibration functionality must once again be locked (<code class="monospace">channel.calibration.lock()</code>). Only one card at a time may be unlocked.</p>
+<p class="iclbody">There is only one password per card. Therefore, the only acceptable values for channel list are<code class="monospace"> &quot;slot1&quot;</code>, &quot;<code class="monospace">slot2&quot;</code>, and so on. Otherwise, an error is generated.</p>
+<p class="iclbody">An error is generated if the password that is entered does not match the one that was saved with <code class="monospace">channel.calibration.password()</code>.</p>
+<p class="iclbody">The password can only contain six case-sensitive, alphanumeric characters.</p>
+<p class="iclbody">The default password from the factory is <code class="monospace">KI3706</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.calibration.unlock(&quot;slot1&quot;,&quot;KI3706&quot;)</p>
+<p class="codetable">-- Perform operations to generate the calibration data</p>
+<p class="codetable">channel.calibration.save()</p>
+<p class="codetable">channel.calibration.lock()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Unlock the channel.</p>
+<p class="tablebodytext">Save the calibration settings.</p>
+<p class="tablebodytext">Lock the channel.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14490" class="jump" title="channel.calibration.lock()" href="14487.htm" target="_self">channel.calibration.lock()</a></p>
+<p class="listcommand"><a id="h7819" class="jump" title="channel.calibration.password()" href="14506.htm" target="_self">channel.calibration.password()</a></p>
+<p class="listcommand"><a id="h13981" class="jump" title="channel.calibration.save()" href="13980.htm" target="_self">channel.calibration.save()</a></p>
+
+

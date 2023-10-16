@@ -1,0 +1,110 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12953.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12934.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t12929" class="heading2-icl">InitiatePulseTest()</h2>
+<p class="bodyzero">This KIPulse factory script function initiates the pulse configuration assigned to <span class="monospaceitalic">tag</span>.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = InitiatePulseTest(<span class="monospaceitalic">tag</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">f</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A Boolean flag; this flag is <code class="monospace">true</code> when the pulse was successfully configured, <code class="monospace">false</code> when errors are encountered</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">msg</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string message; if the <span class="monospaceitalic">f</span> flag is <code class="monospace">false</code>, <span class="monospaceitalic">msg</span> contains an error message; if it is <code class="monospace">true</code>, <span class="monospaceitalic">msg</span> contains a string that indicates successful configuration</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">tag</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Numeric identifier of the pulse configuration to be initiated</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function only initiates configured pulse trains assigned to a valid <span class="monospaceitalic">tag</span>. Configure the pulse before initiating it using one of the <code class="monospace">ConfigurePulse*</code> functions (refer to the <strong class="specialbold">Also see</strong> section).</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.reset()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.source.rangev = 5</p>
+<p class="codetable">smua.source.rangei = 1</p>
+<p class="codetable">smua.source.levelv = 0</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.measure.rangev = 5</p>
+<p class="codetable">smua.measure.rangei = 1</p>
+<p class="codetable">smua.measure.nplc = 0.01</p>
+<p class="codetable">smua.measure.autozero = smua.AUTOZERO_ONCE</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.nvbuffer1.clear()</p>
+<p class="codetable">smua.nvbuffer1.appendmode = 1</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.source.output = smua.OUTPUT_ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">f1, msg1 = ConfigPulseVMeasureI(smua, 0, 5, 1, 0.002, 0.2, 10, smua.nvbuffer1, 1)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if f1 == true then</p>
+<p class="codetable">   f2, msg2 = InitiatePulseTest(1)</p>
+<p class="codetable">   print(&quot;Initiate message:&quot;, msg2)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;Config errors:&quot;, msg1)</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Configure channel A to generate a pulse train. If no errors are encountered, initiate the pulse train. Channel A pulses voltage from a bias level of 0&nbsp;V to a pulse level of 5&nbsp;V. The pulse level is present for 2&nbsp;ms and the bias level for 200&nbsp;ms, with a 1&nbsp;A limit setting. A total of 10 pulses is generated, and the measurement data is stored in <code class="monospace">smua.nvbuffer1</code>. This pulse train is assigned to <code class="monospace">tag = 1</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12925" class="jump" title="ConfigPulseIMeasureV()" href="12926.htm" target="_self">ConfigPulseIMeasureV()</a></p>
+<p class="listcommand"><a id="h12936" class="jump" title="ConfigPulseIMeasureVSweepLin()" href="12937.htm" target="_self">ConfigPulseIMeasureVSweepLin()</a></p>
+<p class="listcommand"><a id="h12942" class="jump" title="ConfigPulseIMeasureVSweepLog()" href="29313.htm" target="_self">ConfigPulseIMeasureVSweepLog()</a></p>
+<p class="listcommand"><a id="h12930" class="jump" title="ConfigPulseVMeasureI()" href="29314.htm" target="_self">ConfigPulseVMeasureI()</a></p>
+<p class="listcommand"><a id="h12939" class="jump" title="ConfigPulseVMeasureISweepLin()" href="12940.htm" target="_self">ConfigPulseVMeasureISweepLin()</a></p>
+<p class="listcommand"><a id="h12945" class="jump" title="ConfigPulseVMeasureISweepLog()" href="12946.htm" target="_self">ConfigPulseVMeasureISweepLog()</a></p>
+<p class="listcommand"><a id="h12919" class="jump" title="KIPulse factory script" href="12916.htm" target="_self">KIPulse factory script</a></p>
+
+

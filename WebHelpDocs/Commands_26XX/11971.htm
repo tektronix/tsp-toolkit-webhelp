@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Guard </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="29087.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="28444.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t11971" class="heading3">Guard</h3>
+<p class="warning"><img id="f4282" src="warninglarge_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0">GUARD is at the same potential as output HI. If hazardous voltages are present at output HI, they are also present at the GUARD terminal.</p>
+<p class="bodytext">The rear&#8209;panel GUARD terminals are always enabled and provide a buffered voltage that is at the same level as the HI (or SENSE HI for remote sense) voltage. The purpose of guarding is to eliminate the effects of leakage current (and capacitance) that can exist between HI and LO. In the absence of a driven guard, leakage in the external test circuit could be high enough to adversely affect the performance of the SMU.</p>
+<p class="bodytext">Leakage current can occur through parasitic or nonparasitic leakage paths. An example of parasitic resistance is the leakage path across the insulator in a coaxial or triaxial cable. An example of nonparasitic resistance is the leakage path through a resistor that is connected in parallel to the device&#8209;under&#8209;test (DUT).</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In This Section</p><p class="relateditem"><a href="28444.htm" target="_self">Guard connections</a></p></td>
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="77072.htm" target="_self">Source-measure concepts</a></p><p class="relateditem"><a href="28193.htm" target="_self">Limit principles</a></p><p class="relateditem"><a href="11598.htm" target="_self">Overheating protection</a></p><p class="relateditem"><a href="11961.htm" target="_self">Operating boundaries</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11971" />
+<input id="topicDescription" type="hidden" value="Guard" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:21:53 PM" />
+</body>
+</html>

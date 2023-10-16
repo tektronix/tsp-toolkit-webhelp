@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> format.byteorder </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="28056.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="28063.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t28048" class="heading2-icl">format.byteorder</h2>
+<p class="bodyzero">This attribute sets the binary byte order for the data that is printed using the <code class="monospace">printnumber()</code> and <code class="monospace">printbuffer()</code> functions.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">format.LITTLEENDIAN</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">order</em><span class="monospaceitalic"> </span>= format.byteorder</p>
+<p class="iclcode">format.byteorder = <em class="emphasis">order</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">order</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">Byte order value as follows:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Most significant byte first: <code class="monospace">format.BIGENDIAN</code></li><li class="tablelistbullet9pt">Least significant byte first: <code class="monospace">format.LITTLEENDIAN</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute selects the byte order in which data is written when you are printing data values with the <code class="monospace">printnumber()</code> and <code class="monospace">printbuffer()</code> functions. The byte order attribute is only used with the <code class="monospace">format.REAL32</code> and <code class="monospace">format.REAL64</code> data formats.</p>
+<p class="iclbody">If you are sending data to a computer with a Microsoft Windows operating system, select the <code class="monospace">format.LITTLEENDIAN</code> byte order.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">x = 1.23</p>
+<p class="codetable">format.data = format.REAL32</p>
+<p class="codetable">format.byteorder = format.LITTLEENDIAN</p>
+<p class="codetable">printnumber(x)</p>
+<p class="codetable">format.byteorder = format.BIGENDIAN</p>
+<p class="codetable">printnumber(x)</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Output depends on the terminal program you use, but will look something like:</p>
+<p class="codetable">#0¤p??</p>
+<p class="codetable">#0??p¤</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14804" class="jump" title="format.asciiprecision" href="28056.htm" target="_self">format.asciiprecision</a></p>
+<p class="listcommand"><a id="h14806" class="jump" title="format.data" href="28063.htm" target="_self">format.data</a></p>
+<p class="listcommand"><a id="h15059" class="jump" title="printbuffer()" href="15057.htm" target="_self">printbuffer()</a></p>
+<p class="listcommand"><a id="h15060" class="jump" title="printnumber()" href="15058.htm" target="_self">printnumber()</a></p>
+
+
+<input id="topicId" type="hidden" value="28048" />
+<input id="topicDescription" type="hidden" value="format.byteorder" />
+<input id="footer-modified" type="hidden" value="Last modified: 5/22/2019 12:51:12 PM" />
+</body>
+</html>

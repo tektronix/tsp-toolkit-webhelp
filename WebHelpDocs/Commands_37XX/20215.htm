@@ -1,0 +1,110 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="20216.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16215.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t20215" class="heading2-icl">ptp.ds.info</h2>
+<p class="bodyzero">This function is a read-only string that returns the settings of the different data sets (DS) associated with the IEEE&#8209;1588 2008 specification.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">ptp.ds.info</p>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">The following data sets are returned:</p>
+<ul class="listbullet"><li class="listbullet">Current</li><li class="listbullet">Default</li><li class="listbullet">Parent</li><li class="listbullet">Time properties</li><li class="listbullet">Port</li><li class="listbullet">Foreign master</li></ul><p class="bodytext">For more detailed information regarding field information, refer to the IEEE-1588 2008 specification.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="162"><p class="codetable">print(ptp.ds.info)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Output:</p>
+<p class="codetable">Current DS</p>
+<p class="codetable">         Steps removed:  0</p>
+<p class="codetable">    Offset from Master:  0.000000000</p>
+<p class="codetable">       Mean Path Delay:  0.000000000</p>
+<p class="codetable">Default DS</p>
+<p class="codetable">       Number of Ports:  1</p>
+<p class="codetable">        Two Step Clock:  T</p>
+<p class="codetable">            Priority 1:  128</p>
+<p class="codetable">            Priority 2:  128</p>
+<p class="codetable">                Domain:  0</p>
+<p class="codetable">        Clock Identity:  12 34 56 FF FE 65 43 21</p>
+<p class="codetable">    Clock Qual - Class:  248</p>
+<p class="codetable"> Clock Qual - Accuracy:  254</p>
+<p class="codetable"> Clock Qual - Variance:  0</p>
+<p class="codetable">            Slave Only:  F</p>
+<p class="codetable">Parent DS</p>
+<p class="codetable">           Parent Stats:  F</p>
+<p class="codetable">  Parent Clock Identify:  12 34 56 FF FE 65 43 21</p>
+<p class="codetable">   Parent Port Identify:  0</p>
+<p class="codetable">      Parent Offset Var:  65535</p>
+<p class="codetable">Parent Phase Chnge Rate:  2147483647</p>
+<p class="codetable">          GM Priority 1:  128</p>
+<p class="codetable">          GM Priority 2:  128</p>
+<p class="codetable">   GM Clck Qual - Class:  248</p>
+<p class="codetable">GM Clck Qual - Accuracy:  254</p>
+<p class="codetable">GM Clck Qual - Variance:  0</p>
+<p class="codetable">      GM Clock Identify:  12 34 56 FF FE 65 43 21</p>
+<p class="codetable">Time Properties DS</p>
+<p class="codetable">     Current UTC Offset:  0</p>
+<p class="codetable">                Leap 59:  F</p>
+<p class="codetable">                Leap 61:  F</p>
+<p class="codetable">Current UTC Offset Vald:  T</p>
+<p class="codetable">          PTP Timescale:  T</p>
+<p class="codetable">         Time Traceable:  F</p>
+<p class="codetable">    Frequency Traceable:  F</p>
+<p class="codetable">            Time Source:  Internal Oscillator</p>
+<p class="codetable">Port DS</p>
+<p class="codetable">         Clock Identify:  12 34 56 FF FE 65 43 21</p>
+<p class="codetable">          Port Identify:  1</p>
+<p class="codetable">             Port State:  6</p>
+<p class="codetable"> Log Mn Delay Req Intrvl: 4</p>
+<p class="codetable">   Peer mean Path Delay:  0</p>
+<p class="codetable">  Log Announce Interval:  1</p>
+<p class="codetable"> Announc Receipt Timeout: 3</p>
+<p class="codetable">      Log Sync Interval:  0</p>
+<p class="codetable">        Delay Mechanism:  E2E</p>
+<p class="codetable">Log Mn PDelay Rq Intrvl:  0</p>
+<p class="codetable">         Version Number:  2</p>
+<p class="codetable">Foreign Master DS 1</p>
+<p class="codetable">      Announce Messages:  2</p>
+<p class="codetable"> Frgn Mstr Clock Idntfy:  00 60 1A FF FE 01 54 29</p>
+<p class="codetable">  Frgn Mstr Port Idntfy:  1</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">Not applicable</p>
+
+

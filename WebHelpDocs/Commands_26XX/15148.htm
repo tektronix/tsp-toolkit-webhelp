@@ -1,0 +1,84 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17115.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19504.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15148" class="heading2-icl">smuX.source.lowrangeY</h2>
+<p class="bodyzero">This attribute sets the lowest source range that is used during autoranging.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="78"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="126"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="96"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="90"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="270"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="78"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="126"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="96"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="90"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="270"><p class="tablebodytextsmall">Voltage:</p>
+<p class="tablebodytextsmall">2601B, 2602B, 2604B: 100e&#8209;3 (100&nbsp;mV)<br>2611B, 2612B, 2614B, 2634B, 2635B, 2636B: 200e&#8209;3 (200&nbsp;mV)</p>
+<p class="tablebodytextsmall">Current:</p>
+<p class="tablebodytextsmall">2601B, 2602B, 2604B, 2611B, 2612B, 2614B: 100e&#8209;9 (100&nbsp;nA)<br>2634B, 2635B, 2636B: 1e&#8209;9 (1&nbsp;nA)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">sourceRangeLow</span> = smu<span class="monospaceitalic">X</span>.source.lowrange<span class="monospaceitalic">Y</span></p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.source.lowrange<span class="monospaceitalic">Y</span> = <span class="monospaceitalic">sourceRangeLow</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">sourceRangeLow</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Set to the lowest voltage (in volts) or current (in amperes) range to be used</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.source.lowrangev</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">SMU source function (v = voltage, i = current)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is used with source autoranging to put a lower bound on the range that is used. Lower ranges generally require greater settling times. If you set a low range value, you might be able to source small values with less settling time.</p>
+<p class="iclbody">If the instrument is set to autorange and it is on a range lower than the one specified by <span class="monospaceitalic">sourceRangeLow</span>, the source range is changed to the range specified by <span class="monospaceitalic">sourceRangeLow</span>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="396"><p class="codetable">smua.source.lowrangev = 1</p>
+</td>
+<td width="198"><p class="tablebodytext">Sets volts low range for Models 2601B, 2602B, 2604B SMU A to 1&nbsp;V. This prevents the source from using the 100 mV range when sourcing voltage.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15235" class="jump" title="smuX.source.autorangeY" href="15139.htm" target="_self">smuX.source.autorangeY</a></p>
+
+

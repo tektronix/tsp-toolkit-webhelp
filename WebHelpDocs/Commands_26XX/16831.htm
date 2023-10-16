@@ -1,0 +1,211 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Variable types </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="2420.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16830.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t16831" class="heading4">Variable types</h4>
+<p class="bodytext">Variables can be one of the following types.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="144" height="0"></td>
+<td width="174" height="0"></td>
+<td width="282" height="0"></td>
+<td width="0" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="3" width="600"><p class="tableheading">Variable types and values</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="144"><p class="tableheading">Variable type returned</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="174"><p class="tableheading">Value</p>
+</th>
+<th style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tableheading">Notes</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable">&quot;nil&quot;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tablebodytext">not declared</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tablebodytext">The type of the value <code class="monospace">nil</code>, whose main property is to be different from any other value; usually it represents the absence of a useful value. </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable">&quot;boolean&quot;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tablebodytext">true or false</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tablebodytext">Boolean is the type of the values <code class="monospace">false</code> and <code class="monospace">true</code>. In Lua, both <code class="monospace">nil</code> and <code class="monospace">false</code> make a condition <code class="monospace">false</code>; any other value makes it <code class="monospace">true</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable">&quot;number&quot;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tablebodytext">number</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tablebodytext">All numbers are real numbers; there is no distinction between integers and floating-point numbers.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable">&quot;string&quot;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tablebodytext">sequence of words or characters</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable">&quot;function&quot;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tablebodytext">a block of code</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tablebodytext">Functions perform a task or compute and return values.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable">&quot;table&quot;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tablebodytext">an array</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tablebodytext">New tables are created with <code class="monospace">{&nbsp;}</code> braces. For&nbsp;example:<br><code class="monospace">{1, 2, 3.00e0}</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable">&quot;userdata&quot;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tablebodytext">variables</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tablebodytext">Allows arbitrary program data to be stored in Lua variables.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="144"><p class="codetable">&quot;thread&quot;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="174"><p class="tablebodytext">line of execution</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="282"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">To determine the type of a variable, you can call the <code class="monospace">type()</code> function, as shown in the examples&nbsp;below.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The output you get from these examples may vary depending on the data format that is set.</p>
+<p class="bodytext"><strong class="specialbold">Example: Nil</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">x = nil</p>
+<p class="codetable">print(x, type(x))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">nil      nil</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Boolean</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">y = false</p>
+<p class="codetable">print(y, type(y))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">false      boolean</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: String and number</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">x = &quot;123&quot;</p>
+<p class="codetable">print(x, type(x))</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">x = x + 7</p>
+<p class="codetable">print(x, type(x))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">123      string</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="tablebodytext">Adding a number to x forces its type to number.</p>
+<p class="codetable">130     number</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Function</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">function add_two(first_value,</p>
+<p class="codetable">   second_value)</p>
+<p class="codetable">   return first_value + second_value</p>
+<p class="codetable">end</p>
+<p class="codetable">print(add_two(3, 4), type(add_two))</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="codetable">7     function</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"><strong class="specialbold">Example: Table</strong></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="288"><p class="codetable">atable = {1, 2, 3, 4}</p>
+<p class="codetable">print(atable, type(atable))</p>
+<p class="codetable">print(atable[1])</p>
+<p class="codetable">print(atable[4])</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Defines a table with four numeric elements.</p>
+<p class="tablebodytext">Note that the <span class="monospaceitalic">table</span> value (shown here as <code class="monospace">a096cd30</code>) varies.</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">table: a096cd30      table</p>
+<p class="codetable">1</p>
+<p class="codetable">4</p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="14284.htm" target="_self">Lua basics</a></p><p class="relateditem"><a href="16697.htm" target="_self">Comments</a></p><p class="relateditem"><a href="14283.htm" target="_self">Function and variable name restrictions</a></p><p class="relateditem"><a href="2420.htm" target="_self">Values and variable types</a></p><p class="relateditem"><a href="16830.htm" target="_self">Delete a global variable</a></p><p class="relateditem"><a href="2422.htm" target="_self">Functions</a></p><p class="relateditem"><a href="16449.htm" target="_self">Operators</a></p><p class="relateditem"><a href="2427.htm" target="_self">Conditional branching</a></p><p class="relateditem"><a href="2428.htm" target="_self">Loop control</a></p><p class="relateditem"><a href="2423.htm" target="_self">Tables and arrays</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="16831" />
+<input id="topicDescription" type="hidden" value="Variable types" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/29/2021 11:11:13 AM" />
+</body>
+</html>

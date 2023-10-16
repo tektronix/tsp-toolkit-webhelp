@@ -1,0 +1,109 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16242.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16973.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t16891" class="heading2-icl">scan.background()</h2>
+<p class="bodyzero">This function starts a scan and runs the scan in the background.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">state</em>, <em class="emphasis">scanCount</em>, <em class="emphasis">stepCount</em> = scan.background()</p>
+<p class="iclcode"><em class="emphasis">state</em>, <em class="emphasis">scanCount</em>, <em class="emphasis">stepCount</em>, <em class="emphasis">reading</em> = scan.background()</p>
+<p class="iclcode"><span class="monospaceitalic">state</span>, <span class="monospaceitalic">scanCount</span>, <span class="monospaceitalic">stepCount</span>, <span class="monospaceitalic">reading</span> = scan.background(<span class="monospaceitalic">bufferVar</span>)</p>
+<p class="iclbody"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The result of scanning:</p>
+<p class="tablebodytext"><code class="monospace">scan.EMPTY</code> or <code class="monospace">0</code></p>
+<p class="tablebodytext"><code class="monospace">scan.BUILDING</code> or <code class="monospace">1</code></p>
+<p class="tablebodytext"><code class="monospace">scan.RUNNING</code> or <code class="monospace">2</code></p>
+<p class="tablebodytext"><code class="monospace">scan.ABORTED</code> or <code class="monospace">3</code></p>
+<p class="tablebodytext"><code class="monospace">scan.FAILED</code> or <code class="monospace">4</code></p>
+<p class="tablebodytext"><code class="monospace">scan.FAILED_INIT</code> or <code class="monospace">5</code></p>
+<p class="tablebodytext"><code class="monospace">scan.SUCCESS</code> or <code class="monospace">6</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">scanCount</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">This is current number scans completed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">stepCount</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">This is current number steps completed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">reading</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">If measurements are taken during the scan, this parameter contains the last scan reading completed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer used during scanning to store the readings; if a buffer is not specified, no readings are stored during the scan</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You can also use this function to specify the scanning reading buffer. This reading buffer, if specified, stores the readings and accompanying attributes as specified for the scan. An error is generated if the reading buffer does not exist or the parameter is not a reading buffer.</p>
+<p class="iclbody">Before using this command, use <code class="monospace">scan.create()</code> and <code class="monospace">scan.add()</code> or <code class="monospace">scan.addimagestep() </code>to set up a scan list.</p>
+<p class="iclbody">When the scan is run in the background, you must use the <code class="monospace">scan.state()</code> function to check the status of the scan.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">scan.background(rbbuff1)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Runs a scan in the background and stores readings in a buffer named <code class="monospace">rbbuff1</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1142" class="jump" title="scan.add()" href="16890.htm" target="_self">scan.add()</a></p>
+<p class="listcommand"><a id="h1139" class="jump" title="scan.create()" href="16892.htm" target="_self">scan.create()</a></p>
+<p class="listcommand"><a id="h1140" class="jump" title="scan.execute()" href="16893.htm" target="_self">scan.execute()</a></p>
+<p class="listcommand"><a id="h1975" class="jump" title="scan.list()" href="16894.htm" target="_self">scan.list()</a></p>
+<p class="listcommand"><a id="h1143" class="jump" title="scan.state()" href="16254.htm" target="_self">scan.state()</a></p>
+<p class="listcommand">Scanning and triggering</p>
+
+

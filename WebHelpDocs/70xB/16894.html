@@ -1,0 +1,102 @@
+<html><head><title> scan.list() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16893.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16895.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">scan.list()</h2>
+<p class="bodyzero">This function queries the active scan list.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="172"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="218"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="165"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="142"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="172"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="218"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+<p class="tablebodytextsmall">Changing a channel or scan setting</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="165"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="142"><p class="tablebodytextsmall">Empty list</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">scanList</em> = scan.list()</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="codetable"><em class="emphasis">scanList</em></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">This parameter is string listing the existing scan step information</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function lists the existing scan list.</p>
+<p class="iclbody">When changing a channel or scan attribute for an existing scan list item, the scan list will be regenerated based on this change. If unable to rebuild the list, an error will be generated and the scan list will be lost. To avoid unintentional changes to an existing scan list, configure channel and scan settings prior to using commands (<code class="monospace">scan.add(), scann.addimagestep(), scan.create()</code>) to build a scan list.</p>
+<p class="iclbody">If the scan list is empty, the string <code class="monospace">&quot;Empty Scan&quot;</code> is returned. Otherwise, the string lists each step in the scan along with its information for step, open, and close (see the example below).</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable"><code class="monospace">scan.create(&quot;1A07:1B03&quot;)</code></p>
+<p class="codetable"><code class="monospace">print(scan.list())</code></p>
+</td>
+<td width="338"><p class="tablebodytext">Populate the scan list with the function <code class="monospace">scan.create(&quot;1A07:1B03&quot;)</code>, then initiate the scan list to be output.</p>
+<p class="tablebodytext">Outputs the existing scan list.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytext"><code class="monospace">Init) OPEN...</code></p>
+<p class="tablebodytext"><code class="monospace">   1) STEP: 1A07</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1A07</code></p>
+<p class="tablebodytext"><code class="monospace">   2) STEP: 1A08</code></p>
+<p class="tablebodytext"><code class="monospace">      OPEN: 1A07</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1A08</code></p>
+<p class="tablebodytext"><code class="monospace">   3) STEP: 1A09</code></p>
+<p class="tablebodytext"><code class="monospace">      OPEN: 1A08</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1A09</code></p>
+<p class="tablebodytext"><code class="monospace">   4) STEP: 1A10</code></p>
+<p class="tablebodytext"><code class="monospace">      OPEN: 1A09</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1A10</code></p>
+<p class="tablebodytext"><code class="monospace">   5) STEP: 1A11</code></p>
+<p class="tablebodytext"><code class="monospace">      OPEN: 1A10</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1A11</code></p>
+<p class="tablebodytext"><code class="monospace">   6) STEP: 1A12</code></p>
+<p class="tablebodytext"><code class="monospace">      OPEN: 1A11</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1A12</code></p>
+<p class="tablebodytext"><code class="monospace">   7) STEP: 1B01</code></p>
+<p class="tablebodytext"><code class="monospace">      OPEN: 1A12</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1B01</code></p>
+<p class="tablebodytext"><code class="monospace">   8) STEP: 1B02</code></p>
+<p class="tablebodytext"><code class="monospace">      OPEN: 1B01</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1B02</code></p>
+<p class="tablebodytext"><code class="monospace">   9) STEP: 1B03</code></p>
+<p class="tablebodytext"><code class="monospace">      OPEN: 1B02</code></p>
+<p class="tablebodytext"><code class="monospace">     CLOSE: 1B03</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h1139" class="jumptemplate" title="scan.create()" href="16892.html" target="_self">scan.create()</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Retrieving errors </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12162.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="77705.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t66582" class="heading2">Retrieving errors</h2>
+<p class="bodytext">When errors occur, the error messages are placed in the error queue. Use <code class="monospace">errorqueue</code> commands to request error message information. For example, the following commands request the complete set of information about the next message in the error queue. They return the code, message, severity, and node for that error:</p>
+<p class="code">errorCode, message, severity, errorNode = errorqueue.next()</p>
+<p class="code">print(errorCode, message, severity, errorNode)</p>
+<p class="bodytext">The following table lists the commands associated with the error queue.</p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="204" height="0"></td>
+<td width="306" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border-left:1px solid #FFFFFF;border-right:1px solid #FFFFFF;border-top:1px solid #FFFFFF;border-bottom:1px solid #C0C0C0;" colspan="2" width="510"><p class="tableheading">Remote commands associated with the error queue</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="204"><p class="tableheading">Command</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="306"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="204"><p class="tablebodytext"><a id="h11126" class="jump" title="errorqueue.clear()" href="14749.htm" target="_self">errorqueue.clear()</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="306"><p class="tablebodytext">Clear error queue of all errors</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="204"><p class="tablebodytext"><a id="h691" class="jump" title="errorqueue.count" href="14750.htm" target="_self">errorqueue.count</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="306"><p class="tablebodytext">Number of messages in the error queue</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="204"><p class="tablebodytext"><a id="h692" class="jump" title="errorqueue.next()" href="17242.htm" target="_self">errorqueue.next()</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="306"><p class="tablebodytext">Request next error message from queue</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13046.htm" target="_self">Troubleshooting guide</a></p><p class="relateditem"><a href="13015.htm" target="_self">Introduction</a></p><p class="relateditem"><a href="12166.htm" target="_self">Error levels</a></p><p class="relateditem"><a href="12162.htm" target="_self">Effects of errors on scripts</a></p><p class="relateditem"><a href="77705.htm" target="_self">Error summary list</a></p><p class="relateditem"><a href="16537.htm" target="_self">LAN troubleshooting suggestions</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="66582" />
+<input id="topicDescription" type="hidden" value="Retrieving errors" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/2/2021 8:03:42 AM" />
+</body>
+</html>

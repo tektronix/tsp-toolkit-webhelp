@@ -1,0 +1,149 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14750.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14756.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t17242" class="heading2-icl">errorqueue.next()</h2>
+<p class="bodyzero">This function reads the oldest entry from the error queue and removes it from the queue.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">errorCode</em>, <em class="emphasis">message</em>, <em class="emphasis">severity</em>, <em class="emphasis">errorNode</em> = errorqueue.next()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">errorCode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The error code number for the entry</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">message</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The message that describes the error code</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">severity</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The severity level (0, 10, 20, 30, or 40); see <strong class="specialbold">Details</strong> for more information</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">errorNode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The node number where the error originated</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Entries are stored in a first-in, first-out (FIFO) queue. This function reads the oldest entry and removes it from the queue.</p>
+<p class="iclbody">Error codes and messages are listed in the <a id="h12781" class="jump" title="Error summary list" href="77705.htm" target="_self">Error summary list</a>.</p>
+<p class="iclbody">If there are no entries in the queue, code 0, <code class="monospace">Queue is Empty</code>, is returned.</p>
+<p class="bodytext">Returned severity levels are described in the following table.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="72"><p class="tableheading">Number</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Error level</p>
+</td>
+<td style="border:1px solid #010101;" width="384"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="72"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">NO_SEVERITY</p>
+</td>
+<td style="border:1px solid #010101;" width="384"><p class="tablebodytext">The message is information only. This level is used when the error queue is empty; the message does not represent an error.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="72"><p class="tablebodytext">10</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">INFORMATIONAL</p>
+</td>
+<td style="border:1px solid #010101;" width="384"><p class="tablebodytext">The message is information only. This level is used to indicate status changes; the message does not represent an error.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="72"><p class="tablebodytext">20</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">RECOVERABLE</p>
+</td>
+<td style="border:1px solid #010101;" width="384"><p class="tablebodytext">The error was caused by improper use of the instrument or by conditions that can be corrected. This message indicates that an error occurred. The instrument is still operating normally.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="72"><p class="tablebodytext">30</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">SERIOUS</p>
+</td>
+<td style="border:1px solid #010101;" width="384"><p class="tablebodytext">There is a condition that prevents the instrument from functioning properly. The message indicates that the instrument is presently operating in an error condition. If the condition is corrected, the instrument returns to normal operation.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="72"><p class="tablebodytext">40</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">FATAL</p>
+</td>
+<td style="border:1px solid #010101;" width="384"><p class="tablebodytext">There is a condition that cannot be corrected that prevents the instrument from functioning properly. Disconnect the DUT and turn the power off and then on again. If the error is a hardware fault that persists after cycling the power, the instrument must be repaired.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">In an expanded system, each TSP&#8209;Link enabled instrument is assigned a node number.<strong class="specialbold"> </strong>The variable <span class="monospaceitalic">errorNode</span> stores the node number where the error originated. The <span class="monospaceitalic">errorNode</span> is always <code class="monospace">1</code> on the 2604B/2614B/2634B.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">errorcode, message = errorqueue.next()</p>
+<p class="codetable">print(errorcode, message)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Reads the oldest entry in the error queue. The output below indicates that the queue is empty.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">0.00000e+00 Queue Is Empty</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h24712" class="jump" title="Error queue" href="12259.htm" target="_self">Error queue</a></p>
+<p class="listcommand"><a id="h11126" class="jump" title="errorqueue.clear()" href="14749.htm" target="_self">errorqueue.clear()</a></p>
+<p class="listcommand"><a id="h691" class="jump" title="errorqueue.count" href="14750.htm" target="_self">errorqueue.count</a></p>
+<p class="listcommand"><a id="h12781_2" class="jump" title="Error summary list" href="77705.htm" target="_self">Error summary list</a></p>
+
+

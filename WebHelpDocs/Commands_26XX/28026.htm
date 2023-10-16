@@ -1,0 +1,84 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Low-current connections </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="21266.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="21267.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t28026" class="heading3">Low-current connections</h3>
+<p class="bodytext">The figure below shows typical connections for low-current measurements. The DUT in this example could be a low-current semiconductor device, a high-megohm resistor, or any other passive or active electronic device requiring low-current measurements. Note that the DUT is enclosed in both a guard shield and a safety shield.</p>
+<p class="bodytext">The inner shield (guard) of the HI triaxial cable is connected to the test fixture guard shield. The guard shield prevents leakage currents from affecting the measurements. The outer cable shield (chassis ground or protective earth (safety ground)) is connected to the safety shield.</p>
+<p class="warning"><img id="f4282" src="warninglarge_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0">A safety shield must be used whenever hazardous voltages (&gt;30&nbsp;V<sub class="subscript">RMS</sub>, 42&nbsp;V<sub class="subscript">PEAK</sub>) will be present in the test circuit. To prevent electrical shock that could cause injury or death, never use the 2600B in a test circuit that may contain hazardous voltages without a properly installed and configured safety shield.</p>
+<p class="warning">Connect the enclosure of all metal test fixtures to protective earth (safety ground). Nonconductive test fixtures must be rated to double the maximum capability of the test equipment in the system. Failure to attach the ground wires to a known protective earth may result in electric shock.</p>
+<p class="magicfigurecenter"><img id="f28027" src="2600b-901-01a_guardingandshieldingconnections_lr.png" class="linkedepsandpngtemplate" alt="Typical low-current connections" height="598" width="576" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytextcenter">(1)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">2600B interlock digital I/O. Pin 24 (INT) and pin 22 (5 V&nbsp;dc) are connected to the test fixture lid switch. The interlock switch is shown in the disengaged, or lid open, position.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytextcenter">(2)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Normally&#8209;open (NO) interlock metal safety enclosure.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytextcenter">(3)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">HI and LO connections using triaxial female panel mount connectors. LO is connected to the metal noise shield.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytextcenter">(4)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">To protective earth (safety ground) from the test fixture or protection module. Additional connections for redundant protective earth may be required.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytextcenter">(5)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Triaxial cable assembly (Model 7078-TRX).</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="21266.htm" target="_self">How do I make low-current measurements?</a></p><p class="relateditem"><a href="21267.htm" target="_self">Low-current measurement programming example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="28026" />
+<input id="topicDescription" type="hidden" value="Low-current connections" />
+<input id="footer-modified" type="hidden" value="Last modified: 7/6/2021 10:46:16 AM" />
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Remote digital I/O commands </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11500.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11519.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t11503" class="heading4">Remote digital I/O commands</h4>
+<p class="bodytext">Commands that control and access the digital I/O port are summarized in the following table. See the <a id="h21768" class="jump" title="TSP command reference" href="2600B_TSP_command_reference.htm" target="_self">TSP command reference</a> for complete details on these commands. See <a id="h12433" class="jump" title="Digital I/O bit weighting" href="11500.htm" target="_self">Digital I/O bit weighting</a> for decimal and hexadecimal values used to control and access the digital I/O port and individual lines. Use these commands to trigger the 2600B using external trigger pulses applied to the digital I/O port, or to provide trigger pulses to external devices.</p>
+<p class="bodytext">Use these commands to perform basic steady-state digital I/O operations such as reading and writing to individual I/O lines or reading and writing to the entire port.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">You can use the digital I/O lines for both input and output. You must write a 1 to all digital I/O lines that are to be used as inputs.</p>
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="240"><p class="tableheading">Remote digital I/O commands</p>
+</td>
+<td width="384"><p class="tableheadingsmall">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tableheading">Command</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">digio.readbit(<span class="monospaceitalic">bit</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Read one digital I/O input line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">digio.readport()</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Read digital I/O port</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">digio.writebit(<span class="monospaceitalic">bit, data</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Write data to one digital I/O output line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">digio.writeport(<span class="monospaceitalic">data</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Write data to digital I/O port</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="240"><p class="codetable">digio.writeprotect = <span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Write protect mask to digital I/O port</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11508.htm" target="_self">Controlling digital I/O lines</a></p><p class="relateditem"><a href="11500.htm" target="_self">Digital I/O bit weighting</a></p><p class="relateditem"><a href="11519.htm" target="_self">Digital I/O programming example</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11503" />
+<input id="topicDescription" type="hidden" value="Remote digital I/O commands" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/15/2021 12:29:04 PM" />
+</body>
+</html>

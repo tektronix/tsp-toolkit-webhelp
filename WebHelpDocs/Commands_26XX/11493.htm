@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Dedicated reading buffer example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13640.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="13519.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t11493" class="heading3">Dedicated reading buffer example</h3>
+<p class="bodytext">The following programming example illustrates how to store data using dedicated reading buffer 1. In the example, the 2600B loops for voltages from 0.01&nbsp;V to 1&nbsp;V with 0.01&nbsp;V steps (performing a staircase sweep), stores 100 current readings and source values in buffer 1, and then recalls all 100 readings and source values.</p>
+<p class="code">-- Restore 2600B defaults.</p>
+<p class="code">smua.reset()</p>
+<p class="code">-- Select channel A display.</p>
+<p class="code">display.screen = display.SMUA</p>
+<p class="code">-- Display current.</p>
+<p class="code">display.smua.measure.func = display.MEASURE_DCAMPS</p>
+<p class="code">-- Select measure I autorange.</p>
+<p class="code">smua.measure.autorangei = smua.AUTORANGE_ON</p>
+<p class="code">-- Select ASCII data format.</p>
+<p class="code">format.data = format.ASCII</p>
+<p class="code">-- Clear buffer 1.</p>
+<p class="code">smua.nvbuffer1.clear()</p>
+<p class="code">-- Enable append buffer mode.</p>
+<p class="code">smua.nvbuffer1.appendmode = 1</p>
+<p class="code">-- Enable source value storage.</p>
+<p class="code">smua.nvbuffer1.collectsourcevalues = 1</p>
+<p class="code">-- Set the count to 1.</p>
+<p class="code">smua.measure.count = 1</p>
+<p class="code">-- Select the source voltage function.</p>
+<p class="code">smua.source.func = smua.OUTPUT_DCVOLTS</p>
+<p class="code">-- Set the bias voltage to 0 V.</p>
+<p class="code">smua.source.levelv = 0.0</p>
+<p class="code">-- Turn on the output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_ON</p>
+<p class="code">-- Loop for voltages from 0.01 V to 1 V.</p>
+<p class="code">for v = 1, 100 do</p>
+<p class="code">	-- Set the source voltage.</p>
+<p class="code">	smua.source.levelv = v * 0.01 </p>
+<p class="code">	-- Measure the current and store in nvbuffer1.</p>
+<p class="code">	smua.measure.i(smua.nvbuffer1)</p>
+<p class="code">end</p>
+<p class="code">-- Turn off the output.</p>
+<p class="code">smua.source.output = smua.OUTPUT_OFF</p>
+<p class="code">-- Output readings 1 to 100.</p>
+<p class="code">printbuffer(1, smua.nvbuffer1.n, smua.nvbuffer1.readings)</p>
+<p class="code">-- Output source values 1 to 100.</p>
+<p class="code">printbuffer(1, smua.nvbuffer1.n, smua.nvbuffer1.sourcevalues)</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11655.htm" target="_self">Remote reading buffer programming</a></p><p class="relateditem"><a href="13640.htm" target="_self">Dedicated reading buffer designations</a></p><p class="relateditem"><a href="13519.htm" target="_self">Reading buffer commands</a></p><p class="relateditem"><a href="11659.htm" target="_self">Buffer status</a></p><p class="relateditem"><a href="11647.htm" target="_self">Dynamic reading buffers</a></p><p class="relateditem"><a href="11650.htm" target="_self">Dynamically allocated buffer example</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="11493" />
+<input id="topicDescription" type="hidden" value="Dedicated reading buffer example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 8:58:21 AM" />
+</body>
+</html>

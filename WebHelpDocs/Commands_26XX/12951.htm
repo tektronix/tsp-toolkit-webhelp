@@ -1,0 +1,121 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14860.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12953.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t12951" class="heading2-icl">i_leakage_measure()</h2>
+<p class="bodyzero">This KIHighC factory script function performs a current leakage measurement after stepping the output&nbsp;voltage.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">imeas</span></span> = i_leakage_measure(smu<span class="monospaceitalic">X</span>, <span class="monospaceitalic">levelv, limiti, sourcedelay, measurei, measuredelay</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">imeas</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measured current</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">X</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Instrument channel (for example, <code class="monospace">smua</code> refers to SMU channel&nbsp;A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">levelv</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Voltage level to step to when this function is called</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">limiti</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Current limit setting for the voltage step</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">sourcedelay</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Delay to wait before lowering the current limit for measurement</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">measurei</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Current limit (and measure range); the current limit is lower at this level and because high-capacitance mode is active, the measure range follows</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">measuredelay</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Delay to wait after lowering the current limit before making the measurement</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function causes the SMU to:</p>
+<ul class="listbullet"><li class="listbullet">Change its current limit to <span class="monospaceitalic"><span class="monospaceitalic">limiti</span></span> with a voltage output of <span class="monospaceitalic"><span class="monospaceitalic">levelv</span></span> for <span class="monospaceitalic"><span class="monospaceitalic">sourcedelay</span></span> time, and then change its current limit to <span class="monospaceitalic"><span class="monospaceitalic">measurei</span></span> (that also changes the measurement range to <span class="monospaceitalic"><span class="monospaceitalic">measurei</span></span>) for <span class="monospaceitalic"><span class="monospaceitalic">measuredelay</span></span> time </li><li class="listbullet">When <span class="monospaceitalic"><span class="monospaceitalic">measuredelay</span></span> time expires, a measurement is made and returned as <span class="monospaceitalic"><span class="monospaceitalic">imeas</span></span></li></ul><p class="iclbody">When measuring leakage current:</p>
+<ul class="listbullet"><li class="listbullet">Charge the capacitor before calling this function (the output of the instrument is usually at a nonzero voltage before calling this function; when measuring leakage, this function does not charge the capacitor)</li><li class="listbullet">Set <span class="monospaceitalic"><span class="monospaceitalic">levelv</span></span><code class="monospace"> = 0</code></li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.source.highc = smua.ENABLE</p>
+<p class="codetable">smua.source.levelv = 5</p>
+<p class="codetable">smua.source.output = smua.OUTPUT_ON</p>
+<p class="codetable">delay(1)</p>
+<p class="codetable">imeas = i_leakage_measure(smua, 0, 1, 300e-3, 10e-6, 0.1)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Enable high-capacitance mode. Charge the capacitor at 5&nbsp;V for 1 second set by <code class="monospace">delay(1)</code>.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">The parameters passed on to the <code class="monospace">i_leakage_measure()</code> function in this example are:</p>
+<p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">smu</span></span> = smua</p>
+<p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">levelv </span></span>= 0&nbsp;V</p>
+<p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">limiti</span></span> = 1&nbsp;A</p>
+<p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">sourcedelay</span></span> = 300&nbsp;ms</p>
+<p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">measurei</span></span> = 10 µA range</p>
+<p class="codetable"><span class="monospaceitalic"><span class="monospaceitalic">measuredelay</span></span> = 100 ms</p>
+<p class="tablebodytext">The levels and delays depend on the value and type of capacitor used.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h19442" class="jump" title="i_leakage_threshold()" href="12953.htm" target="_self">i_leakage_threshold()</a></p>
+<p class="listcommand"><a id="h17786" class="jump" title="High-capacitance mode" href="29559.htm" target="_self">High-capacitance mode</a></p>
+<p class="listcommand"><a id="h12952" class="jump" title="KIHighC factory script" href="12950.htm" target="_self">KIHighC factory script</a></p>
+
+

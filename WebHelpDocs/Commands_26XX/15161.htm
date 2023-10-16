@@ -1,0 +1,111 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15160.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15162.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15161" class="heading2-icl">smuX.trigger.count</h2>
+<p class="bodyzero">This attribute sets the trigger count in the trigger model.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">1</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic"><span class="monospaceitalic">triggerCount</span></span> = smu<span class="monospaceitalic">X</span>.trigger.count</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.trigger.count<code class="monospace"> = </code><span class="monospaceitalic">triggerCount</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">triggerCount</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger count is the number of times the source&#8209;measure unit (SMU) iterates in the trigger layer for any given sweep</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">X</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">SMU channel (for example, <code class="monospace">smua.trigger.count</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">During a sweep, the SMU iterates through the trigger layer of the trigger model the number of times set by this attribute. After performing the iterations, the SMU returns to the arm layer.</p>
+<p class="iclbody">If this count is set to zero (<code class="monospace">0</code>), the SMU stays in the trigger model indefinitely until aborted.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">period_timer = trigger.timer[1]</p>
+<p class="codetable">pulse_timer = trigger.timer[2]</p>
+<p class="codetable">smua.trigger.source.listv( {5} )</p>
+<p class="codetable">smua.trigger.source.action = smua.ENABLE</p>
+<p class="codetable">smua.source.rangev = 5</p>
+<p class="codetable">smua.trigger.measure.action = smua.DISABLE</p>
+<p class="codetable">pulse_timer.delay = 0.0006</p>
+<p class="codetable">pulse_timer.stimulus = period_timer.EVENT_ID</p>
+<p class="codetable">pulse_timer.count = 1</p>
+<p class="codetable">period_timer.delay = 0.005</p>
+<p class="codetable">period_timer.count = 9</p>
+<p class="codetable">period_timer.stimulus = smua.trigger.SWEEPING_EVENT_ID</p>
+<p class="codetable">period_timer.passthrough = true</p>
+<p class="codetable">smua.trigger.source.stimulus = period_timer.EVENT_ID</p>
+<p class="codetable">smua.trigger.endpulse.action = smua.SOURCE_IDLE</p>
+<p class="codetable">smua.trigger.endpulse.stimulus = pulse_timer.EVENT_ID</p>
+<p class="codetable">smua.trigger.count = 1</p>
+<p class="codetable">smua.trigger.arm.count = 10</p>
+<p class="codetable">smua.source.output = smua.OUTPUT_ON</p>
+<p class="codetable">smua.trigger.initiate()</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">smua.source.output = smua.OUTPUT_OFF</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Generate a 10-point pulse train where each pulse has a width of 600&nbsp;µs and a pulse period of 5&nbsp;ms.</p>
+<p class="tablebodytext">Alias the trigger timers to use for pulse width and period.</p>
+<p class="tablebodytext">Create a fixed level voltage sweep.</p>
+<p class="tablebodytext">Set the pulse width and trigger the pulse width timer with a period timer.</p>
+<p class="tablebodytext">Set the pulse period to output one pulse per period and the count to generate 10 pulses.</p>
+<p class="tablebodytext">Trigger the pulse period timer when a sweep is initiated.</p>
+<p class="tablebodytext">Configure the timer to output a trigger event when it starts the first delay.</p>
+<p class="tablebodytext">Trigger the SMU source action using pulse period timer.</p>
+<p class="tablebodytext">Trigger the SMU end pulse action using pulse width timer.</p>
+<p class="tablebodytext">Set the trigger model counts.</p>
+<p class="tablebodytext">Configure the SMU to execute a 10-point pulse train.</p>
+<p class="tablebodytext">Start the trigger model.</p>
+<p class="tablebodytext">Wait for the sweep to complete.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13512" class="jump" title="Triggering" href="14169.htm" target="_self">Triggering</a></p>
+
+

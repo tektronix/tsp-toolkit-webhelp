@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Filter programming example </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="13628.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29559.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t17774" class="heading4">Filter programming example</h4>
+<p class="bodytext">The programming example below illustrates how to set the following filter options:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Filter type:</strong> Moving average</li><li class="listbullet"><strong class="specialbold">Filter count:</strong> 10</li><li class="listbullet"><strong class="specialbold">Filter state:</strong> Enabled</li></ul><p class="code"><code class="monospace">-- Set the program count to 10.</code></p>
+<p class="code"><code class="monospace">smua.measure.filter.count = 10</code></p>
+<p class="code"><code class="monospace">-- Set the moving average filter type.</code></p>
+<p class="code"><code class="monospace">smua.measure.filter.type = smua.FILTER_MOVING_AVG</code></p>
+<p class="code"><code class="monospace">-- Enable the filter.</code></p>
+<p class="code"><code class="monospace">smua.measure.filter.enable = smua.FILTER_ON</code></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="13628.htm" target="_self">Setting the filter using a remote interface</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="17774" />
+<input id="topicDescription" type="hidden" value="Filter programming example" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 1:16:10 PM" />
+</body>
+</html>

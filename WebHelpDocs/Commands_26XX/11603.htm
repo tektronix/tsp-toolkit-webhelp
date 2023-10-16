@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> General power equation </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11600.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="27221.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t11603" class="heading5">General power equation</h5>
+<p class="magicfigurecenter"><img id="f11604" src="26xxas-901-01e_generalsourcemeterinstrumentpowerequation.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="General SourceMeter instrument power equation (1)" height="55" width="975" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext"></p>
+<table class="tableintopic" width="528" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="36"><p class="tablebodytext">V<sub class="subscript">OA</sub></p>
+</td>
+<td width="492"><p class="tablebodytext">The instrument output amplifier voltage. This constant can be found in the tables in <a id="h19357" class="jump" title="Maximum duty cycle equation" href="27221.htm" target="_self">Maximum duty cycle equation</a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="36"><p class="tablebodytext">V<sub class="subscript">P</sub></p>
+</td>
+<td width="492"><p class="tablebodytext">The voltage level the instrument is attempting to force while at the pulse level.</p>
+<p class="tablebodytext">When operating in quadrants 1 or 3 (sourcing power), the sign of this voltage must be positive when used in the power equations.</p>
+<p class="tablebodytext">When operating in quadrants 2 or 4 (sinking power), the sign of this voltage must be negative when used in the power equations.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="36"><p class="tablebodytext">I<sub class="subscript">P</sub></p>
+</td>
+<td width="492"><p class="tablebodytext">The current flowing through the instrument channel while at the pulse level.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="36"><p class="tablebodytext">V<sub class="subscript">B</sub></p>
+</td>
+<td width="492"><p class="tablebodytext">The voltage level the instrument is attempting to force while at the bias level.</p>
+<p class="tablebodytext">When operating in quadrants 1 or 3 (sourcing power), the sign of this voltage must be positive when used in the power equations.</p>
+<p class="tablebodytext">When operating in quadrants 2 or 4 (sinking power), the sign of this voltage must be negative when used in the power equations.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="36"><p class="tablebodytext">I<sub class="subscript">B</sub></p>
+</td>
+<td width="492"><p class="tablebodytext">The current flowing through the instrument channel while at the bias level.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="36"><p class="tablebodytext">P<sub class="subscript">CS</sub></p>
+</td>
+<td width="492"><p class="tablebodytext">The maximum power generated in an instrument channel that can be properly dissipated by the instrument cooling system, measured in watts. For the 2600B, this constant equals 56.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="36"><p class="tablebodytext">P<sub class="subscript">DER</sub></p>
+</td>
+<td width="492"><p class="tablebodytext">= T<sub class="subscript">AMB</sub> - 30</p>
+<p class="tablebodytext">This factor represents the number of watts the instrument is derated when operating in environments above 30 °C. The maximum output power of each instrument channel is reduced by 1&nbsp;W per degree C above 30 °C.</p>
+<p class="tablebodytext">P<sub class="subscript">DER</sub> is 0 when the ambient temperature is below 30 °C.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="36"><p class="tablebodytext">T<sub class="subscript">AMB</sub></p>
+</td>
+<td width="492"><p class="tablebodytext">The ambient temperature of the instrument operating environment.</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11600.htm" target="_self">Power equations to avoid overheating</a></p><p class="relateditem"><a href="27221.htm" target="_self">Maximum duty cycle equation</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="11603" />
+<input id="topicDescription" type="hidden" value="General power equation" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/28/2021 9:35:18 AM" />
+</body>
+</html>

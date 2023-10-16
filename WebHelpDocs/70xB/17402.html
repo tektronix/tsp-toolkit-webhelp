@@ -1,0 +1,108 @@
+<html><head><title> channel.setforbidden() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17522.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15944.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">channel.setforbidden()</h2>
+<p class="bodyzero">This function prevents the closing of specified channels.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="188"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="188"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">Channel reset</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="188"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="188"><p class="tablebodytextsmall">Not forbidden</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.setforbidden(<em class="emphasis">channelList</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="174"><p class="tablebodytext"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="568"><p class="tablebodytext">A string that lists the channels to make forbidden to close.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <span class="monospaceitalic">channelList</span> parameter indicates the scope of channels affected and may include:</p>
+<ul class="listbullet2"><li class="listbullet2"><code class="monospace">allslots</code> or <code class="monospace">slot</code><span class="monospaceitalic">X</span> (where <span class="monospaceitalic">X</span> equals 1 to 6 for Model 707B, or 1 for Model 708B)&lt;CT3700_only_start&gt;(where <span class="monospaceitalic">X</span> equals 1 to 6)&lt;AIT_DELETE_END&gt;</li><li class="listbullet2">Channel ranges or individual channels</li></ul><p class="iclbody">This function prevents all items contained in the channel list parameter from closing (applies the &quot;forbidden to close&quot; attribute to channels specified ). To remove the &quot;forbidden to close&quot; attribute, use <code class="monospace">channel.clearforbidden()</code>.</p>
+<p class="iclbody">If a channel that is being set to forbidden is used in a channel pattern, the channel pattern is deleted when the channel is set to forbidden.</p>
+<p class="iclbody">The channels in the <span class="monospaceitalic">channelList</span> parameter must be installed in the instrument.</p>
+<p class="iclbody">The <span class="monospaceitalic">channelList</span> parameter cannot include a channel pattern.</p>
+<p class="iclbody">If the scan list contains a channel that is forbidden, the scan list is invalidated.</p>
+<p class="iclsubheading">Example</p>
+<table width="742" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="405"><p class="codetable">channel.pattern.setimage(&quot;1A01,1A02&quot;,</p>
+<p class="codetable">   &quot;patternA&quot;)</p>
+<p class="codetable">channel.pattern.setimage(&quot;1B01,1B02&quot;,</p>
+<p class="codetable">   &quot;patternB&quot;)</p>
+<p class="codetable">channel.pattern.setimage(&quot;1C01,1C02&quot;,</p>
+<p class="codetable">   &quot;patternC&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">for name in channel.pattern.catalog() do</p>
+<p class="codetable">   print(name .. &quot; = &quot; ..</p>
+<p class="codetable">      channel.pattern.getimage(name))</p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.setforbidden(&quot;1A02, 1B01&quot;)</p>
+<p class="codetable">for name in channel.pattern.catalog() do</p>
+<p class="codetable">   print(name .. &quot; = &quot; ..</p>
+<p class="codetable">      channel.pattern.getimage(name))</p>
+<p class="codetable">end</p>
+</td>
+<td width="338"><p class="tablebodytext">Create three channel patterns, and then print.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Set forbidden for one channel from patternA and patternB, then print the catalog again. Only patternC should remain.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Assuming no existing channel patterns, the output is:</p>
+<p class="codetable">patternC = 1C01,1C02</p>
+<p class="codetable">patternA = 1A01,1A02</p>
+<p class="codetable">patternB = 1B01,1B02</p>
+<p class="codetable">patternC = 1C01,1C02</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h1803" class="jumptemplate" title="channel.clearforbidden()" href="17406.html" target="_self">channel.clearforbidden()</a></p>
+<p class="iclbody"><a id="h1804" class="jumptemplate" title="channel.getforbidden()" href="17404.html" target="_self">channel.getforbidden()</a></p>
+<p class="tablebodytext"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

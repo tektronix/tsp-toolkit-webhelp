@@ -1,0 +1,187 @@
+<html><head><title> lan.trigger[N].mode </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14927.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14929.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">lan.trigger[N].mode</h2>
+<p class="bodyzero">This attribute sets the trigger operation and detection mode.</p>
+<table width="772" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="128"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style = "border:2px solid #C0C0C0;" width="195"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">System reset</p>
+<p class="tablebodytextsmall">LAN trigger N reset</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="128"><p class="tablebodytextsmall">Create configuration script</p>
+</td>
+<td style = "border:2px solid #C0C0C0;" width="195"><p class="tablebodytextsmall">lan.TRIG_EITHER</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">mode</em> = lan.trigger[<em class="emphasis">N</em>].mode</p>
+<p class="iclcode">lan.trigger[<em class="emphasis">N</em>].mode = <em class="emphasis">mode</em></p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">mode</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="525"><p class="tablebodytext">A number representing the LAN event number (1 to 8); see the <strong class="specialbold">Details</strong> section for more information</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="172"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="525"><p class="tablebodytext">A number representing the trigger mode (0 to 7)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute controls the mode in which the trigger event detector and the output trigger generator operate on the given trigger. These settings are intended to provide behavior similar to the digital I/O triggers.</p>
+<p class="magictablecenter"></p>
+<table width="705" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="225" height="0"></td>
+<td width="75" height="0"></td>
+<td width="240" height="0"></td>
+<td width="165" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="4" width="705"><p class="tableheading"><span class="monospaceitalic">mode</span> settings</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tableheadingsmall">Full</p>
+</td>
+<td width="75"><p class="tableheadingsmall">Number</p>
+</td>
+<td width="240"><p class="tableheadingsmall">Trigger packets detected as input</p>
+</td>
+<td width="165"><p class="tableheadingsmall">LAN trigger packet generated for output with a…</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tablebodytext"><code class="monospace">lan.TRIG_EITHER</code></p>
+</td>
+<td width="75"><p class="tablebodytext">0</p>
+</td>
+<td width="240"><p class="tablebodytext">Rising or falling edge (positive or negative state)</p>
+</td>
+<td width="165"><p class="tablebodytext">negative state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tablebodytext"><code class="monospace">lan.TRIG_FALLING</code></p>
+</td>
+<td width="75"><p class="tablebodytext">1</p>
+</td>
+<td width="240"><p class="tablebodytext">Falling edge (negative state)</p>
+</td>
+<td width="165"><p class="tablebodytext">negative state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tablebodytext"><code class="monospace">lan.TRIG_RISING</code></p>
+</td>
+<td width="75"><p class="tablebodytext">2</p>
+</td>
+<td width="240"><p class="tablebodytext">Rising edge (positive state)</p>
+</td>
+<td width="165"><p class="tablebodytext">positive state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tablebodytext"><code class="monospace">lan.TRIG_RISINGA</code></p>
+</td>
+<td width="75"><p class="tablebodytext">3</p>
+</td>
+<td width="240"><p class="tablebodytext">Rising edge (positive state)</p>
+</td>
+<td width="165"><p class="tablebodytext">positive state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tablebodytext"><code class="monospace">lan.TRIG_RISINGM</code></p>
+</td>
+<td width="75"><p class="tablebodytext">4</p>
+</td>
+<td width="240"><p class="tablebodytext">Rising edge (positive state)</p>
+</td>
+<td width="165"><p class="tablebodytext">positive state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tablebodytext"><code class="monospace">lan.TRIG_SYNCHRONOUS</code></p>
+</td>
+<td width="75"><p class="tablebodytext">5</p>
+</td>
+<td width="240"><p class="tablebodytext">Falling edge (negative state)</p>
+</td>
+<td width="165"><p class="tablebodytext">positive state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tablebodytext"><code class="monospace">lan.TRIG_SYNCHRONOUSA</code></p>
+</td>
+<td width="75"><p class="tablebodytext">6</p>
+</td>
+<td width="240"><p class="tablebodytext">Falling edge (negative state)</p>
+</td>
+<td width="165"><p class="tablebodytext">positive state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="225"><p class="tablebodytext"><code class="monospace">lan.TRIG_SYNCHRONOUSM</code></p>
+</td>
+<td width="75"><p class="tablebodytext">7</p>
+</td>
+<td width="240"><p class="tablebodytext">Rising edge (positive state)</p>
+</td>
+<td width="165"><p class="tablebodytext">negative state</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody"></p>
+<p class="iclbody"><code class="monospace">lan.TRIG_RISING</code> and <code class="monospace">lan.TRIG_RISINGA</code> are the same.</p>
+<p class="iclbody"><code class="monospace">lan.TRIG_RISING</code> and <code class="monospace">lan.TRIG_RISINGM </code>are the same.</p>
+<p class="iclbody"><code class="monospace">lan.TRIG_SYNCHRONOUS</code> is provided for compatibility with the digital I/O and TSPLink triggering on older firmware. Use of <code class="monospace">lan.TRIG_SYNCHRONOUSA</code> or <code class="monospace">lan.TRIG_SYNCHRONOUSM</code> (instead of <code class="monospace">lan.TRIG_SYNCHRONOUS</code>) is preferred.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="698" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="338"><p class="codetable">print(lan.trigger[1].mode)</p>
+</td>
+<td width="360"><p class="tablebodytext">Returns the present LAN trigger mode of LAN event&nbsp;1.</p>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h16985" class="jumptemplate" title="digio functions and attributes" href="14667.html" target="_self">digio functions and attributes</a></p>
+<p class="iclbody"><a id="h16986" class="jumptemplate" title="tsplink functions and attributes" href="14123.html" target="_self">tsplink functions and attributes</a></p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+

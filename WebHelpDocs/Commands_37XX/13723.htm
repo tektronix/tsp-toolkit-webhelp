@@ -1,0 +1,161 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17756.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16345.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t13723" class="heading2-icl">slot[slot].startchannel.*</h2>
+<p class="bodyzero">These attributes indicates whether or not the channel in the specified slot supports a feature and if so, which channels support the feature.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclbody"><span class="monospaceitalic">value</span><code class="monospace"> = slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.amps</code></p>
+<p class="iclbody"><span class="monospaceitalic">value</span><code class="monospace"> = slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.analogoutput</code></p>
+<p class="iclbody"><span class="monospaceitalic">value</span><code class="monospace"> = slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.digitalio</code></p>
+<p class="iclbody"><span class="monospaceitalic">value</span><code class="monospace"> = slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.isolated</code></p>
+<p class="iclbody"><span class="monospaceitalic">value</span><code class="monospace"> = slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.totalizer</code></p>
+<p class="iclbody"><span class="monospaceitalic">value</span><code class="monospace"> = slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.voltage</code></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="114"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">The channel number of the starting channel of the group of channels that supports the feature</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="114"><p class="codetable"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Slot number (1 to 6)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is only available for a slot if the installed card supports the selected feature. If the attribute is not available, the return value is <code class="monospace">nil</code>.</p>
+<p class="iclbody">Channels are grouped on the cards by feature sets, so you can use the start and ending channel numbers to identify a group of channels that supports a particular feature. If the card supports the feature, the returned value is the number of the starting channel.</p>
+<p class="iclbody">If only one channel in the card supports the feature, the starting channel will match the ending channel number.</p>
+<p class="iclbody">The commands support different types of channels:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">slot</code>[<span class="monospaceitalic">slot</span><code class="monospace">].startchannel.amps</code>: Channel supports amperage measurements</li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">slot</span>]<code class="monospace">.startchannel.analogoutput</code>: Channel supports a digital analog output (DAC)</li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.digitalio</code>: Channel supports digital inputs and outputs</li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.isolated</code>: Channel supports isolated channels</li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.totalizer</code>: Channel supports totalizer channels</li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">slot</span><code class="monospace">].startchannel.voltage</code>: Channel supports voltage or two-wire measurements</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">CardChannels = function(SlotNumber)   </p>
+<p class="codetable">   if slot[SlotNumber].idn == &quot;Empty Slot&quot; then   </p>
+<p class="codetable">      print(&quot;   Slot is Empty&quot;)   </p>
+<p class="codetable">   else   </p>
+<p class="codetable">      if (slot[SlotNumber].startchannel.voltage == nil) and<br>            (slot[SlotNumber].endchannel.voltage == nil) then   </p>
+<p class="codetable">         print(&quot;   no voltage channels&quot;)   </p>
+<p class="codetable">      else    </p>
+<p class="codetable">         print(&quot;   Start voltage channel is &quot; ..<br>             slot[SlotNumber].startchannel.voltage)    </p>
+<p class="codetable">         print(&quot;   End voltage channel is &quot; .. slot[SlotNumber].endchannel.voltage)    </p>
+<p class="codetable">      end     </p>
+<p class="codetable">      if (slot[SlotNumber].startchannel.amps == nil) and <br>            (slot[SlotNumber].endchannel.amps == nil) then   </p>
+<p class="codetable">         print(&quot;   no amp channels&quot;)   </p>
+<p class="codetable">      else    </p>
+<p class="codetable">         print(&quot;   Start amp channel is &quot; .. slot[SlotNumber].startchannel.amps)    </p>
+<p class="codetable">         print(&quot;   End amp channel is &quot; .. slot[SlotNumber].endchannel.amps)    </p>
+<p class="codetable">      end     </p>
+<p class="codetable">      if (slot[SlotNumber].digio == 1) then    </p>
+<p class="codetable">         print(&quot;   Start digital i/o channel is &quot; ..<br>             slot[SlotNumber].startchannel.digitalio)    </p>
+<p class="codetable">         print(&quot;   End digital i/o channel is &quot; ..<br>             slot[SlotNumber].endchannel.digitalio)    </p>
+<p class="codetable">      else   </p>
+<p class="codetable">         print(&quot;   no digio channels&quot;)   </p>
+<p class="codetable">      end      </p>
+<p class="codetable">      if (slot[SlotNumber].totalizer == 1) then    </p>
+<p class="codetable">         print(&quot;   Start totalizer channel is &quot; ..<br>             slot[SlotNumber].startchannel.totalizer)    </p>
+<p class="codetable">         print(&quot;   End totalizer channel is &quot; ..<br>             slot[SlotNumber].endchannel.totalizer)   </p>
+<p class="codetable">      else   </p>
+<p class="codetable">         print(&quot;   no totalizer channels&quot;)    </p>
+<p class="codetable">      end   </p>
+<p class="codetable">         if (slot[SlotNumber].startchannel.analogoutput == nil) and<br>             (slot[SlotNumber].endchannel.analogoutput == nil) then   </p>
+<p class="codetable">         print(&quot;   no analog output channels&quot;)   </p>
+<p class="codetable">      else    </p>
+<p class="codetable">         print(&quot;   Start analog output channel is &quot; ..<br>             slot[SlotNumber].startchannel.analogoutput)    </p>
+<p class="codetable">         print(&quot;   End analog output channel is &quot; ..<br>             slot[SlotNumber].endchannel.analogoutput)    </p>
+<p class="codetable">      end     </p>
+<p class="codetable">      if (slot[SlotNumber].matrix == 1) then   </p>
+<p class="codetable">         print(&quot;   Channels on card are matrix type&quot;)   </p>
+<p class="codetable">      end   </p>
+<p class="codetable">   end   </p>
+<p class="codetable">end    </p>
+<p class="codetable">for x = 1,6 do   </p>
+<p class="codetable">   print(&quot;Checking card channels in slot &quot; .. x)   </p>
+<p class="codetable">   CardChannels(x)   </p>
+<p class="codetable">end  </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">If the Series 3700A contains the following cards:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Slot 1: 3732</li><li class="tablelistbullet9pt">Slot 2: 3720</li><li class="tablelistbullet9pt">Slot 3: 3750</li><li class="tablelistbullet9pt">Slot 4: Empty</li><li class="tablelistbullet9pt">Slot 5: 3721</li><li class="tablelistbullet9pt">Slot 6: Empty<p class="tablebodytext">The output of this example is similar to:</p>
+</li></ul><p class="codetable">Checking card channels in slot 1</p>
+<p class="codetable">   no voltage channels</p>
+<p class="codetable">   no amp channels</p>
+<p class="codetable">   no digio channels</p>
+<p class="codetable">   no totalizer channels</p>
+<p class="codetable">   no analog output channels</p>
+<p class="codetable">   Channels on card are matrix type</p>
+<p class="codetable">Checking card channels in slot 2</p>
+<p class="codetable">   Start voltage channel is 1</p>
+<p class="codetable">   End voltage channel is 60</p>
+<p class="codetable">   no amp channels</p>
+<p class="codetable">   no digio channels</p>
+<p class="codetable">   no totalizer channels</p>
+<p class="codetable">   no analog output channels</p>
+<p class="codetable">Checking card channels in slot 3</p>
+<p class="codetable">   no voltage channels</p>
+<p class="codetable">   no amp channels</p>
+<p class="codetable">   Start digital i/o channel is 1</p>
+<p class="codetable">   End digital i/o channel is 5</p>
+<p class="codetable">   Start totalizer channel is 6</p>
+<p class="codetable">   End totalizer channel is 9</p>
+<p class="codetable">   Start analog output channel is 10</p>
+<p class="codetable">   End analog output channel is 11</p>
+<p class="codetable">Checking card channels in slot 4</p>
+<p class="codetable">   Slot is Empty</p>
+<p class="codetable">Checking card channels in slot 5</p>
+<p class="codetable">   Start voltage channel is 1</p>
+<p class="codetable">   End voltage channel is 40</p>
+<p class="codetable">   Start amp channel is 41</p>
+<p class="codetable">   End amp channel is 42</p>
+<p class="codetable">   no digio channels</p>
+<p class="codetable">   no totalizer channels</p>
+<p class="codetable">   no analog output channels</p>
+<p class="codetable">Checking card channels in slot 6</p>
+<p class="codetable">   Slot is Empty</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13730" class="jump" title="slot[slot].endchannel.*" href="13721.htm" target="_self">slot[slot].endchannel.*</a></p>
+
+

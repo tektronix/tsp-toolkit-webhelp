@@ -1,0 +1,107 @@
+﻿<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15953.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15955.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<h2 id="t15954" class="heading2-icl">channel.trigger[N].set()</h2>
+<p class="bodyzero">This function sets the channel status trigger model to watch the state of a specific channel.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Instrument reset<br>Channel reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Create configuration script<br>Save setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Empty channel list<br>State match 0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">channel.trigger[<em class="emphasis">N</em>].set(&quot;<em class="emphasis">channelList</em>&quot;, <em class="emphasis">stateMatch</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Number indicating the channel trigger to set (1 to 8)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The channels to set, using standard channel naming</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">stateMatch</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Value specifying the status to match when triggering an event</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">If the channel list contains more than one channel, the trigger acts as a logical OR. When any one of the channels in the list matches the specified state, a trigger event is generated. Therefore, if an indicator is present in both the match and the actual state, an event is triggered. If the match contains more than one state indicator, only one of those indicators needs to be present to trigger the event.</p>
+<p class="iclbody">There are a total of eight channel trigger events for each Series 3700A, defined by <span class="monospaceitalic">N</span>. Using this mechanism, a trigger can be generated when a pattern is matched on an I/O, a totalizer matches a defined count, or an I/O has an overcurrent condition.</p>
+<p class="iclbody">Latching functionality is not supported. </p>
+<p class="iclbody">This command works for DAC, digital I/O and totalizer channels. Switch channels are not supported.</p>
+<p class="iclbody">To clear a trigger that is no longer needed, pass an empty channel list (<code class="monospace">&quot;&quot;</code> or <code class="monospace">&quot; &quot;</code>) .</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.trigger[1].set(&quot;1001&quot;, channel.IND_MATCH)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Assuming a 3750, defines a channel trigger event 1 to occur when digital I/O channel 1 matches its defined match value.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">channel.trigger[5].set(&quot;6003, 6005&quot;, channel.IND_MATCH)    </p>
+<p class="codetable">print(channel.trigger[5].get())</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">channel.trigger[5].set(&quot; &quot;, channel.IND_MATCH)</p>
+<p class="codetable">print(channel.trigger[5].get())</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Assuming a 3750 card, define channel trigger event 5 to occur when either digital I/O channel 3 or 5 on slot 6 match their defined values.</p>
+<p class="tablebodytext">View the trigger information associated with channel trigger 5.</p>
+<p class="tablebodytext">Clear the trigger information associated with channel trigger 5.</p>
+<p class="tablebodytext">View the trigger information associated with channel trigger 5.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">6003,6005  4.000000000e+000  0.000000000e+000</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h7567" class="jump" title="channel.trigger[N].get()" href="15953.htm" target="_self">channel.trigger[N].get()</a></p>
+
+

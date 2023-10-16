@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smu.measure.userdelay[N] </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30560.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="30521.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t31441" class="heading2-icl">smu.measure.userdelay[N]</h2>
+<p class="bodyzero">This attribute sets a user-defined delay that you can use in the trigger model.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4a6b95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0 (0&nbsp;s)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">delayTime</span> = smu.measure.userdelay[<span class="monospaceitalic">N</span>]</p>
+<p class="iclcode">smu.measure.userdelay[<span class="monospaceitalic">N</span>] = <span class="monospaceitalic">delayTime</span></p>
+<p class="iclcode"><span class="monospaceitalic">delayTime</span> = <code class="monospace">smu</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">smu</code>.ATTR_MEAS_USER_DELAY_<span class="monospaceitalic">N</span>)</p>
+<p class="iclcode"><code class="monospace">smu</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">smu</code>.ATTR_MEAS_USER_DELAY_<span class="monospaceitalic">N</span>, <span class="monospaceitalic">delayTime</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">delayTime</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The delay (0 for no delay, or 167&nbsp;ns to 10 ks)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The user delay to which this time applies (1 to 5)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function; see <strong class="specialbold">Functions</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage measurement: <code class="monospace">smu.FUNC_DC_VOLTAGE</code></li><li class="tablelistbullet9pt">Current measurement: <code class="monospace">smu.FUNC_DC_CURRENT</code> </li><li class="tablelistbullet9pt">Ohms measurement: <code class="monospace">smu.FUNC_RESISTANCE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">To use this command in a trigger model, assign the delay to the dynamic delay block.</p>
+<p class="iclbody">The delay is specific to the selected function.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smu.measure.userdelay[1] = 5</p>
+<p class="codetable">trigger.model.setblock(1, trigger.BLOCK_SOURCE_OUTPUT, smu.ON)</p>
+<p class="codetable">trigger.model.setblock(2, trigger.BLOCK_DELAY_DYNAMIC, trigger.USER_DELAY_M1)</p>
+<p class="codetable">trigger.model.setblock(3, trigger.BLOCK_MEASURE_DIGITIZE)</p>
+<p class="codetable">trigger.model.setblock(4, trigger.BLOCK_SOURCE_OUTPUT, smu.OFF)</p>
+<p class="codetable">trigger.model.setblock(5, trigger.BLOCK_BRANCH_COUNTER, 10, 1)</p>
+<p class="codetable">trigger.model.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set user delay for measure 1 to 5 s.</p>
+<p class="tablebodytext">Set trigger block 1 to turn the source output on.</p>
+<p class="tablebodytext">Set trigger block 2 to a dynamic delay that calls measure user delay 1.</p>
+<p class="tablebodytext">Set trigger block 3 to make a measurement.</p>
+<p class="tablebodytext">Set trigger block 4 to turn the source output off.</p>
+<p class="tablebodytext">Set trigger block 5 to branch to block 1 ten times.</p>
+<p class="tablebodytext">Start the trigger model.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"> </p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h32433" class="jump" title="trigger.model.setblock() - trigger.BLOCK_DELAY_DYNAMIC" href="31101.htm" target="_self">trigger.model.setblock() &#8212; trigger.BLOCK_DELAY_DYNAMIC</a></p>
+
+
+<input id="topicId" type="hidden" value="31441" />
+<input id="topicDescription" type="hidden" value="smu.measure.userdelay[N]" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/4/2019 4:17:49 PM" />
+</body>
+</html>

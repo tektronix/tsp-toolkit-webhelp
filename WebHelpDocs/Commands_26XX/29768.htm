@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Combining channels in series to output higher voltage </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="92679.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="29769.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t29768" class="heading3">Combining channels in series to output higher voltage</h3>
+<p class="warning"><img id="f4282" src="warninglarge_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - WARNING" height="30" width="162" vspace="0" hspace="0" align="bottom" border="0">Channels in series can cause hazardous voltage (&gt;30&nbsp;V<sub class="subscript">RMS</sub>, 42&nbsp;V<sub class="subscript">PEAK</sub>) to be present and accessible at the 2600B output connector. A safety shield must be used whenever hazardous voltages will be present in the test circuit. To prevent electrical shock that could cause injury or death, never use the 2600B in a test circuit that may contain hazardous voltages without a properly installed and configured safety shield. </p>
+<p class="bodytext">When combining two 2600B SMU voltage sources in series, it is possible for the SMU combination to output hazardous voltage levels even though the individual SMUs cannot.</p>
+<p class="bodytext">The following figure illustrates a Model 2602B configured with the two channels connected in series to output up to 80&nbsp;V (40&nbsp;V per channel).</p>
+<p class="bodytext">Whenever hazardous voltage (&gt;30&nbsp;V<sub class="subscript">RMS</sub>, 42&nbsp;V<sub class="subscript">PEAK</sub>) is output, a safety shield must completely surround the DUT test circuit. When using a metal safety shield, it must be connected to a known protective earth (safety ground) and chassis&nbsp;ground.</p>
+<p class="magicfigurecenter"><img id="f29770" src="2600b-901-01a_stackingchannelsforhighervoltage_lr.png" class="linkedepsandpngtemplate" alt="Combining channels to output higher voltage" height="361" width="534" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="bodytext">(1)	2602B Channel A: SMU maximum pulse voltage: +40&nbsp;V<br>(2)	2602B Channel B: SMU maximum pulse voltage: −40&nbsp;V<br>(3)	Series SMU maximum pulse voltage (as shown): 80 V</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="97054.htm" target="_self">Combining SMU outputs</a></p><p class="relateditem"><a href="97055.htm" target="_self">Pulse characteristics for the 2601B, 2602B, and 2604B</a></p><p class="relateditem"><a href="97057.htm" target="_self">Pulse characteristics for the 2611B, 2612B, 2614B, 2634B, 2635B, and 2636B</a></p><p class="relateditem"><a href="97056.htm" target="_self">Guidelines for combining SMU outputs</a></p><p class="relateditem"><a href="92677.htm" target="_self">Source current using two 2600B instruments in parallel</a></p><p class="relateditem"><a href="92678.htm" target="_self">Source voltage using two 2600B instruments in series</a></p><p class="relateditem"><a href="92679.htm" target="_self">Source voltage with extended current using two 2600B instruments in parallel</a></p><p class="relateditem"><a href="29769.htm" target="_self">Combining channels in parallel to output higher current</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="29768" />
+<input id="topicDescription" type="hidden" value="Combining channels in series to output higher voltage" />
+<input id="footer-modified" type="hidden" value="Last modified: 6/28/2021 7:31:45 AM" />
+</body>
+</html>

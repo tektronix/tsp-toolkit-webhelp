@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Step 6. Program calibration dates </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="20445.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12996.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12995" class="heading4">Step 6. Program calibration dates</h4>
+<p class="bodytext">Use the following command to set the calibration adjustment date:</p>
+<p class="bodytext"><code class="monospace">smua.cal.adjustdate = os.time{year=2019, month=12, day=1}</code></p>
+<p class="bodytext">Optionally, it is possible to set the calibration date and calibration due date with the following commands:</p>
+<p class="bodytext"><code class="monospace">smua.cal.date = os.time{year=2019, month=12, day=1}</code></p>
+<p class="bodytext"><code class="monospace">smua.cal.due = os.time{year=2020, month=12, day=1}</code></p>
+<p class="bodytext">If you do not wish to set a calibration date or calibration due date and want to clear the previous values, use the following commands:</p>
+<p class="bodytext"><code class="monospace">smua.cal.date = 0</code></p>
+<p class="bodytext"><code class="monospace">smua.cal.due = 0</code></p>
+<p class="bodytext">The actual year, month, day, and (optional) hour and minute should be used (seconds can be given but are essentially ignored due to the precision of the internal date storage format). The allowable range for the year is from 1970 to 2037, the month is from 1 to 12, and the day is from 1 to 31.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="12984.htm" target="_self">Adjustment procedure</a></p><p class="relateditem"><a href="12985.htm" target="_self">Step 1. Prepare the 2600B for adjustment</a></p><p class="relateditem"><a href="26834.htm" target="_self">Step 2. Voltage calibration adjustment</a></p><p class="relateditem"><a href="27972.htm" target="_self">Step 3. Current calibration adjustment</a></p><p class="relateditem"><a href="20445.htm" target="_self">Step 4. Contact check calibration adjustment</a></p><p class="relateditem"><a href="12996.htm" target="_self">Step 7. Save calibration constants</a></p><p class="relateditem"><a href="12997.htm" target="_self">Step 8. Lock out calibration</a></p><p class="relateditem"><a href="12998.htm" target="_self">Step 9. Repeat calibration procedure for Channel B</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12995" />
+<input id="topicDescription" type="hidden" value="Step 6. Program calibration dates" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/16/2021 2:04:20 PM" />
+</body>
+</html>

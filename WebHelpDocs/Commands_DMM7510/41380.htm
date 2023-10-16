@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.coupling.type </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41744.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="46371.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41380" class="heading2-icl">dmm.digitize.coupling.type</h2>
+<p class="bodyzero">This attribute determines if AC or DC signal coupling is used.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.COUPLING_DC</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">couplingType</em> = dmm.digitize.coupling.type</p>
+<p class="iclcode">dmm.digitize.coupling.type = <em class="emphasis">couplingType</em></p>
+<p class="iclcode"><em class="emphasis">couplingType</em> = dmm.measure.getattribute(dmm.FUNC_DIGITIZE_VOLTAGE, <code class="monospace">dmm</code>.ATTR_DIGI_COUPLING_TYPE)</p>
+<p class="iclcode">dmm.measure.setattribute(dmm.FUNC_DIGITIZE_VOLTAGE, <code class="monospace">dmm</code>.ATTR_DIGI_COUPLING_TYPE, <em class="emphasis">couplingType</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">couplingType</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The type of coupling:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">AC: <code class="monospace">dmm.COUPLING_AC</code></li><li class="tablelistbullet9pt">DC: <code class="monospace">dmm.COUPLING_DC</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command selects the type of input coupling that is used for the selected function.</p>
+<p class="iclbody">When DC is selected, the instrument measures AC and DC components of the signal. When AC is selected, the instrument only measures the AC components of the signal.</p>
+<p class="iclbody">If AC coupling is selected, you can change input impedance settings, but they do not take effect until DC coupling is selected.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">dmm.digitize.func = dmm.FUNC_DIGITIZE_VOLTAGE</p>
+<p class="codetable">dmm.digitize.coupling.type = dmm.COUPLING_AC</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Set the digitize voltage coupling to AC.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h47134" class="jump" title="DC and AC coupling" href="47132.htm" target="_self">DC and AC coupling</a></p>
+<p class="listcommand"><a id="h44575" class="jump" title="dmm.digitize.coupling.acfilter" href="41743.htm" target="_self">dmm.digitize.coupling.acfilter</a></p>
+<p class="listcommand"><a id="h44576" class="jump" title="dmm.digitize.coupling.acfrequency" href="41744.htm" target="_self">dmm.digitize.coupling.acfrequency</a></p>
+
+
+<input id="topicId" type="hidden" value="41380" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.coupling.type" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 1:23:34 PM" />
+</body>
+</html>

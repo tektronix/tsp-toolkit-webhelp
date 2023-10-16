@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>  </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17092.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="16688.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+
+<p class="bodytext">A script becomes unnamed if you create a new script with the same name. In this circumstance, the name of the script in the <code class="monospace">script.user.scripts</code> table is set to an empty string before it is replaced by the new script.</p>
+<p class="bodytext">For example, if <code class="monospace">beepTwoSec</code> already exists in the <code class="monospace">script.user.scripts</code> table and you sent:</p>
+<p class="code">beepTwoSec1200 = script.new(&quot;beeper.enable = 1 beeper.beep(2, 1200)&quot;, &quot;beepTwoSec&quot;)</p>
+<p class="bodytext">The following actions occur:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">beepTwoSec1200</code> is added as a global variable.</li><li class="listbullet">The script that was in the runtime environment as <code class="monospace">beepTwoSec</code> is changed to an unnamed script (the name attribute is set to an empty string).</li><li class="listbullet">The global variable <code class="monospace">beepTwoSec</code> remains in the runtime environment unchanged (it points to the now unnamed script).</li><li class="listbullet">A new script named <code class="monospace">beepTwoSec</code> is added to the runtime environment.</li></ul><p class="bodytext">In this example, you can access the new script by sending either of the following commands:</p>
+<p class="code">beepTwoSec1200()</p>
+<p class="code">script.user.scripts.beepTwoSec()</p>
+<p class="bodytext">To access the unnamed script, you can send the command:</p>
+<p class="code">beepTwoSec()</p>
+<p class="magicfigurecenter"><img id="f17174" src="17174.png" class="linkedepsandpngtemplate50%" alt="Create a new script with the name of an existing script" height="1036" width="1880" vspace="0" hspace="0" align="middle" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="17075.htm" target="_self">Create a script using the script.new() command</a></p><p class="relateditem"><a href="17092.htm" target="_self">Create an unnamed script using script.new()</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="17259" />
+<input id="topicDescription" type="hidden" value=" " />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2021 8:55:46 AM" />
+</body>
+</html>

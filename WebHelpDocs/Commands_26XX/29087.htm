@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> I-source sink operating boundaries </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19314.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11971.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "48">
+<p class="bodytext"><a href="JavaContents.htm" target="TOC"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h5 id="t29087" class="heading5">I-source sink operating boundaries</h5>
+<p class="bodytext">The quadrant within which the 2600B operates depends on the device-under-test (DUT) connected to the 2600B output. The following example illustrates this operation by using the 2600B configured to provide a constant current to discharge a 12 V power source (a battery).</p>
+<p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">When using the SMU current source as a sink, always set the voltage compliance limit to levels that are higher than the external voltage level. Using the 2601B, 2602B, or 2604B to sink more than 3 A can damage the instrument and invalidate your warranty. Using the 2611B, 2612B, 2614B, 2634B, 2635B, or 2636B to sink more than 1.5 A can damage the instrument and invalidate your warranty.</p>
+<p class="magicfigurecenter"><img id="f29088" src="2600b-901-01a_sinkingcurrentoperationexample_lr.png" class="linkedepsandpngtemplate" alt="Sourcing current sink operation example" height="202" width="410" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">The voltage compliance limit applies both to positive and negative voltages. For example, if you set the voltage compliance limit to 15&nbsp;V, the voltage limit applies to ±15&nbsp;V.</p>
+<p class="bodytext">For this example, the 2600B is programmed to source −50 mA (the constant current) and to limit voltage to 15 V. When the SMU turns on, it begins sinking current as determined by the programmed current source level (−50 mA), causing a decrease in battery voltage. If the battery were ideal and could be charged negatively, its voltage would continue to decrease until it is negatively charged at −15 V (shown by the green arrow in the following figure), at which point the SMU is in voltage compliance.</p>
+<p class="caution"><img id="f14260_1" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">Reversing the polarity when sourcing current and sinking power may destroy some power sources. To prevent a negative charge, monitor the measurement of the battery voltage on the SMU and stop the discharge before the SMU starts to operate in quadrant III (negative voltage). You can stop the discharge by changing the programmed current source level or by disconnecting the SMU from the device.</p>
+<p class="bodytext">As the battery drains, the battery voltage is lowered as shown by the green arrow. Operation continues in this direction until the you stop operation or the voltage reaches the voltage compliance limit. Because the battery is a power source, operation in this example is limited by the capability of the battery to deliver 50&nbsp;mA. See the following figure.</p>
+<p class="magicfigurecenter"><img id="f29089" src="2600b-901-01a_i-sinkconsiderations_lr.png" class="linkedepsandpngtemplate" alt="Considerations when sourcing current and sinking power" height="528" width="523" vspace="0" hspace="0" align="bottom" border="0"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="11964.htm" target="_self">I-source operating boundaries</a></p><p class="relateditem"><a href="11587.htm" target="_self">2601B, 2602B, and 2604B current source operating boundaries</a></p><p class="relateditem"><a href="11965.htm" target="_self">2611B, 2612B, 2614B, 2634B, 2635B, and 2636B current source operating boundaries</a></p><p class="relateditem"><a href="19314.htm" target="_self">Load considerations (I-source)</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="29087" />
+<input id="topicDescription" type="hidden" value="I-source sink operating boundaries" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/9/2021 12:07:44 PM" />
+</body>
+</html>

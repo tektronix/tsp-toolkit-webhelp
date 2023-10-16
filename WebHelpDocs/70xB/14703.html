@@ -1,0 +1,159 @@
+<html><head><title> display.inputvalue() </title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><style type="text/css">div.kpos {width:654px; left:0px; position:fixed;}table {border:1px solid #C0C0C0; padding-left:5px; float:right; clear:both;}td  {border:1px solid #C0C0C0;  padding-left:5px;}p.iclsubheading {clear:both;}p.iclspacing {clear:both; padding-left:55px;}p.iclcode {clear:both; padding-left:55px;}p.iclbody {clear:both; padding-left:55px;}h2.heading2-icl {clear:both; }br {clear:both;}hr {clear:both;}</style></head><body><div class="kpos"><table cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14702.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14704.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">display.inputvalue()</h2>
+<p class="bodyzero">This function displays a formatted input field on the instrument display that the operator can edit.</p>
+<table width="825" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style = "border:2px solid #D3D3D3;" width="195"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="128"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style = "border:2px solid #D3D3D3;" width="248"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="195"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="128"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style = "border:2px solid #D3D3D3;" width="248"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">display.inputvalue(<em class="emphasis">format</em>)</p>
+<p class="iclcode">display.inputvalue(<em class="emphasis">format</em>, <em class="emphasis">default</em>)</p>
+<p class="iclcode">display.inputvalue(<em class="emphasis">format</em>, <em class="emphasis">default</em>, <em class="emphasis">minimum</em>)</p>
+<p class="iclcode">display.inputvalue(<em class="emphasis">format</em>, <em class="emphasis">default</em>, <em class="emphasis">minimum</em>, <em class="emphasis">maximum</em>)</p>
+<p class="iclspacing"></p>
+<table width="742" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="135"><p class="tablebodytext"><span class="monospaceitalic">format</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="608"><p class="tablebodytext">A string that defines how the input field is formatted. See <strong class="specialbold">Details</strong> for more information.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="135"><p class="tablebodytext"><span class="monospaceitalic">default</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="608"><p class="tablebodytext">The default value for the input value.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="135"><p class="tablebodytext"><span class="monospaceitalic">minimum</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="608"><p class="tablebodytext">The minimum input value.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style = "border:1px solid #C0C0C0;" width="135"><p class="tablebodytext"><span class="monospaceitalic">maximum</span></p>
+</td>
+<td style = "border:1px solid #C0C0C0;" width="608"><p class="tablebodytext">The maximum input value.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody"><span class="monospaceitalic">format</span> uses 0s, the decimal point, polarity sign, and exponents to define how the input field is formatted. <span class="monospaceitalic">format</span> can include the options shown in the following table.</p>
+<p class="magictablebody"></p>
+<table width="825" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="120"><p class="tableheading"><span class="monospaceitalic">format</span> options</p>
+</td>
+<td width="446"><p class="iclbody">&nbsp;</p>
+</td>
+<td width="259"><p class="iclbody">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tableheadingsmall">Option</p>
+</td>
+<td width="446"><p class="tableheadingsmall">Description</p>
+</td>
+<td width="259"><p class="tableheadingsmall">Examples</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tablebodytext">E</p>
+</td>
+<td width="446"><p class="tablebodytext">Include the E to display the value exponentially</p>
+</td>
+<td width="259"><p class="tablebodytext">0.00000e+0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tablebodytext">+</p>
+</td>
+<td width="446"><p class="tablebodytext">Allows operators to enter positive or negative values. If the &quot;+&quot; sign is not included, the operator cannot enter a negative value.</p>
+</td>
+<td width="259"><p class="tablebodytext">+0.00</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tablebodytext">0</p>
+</td>
+<td width="446"><p class="tablebodytext">Defines the digit positions for the value. You can use up to six 0s.</p>
+</td>
+<td width="259"><p class="tablebodytext">+00.0000e+00</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><p class="tablebodytext">.</p>
+</td>
+<td width="446"><p class="tablebodytext">Include to have a decimal point appear in the value.</p>
+</td>
+<td width="259"><p class="tablebodytext">+0.00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody"><span class="monospaceitalic">default</span> is the value shown when the value is first displayed.</p>
+<p class="iclbody"><span class="monospaceitalic">minimum</span> and <span class="monospaceitalic">maximum</span> can be used to limit the values that can be entered. When + is selected for <span class="monospaceitalic">format</span>, the minimum limit must be more than or equal to zero. When limits are used, the operator cannot enter values above or below these limits.</p>
+<p class="iclbody">After the instrument is turned on, the first time you use a display command to write to the display, the message &quot;USER SCREEN&quot; is cleared. After the first write, you need to use <code class="monospace">display.clear()</code> to clear the message.</p>
+<p class="iclbody">The input value is limited to ±1e37.</p>
+<p class="iclbody">Before calling <code class="monospace">display.inputvalue()</code>, you should send a message prompt to the operator using display.prompt(). Make sure to position the cursor where the edit field should appear.</p>
+<p class="iclbody">After this command is sent, script execution pauses until the operator enters a value and presses the <strong class="specialbold">ENTER </strong>key.</p>
+<p class="iclbody">For positive and negative entry (&quot;+&quot; sign used for the value field and/or the exponent field), polarity of a non-zero value or exponent can be toggled by positioning the cursor on the polarity sign and turning the navigation wheel. Polarity will also toggle when using the navigation wheel to decrease or increase the value or exponent past zero. A zero value or exponent (for example, +00) is always positive and cannot be toggled to negative polarity.</p>
+<p class="iclbody">After sending this command and pressing the <strong class="specialbold">EXIT (LOCAL) </strong>key, value returns <code class="monospace">nil</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table width="750" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="750"><p class="codetable">display.clear()</p>
+<p class="codetable">display.settext(&quot;Enter value between$N  -0.10 and 2.00:  &quot;)</p>
+<p class="codetable">value = display.inputvalue(&quot;+0.00&quot;, 0.5, -0.1, 2.0)</p>
+<p class="codetable">print(&quot;Value entered = &quot;, value)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="750"><p class="tablebodytext">Displays an editable field (+0.50) for operator input. The valid input range is –0.10 to +2.00, with a default of 0.50.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">Value entered =    1.350000000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="iclbody"><a id="h683" class="jumptemplate" title="display.prompt()" href="14740.html" target="_self">display.prompt()</a></p>
+<p class="iclbody"><a id="h676" class="jumptemplate" title="display.setcursor()" href="14711.html" target="_self">display.setcursor()</a></p>
+<p class="iclbody">display.settext() (<a id="h677" class="jumptemplate" title="display.sendkey()" href="17055.html" target="_self">display.sendkey()</a>, <a id="h677" class="jumptemplate" title="display.settext()" href="14712.html" target="_self">display.settext()</a>)</p>
+<p class="allowpagebreak"></p>
+
+<br/><hr/><p class="bodytext">Copyright (c) 2004-2010, Keithley Instruments, Inc.  All rights reserved.</p></div></body></html>
+
