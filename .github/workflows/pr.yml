@@ -55,16 +55,16 @@ jobs:
         uses: actions/checkout@v3
         with:
           set-safe-directory: '*'
-      - name: Get Tagged Version
-        id: lasttag
-        run: |
-          V="${GITHUB_REF#refs/tags/v}"
-          CL="${V%-*}"
-          echo "version=${V}" >> $GITHUB_OUTPUT
-          echo "cl_version=${CL}" >> $GITHUB_OUTPUT
-          # set version to RC version if this is a tagged build
-          npm version --no-git-tag-version --allow-same-version "$V"
-        if: startsWith(github.ref, 'refs/tags/')
+      # - name: Get Tagged Version
+      #   id: lasttag
+      #   run: |
+      #     V="${GITHUB_REF#refs/tags/v}"
+      #     CL="${V%-*}"
+      #     echo "version=${V}" >> $GITHUB_OUTPUT
+      #     echo "cl_version=${CL}" >> $GITHUB_OUTPUT
+      #     # set version to RC version if this is a tagged build
+      #     npm version --no-git-tag-version --allow-same-version "$V"
+      #   if: startsWith(github.ref, 'refs/tags/')
       - name: Get Artifacts
         uses: actions/download-artifact@v3
         with:
