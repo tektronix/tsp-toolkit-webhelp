@@ -71,6 +71,7 @@ jobs:
           name: WebHelpDocs
       - name: publish pack
         run: |
+          cd WebHelpDocs
           npm publish *.tgz
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
