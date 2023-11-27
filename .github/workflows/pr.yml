@@ -35,7 +35,6 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     needs:
       - package
-      - test
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/tek-engineering/tsp-toolkit-build:latest
@@ -80,9 +79,7 @@ jobs:
     name: Release
     if: startsWith(github.ref, 'refs/tags/')
     needs:
-      - build
-      - test
-      - sbom
+      - publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
