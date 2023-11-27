@@ -22,3 +22,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## Unreleased
 
+## [0.11.2]
+
+### Added
+- Rename of folders structure (TSP-357)
+- Language feature has been added for 37XX commmand set(TSP-341)
+- Language feature has been added for  DAQ6510 and DMM6500 command set(TSP-304)
+- Language feature has been added for 24XX and DMM7510 command set(TSP-232)
+
