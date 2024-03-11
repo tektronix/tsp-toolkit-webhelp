@@ -1,0 +1,123 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> display.input.option() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="40051.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="40053.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t40052" class="heading2-icl">display.input.option()</h2>
+<p class="bodyzero">This function allows you to create an option dialog box with customizable buttons on the front-panel display.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">display.BUTTON_OPTION<em class="emphasis">n</em> = display.input.option(&quot;<em class="emphasis">dialogTitle</em>&quot;, &quot;<em class="emphasis">buttonTitle1</em>&quot;, ...)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">n</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of the button that is selected from the front-panel display; <code class="monospace">nil</code> if Cancel is pressed on the keypad; buttons are numbered top to bottom, left to right</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">dialogTitle</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that contains the text to be displayed as the title of the dialog box on the front-panel display; up to 32 characters</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">buttonTitle1</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that contains the name of the first button; up to 15 characters</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">buttonTitle2</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that contains the name of the second button; up to 15 characters</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">buttonTitleN</em></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that contains the names of subsequent buttons, where <span class="monospaceitalic">N</span> is a number from 3 to 10; you can define up to 10 buttons; each button can be up to 15 characters</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Buttons are created from top to bottom, left to right. If you have more than five buttons, they are placed into two columns.</p>
+<p class="iclbody">The prompt is displayed until it has been responded to. You can only send one input prompt command at a time.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">optionID = display.input.option(&quot;Select an option&quot;, &quot;Apple&quot;, &quot;Orange&quot;, &quot;Papaya&quot;, &quot;Pineapple&quot;, &quot;Blueberry&quot;, &quot;Banana&quot;, &quot;Grapes&quot;, &quot;Peach&quot;, &quot;Apricot&quot;, &quot;Guava&quot;)</p>
+<p class="codetable">print(optionID)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">This example displays the following dialog box:</p>
+<p class="magicfigurecenter"><img id="f40109" src="2450display_input_optionexample_tsb.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="2450 display_input_option example" height="158" width="264" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="tablebodytext">If the user selects <code class="monospace">Peach</code>, the return is <code class="monospace">display.BUTTON_OPTION8</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h40062" class="jump" title="display.input.number()" href="40051.htm" target="_self">display.input.number()</a></p>
+<p class="listcommand"><a id="h40058" class="jump" title="display.input.prompt()" href="40053.htm" target="_self">display.input.prompt()</a></p>
+<p class="listcommand"><a id="h40059" class="jump" title="display.input.string()" href="40054.htm" target="_self">display.input.string()</a></p>
+
+
+<input id="topicId" type="hidden" value="40052" />
+<input id="topicDescription" type="hidden" value="display.input.option()" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2019 7:18:04 AM" />
+</body>
+</html>
