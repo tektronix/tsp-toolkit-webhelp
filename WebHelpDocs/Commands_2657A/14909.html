@@ -1,0 +1,105 @@
+<html>
+<head>
+<title> lan.status.dns.address[N] </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14896.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14910.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">lan.status.dns.address[N]</h2>
+<p class="bodyzero">This attribute contains the DNS server IP addresses.</p>
+<table class="tableintopic" width="618" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">dnsAddress</em> = lan.status.dns.address[<em class="emphasis">N</em>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">dnsAddress</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="420"><p class="tablebodytext">DNS server IP address</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="420"><p class="tablebodytext">Entry index (1, 2, or 3)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is an array of DNS server addresses. The instrument can use up to three addresses.</p>
+<p class="iclbody">Unused or disabled entries are returned as <code class="monospace">&quot;0.0.0.0&quot;</code> when read. The <span class="monospaceitalic">dnsAddress</span> returned is a string specifying the IP address of the DNS server in dotted decimal notation.</p>
+<p class="iclbody">You can only specify two addresses manually. However, the instrument uses up to three DNS server addresses. If two are specified, only the one given by a DHCP server is used. If no entries are specified, up to three address given by a DHCP server are used.</p>
+<p class="iclbody">The value of <code class="monospace">lan.status.dns.address[1]</code> is referenced first for all DNS lookups. The values of <code class="monospace">lan.status.dns.address[2]</code> and <code class="monospace">lan.status.dns.address[3]</code> are referenced second and third, respectively.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">print(lan.status.dns.address[1])</p>
+</td>
+<td width="288"><p class="tablebodytext">Outputs DNS server address 1, for example:</p>
+<p class="codetable">164.109.48.173</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14953" class="jumptemplate" title="lan.status.dns.name" href="14910.html" target="_self">lan.status.dns.name</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

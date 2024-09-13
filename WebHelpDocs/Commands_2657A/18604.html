@@ -1,0 +1,105 @@
+<html>
+<head>
+<title> smuX.source.protectv </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15151.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15153.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.source.protectv</h2>
+<p class="bodyzero">This attribute controls the overvoltage protection limit.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">0 (disabled)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">limit</span> = smu<span class="monospaceitalic">X</span>.source.protectv</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.source.protectv = <span class="monospaceitalic">limit</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">limit</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The overvoltage protection limit.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">SMU channel (for example, <code class="monospace">smua.source.protectv</code> applies to SMU channel A).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Reading this attribute returns the overvoltage protection limit the SMU is currently using.</p>
+<p class="iclbody">Setting this attribute to zero disables overvoltage protection (OVP). When this attribute is set to a nonzero value, the SMU will limit the voltage on the force leads to the value specified by this attribute.</p>
+<p class="iclbody">The valid OVP range is between 300 V and 3000 V. Setting the OVP limit to a value outside of this range will generate standard error code -224, &quot;Illegal parameter value.&quot; To disable OVP, either set <code class="monospace">smua.source.protectv = 0</code>, or disable OVP from the front panel (see Front panel overvoltage protection).</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">smua.source.protectv = 300</p>
+</td>
+<td width="324"><p class="tablebodytext">Limits voltage on SMU channel A to 300&nbsp;V.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15242" class="jumptemplate" title="smuX.source.limitY" href="17115.html" target="_self">smuX.source.limitY</a></p>
+<p class="listcommand">Overvoltage protection (OVP)</p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

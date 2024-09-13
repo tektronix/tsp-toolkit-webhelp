@@ -1,0 +1,103 @@
+<html>
+<head>
+<title> localnode.passwordmode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15014.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15016.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">localnode.passwordmode</h2>
+<p class="bodyzero">This attribute stores the remote access password enable mode.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="126"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="174"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="126"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="174"><p class="tablebodytextsmall">1 (localnode.PASSWORD_WEB)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">mode</em> = localnode.passwordmode</p>
+<p class="iclcode">localnode.passwordmode = <em class="emphasis">mode</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E4E4E4">
+<tr align="left" valign="top">
+<td style="border:1px solid #E4E4E4;" width="138"><p class="tablebodytext"><span class="monospaceitalic">mode</span></p>
+</td>
+<td style="border:1px solid #E4E4E4;" width="456"><p class="tablebodytext">The remote password enable mode</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute controls if and where remote access passwords are required. Set this attribute to one of the values below to enable password checking:</p>
+<p class="iclbody"><code class="monospace">localnode.PASSWORD_NONE</code> or <code class="monospace">0</code>: Disable passwords everywhere</p>
+<p class="iclbody"><code class="monospace">localnode.PASSWORD_WEB</code> or <code class="monospace">1</code>: Use passwords on the web interface only</p>
+<p class="iclbody"><code class="monospace">localnode.PASSWORD_LAN</code> or <code class="monospace">2</code>: Use passwords on the web interface and all LAN interfaces</p>
+<p class="iclbody"><code class="monospace">localnode.PASSWORD_ALL</code> or <code class="monospace">3</code>: Use passwords on the web interface and all remote command interfaces</p>
+<p class="iclbody">When using this command from a remote node, <code class="monospace">localnode</code> should be replaced with the node reference, for example <code class="monospace">node[5].passwordmode</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">mode = localnode.PASSWORD_WEB</p>
+<p class="codetable">localnode.passwordmode = mode</p>
+</td>
+<td width="324"><p class="tablebodytext">Sets value of <code class="monospace">mode</code> to <code class="monospace">PASSWORD_WEB</code>.</p>
+<p class="tablebodytext">Allows use of passwords on the web interface only.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15030" class="jumptemplate" title="localnode.password" href="15014.html" target="_self">localnode.password</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

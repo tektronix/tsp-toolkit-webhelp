@@ -1,0 +1,101 @@
+<html>
+<head>
+<title> lan.config.dns.dynamic </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14899.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14901.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">lan.config.dns.dynamic</h2>
+<p class="bodyzero">Enables or disables the dynamic DNS registration.</p>
+<table class="tableintopic" width="618" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="114"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="108"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="114"><p class="tablebodytextsmall">LAN restore defaults</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="108"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">1 (lan.ENABLE)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">state</em> = lan.config.dns.dynamic</p>
+<p class="iclcode">lan.config.dns.dynamic = <em class="emphasis">state</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="420"><p class="tablebodytext">The dynamic DNS registration state. It may be one of the following values:</p>
+<p class="tablebodytext"><code class="monospace">1</code> or <code class="monospace">lan.ENABLE</code>: Enabled<br><code class="monospace">0</code> or <code class="monospace">lan.DISABLE</code>: Disabled</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Dynamic DNS registration works with DHCP to register the host name with the DNS server. The host name is specified in the <code class="monospace">lan.config.dns.hostname</code> attribute.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">print(lan.config.dns.dynamic)</p>
+</td>
+<td width="288"><p class="tablebodytext">Outputs the dynamic registration state.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">If dynamic DNS registration is enabled, the response is:</p>
+<p class="codetable">1.00000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1897" class="jumptemplate" title="lan.config.dns.hostname" href="14901.html" target="_self">lan.config.dns.hostname</a></p>
+<p class="listcommand"><a id="h14951" class="jumptemplate" title="lan.restoredefaults()" href="14896.html" target="_self">lan.restoredefaults()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

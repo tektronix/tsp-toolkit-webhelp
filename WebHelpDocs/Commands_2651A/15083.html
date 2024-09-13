@@ -1,0 +1,98 @@
+<html>
+<head>
+<title> setup.save() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15082.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15088.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">setup.save()</h2>
+<p class="bodyzero">This function saves the present setup as a user-saved setup.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">setup.save(<span class="monospaceitalic">id</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">id</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="425"><p class="tablebodytext">An integer or string specifying where to save the user setup:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">Save in nonvolatile memory (<code class="monospace">1</code> to <code class="monospace">5</code>)</li><li class="tablelistbullet">Save as user-saved setup on a USB flash drive (<span class="monospaceitalic">&quot;/path/filename&quot;</span>)</li></ul></td>
+</tr>
+
+</table>
+<p class="iclbody">When the <span class="monospaceitalic">id</span> parameter is an integer (<span class="monospaceitalic">n</span>), it is interpreted as the setup number to save to the instrument's nonvolatile memory.</p>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="48" width="176" vspace="0" hspace="0" align="top" border="0"><br>When you save to a specified integer (<code class="monospace">1</code> to <code class="monospace">5</code>) in nonvolatile memory, the previous setup at that same location is overwritten.</p>
+<p class="iclbody">When the <span class="monospaceitalic">id</span> parameter is a string, it is interpreted as the path and file name of the location to save the present setup on a USB flash drive. The path may be absolute or relative to the current working directory.</p>
+<p class="iclbody"></p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="276"><p class="codetable">setup.save(5)</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="288"><p class="tablebodytext">Saves the present setup to the internal memory of the instrument at location 5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15085" class="jumptemplate" title="setup.recall()" href="15082.html" target="_self">setup.recall()</a></p>
+<p class="listcommand"><a id="h11159" class="jumptemplate" title="User setup" href="19562.html" target="_self">User setup</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title> Command name and summary table </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17852.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17854.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h4 class="heading4">Command name and summary table</h4>
+<p class="bodytext">Each instrument command description starts with the command name, followed by a table with relevant information for each command. Definitions for the numbered items in the figure below are listed following the figure.</p>
+<p class="magicfigurecenter"><img src="26xxicldescription-table.png" alt="Command name and summary table" height="170" width="577" vspace="0" hspace="0" align="bottom" border="0"></p>
+<ol class="listnumber"><li class="listnumber"><strong class="specialbold">Instrument command name</strong>. Signals the beginning of the command description and is followed by a brief description of what the command does.</li><li class="listnumber"><strong class="specialbold">Type of command</strong>. Options are:<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Function</strong>. Function-based commands control actions or activities, but are not always directly related to instrument operation. Function names are always followed by a set of parentheses, for example, <code class="monospace">digio.writeport(15)</code><strong class="specialbold">. </strong>If the function does not need a parameter, the parentheses set remains empty, for example, <code class="monospace">exit()</code>.</li><li class="listbullet2"><strong class="specialbold">Attribute (R),</strong> <strong class="specialbold">(RW), </strong>or <strong class="specialbold">(W)</strong>. Attribute-based commands set or read the characteristics of an instrument feature or operation by defining a value. For example, a characteristic of a TSP&#8209;enabled instrument is the model number (<code class="monospace">localnode.model</code>); another characteristic is the number of errors in the error queue (<code class="monospace">errorqueue.count</code>). For many attributes, the defined value is a number or predefined constant. Attributes can be read-only (R), read-write (RW), or write-only (W), and can be used as a parameter of a function or assigned to another variable.</li><li class="listbullet2"><strong class="specialbold">Constant.</strong> A constant command represents a fixed value when used in a script.</li></ul></li><li class="listnumber"><strong class="specialbold">TSP-Link accessible</strong>. <strong class="specialbold">Yes</strong> or <strong class="specialbold">No</strong>; indicates whether or not the command can accessed through a TSP-Link network.</li><li class="listnumber"><strong class="specialbold">Affected by</strong>. Commands or actions that have a direct effect on the instrument command.<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">LAN restore defaults</strong></li><li class="listbullet2"><strong class="specialbold">Recall setup</strong></li><li class="listbullet2"><strong class="specialbold">Instrument reset:</strong> An instrument reset can be invoked by <code class="monospace">reset()</code>, <code class="monospace">localnode.reset()</code>, or <code class="monospace">*RST</code>.</li></ul></li><li class="listnumber"><strong class="specialbold">Where saved</strong>. Indicates where the command settings reside once they are used on an instrument. Options include:<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">Not saved:</strong> Command is not saved anywhere and must be typed each time you use it.</li><li class="listbullet2"><strong class="specialbold">Nonvolatile memory:</strong> Storage area in the instrument where information is saved when the instrument is turned off. </li><li class="listbullet2"><strong class="specialbold">Saved setup</strong></li></ul></li><li class="listnumber"><strong class="specialbold">Default value:</strong> Lists the default value or constant for the command. The parameter values are defined in the Usage or Details sections of the command description.</li></ol>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

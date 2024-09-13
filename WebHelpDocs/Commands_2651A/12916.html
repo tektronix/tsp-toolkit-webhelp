@@ -1,0 +1,89 @@
+<html>
+<head>
+<title> KIPulse factory script </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12175.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19518.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h4 class="heading4">KIPulse factory script</h4>
+<p class="bodytext">The KIPulse factory script provides examples of how to generate pulses and to provide a simple pulsing interface. Pulses can be generated using the functions listed below.</p>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="48" width="176" vspace="0" hspace="0" align="top" border="0"><br>Please note the following information about the KIPulse factory script:<br><br><span class="wingdingsymbols">Ÿ</span> This factory script only operates on the channels present in the instrument executing the pulse functions. These functions will not operate correctly if you attempt to access instrument channels over the TSP&#8209;Link<sup class="superscript">&reg;</sup> interface.<br><br><span class="wingdingsymbols">Ÿ</span> The KIPulse factory scripts are general purpose examples that may not be suitable for all use cases. Very short pulses (less than 1ms pulse width) may require optimization of the examples provided by the factory script in order to achieve settled measurements.<br><br><span class="wingdingsymbols">Ÿ</span> The <code class="monospace">PulseIMeasureV()</code> and <code class="monospace">PulseVMeasureI()</code> functions may be accessed from the front panel. The remaining functions may only be accessed remotely.</p>
+<p class="bodytext">Use the configuration <a id="h19527" class="jumptemplate" title="KIPulse tag parameter pulse functions" href="19518.html" target="_self">KIPulse tag parameter pulse functions</a> to configure a pulse train and assign the configuration to the <span class="monospaceitalic">tag</span><code class="monospace"> </code>parameter (use <code class="monospace">QueryPulseConfig()</code> to inspect configured pulse trains). Use the initiation<code class="monospace"> InitiatePulseTest()</code> function to execute the pulse trains assigned to its <span class="monospaceitalic">tag</span> arguments. The conditions listed in the table below must be true for these functions to execute successfully.</p>
+<p class="bodytext">Conditions that must be true for successful function execution:</p>
+<table class="tableintopic" width="510" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="222"><p class="tableheadingsmall">Config functions:</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="60"><p class="tableheadingsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="228"><p class="tableheadingsmall">InitiatePulseTest functions:</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="222"><p class="tablebodytext">Source autorange (I and V) off</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="60"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="228"><p class="tablebodytext">Output on</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="222"><p class="tablebodytext">Measure autorange (I and V) off</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="60"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="228"><p class="tablebodytext">There is enough free space in the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="222"><p class="tablebodytext">Measure NPLC &lt; ton</p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;" width="60"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #010101;" width="228"><p class="tablebodytext">Buffer append mode is on when pulse train is &gt;1 point</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="222"><p class="tablebodytext">Measure autozero OFF or ONCE</p>
+</td>
+<td style="border-left:1px solid #010101;" width="60"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td width="228"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">Use the <a id="h19528" class="jumptemplate" title="KIPulse simple pulse functions" href="19519.html" target="_self">KIPulse simple pulse functions</a> to specify and perform a specified number of pulse-measure cycles.</p>
+<p class="bodytext">The following functions make up the KIPulse factory script:</p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<html>
+<head>
+<title> trigger.blender[N].orenable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15786.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15788.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">trigger.blender[N].orenable</h2>
+<p class="bodyzero">This attribute selects whether the blender operates in OR mode or AND mode.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Instrument reset<br>Trigger blender N reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Not saved  </p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">false (AND mode)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">orenable</em> = trigger.blender[<em class="emphasis">N</em>].orenable</p>
+<p class="iclcode">trigger.blender[<em class="emphasis">N</em>].orenable = <em class="emphasis">orenable</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">orenable</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The orenable mode:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet"><code class="monospace">true</code>: OR mode</li><li class="tablelistbullet"><code class="monospace">false</code>: AND mode</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The trigger blender (1 to 4)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute selects whether the blender waits for any one event (the &#8220;OR&#8221; mode) or waits for all selected events (the &#8220;AND&#8221; mode) before signaling an output event.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="432"><p class="codetable">trigger.blender[1].orenable = true</p>
+<p class="codetable">trigger.blender[1].stimulus[1] = digio.trigger[3].EVENT_ID</p>
+<p class="codetable">trigger.blender[1].stimulus[2] = digio.trigger[5].EVENT_ID</p>
+</td>
+<td width="162"><p class="tablebodytext">Generate a trigger blender 1 event when a digital I/O trigger happens on line 3 or 5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17667" class="jumptemplate" title="trigger.blender[N].reset()" href="17666.html" target="_self">trigger.blender[N].reset()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

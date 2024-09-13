@@ -1,0 +1,75 @@
+<html>
+<head>
+<title> Logical instruments </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17860.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12044.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h4 class="heading4">Logical instruments</h4>
+<p class="bodytext">You would normally refer to all instrumentation in one enclosure or node as a single instrument. In the context of Test Script Processor (TSP<sup class="superscript">&reg;</sup>) scripting engine and instrument commands, it is useful to think of each individual subdivision in an enclosure, such as a card slot or the channels, as a stand&#8209;alone instrument. To avoid confusion, all subdivisions of the instrumentation in an enclosure are referred to as &quot;logical instruments.&quot;</p>
+<p class="bodytext">Each logical instrument is given a unique identifier in a system. These identifiers are used as part of all commands that control a given logical instrument.</p>
+<p class="bodytext">The logical instruments are:</p>
+<table class="tableintopic" width="246" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="120"><ul class="tablelistbullet"><li class="tablelistbullet">beeper</li></ul></td>
+<td width="126"><ul class="tablelistbullet"><li class="tablelistbullet">gpib</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><ul class="tablelistbullet"><li class="tablelistbullet">bit</li></ul></td>
+<td width="126"><ul class="tablelistbullet"><li class="tablelistbullet">lan</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><ul class="tablelistbullet"><li class="tablelistbullet">digio</li></ul></td>
+<td width="126"><ul class="tablelistbullet"><li class="tablelistbullet">status</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><ul class="tablelistbullet"><li class="tablelistbullet">display</li></ul></td>
+<td width="126"><ul class="tablelistbullet"><li class="tablelistbullet">timer</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><ul class="tablelistbullet"><li class="tablelistbullet">eventlog</li></ul></td>
+<td width="126"><ul class="tablelistbullet"><li class="tablelistbullet">trigger</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><ul class="tablelistbullet"><li class="tablelistbullet">errorqueue</li></ul></td>
+<td width="126"><ul class="tablelistbullet"><li class="tablelistbullet">tsplink</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td width="120"><ul class="tablelistbullet"><li class="tablelistbullet">format</li></ul></td>
+<td width="126"><ul class="tablelistbullet"><li class="tablelistbullet">smua</li></ul></td>
+</tr>
+
+</table>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="48" width="176" vspace="0" hspace="0" align="top" border="0"><br>Do not create variable names that are the same as names of logical instruments. Doing so will result in the loss of use of the logical instrument and its associated commands. For example, if you send the command <code class="monospace">digio</code>&nbsp;<code class="monospace">=</code>&nbsp;<code class="monospace">5</code>, you cannot access the <code class="monospace">digio.*</code> commands until you turn off the power to the instrument, and then turn it on again.</p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

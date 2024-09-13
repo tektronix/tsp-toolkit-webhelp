@@ -1,0 +1,113 @@
+<html>
+<head>
+<title> smuX.cal.polarity </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15096.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15090.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.cal.polarity</h2>
+<p class="bodyzero">This attribute controls which calibration constants are used for all subsequent measurements.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>SMU cal. lock<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">0 (smuX.CAL_AUTO)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">calPolarity</em> = smu<em class="emphasis">X</em>.cal.polarity</p>
+<p class="iclcode">smu<em class="emphasis">X</em>.cal.polarity = <em class="emphasis">calPolarity</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">calPolarity</span></p>
+</td>
+<td width="455"><p class="tablebodytext">The polarity to use for measurements. Set to one of the following values:</p>
+<p class="tablebodytext"><code class="monospace">0</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.CAL_AUTO</code>: Automatic polarity detection</p>
+<p class="tablebodytext"><code class="monospace">1</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.CAL_POSITIVE</code>: Measure with positive polarity calibration constants</p>
+<p class="tablebodytext"><code class="monospace">2</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.CAL_NEGATIVE</code>: Measure with negative polarity calibration constants</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="455"><p class="tablebodytext">SMU channel (for example, <code class="monospace">smua.cal.polarity</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute controls which polarity calibration constants are used to make all subsequent measurements. This attribute does not affect the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.calibrate</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.calibrate</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> commands. The polarity for those commands are dictated by the range parameter given to the command. The measurement calibration commands require the measurements provided to have been made using the polarity being calibrated. </p>
+<p class="iclbody">When making those measurements with calibration points far away from zero, the desired polarity constants are inherently used. When measuring near zero, it is possible for the measurement to be made using the calibration constants from either polarity without knowing which was used. Setting this attribute to positive or negative forces measurements to be made using the calibration constants for a given polarity rather than basing the choice on the raw measurement data.</p>
+<p class="iclbody">This attribute can only be set to positive or negative when calibration is unlocked. This attribute will automatically be set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.CAL_AUTO</code> when calibration is locked.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="318"><p class="codetable">smua.cal.polarity = smua.CAL_POSITIVE</p>
+</td>
+<td width="276"><p class="tablebodytext">Selects positive calibration constants for all subsequent measurements on SMU channel A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17699" class="jumptemplate" title="Adjustment" href="19563.html" target="_self">Adjustment</a></p>
+<p class="listcommand"><a id="h13937" class="jumptemplate" title="reset()" href="13933.html" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15189" class="jumptemplate" title="smuX.cal.lock()" href="15089.html" target="_self">smuX.cal.lock()</a></p>
+<p class="listcommand"><a id="h15195" class="jumptemplate" title="smuX.cal.unlock()" href="15092.html" target="_self">smuX.cal.unlock()</a></p>
+<p class="listcommand"><a id="h15207" class="jumptemplate" title="smuX.measure.calibrateY()" href="15109.html" target="_self">smuX.measure.calibrateY()</a></p>
+<p class="listcommand"><a id="h15232" class="jumptemplate" title="smuX.reset()" href="15136.html" target="_self">smuX.reset()</a></p>
+<p class="listcommand"><a id="h15236" class="jumptemplate" title="smuX.source.calibrateY()" href="15143.html" target="_self">smuX.source.calibrateY()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

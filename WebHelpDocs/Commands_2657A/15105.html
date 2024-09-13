@@ -1,0 +1,112 @@
+<html>
+<head>
+<title> smuX.makebuffer() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15104.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17114.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.makebuffer()</h2>
+<p class="bodyzero">This function creates a reading buffer.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar</span> = smu<em class="emphasis">X</em>.makebuffer(<em class="emphasis">bufferSize</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The created reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.makebuffer()</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">bufferSize</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Maximum number of readings that can be stored</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Reading buffers can be created and allocated dynamically using this function. Use <span class="monospaceitalic">bufferSize</span> to designate the number of readings the buffer can store.</p>
+<p class="iclbody">Dynamically allocated reading buffers can be used interchangeably with the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.nvbuffer</code><span class="monospaceitalic">Y</span> buffers.</p>
+<p class="iclbody">A reading buffer can be deleted by setting all references to the reading buffer equal to <code class="monospace">nil</code>, then running the garbage collector (see the <code class="monospace">collectgarbage()</code> function in Standard libraries).</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" width="276"><p class="codetable">mybuffer2 = smua.makebuffer(200)</p>
+</td>
+<td width="318"><p class="tablebodytext">Creates a 200 element reading buffer (<code class="monospace">mybuffer2)</code>for SMU channel A .</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">collectgarbage() in <a id="h17787" class="jumptemplate" title="Base library functions" href="2430.html" target="_self">Base library functions</a></p>
+<p class="listcommand"><a id="h18558" class="jumptemplate" title="Remote reading buffer programming" href="11655.html" target="_self">Remote reading buffer programming</a></p>
+<p class="listcommand"><a id="h18017" class="jumptemplate" title="savebuffer()" href="12959.html" target="_self">savebuffer()</a></p>
+<p class="listcommand"><a id="h15222" class="jumptemplate" title="smuX.nvbufferY" href="15126.html" target="_self">smuX.nvbufferY</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

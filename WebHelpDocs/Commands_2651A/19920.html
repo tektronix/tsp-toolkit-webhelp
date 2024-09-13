@@ -1,0 +1,119 @@
+<html>
+<head>
+<title> bufferVar.readings </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15134.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19916.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">bufferVar.readings</h2>
+<p class="bodyzero">This attribute contains the readings stored in a specified reading buffer.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="84"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="174"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="126"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="84"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Clearing the buffer</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="174"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="126"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">reading</span> = <span class="monospaceitalic">bufferVar</span>.readings[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">reading</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The value of the reading in the specified reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The reading number (<code class="monospace">1</code> to <span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <code class="monospace">readings</code> buffer recall attribute is like an array (a Lua table) of the readings stored in the reading buffer. This array holds the same data that is returned when the reading buffer is accessed directly; that is, <code class="monospace">rb[2]</code> and <code class="monospace">rb.readings[2]</code> access the same value.</p>
+<p class="iclbody">For dedicated reading buffers, all buffer attributes are saved to nonvolatile memory only when the reading buffer is saved to nonvolatile memory.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="342"><p class="codetable">print(smua.nvbuffer1.readings[1])</p>
+</td>
+<td width="252"><p class="tablebodytext">Output the first reading saved in dedicated reading buffer 1.</p>
+<p class="tablebodytext">Output:</p>
+<p class="tablebodytextsmall"><code class="monospace">8.81658e-08</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h20169" class="jumptemplate" title="bufferVar.measurefunctions" href="19914.html" target="_self">bufferVar.measurefunctions</a></p>
+<p class="listcommand"><a id="h20170" class="jumptemplate" title="bufferVar.measureranges" href="19915.html" target="_self">bufferVar.measureranges</a></p>
+<p class="listcommand"><a id="h15230" class="jumptemplate" title="bufferVar.n" href="15134.html" target="_self">bufferVar.n</a></p>
+<p class="listcommand"><a id="h20175" class="jumptemplate" title="bufferVar.sourcefunctions" href="19916.html" target="_self">bufferVar.sourcefunctions</a></p>
+<p class="listcommand"><a id="h20176" class="jumptemplate" title="bufferVar.sourceoutputstates" href="19917.html" target="_self">bufferVar.sourceoutputstates</a></p>
+<p class="listcommand"><a id="h20177" class="jumptemplate" title="bufferVar.sourceranges" href="19918.html" target="_self">bufferVar.sourceranges</a></p>
+<p class="listcommand"><a id="h20178" class="jumptemplate" title="bufferVar.sourcevalues" href="19919.html" target="_self">bufferVar.sourcevalues</a></p>
+<p class="listcommand"><a id="h20172" class="jumptemplate" title="bufferVar.statuses" href="19921.html" target="_self">bufferVar.statuses</a></p>
+<p class="listcommand"><a id="h20173" class="jumptemplate" title="bufferVar.timestamps" href="19922.html" target="_self">bufferVar.timestamps</a></p>
+<p class="listcommand"><a id="h13654" class="jumptemplate" title="Reading buffers" href="13629.html" target="_self">Reading buffers</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

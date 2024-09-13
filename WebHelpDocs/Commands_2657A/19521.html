@@ -1,0 +1,225 @@
+<html>
+<head>
+<title> digio.trigger[N].stimulus </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17719.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14679.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">digio.trigger[N].stimulus</h2>
+<p class="bodyzero">This attribute selects the event that causes a trigger to be asserted on the digital output line.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Instrument reset<br>Digital I/O trigger N reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">triggerStimulus</em> = digio.trigger[<em class="emphasis">N</em>].stimulus</p>
+<p class="iclcode">digio.trigger[<em class="emphasis">N</em>].stimulus = <em class="emphasis">triggerStimulus</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">triggerStimulus</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The event identifier for the triggering event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Digital I/O trigger line (1 to 14)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Set this attribute to zero (0) to disable the automatic trigger output.</p>
+<p class="iclbody">Do not use the stimulus attribute for generating output triggers under script control. Use <code class="monospace"><code class="monospace">digio.trigger[</code></code><span class="monospaceitalic">N</span><code class="monospace"><code class="monospace">].assert()</code></code> instead.</p>
+<p class="iclbody">The trigger stimulus for a digital I/O line<strong class="specialbold"> </strong>may be set to one of the existing trigger event IDs, described in the following table.</p>
+<table class="tableintopic" width="552" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="294" height="0"></td>
+<td width="258" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="552"><p class="tableheadingsmall">Trigger event IDs*</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="294"><p class="tableheadingsmall">Event ID</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="258"><p class="tableheadingsmall">Event description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace">smua.trigger.SWEEPING_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the source&#8209;measure unit (SMU) transitions from the idle state to the arm layer of the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace">smua.trigger.ARMED_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the SMU moves from the arm layer to the trigger layer of the trigger model</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace">smua.trigger.SOURCE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the SMU completes a source action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace">smua.trigger.MEASURE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the SMU completes a measure action</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace">smua.trigger.PULSE_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the SMU completes a pulse</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace">smua.trigger.SWEEP_COMPLETE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the SMU completes a sweep</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace">smua.trigger.IDLE_EVENT_ID</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the SMU returns to the idle state</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace"><code class="monospace">digio.trigger[</code></code><span class="monospaceitalic">N</span><code class="monospace"><code class="monospace">].EVENT_ID</code></code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when an edge is detected on a digital I/O line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace"><code class="monospace">tsplink.trigger[</code></code><span class="monospaceitalic">N</span><code class="monospace"><code class="monospace">].EVENT_ID</code></code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when an edge is detected on a TSP&#8209;Link line</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace"><code class="monospace">lan.trigger[</code></code><span class="monospaceitalic">N</span><code class="monospace"><code class="monospace">].EVENT_ID</code></code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace"><code class="monospace">display.trigger.EVENT_ID</code></code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when the TRIG key on the front panel is pressed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace"><code class="monospace">trigger.EVENT_ID</code></code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when a *TRG command is received on the remote interface</p>
+<p class="tablebodytextsmall">GPIB only: Occurs when a GET bus command is received</p>
+<p class="tablebodytextsmall">VXI-11 only: Occurs with the VXI-11 command <code class="monospace"><code class="monospace">device_trigger</code></code>; reference the VXI-11 standard for additional details on the device trigger operation</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace"><code class="monospace">trigger.blender[</code></code><span class="monospaceitalic">N</span><code class="monospace"><code class="monospace">].EVENT_ID</code></code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs after a collection of events is detected</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="294"><p class="tablebodytextsmall"><code class="monospace"><code class="monospace">trigger.timer[</code></code><span class="monospaceitalic">N</span><code class="monospace"><code class="monospace">].EVENT_ID</code></code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytextsmall">Occurs when a delay expires</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="552"><p class="tablebodytextsmall">* Use the name of the trigger event ID to set the stimulus value rather than the numeric value. Using the name makes the code compatible for future upgrades (for example, if the numeric values must change when enhancements are added to the instrument).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="552" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="444"><p class="codetable">digio.trigger[3].stimulus = 0</p>
+</td>
+<td width="108"><p class="tablebodytext">Clear the trigger stimulus of digital I/O line 3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="444"><p class="codetable">digio.trigger[3].stimulus =</p>
+<p class="codetable">   smua.trigger.SOURCE_COMPLETE_EVENT_ID</p>
+</td>
+<td width="114"><p class="tablebodytext">Set the trigger stimulus of digital I/O line 3 to be the source complete event.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12593" class="jumptemplate" title="digio.trigger[N].assert()" href="14670.html" target="_self">digio.trigger[N].assert()</a></p>
+<p class="listcommand"><a id="h11090" class="jumptemplate" title="digio.trigger[N].clear()" href="14671.html" target="_self">digio.trigger[N].clear()</a></p>
+<p class="listcommand"><a id="h17665" class="jumptemplate" title="digio.trigger[N].reset()" href="17719.html" target="_self">digio.trigger[N].reset()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

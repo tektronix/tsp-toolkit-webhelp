@@ -1,0 +1,114 @@
+<html>
+<head>
+<title> bufferVar.capacity </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17109.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15130.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">bufferVar.capacity</h2>
+<p class="bodyzero">This attribute contains the capacity of the buffer.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="180"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="180"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">bufferCapacity</span> <code class="monospace">= </code><span class="monospaceitalic">bufferVar</span>.capacity</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">bufferCapacity</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The maximum number of readings the buffer can store</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This read-only attribute reads the number of readings that can be stored in the buffer.</p>
+<p class="iclbody">For dedicated reading buffers, all buffer attributes are saved to nonvolatile memory only when the reading buffer is saved to nonvolatile memory.</p>
+<p class="iclbody">The buffer's capacity does not change as readings fill the buffer. A dedicated reading buffer that only collects basic items can store over 140,000 readings. Turning on additional collection items, such as timestamps and source values, decreases the capacity of a dedicated reading buffer (for example, <code class="monospace">smua.nvbuffer1</code>), but does not change the capacity of a user-defined dynamically allocated buffer. A user-defined dynamically allocated buffer has a fixed capacity that is set when the buffer is created.</p>
+<p class="iclbody">See the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.nvbuffer</code><span class="monospaceitalic">Y</span> attribute for details on accessing dedicated reading buffers. See the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.makebuffer()</code> function for information on creating user-defined dynamically allocated reading buffers.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="348"><p class="codetable">bufferCapacity = smua.nvbuffer1.capacity</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(bufferCapacity)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="246"><p class="tablebodytext">Reads the capacity of dedicated reading<br>buffer 1.</p>
+<p class="tablebodytext">Output:  </p>
+<p class="tablebodytext"><code class="monospace">1.49789e+05</code></p>
+<p class="tablebodytext">The above output indicates that the buffer can hold 149789 readings.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13654" class="jumptemplate" title="Reading buffers" href="13629.html" target="_self">Reading buffers</a></p>
+<p class="listcommand"><a id="h15202" class="jumptemplate" title="smuX.makebuffer()" href="15105.html" target="_self">smuX.makebuffer()</a></p>
+<p class="listcommand"><a id="h15216" class="jumptemplate" title="smuX.measure.overlappedY()" href="15120.html" target="_self">smuX.measure.overlappedY()</a></p>
+<p class="listcommand"><a id="h15220" class="jumptemplate" title="smuX.measure.Y()" href="15122.html" target="_self">smuX.measure.Y()</a></p>
+<p class="listcommand"><a id="h15222" class="jumptemplate" title="smuX.nvbufferY" href="15126.html" target="_self">smuX.nvbufferY</a></p>
+<p class="listcommand"><a id="h15266" class="jumptemplate" title="smuX.trigger.measure.Y()" href="15172.html" target="_self">smuX.trigger.measure.Y()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

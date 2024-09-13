@@ -1,0 +1,98 @@
+<html>
+<head>
+<title> setup.poweron </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15021.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15082.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">setup.poweron</h2>
+<p class="bodyzero">This attribute specifies which saved setup to recall when the instrument is turned on.</p>
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="126"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="138"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="126"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="138"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">N</span> = setup.poweron</p>
+<p class="iclcode">setup.poweron = <span class="monospaceitalic">N</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="425"><p class="tablebodytext">An integer that specifies the setup to recall when the instrument power is turned on (0 to 5)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When <span class="monospaceitalic">N</span> = <code class="monospace">0</code>, the instrument uses the factory default setup when it is turned on. When <span class="monospaceitalic">N</span> is set to 1 to 5, it uses the setup saved with <code class="monospace">setup.save()</code>.</p>
+<p class="iclbody">Only setups stored in nonvolatile memory are available (you cannot recall a script from a USB flash drive with this command) . To save a script to be used when the instrument is powered on, you can create a configuration script and name it <code class="monospace">autoexec</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="276"><p class="codetable">setup.poweron = 0</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="288"><p class="tablebodytext">Set the instrument to use the factory default setup when power is turned on.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h19448" class="jumptemplate" title="Start-up (power-on) configuration" href="11613.html" target="_self">Start-up (power-on) configuration</a></p>
+<p class="listcommand"><a id="h15086" class="jumptemplate" title="setup.save()" href="15083.html" target="_self">setup.save()</a> </p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

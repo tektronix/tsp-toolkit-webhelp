@@ -1,0 +1,110 @@
+<html>
+<head>
+<title> smuX.source.outputenableaction </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15151.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15153.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.source.outputenableaction</h2>
+<p class="bodyzero">This attribute controls output enable action of the source.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">0 (smuX.OE_NONE)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">outputAction</span><code class="monospace"> = smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.outputenableaction</code></p>
+<p class="iclcode"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.outputenableaction = </code><span class="monospaceitalic">outputAction</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">outputAction</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The source's output enable action. Set to one of the following values:</p>
+<p class="tablebodytext"><code class="monospace">0</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OE_NONE</code>: No action</p>
+<p class="tablebodytext"><code class="monospace">1</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OE_OUTPUT_OFF</code>: Turns the source output off</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.source.outputenableaction</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute controls the SMU action taken when the output enable line is deasserted.</p>
+<p class="iclbody">When set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OE_NONE</code>, the SMU will take no action when the output enable line goes low (deasserted).</p>
+<p class="iclbody">When set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OE_OUTPUT_OFF</code> and the output enable line is de-asserted, the SMU will turn its output off as if the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.output = smu</code><span class="monospaceitalic">X</span><code class="monospace">.OUTPUT_OFF</code> command had been received.</p>
+<p class="iclbody">The SMU will not automatically turn its output on when the output enable line returns to the high state.</p>
+<p class="iclbody">If the output enable line is not asserted when this attribute is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OE_OUTPUT_OFF</code> and the output is on, the output will turn off immediately.</p>
+<p class="iclbody">Detection of the output enable line going low will not abort any running scripts. This may cause execution errors.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="396"><p class="codetable">smua.source.outputenableaction = smua.OE_OUTPUT_OFF</p>
+</td>
+<td width="198"><p class="tablebodytext">Sets SMU channel A to turn off the output if the output enable line goes low (deasserted).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15245" class="jumptemplate" title="smuX.source.offmode" href="15150.html" target="_self">smuX.source.offmode</a></p>
+<p class="listcommand"><a id="h15246" class="jumptemplate" title="smuX.source.output" href="15151.html" target="_self">smuX.source.output</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

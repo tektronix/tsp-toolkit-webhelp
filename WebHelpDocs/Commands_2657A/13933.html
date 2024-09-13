@@ -1,0 +1,100 @@
+<html>
+<head>
+<title> reset() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12949.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12959.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">reset()</h2>
+<p class="bodyzero">This function resets commands to their default settings.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">reset()</p>
+<p class="iclcode">reset(<em class="emphasis">system</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #C0C0C0;border-bottom:1px solid #010101;" width="139"><p class="tablebodytext"><span class="monospaceitalic">system</span></p>
+</td>
+<td style="border-left:1px solid #010101;border-right:1px solid #010101;border-top:1px solid #C0C0C0;border-bottom:1px solid #010101;" width="425"><p class="tablebodytext"><code class="monospace">true</code>: If the node is the master, the entire system is reset</p>
+<p class="tablebodytext"><code class="monospace">false</code>: Only the local group is reset</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <code class="monospace">reset()</code> command in its simplest form resets the entire TSP&#8209;enabled system, including the controlling node and all subordinate nodes.</p>
+<p class="iclbody">If you want to reset a specific instrument, use either the <code class="monospace">localnode.reset()</code> or <code class="monospace">node[</code><span class="monospaceitalic">X</span><code class="monospace">].reset()</code> command. The <code class="monospace">localnode.reset()</code> command is used for the local instrument. The <code class="monospace">node[</code><span class="monospaceitalic">X</span><code class="monospace">].reset()</code> command is used to reset an instrument on a subordinate node.</p>
+<p class="iclbody">When no value is specified for <span class="monospaceitalic">system</span>, the default value is <code class="monospace">true</code>.</p>
+<p class="iclbody">Resetting the entire system using <code class="monospace">reset(true)</code> is permitted only if the node is the master. If the node is not the master node, executing this command generates an error.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="276"><p class="codetable">reset(true)</p>
+</td>
+<td width="288"><p class="tablebodytext">If the node is the master node, the entire system is reset; if the node is not the master node, an error is generated.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h2944" class="jumptemplate" title="localnode.reset()" href="16978.html" target="_self">localnode.reset()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

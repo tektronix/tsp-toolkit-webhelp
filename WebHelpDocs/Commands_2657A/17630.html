@@ -1,0 +1,100 @@
+<html>
+<head>
+<title> tsplink.writeprotect </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15302.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14073.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">tsplink.writeprotect</h2>
+<p class="bodyzero">This attribute contains the write&#8209;protect mask that protects bits from changes by the <code class="monospace">tsplink.writebit()</code> and <code class="monospace">tsplink.writeport()</code> functions.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">Saved setup </p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">mask</em> = tsplink.writeprotect</p>
+<p class="iclcode">tsplink.writeprotect = <em class="emphasis">mask</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">mask</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">An integer that specifies the value of the bit pattern for write&#8209;protect; set bits to <code class="monospace">1</code> to write&#8209;protect the corresponding TSP-Link trigger line</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The binary equivalent of <span class="monospaceitalic">mask</span> indicates the mask to be set for the TSP-Link trigger line. For example, a <span class="monospaceitalic">mask</span> value of <code class="monospace">5</code> has a binary equivalent of 101. This <span class="monospaceitalic">mask</span> write&#8209;protects TSP-Link trigger lines 1 and 3.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="324"><p class="codetable">tsplink.writeprotect = 5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="270"><p class="tablebodytext">Write&#8209;protects TSP-Link trigger lines 1 and 3.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h11335" class="jumptemplate" title="Controlling digital I/O lines" href="11508.html" target="_self">Controlling digital I/O lines</a></p>
+<p class="listcommand"><a id="h11321" class="jumptemplate" title="tsplink.readbit()" href="15288.html" target="_self">tsplink.readbit()</a></p>
+<p class="listcommand"><a id="h15308" class="jumptemplate" title="tsplink.readport()" href="15289.html" target="_self">tsplink.readport()</a></p>
+<p class="listcommand"><a id="h15320" class="jumptemplate" title="tsplink.writebit()" href="15301.html" target="_self">tsplink.writebit()</a></p>
+<p class="listcommand"><a id="h15321" class="jumptemplate" title="tsplink.writeport()" href="15302.html" target="_self">tsplink.writeport()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

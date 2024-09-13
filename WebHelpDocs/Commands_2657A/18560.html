@@ -1,0 +1,44 @@
+<html>
+<head>
+<title> Analog-to-digital converter </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19563.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="11440.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Analog-to-digital converter</h3>
+<p class="bodytext">The Model 2657A has two analog-to-digital converters (ADC): An integrating ADC and a fast ADC.</p>
+<p class="bodytext">The integrating ADC uses a ratiometric analog-to-digital conversion technique. Depending on the configuration of the integrating ADC, periodic fresh reference measurements are required to minimize drift. The measurement aperture is used to determine the time interval between these measurement updates. For additional information, see <a id="h17701" class="jumptemplate" title="Autozero" href="11440.html" target="_self">Autozero</a>. To help optimize operation of this ADC, the instrument caches the reference and zero values for up to ten of the most recent number of power line cycles. For additional information, see NPLC caching.</p>
+<p class="bodytext">The fast ADC can acquire measurements at speeds up to 1 million samples per second. The fast ADC does not take reference measurements. A reading measurement acquisition buffer allows up to 5,000 readings to be made at the maximum acquisition rate of the fast ADCs. If this buffer is filled, the instrument slows its acquisition rate to the rate at which the instrument can process the data.</p>
+<p class="bodytext">Data acquisition takes priority over both source operation and display operation. Sustained high data acquisition rates will cause the display to stop updating. A sustained high data acquisition rate during a sweep or pulse train may slow source operations. This can cause erratic sweep or pulse timing and may lead to triggers being missed (trigger overruns). Use the status model to monitor for trigger overruns. If a high sustained data acquisition rate causes undesirable sweep or pulse timing, reduce the data acquisition rate or reduce the total number of measurements until the desired sweep or pulse timing is achieved.</p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

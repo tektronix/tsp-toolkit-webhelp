@@ -1,0 +1,111 @@
+<html>
+<head>
+<title> smuX.trigger.source.limitY </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15178.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15180.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.trigger.source.limitY</h2>
+<p class="bodyzero">This attribute sets the sweep source limit.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">0 (smuX.LIMIT_AUTO)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">sweepSourceLimit</span> = smu<em class="emphasis">X</em>.trigger.source.limit<span class="monospaceitalic">Y</span></p>
+<p class="iclcode">smu<em class="emphasis">X</em>.trigger.source.limit<span class="monospaceitalic">Y</span><code class="monospace"> = </code><span class="monospaceitalic">sweepSourceLimit</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">sweepSourceLimit</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source limit during triggered operation; set to the desired source limit during triggered operation or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.LIMIT_AUTO</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.trigger.source.limitv</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td width="456"><p class="tablebodytext">SMU output function (<code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">If this attribute is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.LIMIT_AUTO</code> (or <code class="monospace">0</code>), the SMU will use the normal limit setting during sweeping. If this attribute is set to any other numeric value, the SMU will switch in this limit at the start of the source action and will switch back to the normal limit setting at the end of the end pulse action.</p>
+<p class="iclbody">Normally, the limit range is automatically adjusted in accordance with the desired limit value. During sweeping, however, the limit range is fixed in order to avoid the delays associated with changing range. This fixed limit range is determined by the maximum limit value needed during the sweep; that is, the greater of either the normal limit value (as specified by <code class="monospace">smu</code><span class="monospaceitalic">X.</span><code class="monospace">source.limit</code><span class="monospaceitalic">Y</span>) or the sweep limit value (as specified by <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.limit</code><span class="monospaceitalic">Y</span>). Note that the minimum limit value that can be enforced during the sweep is equal to 10 percent of the full scale value of the fixed limit range. If the smaller limit value (normal or sweep) falls below this 10% threshold, the 10 percent value will be enforced instead. Likewise, if the limit value were to fall below the 10 percent threshold as a result of power compliance, the 10 percent value will be enforced instead.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="426"><p class="codetable">smua.trigger.source.limitv = 500</p>
+</td>
+<td width="168"><p class="tablebodytext">Sets the voltage sweep limit of SMU channel A to 500&nbsp;V.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15242" class="jumptemplate" title="smuX.source.limitY" href="17115.html" target="_self">smuX.source.limitY</a></p>
+<p class="listcommand"><a id="h18561" class="jumptemplate" title="Configuring and running sweeps" href="19567.html" target="_self">Configuring and running sweeps</a></p>
+<p class="listcommand"><a id="h13512" class="jumptemplate" title="Triggering" href="19574.html" target="_self">Triggering</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

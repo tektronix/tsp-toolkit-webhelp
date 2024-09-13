@@ -1,0 +1,100 @@
+<html>
+<head>
+<title> lan.config.dns.hostname </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14900.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14902.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">lan.config.dns.hostname</h2>
+<p class="bodyzero">This attribute defines the dynamic DNS host name.</p>
+<table class="tableintopic" width="618" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="150"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="150"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Instrument specific (see <strong class="specialbold">Details</strong>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">hostName</em> = lan.config.dns.hostname</p>
+<p class="iclcode">lan.config.dns.hostname = <em class="emphasis">hostName</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">hostName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="420"><p class="tablebodytext">The host name to use for dynamic DNS registration; the host name must:</p>
+<ul class="tablelistbullet"><li class="tablelistbullet">be a string of 15 characters or less</li><li class="tablelistbullet">start with a letter</li><li class="tablelistbullet">end with a letter or digit</li><li class="tablelistbullet">contain only letters, digits, and hyphens</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute holds the host name to request during dynamic DNS registration. Dynamic DNS registration works with DHCP to register the host name specified in this attribute with the DNS server.</p>
+<p class="iclbody">The factory default value for <span class="monospaceitalic">hostName</span> is <code class="monospace"><code class="monospace">&quot;k&#8209;&lt;model number&gt;</code></code>&#8209;<code class="monospace"><code class="monospace">&lt;serial number&gt;&quot;</code></code>, where <code class="monospace"><code class="monospace">&lt;model number&gt;</code></code> and <code class="monospace"><code class="monospace">&lt;serial number&gt;</code></code> are replaced with the actual model number and serial number of the instrument (for example, <code class="monospace"><code class="monospace">&quot;k&#8209;2657A</code></code>&#8209;<code class="monospace"><code class="monospace">1234567&quot;</code></code>). Note that hyphens separate the characters of <span class="monospaceitalic">hostName</span>. </p>
+<p class="iclbody">The length of the fully qualified host name (combined length of the domain and host name with separator characters) must be less than or equal to 255 characters. Although up to 15 characters can be entered here, care must be taken to be sure the combined length is no more than 255 characters.</p>
+<p class="iclbody">Setting this attribute to an empty string (in other words, setting this attribute to a string of length zero, or one consisting entirely of whitespace characters) will revert the host name to the factory default value.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">print(lan.config.dns.hostname)</p>
+</td>
+<td width="288"><p class="tablebodytext">Outputs the present dynamic DNS host name.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1900" class="jumptemplate" title="lan.config.dns.dynamic" href="14900.html" target="_self">lan.config.dns.dynamic</a></p>
+<p class="listcommand"><a id="h14951" class="jumptemplate" title="lan.restoredefaults()" href="14896.html" target="_self">lan.restoredefaults()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<html>
+<head>
+<title> smuX.contact.r() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15101.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15103.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.contact.r()</h2>
+<p class="bodyzero">This function measures contact resistance.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">rhi</span><code class="monospace">, </code><span class="monospaceitalic">rlo </span><code class="monospace">= smu</code><span class="monospaceitalic">X</span><code class="monospace">.contact.r()</code></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">rhi</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The measured contact resistance on the high/sense high side</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">rlo</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The measured contact resistance on the low/sense low side</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.contact.r()</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Attempting to perform a contact resistance measurement when any of the following conditions exist will generate an error:</p>
+<p class="iclbody">When output is on and any of the following:</p>
+<ul class="listbullet2"><li class="listbullet2">SMU is a current source with current range set to less than 1 mA (error code 5065, &quot;I range too low for contact check&quot;)</li><li class="listbullet2">SMU is a voltage source with current limit set to less than 1 mA (error code 5050, &quot;I limit too low for contact check&quot;)</li></ul><p class="iclbody">When output is off and any of the following:</p>
+<ul class="listbullet2"><li class="listbullet2">The output off mode is High-Z (error code 5048, &quot;Contact check not valid with HIGH-Z OUTPUT off&quot;)</li><li class="listbullet2">The output off mode is Normal with the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offfunc</code> attribute set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OUTPUT_DCVOLTS</code> and the off current limit set to less than 1 mA (error code 5066, &quot;source.offlimiti too low for contact check&quot;)</li><li class="listbullet2">The output off mode is Normal with the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.offfunc</code> attribute set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.OUTPUT_DCAMPS</code> and the source range is less than 1 mA (error code 5065, &quot;I range too low for contact check&quot;)</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" width="342"><p class="codetable">if not smua.contact.check() then</p>
+<p class="codetable">   smua.contact.speed = smua.CONTACT_SLOW</p>
+<p class="codetable">   rhi, rlo = smua.contact.r()</p>
+<p class="codetable">   print(rhi, rlo)</p>
+<p class="codetable">   exit()</p>
+<p class="codetable">end</p>
+</td>
+<td width="246"><p class="tablebodytext">Check contacts against threshold.</p>
+<p class="tablebodytext">Set speed for SMU channel A to slow.</p>
+<p class="tablebodytext">Get resistance readings.</p>
+<p class="tablebodytext">Output contact resistances to the host.</p>
+<p class="tablebodytext">Terminate execution.</p>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17700" class="jumptemplate" title="Contact check connections" href="19564.html" target="_self">Contact check connections</a></p>
+<p class="listcommand"><a id="h15400" class="jumptemplate" title="Contact check measurements" href="19565.html" target="_self">Contact check measurements</a></p>
+<p class="listcommand"><a id="h15198" class="jumptemplate" title="smuX.contact.check()" href="15101.html" target="_self">smuX.contact.check()</a></p>
+<p class="listcommand"><a id="h15200" class="jumptemplate" title="smuX.contact.speed" href="15103.html" target="_self">smuX.contact.speed</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

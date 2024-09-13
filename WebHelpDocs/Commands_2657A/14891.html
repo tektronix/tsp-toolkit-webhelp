@@ -1,0 +1,90 @@
+<html>
+<head>
+<title> lan.autoconnect </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14890.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14898.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">lan.autoconnect</h2>
+<p class="bodyzero">This attribute is used to enable or disable link monitoring.</p>
+<table class="tableintopic" width="618" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="138"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="108"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="138"><p class="tablebodytextsmall">LAN restore defaults</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="108"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">1 (lan.ENABLE)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">state</em> = lan.autoconnect</p>
+<p class="iclcode">lan.autoconnect = <em class="emphasis">state</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="420"><p class="tablebodytext">LAN link monitoring state:</p>
+<p class="tablebodytext"><code class="monospace">1</code> or <code class="monospace">lan.ENABLE:</code> Enables automatic link reconnection and monitoring</p>
+<p class="tablebodytext"><code class="monospace">0</code> or <code class="monospace">lan.DISABLE:</code> Disables automatic link reconnection and monitoring</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute sets the LAN link monitoring and automatic connection state.</p>
+<p class="iclbody">When this is set to <code class="monospace">lan.ENABLE</code>, all connections are closed if the link to the LAN is lost for more than the time specified by <code class="monospace">lan.linktimeout</code>.</p>
+<p class="iclbody">Set this attribute to <code class="monospace">lan.ENABLE</code> to automatically reset the LAN connection after the LAN link is established.</p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14979" class="jumptemplate" title="lan.linktimeout" href="14892.html" target="_self">lan.linktimeout</a></p>
+<p class="listcommand"><a id="h14951" class="jumptemplate" title="lan.restoredefaults()" href="14896.html" target="_self">lan.restoredefaults()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

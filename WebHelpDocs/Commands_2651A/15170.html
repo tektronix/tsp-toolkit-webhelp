@@ -1,0 +1,101 @@
+<html>
+<head>
+<title> smuX.trigger.measure.set() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15169.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15171.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.trigger.measure.set()</h2>
+<p class="bodyzero">This function sets the measure event detector to the detected state.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.measure.set()</code></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.trigger.measure.set()</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function is useful whenever you want the SMU to continue operation without waiting for a programmed trigger event. When called, this function immediately satisfies the event detector, allowing the SMU to continue through the trigger model.</p>
+<p class="iclbody">A common example of when this function can be used is when you want the SMU to immediately perform an action the first time through the trigger model even if a programmed trigger event does not occur. Make sure that if the event detectors are configured to clear automatically (because the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.autoclear</code> attribute is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.ENABLE</code>) that this command is issued after the SMU has entered the trigger layer. This function can also be used to start actions on the SMU in case of a missed trigger event.</p>
+<p class="iclbody">The SMU will automatically clear all event detectors when the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.initiate()</code> function is executed. This function should be called after the sweep is initiated.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="396"><p class="codetable">smua.trigger.measure.set()</p>
+<p class="codetable">&nbsp;</p>
+</td>
+<td width="198"><p class="tablebodytext">Sets the measure event detector of SMU channel A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15252" class="jumptemplate" title="smuX.trigger.arm.set()" href="15157.html" target="_self">smuX.trigger.arm.set()</a></p>
+<p class="listcommand"><a id="h15255" class="jumptemplate" title="smuX.trigger.autoclear" href="15160.html" target="_self">smuX.trigger.autoclear</a></p>
+<p class="listcommand"><a id="h15258" class="jumptemplate" title="smuX.trigger.endpulse.set()" href="15163.html" target="_self">smuX.trigger.endpulse.set()</a></p>
+<p class="listcommand"><a id="h15274" class="jumptemplate" title="smuX.trigger.source.set()" href="15183.html" target="_self">smuX.trigger.source.set()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

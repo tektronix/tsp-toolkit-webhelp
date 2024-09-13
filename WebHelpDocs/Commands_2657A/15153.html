@@ -1,0 +1,117 @@
+<html>
+<head>
+<title> smuX.source.rangeY </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="18604.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15154.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.source.rangeY</h2>
+<p class="bodyzero">This attribute contains the source range.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="84"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="90"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="90"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="264"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="84"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="90"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="90"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="264"><p class="tablebodytextsmall">Current: 1e-9 (1 nA)<br>Voltage: 200 (200 V)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">rangeValue</span> = smu<em class="emphasis">X</em>.source.range<em class="emphasis">Y</em></p>
+<p class="iclcode">smu<em class="emphasis">X</em>.source.range<em class="emphasis">Y</em><code class="monospace"> = </code><span class="monospaceitalic">rangeValue</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">rangeValue</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Set to the maximum expected voltage or current to be sourced</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.measure.rangev</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td width="456"><p class="tablebodytext">SMU source function (<code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute contains a value that sets the source&#8209;measure unit (SMU) to a fixed range large enough to source the value. When read, the attribute contains the range the instrument is presently on when in autorange.</p>
+<p class="iclbody">Assigning a value to this attribute sets the SMU to a fixed range large enough to source the assigned value. The instrument will select the best range for sourcing a value of <span class="monospaceitalic">rangeValue</span>.</p>
+<p class="iclbody">Reading this attribute returns the positive full-scale value of the source range the SMU is currently using. With source autoranging enabled, the output level controls the range. Querying the range after the level is set will return the range the unit chose as appropriate for that source level.</p>
+<p class="iclbody">This attribute is primarily intended to eliminate the time required by the automatic range selection performed by a sourcing instrument. Because selecting a fixed range will prevent autoranging, an overrange condition can occur. </p>
+<p class="iclbody"></p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">smua.source.rangev = 200 </p>
+</td>
+<td width="324"><p class="tablebodytext">Selects the 200 V source range for SMU channel A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13592" class="jumptemplate" title="Range" href="11993.html" target="_self">Range</a></p>
+<p class="listcommand"><a id="h13937" class="jumptemplate" title="reset()" href="13933.html" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15085" class="jumptemplate" title="setup.recall()" href="15082.html" target="_self">setup.recall()</a></p>
+<p class="listcommand"><a id="h15217" class="jumptemplate" title="smuX.measure.rangeY" href="15121.html" target="_self">smuX.measure.rangeY</a></p>
+<p class="listcommand"><a id="h15232" class="jumptemplate" title="smuX.reset()" href="15136.html" target="_self">smuX.reset()</a></p>
+<p class="listcommand"><a id="h15235" class="jumptemplate" title="smuX.source.autorangeY" href="15139.html" target="_self">smuX.source.autorangeY</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

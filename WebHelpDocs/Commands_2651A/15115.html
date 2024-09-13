@@ -1,0 +1,113 @@
+<html>
+<head>
+<title> smuX.measure.filter.type </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15114.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15116.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.measure.filter.type</h2>
+<p class="bodyzero">This attribute sets the type of filter used for measurements when <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.filter.enable</code> is enabled.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">1 (smuX.FILTER_REPEAT_AVG)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">filterType</em> = smu<em class="emphasis">X</em>.measure.filter.type</p>
+<p class="iclcode">smu<em class="emphasis">X</em>.measure.filter.type = <em class="emphasis">filterType</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">filterType</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The filter type to use when filtering is enabled. Set to one of the following values:</p>
+<p class="tablebodytext"><code class="monospace">0</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.FILTER_MOVING_AVG</code>: Selects the moving average filter</p>
+<p class="tablebodytext"><code class="monospace">1</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.FILTER_REPEAT_AVG</code>: Selects the repeat filter</p>
+<p class="tablebodytext"><code class="monospace">2</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.FILTER_MEDIAN</code>: Selects the median filter</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">SMU channel (for example, <code class="monospace">smua.measure.filter.type</code> applies to SMU Channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">There are two averaging filter types and one median filter type available. Both repeating and moving types of averaging filters are available.</p>
+<p class="iclbody">For the repeating filter (which is the power-on default), the stack (filter count) is filled, and the conversions are averaged to yield a reading. The stack is then cleared, and the process starts over. </p>
+<p class="iclbody">The moving average filter uses a first-in, first-out stack. When the stack (filter count) becomes full, the measurement conversions are averaged, yielding a reading. For each subsequent conversion placed into the stack, the oldest conversion is discarded. The stack is re-averaged, yielding a new reading.</p>
+<p class="iclbody">The median filter uses a first-in, first-out stack. When the stack (filter count) becomes full, the &#8220;middle-most&#8221; reading is returned. For each subsequent conversion placed into the stack, the oldest reading is discarded. The stack is then re-sorted, yielding a new reading. If the filter count is an even number, the reading returned is the average of the two middle readings.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">smua.measure.filter.type = 2</p>
+</td>
+<td width="324"><p class="tablebodytext">Selects the median filter for SMU channel A. Alternatively, the value 2 may be replaced with <code class="monospace">smua.FILTER_MEDIAN</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h13937" class="jumptemplate" title="reset()" href="13933.html" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15085" class="jumptemplate" title="setup.recall()" href="15082.html" target="_self">setup.recall()</a></p>
+<p class="listcommand"><a id="h15279" class="jumptemplate" title="smuX.measure.filter.count" href="15113.html" target="_self">smuX.measure.filter.count</a></p>
+<p class="listcommand"><a id="h15210" class="jumptemplate" title="smuX.measure.filter.enable" href="15114.html" target="_self">smuX.measure.filter.enable</a></p>
+<p class="listcommand"><a id="h15232" class="jumptemplate" title="smuX.reset()" href="15136.html" target="_self">smuX.reset()</a></p>
+<p class="listcommand"><a id="h13596" class="jumptemplate" title="Filters" href="11532.html" target="_self">Filters</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

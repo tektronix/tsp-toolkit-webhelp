@@ -1,0 +1,144 @@
+<html>
+<head>
+<title> gm_isweep() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15011.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12955.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">gm_isweep()</h2>
+<p class="bodyzero">This <a id="h12956" class="jumptemplate" title="KIParlib factory script" href="12954.html" target="_self">KIParlib factory script</a> function performs a linear current sweep and calculates the transconductance (Gm) at each point.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">gm_array, vbuf, ibuf</span> = gm_isweep(<span class="monospaceitalic">smu, start_i, stop_i, points</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">gm_array</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">A Lua table containing the calculated Gm values at each point</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">vbuf</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">A reading buffer containing the measured voltage at each point</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">ibuf</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">A reading buffer containing the measured current at each point</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">smu</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">System SourceMeter<sup class="superscript">&reg;</sup> instrument channel (set to <code class="monospace">smua</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">start_i</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Starting current level of the sweep </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">stop_i</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Ending current level of the sweep </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">points</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Number of measurements between <span class="monospaceitalic">start_i</span> and <span class="monospaceitalic">stop_i</span> (must be <span class="symbols">³</span> 2)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Output data includes transconductance values, reading buffer with measured voltages, reading buffer with measured voltages and currents.</p>
+<p class="iclbody">If all parameters are omitted when this function is called, this function is executed with the parameters set to the default values.</p>
+<p class="iclbody">The <code class="monospace">gm_isweep()</code> function performs a linear current sweep, measuring voltage and current, and then calculating the transconductance (Gm) at each point using the central difference method. It can return an array of Gm values, a reading buffer with the measured voltages, and a reading buffer with the measured currents.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="348"><p class="codetable">gm_array = gm_isweep(smua, 0, 0.01, 20)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">gm_array, vbuf = gm_isweep(smua, 0, 0.01, 20)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">gm_array, vbuf, ibuf = gm_isweep(smua, 0,</p>
+<p class="codetable">   0.01, 20)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="252"><p class="tablebodytext">Source&#8209;measure unit (SMU) A returns Gm values only.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">SMU A returns Gm and reading buffer with measured voltages.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">SMU A returns Gm and reading buffers with measured voltages and currents.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h19440" class="jumptemplate" title="gm_vsweep()" href="12955.html" target="_self">gm_vsweep()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

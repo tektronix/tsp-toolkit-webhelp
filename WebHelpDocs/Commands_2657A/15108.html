@@ -1,0 +1,114 @@
+<html>
+<head>
+<title> smuX.measure.autozero </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15107.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15109.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.measure.autozero</h2>
+<p class="bodyzero">This attribute sets the behavior of the source-measure unit's (SMU's) A/D internal reference measurements (autozero).</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">2 (smuX.AUTOZERO_AUTO)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">azMode</span> = smu<span class="monospaceitalic">X</span>.measure.autozero</p>
+<p class="iclcode">smu<span class="monospaceitalic">X</span>.measure.autozero = <span class="monospaceitalic">azMode</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">azMode</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Indicates status of autozero; set to one of the following values:</p>
+<p class="tablebodytext"><code class="monospace">0</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTOZERO_OFF</code>: Autozero disabled</p>
+<p class="tablebodytext"><code class="monospace">1</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTOZERO_ONCE</code>: Performs autozero once, then disables autozero</p>
+<p class="tablebodytext"><code class="monospace">2</code> or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTOZERO_AUTO</code>: Automatic checking of reference and zero measurements; an autozero is performed when needed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">SMU channel (for example, <code class="monospace">smua.measure.autozero</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The integrating analog-to-digital converter (ADC) uses a ratiometric A/D conversion technique. To ensure the accuracy of readings, the instrument must periodically obtain fresh measurements of its internal ground and voltage reference. The time interval between updates to these reference measurements is determined by the integration aperture being used for measurements. Separate reference and zero measurements are used for each aperture.</p>
+<p class="iclbody">By default, the instrument automatically checks these reference measurements whenever a signal measurement is made. If the reference measurements have expired when a signal measurement is made, the instrument will automatically take two more A/D conversions, one for the reference and one for the zero, before returning the result. Thus, occasionally, a measurement takes longer than normal.</p>
+<p class="iclbody">This additional time can cause problems in sweeps and other test sequences in which measurement timing is critical. To avoid the extra time for the reference measurements in these situations, the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.measure.autozero</code> attribute can be used to disable the automatic reference measurements. Keep in mind that disabling automatic reference measurements may allow the instrument to gradually drift out of specification.</p>
+<p class="iclbody">To minimize the drift, a reference and zero measurement should be made just prior to the critical test sequence. The <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTOZERO_ONCE</code> setting can be used to force a refresh of the reference and zero measurements used for the current aperture setting.</p>
+<p class="iclbody">Autozero reference measurements for the last 10 used NPLC settings are stored in a reference cache. If an NPLC setting is selected and an entry for it is not in the cache, the oldest (least recently used) entry will be discarded to make room for the new entry.</p>
+<p class="iclbody">The fast ADC (analog-to-digital converter) does not need or use the reference measurements associated with this attribute (only the integrating ADC). When this attribute is set to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTOZERO_AUTO</code>, the fast ADC will not require these reference measurements. However, if the fast ADC is selected, setting this attribute to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.AUTOZERO_ONCE</code> will cause the integrating ADC to acquire a new set of reference measurements.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="270"><p class="codetable">smua.measure.autozero = 1</p>
+</td>
+<td width="324"><p class="tablebodytext">Performs autozero once for SMU channel A. Alternatively, the value 1 may be replaced with <code class="monospace">smua.AUTOZERO_ONCE</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17701" class="jumptemplate" title="Autozero" href="11440.html" target="_self">Autozero</a></p>
+<p class="listcommand"><a id="h13937" class="jumptemplate" title="reset()" href="13933.html" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15215" class="jumptemplate" title="smuX.measure.nplc" href="15119.html" target="_self">smuX.measure.nplc</a></p>
+<p class="listcommand"><a id="h15085" class="jumptemplate" title="setup.recall()" href="15082.html" target="_self">setup.recall()</a></p>
+<p class="listcommand"><a id="h15232" class="jumptemplate" title="smuX.reset()" href="15136.html" target="_self">smuX.reset()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

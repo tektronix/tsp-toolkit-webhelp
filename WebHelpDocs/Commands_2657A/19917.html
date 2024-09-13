@@ -1,0 +1,119 @@
+<html>
+<head>
+<title> bufferVar.sourceoutputstates </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19916.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19918.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">bufferVar.sourceoutputstates</h2>
+<p class="bodyzero">This attribute indicates the state of the source output for readings stored in a specified buffer.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="150"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="150"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Clearing the buffer</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="150"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="150"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = <span class="monospaceitalic">bufferVar</span>.sourceoutputstates[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">state </span></p>
+</td>
+<td width="456"><p class="tablebodytext">The output state (<code class="monospace">&quot;Off&quot;</code> or <code class="monospace">&quot;On&quot;</code>) when reading <span class="monospaceitalic">N</span> of the specified buffer was acquired</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The reading buffer; can be a dynamically allocated buffer (user&#8209;defined), or a dedicated reading buffer (such as <code class="monospace">smua.nvbuffer1</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The reading number (<code class="monospace">1</code> to <span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <code class="monospace">sourceoutputstates</code> buffer recall attribute is like an array (a Lua table) of strings indicating the state of the source output (<code class="monospace">&quot;Off&quot;</code> or <code class="monospace">&quot;On&quot;</code>) at the time of the measurement.</p>
+<p class="iclbody">For dedicated reading buffers, all buffer attributes are saved to nonvolatile memory only when the reading buffer is saved to nonvolatile memory.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="408"><p class="codetable">printbuffer(1, 1, smua.nvbuffer1.sourceoutputstates)</p>
+</td>
+<td width="186"><p class="tablebodytext">Print the source output for the first reading stored in dedicated reading buffer 1.</p>
+<p class="tablebodytext">Example output: <code class="monospace">On</code></p>
+<p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h20169" class="jumptemplate" title="bufferVar.measurefunctions" href="19914.html" target="_self">bufferVar.measurefunctions</a></p>
+<p class="listcommand"><a id="h20170" class="jumptemplate" title="bufferVar.measureranges" href="19915.html" target="_self">bufferVar.measureranges</a></p>
+<p class="listcommand"><a id="h15230" class="jumptemplate" title="bufferVar.n" href="15134.html" target="_self">bufferVar.n</a></p>
+<p class="listcommand"><a id="h20171" class="jumptemplate" title="bufferVar.readings" href="19920.html" target="_self">bufferVar.readings</a></p>
+<p class="listcommand"><a id="h20175" class="jumptemplate" title="bufferVar.sourcefunctions" href="19916.html" target="_self">bufferVar.sourcefunctions</a></p>
+<p class="listcommand"><a id="h20177" class="jumptemplate" title="bufferVar.sourceranges" href="19918.html" target="_self">bufferVar.sourceranges</a></p>
+<p class="listcommand"><a id="h20178" class="jumptemplate" title="bufferVar.sourcevalues" href="19919.html" target="_self">bufferVar.sourcevalues</a></p>
+<p class="listcommand"><a id="h20172" class="jumptemplate" title="bufferVar.statuses" href="19921.html" target="_self">bufferVar.statuses</a></p>
+<p class="listcommand"><a id="h20173" class="jumptemplate" title="bufferVar.timestamps" href="19922.html" target="_self">bufferVar.timestamps</a></p>
+<p class="iclbody"></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

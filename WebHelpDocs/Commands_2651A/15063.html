@@ -1,0 +1,110 @@
+<html>
+<head>
+<title> script.load() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19931.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15064.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">script.load()</h2>
+<p class="bodyzero">This function creates a script from a specified file.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">scriptVar</span> = script.load(<span class="monospaceitalic">file</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">scriptVar</span> = script.load(<span class="monospaceitalic">file</span>, <span class="monospaceitalic">name</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="139"><p class="codetable"><span class="monospaceitalic">scriptVar</span></p>
+</td>
+<td width="425"><p class="tablebodytext">The created script. This is <code class="monospace">nil</code> if an error is encountered</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="codetable"><span class="monospaceitalic">file</span></p>
+</td>
+<td width="425"><p class="tablebodytext">The path and file name of the script file to load</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="codetable"><span class="monospaceitalic">name</span></p>
+</td>
+<td width="425"><p class="tablebodytext">The name of the script to be created</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The file path may be absolute or relative to the current working directory. The root folder of the USB flash drive has the absolute path &quot;/usb1/&quot;. Both the forward slash (/) and backslash (\) are supported as directory separators.</p>
+<p class="iclbody">The file to be loaded must start with the <code class="monospace">loadscript</code> or <code class="monospace">loadandrunscript</code> keywords, contain the body of the script, and end with the <code class="monospace">endscript</code> keyword.</p>
+<p class="iclbody">Script naming:</p>
+<ul class="listbullet2"><li class="listbullet2">If the <span class="monospaceitalic">name</span> parameter is an empty string, or <span class="monospaceitalic">name</span> is absent (or <code class="monospace">nil</code>) and the script name cannot be extracted from the file, <span class="monospaceitalic">scriptVar</span> is the only handle to the created script.</li><li class="listbullet2">If <span class="monospaceitalic">name</span> is given (and not <code class="monospace">nil</code>), any script name embedded in the file is ignored.</li><li class="listbullet2">If <span class="monospaceitalic">name</span> conflicts with the name of an existing script in the <code class="monospace">script.user.scripts</code> table, the existing script&#8217;s name attribute is set to an empty string before it is replaced in the <code class="monospace">script.user.scripts</code> table by the new script.</li><li class="listbullet2">If <span class="monospaceitalic">name</span> is absent or <code class="monospace">nil</code>, the command attempts to extract the name of the script from the file. Any conflict between the extracted name and that of an existing script in the scripts table generates an error. If the script name cannot be extracted, the created script's name attribute is initialized to the empty string, and must be set to a valid nonempty string before saving the script to nonvolatile memory.</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="312"><p class="codetable">myTest8 = <br>   script.load(&quot;/usb1/filename.tsp&quot;,<br>   &quot;myTest8&quot;)</p>
+</td>
+<td width="252"><p class="tablebodytext">Loads the script myTest8 from the USB flash drive.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15066" class="jumptemplate" title="script.new()" href="15064.html" target="_self">script.new()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

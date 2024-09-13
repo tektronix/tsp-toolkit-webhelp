@@ -1,0 +1,116 @@
+<html>
+<head>
+<title> smuX.source.levelY </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15144.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17115.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.source.levelY</h2>
+<p class="bodyzero">This attribute sets the source level.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="198"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">SMU reset<br>Instrument reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">sourceLevel</span><code class="monospace"> = smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.level</code><span class="monospaceitalic">Y</span></p>
+<p class="iclcode"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.level</code><span class="monospaceitalic">Y</span><code class="monospace"> = </code><span class="monospaceitalic">sourceLevel</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">sourceLevel</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The source value; set to one of the following values:<br>Voltage: 0&nbsp;V to ±3000&nbsp;V</p>
+<p class="tablebodytext">Current: 0 A to ±120 mA</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.source.levelv</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td width="456"><p class="tablebodytext">SMU source function (<code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute configures the output level of the voltage or current source.</p>
+<p class="iclbody">If the source is configured as a voltage source and the output is on, the new <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.levelv</code> setting will be sourced immediately. If the output is off or the source is configured as a current source, the voltage level will be sourced when the source is configured as a voltage source and the output is turned on.</p>
+<p class="iclbody">If the source is configured as a current source and the output is on, the new <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.source.leveli</code> setting will be sourced immediately. If the output is off or the source is configured as a voltage source, the current level will be sourced when the source is configured as a current source and the output is turned on.</p>
+<p class="iclbody">The sign of <span class="monospaceitalic">sourceLevel</span> dictates the polarity of the source. Positive values generate positive voltage or current from the high terminal of the source relative to the low terminal. Negative values generate negative voltage or current from the high terminal of the source relative to the low terminal.</p>
+<p class="iclbody">The <code class="monospace">reset()</code> function sets the source levels to 0&nbsp;V and 0 A.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="396"><p class="codetable">smua.source.levelv = 1</p>
+</td>
+<td width="198"><p class="tablebodytext">Sets voltage source of SMU channel A to 1 V.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15237" class="jumptemplate" title="smuX.source.compliance" href="15141.html" target="_self">smuX.source.compliance</a></p>
+<p class="listcommand"><a id="h15239" class="jumptemplate" title="smuX.source.func" href="15144.html" target="_self">smuX.source.func</a></p>
+<p class="listcommand"><a id="h15246" class="jumptemplate" title="smuX.source.output" href="15151.html" target="_self">smuX.source.output</a></p>
+<p class="listcommand"><a id="h13598" class="jumptemplate" title="Source-measure concepts" href="19572.html" target="_self">Source-measure concepts</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<html>
+<head>
+<title> InitiatePulseTest() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12953.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14868.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">InitiatePulseTest()</h2>
+<p class="bodyzero">This <a id="h12919" class="jumptemplate" title="KIPulse factory script" href="12916.html" target="_self">KIPulse factory script</a> function initiates the pulse configuration assigned to <span class="monospaceitalic">tag</span>.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = InitiatePulseTest(<span class="monospaceitalic">tag</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">f</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">A Boolean flag; this flag will be <code class="monospace">true</code> when the pulse was successfully configured, <code class="monospace">false</code> when errors were encountered</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">msg</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">A string message; if the <span class="monospaceitalic">f</span> flag is <code class="monospace">false</code>, <span class="monospaceitalic">msg</span> will contain an error message; if it is <code class="monospace">true</code>, <code class="monospace">msg</code> will contain a string indicating successful configuration</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">tag</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Numeric identifier of the pulse configuration to be initiated</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function will only initiate configured pulse trains assigned to a valid <span class="monospaceitalic">tag</span>. Configure the pulse before initiating it using one of the <code class="monospace">ConfigurePulse*</code> functions (refer to the <strong class="specialbold">Also see</strong> section).</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="516" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="324"><p class="codetable">smua.reset()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.source.rangev = 5</p>
+<p class="codetable">smua.source.rangei = 1</p>
+<p class="codetable">smua.source.levelv = 0</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.measure.rangev = 5</p>
+<p class="codetable">smua.measure.rangei = 1</p>
+<p class="codetable">smua.measure.nplc = 0.01</p>
+<p class="codetable">smua.measure.autozero = smua.AUTOZERO_ONCE</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.nvbuffer1.clear()</p>
+<p class="codetable">smua.nvbuffer1.appendmode = 1</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.source.output = smua.OUTPUT_ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">f1, msg1 = ConfigPulseVMeasureI(smua, 0, 5,</p>
+<p class="codetable">   1, 0.002, 0.2, 10, smua.nvbuffer1, 1)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">if f1 == true then</p>
+<p class="codetable">   f2, msg2 = InitiatePulseTest(1)</p>
+<p class="codetable">   print(&quot;Initiate message:&quot;, msg2)</p>
+<p class="codetable">else</p>
+<p class="codetable">   print(&quot;Config errors:&quot;, msg1)</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Configure System SourceMeter<sup class="superscript">&reg;</sup> instrument channel A to generate a pulse train. If no errors are encountered, initiate the pulse train. Channel A will pulse voltage from a bias level of 0&nbsp;V to a pulse level of 5&nbsp;V. The pulse level will be present for 2&nbsp;ms and the bias level for 200&nbsp;ms, with a 1&nbsp;A limit setting. A total of 10 pulses will be generated, and the measurement data will be stored in <code class="monospace">smua.nvbuffer1</code>. This pulse train will be assigned to <code class="monospace">tag = 1</code>.</p>
+<p class="codetable">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12925" class="jumptemplate" title="ConfigPulseIMeasureV()" href="12926.html" target="_self">ConfigPulseIMeasureV()</a></p>
+<p class="listcommand"><a id="h12930" class="jumptemplate" title="ConfigPulseVMeasureI()" href="12931.html" target="_self">ConfigPulseVMeasureI()</a></p>
+<p class="listcommand"><a id="h12936" class="jumptemplate" title="ConfigPulseIMeasureVSweepLin()" href="12937.html" target="_self">ConfigPulseIMeasureVSweepLin()</a></p>
+<p class="listcommand"><a id="h12939" class="jumptemplate" title="ConfigPulseVMeasureISweepLin()" href="12940.html" target="_self">ConfigPulseVMeasureISweepLin()</a></p>
+<p class="listcommand"><a id="h12942" class="jumptemplate" title="ConfigPulseIMeasureVSweepLog()" href="12943.html" target="_self">ConfigPulseIMeasureVSweepLog()</a></p>
+<p class="listcommand"><a id="h12945" class="jumptemplate" title="ConfigPulseVMeasureISweepLog()" href="12946.html" target="_self">ConfigPulseVMeasureISweepLog()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

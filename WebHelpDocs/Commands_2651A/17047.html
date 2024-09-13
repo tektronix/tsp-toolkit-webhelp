@@ -1,0 +1,300 @@
+<html>
+<head>
+<title> display.getlastkey() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14700.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14702.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">display.getlastkey()</h2>
+<p class="bodyzero">This function retrieves the key code for the last pressed key.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">keyCode</em> = display.getlastkey()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">keyCode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">A returned value that represents the last front-panel key pressed; see <strong class="specialbold">Details</strong> for more information</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">A history of the key code for the last pressed front&#8209;panel key is maintained by the instrument. When the instrument is turned on, or when it is transitioning from local to remote operation, the key code is set to 0 (<code class="monospace">display.KEY_NONE</code>).</p>
+<p class="iclbody">Pressing the EXIT (LOCAL) key normally aborts a script. To use this function with the EXIT (LOCAL) key, <code class="monospace">display.locallockout</code> must be used.</p>
+<p class="iclbody">The table below lists the <span class="monospaceitalic">keyCode</span> value for each front&#8209;panel action.</p>
+<table class="tableintopic" width="576" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="72" height="0"></td>
+<td width="228" height="0"></td>
+<td width="18" height="0"></td>
+<td width="78" height="0"></td>
+<td width="180" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="5" width="576"><p class="tableheading">&nbsp;</p>
+<p class="tableheadingsmall">Key codes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheadingsmall">Value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tableheadingsmall">Key list</p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tableheadingsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tableheadingsmall">Value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tableheadingsmall">Key list</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_NONE</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">82</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_ENTER</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">65</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_RANGEUP</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">85</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_RECALL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">68</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_MENU</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">86</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_MEASA</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">69</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_MODEA</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">87</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_DIGITSA</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">70</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_RELA</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">92</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_TRIG</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">71</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_RUN</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">93</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_LIMITA</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">72</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_DISPLAY</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">94</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_SPEEDA</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">73</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_AUTO</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">95</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_LOAD</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">75</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_EXIT</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">97</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.WHEEL_ENTER</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">77</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_FILTERA</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">103</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_RIGHT</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">78</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_STORE</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">104</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.KEY_LEFT</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">79</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_SRCA</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">107</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.WHEEL_LEFT</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">80</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_CONFIG</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">114</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext"><code class="monospace">display.WHEEL_RIGHT</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">81</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="228"><p class="tablebodytext"><code class="monospace">display.KEY_RANGEDOWN</code></p>
+</td>
+<td bgcolor="#D3D3D3" style="border:1px solid #C0C0C0;" width="18"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="180"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody"></p>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="48" width="176" vspace="0" hspace="0" align="top" border="0"><br>When using this function, use built-in constants such as <code class="monospace">display.KEY_RIGHT</code> (rather than the numeric value of <code class="monospace">103</code>). This will allow for better forward compatibility with firmware revisions.</p>
+<p class="iclbody">The OUTPUT ON/OFF control cannot be tracked by this function.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="324"><p class="codetable">key = display.getlastkey()</p>
+<p class="codetable">print(key)</p>
+</td>
+<td width="270"><p class="tablebodytext">On the front panel, press the <strong class="specialbold">MENU</strong> key and then send the code to the left. This retrieves the key code for the last pressed key.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">6.80000e+01</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h681" class="jumptemplate" title="display.locallockout" href="14707.html" target="_self">display.locallockout</a></p>
+<p class="listcommand"><a id="h680" class="jumptemplate" title="display.sendkey()" href="17055.html" target="_self">display.sendkey()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>
