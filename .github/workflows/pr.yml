@@ -25,14 +25,14 @@ jobs:
           cd WebHelpDocs
           npm pack
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: WebHelpDocs
           path: ./WebHelpDocs/*.tgz
 
   publish:
     name: Publish
-    if: startsWith(github.ref, 'refs/tags/')
+    if: ${{ (endsWith(github.base_ref, 'main') && (contains(github.head_ref, 'release/')) && github.event.pull_request.merged ) }}
     needs:
       - package
     runs-on: ubuntu-latest
@@ -66,7 +66,7 @@ jobs:
       #     npm version --no-git-tag-version --allow-same-version "$V"
       #   if: startsWith(github.ref, 'refs/tags/')
       - name: Get Artifacts
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4.1.8
         with:
           name: WebHelpDocs
       - name: publish pack
@@ -77,7 +77,7 @@ jobs:
 
   release:
     name: Release
-    if: startsWith(github.ref, 'refs/tags/')
+    if: ${{ (endsWith(github.base_ref, 'main') && (contains(github.head_ref, 'release/')) && github.event.pull_request.merged ) }}
     needs:
       - publish
     runs-on: ubuntu-latest
