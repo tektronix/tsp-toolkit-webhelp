@@ -1,0 +1,62 @@
+<html>
+<head>
+<title> Removing stale values from the reading buffer cache </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11655.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19560.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Removing stale values from the reading buffer cache</h3>
+<p class="bodytext">The node that acquires the data stores the data for the reading buffer. To optimize data access, all nodes can cache data from the node that stores the reading buffer data.</p>
+<p class="bodytext">Running Lua code remotely can cause reading buffer data that is held in the cache to become stale. If the values in the reading buffer change while the Lua code runs remotely, another node can hold stale values. Use the <code class="monospace">clearcache()</code> command to clear the cache. For additional detail on the reading buffer cache commands, see <a id="h17776" class="jumptemplate" title="bufferVar.cachemode" href="17109.html" target="_self">bufferVar.cachemode</a> and <a id="h15227" class="jumptemplate" title="bufferVar.clearcache()" href="15131.html" target="_self">bufferVar.clearcache()</a>.</p>
+<p class="bodytext">The following example code demonstrates how stale values occur and how to use the<code class="monospace"> clearcache()</code> command to clear the cache on node 2, which is part of group 7.</p>
+<p class="code">-- Create a reading buffer on a node in a remote group.</p>
+<p class="code">node[2].tsplink.group = 7</p>
+<p class="code">node[2].execute(&quot;rbremote = smua.makebuffer(20) &quot; ..</p>
+<p class="code">                &quot;smua.measure.count = 20 &quot; ..</p>
+<p class="code">                &quot;smua.measure.v(rbremote)&quot;)</p>
+<p class="code">-- Create a variable on the local node to</p>
+<p class="code">-- access the reading buffer.</p>
+<p class="code">rblocal = node[2].getglobal(&quot;rbremote&quot;)</p>
+<p class="code">-- Access data from the reading buffer.</p>
+<p class="code">print(rblocal[1])</p>
+<p class="code">-- Run code on the remote node that updates the reading buffer.</p>
+<p class="code">node[2].execute(&quot;smua.measure.v(rbremote)&quot;)</p>
+<p class="code">-- Use the clearcache command if the reading buffer contains cached data.</p>
+<p class="code">rblocal.clearcache()</p>
+<p class="code">-- If you do not use the clearcache command, the data buffer</p>
+<p class="code">-- values will never update. Every time the print command is</p>
+<p class="code">-- issued after the first print command, the same data buffer</p>
+<p class="code">-- values will print.</p>
+<p class="code">print(rblocal[1])</p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<html>
+<head>
+<title> smuX.buffer.getstats() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15088.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="18556.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.buffer.getstats()</h2>
+<p class="bodyzero">This function returns a specified reading buffer's statistics.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">statistics </span>= smu<span class="monospaceitalic">X</span>.buffer.getstats(<span class="monospaceitalic">bufferVar</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">statistics</span></p>
+</td>
+<td width="455"><p class="tablebodytext">The reading buffer's statistics</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="455"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.buffer.getstats()</code> specifies SMU channel&nbsp;A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td width="455"><p class="tablebodytext">The reading buffer to process</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function returns a table with statistical data about the data placed in the buffer.</p>
+<p class="iclbody">The SMU will automatically update reading buffer statistics as data is added to the reading buffer. When the reading buffer is configured to wrap around and overwrite older data with new data, the buffer statistics will include the data that was overwritten.</p>
+<p class="iclbody">The table returned from this function is a snapshot. Although the SMU continues to update the statistics, the table returned will not be updated. To get fresh statistics, call this function again.</p>
+<p class="iclbody">The <span class="monospaceitalic">statistics</span> parameter has the following attributes:</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="78"><p class="tableheadingsmall">Attribute</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tableheadingsmall">When returned</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tableheadingsmall">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="78"><p class="codetable">n</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tablebodytextsmall">Always</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">The number of data points on which the statistics are based</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="78"><p class="codetable">mean</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tablebodytextsmall">When <code class="monospace">n</code> &gt; 0</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">The average of all readings added to the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="78"><p class="codetable">stddev</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tablebodytextsmall">When <code class="monospace">n</code> &gt; 1</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">The standard deviation of all readings (samples) added to the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="78"><p class="codetable">min</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tablebodytextsmall">When <code class="monospace">n</code> &gt; 0</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">A table containing data about the minimum reading value added to the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="78"><p class="codetable">max</p>
+</td>
+<td style="border:1px solid #010101;" width="102"><p class="tablebodytextsmall">When <code class="monospace">n</code> &gt; 0</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">A table containing data about the maximum reading value added to the buffer</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">If <code class="monospace">n</code> equals zero (0), all other attributes will be <code class="monospace">nil</code> because there is no data to base any statistics on.  If <code class="monospace">n</code> equals 1, the <code class="monospace">stddev</code> attribute will be <code class="monospace">nil</code> because the standard deviation of a sample size of 1 is undefined.</p>
+<p class="iclbody">The <code class="monospace">min</code> and <code class="monospace">max</code> entries each have the following attributes:</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="tableheadingsmall">Attribute</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tableheadingsmall">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">measurefunction</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">String indicating the function measured for the reading (current, voltage, ohms or watts)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">measurerange</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">The full-scale range value for the measure range used when the measurement was made</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">reading</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">The reading value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">sourcefunction</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">String indicating the source function at the time of the measurement (current or voltage)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">sourceoutputstate</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">String indicating the state of the source (off or on)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">sourcerange</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">Full-scale range value for the source range used when the measurement was made</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">sourcevalue</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">If <span class="monospaceitalic">bufferVar</span><code class="monospace">.collectsourcevalues</code> is enabled, the sourced value in effect at the time of the reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">status</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">Status value for the reading; the status value is a floating-point number that encodes the status value into a floating-point value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="180"><p class="codetable">timestamp</p>
+</td>
+<td style="border:1px solid #010101;" width="414"><p class="tablebodytextsmall">If <span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps</code> is enabled, the timestamp, in seconds, between when the reading was acquired and when the first reading in the buffer was acquired; adding this value to the base timestamp will give the actual time the measurement was acquired</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h18555" class="jumptemplate" title="smuX.buffer.recalculatestats()" href="18556.html" target="_self">smuX.buffer.recalculatestats()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

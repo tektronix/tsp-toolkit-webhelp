@@ -1,0 +1,92 @@
+<html>
+<head>
+<title> Base library functions </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="11440.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19570.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Base library functions</h3>
+<table class="tableintopic" width="522" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="174" height="0"></td>
+<td width="348" height="0"></td>
+<td width="0" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border-bottom:1px solid #010101;" colspan="2" width="522"><p class="tableheading">Base library functions</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="174"><p class="tableheadingsmall">Function</p>
+</th>
+<th style="border:1px solid #C0C0C0;" colspan="2" width="348"><p class="tableheadingsmall">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="174"><p class="codetable">collectgarbage()</p>
+<p class="codetable">collectgarbage(<span class="monospaceitalic">limit</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="348"><p class="tablebodytext">Sets the garbage-collection threshold to the given limit (in kilobytes) and checks it against the byte counter. If the new threshold is smaller than the byte counter, Lua immediately runs the garbage collector. If there is no limit parameter, it defaults to zero (0), which forces a garbage&#8209;collection cycle. See the &quot;Lua memory management&quot; topic for more information.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="174"><p class="codetable">gcinfo()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="348"><p class="tablebodytext">Returns the number of kilobytes of dynamic memory that the Test Script Processor (TSP<sup class="superscript">&reg;</sup>) scripting engine is using, and returns the current garbage collector threshold (also in kilobytes). See the &quot;Lua memory management&quot; topic for more information.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="174"><p class="codetable">tonumber(<span class="monospaceitalic">x</span>)</p>
+<p class="codetable">tonumber(<span class="monospaceitalic">x, base</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="348"><p class="tablebodytext">Returns <span class="monospaceitalic">x</span> converted to a number. If <span class="monospaceitalic">x</span> is already a number, or a convertible string, the number is returned; otherwise, it returns <code class="monospace">nil</code>.</p>
+<p class="tablebodytext">An optional argument specifies the base to interpret the numeral. The base may be any integer between 2 and 36, inclusive. In bases above 10, the letter <code class="monospace">A</code> (in either upper or lower case) represents 10, <code class="monospace">B</code> represents 11, and so forth, with <code class="monospace">Z</code> representing 35. In base 10, the default, the number may have a decimal part, as well as an optional exponent. In other bases, only unsigned integers are accepted.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="174"><p class="codetable">tostring(<span class="monospaceitalic">x</span>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="348"><p class="tablebodytext">Receives an argument of any type and converts it to a string in a reasonable format.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="174"><p class="codetable">type(<span class="monospaceitalic">v</span>)</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" colspan="2" width="348"><p class="tablebodytext">Returns (as a string) the type of its only argument. The possible results of this function are <code class="monospace">&quot;nil&quot; </code>(a string, not the value <code class="monospace">nil</code>), <code class="monospace">&quot;number&quot;</code>, <code class="monospace">&quot;string&quot;</code>, <code class="monospace">&quot;boolean&quot;</code>, <code class="monospace">&quot;table&quot;</code>, <code class="monospace">&quot;function&quot;</code>, <code class="monospace">&quot;thread&quot;</code>, and <code class="monospace">&quot;userdata&quot;</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

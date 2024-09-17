@@ -16,6 +16,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
     Security -- in case of vulnerabilities.
 -->
 
+## [0.18.0]
+
+### Added
+- Added 2651A and 2657A models webhelp documents
+
 ## [0.15.3]
 
 ### Fixed
@@ -39,6 +44,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Language feature has been added for  DAQ6510 and DMM6500 command set(TSP-304)
 - Language feature has been added for 24XX and DMM7510 command set(TSP-232)
 
+[0.18.0]: https://github.com/tektronix/tsp-toolkit-webhelp/releases/tag/v0.18.0
 [0.15.3]: https://github.com/tektronix/tsp-toolkit-webhelp/releases/tag/v0.15.3
 [0.15.0]: https://github.com/tektronix/tsp-toolkit-webhelp/releases/tag/v0.15.0
 [0.14.1]: https://github.com/tektronix/tsp-toolkit-webhelp/releases/tag/v0.14.1

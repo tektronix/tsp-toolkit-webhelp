@@ -1,0 +1,62 @@
+<html>
+<head>
+<title> Placeholder text </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19536.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17860.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h4 class="heading4">Placeholder text</h4>
+<p class="bodytext">This manual uses italicized text to represent the parts of remote commands that must be replaced by user specified values. The following examples show typical uses of italicized text: </p>
+<p class="bodytext"><strong class="specialbold">Example 1:</strong></p>
+<p class="bodytext"><code class="monospace">gpib.address = </code><span class="monospaceitalic">address</span></p>
+<p class="bodytext">Where:</p>
+<p class="bodytext"><span class="monospaceitalic">address</span> is an integer (0 to 30) that you specify. For example, to set this attribute to 15 you would send:</p>
+<p class="bodytext"><code class="monospace">gpib.address = 15</code></p>
+<p class="bodytext"><strong class="specialbold">Example 2:</strong></p>
+<p class="bodytext"><code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].assert()</code></p>
+<p class="bodytext">Where:</p>
+<p class="bodytext"><span class="monospaceitalic">N</span> is an integer (<code class="monospace">1</code> to <code class="monospace">14</code>) that you specify. For example, to assert trigger line 7 you would send:</p>
+<p class="bodytext"><code class="monospace">digio.trigger[7].assert()</code></p>
+<p class="bodytext">To assert a trigger line with a variable as the integer, you would send:</p>
+<p class="bodytext"><code class="monospace">triggerline = 7</code></p>
+<p class="bodytext"><code class="monospace">digio.trigger[triggerline].assert()</code></p>
+<p class="bodytext"><strong class="specialbold">Example 3:</strong></p>
+<p class="bodytext"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.measure.</code><span class="monospaceitalic">Y</span><code class="monospace">(</code><span class="monospaceitalic">rbuffer</span><code class="monospace">)</code></p>
+<p class="bodytext">Where: </p>
+<p class="bodytext"><span class="monospaceitalic">X</span> refers to the source&#8209;measure unit (SMU) channel (use <code class="monospace">a</code> for SMU A).</p>
+<p class="bodytext"><span class="monospaceitalic">Y</span> is the measurement type that you specify (<code class="monospace">v</code>, <code class="monospace">i</code>, <code class="monospace">r</code>, or <code class="monospace">p</code>). </p>
+<p class="bodytext"><span class="monospaceitalic">rbuffer</span> is the reading buffer object where the readings will be stored. </p>
+<p class="bodytext">For example, to use SMU A to take voltage measurements and store them in buffer <code class="monospace">vbuffername</code>, you would send:</p>
+<p class="bodytext"><code class="monospace">smua.trigger.measure.v(vbuffername)</code></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

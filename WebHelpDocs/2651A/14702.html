@@ -1,0 +1,166 @@
+<html>
+<head>
+<title> display.gettext() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17047.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14703.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">display.gettext()</h2>
+<p class="bodyzero">This function reads the text displayed on the instrument front panel.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">text</em> = display.gettext()</p>
+<p class="iclcode"><em class="emphasis">text</em> = display.gettext(<em class="emphasis">embellished</em>)</p>
+<p class="iclcode"><em class="emphasis">text</em> = display.gettext(<em class="emphasis">embellished</em>, <em class="emphasis">row</em>)</p>
+<p class="iclcode"><em class="emphasis">text</em> = display.gettext(<em class="emphasis">embellished</em>, <em class="emphasis">row</em>, <em class="emphasis">columnStart</em>)</p>
+<p class="iclcode"><em class="emphasis">text</em> = display.gettext(<em class="emphasis">embellished</em>, <em class="emphasis">row</em>, <em class="emphasis">columnStart</em>, <em class="emphasis">columnEnd</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">text</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The returned value, which contains the text that is presently displayed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">embellished</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Indicates type of returned text: <code class="monospace">false</code> (simple text); <code class="monospace">true</code> (text with embedded character codes)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">row</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Selects the row from which to read the text: <code class="monospace">1</code> (row 1); <code class="monospace">2</code> (row 2). If <span class="monospaceitalic">row</span> is not included, both rows of text are read</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">columnStart</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Selects the first column from which to read text; for row 1, the valid column numbers are 1 to 20; for row 2, the valid column numbers are 1 to 32; if nothing is selected, 1 is used</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">columnEnd</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Selects the last column from which to read text; for row 1, the valid column numbers are 1 to 20; for row 2, the valid column numbers are 1 to 32; the default is 20 for row 1, and 32 for row 2</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Using the command without any parameters returns both lines of the display.</p>
+<p class="iclbody">The <code class="monospace">$N</code> character code is included in the returned value to show where the top line ends and the bottom line begins. This is not affected by the value of <span class="monospaceitalic">embellished</span>.</p>
+<p class="iclbody">When <span class="monospaceitalic">embellished</span> is set to <code class="monospace">true</code>, all other character codes are returned along with the message. When <span class="monospaceitalic">embellished</span> is set to <code class="monospace">false</code>, only the message and the <code class="monospace">$N</code> character code is returned. For information on the embedded character codes, see <a id="h677" class="jumptemplate" title="display.settext()" href="14712.html" target="_self">display.settext()</a>.</p>
+<p class="iclbody">The display is not switched to the user screen (the screen set using <code class="monospace">display.settext()</code>). Text will be read from the active screen.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="588"><p class="codetable">display.clear()</p>
+<p class="codetable">display.setcursor(1, 1)</p>
+<p class="codetable">display.settext(&quot;ABCDEFGHIJ$DKLMNOPQRST&quot;)</p>
+<p class="codetable">display.setcursor(2, 1)</p>
+<p class="codetable">display.settext(&quot;abcdefghijklm$Bnopqrstuvwxyz$F123456&quot;)</p>
+<p class="codetable">print(display.gettext())</p>
+<p class="codetable">print(display.gettext(true))</p>
+<p class="codetable">print(display.gettext(false, 2))</p>
+<p class="codetable">print(display.gettext(true, 2, 9))</p>
+<p class="codetable">print(display.gettext(false, 2, 9, 10))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="588"><p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">This example shows how to retrieve the display text in multiple ways. The output is:</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="codetable">ABCDEFGHIJKLMNOPQRST$Nabcdefghijklmnopqrstuvwxyz123456</p>
+<p class="codetable">$RABCDEFGHIJ$DKLMNOPQRST$N$Rabcdefghijklm$Bnopqrstuvwxyz$F123456</p>
+<p class="codetable">abcdefghijklmnopqrstuvwxyz123456</p>
+<p class="codetable">$Rijklm$Bnopqrstuvwxyz$F123456</p>
+<p class="codetable">ij</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="588"><p class="codetable">display.clear()</p>
+<p class="codetable">display.settext(&quot;User Screen&quot;)</p>
+<p class="codetable">text = display.gettext()</p>
+<p class="codetable">print(text)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="588"><p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">This outputs all text in both lines of the display:</p>
+<p class="codetable">User Screen       $N</p>
+<p class="tablebodytext">This indicates that the message &#8220;User Screen&#8221; is on the top line. The bottom line is blank.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14720" class="jumptemplate" title="display.clear()" href="14699.html" target="_self">display.clear()</a></p>
+<p class="listcommand"><a id="h14746" class="jumptemplate" title="display.getcursor()" href="14700.html" target="_self">display.getcursor()</a></p>
+<p class="listcommand"><a id="h14730" class="jumptemplate" title="display.setcursor()" href="14711.html" target="_self">display.setcursor()</a></p>
+<p class="listcommand"><a id="h677_2" class="jumptemplate" title="display.settext()" href="14712.html" target="_self">display.settext()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

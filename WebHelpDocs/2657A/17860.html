@@ -1,0 +1,117 @@
+<html>
+<head>
+<title> Syntax rules </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="17859.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12044.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h4 class="heading4">Syntax rules</h4>
+<p class="bodytext">The following table lists syntax requirements to build well-formed instrument control commands.</p>
+<table class="tableintopic" width="528" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="120" height="0"></td>
+<td width="144" height="0"></td>
+<td width="264" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th style="border-bottom:1px solid #010101;" colspan="3" width="528"><p class="tableheading">Syntax rules for instrument commands</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th bgcolor="#E0E0E0" style="border:1px solid #010101;" width="120"><p class="tableheadingsmall">Syntax rule</p>
+</th>
+<th bgcolor="#E0E0E0" style="border:1px solid #010101;" width="144"><p class="tableheading">Details</p>
+</th>
+<th bgcolor="#E0E0E0" style="border:1px solid #010101;" width="264"><p class="tableheading">Examples</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" rowspan="2" width="120"><p class="tablebodytext"><strong class="specialbold">Case sensitivity:</strong> Instrument commands are case sensitive. </p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">For best results, simply match the case shown in the command reference descriptions.</p>
+<p class="tablebodytext">&nbsp;</p>
+</th>
+<th style="border:1px solid #010101;" width="144"><p class="tablebodytext">Function and attribute names should be in lowercase characters.</p>
+</th>
+<th style="border:1px solid #010101;" width="264"><p class="tablebodytext">An example of the <code class="monospace">scriptVar.save()</code> function (where <code class="monospace">test8</code> is the name of the script):</p>
+<p class="codetable">test8.save()</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" width="144"><p class="tablebodytext">Parameters can use a combination of lowercase and uppercase characters.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Attribute constants use uppercase characters</p>
+</th>
+<th style="border:1px solid #010101;" width="264"><p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">In the command below, which sets the format of data transmitted from the instrument to double&#8209;precision floating point, <code class="monospace">format.REAL64</code> is the attribute constant and<code class="monospace"> format.data</code> is the attribute command:</p>
+<p class="codetable">format.data = format.REAL64</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" width="120"><p class="tablebodytext"><strong class="specialbold">White space:</strong> Not required in a function.</p>
+</th>
+<th style="border:1px solid #010101;" width="144"><p class="tablebodytext">Functions can be sent with or without white spaces.</p>
+</th>
+<th style="border:1px solid #010101;" width="264"><p class="tablebodytext">The following functions, which set digital I/O line 3 low, are equivalent:</p>
+<p class="codetable">digio.writebit(3,0)</p>
+<p class="codetable">digio.writebit (3, 0)</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #010101;" width="120"><p class="tablebodytext"><strong class="specialbold">Function parameters:</strong> All functions are required to have a set of parentheses () immediately following the function.</p>
+</th>
+<th style="border:1px solid #010101;" width="144"><p class="tablebodytext">You can specify the function parameters by placing them between the parentheses. Note that the parentheses are required even when there are no parameters specified.</p>
+</th>
+<th style="border:1px solid #010101;" width="264"><p class="tablebodytext">The following function specifies all overlapped commands in the nodes in group G must complete before commands from other groups can execute:</p>
+<p class="codetable">waitcomplete(G)</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">The command below reads the value of the local time zone (no parameters are needed):</p>
+<p class="codetable">timezone = localnode.gettimezone()</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="120"><p class="tablebodytext"><strong class="specialbold">Multiple parameters:</strong> Must be separated by commas (,).</p>
+</td>
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Some commands require multiple parameters, which must be separated by commas&nbsp;(<code class="monospace">,</code>).</p>
+</td>
+<td style="border:1px solid #010101;" width="264"><p class="tablebodytext">This command sets the beeper to emit a double&#8209;beep at 2400&nbsp;Hz, with a beep sequence of 0.5 seconds on, 0.25 seconds off, and then 0.5 seconds on:</p>
+<p class="codetable">beeper.beep(0.5, 2400)</p>
+<p class="codetable">delay(0.250)</p>
+<p class="codetable">beeper.beep(0.5, 2400)</p>
+</td>
+</tr>
+
+</table>
+<p class="codetable"></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

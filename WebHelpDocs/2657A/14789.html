@@ -1,0 +1,120 @@
+<html>
+<head>
+<title> fileVar:write() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14788.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14797.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">fileVar:write()</h2>
+<p class="bodyzero">This function writes data to a file.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">fileVar</span>:write(<span class="monospaceitalic">data</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">fileVar</span>:write(<span class="monospaceitalic">data1</span><code class="monospace">, </code><span class="monospaceitalic">data2</span><code class="monospace">)</code></p>
+<p class="iclcode"><span class="monospaceitalic">fileVar</span>:write(<span class="monospaceitalic">data1</span><code class="monospace">, ..., </code><span class="monospaceitalic">datan</span><code class="monospace">)</code></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="564" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">fileVar</span></p>
+</td>
+<td width="425"><p class="tablebodytext">The file descriptor variable</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">data</span></p>
+</td>
+<td width="425"><p class="tablebodytext">Write all data to the file</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">data1</span></p>
+</td>
+<td width="425"><p class="tablebodytext">The first data to write to the file</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">data2</span></p>
+</td>
+<td width="425"><p class="tablebodytext">The second data to write to the file</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">datan</span></p>
+</td>
+<td width="425"><p class="tablebodytext">The last data to write to the file</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="139"><p class="tablebodytext"><span class="monospaceitalic">...</span></p>
+</td>
+<td width="425"><p class="tablebodytext">One or more entries (or values) separated by commas</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function may buffer data until a flush (<span class="monospaceitalic">fileVar</span><code class="monospace">:flush()</code> or <code class="monospace">io.flush()</code>) or close (<span class="monospaceitalic">fileVar</span><code class="monospace">:close()</code> or <code class="monospace">io.close()</code>) operation is performed.</p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h19398" class="jumptemplate" title="fileVar:close()" href="14772.html" target="_self">fileVar:close()</a></p>
+<p class="listcommand"><a id="h14791" class="jumptemplate" title="fileVar:flush()" href="14786.html" target="_self">fileVar:flush()</a></p>
+<p class="listcommand"><a id="h14878" class="jumptemplate" title="io.close()" href="14868.html" target="_self">io.close()</a></p>
+<p class="listcommand"><a id="h14881" class="jumptemplate" title="io.open()" href="14872.html" target="_self">io.open()</a></p>
+<p class="bodytext"></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

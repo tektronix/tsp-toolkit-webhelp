@@ -1,0 +1,107 @@
+<html>
+<head>
+<title> smuX.trigger.initiate() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15167.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15169.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.trigger.initiate()</h2>
+<p class="bodyzero">This function initiates a sweep operation.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.initiate()</code></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.trigger.initiate()</code> applies to SMU channel A)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function causes the SMU to clear the four trigger model event detectors and enter its trigger model state machine (moves the SMU from the idle state into the arm layer).</p>
+<p class="iclbody">To perform source actions during the sweep, it is necessary to configure and enable one of the sweep source actions, <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, <code class="monospace">smu</code><span class="monospaceitalic">X.</span><code class="monospace">trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, or <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, and measure actions (<code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.trigger.measure.</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, before calling this function.</p>
+<p class="iclbody">If you run this function more than once without reconfiguring the sweep measurements, the caches on the configured measurement reading buffers will hold stale data. If you do run this function repeatedly without reconfiguring the sweep measurement, use the <span class="monospaceitalic">bufferVar</span><code class="monospace">.clearcache()</code> function to remove stale values from the reading buffer cache.</p>
+<p class="iclbody">This function initiates an overlapped operation.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="396"><p class="codetable">smua.trigger.initiate()</p>
+<p class="codetable">&nbsp;</p>
+</td>
+<td width="198"><p class="tablebodytext">Starts a preconfigured sweep and clears the event detectors for SMU channel A).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15227" class="jumptemplate" title="bufferVar.clearcache()" href="15131.html" target="_self">bufferVar.clearcache()</a></p>
+<p class="listcommand"><a id="h18561" class="jumptemplate" title="Configuring and running sweeps" href="19567.html" target="_self">Configuring and running sweeps</a></p>
+<p class="listcommand"><a id="h15262" class="jumptemplate" title="smuX.trigger.measure.action" href="15169.html" target="_self">smuX.trigger.measure.action</a></p>
+<p class="listcommand"><a id="h15266" class="jumptemplate" title="smuX.trigger.measure.Y()" href="15172.html" target="_self">smuX.trigger.measure.Y()</a></p>
+<p class="listcommand"><a id="h15269" class="jumptemplate" title="smuX.trigger.source.action" href="15178.html" target="_self">smuX.trigger.source.action</a></p>
+<p class="listcommand"><a id="h15271" class="jumptemplate" title="smuX.trigger.source.linearY()" href="15180.html" target="_self">smuX.trigger.source.linearY()</a></p>
+<p class="listcommand"><a id="h15272" class="jumptemplate" title="smuX.trigger.source.listY()" href="15181.html" target="_self">smuX.trigger.source.listY()</a></p>
+<p class="listcommand"><a id="h15273" class="jumptemplate" title="smuX.trigger.source.logY()" href="15182.html" target="_self">smuX.trigger.source.logY()</a></p>
+<p class="listcommand"><a id="h13512" class="jumptemplate" title="Triggering" href="19574.html" target="_self">Triggering</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

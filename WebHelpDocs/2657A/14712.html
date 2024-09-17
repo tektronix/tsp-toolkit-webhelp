@@ -1,0 +1,166 @@
+<html>
+<head>
+<title> display.settext() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14711.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14713.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">display.settext()</h2>
+<p class="bodyzero">This function displays text on the user screen.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">display.settext(<em class="emphasis">text</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">text</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Text message to be displayed, with optional character codes</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function selects the user display screen and displays the given text.</p>
+<p class="iclbody">After the instrument is turned on, the first time you use a display command to write to the display, the message &quot;User Screen&quot; is cleared. After the first write, you need to use <code class="monospace">display.clear()</code> to clear the message.</p>
+<p class="iclbody">The <code class="monospace">display.clear()</code>, <code class="monospace">display.setcursor()</code>, and <code class="monospace">display.settext()</code> functions are overlapped, nonblocking commands. That is, the script does not wait for one of these commands to complete. These nonblocking functions do not immediately update the display. For performance considerations, they update the physical display as soon as processing time becomes available.</p>
+<p class="iclbody">The text starts at the present cursor position. After the text is displayed, the cursor is after the last character in the display message.</p>
+<p class="iclbody">Top line text does not wrap to the bottom line of the display automatically. Any text that does not fit on the current line is truncated. If the text is truncated, the cursor remains at the end of the line.</p>
+<p class="iclbody">The text remains on the display until replaced or cleared.</p>
+<p class="iclbody">The following character codes can be also be included in the text string:</p>
+<p class="iclbody"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="120" height="0"></td>
+<td width="474" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-bottom:1px solid #C0C0C0;" colspan="2" width="594"><p class="tableheading">Display character codes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheadingsmall">Character Code</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tableheadingsmall">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">$N</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytext">Newline, starts text on the next line; if the cursor is already on line 2, text will be ignored after the <code class="monospace">$N</code> is received</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">$R</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytext">Sets text to normal intensity, nonblinking</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">$B</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytext">Sets text to blink</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">$D</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytext">Sets text to dim intensity</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">$F</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytext">Sets the text to background blink</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="120"><p class="codetable">$$</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="474"><p class="tablebodytext">Escape sequence to display a single dollar symbol (<code class="monospace">$</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" width="594"><p class="codetable">display.clear()</p>
+<p class="codetable">display.settext(&quot;Normal $BBlinking$N&quot;)</p>
+<p class="codetable">display.settext(&quot;$DDim $FBackgroundBlink$R $$$$ 2 dollars&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="594"><p class="tablebodytext">This example sets the display to:</p>
+<p class="codetable">Normal Blinking</p>
+<p class="codetable">Dim BackgroundBlink $$ 2 dollars</p>
+<p class="tablebodytext">with the named effect on each word.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14720" class="jumptemplate" title="display.clear()" href="14699.html" target="_self">display.clear()</a></p>
+<p class="listcommand"><a id="h14746" class="jumptemplate" title="display.getcursor()" href="14700.html" target="_self">display.getcursor()</a></p>
+<p class="listcommand"><a id="h14722" class="jumptemplate" title="display.gettext()" href="14702.html" target="_self">display.gettext()</a></p>
+<p class="listcommand"><a id="h14744" class="jumptemplate" title="display.screen" href="14741.html" target="_self">display.screen</a></p>
+<p class="listcommand"><a id="h14730" class="jumptemplate" title="display.setcursor()" href="14711.html" target="_self">display.setcursor()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

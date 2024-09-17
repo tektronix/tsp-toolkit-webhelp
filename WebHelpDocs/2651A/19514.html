@@ -1,0 +1,44 @@
+<html>
+<head>
+<title> Advanced features for KIPulse tag parameter pulse functions </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19519.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12950.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h5 class="heading5">Advanced features for KIPulse tag parameter pulse functions</h5>
+<p class="bodytext"><strong class="specialbold">Variable off time between pulses in a pulse train</strong></p>
+<p class="bodytext">The KIPulse &#8220;Configure&#8221; functions will accept the <span class="monospaceitalic">toff</span> parameter as a table, or as a number. The table allows you to define different off times to be used after each pulse. The following should be noted:</p>
+<ul class="listbullet"><li class="listbullet">If <span class="monospaceitalic">toff</span> is passed as a number or only a single value is used in the table, it will be used for all points in a multiple point pulse.</li><li class="listbullet">The number of times specified in the table must match the number of points called for in the sweep.</li><li class="listbullet">The times used in tables must match for dual channel pulsing.</li><li class="listbullet">Each specified off time must adhere to the duty cycle limits for the specified pulsing region.</li></ul><p class="bodytext"><strong class="specialbold">Simultaneous IV measurement during pulse</strong></p>
+<p class="bodytext">The KIPulse &#8220;Configure&#8221; functions will optionally accept an extra reading buffer to activate simultaneous IV measurements during pulsing. Previous usage of passing in a reading buffer or a nil (for no measurement) is still supported.</p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

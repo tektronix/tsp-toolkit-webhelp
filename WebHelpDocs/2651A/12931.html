@@ -1,0 +1,226 @@
+<html>
+<head>
+<title> ConfigPulseVMeasureI() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12943.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12940.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">ConfigPulseVMeasureI()</h2>
+<p class="bodyzero">This <a id="h12919" class="jumptemplate" title="KIPulse factory script" href="12916.html" target="_self">KIPulse factory script</a> function configures a voltage pulse train with a current measurement at each point.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseVMeasureI(<span class="monospaceitalic">smu, bias, level, limit, ton, toff, points, buffer, </span></p>
+<p class="iclcode"><span class="monospaceitalic">   tag, sync_in, sync_out, sync_in_timeout, sync_in_abort</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseVMeasureI(<span class="monospaceitalic">smu, bias, level, limit, ton, toff, points, buffer, </span></p>
+<p class="iclcode"><span class="monospaceitalic">   tag, sync_in, sync_out, sync_in_timeout</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseVMeasureI(<span class="monospaceitalic">smu, bias, level, limit, ton, toff, points, buffer, </span></p>
+<p class="iclcode"><span class="monospaceitalic">   tag, sync_in, sync_out</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseVMeasureI(<span class="monospaceitalic">smu, bias, level, limit, ton, toff, points, buffer, </span></p>
+<p class="iclcode"><span class="monospaceitalic">   tag, sync_in</span>)</p>
+<p class="iclcode"><span class="monospaceitalic">f</span>, <span class="monospaceitalic">msg</span> = ConfigPulseVMeasureI(<span class="monospaceitalic">smu, bias, level, limit, ton, toff, points, buffer, </span></p>
+<p class="iclcode"><span class="monospaceitalic">   tag</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">f</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">A Boolean flag; this flag will be <code class="monospace">true</code> when the pulse was successfully configured, <code class="monospace">false</code> when errors were encountered </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">msg</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">A string message; if the <span class="monospaceitalic">f</span> flag is <code class="monospace">false</code>, <span class="monospaceitalic">msg</span> will contain an error message; if it is <code class="monospace">true</code>, <span class="monospaceitalic">msg</span> will contain a string indicating successful configuration</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">smu</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">System SourceMeter<sup class="superscript">&reg;</sup> instrument channel (set to <code class="monospace">smua</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">bias</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Bias level in volts</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">level</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Pulse level in volts</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">limit</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Current limit (for example, compliance) in amperes</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">ton</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Pulse on time in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">toff</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Pulse off time in seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">points</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Number of pulse-measure cycles</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">buffer</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Reading buffer where pulsed measurements will be stored; if this is <code class="monospace">nil</code> when the function is called, no measurements will be made when the pulse train is initiated</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">tag</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Numeric identifier to be assigned to the defined pulse train</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">sync_in</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Defines a digital I/O trigger input line; if programmed, the pulse train will wait for a trigger input before executing each pulse (this parameter is optional)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">sync_out</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Defines a digital I/O trigger output line; if programmed, the pulse train will generate a trigger output immediately before the start of <code class="monospace">ton</code> (this parameter is optional)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">sync_in_timeout</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Specifies the length of time (in seconds) to wait for input trigger; default value is 10&nbsp;s</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">sync_in_abort</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytextsmall">Specifies whether or not to abort pulse if input trigger is not received; if pulse aborts because of a missed trigger, a timer timeout message is returned; <code class="monospace">true</code> or <code class="monospace">false</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Data for pulsed current measurements are stored in the reading buffer specified by the <span class="monospaceitalic">buffer</span> input parameter.</p>
+<p class="iclbody">Configures a voltage pulse train with a current measurement at each point. Measurements are made at the end of the <span class="monospaceitalic">ton</span> time. </p>
+<p class="iclbody">This function does not cause the specified <span class="monospaceitalic">smu</span> to output a pulse train. It simply checks to see if all of the pulse dimensions are achievable, and if they are, assigns the indicated <span class="monospaceitalic">tag</span> or index to the pulse train.The <code class="monospace">InitiatePulseTest(</code><span class="monospaceitalic">tag</span><code class="monospace">)</code> function is used to initiate a pulse train assigned to a valid <span class="monospaceitalic">tag</span>.</p>
+<p class="magicfigurecenter"><img src="2600s-901-01b_kipulsetsptestscript_configpulsevmeasurei.png" alt="ConfigPulseVMeasureI()" height="242" width="361" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable">ConfigPulseVMeasureI(smua, 0, 20, 1,</p>
+<p class="codetable">   0.001, 0.080, 10, smua.nvbuffer1, 2)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Set up a pulse train that uses System SourceMeter<sup class="superscript">&reg;</sup> instrument channel A. The pulse amplitude will be 20&nbsp;V and will return to 0&nbsp;V after 1&nbsp;ms. The pulse will remain at 0&nbsp;V for 80 ms, and the current limit will be 1&nbsp;A during the pulse. The pulse train will consist of 10 pulses, and the pulse train will be assigned a <span class="monospaceitalic">tag</span> index of 2.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading"></p>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="336"><p class="codetable">local timelist = { 1, 2, 3, 4, 5 }</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">f, msg = ConfigPulseVMeasureI(smua, 0, 1,</p>
+<p class="codetable">   100e-3, 1, timelist, 5, nil, 1)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Variable off time between pulses in a pulse train.</p>
+<p class="tablebodytext">Configure a pulse with 1 second on-time and variable off-time, no measurement.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 3</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="342"><p class="codetable">rbi = smua.makebuffer(10)</p>
+<p class="codetable">rbv = smua.makebuffer(10)</p>
+<p class="codetable">rbi.appendmode = 1</p>
+<p class="codetable">rbv.appendmode = 1</p>
+<p class="codetable">rbs = { i = rbi, v = rbv }</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">f, msg = ConfigPulseVMeasureI(smua, 0, 10,</p>
+<p class="codetable">   1e-3, 1e-3, 1e-3, 2, rbs, 1)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="258"><p class="tablebodytext">Simultaneous IV measurement during pulse.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h12928" class="jumptemplate" title="InitiatePulseTest()" href="12929.html" target="_self">InitiatePulseTest()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

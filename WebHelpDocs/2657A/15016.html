@@ -1,0 +1,100 @@
+<html>
+<head>
+<title> localnode.prompts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15015.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15017.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">localnode.prompts</h2>
+<p class="bodyzero">This attribute sets and reads the local node prompting state (enabled or disabled).</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="126"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="174"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Power cycle</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="126"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="174"><p class="tablebodytextsmall">0 (disabled)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">prompting</em> = localnode.prompts</p>
+<p class="iclcode">localnode.prompts = <em class="emphasis">prompting</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">prompting</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">Prompting state (<code class="monospace">0</code> to disable or <code class="monospace">1</code> to enable)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The command messages do not generate prompts. The instrument generates prompts in response to command messages.</p>
+<p class="iclbody">When the prompting mode is enabled (set to 1), the instrument generates prompts in response to command messages. There are three prompts that might be generated:</p>
+<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">TSP&gt;</strong> is the standard prompt. This prompt indicates that everything is normal and the command is done processing.</li><li class="listbullet2"><strong class="specialbold">TSP?</strong> is issued if there are entries in the error queue when the prompt is issued. Like the TSP&gt; prompt, it indicates the command is done processing. It does not mean the previous command generated an error, only that there are still errors in the queue when the command was done processing.</li><li class="listbullet2"><strong class="specialbold">&gt;&gt;&gt;&gt;</strong> is the continuation prompt. This prompt is used when downloading scripts. When downloading scripts, many command messages must be sent as a group. The continuation prompt indicates that the instrument is expecting more messages as part of the current command.</li></ul><p class="iclbody">When using this command from a remote node, <code class="monospace">localnode</code> should be replaced with the node reference, for example, <code class="monospace">node[5].prompts</code>.</p>
+<p class="note"><img src="notehelp.png" alt="NOTE" height="48" width="176" vspace="0" hspace="0" align="top" border="0"><br>Do not disable prompting when using Test Script Builder. Test Script Builder requires prompts and sets the prompting mode behind the scenes. If you disable prompting, using Test Script Builder causes the instrument to stop responding because it is waiting for the prompt that lets it know that the command is done executing.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="270"><p class="codetable">localnode.prompts = 1</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="324"><p class="tablebodytext">Enable prompting.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15034" class="jumptemplate" title="localnode.prompts4882" href="15017.html" target="_self">localnode.prompts4882</a></p>
+<p class="listcommand"><a id="h15038" class="jumptemplate" title="localnode.showerrors" href="15022.html" target="_self">localnode.showerrors</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

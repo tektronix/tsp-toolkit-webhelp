@@ -1,0 +1,208 @@
+<html>
+<head>
+<title> bufferVar.statuses </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19919.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15135.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">bufferVar.statuses</h2>
+<p class="bodyzero">This attribute contains the status values of readings in the reading buffer.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="132"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="126"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="132"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="126"><p class="tablebodytextsmall">Clearing the buffer</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">statusInformation</span> = <span class="monospaceitalic">bufferVar</span>.statuses[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="150"><p class="codetable"><span class="monospaceitalic">statusInformation</span></p>
+</td>
+<td width="444"><p class="tablebodytext">The status value when reading <span class="monospaceitalic">N</span> of the specified buffer was acquired </p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="150"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td width="444"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="150"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td width="444"><p class="tablebodytext">The reading number (<code class="monospace">1</code> to <span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This read&#8209;only buffer recall attribute is like an array (a Lua table) of the status values for all of the readings in the buffer. The status values are floating-point numbers that encode the status value; see the following table for values. </p>
+<p class="iclbody">For dedicated reading buffers, all buffer attributes are saved to nonvolatile memory only when the reading buffer is saved to nonvolatile memory.</p>
+<table class="tableintopic" width="558" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="48" height="0"></td>
+<td width="120" height="0"></td>
+<td width="67" height="0"></td>
+<td width="322" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<td colspan="4" width="558"><p class="tableheadingsmall">Buffer status bits</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tableheadingsmall">Bit</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tableheadingsmall">Name</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tableheadingsmall">Hex value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tableheadingsmall">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">FastADC</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tablebodytext">0x01</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tablebodytext">Fast ADC was used to make the reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Overtemp</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tablebodytext">0x02</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tablebodytext">Over temperature condition</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">AutoRangeMeas</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tablebodytext">0x04</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tablebodytext">Measure range was autoranged</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">AutoRangeSrc</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tablebodytext">0x08</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tablebodytext">Source range was autoranged</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">4Wire</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tablebodytext">0x10</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tablebodytext">4-wire (remote) sense mode enabled</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Rel</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tablebodytext">0x20</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tablebodytext">Rel applied to reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Compliance</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tablebodytext">0x40</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tablebodytext">Source function in compliance</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="120"><p class="tablebodytext">Filtered</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tablebodytext">0x80</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="323"><p class="tablebodytext">Reading was filtered</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody"></p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h20169" class="jumptemplate" title="bufferVar.measurefunctions" href="19914.html" target="_self">bufferVar.measurefunctions</a></p>
+<p class="listcommand"><a id="h20170" class="jumptemplate" title="bufferVar.measureranges" href="19915.html" target="_self">bufferVar.measureranges</a></p>
+<p class="listcommand"><a id="h15230" class="jumptemplate" title="bufferVar.n" href="15134.html" target="_self">bufferVar.n</a></p>
+<p class="listcommand"><a id="h20171" class="jumptemplate" title="bufferVar.readings" href="19920.html" target="_self">bufferVar.readings</a></p>
+<p class="listcommand"><a id="h20169_2" class="jumptemplate" title="bufferVar.measurefunctions" href="19914.html" target="_self">bufferVar.measurefunctions</a></p>
+<p class="listcommand"><a id="h20170_2" class="jumptemplate" title="bufferVar.measureranges" href="19915.html" target="_self">bufferVar.measureranges</a></p>
+<p class="listcommand"><a id="h20173" class="jumptemplate" title="bufferVar.timestamps" href="19922.html" target="_self">bufferVar.timestamps</a></p>
+<p class="listcommand"><a id="h13654" class="jumptemplate" title="Reading buffers" href="13629.html" target="_self">Reading buffers</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

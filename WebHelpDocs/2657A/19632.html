@@ -1,0 +1,111 @@
+<html>
+<head>
+<title> Measure auto delay </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="12893.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19571.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h3 class="heading3">Measure auto delay</h3>
+<p class="bodytext">The measure delay is a specific delay applied before each measurement is taken. This delay is set to the auto delay by default (see table). You can change the default delay by setting the <a id="h15208" class="jumptemplate" title="smuX.measure.delay" href="15111.html" target="_self">smuX.measure.delay</a> attribute either to a specific value or to an auto delay setting (set <code class="monospace">smua.measure.delay = smua.DELAY_AUTO</code>). If the measure delay is set to the auto delay setting, a range-dependent delay is applied each time the instrument performs a current measurement. This delay also happens for the measurement that is taken after changing current ranges during an autoranged measurement. The following table contains the measure auto delays associated with each current range.</p>
+<table class="tableintopic" width="366" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tableheadingsmall">Range</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tableheadingsmall">Measure auto delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">120 mA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">0.1 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">20 mA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">0.1 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">2 mA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">0.5 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">1 mA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">0.5 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">100 <span class="symbols">m</span>A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">1 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">10 <span class="symbols">m</span>A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">1 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">1 <span class="symbols">m</span>A</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">2 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">100 nA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">15 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">10 nA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">150 ms</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">1 nA</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="210"><p class="tablebodytextsmall">1 s</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext">You can increase or decrease the auto delay by changing the delay factor (for example, to reduce the delay across all ranges by half, set <code class="monospace">smua.measure.delayfactor = 0.5</code>). For additional information, refer to <a id="h15209" class="jumptemplate" title="smuX.measure.delayfactor" href="15112.html" target="_self">smuX.measure.delayfactor</a> in the &quot;Remote commands&quot; section.</p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>

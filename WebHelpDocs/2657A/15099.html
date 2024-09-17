@@ -1,0 +1,156 @@
+<html>
+<head>
+<title> smuX.contact.calibratehi() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<style type="text/css">
+div.kpos {width:654px; left:0px; position:fixed;}
+table {border:1px solid #C0C0C0; padding-left:0px; float:none; clear:both;}
+td  {border:1px solid #C0C0C0;  padding-left:0px;}
+p.iclsubheading {clear:both;}
+p.iclspacing {clear:both; padding-left:55px;}
+p.iclcode {clear:both; padding-left:55px;}
+p.iclbody {clear:both; padding-left:55px;}
+h2.heading2-icl {clear:both; }
+br {clear:both;}
+hr {clear:both;}
+
+</style>
+</head>
+<body>
+<div class="kpos">
+
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15092.html" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15100.html" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">smuX.contact.calibratehi()</h2>
+<p class="bodyzero">This function calibrates the high/sense high contact check measurement.</p>
+<table class="tableintopic" width="660" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="102"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="102"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="198"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="102"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="198"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smu<em class="emphasis">X</em>.contact.calibratehi(<em class="emphasis">cp1Measured</em>, <em class="emphasis">cp1Reference</em>, <em class="emphasis">cp2Measured</em>,<em class="emphasis"> cp2Reference</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td width="456"><p class="tablebodytext">Source&#8209;measure unit (SMU) channel (for example, <code class="monospace">smua.contact.calibratehi()</code> applies to SMU channel A)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">cp1Measured</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The value measured by this SMU for calibration point 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">cp1Reference</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The reference measurement for calibration point 1 as measured externally</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">cp2Measured</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The value measured by this SMU for calibration point 2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td width="138"><p class="tablebodytext"><span class="monospaceitalic">cp2Reference</span></p>
+</td>
+<td width="456"><p class="tablebodytext">The reference measurement for calibration point 2 as measured externally</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Contact check measurement calibration does not require range information.</p>
+<p class="iclbody">Typically, calibration points one and two will be near 0 <span class="symbols">W </span>and 50 <span class="symbols">W, </span>respectively.</p>
+<p class="iclbody">All four measurements (<span class="monospaceitalic">cp1Measured</span>, <span class="monospaceitalic">cp1Reference</span>, <span class="monospaceitalic">cp2Measured</span>, and <span class="monospaceitalic">cp2Reference</span>) must be made with the active calibration set. If not, corruption of the calibration constants may result.</p>
+<p class="iclbody">The new calibration constants will be activated immediately but are not written to nonvolatile storage. Use <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.save()</code> to save the new constants to nonvolatile storage. The active calibration constants will stay in effect until the instrument is power cycled or a calibration set is loaded from nonvolatile storage with the <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.restore()</code> function.</p>
+<p class="iclbody">This function will be disabled until a successful call to <code class="monospace">smu</code><span class="monospaceitalic">X</span><code class="monospace">.cal.unlock()</code> is made.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" width="474"><p class="codetable">-- Short SENSE LO and LO terminals</p>
+<p class="codetable">-- Short SENSE HI and HI terminals</p>
+<p class="codetable">-- Allow readings to settle, then get measurements</p>
+<p class="codetable">r0_hi, r0_lo = smua.contact.r()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Connect 50 OHM resistor between SENSE LO and LO</p>
+<p class="codetable">-- Connect 50 OHM resistor between SENSE HI and HI</p>
+<p class="codetable">-- Allow readings to settle, then get measurements</p>
+<p class="codetable">r50_hi, r50_lo = smua.contact.r()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.contact.calibratelo(r0_lo, Z_actual_lo, r50_lo,</p>
+<p class="codetable">   50_ohm_actual_lo)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">smua.contact.calibratehi(r0_hi, Z_actual_hi, r50_hi,</p>
+<p class="codetable">   50_ohm_actual_hi)</p>
+</td>
+<td width="120"><p class="tablebodytext">Performs contact</p>
+<p class="tablebodytext">check on SMU</p>
+<p class="tablebodytext">channel A.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Install and measure</p>
+<p class="tablebodytext">two resisters.</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Sends contact check LO calibration</p>
+<p class="tablebodytext">command.</p>
+<p class="tablebodytext"><br></p>
+<p class="tablebodytext">Send contact check HI calibration command.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17699" class="jumptemplate" title="Adjustment" href="19563.html" target="_self">Adjustment</a></p>
+<p class="listcommand"><a id="h15192" class="jumptemplate" title="smuX.cal.restore()" href="15090.html" target="_self">smuX.cal.restore()</a></p>
+<p class="listcommand"><a id="h15193" class="jumptemplate" title="smuX.cal.save()" href="15091.html" target="_self">smuX.cal.save()</a></p>
+<p class="listcommand"><a id="h15195" class="jumptemplate" title="smuX.cal.unlock()" href="15092.html" target="_self">smuX.cal.unlock()</a></p>
+<p class="listcommand"><a id="h15197" class="jumptemplate" title="smuX.contact.calibratelo()" href="15100.html" target="_self">smuX.contact.calibratelo()</a></p>
+
+
+
+<br/>
+<hr/>
+<p class="bodytext">Copyright (c) 2007-2012, Keithley Instruments, Inc.  All rights reserved.</p>
+</div>
+</body>
+
+</html>
