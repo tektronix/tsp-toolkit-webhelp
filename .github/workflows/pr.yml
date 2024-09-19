@@ -19,13 +19,13 @@ jobs:
       - name: Tool Versions
         run: npm --version
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: npm Package
         run: |
           cd WebHelpDocs
           npm pack
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4
         with:
           name: WebHelpDocs
           path: ./WebHelpDocs/*.tgz
@@ -46,27 +46,15 @@ jobs:
     steps:
       - name: Tool Versions
         run: npm --version
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@tektronix'
       - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          set-safe-directory: '*'
-      # - name: Get Tagged Version
-      #   id: lasttag
-      #   run: |
-      #     V="${GITHUB_REF#refs/tags/v}"
-      #     CL="${V%-*}"
-      #     echo "version=${V}" >> $GITHUB_OUTPUT
-      #     echo "cl_version=${CL}" >> $GITHUB_OUTPUT
-      #     # set version to RC version if this is a tagged build
-      #     npm version --no-git-tag-version --allow-same-version "$V"
-      #   if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/checkout@v4
       - name: Get Artifacts
-        uses: actions/download-artifact@v4.1.8
+        uses: actions/download-artifact@v4
         with:
           name: WebHelpDocs
       - name: publish pack
@@ -83,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Get Tagged Version
         id: lasttag
         run: |
@@ -100,7 +88,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           name: ${{steps.lasttag.outputs.version}}
-          artifacts: target/*,sbom/**/*
           body: |
             ## Features Requests / Bugs
 
@@ -114,7 +101,9 @@ jobs:
 
             ${{steps.changelog.outputs.description}}
 
-          prerelease: true
+          prerelease: ${{(! github.event.pull_request.merged) || (github.event.pull_request.merged && ! contains(github.head_ref, 'release/'))}}
+          commit: ${{steps.lasttag.outputs.commit}}
           makeLatest: true
+          tag: ${{steps.lasttag.outputs.version}}
 
 
