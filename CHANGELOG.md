@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "keithley_instrument_libraries" npm package will be documented in this file.
+All notable changes to the "web-help-documents" npm package will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
