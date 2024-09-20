@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> display.getcursor() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14719.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="92660.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t14700" class="heading2-icl">display.getcursor()</h2>
+<p class="bodyzero">This function reads the present position of the cursor on the front-panel display.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">row</em>, <em class="emphasis">column</em>, <em class="emphasis">style</em> = display.getcursor()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">row</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The row where the cursor is: <code class="monospace">1</code> (top row); <code class="monospace">2</code> (bottom row)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">column</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The column where the cursor is:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">If the cursor is in the top row: 1 to 20</li><li class="tablelistbullet9pt">If the cursor is in the bottom row: 1 to 32</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">style</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Visibility of the cursor:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Invisible: <code class="monospace">0</code></li><li class="tablelistbullet9pt">Blinking: <code class="monospace">1</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function switches the front-panel display to the user screen (the text set by <code class="monospace">display.settext()</code>), and then returns values to indicate the cursor's row and column position and cursor&nbsp;style.</p>
+<p class="iclbody">Columns are numbered from left to right on the display.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="360"><p class="codetable"><code class="monospace">testRow, testColumn = display.getcursor()</code></p>
+<p class="codetable"><code class="monospace">print(testRow, testColumn)</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">This example reads the cursor position into local variables and prints them. Example output:</p>
+<p class="codetable">1.00000e+00     1.00000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="360"><p class="codetable"><code class="monospace">print(display.getcursor())</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">This example prints the cursor position directly. In this example, the cursor is in row 1 at column 3, with an invisible cursor:</p>
+<p class="codetable">1.00000e+00   3.00000e+00   0.00000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h14722" class="jump" title="display.gettext()" href="14702.htm" target="_self">display.gettext()</a></p>
+<p class="listcommand"><a id="h14744" class="jump" title="display.screen" href="92282.htm" target="_self">display.screen</a></p>
+<p class="listcommand"><a id="h14730" class="jump" title="display.setcursor()" href="14711.htm" target="_self">display.setcursor()</a></p>
+<p class="listcommand"><a id="h677" class="jump" title="display.settext()" href="14712.htm" target="_self">display.settext()</a></p>
+
+
+<input id="topicId" type="hidden" value="14700" />
+<input id="topicDescription" type="hidden" value="display.getcursor()" />
+<input id="footer-modified" type="hidden" value="Last modified: 12/19/2019 1:53:01 PM" />
+</body>
+</html>

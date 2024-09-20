@@ -1,0 +1,127 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.trigger.source.logY() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15181.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="91678.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t15182" class="heading2-icl">smua.trigger.source.logY()</h2>
+<p class="bodyzero">This function configures an exponential (geometric) source sweep.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smua.trigger.source.log<span class="monospaceitalic"><span class="monospaceitalic">Y</span></span>(<span class="monospaceitalic"><span class="monospaceitalic">startValue</span></span>, <span class="monospaceitalic"><span class="monospaceitalic">endValue</span></span>, <span class="monospaceitalic"><span class="monospaceitalic">points</span></span>, <span class="monospaceitalic"><span class="monospaceitalic">asymptote</span></span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">SMU source function (<code class="monospace"><code class="monospace">v</code></code> = voltage, <code class="monospace"><code class="monospace">i</code></code> = current)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">startValue</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source value of the first point</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">endValue</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Source value of the last point</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">points</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of points used to calculate the step size</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">asymptote</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The asymptotic offset value</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function configures the source action to be a geometric source sweep in a subsequent sweep. During the sweep, the source generates a geometric series of ascending or descending voltage or current changes called steps. Each step is larger or smaller than the previous step by a fixed proportion. The constant of proportionality is determined by the starting value, the ending value, the asymptote, and the number of steps in the sweep. The number of source steps is one less than the number of sourced <span class="monospaceitalic"><span class="monospaceitalic">points</span></span>.</p>
+<p class="iclbody">The <span class="monospaceitalic"><span class="monospaceitalic">points</span></span> parameter does not set the number of steps in a sweep, but rather is used to calculate source values within a subsequent sweep. If the subsequent sweep has more points than specified in <span class="monospaceitalic"><span class="monospaceitalic">points</span></span>, the source restarts at the beginning. This means that if the trigger count is greater than the number of points in a sweep as configured, the SMU satisfies the trigger count by restarting the sweep values from the beginning. </p>
+<p class="iclbody">If the subsequent sweep has fewer points than specified in <span class="monospaceitalic"><span class="monospaceitalic">points</span></span>, <span class="monospaceitalic"><span class="monospaceitalic">endValue</span></span> is not reached during the sweep. This means that if the trigger count is less than the number of source values configured, the SMU satisfies the trigger count and ignores the remaining source values.</p>
+<p class="iclbody">In cases where the first sweep point is nonzero, it may be necessary to pre-charge the circuit so that the sweep returns a stable value for the first measured point without penalizing remaining points in the sweep.</p>
+<p class="iclbody">With logarithmic sweeps, it is usually necessary to allow the source to autorange to maintain good source accuracy when sweeping over more than one decade or across range boundaries.</p>
+<p class="iclbody">The <span class="monospaceitalic"><span class="monospaceitalic">asymptote</span></span> parameter can be used to customize the inflection and offset of the source value curve. This allows log sweeps to cross zero. Setting this parameter to zero provides a conventional logarithmic sweep. The <span class="monospaceitalic"><span class="monospaceitalic">asymptote</span></span> value is the value that the curve has at either positive or negative infinity, depending on the direction of the sweep.</p>
+<p class="iclbody">The <span class="monospaceitalic"><span class="monospaceitalic">asymptote</span></span> value must not be equal to or between the starting and ending values. It must be outside the range defined by the starting and ending values.</p>
+<p class="iclbody">The SMU stores only the most recent configured source action. The last call to <code class="monospace">smua.trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, <code class="monospace">smua.trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, or <code class="monospace">smua.trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> is used for the source action.</p>
+<p class="iclbody">Source functions cannot be changed within a sweep.</p>
+<p class="iclbody">After configuring the sweep source values, enable the source action by setting <code class="monospace">smua.trigger.source.action</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="350"><p class="codetable">smua.trigger.source.logv(1, 10, 11, 0)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tablebodytext">Sweeps from 1&nbsp;V to 10&nbsp;V in 10 steps with an asymptote of 0&nbsp;V.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15269" class="jump" title="smua.trigger.source.action" href="15178.htm" target="_self">smua.trigger.source.action</a></p>
+<p class="listcommand"><a id="h15271" class="jump" title="smua.trigger.source.linearY()" href="15180.htm" target="_self">smua.trigger.source.linearY()</a></p>
+<p class="listcommand"><a id="h15272" class="jump" title="smua.trigger.source.listY()" href="15181.htm" target="_self">smua.trigger.source.listY()</a></p>
+<p class="listcommand"><a id="h12329" class="jump" title="Sweep operation" href="19550.htm" target="_self">Sweep operation</a></p>
+
+
+<input id="topicId" type="hidden" value="15182" />
+<input id="topicDescription" type="hidden" value="smua.trigger.source.logY()" />
+<input id="footer-modified" type="hidden" value="Last modified: 2/4/2020 8:22:11 AM" />
+</body>
+</html>

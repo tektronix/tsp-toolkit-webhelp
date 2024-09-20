@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.cal.polarity </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15096.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15090.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t93060" class="heading2-icl">smua.cal.polarity</h2>
+<p class="bodyzero">This attribute controls which calibration constants are used for all subsequent&nbsp;measurements.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>SMU calibration lock<br>Recall setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0 (smua.CAL_AUTO)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">calPolarity</em> = smua.cal.polarity</p>
+<p class="iclcode">smua.cal.polarity = <em class="emphasis">calPolarity</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic"><span class="monospaceitalic">calPolarity</span></span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The polarity to use for measurements. Set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">0</code></code> or <code class="monospace">smua.CAL_AUTO</code>: Automatic polarity detection</li><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">1</code></code> or <code class="monospace">smua.CAL_POSITIVE</code>: Measure with positive polarity calibration&nbsp;constants</li><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">2</code></code> or <code class="monospace">smua.CAL_NEGATIVE</code>: Measure with negative polarity calibration&nbsp;constants</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute controls which polarity calibration constants are used to make all subsequent measurements.</p>
+<p class="iclbody">This attribute does not affect the <code class="monospace">smua.measure.calibrate</code><span class="monospaceitalic">Y</span><code class="monospace">()</code> and <code class="monospace"><code class="monospace">smua.pulser.measure.calibrate</code></code><span class="monospaceitalic"><span class="monospaceitalic">Y</span></span><code class="monospace"><code class="monospace">()</code></code> commands. The polarity for the measure calibrate commands is dictated by their range parameters. The measure calibration commands require the measurements provided to have been made using the polarity being calibrated.</p>
+<p class="iclbody">When making measurements for points far away from zero, the desired polarity constants are inherently used. However, when making measurements near zero, it is possible that the instrument could use the calibration constants from the wrong polarity. Setting <code class="monospace">smua.cal.polarity</code> to positive or negative forces measurements to be made using the calibration constants for a given polarity, rather than basing the choice on the raw measurement data.</p>
+<p class="iclbody">This attribute can only be set to positive or negative when calibration is unlocked. This attribute is automatically set to <code class="monospace">smua.CAL_AUTO</code> when calibration is locked.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.cal.polarity = smua.CAL_POSITIVE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Selects positive calibration constants for all subsequent measurements.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17699" class="jump" title="Adjustment" href="19563.htm" target="_self">Adjustment</a></p>
+<p class="listcommand"><a id="h13937" class="jump" title="reset()" href="13933.htm" target="_self">reset()</a></p>
+<p class="listcommand"><a id="h15189" class="jump" title="smua.cal.lock()" href="15089.htm" target="_self">smua.cal.lock()</a></p>
+<p class="listcommand"><a id="h15195" class="jump" title="smua.cal.unlock()" href="15092.htm" target="_self">smua.cal.unlock()</a></p>
+<p class="listcommand"><a id="h15207" class="jump" title="smua.measure.calibrateY()" href="15109.htm" target="_self">smua.measure.calibrateY()</a></p>
+<p class="listcommand"><a id="h91943" class="jump" title="smua.pulser.measure.calibrateY()" href="91895.htm" target="_self">smua.pulser.measure.calibrateY()</a></p>
+<p class="listcommand"><a id="h15232" class="jump" title="smua.reset()" href="15136.htm" target="_self">smua.reset()</a></p>
+
+
+<input id="topicId" type="hidden" value="93060" />
+<input id="topicDescription" type="hidden" value="smua.cal.polarity" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/2/2020 11:20:45 AM" />
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.cal.adjustdate </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="18556.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15094.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t15093" class="heading2-icl">smua.cal.adjustdate</h2>
+<p class="bodyzero">This attribute stores the date of the last calibration adjustment.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU cal. restore</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">SMU nonvolatile memory</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Initially set to factory<br>calibration&nbsp;date</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">adjustDate</em> = smua.cal.adjustdate</p>
+<p class="iclcode">smua.cal.adjustdate = <em class="emphasis">adjustDate</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">adjustDate</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Date of the last adjustment</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute stores the adjustment date associated with the active calibration set. The adjustment date can be read at any time but can only be assigned a new value when calibration has been enabled with the <code class="monospace">smua.cal.unlock()</code> function.</p>
+<p class="iclbody">You cannot change the adjustment date without first making a change to the calibration constants.</p>
+<p class="iclbody">Once you change any calibration constants, you must set the adjustment date before you can save the calibration data to the nonvolatile memory of the SMU.</p>
+<p class="iclbody">This attribute is stored with the active calibration set. If a different calibration set is restored, this attribute reflects the date stored with that set.</p>
+<p class="iclbody"><code class="monospace">smua.cal.adjustdate</code> must be set to the date the adjustment was done using the UTC time and date. The date is stored as the number of seconds since UTC, 12:00&nbsp;am&nbsp;Jan&nbsp;1,&nbsp;1970.</p>
+<p class="iclbody">Due to the internal storage format, <code class="monospace">smua.cal.adjustdate</code> is only accurate to within a few minutes of the value set.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">smua.cal.adjustdate = os.time()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Sets the adjustment date to the current time set on the&nbsp;instrument.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17699" class="jump" title="Adjustment" href="19563.htm" target="_self">Adjustment</a></p>
+<p class="listcommand"><a id="h29092" class="jump" title="os.time()" href="25959.htm" target="_self">os.time()</a></p>
+<p class="listcommand"><a id="h15187" class="jump" title="smua.cal.date" href="15094.htm" target="_self">smua.cal.date</a></p>
+<p class="listcommand"><a id="h15188" class="jump" title="smua.cal.due" href="15095.htm" target="_self">smua.cal.due</a></p>
+<p class="listcommand"><a id="h15189" class="jump" title="smua.cal.lock()" href="15089.htm" target="_self">smua.cal.lock()</a></p>
+<p class="listcommand"><a id="h15192" class="jump" title="smua.cal.restore()" href="15090.htm" target="_self">smua.cal.restore()</a></p>
+<p class="listcommand"><a id="h15193" class="jump" title="smua.cal.save()" href="15091.htm" target="_self">smua.cal.save()</a></p>
+<p class="listcommand"><a id="h15194" class="jump" title="smua.cal.state" href="15098.htm" target="_self">smua.cal.state</a></p>
+<p class="listcommand"><a id="h15195" class="jump" title="smua.cal.unlock()" href="15092.htm" target="_self">smua.cal.unlock()</a></p>
+
+
+<input id="topicId" type="hidden" value="15093" />
+<input id="topicDescription" type="hidden" value="smua.cal.adjustdate" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/3/2020 9:52:54 AM" />
+</body>
+</html>

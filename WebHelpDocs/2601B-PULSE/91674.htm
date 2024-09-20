@@ -1,0 +1,96 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.pulser.enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="92706.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="91672.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t91674" class="heading2-icl">smua.pulser.enable</h2>
+<p class="bodyzero">This attribute enables or disables the 2601B-PULSE pulser.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smua.DISABLE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">enable</span> = smua.pulser.enable</p>
+<p class="iclcode">smua.pulser.enable = <span class="monospaceitalic">enable</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">enable</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Enable or disable the pulser; set to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">smua.DISABLE</code>: Conventional pulsing and full source-measure unit (SMU)&nbsp;functionality</li><li class="tablelistbullet9pt"><code class="monospace">smua.ENABLE</code>: Allow fast-edge pulsing using the trigger model</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">When the pulser is enabled, there are the following differences in source-measure unit (SMU) functionality:</p>
+<ul class="listbullet"><li class="listbullet">You can only source current (not voltage).</li><li class="listbullet">If the output exceeds a maximum pulse width, maximum duty cycle, or the specified protection level during a sweep, the 2601B-PULSE output is shorted, but the sweep continues with no source output until it is finished.</li><li class="listbullet">Some SMU settings are ignored; see <a id="h91980" class="jump" title="Settings ignored when the pulser is enabled" href="91979.htm" target="_self">Settings ignored when the pulser is enabled</a> for details.</li><li class="listbullet">The <code class="monospace">smua.trigger.source.pulsewidth</code> and <code class="monospace">smua.pulser.measure.delay</code> attributes provide more precise timing than you can achieve using the <code class="monospace">smua.trigger.endpulse.stimulus</code> and <code class="monospace">smua.trigger.measure.stimulus</code> attributes.</li><li class="listbullet">Some of the output-off modes behave differently:<ul class="listbullet2"><li class="listbullet2"><strong class="specialbold">OUTPUT_NORMAL:</strong> The output circuit is shorted when this output-off mode is&nbsp;selected.</li><li class="listbullet2"><strong class="specialbold">OUTPUT_ZERO:</strong> The output circuit is shorted and current cannot be measured when this output-off mode is&nbsp;selected.</li></ul></li><li class="listbullet">You cannot use contact check.</li><li class="listbullet">You cannot make measurements when the output is off.</li></ul><p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">smua.pulser.enable = smua.ENABLE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Enable the pulser.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h92657" class="jump" title="Pulser operation" href="93214.htm" target="_self">Pulser operation</a></p>
+<p class="listcommand"><a id="h91969" class="jump" title="smua.pulser.measure.delay" href="91673.htm" target="_self">smua.pulser.measure.delay</a></p>
+<p class="listcommand"><a id="h91679" class="jump" title="smua.trigger.source.pulsewidth" href="91678.htm" target="_self">smua.trigger.source.pulsewidth</a></p>
+
+
+<input id="topicId" type="hidden" value="91674" />
+<input id="topicDescription" type="hidden" value="smua.pulser.enable" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/10/2020 2:36:27 PM" />
+</body>
+</html>

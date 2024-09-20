@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> bufferVar.measurefunctions </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="18552.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19915.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t19914" class="heading2-icl">bufferVar.measurefunctions</h2>
+<p class="bodyzero">This attribute contains the measurement function that was used to acquire a reading stored in a specified reading&nbsp;buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Clearing the buffer</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">measurefunction</span> = <span class="monospaceitalic">bufferVar</span>.measurefunctions[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">measurefunction</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function used (<code class="monospace">Current</code>, <code class="monospace">Voltage</code>, <code class="monospace">Ohms</code>, or <code class="monospace">Watts</code>) to acquire reading number <span class="monospaceitalic">N</span> in the specified buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated buffer (user-defined), or a dedicated reading buffer (such as <code class="monospace">smua.nvbuffer1</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading number (<code class="monospace">1</code> to <span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">The <code class="monospace">measurefunctions</code> buffer recall attribute is like an array (a Lua table) of strings indicating the function measured for the reading.</p>
+<p class="iclbody">For dedicated reading buffers, all buffer attributes are saved to nonvolatile memory only when the reading buffer is saved to nonvolatile memory.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">measurefunction = smua.nvbuffer1.measurefunctions[5]</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Store the measure function used to make reading number&nbsp;5.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">printbuffer(1, 5, smua.nvbuffer1.measurefunctions)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Print the measurement function that was used to measure the first five readings saved in dedicated reading buffer&nbsp;1.</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">Current, Current, Current, Current, Current</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h20170" class="jump" title="bufferVar.measureranges" href="19915.htm" target="_self">bufferVar.measureranges</a></p>
+<p class="listcommand"><a id="h15230" class="jump" title="bufferVar.n" href="15134.htm" target="_self">bufferVar.n</a></p>
+<p class="listcommand"><a id="h20171" class="jump" title="bufferVar.readings" href="19920.htm" target="_self">bufferVar.readings</a></p>
+<p class="listcommand"><a id="h20175" class="jump" title="bufferVar.sourcefunctions" href="19916.htm" target="_self">bufferVar.sourcefunctions</a></p>
+<p class="listcommand"><a id="h20176" class="jump" title="bufferVar.sourceoutputstates" href="19917.htm" target="_self">bufferVar.sourceoutputstates</a></p>
+<p class="listcommand"><a id="h20177" class="jump" title="bufferVar.sourceranges" href="19918.htm" target="_self">bufferVar.sourceranges</a></p>
+<p class="listcommand"><a id="h20178" class="jump" title="bufferVar.sourcevalues" href="19919.htm" target="_self">bufferVar.sourcevalues</a></p>
+<p class="listcommand"><a id="h20172" class="jump" title="bufferVar.statuses" href="92702.htm" target="_self">bufferVar.statuses</a></p>
+<p class="listcommand"><a id="h20173" class="jump" title="bufferVar.timestamps" href="19922.htm" target="_self">bufferVar.timestamps</a></p>
+<p class="listcommand"><a id="h13654" class="jump" title="Overview" href="13629.htm" target="_self">Reading buffers</a></p>
+
+
+<input id="topicId" type="hidden" value="19914" />
+<input id="topicDescription" type="hidden" value="bufferVar.measurefunctions" />
+<input id="footer-modified" type="hidden" value="Last modified: 2/3/2020 1:41:46 PM" />
+</body>
+</html>

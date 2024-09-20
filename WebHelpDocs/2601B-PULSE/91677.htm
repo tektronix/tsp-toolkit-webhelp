@@ -1,0 +1,164 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.pulser.rangeY </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="91676.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="91897.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t91677" class="heading2-icl">smua.pulser.rangeY</h2>
+<p class="bodyzero">This attribute sets the source and measure ranges when the pulser is&nbsp;enabled.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Current: 10 A<br>Voltage: 10 V</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">range</span> = smua.pulser.rangei</p>
+<p class="iclcode"><span class="monospaceitalic">range</span> = smua.pulser.rangev</p>
+<p class="iclcode">smua.pulser.rangei = <span class="monospaceitalic">range</span></p>
+<p class="iclcode">smua.pulser.rangev = <span class="monospaceitalic">range</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">range</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source and measure range</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When you set a value for the range, the 2601B-PULSE automatically sets the range as appropriate for the specified&nbsp;value.</p>
+<p class="iclbody">This attribute setting affects the settings that are allowed for the <code class="monospace">smua.pulser.protect.sensev</code> attribute, which must be between 5&nbsp;percent and 200&nbsp;percent of the voltage range.</p>
+<p class="bodytext">The following table lists the pulser limits for the voltage and current functions.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="276"><p class="tableheading">Voltage range</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tableheading">Source</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="180"><p class="tableheading">Measure</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-top:1px solid #D3D3D3;" width="276"><p class="tablebodytext">5&nbsp;V</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-top:1px solid #D3D3D3;" width="144"><p class="tablebodytext">Not applicable</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-top:1px solid #D3D3D3;" width="180"><p class="tablebodytext">5.1&nbsp;V</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="276"><p class="tablebodytext">10 V</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="144"><p class="tablebodytext">Not applicable</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="180"><p class="tablebodytext">10.2&nbsp;V</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #D3D3D3;border-top:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="276"><p class="tableheading">Current ranges</p>
+</td>
+<td style="border-top:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="144"><p class="tablebodytext">&nbsp;</p>
+</td>
+<td style="border-right:1px solid #D3D3D3;border-top:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="180"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-top:1px solid #D3D3D3;" width="276"><p class="tablebodytext">1&nbsp;A</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-top:1px solid #D3D3D3;" width="144"><p class="tablebodytext">±1.01&nbsp;A</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-top:1px solid #D3D3D3;" width="180"><p class="tablebodytext">±1.02&nbsp;A</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;" width="276"><p class="tablebodytext">5&nbsp;A</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;" width="144"><p class="tablebodytext">±5.05&nbsp;A</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;" width="180"><p class="tablebodytext">±5.1&nbsp;A</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;" width="276"><p class="tablebodytext">10&nbsp;A</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;" width="144"><p class="tablebodytext">±10.1&nbsp;A</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;" width="180"><p class="tablebodytext">±10.2&nbsp;A</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="276"><p class="tablebodytext">250 mA (DC bias)</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="144"><p class="tablebodytext">±250&nbsp;mA</p>
+</td>
+<td style="border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;border-bottom:1px solid #D3D3D3;" width="180"><p class="tablebodytext">Selected pulse measure range</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">The settings for this attribute are ignored if the pulser is disabled.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">smua.pulser.rangei = 1</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Set the pulser current range to 1 A.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h91691" class="jump" title="smua.pulser.protect.sensev" href="91675.htm" target="_self">smua.pulser.protect.sensev</a></p>
+
+
+<input id="topicId" type="hidden" value="91677" />
+<input id="topicDescription" type="hidden" value="smua.pulser.rangeY" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/14/2020 9:44:23 AM" />
+</body>
+</html>

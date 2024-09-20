@@ -1,0 +1,198 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> tsplink.trigger[N].mode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15294.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15296.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t15295" class="heading2-icl">tsplink.trigger[N].mode</h2>
+<p class="bodyzero">This attribute defines the trigger operation and detection mode. </p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Recall setup<br>TSP-Link trigger N reset</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0 (tsplink.TRIG_BYPASS)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">mode</em> = tsplink.trigger[<em class="emphasis">N</em>].mode</p>
+<p class="iclcode">tsplink.trigger[<em class="emphasis">N</em>].mode = <em class="emphasis">mode</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">mode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger mode</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger line (1 to 3)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute controls the mode in which the trigger event detector and the output trigger generator operate on the given trigger line.</p>
+<p class="iclbody">The setting for <span class="monospaceitalic">mode</span> can be one of the following values:</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tableheading">Mode</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tableheading">Number value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_BYPASS</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">0</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">Allows direct control of the line as a digital I/O line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_FALLING</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">1</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">Detects falling-edge triggers as input. Asserts a TTL-low pulse for output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_RISING</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">2</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">If the programmed state of the line is high, the <code class="monospace">tsplink.TRIG_RISING</code> mode behaves similarly to <code class="monospace">tsplink.TRIG_RISINGA</code>.</p>
+<p class="tablebodytext">If the programmed state of the line is low, the <code class="monospace">tsplink.TRIG_RISING</code> mode behaves similarly to <code class="monospace">tsplink.TRIG_RISINGM</code>.</p>
+<p class="tablebodytext">Use <code class="monospace">tsplink.TRIG_RISINGA</code> if the line is in the high output state.</p>
+<p class="tablebodytext">Use <code class="monospace">tsplink.TRIG_RISINGM</code> if the line is in the low output state.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_EITHER</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">3</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">Detects rising- or falling-edge triggers as input. Asserts a TTL-low pulse for output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_SYNCHRONOUSA</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">4</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">Detects the falling-edge input triggers and automatically latches and drives the trigger line low.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_SYNCHRONOUS</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">5</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">Detects the falling-edge input triggers and automatically latches and drives the trigger line low. Asserts a TTL-low pulse as an output trigger.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_SYNCHRONOUSM</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">6</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">Detects rising-edge triggers as an input. Asserts a TTL-low pulse for output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_RISINGA</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">7</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">Detects rising-edge triggers as input. Asserts a TTL-low pulse for output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext"><code class="monospace">tsplink.TRIG_RISINGM</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="58"><p class="tablebodytext"><code class="monospace">8</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="326"><p class="tablebodytext">Edge detection as an input is not available. Generates a TTL-high pulse as an output trigger.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">When programmed to any mode except <code class="monospace">tsplink.TRIG_BYPASS</code>, the output state of the I/O line is controlled by the trigger logic, and the user-specified output state of the line is&nbsp;ignored.</p>
+<p class="iclbody">When the trigger mode is set to <code class="monospace">tsplink.TRIG_RISING</code>, the user-specified output state of the line is examined. If the output state selected when the mode is changed is high, the actual mode used will be <code class="monospace">tsplink.TRIG_RISINGA</code>. If the output state selected when the mode is changed is low, the actual mode used will be <code class="monospace">tsplink.TRIG_RISINGM</code>.</p>
+<p class="iclbody"><span class="monospaceitalic">mode</span> stores the trigger mode as a numeric value when the attribute is read.</p>
+<p class="iclbody">To control the line state, use the <code class="monospace">tsplink.TRIG_BYPASS</code> mode with the <code class="monospace">tsplink.writebit()</code> and the <code class="monospace">tsplink.writeport()</code> commands.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="350"><p class="codetable">tsplink.trigger[3].mode = tsplink.TRIG_RISINGM</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="250"><p class="tablebodytext">Sets the trigger mode for synchronization line 3 to <code class="monospace">tsplink.TRIG_RISINGM</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17599" class="jump" title="digio.writebit()" href="14680.htm" target="_self">digio.writebit()</a></p>
+<p class="listcommand"><a id="h17600" class="jump" title="digio.writeport()" href="14681.htm" target="_self">digio.writeport()</a></p>
+<p class="listcommand"><a id="h12594" class="jump" title="tsplink.trigger[N].assert()" href="15292.htm" target="_self">tsplink.trigger[N].assert()</a></p>
+<p class="listcommand"><a id="h1926" class="jump" title="tsplink.trigger[N].clear()" href="15293.htm" target="_self">tsplink.trigger[N].clear()</a></p>
+<p class="listcommand"><a id="h1928" class="jump" title="tsplink.trigger[N].overrun" href="15296.htm" target="_self">tsplink.trigger[N].overrun</a></p>
+<p class="listcommand"><a id="h15317" class="jump" title="tsplink.trigger[N].release()" href="15298.htm" target="_self">tsplink.trigger[N].release()</a></p>
+<p class="listcommand"><a id="h17670" class="jump" title="tsplink.trigger[N].reset()" href="17669.htm" target="_self">tsplink.trigger[N].reset()</a></p>
+<p class="listcommand"><a id="h1930" class="jump" title="tsplink.trigger[N].stimulus" href="17682.htm" target="_self">tsplink.trigger[N].stimulus</a></p>
+<p class="listcommand"><a id="h15319" class="jump" title="tsplink.trigger[N].wait()" href="15300.htm" target="_self">tsplink.trigger[N].wait()</a></p>
+
+
+<input id="topicId" type="hidden" value="15295" />
+<input id="topicDescription" type="hidden" value="tsplink.trigger[N].mode" />
+<input id="footer-modified" type="hidden" value="Last modified: 12/31/2019 2:30:01 PM" />
+</body>
+</html>
