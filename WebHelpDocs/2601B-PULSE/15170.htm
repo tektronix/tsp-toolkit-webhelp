@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.trigger.measure.set() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15169.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15171.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t15170" class="heading2-icl">smua.trigger.measure.set()</h2>
+<p class="bodyzero">This function sets the measurement event detector to the detected state.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smua.<code class="monospace"><code class="monospace">trigger.measure.set()</code></code></p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function is useful whenever you want the SMU to continue operation without waiting for a programmed trigger event. When called, this function immediately satisfies the event detector, allowing the SMU to continue through the trigger model.</p>
+<p class="iclbody">For example, you might use this function to have the SMU immediately perform an action the first time through the trigger model, even if a programmed trigger event does not&nbsp;occur.</p>
+<p class="iclbody">If the event detectors are configured to clear automatically because the <code class="monospace">smua.trigger.autoclear</code> attribute is set to <code class="monospace">smua.ENABLE</code>, make sure that <code class="monospace">smua.trigger.measure.set()</code> is issued after the SMU has entered the trigger layer. This function can also be used to start actions on the SMU in case of a missed trigger&nbsp;event.</p>
+<p class="iclbody">The SMU automatically clears all event detectors when the <code class="monospace">smua.trigger.initiate()</code> function is executed. This function should be called after the sweep is&nbsp;initiated.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">smua.trigger.measure.set()</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Sets the measure event detector.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15252" class="jump" title="smua.trigger.arm.set()" href="15157.htm" target="_self">smua.trigger.arm.set()</a></p>
+<p class="listcommand"><a id="h15255" class="jump" title="smua.trigger.autoclear" href="15160.htm" target="_self">smua.trigger.autoclear</a></p>
+<p class="listcommand"><a id="h15258" class="jump" title="smua.trigger.endpulse.set()" href="15163.htm" target="_self">smua.trigger.endpulse.set()</a></p>
+<p class="listcommand"><a id="h15274" class="jump" title="smua.trigger.source.set()" href="15183.htm" target="_self">smua.trigger.source.set()</a></p>
+
+
+<input id="topicId" type="hidden" value="15170" />
+<input id="topicDescription" type="hidden" value="smua.trigger.measure.set()" />
+<input id="footer-modified" type="hidden" value="Last modified: 2/4/2020 3:18:23 PM" />
+</body>
+</html>

@@ -1,0 +1,132 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.pulser.measure.calibrateY() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="91672.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="91673.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t91895" class="heading2-icl">smua.pulser.measure.calibrateY()</h2>
+<p class="bodyzero">This function generates and activates new measurement calibration constants for the pulser.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smua.pulser.measure.calibrate<span class="monospaceitalic">Y</span>(<span class="monospaceitalic">range</span>, <span class="monospaceitalic">cp1Measured</span>, <span class="monospaceitalic">cp1Reference</span>, <span class="monospaceitalic">cp2Measured</span>, <span class="monospaceitalic">cp2Reference</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">range</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The pulse measurement range to adjust</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The measurement function (<code class="monospace"><code class="monospace">v</code></code> = voltage, <code class="monospace"><code class="monospace">i</code></code> = current)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">cp1Measured</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The value measured by this SMU for point 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">cp1Reference</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The reference measurement for point 1 as measured externally</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">cp2Measured</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The value measured by this SMU for point 2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">cp2Reference</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">The reference measurement for point 2 as measured externally</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function generates and activates new calibration constants for the given range. </p>
+<p class="iclbody">The positive and negative polarities of the instrument must be adjusted separately. Use a positive value for <span class="monospaceitalic">range</span> to adjust the positive polarity and a negative value for <span class="monospaceitalic">range</span> to adjust the negative polarity.</p>
+<p class="iclbody">Typically, the two points that are used are near zero for point 1 and 90% of full scale for point&nbsp;2. Full scale for point&nbsp;2 should be avoided if the source of the SMU is substantially out of calibration.</p>
+<p class="iclbody">The new calibration constants are activated immediately but they are not written to nonvolatile memory. Use the <code class="monospace">smua.cal.save()</code> function to save the new constants to nonvolatile memory. The active calibration constants stay in effect until the instrument is power cycled or a calibration set is loaded from nonvolatile memory with the <code class="monospace">smua.cal.restore()</code> function.</p>
+<p class="iclbody">This function is only available when calibration is unlocked using <code class="monospace">smua.cal.unlock()</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="594"><p class="codetable">smua.pulser.measure.calibratei(1, 0.01, 0.011, 0.75, 0.76)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="594"><p class="tablebodytext">Adjusts the current measurement using the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">1 A measurement range</li><li class="tablelistbullet9pt">0.01 for the +zero measurement reading</li><li class="tablelistbullet9pt">0.011 for the +zero DMM measurement reading</li><li class="tablelistbullet9pt">0.75 for the + full-scale measurement reading</li><li class="tablelistbullet9pt">0.76 for the + full-scale DMM measurement reading</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h10647" class="jump" title="Calibration" href="19570.htm" target="_self">Calibration</a></p>
+<p class="listcommand"><a id="h15192" class="jump" title="smua.cal.restore()" href="15090.htm" target="_self">smua.cal.restore()</a></p>
+<p class="listcommand"><a id="h15193" class="jump" title="smua.cal.save()" href="15091.htm" target="_self">smua.cal.save()</a></p>
+<p class="listcommand"><a id="h15195" class="jump" title="smua.cal.unlock()" href="15092.htm" target="_self">smua.cal.unlock()</a></p>
+<p class="listcommand"><a id="h91971" class="jump" title="smua.pulser.source.calibratebiasi()" href="91897.htm" target="_self">smua.pulser.source.calibratebiasi()</a></p>
+<p class="listcommand"><a id="h91945" class="jump" title="smua.pulser.source.calibratei()" href="91898.htm" target="_self">smua.pulser.source.calibratei()</a></p>
+
+
+<input id="topicId" type="hidden" value="91895" />
+<input id="topicDescription" type="hidden" value="smua.pulser.measure.calibrateY()" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/13/2020 7:30:52 PM" />
+</body>
+</html>

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> digio.trigger[N].mode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="14672.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14675.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t14674" class="heading2-icl">digio.trigger[N].mode</h2>
+<p class="bodyzero">This attribute sets the mode in which the trigger event detector and the output trigger generator operate on the given trigger line. </p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Digital I/O trigger <span class="monospaceitalic">N</span> reset<br>Recall setup</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not saved </p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0 (digio.TRIG_BYPASS)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">triggerMode</em> = digio.trigger[<em class="emphasis">N</em>].mode</p>
+<p class="iclcode">digio.trigger[<em class="emphasis">N</em>].mode = <em class="emphasis">triggerMode</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="596" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="135"><p class="tablebodytext"><span class="monospaceitalic">triggerMode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger mode; see <strong class="specialbold">Details</strong> for values</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="135"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Digital I/O trigger line (1 to 14)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Set <span class="monospaceitalic">triggerMode</span> to one of the following values:</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th colspan="2" width="600"><p class="tableheading">Trigger mode values</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="259"><p class="tableheading"><span class="monospaceitalic">triggerMode</span></p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="341"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_BYPASS</code> or <code class="monospace">0</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Allows direct control of the line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_FALLING</code> or <code class="monospace">1</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects falling-edge triggers as input; asserts a TTL-low pulse for output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_RISING</code> or <code class="monospace">2</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">If the programmed state of the line is high, the <code class="monospace">digio.TRIG_RISING</code> mode behavior is similar to <code class="monospace">digio.TRIG_RISINGA</code>. If the programmed state of the line is low, the <code class="monospace">digio.TRIG_RISING</code> mode behavior is similar to <code class="monospace">digio.TRIG_RISINGM</code>. This setting should only be used if necessary for compatibility with other Keithley Instruments products.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_EITHER</code> or <code class="monospace">3</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects rising- or falling-edge triggers as input. Asserts a TTL-low pulse for output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_SYNCHRONOUSA</code> or <code class="monospace">4</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects the falling-edge input triggers and automatically latches and drives the trigger line low. Asserting the output trigger releases the latched line.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_SYNCHRONOUS</code> or <code class="monospace">5</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects the falling-edge input triggers and automatically latches and drives the trigger line low. Asserts a TTL-low pulse as an output trigger.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_SYNCHRONOUSM</code> or <code class="monospace">6</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects rising-edge triggers as input. Asserts a TTL-low pulse for output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_RISINGA</code> or <code class="monospace">7</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects rising-edge triggers as input. Asserts a TTL-low pulse for output.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.TRIG_RISINGM</code> or <code class="monospace">8</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Asserts a TTL-high pulse for output. Input edge detection is not possible in this mode.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">When programmed to any mode except <code class="monospace">digio.TRIG_BYPASS</code>, the output state of the I/O line is controlled by the trigger logic, and the user-specified output state of the line is ignored.</p>
+<p class="iclbody">Use of either <code class="monospace">digio.TRIG_SYNCHRONOUSA</code> or <code class="monospace">digio.TRIG_SYNCHRONOUSM</code> is preferred over <code class="monospace">digio.TRIG_SYNCHRONOUS</code>, because <code class="monospace">digio.TRIG_SYNCHRONOUS</code> is provided for compatibility with the digital I/O and TSP-Link triggering on older firmware.</p>
+<p class="iclbody">To control the line state, set the mode to <code class="monospace">digio.TRIG_BYPASS</code> and use the <code class="monospace">digio.writebit()</code> and <code class="monospace">digio.writeport()</code> commands.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">digio.trigger[4].mode = 2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Sets the trigger mode for I/O line 4 to <code class="monospace">digio.TRIG_RISING</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h11090" class="jump" title="digio.trigger[N].clear()" href="14671.htm" target="_self">digio.trigger[N].clear()</a></p>
+<p class="listcommand"><a id="h17665" class="jump" title="digio.trigger[N].reset()" href="17719.htm" target="_self">digio.trigger[N].reset()</a></p>
+<p class="listcommand"><a id="h17599" class="jump" title="digio.writebit()" href="14680.htm" target="_self">digio.writebit()</a></p>
+<p class="listcommand"><a id="h17600" class="jump" title="digio.writeport()" href="14681.htm" target="_self">digio.writeport()</a></p>
+<p class="listcommand"><a id="h12329" class="jump" title="Sweep operation" href="19550.htm" target="_self">Sweep operation</a></p>
+
+
+<input id="topicId" type="hidden" value="14674" />
+<input id="topicDescription" type="hidden" value="digio.trigger[N].mode" />
+<input id="footer-modified" type="hidden" value="Last modified: 4/3/2020 9:15:29 AM" />
+</body>
+</html>

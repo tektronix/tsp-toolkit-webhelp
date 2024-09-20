@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> LAN and LXI </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19423.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="19424.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t14129" class="heading4">LAN and LXI</h4>
+<p class="bodytext">The LAN commands have options that allow you to review and configure network settings.</p>
+<p class="bodytext">The <code class="monospace">lan.config.*</code> commands allow you to configure LAN settings over the remote interface. Note that you must send <code class="monospace">lan.applysettings()</code> for the configuration settings to take effect.</p>
+<p class="bodytext">The <code class="monospace">lan.status.*</code> commands help you determine the status of the LAN.</p>
+<p class="bodytext">The <code class="monospace">lan.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].*</code> commands allow you to set up and assert trigger events that are sent over the LAN.</p>
+<p class="bodytext">Other LAN commands allow you to reset the LAN, restore defaults, check LXI domain information, and enable or disable the Nagle algorithm.</p>
+<p class="listcommand"><a id="h14934" class="jump" title="lan.applysettings()" href="14890.htm" target="_self">lan.applysettings()</a></p>
+<p class="listcommand"><a id="h14935" class="jump" title="lan.autoconnect" href="14891.htm" target="_self">lan.autoconnect</a></p>
+<p class="listcommand"><a id="h14936" class="jump" title="lan.config.dns.address[N]" href="14898.htm" target="_self">lan.config.dns.address[N]</a></p>
+<p class="listcommand"><a id="h1899" class="jump" title="lan.config.dns.domain" href="14899.htm" target="_self">lan.config.dns.domain</a></p>
+<p class="listcommand"><a id="h1900" class="jump" title="lan.config.dns.dynamic" href="14900.htm" target="_self">lan.config.dns.dynamic</a></p>
+<p class="listcommand"><a id="h1897" class="jump" title="lan.config.dns.hostname" href="66559.htm" target="_self">lan.config.dns.hostname</a></p>
+<p class="listcommand"><a id="h1901" class="jump" title="lan.config.dns.verify" href="14902.htm" target="_self">lan.config.dns.verify</a></p>
+<p class="listcommand"><a id="h14941" class="jump" title="lan.config.duplex" href="14903.htm" target="_self">lan.config.duplex</a></p>
+<p class="listcommand"><a id="h14942" class="jump" title="lan.config.gateway" href="14904.htm" target="_self">lan.config.gateway</a></p>
+<p class="listcommand"><a id="h14943" class="jump" title="lan.config.ipaddress" href="14905.htm" target="_self">lan.config.ipaddress</a></p>
+<p class="listcommand"><a id="h2923" class="jump" title="lan.config.method" href="14906.htm" target="_self">lan.config.method</a></p>
+<p class="listcommand"><a id="h14947" class="jump" title="lan.config.speed" href="14907.htm" target="_self">lan.config.speed</a></p>
+<p class="listcommand"><a id="h14946" class="jump" title="lan.config.subnetmask" href="14908.htm" target="_self">lan.config.subnetmask</a></p>
+<p class="listcommand"><a id="h14979" class="jump" title="lan.linktimeout" href="14892.htm" target="_self">lan.linktimeout</a></p>
+<p class="listcommand"><a id="h2926" class="jump" title="lan.lxidomain" href="14893.htm" target="_self">lan.lxidomain</a></p>
+<p class="listcommand"><a id="h14949" class="jump" title="lan.nagle" href="14894.htm" target="_self">lan.nagle</a></p>
+<p class="listcommand"><a id="h14950" class="jump" title="lan.reset()" href="14895.htm" target="_self">lan.reset()</a></p>
+<p class="listcommand"><a id="h14951" class="jump" title="lan.restoredefaults()" href="14896.htm" target="_self">lan.restoredefaults()</a></p>
+<p class="listcommand"><a id="h14952" class="jump" title="lan.status.dns.address[N]" href="14909.htm" target="_self">lan.status.dns.address[N]</a></p>
+<p class="listcommand"><a id="h14953" class="jump" title="lan.status.dns.name" href="14910.htm" target="_self">lan.status.dns.name</a></p>
+<p class="listcommand"><a id="h14954" class="jump" title="lan.status.duplex" href="14911.htm" target="_self">lan.status.duplex</a></p>
+<p class="listcommand"><a id="h14956" class="jump" title="lan.status.gateway" href="14912.htm" target="_self">lan.status.gateway</a></p>
+<p class="listcommand"><a id="h1909" class="jump" title="lan.status.ipaddress" href="14913.htm" target="_self">lan.status.ipaddress</a></p>
+<p class="listcommand"><a id="h14958" class="jump" title="lan.status.macaddress" href="14914.htm" target="_self">lan.status.macaddress</a></p>
+<p class="listcommand"><a id="h14959" class="jump" title="lan.status.port.dst" href="14915.htm" target="_self">lan.status.port.dst</a></p>
+<p class="listcommand"><a id="h14960" class="jump" title="lan.status.port.rawsocket" href="14916.htm" target="_self">lan.status.port.rawsocket</a></p>
+<p class="listcommand"><a id="h14961" class="jump" title="lan.status.port.telnet" href="14917.htm" target="_self">lan.status.port.telnet</a></p>
+<p class="listcommand"><a id="h14962" class="jump" title="lan.status.port.vxi11" href="14918.htm" target="_self">lan.status.port.vxi11</a></p>
+<p class="listcommand"><a id="h14963" class="jump" title="lan.status.speed" href="14919.htm" target="_self">lan.status.speed</a></p>
+<p class="listcommand"><a id="h14964" class="jump" title="lan.status.subnetmask" href="14920.htm" target="_self">lan.status.subnetmask</a></p>
+<p class="listcommand"><a id="h14965" class="jump" title="lan.timedwait" href="14897.htm" target="_self">lan.timedwait</a></p>
+<p class="listcommand"><a id="h1883" class="jump" title="lan.trigger[N].assert()" href="14921.htm" target="_self">lan.trigger[N].assert()</a></p>
+<p class="listcommand"><a id="h1879" class="jump" title="lan.trigger[N].clear()" href="14922.htm" target="_self">lan.trigger[N].clear()</a></p>
+<p class="listcommand"><a id="h14968" class="jump" title="lan.trigger[N].connect()" href="14923.htm" target="_self">lan.trigger[N].connect()</a></p>
+<p class="listcommand"><a id="h14969" class="jump" title="lan.trigger[N].connected" href="14924.htm" target="_self">lan.trigger[N].connected</a></p>
+<p class="listcommand"><a id="h14970" class="jump" title="lan.trigger[N].disconnect()" href="14925.htm" target="_self">lan.trigger[N].disconnect()</a></p>
+<p class="listcommand"><a id="h14972" class="jump" title="lan.trigger[N].EVENT_ID" href="14926.htm" target="_self">lan.trigger[N].EVENT_ID</a></p>
+<p class="listcommand"><a id="h14971" class="jump" title="lan.trigger[N].ipaddress" href="14927.htm" target="_self">lan.trigger[N].ipaddress</a></p>
+<p class="listcommand"><a id="h2756" class="jump" title="lan.trigger[N].mode" href="14928.htm" target="_self">lan.trigger[N].mode</a></p>
+<p class="listcommand"><a id="h1880" class="jump" title="lan.trigger[N].overrun" href="14929.htm" target="_self">lan.trigger[N].overrun</a></p>
+<p class="listcommand"><a id="h14975" class="jump" title="lan.trigger[N].protocol" href="14930.htm" target="_self">lan.trigger[N].protocol</a></p>
+<p class="listcommand"><a id="h14976" class="jump" title="lan.trigger[N].pseudostate" href="14931.htm" target="_self">lan.trigger[N].pseudostate</a></p>
+<p class="listcommand"><a id="h14978" class="jump" title="lan.trigger[N].stimulus" href="17679.htm" target="_self">lan.trigger[N].stimulus</a></p>
+<p class="listcommand"><a id="h1882" class="jump" title="lan.trigger[N].wait()" href="14933.htm" target="_self">lan.trigger[N].wait()</a></p>
+<p class="listcommand"><a id="h15025" class="jump" title="localnode.description" href="15008.htm" target="_self">localnode.description</a></p>
+<p class="listcommand"><a id="h15030" class="jump" title="localnode.password" href="15014.htm" target="_self">localnode.password</a></p>
+<p class="listcommand"><a id="h15031" class="jump" title="localnode.passwordmode" href="15015.htm" target="_self">localnode.passwordmode</a></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See also</p><p class="relateditem"><a href="13401.htm" target="_self">About TSP commands</a></p><p class="relateditem"><a href="14127.htm" target="_self">Beeper control</a></p><p class="relateditem"><a href="11382.htm" target="_self">Bit manipulation and logic operations</a></p><p class="relateditem"><a href="92710.htm" target="_self">Calibration</a></p><p class="relateditem"><a href="14653.htm" target="_self">Data queue</a></p><p class="relateditem"><a href="77502.htm" target="_self">Digital I/O</a></p><p class="relateditem"><a href="15965.htm" target="_self">Display</a></p><p class="relateditem"><a href="14748.htm" target="_self">Error queue</a></p><p class="relateditem"><a href="10905.htm" target="_self">Event log</a></p><p class="relateditem"><a href="14771.htm" target="_self">File I/O</a></p><p class="relateditem"><a href="14859.htm" target="_self">GPIB</a></p><p class="relateditem"><a href="19423.htm" target="_self">Instrument identification</a></p><p class="relateditem"><a href="19424.htm" target="_self">Miscellaneous</a></p><p class="relateditem"><a href="19425.htm" target="_self">Parallel script execution</a></p><p class="relateditem"><a href="14795.htm" target="_self">Queries and response messages</a></p><p class="relateditem"><a href="17112.htm" target="_self">Reading buffer</a></p><p class="relateditem"><a href="15061.htm" target="_self">Reset</a></p><p class="relateditem"><a href="15067.htm" target="_self">RS-232</a></p><p class="relateditem"><a href="19516.htm" target="_self">Saved setups</a></p><p class="relateditem"><a href="15062.htm" target="_self">Scripting</a></p><p class="relateditem"><a href="93150.htm" target="_self">SMU</a></p><p class="relateditem"><a href="14126.htm" target="_self">Status model</a></p><p class="relateditem"><a href="19432.htm" target="_self">Time</a></p><p class="relateditem"><a href="93152.htm" target="_self">Triggering</a></p><p class="relateditem"><a href="77377.htm" target="_self">TSP-Link</a></p><p class="relateditem"><a href="14072.htm" target="_self">TSP-Net</a></p><p class="relateditem"><a href="72522.htm" target="_self">Userstrings</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="14129" />
+<input id="topicDescription" type="hidden" value="LAN and LXI" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/2/2018 11:46:14 AM" />
+</body>
+</html>

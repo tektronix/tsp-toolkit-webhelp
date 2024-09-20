@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Factory scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="72522.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="12913.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h3 id="t12911" class="heading3">Factory scripts</h3>
+<p class="bodytext">The Keithley Instruments 2601B-PULSE System SourceMeter<sup class="superscript">&reg;</sup> instrument is shipped with one or more factory scripts saved in its flash firmware memory. A factory script is made up of a number of functions. Some of them can be called from the front-panel LOAD TEST menu. All of them can be called using remote programming.</p>
+<p class="bodytext">As Keithley Instruments develops additional factory scripts, they will be made available on <a class="jump" title="tek.com/keithley" href="https://www.tek.com/keithley" target="_blank">tek.com/keithley</a> as a flash firmware upgrade for the 2601B-PULSE. See <a id="h19131" class="jump" title="Upgrading the firmware" href="93219.htm" target="_self">Upgrading the firmware</a> for instructions on upgrading the flash firmware of your 2601B-PULSE instrument.</p>
+<p class="bodytext">A factory script is similar to a user script, except a factory script is created by Keithley Instruments at the factory and is permanently stored in nonvolatile memory. The differences between a user script and a factory script include the&nbsp;following:</p>
+<ul class="listbullet"><li class="listbullet">A factory script cannot be deleted from nonvolatile memory.</li><li class="listbullet">The script listing for a factory script can be retrieved and modified, but it is then treated as a user script. A user script cannot be saved as a factory script.</li><li class="listbullet">Factory scripts are not stored in global variables. The only references to factory scripts are in the<code class="monospace"> script.factory.scripts</code> attribute.</li><li class="listbullet">The <code class="monospace">script.factory.catalog()</code> function returns an iterator that can be used in a <code class="monospace">for</code> loop to iterate over all the factory scripts.</li></ul><p class="bodytext"><strong class="specialbold">Example</strong></p>
+<p class="bodytext">To retrieve the catalog listing for factory scripts, send:</p>
+<p class="code">for name in script.factory.catalog() do print(name) end</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">In this section</p><p class="relateditem"><a href="12913.htm" target="_self">Running a factory script</a></p><p class="relateditem"><a href="12194.htm" target="_self">Retrieving and modifying a factory script listing</a></p><p class="relateditem"><a href="12175.htm" target="_self">KISweep factory script</a></p><p class="relateditem"><a href="12950.htm" target="_self">KIHighC factory script</a></p><p class="relateditem"><a href="12954.htm" target="_self">KIParlib factory script</a></p><p class="relateditem"><a href="12958.htm" target="_self">KISavebuffer factory script</a></p></td>
+<td width= "227">
+<p class="relatedheading">See also</p><p class="relateditem"><a href="2601B-PULSE_introduction_to_TSP_operation.htm" target="_self">Remote commands</a></p><p class="relateditem"><a href="17029.htm" target="_self">Introduction to TSP operation</a></p><p class="relateditem"><a href="13401.htm" target="_self">About TSP commands</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="12911" />
+<input id="topicDescription" type="hidden" value="Factory scripts" />
+<input id="footer-modified" type="hidden" value="Last modified: 1/22/2020 10:25:17 AM" />
+</body>
+</html>

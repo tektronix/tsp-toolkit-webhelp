@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.trigger.initiate() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15167.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="15169.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t15168" class="heading2-icl">smua.trigger.initiate()</h2>
+<p class="bodyzero">This function initiates a sweep operation.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><code class="monospace">smua.trigger.initiate()</code></p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function causes the SMU to clear the four trigger model event detectors and enter its trigger model (moves the SMU from the idle state into the arm layer).</p>
+<p class="iclbody">To perform source actions during the sweep, before calling this function, it is necessary to configure and enable one of the following sweep source actions:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">smua.trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code></li><li class="listbullet"><code class="monospace">smua</code><span class="monospaceitalic">.</span><code class="monospace">trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code></li><li class="listbullet"><code class="monospace">smua.trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code></li></ul><p class="iclbody">To make measurements during the sweep, you must also configure and enable the measure action using s<code class="monospace">mua.trigger.measure.</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>.</p>
+<p class="iclbody">If you run this function more than once without reconfiguring the sweep measurements, the caches on the configured measurement reading buffers will hold stale data; use the <span class="monospaceitalic">bufferVar</span><code class="monospace">.clearcache()</code> function to remove stale values from the reading buffer cache.</p>
+<p class="iclbody">This function initiates an overlapped operation.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">smua.trigger.initiate()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Starts a preconfigured sweep and clears the event detectors.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h15227" class="jump" title="bufferVar.clearcache()" href="15131.htm" target="_self">bufferVar.clearcache()</a></p>
+<p class="listcommand"><a id="h18561" class="jump" title="Configuring and running sweeps" href="19567.htm" target="_self">Configuring and running sweeps</a></p>
+<p class="listcommand"><a id="h15262" class="jump" title="smua.trigger.measure.action" href="15169.htm" target="_self">smua.trigger.measure.action</a></p>
+<p class="listcommand"><a id="h15266" class="jump" title="smua.trigger.measure.Y()" href="15172.htm" target="_self">smua.trigger.measure.Y()</a></p>
+<p class="listcommand"><a id="h15269" class="jump" title="smua.trigger.source.action" href="15178.htm" target="_self">smua.trigger.source.action</a></p>
+<p class="listcommand"><a id="h15271" class="jump" title="smua.trigger.source.linearY()" href="15180.htm" target="_self">smua.trigger.source.linearY()</a></p>
+<p class="listcommand"><a id="h15272" class="jump" title="smua.trigger.source.listY()" href="15181.htm" target="_self">smua.trigger.source.listY()</a></p>
+<p class="listcommand"><a id="h15273" class="jump" title="smua.trigger.source.logY()" href="15182.htm" target="_self">smua.trigger.source.logY()</a></p>
+<p class="listcommand"><a id="h13512" class="jump" title="Triggering" href="19574.htm" target="_self">Triggering</a></p>
+
+
+<input id="topicId" type="hidden" value="15168" />
+<input id="topicDescription" type="hidden" value="smua.trigger.initiate()" />
+<input id="footer-modified" type="hidden" value="Last modified: 2/4/2020 8:09:18 AM" />
+</body>
+</html>

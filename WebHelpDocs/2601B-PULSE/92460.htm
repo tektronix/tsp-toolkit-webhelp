@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Placeholder text </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="19536.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17860.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t92460" class="heading4">Placeholder text</h4>
+<p class="bodytext">This manual uses italicized text to represent the parts of remote commands that must be replaced by user specified values. The following examples show typical uses of italicized text: </p>
+<p class="bodytext"><strong class="specialbold">Example 1:</strong></p>
+<p class="bodytext"><code class="monospace">beeper.enable = </code><span class="monospaceitalic">state</span></p>
+<p class="bodytext">Where <span class="monospaceitalic">state</span> can be a value (<code class="monospace">beeper.ON</code> or <code class="monospace">beeper.OFF</code>) or an integer (<code class="monospace">1</code> or <code class="monospace">0</code>) that you specify. For example, to set this attribute on, you would send one of the following commands:</p>
+<p class="bodytext"><code class="monospace">beeper.enable = beeper.ON</code></p>
+<p class="bodytext"><code class="monospace">beeper.enable = 1</code></p>
+<p class="bodytext"><strong class="specialbold">Example 2:</strong></p>
+<p class="bodytext"><code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].assert()</code></p>
+<p class="bodytext">Where <span class="monospaceitalic">N</span> is an integer (<code class="monospace">1</code> to <code class="monospace">14</code>) that you specify. For example, to assert trigger line 7 you would send:</p>
+<p class="bodytext"><code class="monospace">digio.trigger[7].assert()</code></p>
+<p class="bodytext">To assert a trigger line with a variable as the integer, you would send:</p>
+<p class="bodytext"><code class="monospace">triggerline = 7</code></p>
+<p class="bodytext"><code class="monospace">digio.trigger[triggerline].assert()</code></p>
+<p class="bodytext"><strong class="specialbold">Example 3:</strong></p>
+<p class="bodytext"><code class="monospace">smua.trigger.measure.</code><span class="monospaceitalic">Y</span><code class="monospace">(</code><span class="monospaceitalic">rbuffer</span><code class="monospace">)</code></p>
+<p class="bodytext">Where: </p>
+<ul class="listbullet"><li class="listbullet"><span class="monospaceitalic">Y</span> is the measurement type that you specify (<code class="monospace">v</code>, <code class="monospace">i</code>, <code class="monospace">r</code>, or <code class="monospace">p</code>). </li><li class="listbullet"><span class="monospaceitalic">rbuffer</span> is the reading buffer object where the readings will be stored. </li></ul><p class="bodytext">For example, to make voltage measurements and store them in buffer <code class="monospace">vbuffername</code>, you would send:</p>
+<p class="bodytext"><code class="monospace">smua.trigger.measure.v(vbuffername)</code></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See also</p><p class="relateditem"><a href="19536.htm" target="_self">TSP command programming notes</a></p><p class="relateditem"><a href="17860.htm" target="_self">Syntax rules</a></p><p class="relateditem"><a href="12044.htm" target="_self">Time and date values</a></p><p class="relateditem"><a href="91979.htm" target="_self">Settings ignored when the pulser is enabled</a></p><p class="relateditem"><a href="91702.htm" target="_self">Settings ignored when the pulser is disabled</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="92460" />
+<input id="topicDescription" type="hidden" value="Placeholder text" />
+<input id="footer-modified" type="hidden" value="Last modified: 1/8/2020 7:49:41 AM" />
+</body>
+</html>

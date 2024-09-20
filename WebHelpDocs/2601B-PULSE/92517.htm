@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> smua.contact.check() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="15100.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="92712.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t92517" class="heading2-icl">smua.contact.check()</h2>
+<p class="bodyzero">This function determines if contact resistance is lower than the threshold.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">smua.contact.check()</p>
+<p class="iclsubheading">Details</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0"><br>Contact check is not available when the pulser is enabled. If you need to use the contact check function in a pulser application, you can disable the pulser, run the contact check measurements, then enable the pulser. See Example 1: Ten-point pulse sweep for a code example.</p>
+<p class="iclbody">This function returns <code class="monospace"><code class="monospace">true</code></code> if the contact resistance is below the threshold; this function returns <code class="monospace"><code class="monospace">false</code></code> if it is above the threshold. The threshold value is set by the <code class="monospace">smua.contact.threshold</code>&nbsp;attribute.</p>
+<p class="iclbody">When the output is on and any of the following:</p>
+<ul class="listbullet"><li class="listbullet">SMU is a current source with current range set to less than 1&nbsp;mA (error code 5065, &quot;I range too low for contact check&quot;)</li><li class="listbullet">SMU is a voltage source with current limit set to less than 1&nbsp;mA (error code 5050, &quot;I limit too low for contact check&quot;)</li></ul><p class="iclbody">When the output is off and any of the following:</p>
+<ul class="listbullet"><li class="listbullet">The output off mode is High-Z (error code 5048, &quot;Contact check not valid with HIGH-Z OUTPUT&nbsp;off&quot;)</li><li class="listbullet">The output off mode is Normal with the <code class="monospace">smua.source.offfunc</code> attribute set to <code class="monospace">smua.OUTPUT_DCVOLTS</code> and the off current limit set to less than 1 mA (error code 5066, &quot;source.offlimiti too low for contact check&quot;)</li><li class="listbullet">The output off mode is Normal with the <code class="monospace">smua.source.offfunc</code> attribute set to <code class="monospace">smua.OUTPUT_DCAMPS</code> and the source range is less than 1 mA (error code 5065, &quot;I range too low for contact check&quot;)</li></ul><p class="iclbody">If you attempt to perform a contact check measurement when any of the above conditions exist, an error is generated.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #C0C0C0;" width="254"><p class="codetable">if not smua.contact.check() then</p>
+<p class="codetable">   -- take action</p>
+<p class="codetable">end</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="346"><p class="tablebodytext">Takes action if contact check fails.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17700" class="jump" title="Contact check connections" href="19564.htm" target="_self">Contact check connections</a></p>
+<p class="listcommand"><a id="h15400" class="jump" title="Contact check measurements" href="19565.htm" target="_self">Contact check measurements</a></p>
+<p class="listcommand"><a id="h15200" class="jump" title="smua.contact.speed" href="92519.htm" target="_self">smua.contact.speed</a></p>
+<p class="listcommand"><a id="h15201" class="jump" title="smua.contact.threshold" href="92520.htm" target="_self">smua.contact.threshold</a></p>
+<p class="listcommand"><a id="h19507" class="jump" title="smua.source.offfunc" href="92715.htm" target="_self">smua.source.offfunc</a></p>
+
+
+<input id="topicId" type="hidden" value="92517" />
+<input id="topicDescription" type="hidden" value="smua.contact.check()" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/31/2020 4:23:27 PM" />
+</body>
+</html>
