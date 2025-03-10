@@ -1,0 +1,134 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> os.time() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('19389');expand('18079');highlight('106536')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="106535.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17645.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t106536" class="heading2-icl">os.time()</h2>
+<p class="bodyzero">This function generates a time value in UTC time.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</td>
+<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">utcSeconds, utcFractional</span> = os.time()</p>
+<p class="iclcode"><span class="monospaceitalic">utcSeconds, utcFractional</span> = os.time(<span class="monospaceitalic">timespec</span>)</p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="codetable"><span class="monospaceitalic">utcSeconds</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">Time value in UTC time, which is the number of seconds since midnight January 1, 1970 UTC</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="codetable"><span class="monospaceitalic">utcFractional</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">When using the first form, this value will hold the fractional seconds. When using the second form, this value will always be 0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="codetable"><span class="monospaceitalic">timespec</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">The date and time (year, month, day, hour, and minute)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When used without parameters, this function returns current time as the number of seconds since midnight January 1, 1970. The <span class="monospaceitalic">utcSeconds</span> value will be the elapsed seconds and <span class="monospaceitalic">utcFractional</span> will be the fractional seconds. Both values have the units of seconds. <span class="monospaceitalic">utcSeconds</span> will be an integer and <span class="monospaceitalic">utcFractional</span> will be a value between <code class="monospace">0</code> and <code class="monospace">1</code> but always less than <code class="monospace">1</code>.</p>
+<p class="iclbody">When using the second form, <span class="monospaceitalic">timespec</span> is a table using the fields listed below.</p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="tablebodytext"><span class="monospaceitalic">year</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">The year (<code class="monospace">1970</code> or later)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="tablebodytext"><span class="monospaceitalic">month</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">The month (<code class="monospace">1</code> to <code class="monospace">12</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="tablebodytext"><span class="monospaceitalic">day</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">The day (<code class="monospace">1</code> to <code class="monospace">31</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="tablebodytext"><span class="monospaceitalic">hour</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">The hour (<code class="monospace">0</code> to <code class="monospace">23</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="tablebodytext"><span class="monospaceitalic">min</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">The minute (<code class="monospace">0</code> to <code class="monospace">59</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="139"><p class="tablebodytext"><span class="monospaceitalic">sec</span></p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="455"><p class="tablebodytext">The second (<code class="monospace">0</code> to <code class="monospace">59</code>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">If the time (hour, minute, second) fields are not provided, noon on that day will be used. The time specified is given in the local timezone.</p>
+<p class="iclsubheading">Example</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">print(os.date('%Y-%m-%d %H:%M:%S' , os.time()))</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">****using this example for now</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h106795" class="jump" title="os.clock()" href="106535.htm" target="_self">os.clock()</a></p>
+<p class="listcommand"><a id="h106796" class="jump" title="settime()" href="106537.htm" target="_self">settime()</a></p>
+<p class="listcommand">settimezone()</p>
+
+</body>
+</html>
