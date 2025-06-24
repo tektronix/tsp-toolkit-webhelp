@@ -1,0 +1,177 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> bufferVar.statuses </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('107205')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="107204.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="115932.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t107205" class="heading2-icl">bufferVar.statuses</h2>
+<p class="bodyzero">This attribute contains the status values of readings in the reading buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Clearing the buffer</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">See Details</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">statusInformation</span> = <span class="monospaceitalic">bufferVar</span>.statuses[<span class="monospaceitalic">N</span>]</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="codetable"><span class="monospaceitalic">statusInformation</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">The status value when reading <span class="monospaceitalic">N</span> of the specified buffer was acquired</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="codetable"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">The reading number: <code class="monospace">1</code> to <span class="monospaceitalic">bufferVar.n</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This read-only buffer column is a Lua table array of the status values for all of the readings in the buffer. The status values are floating-point numbers that encode the status value.</p>
+<p class="iclbody"><strong class="specialbold">Buffer status bits</strong></p>
+<table class="tableintopic" width="438" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tableheading">Bit</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tableheading">Name</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tableheading">Hex value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="234"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext"><strong class="specialbold">B1</strong></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">Unused</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">0x02</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="234"><p class="tablebodytext">Unused</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext"><strong class="specialbold">B2</strong></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">Unused</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">0x04</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="234"><p class="tablebodytext">Unused</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext"><strong class="specialbold">B3</strong></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">Unused</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">0x08</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="234"><p class="tablebodytext">Unused</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext"><strong class="specialbold">B4</strong></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">4Wire</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">0x10</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="234"><p class="tablebodytext">4-wire (remote) sense mode enabled</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext"><strong class="specialbold">B5</strong></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">Rel</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">0x20</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="234"><p class="tablebodytext">Relative offset applied to reading</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext"><strong class="specialbold">B6</strong></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">Compliance</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">0x40</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="234"><p class="tablebodytext">Source function was limited because the complementary function would be over the compliance limit</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="36"><p class="tablebodytext"><strong class="specialbold">B7</strong></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="90"><p class="tablebodytext">Unused</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="78"><p class="tablebodytext">0x80</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="234"><p class="tablebodytext">Unused</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer1 = slot[1].smu[1].makebuffer(100)</p>
+<p class="codetable">printbuffer(1, 5, buffer1.statuses)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Prints the status values for the first five readings in a reading buffer for channel 1 of the module installed in slot 1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+</body>
+</html>

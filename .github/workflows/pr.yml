@@ -26,9 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: npm Package
-        run: |
-          cd WebHelpDocs
-          npm pack
+        run: npm pack
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -46,7 +44,6 @@ jobs:
       credentials:
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
-      #https://github.com/actions/runner/issues/2033#issuecomment-1598547465
       options: --user 1001
     steps:
       - name: Tool Versions
