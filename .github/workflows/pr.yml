@@ -27,6 +27,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Get RC Version
         run: |
+          git config --global --add safe.directory "$PWD"
           COMMIT="${{github.sha}}"
           if ${{contains(github.head_ref, 'release/')}}; then
             V="${{github.head_ref}}"
@@ -115,6 +116,7 @@ jobs:
       - name: Get Tagged Version
         id: lasttag
         run: |
+          git config --global --add safe.directory "$PWD"
           COMMIT="${{github.sha}}"
           if ${{contains(github.head_ref, 'release/')}}; then
             V="${{github.head_ref}}"
