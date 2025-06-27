@@ -1,0 +1,116 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> dataqueue.add() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116219')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="116218.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="116220.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t116219" class="heading2-icl">dataqueue.add()</h2>
+<p class="bodyzero">This function adds an entry to the data queue.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">result</em> = dataqueue.add(<em class="emphasis">value</em>)</p>
+<p class="iclcode"><em class="emphasis">result</em> = dataqueue.add(<em class="emphasis">value</em>, <em class="emphasis">timeout</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">result</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The resulting value of <code class="monospace">true</code> or <code class="monospace">false</code> based on the success of the function</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The data item to add; <span class="monospaceitalic">value</span> can be of any type</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">timeout</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The maximum number of seconds to wait for space in the data queue</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You cannot use the <span class="monospaceitalic">timeout</span> value when accessing the data queue from a remote node. You can only use the <span class="monospaceitalic">timeout</span> value while adding data to the local data queue.</p>
+<p class="iclbody">The <span class="monospaceitalic">timeout</span> value is ignored if the data queue is not full.</p>
+<p class="iclbody">The <code class="monospace">dataqueue.add()</code> function returns <code class="monospace">false</code>:</p>
+<ul class="listbullet2"><li class="listbullet2">If the timeout expires before space is available in the data queue</li><li class="listbullet2">If the data queue is full and a <span class="monospaceitalic">timeout</span> value is not specified</li></ul><p class="iclbody">If the value is a table, a duplicate of the table and any subtables is made. The duplicate table does not contain any references to the original table or to any subtables.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">dataqueue.clear()</p>
+<p class="codetable">dataqueue.add(10)</p>
+<p class="codetable">dataqueue.add(11, 2)</p>
+<p class="codetable">result = dataqueue.add(12, 3)</p>
+<p class="codetable">if result == false then</p>
+<p class="codetable">   print(&quot;Failed to add 12 to the dataqueue&quot;)</p>
+<p class="codetable">end</p>
+<p class="codetable">print(&quot;The dataqueue contains:&quot;)</p>
+<p class="codetable">while dataqueue.count &gt; 0 do</p>
+<p class="codetable">   print(dataqueue.next())</p>
+<p class="codetable">end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Clear the data queue.</p>
+<p class="tablebodytext">Each line adds one item to the data queue.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">The dataqueue contains:</p>
+<p class="codetable">10</p>
+<p class="codetable">11</p>
+<p class="codetable">12</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h116235" class="jump" title="dataqueue.CAPACITY" href="116220.htm" target="_self">dataqueue.CAPACITY</a></p>
+<p class="listcommand"><a id="h116236" class="jump" title="dataqueue.clear()" href="116222.htm" target="_self">dataqueue.clear()</a></p>
+<p class="listcommand"><a id="h116237" class="jump" title="dataqueue.count" href="116223.htm" target="_self">dataqueue.count</a></p>
+<p class="listcommand"><a id="h116238" class="jump" title="dataqueue.next()" href="116224.htm" target="_self">dataqueue.next()</a></p>
+<p class="listcommand">***Using the data queue for real-time communications</p>
+
+</body>
+</html>

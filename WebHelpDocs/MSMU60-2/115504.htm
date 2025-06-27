@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> slot[Z].trigger.model.addblock.source.action.bias() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('115504')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="114972.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="115827.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t115504" class="heading2-icl">slot[Z].trigger.model.addblock.source.action.bias()</h2>
+<p class="bodyzero">This function changes the source output level to the present level of the sweep configuration, then advances to the next step in the sweep configuration.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.action.bias(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, c</code><span class="monospaceitalic">hannel</span><code class="monospace">)</code></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">Z</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="462"><p class="tablebodytext">Module slot number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="462"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="462"><p class="tablebodytext">Name of the trigger block defining where to branch</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">channel</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="462"><p class="tablebodytext">Channel number</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function defines a trigger model building block that advances the source output based on the setup for the specified channel.</p>
+<p class="iclbody">For a stair-step returning to the initial value on each advance, set the initial output bias voltage before defining the trigger model. For example, you want to to return to 2 V on each step, set the SMU channel to start at 2 V.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SLOT_NUM = 1</p>
+<p class="codetable">CHANNEL_NUM = 1</p>
+<p class="codetable">SmuCh1 = slot[SLOT_NUM].smu[CHANNEL_NUM]</p>
+<p class="codetable">SmuCh1.source.levelv = 2</p>
+<p class="codetable">SmuCh1.trigger.source.linearv(0,5,6)</p>
+<p class="codetable">SmuCh1.source.output = 1</p>
+<p class="codetable">TM = slot[SLOT_NUM].trigger.model</p>
+<p class="codetable"> </p>
+<p class="codetable">TM.delete(&quot;TM1&quot;)</p>
+<p class="codetable">TM.create(&quot;TM1&quot;)</p>
+<p class="codetable">TM.addblock.source.action.step(&quot;TM1&quot;, &quot;sourceActionStep&quot;, CHANNEL_NUM)</p>
+<p class="codetable">TM.addblock.delay.constant(&quot;TM1&quot;, &quot;delay50ms&quot;, 0.05)</p>
+<p class="codetable">TM.addblock.source.action.bias(&quot;TM1&quot;, &quot;sourceActionBias&quot;, CHANNEL_NUM)</p>
+<p class="codetable">TM.addblock.delay.constant(&quot;TM1&quot;, &quot;delay50ms&quot;, 0.05)</p>
+<p class="codetable">TM.addblock.branch.counter(&quot;TM1&quot;,&quot;branchCounter&quot;, &quot;sourceActionStep&quot;, 6)</p>
+<p class="codetable">TM.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">waitcomplete() print(&quot;Done&quot;)</p>
+<p class="codetable">SmuCh1.source.output = 0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that increases from 0 to 5 V in six steps and between steps returns to the 2 V bias level for 50 ms.</p>
+<p class="tablebodytext">Note the assignment of the SLOT variable and change it accordingly.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h116794" class="jump" title="slot[Z].smu[X].trigger.source.linearY()" href="115828.htm" target="_self">slot[Z].smu[X].trigger.source.linearY()</a></p>
+<p class="listcommand"><a id="h116898" class="jump" title="slot[Z].trigger.model.addblock.source.action.skip()" href="115827.htm" target="_self">slot[Z].trigger.model.addblock.source.action.skip()</a></p>
+<p class="listcommand"><a id="h116807" class="jump" title="slot[Z].trigger.model.addblock.source.action.step()" href="114973.htm" target="_self">slot[Z].trigger.model.addblock.source.action.step()</a></p>
+
+</body>
+</html>

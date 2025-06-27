@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> digio.trigger[N].edge </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('115124')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="115324.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="116241.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t115124" class="heading2-icl">digio.trigger[N].edge</h2>
+<p class="bodyzero">This command configures the edge detection mode for a digital I/O line.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accssible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">digio.trigger[N].reset<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">digio.EDGE_FALLING</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">triggerEdge</span> = digio.trigger[<span class="monospaceitalic">N</span>].edge</p>
+<p class="iclcode">digio.trigger[<span class="monospaceitalic">N</span>].edge = <span class="monospaceitalic">triggerEdge</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">triggerEdge</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger edge selection; see <strong class="specialbold">Trigger edge values</strong> for values</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Digital I/O trigger line: 1 to 18</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command is used for input trigger detection. To control output trigger generation, use the <code class="monospace">digio.trigger[N].logic</code> command.</p>
+<p class="iclbody">To directly control the line state, set the mode of the line to digital and use the write command. When the digital line mode is set for open drain, the edge settings assert a TTL low&#8209;pulse.</p>
+<p class="iclbody">Set <span class="monospaceitalic">triggerEdge</span> to one of the following values:</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="259" height="0"></td>
+<td width="340" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="2" width="600"><p class="tableheading">Trigger edge values</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="259"><p class="tableheading"><span class="monospaceitalic">triggerEdge</span></p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="341"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.EDGE_FALLING</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects falling&#8209;edge triggers as input when the line is configured as an input or open drain</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.EDGE_RISING</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects rising&#8209;edge triggers as input when the line is configured as an open drain</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.EDGE_EITHER</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Detects rising- or falling&#8209;edge triggers as input when the line is configured as an input or open drain</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">digio.trigger[3].edge = digio.EDGE_RISING</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets the trigger edge detection mode for I/O line 3 to <code class="monospace">digio.EDGE_RISING</code>. This will configure line 3 to detect rising edges as input triggers.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h115326" class="jump" title="digio.trigger[N].clear()" href="115324.htm" target="_self">digio.trigger[N].clear()</a></p>
+<p class="listcommand"><a id="h115561" class="jump" title="digio.trigger[N].logic" href="115125.htm" target="_self">digio.trigger[N].logic</a></p>
+<p class="listcommand"><a id="h115294" class="jump" title="digio.trigger[N].mode" href="115123.htm" target="_self">digio.trigger[N].mode</a></p>
+<p class="listcommand"><a id="h115296" class="jump" title="digio.trigger[N].reset()" href="115131.htm" target="_self">digio.trigger[N].reset</a></p>
+<p class="listcommand"><a id="h115289" class="jump" title="digio.writeport()" href="115120.htm" target="_self">digio.writeport()</a></p>
+
+</body>
+</html>

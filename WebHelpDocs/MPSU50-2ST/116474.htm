@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> slot[Z].trigger.model.removeblock() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('116474')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="116470.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="107215.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t116474" class="heading2-icl">slot[Z].trigger.model.removeblock()</h2>
+<p class="bodyzero">This function removes the trigger block from the trigger model.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.removeblock(</code><span class="monospaceitalic">&quot;triggerModelName&quot;, &quot;triggerBlockName&quot;</span><code class="monospace">)</code></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Module slot number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">triggerModelName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger model from which this trigger block will be removed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">triggerBlockName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Unique name of the trigger block to remove; this string cannot be empty</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When this command is executed, the specified trigger block within the named trigger model will be deleted. If either the trigger block name or the trigger model name does not exist, an error message will be returned.</p>
+<p class="iclbody">You can add trigger model blocks with the <code class="monospace">slot[Z].trigger.model.addblock.*</code> series of functions.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">PsuCh1 = slot[1].psu[1]</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--- Set the initial voltage output for PSU channel 1 to 2 V   ---</p>
+<p class="codetable">PsuCh1.source.levelv = 2</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--- Delete old trigger model instances before creating new ones ---</p>
+<p class="codetable">slot[1].trigger.model.delete(&quot;TM1&quot;)</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--- Delete the second delay constant block before trigger model initiates ---</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOn&quot;, 1, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;Delay1&quot;, 0.2)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;Delay2&quot;, 0.5)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOff&quot;, 1, 0)</p>
+<p class="codetable">slot[1].trigger.model.removeblock(&quot;TM1&quot;, &quot;Delay2&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--- Execute the trigger model ---</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example uses the <code class="monospace">slot[Z].trigger.model.removeblock()</code> command to delete an existing trigger model block. This prevents the second trigger model delay block (0.5 s) from running when the trigger model is initiated.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">None</p>
+
+</body>
+</html>

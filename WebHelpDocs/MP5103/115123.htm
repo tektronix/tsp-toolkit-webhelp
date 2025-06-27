@@ -1,0 +1,158 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> digio.trigger[N].mode </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('115123')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="115125.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="115323.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t115123" class="heading2-icl">digio.trigger[N].mode</h2>
+<p class="bodyzero">This attribute sets the mode of the digital I/O line to be a digital line, trigger line, or synchronous line and sets the line to be input, output, or open-drain.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">digio.trigger[N].reset()<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">digio.MODE_DIGITAL_IN</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">digio.trigger[<em class="emphasis">N</em>].mode = <em class="emphasis">triggerMode</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Digital I/O trigger line: 1 to 18</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">triggerMode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger mode; see <strong class="specialbold">Details</strong> for values</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Set <span class="monospaceitalic">triggerMode</span> to one of the following values:</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr>
+<td width="259" height="0"></td>
+<td width="340" height="0"></td>
+</tr>
+<tr align="left" valign="top">
+<th colspan="2" width="600"><p class="tableheading">Mode values</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="259"><p class="tableheading"><span class="monospaceitalic">triggerMode</span></p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="341"><p class="tableheading">Description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.MODE_DIGITAL_IN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Digital control, input</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.MODE_DIGITAL_OUT</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Digital control, output</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.MODE_DIGITAL_OPEN_DRAIN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Digital control, open drain</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.MODE_TRIGGER_IN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Trigger control, input</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.MODE_TRIGGER_OUT</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Trigger control, output</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.MODE_TRIGGER_OPEN_DRAIN</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Trigger control, open drain</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.MODE_SYNCHRONOUS_MASTER</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Synchronous master</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.MODE_SYNCHRONOUS_ACCEPTOR</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Synchronous acceptor</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">You can use this command to place each digital I/O line into one of the following modes:</p>
+<ul class="listbullet"><li class="listbullet">Digital open&#8209;drain, output, or input</li><li class="listbullet">Trigger open&#8209;drain, output, or input</li><li class="listbullet">Trigger synchronous master or synchronous acceptor</li></ul><p class="bodytext">A digital line allows direct control of the digital I/O lines by writing a bit pattern to the lines. A trigger line uses the digital I/O lines to detect triggers.</p>
+<p class="iclbody">The following settings of <span class="monospaceitalic">triggerMode</span> set the line for direct control as a digital line:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">digio.MODE_DIGITAL_IN</code>: The instrument automatically detects externally generated logic levels. You can read an input line, but you cannot write to it.</li><li class="listbullet"><code class="monospace">digio.MODE_DIGITAL_OUT</code>: You can set the line as logic high (+5&nbsp;V) or as logic low (0&nbsp;V). The default level is logic low (0&nbsp;V). When the instrument is in output mode, the line is actively driven high or low.</li><li class="listbullet"><code class="monospace">digio.MODE_DIGITAL_OPEN_DRAIN</code>: Configures the line to be an open&#8209;drain signal. The line can serve as an input, an output or both. When a digital I/O line is used as an input in open&#8209;drain mode, you must write a <code class="monospace">1</code> to it.</li></ul><p class="iclbody">The following settings of <span class="monospaceitalic">triggerMode</span> set the line for direct control as a trigger line:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">digio.MODE_TRIGGER_IN</code>: The line automatically responds to and detects externally generated triggers. It detects falling&#8209;edge, rising&#8209;edge, or either&#8209;edge triggers as input. This line state uses the edge setting specified by the <code class="monospace">digio.trigger[N].edge</code> attribute.</li><li class="listbullet"><code class="monospace">digio.MODE_TRIGGER_OUT</code>: The line is automatically set high or low depending on the output logic specified by the <code class="monospace">digio.trigger[N].logic</code> attribute. Use the negative logic setting when you want to generate a falling edge trigger and use the positive logic setting when you want to generate a rising edge trigger.</li><li class="listbullet"><code class="monospace">digio.MODE_TRIGGER_OPEN_DRAIN</code>: Configures the line to be an open&#8209;drain signal. You can use the line to detect input triggers or generate output triggers. This line state uses the edge setting specified by the <code class="monospace">digio.trigger[N].edge</code> attribute and the logic setting specified by the <code class="monospace">digio.trigger[N].logic</code> attribute.</li></ul><p class="iclbody">When the line is set as a synchronous acceptor, the line detects the falling-edge input triggers and utomatically latches and drives the trigger line low. Asserting an output trigger releases the atched line.</p>
+<p class="iclbody">When the line is set as a synchronous master, the line detects rising-edge triggers as input. For utput, the line asserts a TTL-low pulse.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">digio.trigger[3].mode = digio.MODE_DIGITAL_IN</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets the trigger mode for I/O line 3 to <code class="monospace">digio.MODE_DIGITAL_IN</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h115560" class="jump" title="digio.trigger[N].edge" href="115124.htm" target="_self">digio.trigger[N].edge</a></p>
+<p class="listcommand"><a id="h115291" class="jump" title="digio.writebit()" href="115121.htm" target="_self">digio.writebit()</a></p>
+
+</body>
+</html>

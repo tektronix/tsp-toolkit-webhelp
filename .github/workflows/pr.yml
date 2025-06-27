@@ -25,19 +25,55 @@ jobs:
         run: npm --version
       - name: Checkout
         uses: actions/checkout@v4
-      - name: npm Package
+      - name: Get RC Version
         run: |
-          cd WebHelpDocs
-          npm pack
+          COMMIT="${{github.sha}}"
+          if ${{contains(github.head_ref, 'release/')}}; then
+            V="${{github.head_ref}}"
+            V="${V#release/}"
+          else
+            V="$(npm pkg get version)"
+            echo "Extracted Version: $V"
+            V="$(echo v"$V" | sed 's/\"//g')"
+            echo "Cleaned up Version: $V"
+          fi
+
+          # Check to see if the version tag already exists
+          # If it does, print a message and exit with an error code
+          if [ $(git tag --list "$V") ]; then
+            echo "Version tag already exists. Did you bump the version number?"
+            exit 1
+          fi
+
+          # Create an RC release if
+          # 1) This PR is a release branch that hasn't been merged to main.
+          # 2) This is a feature branch being merged into the main branch.
+          if ${{(! github.event.pull_request.merged && contains(github.head_ref, 'release/')) || (github.event.pull_request.merged && !contains(github.head_ref, 'release/'))}}; then
+            V="${V}-$(git tag --list ${V}* | wc -l)"
+            echo "RC Version: $V"
+          fi
+
+          echo "version=${V}" >> $GITHUB_OUTPUT
+          npm version --no-git-tag-version "${V}" || true
+      - name: npm Package All
+        run: |
+            cp package.json WebHelpDocs/
+            cp LICENSE WebHelpDocs/
+            cp index.js WebHelpDocs/
+            cp README.md WebHelpDocs/
+            cd WebHelpDocs
+            npm pack .
+            mv *.tgz ..
+            cd ..  
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: WebHelpDocs
-          path: ./WebHelpDocs/*.tgz
+          path: ./*.tgz
 
   publish:
     name: Publish
-    if: ${{ (endsWith(github.base_ref, 'main') && (contains(github.head_ref, 'release/')) || github.event.pull_request.merged ) }}
+    if: ${{ endsWith(github.base_ref, 'main') && (contains(github.head_ref, 'release/') || github.event.pull_request.merged) }}
     needs:
       - package
     runs-on: ubuntu-latest
@@ -46,7 +82,6 @@ jobs:
       credentials:
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
-      #https://github.com/actions/runner/issues/2033#issuecomment-1598547465
       options: --user 1001
     steps:
       - name: Tool Versions

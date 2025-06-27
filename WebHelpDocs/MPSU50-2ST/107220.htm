@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> slot[Z].psu[X].measure.nplc </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('107220')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="107232.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="107227.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t107220" class="heading2-icl">slot[Z].psu[X].measure.nplc</h2>
+<p class="bodyzero">This attribute configures the measurement aperture in number of power line cycles.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td bgcolor="#000080" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#000080" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Recall setup<br>slot[Z].psu[X].measure.rate</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Saved setup</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">1.0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">nplc</span> = slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].measure.nplc</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">nplc</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Power line cycles: <code class="monospace">0.00005</code> to <code class="monospace">30</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Module slot number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Module channel number</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">This setting configures the measurement aperture in number of power line cycles (NPLC) for the channel. The measurement aperture is the amount of time that the input signal is measured. The amount of time is specified as the number of power line cycles (NPLCs). Each PLC for 60&nbsp;Hz is 16.67&nbsp;ms (1/60) and each PLC for 50&nbsp;Hz is 20&nbsp;ms (1/50). For 60&nbsp;Hz, if you set the NPLC to 0.1, the measure time is 1.667 ms. The shortest amount of time results in the fastest reading rate but increases the reading noise. The longest amount of time provides the lowest reading noise but has the slowest reading rate.</p>
+<p class="bodytext">Settings between the fastest and slowest number of power line cycles are a compromise between speed and noise.</p>
+<p class="iclbody">If you change this attribute, the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.aperture</code> attribute.</p>
+<p class="iclbody">The NPLC and aperture attributes cannot be set directly. These attributes are used to report the present measure rate in NPLCs or seconds. The measure rate is set to a predefined rate using the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.aperture</code> attribute is changed to the equivalent value of seconds.</p>
+<p class="iclbody">Use this attribute to set a measurement aperture that is a multiple of the number of power line cycles. To set a fixed aperture, use <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.aperture</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">NPLC1 = slot[1].psu[2].measure.nplc</p>
+<p class="codetable">print(NPLC1)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Reads the measurement aperture in NPLCs for channel 2 of the module installed in slot 1 and prints the value of NPLC1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h107410" class="jump" title="slot[Z].psu[X].measure.aperture" href="107218.htm" target="_self">slot[Z].psu[X].measure.aperture</a></p>
+<p class="listcommand"><a id="h107836" class="jump" title="slot[Z].psu[X].measure.rate" href="107825.htm" target="_self">slot.[Z].psu[X].measure.rate</a></p>
+
+</body>
+</html>
