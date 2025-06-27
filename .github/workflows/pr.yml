@@ -28,6 +28,7 @@ jobs:
       - name: Get RC Version
         run: |
           git config --global --add safe.directory "$PWD"
+          git fetch --tags
           COMMIT="${{github.sha}}"
           if ${{contains(github.head_ref, 'release/')}}; then
             V="${{github.head_ref}}"
