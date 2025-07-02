@@ -59,10 +59,7 @@ jobs:
           npm version --no-git-tag-version "${V}" || true
       - name: npm Package All
         run: |
-            cp package.json WebHelpDocs/
-            cp LICENSE WebHelpDocs/
-            cp index.js WebHelpDocs/
-            cp README.md WebHelpDocs/
+            cp package.json LICENSE index.js index.d.ts README.md WebHelpDocs/
             cd WebHelpDocs
             npm pack .
             mv *.tgz ..
