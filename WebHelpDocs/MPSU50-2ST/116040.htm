@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute contains the timestamp for each reading in the specified buffer.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,11 +37,11 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Clearing the buffer</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">See <strong class="specialbold">Details</strong></p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall"><code class="monospace">1</code></p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 </tr>
 
@@ -59,7 +59,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer can be a dynamically allocated user-defined buffer or a default reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -71,10 +71,7 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">When enabled by the <span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps</code> attribute, this attribute contains the timestamp (relative to <code class="monospace">bufferVar.basetimestamp</code>) when each reading saved in the specified reading buffer occurred.This attribute is relative to the <code class="monospace">buffervar.basetimestamp</code>.</p>
-<p class="iclbody">The <span class="monospaceitalic">bufferVar</span><code class="monospace">.timestamps</code> information from a reading buffer is only available if the <span class="monospaceitalic">bufferVar</span><code class="monospace">.collecttimestamps</code> attribute is set to <code class="monospace">1</code> (default setting). If it is set to <code class="monospace">0</code>, you cannot access any time information from a reading buffer.</p>
-<p class="iclbody">If enabled, this buffer recall attribute is like an array (a Lua table) that contains timestamps, in seconds, of when each reading occurred.</p>
-<p class="iclbody">For dedicated reading buffers, all buffer attributes are saved to nonvolatile memory only when the reading buffer is saved to nonvolatile memory.</p>
+<p class="iclbody">This buffer recall attribute is similar to an array (a Lua table) that contains UTC timestamp of when each reading occurred.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">

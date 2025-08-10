@@ -21,15 +21,15 @@
 <p class="bodyzero">This function performs a contact check measurement and compares the result to the user-specified contact check threshold setting.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -69,23 +69,23 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">X</span></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Module channel number</p>
-</td>
-</tr>
-<tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">Z</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Module slot number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Module channel number</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">Performs a contact check measurement sequence, then compares the result to the user&#8209;specified threshold set using <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].contact.threshold</code>. Returns <code class="monospace">true</code> if the measurement is within the threshold. If it is not within the threshold, it returns <code class="monospace">false</code>.</p>
-<p class="iclbody">This measurement is performed on the best fixed range for the user threshold setting.</p>
 <p class="iclbody">The command also returns the resistance measurements used in determining the contact check result, but only when calibration is unlocked. These measurements are needed for the contact check calibration procedure.</p>
+<p class="iclbody">You cannot use the high impedance output or output mode setting with contact check.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
@@ -103,6 +103,8 @@
 <p class="listcommand"><a id="h111465" class="jump" title="slot[Z].smu[X].contact.r()" href="111444.htm" target="_self">slot[Z].smu[X].contact.r()</a></p>
 <p class="listcommand"><a id="h111466" class="jump" title="slot[Z].smu[X].contact.threshold" href="111447.htm" target="_self">slot[Z].smu[X].contact.threshold</a></p>
 <p class="listcommand"><a id="h111456" class="jump" title="slot[Z].smu[X].contact.speed" href="111446.htm" target="_self">slot[Z].smu[X].contact.speed</a></p>
+<p class="listcommand"><a id="h111469" class="jump" title="slot[Z].smu[X].source.offmode" href="111451.htm" target="_self">slot[Z].smu[X].source.offmode</a></p>
+<p class="listcommand"><a id="h110006" class="jump" title="slot[Z].smu[X].source.output" href="104154.htm" target="_self">slot[Z].smu[X].source.output</a></p>
 
 </body>
 </html>

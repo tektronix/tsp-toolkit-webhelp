@@ -12,7 +12,7 @@
 <body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116327')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="116326.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="14076.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="116328.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
@@ -21,15 +21,15 @@
 <p class="bodyzero">This function sends a command string to the remote device.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -98,8 +98,8 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command sends a command string to the remote instrument. A termination is added to the command string when it is sent to the remote instrument (<code class="monospace">tspnet.termination()</code>). You can also specify a format string, which causes the command to wait for a response from the remote instrument. The mainframe decodes the response message according to the format specified in the format string and returns the message as return values from the function (see <code class="monospace">tspnet.read()</code> for format specifiers).</p>
-<p class="iclbody">When this command is sent to a TSP-enabled instrument, the mainframe suspends operation until a timeout error is generated or until the instrument responds. The TSP prompt from the remote instrument is read and discarded. The mainframe places any remotely generated errors into its error queue. When the optional format string is not specified, this command is equivalent to <code class="monospace">tspnet.write()</code>, except that a termination is automatically added to the end of the command.</p>
+<p class="iclbody">This command sends a command string to the remote instrument. A termination is added to the command string when it is sent to the remote instrument (<code class="monospace">tspnet.termination()</code>). You can also specify a format string, which causes the command to wait for a response from the remote instrument. The MP5103 decodes the response message according to the format specified in the format string and returns the message as return values from the function (see <code class="monospace">tspnet.read()</code> for format specifiers).</p>
+<p class="iclbody">When this command is sent to a TSP-enabled instrument, the MP5103 suspends operation until a timeout error is generated or until the instrument responds. The TSP prompt from the remote instrument is read and discarded. The mainframe places any remotely generated errors and events into its error and event queue. When the optional format string is not specified, this command is equivalent to <code class="monospace">tspnet.write()</code>, except that a termination is automatically added to the end of the command.</p>
 <p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
@@ -132,9 +132,9 @@
 </table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"><a id="h116414" class="jump" title="tspnet.connect()" href="116325.htm" target="_self">tspnet.connect()</a></p>
-<p class="listcommand"><a id="h116418" class="jump" title="tspnet.read()" href="116329.htm" target="_self">tspnet.read()</a></p>
+<p class="listcommand">tspnet.read()</p>
 <p class="listcommand"><a id="h116419" class="jump" title="tspnet.termination()" href="116333.htm" target="_self">tspnet.termination()</a></p>
-<p class="listcommand"><a id="h116416" class="jump" title="tspnet.write()" href="116339.htm" target="_self">tspnet.write()</a></p>
+<p class="listcommand">tspnet.write()</p>
 
 </body>
 </html>

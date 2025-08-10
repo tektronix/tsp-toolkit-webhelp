@@ -12,24 +12,24 @@
 <body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('116020')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="116913.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="116017.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="116024.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t116020" class="heading2-icl">bufferVar.sourcefunctions</h2>
-<p class="bodyzero">This function contains the source function that was used for readings stored in a specified reading buffer.</p>
+<p class="bodyzero">This function contains the source function that was used to make the readings stored in a specified reading buffer.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,9 +37,9 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Clearing the buffer</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">See Details</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -53,35 +53,50 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sourcefunction</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source function used (such as <code class="monospace">voltage</code>) to acquire reading number <span class="monospaceitalic">N</span> in the specified buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source function used (<code class="monospace">Voltage</code>)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a default reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading number: <code class="monospace">1</code> to <code class="monospace">bufferVar.n</code></p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading number: <code class="monospace">1</code> to <span class="monospaceitalic">bufferVar</span><code class="monospace">.n </code></p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">The <code class="monospace">sourcefunctions</code> buffer column is a Lua table array of strings indicating the source function at the time of the measurement.</p>
+<p class="iclbody">The <code class="monospace">sourcefunctions</code> buffer column is a Lua table array of strings that indicate the source function at the time of the measurement.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer1 = slot[1].psu[1].makebuffer(100)</p>
-<p class="codetable">printbuffer(1, 5, buffer1.sourcefunctions)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer1 = slot[1].psu[1].makebuffer(10)</p>
+<p class="codetable">buffer1.clear()</p>
+<p class="codetable">slot[1].psu[1].measure.count = 10</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 2.2</p>
+<p class="codetable">slot[1].psu[1].source.output = 1</p>
+<p class="codetable">slot[1].psu[1].measure.v(buffer1)</p>
+<p class="codetable">slot[1].psu[1].source.output = 0</p>
+<p class="codetable">printbuffer(1, buffer1.n, buffer1.readings, buffer1.sourcefunctions, buffer1.sourceoutputstates)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Prints the source function for the first five readings in a reading buffer for channel 1 of the module installed in slot&nbsp;1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create the reading buffer <code class="monospace">buffer1</code> on slot 1 PSU channel 1.</p>
+<p class="tablebodytext">Clear the buffer.</p>
+<p class="tablebodytext">Set the measure count to 20.</p>
+<p class="tablebodytext">Set the source voltage level to 2.2.</p>
+<p class="tablebodytext">Turn the source output on.</p>
+<p class="tablebodytext">Make measurements and store them in <code class="monospace">buffer1</code>.</p>
+<p class="tablebodytext">Turn the output off.</p>
+<p class="tablebodytext">Show the each reading with the source function and source output state.</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">2.19807e+00, Voltage, On, 2.19804e+00, Voltage, On, 2.19812e+00, Voltage, On, 2.19819e+00, Voltage, On, 2.19811e+00, Voltage, On, 2.19811e+00, Voltage, On, 2.19813e+00, Voltage, On, 2.19817e+00, Voltage, On, 2.19816e+00, Voltage, On, 2.19817e+00, Voltage, On</p>
 </td>
 </tr>
 

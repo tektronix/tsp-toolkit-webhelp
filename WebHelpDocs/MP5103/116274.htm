@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t116274" class="heading2-icl">printbuffer()</h2>
-<p class="bodyzero">This function prints data from tables or reading buffer subtables.</p>
+<p class="bodyzero">This function prints data from tables or reading buffer columns.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -55,62 +55,143 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">startIndex</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Beginning index of the buffer to print; this must be more than one and less than endIndex</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Beginning index of the buffer to print; this must be more than one and less than <span class="monospaceitalic">endIndex</span></p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">endIndex</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Ending index of the buffer to print; this must be more than startIndex and less than the index of the last entry in the tables</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Ending index of the buffer to print; this must be more than <span class="monospaceitalic">startIndex</span> and less than the index of the last entry in the tables; you can use <span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code></p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">First table or reading buffer subtable to print</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">First table or reading buffer column to print</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar2</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Second table or reading buffer subtable to print</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Second table or reading buffer column to print</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable">...</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">One or more tables or reading buffer columns separated with commas</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVarN</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The last table or reading buffer subtable to print</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">...</span></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">One or more tables or reading buffer subtables separated with commas</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The last table or reading buffer column to print</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">If <span class="monospaceitalic">startIndex</span> ≤ 1, 1 is used as <span class="monospaceitalic">startIndex</span>. If <span class="monospaceitalic">n</span> &lt; <span class="monospaceitalic">endIndex</span>, <span class="monospaceitalic">n</span> is used as <span class="monospaceitalic">endIndex</span>.</p>
-<p class="iclbody">When any given reading buffers are used in overlapped commands that have not yet completed (at least to the specified index), this function outputs data as it becomes available.</p>
-<p class="iclbody">When there are outstanding overlapped commands to acquire data, <span class="monospaceitalic">n</span> refers to the index that the last entry in the table has after all the measurements have completed.</p>
-<p class="iclbody">If you pass a reading buffer instead of a reading buffer subtable, the default subtable for that reading buffer is used.</p>
+<p class="iclbody">If overlapped commands use the specified reading buffers and the commands are not complete (at least to the specified index), this function outputs data as it becomes available.</p>
+<p class="iclbody">When there are outstanding overlapped commands to acquire data, <span class="monospaceitalic">endIndex</span> refers to the index of the last entry in the table after all the measurements have completed.</p>
+<p class="iclbody">If you pass a reading buffer instead of a reading buffer column, the default column for that reading buffer is used. </p>
 <p class="iclbody">This command generates a single response message that contains all data. The response message is stored in the output queue.</p>
-<p class="iclbody">The <code class="monospace">format.data</code> attribute controls the format of the response message.</p>
+<p class="iclbody">The output of <code class="monospace">printbuffer()</code> is affected by the data format selected by <code class="monospace">format.data</code>. If you set <code class="monospace">format.data</code> to <code class="monospace">format.REAL32</code> or <code class="monospace">format.REAL64</code>, you have fewer options for buffer elements. With these formats, the only buffer elements available are <code class="monospace">readings</code>, statuses,  <code class="monospace">relativetimestamps</code>, and <code class="monospace">extravalues</code>. If you request a buffer element that is not permitted for the selected data format, the instrument returns <code class="monospace">9.91e37</code>.</p>
+<p class="iclbody">You can use the <span class="monospaceitalic">bufferVar</span> attributes that are listed in the following table with the print buffer command. For example, if <code class="monospace">testData</code> is the buffer, you can use <code class="monospace">testData.dates</code> attribute to print the date of each reading in the <code class="monospace">testData</code> buffer.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tableheading">Attribute</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.measurefunctions</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The measurement functions that were used to acquire a reading stored in a specified reading buffer. Refer to bufferVar.measurefunctions.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.measureranges</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The measurement range values that were used for readings stored in a specified buffer. Refer to bufferVar.measureranges.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.readings</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The readings stored in a specified reading buffer. Refer to bufferVar.readings.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.sourcefunctions</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source functions that were used for readings stored in a specified reading buffer. Refer to bufferVar.sourcefunctions.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.sourceoutputstates</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The states of the source output for readings stored in a specified buffer. Refer to bufferVar.sourceoutputstates.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.sourceranges</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source range values for readings stored in the specified buffer. Refer to bufferVar.sourceranges.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="monospaceitalic">bufferVar</span>.sourcevalues</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source levels that were being output when readings in the reading buffer were acquired. Refer to bufferVar.sourcevalues.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="monospaceitalic">bufferVar</span>.statuses</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The status values of readings in the reading buffer. Refer to bufferVar.statuses.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="monospaceitalic">bufferVar</span>.timestamps</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The timestamps of readings stored in the reading buffer. Refer to bufferVar.timestamps.</p>
+</td>
+</tr>
+
+</table>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">format.data = format.ASCII</p>
-<p class="codetable">format.asciiprecision = 6</p>
-<p class="codetable">printbuffer(1, rb1.n, rb1)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">rb1 = slot[2].smu[1].makebuffer(10)</p>
+<p class="codetable">slot[2].smu[1].trigger.measure.v(rb1)</p>
+<p class="codetable">slot[2].smu[1].source.output = 0</p>
+<p class="codetable">slot[2].smu[1].source.levelv = 5</p>
+<p class="codetable">slot[2].trigger.model.delete(&quot;TM1&quot;)</p>
+<p class="codetable">slot[2].trigger.model.create(&quot;TM1&quot;)</p>
+<p class="codetable">-- Start the measurements.</p>
+<p class="codetable">slot[2].trigger.model.addblock.measure(&quot;TM1&quot;, &quot;&quot;, 1, 10)</p>
+<p class="codetable">slot[2].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay2&quot;, 0.05)</p>
+<p class="codetable">slot[2].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput3&quot;, 1, 1)</p>
+<p class="codetable">slot[2].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay4&quot;, 0.05)</p>
+<p class="codetable">slot[2].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput5&quot;, 1, 0)</p>
+<p class="codetable">slot[2].trigger.model.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">waitcomplete() print(&quot;Done&quot;)</p>
+<p class="codetable">printbuffer(1, rb1.n, rb1.readings, rb1.sourcefunctions, rb1.sourceoutputstates)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This assumes that <code class="monospace">rb1</code> is a valid reading buffer in the runtime environment. The use of <code class="monospace">rb1.n</code></p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create a reading buffer named rb1 for slot 2, SMU channel 1 measurements.</p>
+<p class="tablebodytext">Define a voltage measurement that stores data in the rb1 reading buffer.</p>
+<p class="tablebodytext">Set the source output off and set the source level to 0&nbsp;V.</p>
+<p class="tablebodytext">Create a trigger model named TM1.</p>
+<p class="tablebodytext">Create a trigger model makes 10 measurements.</p>
+<p class="tablebodytext">Return the readings, source functions, and source output states from <code class="monospace">rb1</code>. The use of <code class="monospace">rb1.n</code></p>
 <p class="tablebodytext">(<span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>) indicates that the instrument should output all readings in the reading buffer. In this example, <code class="monospace">rb1.n</code> equals 10.</p>
-<p class="tablebodytext">Example of output data (<code class="monospace">rb1.readings</code>):</p>
-<p class="codetable">4.07205e-05, 4.10966e-05, 4.06867e-05, 4.08865e-05, 4.08220e-05, 4.08988e-05, 4.08250e-05, 4.09741e-05, 4.07174e-05, 4.07881e-05</p>
+<p class="tablebodytext">Example of output data:</p>
+<p class="codetable">Done</p>
+<p class="codetable">-1.043131560e-04, Voltage, Off, -1.029029372e-04, Voltage, Off, -1.049783605e-04, Voltage, Off, -1.073198582e-04, Voltage, Off, -1.037277834e-04, Voltage, Off, -1.019184419e-04, Voltage, Off, -1.060958894e-04, Voltage, Off, -1.062289302e-04, Voltage, Off, -1.084107862e-04, Voltage, Off, -1.065482284e-04, Voltage, Off</p>
 </td>
 </tr>
 
@@ -119,6 +200,7 @@
 <p class="listcommand"><a id="h116341" class="jump" title="format.asciiprecision" href="116244.htm" target="_self">format.asciiprecision</a></p>
 <p class="listcommand"><a id="h116346" class="jump" title="format.byteorder" href="116245.htm" target="_self">format.byteorder</a></p>
 <p class="listcommand"><a id="h116347" class="jump" title="format.data" href="116246.htm" target="_self">format.data</a></p>
+<p class="listcommand"><a id="h116348" class="jump" title="print()" href="116273.htm" target="_self">print()</a></p>
 <p class="listcommand"><a id="h116350" class="jump" title="printnumber()" href="116275.htm" target="_self">printnumber()</a></p>
 
 </body>

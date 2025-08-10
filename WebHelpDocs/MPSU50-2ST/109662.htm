@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute enables or disables the overcurrent protection function.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,11 +37,11 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>PSU reset</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">See Details</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">ENABLE</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">slot[<em class="emphasis">Z</em>].psu[<em class="emphasis">X</em>].ENABLE)</p>
 </td>
 </tr>
 
@@ -54,7 +54,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">protectEnabled</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].DISABLE</code></li><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].ENABLE</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Enable or disable overcurrent protection:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Disable: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].DISABLE</code></li><li class="tablelistbullet9pt">Enable: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].ENABLE</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
@@ -71,7 +72,7 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute enables or disables the output overcurrent protection function. When disabled, the overcurrent protection circuit will not turn off the power supply output when the output current exceeds the protection level attribute.</p>
+<p class="iclbody">When overcurrent protection is enabled, the power supply will turn off when the output current exceeds the protection level attribute.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">

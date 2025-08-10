@@ -21,15 +21,15 @@
 <p class="bodyzero">This function configures the linear sweep for the trigger model.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -47,7 +47,7 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].trigger.source.linear<span class="monospaceitalic">Y</span>(<span class="monospaceitalic">StartY</span>, <span class="monospaceitalic">EndY</span>, <em class="emphasis">P</em><span class="monospaceitalic">oints</span>)</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].trigger.source.linear<span class="monospaceitalic">Y</span>(s<span class="monospaceitalic">tart</span>, e<span class="monospaceitalic">nd</span>, p<span class="monospaceitalic">oints</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -65,23 +65,23 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Function:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage: <code class="monospace">v</code></li><li class="tablelistbullet9pt">Current: <code class="monospace">i</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function; <code class="monospace">v</code> = voltage</p>
+</td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">StartY</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">start</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Start source level</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">EndY</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">end</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">End source level</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Points</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">points</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Number of points used to calculate the step size</p>
 </td>
@@ -89,45 +89,51 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command sets up a linear sweep by configuring the start source level, end source level, and the number of steps to increase or decrease from the starting source level to the ending source level.</p>
-<p class="iclbody">The <span class="monospaceitalic">points</span> parameter does not set the number of steps in a sweep. Instead, it is used to calculate source values within a subsequent sweep. If the subsequent sweep has more points than specified in <span class="monospaceitalic">points</span>, the source restarts at the beginning. This means that if the number of times that the <code class="monospace">source.action.step</code> block is executed is greater than the number of points in a sweep as configured, the instrument satisfies the block execution count by restarting the sweep values from the beginning.</p>
-<p class="iclbody">If the subsequent sweep has fewer points than specified in <span class="monospaceitalic">points</span>, <span class="monospaceitalic">endY</span> is not reached during the sweep. This means that if the block execution count is less than the number of source values configured, the instrument satisfies the block execution count and ignores the remaining source values.</p>
-<p class="iclbody">In cases where the first sweep point is a nonzero value, it may be necessary to pre-charge the circuit so that the sweep returns a stable value for the first measured point without penalizing remaining points in the sweep.</p>
-<p class="iclbody">When you use a linear staircase sweep, the voltage or current source increases or decreases in fixed steps. Each point is equally-spaced between the start and stop.</p>
+<p class="iclbody">This command sets up a linear sweep by configuring the start source level, end source level, and the number of steps to increase or decrease from the starting source level to the ending source level. When you use a linear staircase sweep, the voltage source increases or decreases in fixed steps. Each point is equally spaced between the start and stop.</p>
+<p class="iclbody">The <span class="monospaceitalic">points</span> parameter does not set the number of steps in a sweep. Instead, it is used to calculate source values in a subsequent sweep. </p>
+<p class="bodytext">To advance through the configured sweep, use source action blocks in a trigger model. Available blocks include <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.action.step</code>, <code class="monospace">.set, .skip</code>, and <code class="monospace">.bias</code>. When you use trigger model source action blocks to progress through the sweep:</p>
+<ul class="listbullet"><li class="listbullet">If the number of source block executions exceeds the configured number of levels, the sweep wraps to the beginning.</li><li class="listbullet">If the number of executions is less than the configured number of levels, the remaining source values are ignored and not used.</li></ul><p class="iclbody">In cases where the first sweep point is a nonzero value, it may be necessary to pre-charge the circuit so that the sweep returns a stable value for the first measured point without penalizing remaining points in the sweep.</p>
+<p class="iclbody">The PSU stores the most recent configured source action. The last call to a sweep command is used for the source action in a trigger model. The sweep commands are <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">PsuCh1 = slot[1].psu[1]</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">--- Set the linear sweep starting at 0 V rising to 5 V over 6 steps  ---</p>
+<p class="codetable">slot[1].psu[1].trigger.source.linearv(0,5,6)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Set the linear sweep starting at 0 V rising to 5 V over 6 steps  ---</p>
-<p class="codetable">PsuCh1.trigger.source.linearv(0,5,6)</p>
-<p class="codetable">&nbsp;</p>
-<p class="codetable">--- Delete old trigger model instances before creating new ones ---</p>
+<p class="codetable">--- Delete old trigger models. ---</p>
 <p class="codetable">slot[1].trigger.model.delete(&quot;TM1&quot;)</p>
+<p class="codetable">---Create a new trigger model. ---</p>
 <p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Loop 6 times stepping the voltage from 0 V to 5 V for 6 steps in 1 V increments as specified in the psuCh1.trigger.source.linearv specification above. Branch to &quot;SourceActionStep&quot; ---</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOn&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;TM1&quot;, &quot;SourceActionStep&quot;, 1, 0)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;Delay5ms&quot;, 0.005)</p>
+<p class="codetable">--- Create a trigger model that turns on the output, </p>
+<p class="codetable">--- steps the voltage, delays 5&nbsp;ms, and then loops </p>
+<p class="codetable">--- through the remaining values of the sweep.</p>
+<p class="codetable">--- The branch counter is 6, so the PSU </p>
+<p class="codetable">--- steps the voltage from 0&nbsp;V to 5&nbsp;V in 1&nbsp;V steps</p>
+<p class="codetable">--- before turning off the output.</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;TM1&quot;, &quot;SourceActionStep&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;&quot;, 0.005)</p>
+<p class="codetable">--- Create a branch counter to determine how many steps to execute in the sweep.</p>
 <p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;, &quot;BranchCounter&quot;, &quot;SourceActionStep&quot;, 6)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOff&quot;, 1, 0)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 0)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Execute the trigger model ---</p>
+<p class="codetable">--- Execute the trigger model.</p>
 <p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example sets up a linear sweep with source level beginning, end, and number of steps.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example sets up a trigger model to execute a linear sweep.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h117725" class="jump" title="slot[Z].trigger.model.addblock.source.action.bias()" href="117724.htm" target="_self">slot[Z].trigger.model.addblock.source.action.bias()</a></p>
-<p class="listcommand"><a id="h116764" class="jump" title="slot[Z].trigger.model.addblock.source.action.skip()" href="116643.htm" target="_self">slot[Z].trigger.model.addblock.source.action.skip()</a></p>
-<p class="listcommand"><a id="h116766" class="jump" title="slot[Z].trigger.model.addblock.source.action.step()" href="116653.htm" target="_self">slot[Z].trigger.model.addblock.source.action.step()</a></p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.bias()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.set()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.skip()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.step()</p>
 
 </body>
 </html>

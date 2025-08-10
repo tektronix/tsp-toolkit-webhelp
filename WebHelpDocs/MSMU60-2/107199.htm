@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute contains the number of readings in the buffer.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -39,7 +39,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">See Details</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -59,23 +59,51 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This read-only attribute contains the number of readings in the buffer.</p>
-<p class="iclsubheading">Example</p>
+<p class="iclbody">You can use this to specify the final reading in a buffer.</p>
+<p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">buffer1 = slot[1].smu[1].makebuffer(100)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">buffer1 = slot[2].smu[1].makebuffer(100)</p>
+<p class="codetable">slot[2].smu[1].measure.count = 3</p>
+<p class="codetable">slot[2].smu[1].measure.i(buffer1)</p>
 <p class="codetable">numberOfReadings = buffer1.n</p>
+<p class="codetable">print(numberOfReadings)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets the <code class="monospace">numberOfReadings</code> variable to the number of readings stored in <code class="monospace">buffer1.n</code> of channel 1 of the module installed in slot 1.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Create a reading buffer named <code class="monospace">buffer1</code> on slot 2, SMU channel 1.</p>
+<p class="tablebodytext">Set the measure count to 3.</p>
+<p class="tablebodytext">Make current measurements and store the readings in <code class="monospace">buffer1</code>.</p>
+<p class="tablebodytext">Set the <code class="monospace">numberOfReadings</code> variable to the number of readings stored in <code class="monospace">buffer1</code>.</p>
+<p class="tablebodytext">Return the number of readings:</p>
+<p class="tablebodytext"><code class="monospace">3</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[2].smu[1].measure.count = 3</p>
+<p class="codetable">slot[2].smu[1].measure.i(slot[2].smu[1].defbuffer1)</p>
+<p class="codetable">numberOfReadings = slot[2].smu[1].defbuffer1.n</p>
+<p class="codetable">print(numberOfReadings)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the measure count to 3.</p>
+<p class="tablebodytext">Make current measurements and store the readings in <code class="monospace">defbuffer1</code> on SMU channel 1 in slot 2.</p>
+<p class="tablebodytext">Set the <code class="monospace">numberOfReadings</code> variable to the number of readings stored in <code class="monospace">defbuffer1.n</code>.</p>
+<p class="tablebodytext">Return the number of readings:</p>
+<p class="tablebodytext"><code class="monospace">3</code></p>
 </td>
 </tr>
 

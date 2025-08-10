@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title> slot[Z].status.measurement </title>
+<title> slot[Z].status.measurement.* </title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <meta name="Generator" content="Author-it">
 <meta name="Keywords" content="">
@@ -14,22 +14,22 @@
 <td width= "18">
 <p class="bodytext"><a href="117357.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="117223.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="117321.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
-<h2 id="t116015" class="heading2-icl">slot[Z].status.measurement</h2>
+<h2 id="t116015" class="heading2-icl">slot[Z].status.measurement.*</h2>
 <p class="bodyzero">This attribute contains the measurement event register set.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -101,7 +101,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">6,491 (all bits set)</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">6,275 (all bits set)</p>
 </td>
 </tr>
 
@@ -133,7 +133,7 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">These attributes read or write the measurement event registers.</p>
-<p class="iclbody">Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15.For example, assume value 257 is returned for the enable register. The binary equivalent is 0000&nbsp;0001&nbsp;0000&nbsp;0001. This value indicates that bit B0 (VLMT) and bit B8 (BAV) are&nbsp;set.</p>
+<p class="iclbody">Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15. For example, assume value 130 is returned for the enable register. The binary equivalent is 0000&nbsp;0000&nbsp;1000&nbsp;0001. This value indicates that bit B0 (VLMT) and bit B7 (ROF) are&nbsp;set.</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="576" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -241,99 +241,76 @@
 
 </table>
 <p class="iclbody">* Least significant bit<br>** Most significant bit</p>
-<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents and Enable and transition registers. The individual bits of this register are defined in the following table.</p>
+<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents. The individual bits of this register are defined in the following table.</p>
 <p class="iclspacing"></p>
-<table class="tableintopic" width="612" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <th style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Bit</p>
 </th>
-<th style="border:1px solid #C0C0C0;" width="276"><p class="tableheading">Value</p>
-</th>
-<th style="border:1px solid #C0C0C0;" width="264"><p class="tableheading">Description</p>
+<th style="border:1px solid #C0C0C0;" width="552"><p class="tableheading">Value</p>
 </th>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="codetable">status.measurement.VLMT</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Set bit is a summary of the<code class="monospace"> status.measurement.voltage_limit</code> register.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.VLMT</p>
+<p class="tablebodytext">Set bit is a summary of the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].status.measurement.voltage_limit</code> register.</p>
 <p class="tablebodytext">Bit B0 decimal value: 1</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B1</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="codetable">status.measurement.ILMT</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Set bit is a summary of the<code class="monospace"> status.measurement.current_limit</code> register.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.ILMT</p>
+<p class="tablebodytext">Set bit is a summary of the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].status.measurement.current_limit</code> register.</p>
 <p class="tablebodytext">Bit B1 decimal value: 2</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B2 to B6</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Not used</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Not applicable</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B7</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="codetable">status.measurement.ROF</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Set bit is a summary of the<code class="monospace"> status.measurement.reading_overflow</code> register.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.ROF</p>
+<p class="tablebodytext">Set bit is a summary of the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].status.measurement.reading_overflow</code> register.</p>
 <p class="tablebodytext">Bit B7 decimal value: 128</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B8</p>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B8 to B10</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="codetable">status.measurement.BAV</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Set bit is a summary of the<code class="monospace"> status.measurement.buffer_available</code> register.</p>
-<p class="tablebodytext">Bit B8 decimal value: 256</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B9 to B10</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Not used</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Not applicable</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B11</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="codetable">status.measurement.INT</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Set bit indicates that interlock has been asserted.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.INT</p>
+<p class="tablebodytext">Set bit indicates that interlock has been asserted.</p>
 <p class="tablebodytext">Bit B11 decimal value: 2,048</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B12</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="codetable">status.measurement.INST</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Set bit indicates that a bit in the measurement instrument summary register is set.</p>
-<p class="tablebodytext">Bit B12 decimal value: 4,056</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.INST</p>
+<p class="tablebodytext">Set bit indicates that a bit in the measurement instrument summary register is set.</p>
+<p class="tablebodytext">Bit B12 decimal value: 4,096</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B13 to B15</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="276"><p class="tablebodytext">Not used</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="264"><p class="tablebodytext">Not applicable</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
 </td>
 </tr>
 
 </table>
-<p class="iclbody">As an example, to set bit B8 of the measurement event enable register for slot 1, set <code class="monospace">slot1.status.measurement.enable = status.measurement.BAV</code>.</p>
-<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">measurementRegister</span> can be set to the decimal equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">measurementRegister</span> to the sum of their decimal weights. For example, to set bits B1 and B8, set <span class="monospaceitalic">measurementRegister</span> to 258 (which is the sum of 2 + 256).</p>
+<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">measurementRegister</span> can be set to the decimal equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">measurementRegister</span> to the sum of their decimal weights. For example, to set bits B1 and B7, set <span class="monospaceitalic">measurementRegister</span> to 130 (which is the sum of 2 + 128).</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -506,11 +483,11 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot1.status.measurement.enable = status.measurement.BAV</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].status.measurement.enable = slot[1].status.measurement.ILMT</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets the BAV bit of the measurement event enable register.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">For slot 1, sets the current limit (B1) bit of the Measurement Event enable register.</p>
 </td>
 </tr>
 

@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute contains the operation status instrument summary register set. </p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="96"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="96"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="96"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="96"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="96"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="96"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="192"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="192"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -101,7 +101,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="96"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="192"><p class="tablebodytextsmall">28,672 (all bits set)</p>
+<td style="border:2px solid #D3D3D3;" width="192"><p class="tablebodytextsmall">30,720 (all bits set)</p>
 </td>
 </tr>
 
@@ -120,7 +120,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">operationRegister</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The status of the operation event register; a zero (0) indicates no bits set (also send 0 to clear all bits); other values indicate various bit settings</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The status of the operation event register; a zero (0) indicates no bits set (also send 0 to clear all bits); other values indicate bits are set</p>
 </td>
 </tr>
 
@@ -233,7 +233,7 @@
 
 </table>
 <p class="iclbody">* Least significant bit<br>** Most significant bit<br></p>
-<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents and Enable and transition registers. The individual bits of this register are defined in the following table.</p>
+<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents. The individual bits of this register are defined in the following table.</p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="67"><p class="tableheading">Bit</p>
@@ -244,7 +244,7 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="67"><p class="tableheading">B0 to B11</p>
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tableheading">B0 to B10</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="317"><p class="tablebodytext">Not used</p>
 </td>
@@ -252,11 +252,20 @@
 </td>
 </tr>
 <tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="67"><p class="tableheading">B11</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="317"><p class="tablebodytext"><code class="monospace">status.operation.instrument.TRGTMR</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits for the Operation Status Trigger Timer Summary register is set.</p>
+<p class="tablebodytext">Bit B11 decimal value: 2,048</p>
+</td>
+</tr>
+<tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="67"><p class="tableheading">B12</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="317"><p class="tablebodytext"><code class="monospace">status.operation.instrument.DIGIO</code></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits for the operation status digital I/O summary register is set.</p>
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits for the Operation Status Digital I/O Summary register is set.</p>
 <p class="tablebodytext">Bit B12 decimal value: 4,096</p>
 </td>
 </tr>
@@ -265,7 +274,7 @@
 </td>
 <td style="border:1px solid #C0C0C0;" width="317"><p class="tablebodytext"><code class="monospace">status.operation.instrument.TSPLINK</code></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits for the operation status TSP-Link summary register is set.</p>
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits for the Operation Status TSP-Link Summary register is set.</p>
 <p class="tablebodytext">Bit B13 decimal value: 8,192</p>
 </td>
 </tr>
@@ -274,7 +283,7 @@
 </td>
 <td style="border:1px solid #C0C0C0;" width="317"><p class="tablebodytext"><code class="monospace">status.operation.instrument.LAN</code></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits for the operation status LAN summary register is set.</p>
+<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits for the Operation Status LAN Summary register is set.</p>
 <p class="tablebodytext">Bit B14 decimal value: 16,384</p>
 </td>
 </tr>
@@ -475,10 +484,9 @@
 </table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Operation Status Registers</p>
-<p class="listcommand"><a id="h116370" class="jump" title="status.operation.*" href="116279.htm" target="_self">status.operation</a></p>
-<p class="iclbody">Condition register sets of:</p>
-<p class="listcommand">• <a id="h116371" class="jump" title="status.operation.instrument.digio.*" href="115992.htm" target="_self">status.operation.instrument.digio.*</a></p>
-<p class="listcommand">• <a id="h116372" class="jump" title="status.operation.instrument.lan.*" href="115997.htm" target="_self">status.operation.instrument.lan.*</a></p>
+<p class="listcommand"><a id="h116370" class="jump" title="status.operation.*" href="116279.htm" target="_self">status.operation.*</a></p>
+<p class="listcommand"><a id="h116371" class="jump" title="status.operation.instrument.digio.*" href="115992.htm" target="_self">status.operation.instrument.digio.*</a></p>
+<p class="listcommand"><a id="h116372" class="jump" title="status.operation.instrument.lan.*" href="115997.htm" target="_self">status.operation.instrument.lan.*</a></p>
 
 </body>
 </html>

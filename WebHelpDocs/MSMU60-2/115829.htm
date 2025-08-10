@@ -21,15 +21,15 @@
 <p class="bodyzero">This function configures the list sweep for the trigger model.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -65,56 +65,53 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Function:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage: <code class="monospace">v</code></li><li class="tablelistbullet9pt">Current: <code class="monospace">i</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function; <code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current</p>
+</td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">SourceLevels</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">List of source levels. Each time a <code class="monospace">source</code> block is reached, the index increases by 1. When it reaches the end, it cycles back to the beginning.</p>
-<p class="tablebodytext">&nbsp;</p>
-<p class="tablebodytext">For example, <code class="monospace">({1, 2, 3})</code></p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">List of source levels; see <strong class="specialbold">Details</strong></p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command sets up a list sweep by configuring the source type and the source levels list.</p>
-<p class="iclbody">In a list staircase sweep, the voltage or current increases by one step when the <code class="monospace">source</code> block is reached. Once the index reaches the end of the list, it loops back to the beginning.</p>
+<p class="bodytext">This command sets up a list sweep by configuring the source type and the source levels list. The <span class="monospaceitalic">SourceLevels</span> list defines the source levels. An example of a sourceLevels list is <code class="monospace">({1, 2, 3})</code>.</p>
+<p class="bodytext">To advance through the configured sweep, use source action blocks in a trigger model. Available blocks include <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.action.step</code>, <code class="monospace">.set, .skip</code>, and <code class="monospace">.bias</code>. To advance through the configured sweep, use source action blocks in a trigger model. Available blocks include <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.action.step</code>, <code class="monospace">.set, .skip</code>, and <code class="monospace">.bias</code>. When you use trigger model source action blocks to progress through the sweep:</p>
+<ul class="listbullet"><li class="listbullet">If the number of source block executions exceeds the configured number of levels, the sweep wraps to the beginning.</li><li class="listbullet">If the number of executions is less than the configured number of levels, the remaining source values are ignored and not used.</li></ul><p class="bodytext">The SMU stores the most recent configured source action. The last call to a sweep command is used for the source action in a trigger model. The sweep commands are <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SmuCh1 = slot[1].smu[1]</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">--- Set the list sweep to start at 1 V and iterate the list. ---</p>
+<p class="codetable">slot[1].smu[1].trigger.source.listv({1, 2, 3})</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Set the list sweep starting at 1V and iterate the list ---</p>
-<p class="codetable">slot[Z].smu[X].trigger.source.listY({1,2,3})</p>
-<p class="codetable">&nbsp;</p>
-<p class="codetable">--- Delete old trigger model instances before creating new ones ---</p>
+<p class="codetable">--- Delete old trigger model instance and create new one. ---</p>
 <p class="codetable">slot[1].trigger.model.delete(&quot;TM1&quot;)</p>
 <p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Loop 4 times stepping the voltage from 1 V to 3 V and stepping back to  1V the fourth time. ---</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOn&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;TM1&quot;, &quot;SourceActionStep&quot;, 1, 0)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;Delay5ms&quot;, 0.005)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;, &quot;BranchCounter&quot;, &quot;SourceActionStep&quot;, 4)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOff&quot;, 1, 0)</p>
+<p class="codetable">--- Create a trigger model that turns on the output, steps the voltage, delays 5 ms, and then loops through the remaining values of the sweep. The branch counter is 4, so the instrument steps the voltage from 1 V to 3 V to 1 V before turning off the output. ---</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;TM1&quot;, &quot;SourceActionStep&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;&quot;, 0.005)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;, &quot;&quot;, &quot;SourceActionStep&quot;, 4)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 0)</p>
 <p class="codetable">&nbsp;</p>
 <p class="codetable">--- Execute the trigger model ---</p>
 <p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example uses the <code class="monospace">slot[Z].smu[X].trigger.source.listY()</code> to set the sweep source levels, and the list is iterated. The measurement loop is then initiated and the trigger model is executed.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example uses the <code class="monospace">slot[Z].smu[X].trigger.source.listY()</code> to set the sweep source levels. It creates a trigger model to iterate through the list sweep.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h116806" class="jump" title="slot[Z].trigger.model.addblock.source.action.bias()" href="115504.htm" target="_self">slot[Z].trigger.model.addblock.source.action.bias()</a></p>
-<p class="listcommand"><a id="h116898" class="jump" title="slot[Z].trigger.model.addblock.source.action.skip()" href="115827.htm" target="_self">slot[Z].trigger.model.addblock.source.action.skip()</a></p>
-<p class="listcommand"><a id="h116807" class="jump" title="slot[Z].trigger.model.addblock.source.action.step()" href="114973.htm" target="_self">slot[Z].trigger.model.addblock.source.action.step</a></p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.bias()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.skip()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.step</p>
 
 </body>
 </html>

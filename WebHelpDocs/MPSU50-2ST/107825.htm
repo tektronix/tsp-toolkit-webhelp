@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute configures the measure rate for a PSU channel.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,9 +37,9 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Power supply reset</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Mainframe reset<br>PSU reset<br>Power cycle</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Nonvolatile memory</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">slot[Z].psu[X].RATE_NORMAL</p>
 </td>
@@ -47,7 +47,7 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">measureRate</span><code class="monospace"> </code>= slot[Z].psu[X].measure.rate</p>
+<p class="iclcode"><span class="monospaceitalic">measureRate</span><code class="monospace"> </code>= slot[<em class="emphasis">Z</em>].psu[<em class="emphasis">X</em>].measure.rate</p>
 <p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].measure.rate = <span class="monospaceitalic">measureRate</span></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
@@ -73,7 +73,8 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This attribute configures the measure rate for the channel to one of the predefined rates.</p>
-<p class="iclbody">Setting this attribute changes the measurement aperture of the analog-to-digital converter and also changes the reported NPLC and aperture attributes to match the predefined rate.</p>
+<p class="iclbody">Setting this attribute changes the measurement aperture of the analog-to-digital converter. The measurement aperture is the amount of time that the input signal is measured. The fast reading rate increases reading noise. The normal reading rate takes longer but has the lowest reading noise.</p>
+<p class="iclbody">This setting changes the reported NPLC and aperture attributes to match the predefined rate.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">

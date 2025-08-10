@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t115821" class="heading2-icl">slot[Z].smu[X].trigger.measure.Y()</h2>
-<p class="bodyzero">This function configures the reading buffer and measure type for the trigger model.</p>
+<p class="bodyzero">This function configures the measurements to be made during trigger model operation and identifies the reading buffer that stores the measurements.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -48,7 +48,8 @@
 </table>
 <p class="iclsubheading">Usage</p>
 <p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.measure.<span class="monospaceitalic">Y</span>(<span class="monospaceitalic">ReadingBuffer</span>)</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.measure.<span class="monospaceitalic">iv</span>(<span class="monospaceitalic">ibuffer, vbuffer</span>)</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.measure.<code class="monospace">iv</code>(<em class="emphasis">CurrentBuffer</em><span class="monospaceitalic">, VoltageBuffer</span>)</p>
+<p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
@@ -65,8 +66,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Function:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage: <code class="monospace">v</code></li><li class="tablelistbullet9pt">Current: <code class="monospace">i</code></li><li class="tablelistbullet9pt">Power: <code class="monospace">p</code></li><li class="tablelistbullet9pt">Current and voltage: <code class="monospace">iv</code></li><li class="tablelistbullet9pt">Resistance:  <code class="monospace">r</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function; <code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current, <code class="monospace">r</code> = resistance, <code class="monospace">iv</code> = current and voltage, <code class="monospace">p</code> = power</p>
+</td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">ReadingBuffer</span></p>
@@ -75,13 +76,13 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">ibuffer</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">CurrentBuffer</em></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Buffer to store current readings</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">vbuffer</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">VoltageBuffer</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Buffer to store voltage readings</p>
 </td>
@@ -89,7 +90,7 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command configures the reading buffer and measure type for the trigger model. Any measurements made in the trigger model will be stored in this reading buffer according to the specified measurement type.</p>
+<p class="iclbody">This command configures the measurements to be made during the trigger model. After configuring the measurements to be made, add a measure block to your trigger model to perform the measurements. Any measurements made in the trigger model are stored in this reading buffer according to the specified measurement type.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
@@ -100,7 +101,7 @@
 <p class="codetable">ReadingBuffer = SmuCh1.makebuffer(10)</p>
 <p class="codetable">SmuCh1.trigger.measure.v(ReadingBuffer)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Set the initial voltage output for SMU Ch1 to 2V ---</p>
+<p class="codetable">--- Set the initial voltage output for SMU Ch1 to 2&nbsp;V. ---</p>
 <p class="codetable">SmuCh1.source.levelv = 2</p>
 <p class="codetable">&nbsp;</p>
 <p class="codetable">--- Delete old trigger model instances before creating new ones ---</p>
@@ -114,6 +115,7 @@
 <p class="codetable">&nbsp;</p>
 <p class="codetable">--- Execute the trigger model ---</p>
 <p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">waitcomplete()</p>
 <p class="codetable">-- Now printbuffer the 10 measurements.</p>
 <p class="codetable">printbuffer(1, ReadingBuffer.n, ReadingBuffer)</p>
 </td>
@@ -125,8 +127,8 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h115819" class="jump" title="slot[Z].trigger.model.addblock.measure()" href="114968.htm" target="_self">slot[Z].trigger.model.addblock.measure()</a></p>
-<p class="listcommand"><a id="h115820" class="jump" title="slot[Z].trigger.model.addblock.measureoverlapped()" href="114969.htm" target="_self">slot[Z].trigger.model.addblock.measureoverlapped()</a></p>
+<p class="listcommand">slot[Z].trigger.model.addblock.measure()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.measureoverlapped()</p>
 
 </body>
 </html>

@@ -14,22 +14,22 @@
 <td width= "18">
 <p class="bodytext"><a href="106532.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="106534.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="118094.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t106533" class="heading2-icl">localnode.showerrors</h2>
 <p class="bodyzero">This attribute sets whether or not the instrument automatically sends generated errors.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -48,7 +48,7 @@
 </table>
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><span class="monospaceitalic">errorMode</span> = localnode.showerrors</p>
-<p class="iclcode">localnode.showerrors = <span class="monospaceitalic">errorModee</span></p>
+<p class="iclcode">localnode.showerrors = <span class="monospaceitalic">errorMode</span></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -60,14 +60,14 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">If this attribute is set to <code class="monospace">1</code>, the instrument automatically sends any generated errors stored in the error queue, and then clears the queue. Errors are processed after executing a command message (just before issuing a prompt if prompts are enabled).</p>
-<p class="iclbody">If this attribute is set to <code class="monospace">0</code>, errors are left in the error queue and must be explicitly read or cleared.</p>
+<p class="iclbody">If this attribute is set to enable, the instrument automatically sends any generated errors stored in the error queue, and then clears the queue. Errors are processed after executing a command message (just before issuing a prompt if prompts are enabled).</p>
+<p class="iclbody">If this attribute is set to disable, errors are left in the error queue and must be explicitly read or&nbsp;cleared.</p>
 <p class="iclbody">When using this command from a remote node, replace <code class="monospace">localnode</code> with the node reference, for example, <code class="monospace">node[5].showerrors</code>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">localnode.showerrors = 1</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">localnode.showerrors = localnode.ENABLE</p>
 </td>
 </tr>
 <tr align="left" valign="top">

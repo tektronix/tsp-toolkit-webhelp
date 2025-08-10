@@ -1,0 +1,100 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> tspnet.tsp.runscript() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('118378')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="116337.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="14089.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t118378" class="heading2-icl">tspnet.tsp.runscript()</h2>
+<p class="bodyzero">This function loads and runs a script on a remote TSP-enabled instrument.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
+</th>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
+</th>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">tspnet.tsp.runscript(<em class="emphasis">connectionID</em>, &quot;<em class="emphasis">script</em>&quot;)</p>
+<p class="iclcode">tspnet.tsp.runscript(<em class="emphasis">connectionID</em>, &quot;<em class="emphasis">name</em>&quot;, &quot;<em class="emphasis">script</em>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">connectionID</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Integer value used as an identifier for other <code class="monospace">tspnet</code> commands</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">name</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name that is assigned to the script</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">script</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The body of the script as a string</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function is appropriate only for TSP-enabled instruments.</p>
+<p class="iclbody">This function downloads a script to a remote instrument and runs it. It automatically adds the appropriate <code class="monospace">loadscript</code> and <code class="monospace">endscript</code> commands around the script, captures any errors, and reads back any prompts. No additional substitutions are done on the text.</p>
+<p class="iclbody">The script is automatically loaded, compiled, and run.</p>
+<p class="iclbody">Any output from previous commands is discarded.</p>
+<p class="iclbody">This command does not wait for the script to complete.</p>
+<p class="iclbody">If you do not want the script to do anything immediately, make sure the script only defines functions for later use. Use the <code class="monospace">tspnet.execute()</code> function to execute those functions later.</p>
+<p class="bodytext">If the remote instrument supports anonymous scripts, if no name is specified, the script is loaded as the anonymous script.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">tspnet.tsp.runscript(myconnection, &quot;mytest&quot;,</p>
+<p class="codetable">&quot;print([[start]]) for d = 1, 10 do print([[work]]) end print([[end]])&quot;)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Load and run a script entitled <code class="monospace">mytest</code> on the TSP&#8209;enabled instrument connected with <code class="monospace">myconnection</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand">tspnet.execute()</p>
+
+</body>
+</html>

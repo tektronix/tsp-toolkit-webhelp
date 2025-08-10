@@ -9,10 +9,10 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('114964')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114964')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="116494.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="114966.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="114965.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
@@ -21,15 +21,15 @@
 <p class="bodyzero">This function causes the trigger model to branch to a specified trigger model block the first time it is encountered in the trigger model.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -59,7 +59,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger model to which the block is added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -84,24 +84,23 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SLOT = 1</p>
-<p class="codetable">slot[SLOT].trigger.model.create(&quot;branchonce1&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.source.output(&quot;branchonce1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.logevent(&quot;branchonce1&quot;, &quot;logevent2&quot;, slot[SLOT].trigger.model.LOG_INFO3, &quot;logevent2&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.branch.once(&quot;branchonce1&quot;, &quot;branchonce3&quot;, &quot;sourceoutput1&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.logevent(&quot;branchonce1&quot;, &quot;logevent4&quot;, slot[SLOT].trigger.model.LOG_INFO2, &quot;Done.&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.print(&quot;branchonce1&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.initiate(&quot;branchonce1&quot;)</p>
-<p class="codetable">errorqueue.next()</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;TM1&quot;, &quot;&quot;, slot[1].trigger.model.LOG_INFO3, &quot;logevent2&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.once(&quot;TM1&quot;, &quot;branchonce3&quot;, &quot;sourceoutput1&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;TM1&quot;, &quot;logevent4&quot;, slot[1].trigger.model.LOG_INFO2, &quot;Done.&quot;)</p>
+<p class="codetable">print(eventlog.next())</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses <code class="monospace">branch.once</code> to branch back one time. Log events will show the behavior.<br>Note the assignment of the SLOT variable and change it accordingly.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses <code class="monospace">branch.once</code> to branch to the defined block one time. Log events show the behavior.</p>
+<p class="tablebodytext">Trigger models require at least one channel-specific command when they are initiated. The <code class="monospace">sourceoutput1</code> block is provided here to assign the channel.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
+<p class="listcommand">Branch once block</p>
 <p class="listcommand"><a id="h115064" class="jump" title="slot[Z].trigger.model.addblock.branch.onceexcluded()" href="114965.htm" target="_self">slot[Z].trigger.model.addblock.branch.onceexcluded()</a></p>
 
 </body>

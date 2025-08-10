@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> lan.mdns.enable </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('132018')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="116256.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="116257.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t132018" class="heading2-icl">lan.mdns.enable</h2>
+<p class="bodyzero">This attribute controls whether or not multicast DNS (mDNS) communications are enabled.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Front-panel LAN</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">localnode.ENABLE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">state</em> = lan.mdns.enable</p>
+<p class="iclcode">lan.mdns.enable = <em class="emphasis">state</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Multicast DNS communications state:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Enable mDNS: <code class="monospace">localnode.ENABLE</code></li><li class="tablelistbullet9pt">Disable mDNS : <code class="monospace">localnode.DISABLE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When set to <code class="monospace">localnode.ENABLE</code>, this command enables mDNS communications. When this command is set to <code class="monospace">localnode.DISABLE</code>, all mDNS communications are disabled.</p>
+<p class="iclbody">This command is only available if <code class="monospace">lan.enable</code> is set to <code class="monospace">localnode.ENABLE</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">lan.mdns.enable = localnode.ENABLE</p>
+<p class="codetable">lan.applysettings()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Enables mDNS.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h117276" class="jump" title="lan.enable" href="116900.htm" target="_self">lan.enable</a></p>
+<p class="listcommand"><a id="h117281" class="jump" title="lan.hislip.access" href="117275.htm" target="_self">lan.hislip.access</a></p>
+<p class="listcommand"><a id="h117413" class="jump" title="lan.status.port.dst" href="117408.htm" target="_self">lan.status.port.dst</a></p>
+<p class="listcommand"><a id="h117414" class="jump" title="lan.status.port.rawsocket" href="117409.htm" target="_self">lan.status.port.rawsocket</a></p>
+<p class="listcommand"><a id="h117415" class="jump" title="lan.status.port.telnet" href="117410.htm" target="_self">lan.status.port.telnet</a></p>
+
+</body>
+</html>

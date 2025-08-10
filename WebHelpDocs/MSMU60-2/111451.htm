@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t111451" class="heading2-icl">slot[Z].smu[X].source.offmode</h2>
-<p class="bodyzero">This attribute sets the source output-off mode.</p>
+<p class="bodyzero">This attribute contains the source output-off mode.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="130"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,11 +37,11 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">SMU reset</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">???</p>
+<td style="border:2px solid #C0C0C0;" width="130"><p class="tablebodytextsmall">Saved setup</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">smu.OFFMODE_NORMAL</p>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">slot[Z].smu[X].OFFMODE_NORMAL (0)</p>
 </td>
 </tr>
 
@@ -55,7 +55,7 @@
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">sourceOffmode</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The output&#8209;off mode:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Normal: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu.OFFMODE_NORMAL</code></li><li class="tablelistbullet9pt">High impedance: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu.OFFMODE_HIGH_Z</code></li></ul></td>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Normal: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFFMODE_NORMAL</code> or <code class="monospace">0</code></li><li class="tablelistbullet9pt">High impedance: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFFMODE_HIGH_Z</code> or <code class="monospace">1</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
@@ -73,8 +73,9 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">Reading this attribute returns the output-off mode of the source. Setting this attribute configures the SMU output-off mode.</p>
-<p class="iclbody">In normal mode, the source function is configured as set by the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.offfunc</code> attribute. The <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.offfunc</code> attribute controls whether the SMU is configured as a 0 V voltage source or a 0 A current source. When the SMU is operating as a 0 A source, the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.offlimitv</code> attribute sets the voltage limit, just as the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.offlimiti</code> attribute sets the current limit when the SMU is operating as a 0 V voltage source.</p>
+<p class="iclbody">When the normal setting is selected, the source function is configured as set by the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.offfunc</code> attribute. The <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.offfunc</code> attribute controls whether the SMU is configured as a 0 V voltage source or a 0 A current source. When the SMU is operating as a 0 A source, the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.offlimitv</code> attribute sets the voltage limit, just as the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.offlimiti</code> attribute sets the current limit when the SMU is operating as a 0 V voltage source.</p>
 <p class="iclbody">When the mode is set to <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFFMODE_HIGH_Z</code>, the SMU opens the output relay when the output is turned off.</p>
+<p class="bodytext">If you are using contact check, you cannot use the high&#8209;Z output setting.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
@@ -89,6 +90,7 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h111455" class="jump" title="slot[Z].smu[X].contact.check()" href="111445.htm" target="_self">slot[Z].smu[X].contact.check()</a></p>
 <p class="listcommand"><a id="h111464" class="jump" title="slot[Z].smu[X].source.offfunc" href="111450.htm" target="_self">slot[Z].smu[X].source.offfunc</a></p>
 <p class="listcommand"><a id="h110006" class="jump" title="slot[Z].smu[X].source.output" href="104154.htm" target="_self">slot[Z].smu[X].source.output</a></p>
 

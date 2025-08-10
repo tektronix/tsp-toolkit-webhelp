@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute sets the number of measurements performed when a measurement is requested.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="142"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="146"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,24 +37,24 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #C0C0C0;" width="142"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #C0C0C0;" width="146"><p class="tablebodytextsmall">Saved setup</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">1</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><span class="monospaceitalic">count</span> = slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].measure.<span class="monospaceitalic">count</span></p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].measure.<span class="monospaceitalic">count</span> = count</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].measure.count = <em class="emphasis">count</em></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">count</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Number of measurements &gt; 0</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Number of measurements: 1 to 5242880</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -72,7 +72,7 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute controls the number of measurements made any time a measurement is requested. When using a reading buffer with a measure command, this attribute also controls the number of readings to be stored. </p>
+<p class="iclbody">This attribute controls the number of measurements made any time a measurement is requested. When using a reading buffer with a measure command, this attribute also controls the number of readings to be stored. If the count exceeds the remaining capacity of the reading buffer, no measurements are made. </p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">

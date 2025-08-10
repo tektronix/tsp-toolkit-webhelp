@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute specifies which event starts the timer.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -66,7 +66,52 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">The event IDs that can be used for this command include mainframe-specific event IDs as well as event IDs for any installed modules capable of generating a trigger event. See ***Trigger event IDs*** to find the event IDs for your mainframe and specific modules.</p>
+<p class="iclbody">The event IDs that can be used for this command include mainframe-specific event IDs as well as event IDs for any installed modules capable of generating a trigger event. See the following table.</p>
+<table class="tableintopic" width="498" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="300"><p class="tableheading">ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h116679" class="jump" title="digio.trigger[N].EVENT_ID" href="116241.htm" target="_self">digio.trigger[N].EVENT_ID</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when a digital I/O line changes state according to its configured trigger mode</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">slot[Z].trigger.model.EVENT_AT_LIMIT (SMUs only)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">slot[Z].trigger.model.EVENT_NOTIFYN</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when the notify block of the trigger model is executed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h116380" class="jump" title="trigger.generator[N].EVENT_ID" href="116289.htm" target="_self">trigger.generator[N].EVENT_ID</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Trigger generator event</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h117264" class="jump" title="trigger.timer[N].EVENT_ID" href="117242.htm" target="_self">trigger.timer[N].EVENT_ID</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when the timer delay of timer <code class="monospace">N</code> elapses</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h117264_2" class="jump" title="trigger.timer[N].EVENT_ID" href="117242.htm" target="_self">tsplink.trigger[N].EVENT_ID</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when a TSP-Link line changes state according to its configured trigger mode</p>
+</td>
+</tr>
+
+</table>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
@@ -81,7 +126,7 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h117256" class="jump" title="trigger.timer[N].reset" href="117249.htm" target="_self">trigger.timer[N].reset</a></p>
+<p class="listcommand"><a id="h117256" class="jump" title="trigger.timer[N].reset()" href="117249.htm" target="_self">trigger.timer[N].reset</a></p>
 
 </body>
 </html>

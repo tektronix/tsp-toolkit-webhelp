@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute sets the output logic of the trigger event generator to positive or negative for the specified line.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accssible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">digio.trigger[N].reset<br>Instrument reset<br>Power cycle</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">digio.trigger[N].reset()<br>Instrument reset<br>Power cycle</p>
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -54,8 +54,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">triggerLogic</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger mode; see <strong class="specialbold">Details</strong> for values</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The trigger mode:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Assert a TTL-high pulse for output: <code class="monospace">digio.LOGIC_POSITIVE</code></li><li class="tablelistbullet9pt">Assert a TTL-low pulse for output: <code class="monospace">digio.LOGIC_NEGATIVE</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
@@ -66,47 +66,17 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute is used for output trigger generation. To control input trigger detection, use the <code class="monospace">digio.trigger[N].edge</code> command.</p>
-<p class="iclbody">Set <span class="monospaceitalic">triggerLogic</span> to one of the following values:</p>
-<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
-<tr>
-<td width="259" height="0"></td>
-<td width="340" height="0"></td>
-</tr>
-<tr align="left" valign="top">
-<th colspan="2" width="600"><p class="tableheading">Trigger logic level</p>
-</th>
-</tr>
-<tr align="left" valign="top">
-<th style="border:1px solid #C0C0C0;" width="259"><p class="tableheading"><span class="monospaceitalic">triggerLogic</span></p>
-</th>
-<th style="border:1px solid #C0C0C0;" width="341"><p class="tableheading">Description</p>
-</th>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.LOGIC_POSITIVE</code></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Asserts a TTL&#8209;high pulse for output</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="259"><p class="tablebodytext"><code class="monospace">digio.LOGIC_NEGATIVE</code></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="341"><p class="tablebodytext">Assert a TTL-low pulse for output</p>
-</td>
-</tr>
-
-</table>
+<p class="iclbody">This attribute generates an output trigger. To control input trigger detection, use the <code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].edge</code> command.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable"><code class="monospace">digio.trigger[3].logic = digio.LOGIC_POSITIVE</code></p>
-<p class="codetable"><code class="monospace">digio.trigger[3].mode = digio.MODE_TRIGGER_OUT</code></p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable"><code class="monospace">digio.trigger[3].mode = digio.MODE_TRIGGER_OUT</code></p>
+<p class="codetable"><code class="monospace">digio.trigger[3].logic = digio.LOGIC_POSITIVE</code></p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets I/O line 3 mode to be a trigger output and sets the output logic of the trigger event generator to negative.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets I/O line 3 mode to be a trigger output and sets the output logic of the trigger event generator to positive.</p>
 </td>
 </tr>
 

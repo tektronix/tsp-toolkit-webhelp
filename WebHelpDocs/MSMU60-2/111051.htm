@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute contains the state of the sense mode.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,12 +37,11 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Reset</p>
-<p class="tablebodytextsmall">***</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>SMU reset</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">***</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">SENSE_LOCAL (2-wire)</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">slot[Z].smu[X].SENSE_LOCAL</p>
 </td>
 </tr>
 
@@ -61,7 +60,7 @@
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">senseMode</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" colspan="2" width="467"><p class="tablebodytext">The sense setting:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_LOCAL</code> or <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">]smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_2WIRE</code></li><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_REMOTE</code> or <code class="monospace">slot[Z].smu[X].SENSE_4WIRE</code></li><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_AUTO</code></li><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_CALA</code></li></ul></td>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_LOCAL</code> or <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_2WIRE</code></li><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_REMOTE</code> or <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_4WIRE</code></li><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_AUTO</code></li><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_CALA</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" colspan="2" width="139"><p class="codetable"><span class="monospaceitalic">Z</span></p>
@@ -78,9 +77,9 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">Source-measure operations are performed using either 2-wire local sense connections or 4-wire remote sense connections. Writing to this attribute selects the sense mode. The sense mode can be changed between local and remote while the output is on.</p>
-<p class="iclbody">When local sense or 2-wire sense is selected, sensing is configured for local sense operation. When remote or  4-wire sense is selected, sensing is configured for remote sense operation and the autosense circuit is disabled.</p>
-<p class="iclbody">When auto is selected, 4-wire remote sensing is configured and the autosense circuit is enabled. When autosense is enabled, the 4-wire is monitored co in case the sense leads become disconnected.</p>
+<p class="iclbody">Source-measure operations are performed using either 2-wire local sense connections or 4-wire remote sense connections. When local or 2-wire sense is selected, sensing is configured for local sense operation. When remote or 4-wire sense is selected, sensing is configured for remote sense operation without the autosense circuit.</p>
+<p class="iclbody">When <code class="monospace">SENSE_AUTO</code> is selected, 4-wire sense also includes the autosense circuit. Autosense monitors the remote sense terminals. If they become disconnected, resistors are placed between the force and sense pairs to prevent unexpected voltages.</p>
+<p class="iclbody">You can change the local or remote sense mode while the output is on.</p>
 <p class="iclbody">The <code class="monospace">slot[Z].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].SENSE_CALA</code> mode is only used for calibration. You must enable calibration before selecting the calibration sense setting. The output must be off when this option is selected.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
@@ -96,7 +95,7 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">None</p>
+<p class="listcommand">Comparison of 2-wire to 4-wire measurement techniques</p>
 
 </body>
 </html>

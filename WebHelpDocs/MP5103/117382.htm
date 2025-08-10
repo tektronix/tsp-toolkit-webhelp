@@ -12,24 +12,24 @@
 <body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('117382')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="116900.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="117275.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="116902.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t117382" class="heading2-icl">lan.identify</h2>
-<p class="bodyzero">This attribute controls the LXI LAN identify state.</p>
+<p class="bodyzero">This attribute controls the LXI LAN indicator on the front panel.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">LAN restore defaults</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Nonvolatile memory</p>
 </td>
@@ -55,21 +55,22 @@
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">identify</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">LXI identify setting:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">The LAN indicator is in identify mode: <code class="monospace">localnode.ON</code></li><li class="tablelistbullet9pt">The LAN indicator is in normal mode: <code class="monospace">localnode.OFF</code></li></ul></td>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">The LAN indicator is flashing: <code class="monospace">localnode.ON</code></li><li class="tablelistbullet9pt">The LAN indicator is steady on: <code class="monospace">localnode.OFF</code></li></ul></td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">When the LXI LAN identify attribute is set to ON, the LAN indicator on the front panel will flash to indicate which instrument is in the identify mode. When the attribute is set to OFF, the LAN indicator will indicate the LAN connection state as normal (illuminated and not flashing).</p>
+<p class="iclbody">When the LXI LAN identify attribute is set to ON, the LAN indicator on the front panel flashes to indicate which instrument is in the identify mode. When the attribute is set to OFF, the LAN indicator does not flash.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">lan.identify = localnode.ON</p>
+<p class="codetable">lan.applysettings()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Flashes the LAN indicator on the front panel of the mainframe.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">The LAN indicator on the front panel of the mainframe flashes.</p>
 </td>
 </tr>
 

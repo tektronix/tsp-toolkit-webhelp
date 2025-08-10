@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t116046" class="heading2-icl">slot[Z].firmware.verify()</h2>
-<p class="bodyzero">This function verifys that an image downloaded to the mainframe is the exact firmware flashed onto a module.</p>
+<p class="bodyzero">This function verifies that an image downloaded to the mainframe is the exact firmware flashed onto a module.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -47,9 +47,15 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode">result = slot[<span class="monospaceitalic">Z</span>].firmware.verify()</p>
+<p class="iclcode"><em class="emphasis">result </em>= slot[<span class="monospaceitalic">Z</span>].firmware.verify()</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">result</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Status of the firmware verification:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Firmware does not match: <code class="monospace">false</code></li><li class="tablelistbullet9pt">Firmware does match: <code class="monospace">true</code></li></ul></td>
+</tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
 </td>
@@ -59,8 +65,7 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function verifies that the firmware of a module connected to a slot is the same as the firmware downloaded to the mainframe computer. This should be invoked after the image has been downloaded onto the mainframe, either by opening a raw socket connection or using an existing utility or tool that will download the image. </p>
-<p class="iclbody">This function is useful to determine that the firmware has flashed correctly after performing a <a id="h107625" class="jump" title="slot[Z].firmware.update()" href="116043.htm" target="_self">slot[Z].firmware.update()</a> command.</p>
+<p class="iclbody">This function is useful to determine that the firmware has flashed correctly after performing the <code class="monospace">slot[Z].firmware.update()</code> command.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
@@ -75,7 +80,7 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h107625_2" class="jump" title="slot[Z].firmware.update()" href="116043.htm" target="_self">slot[Z].firmware.update</a></p>
+<p class="listcommand"><a id="h107625" class="jump" title="slot[Z].firmware.update()" href="116043.htm" target="_self">slot[Z].firmware.update</a></p>
 
 </body>
 </html>
