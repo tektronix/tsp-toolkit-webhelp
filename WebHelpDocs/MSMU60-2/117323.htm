@@ -14,22 +14,22 @@
 <td width= "18">
 <p class="bodytext"><a href="117325.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="117351.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="118078.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t117323" class="heading2-icl">slot[Z].status.measurement.voltage_limit.*</h2>
 <p class="bodyzero">This attribute contains the measurement event voltage limit summary register set.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -133,31 +133,27 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">These attributes read or write to the measurement event voltage limit summary registers. Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15.</p>
-<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents and Enable and transition registers. The individual bits of this register are defined in the following table.</p>
+<p class="bodytext">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents. The individual bits of this register are defined in the following table.</p>
+<p class="bodytext">Bits B1 and B2 report the last status of the source while the output was turned on. If the limit is reached when the output is off, it is not reset until the source is turned on and is within limits.</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <th style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Bit</p>
 </th>
-<th style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Value</p>
-</th>
-<th style="border:1px solid #C0C0C0;" width="216"><p class="tableheading">Description</p>
+<th style="border:1px solid #C0C0C0;" width="528"><p class="tableheading">Value</p>
 </th>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">B0</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Not used</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Not applicable.</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext">Not used</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">B1</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><code class="monospace">status.measurement.voltage_limit.SMU1</code></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates the enabled VLMT bit for the SMU 1 measurement register is&nbsp;set.</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.voltage_limit.SMU1</p>
+<p class="tablebodytext">Set bit indicates the enabled VLMT bit for the SMU 1 measurement register is&nbsp;set.</p>
 <p class="tablebodytext">Bit B1 decimal value: 2</p>
 <p class="tablebodytext">Binary value: 0000 0010</p>
 </td>
@@ -165,9 +161,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">B2</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><code class="monospace">status.measurement.voltage_limit.SMU2</code></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates the enabled VLMT bit for the SMU 2 measurement register is&nbsp;set.</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.voltage_limit.SMU2</p>
+<p class="tablebodytext">Set bit indicates the enabled VLMT bit for the SMU 2 measurement register is&nbsp;set.</p>
 <p class="tablebodytext">Bit B2 decimal value: 4</p>
 <p class="tablebodytext">Binary value: 0000 0100</p>
 </td>
@@ -175,24 +170,21 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">B3 to B15</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Not used</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Not applicable.</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext">Not used</p>
 </td>
 </tr>
 
 </table>
-<p class="iclbody">As an example, to set bit B1 of the measurement event voltage limit summary enable register, set <code class="monospace">status.measurement.voltage_limit.enable = status.measurement.voltage_limit.SMU1</code>.</p>
 <p class="iclbody">In addition to the above constants, <span class="monospaceitalic">measurementRegister</span> can be set to the decimal equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">measurementRegister</span> to the sum of their decimal weights. For example, to set bits B1 and B2, set <span class="monospaceitalic">measurementRegister</span> to 6 (which is the sum of 2 + 4).</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[2].status.measurement.voltage_limit.enable = status.measurement.voltage_limit.SMU2</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[2].status.measurement.voltage_limit.enable = slot[2].status.measurement.voltage_limit.SMU2</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets the SMU2 bit of the measurement event voltage limit summary enable register using a constant.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Sets the SMU2 bit of the Measurement Event Voltage Limit Summary enable register using a constant.</p>
 </td>
 </tr>
 

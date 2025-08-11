@@ -21,15 +21,15 @@
 <p class="bodyzero">This function adjusts the high/sense high contact check measurement.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -93,7 +93,7 @@
 <p class="iclbody">Typically, points one and two are near 0 Ω and 50 Ω, respectively.</p>
 <p class="iclbody">All four measurements (<span class="monospaceitalic">cp1Measured</span><code class="monospace">, </code><span class="monospaceitalic">cp1Reference</span><code class="monospace">, </code><span class="monospaceitalic">cp2Measured</span><code class="monospace">, and </code><span class="monospaceitalic">cp2Reference</span>) must be made with the active calibration set. If not, corruption of the calibration constants may result.</p>
 <p class="iclbody">The new calibration constants are activated immediately but are not written to nonvolatile memory. Use <code class="monospace">slot[Z].smu[X].cal.save()</code> to save the new constants to nonvolatile memory. The active calibration constants stay in effect until the instrument is power cycled or a calibration set is loaded from nonvolatile memory with the <code class="monospace">slot[Z].smu[X].cal.restore()</code> function.</p>
-<p class="iclbody">This function is disabled until a successful call to <code class="monospace">slot[z].smuX.cal.unlock()</code> is made.</p>
+<p class="iclbody">This function is disabled until a successful call to <code class="monospace">slot[z].smu[X].cal.unlock()</code> is made.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
@@ -111,7 +111,7 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">For channel 1 of the SMU installed in slot 1 of the MP5000 Series mainframe:</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">For channel 1 of the module installed in slot 1:</p>
 <p class="tablebodytext">The instrument performs a contact check.</p>
 <p class="tablebodytext">Install and measure two resistors.</p>
 <p class="tablebodytext">The user sends the contact check LO calibration command.</p>
@@ -121,7 +121,7 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">Adjustment section in the <em class="emphasis">MP5000 SMU Calibration and Adjustment Manual</em></p>
+<p class="listcommand">****verify these manual names Adjustment section in the <em class="emphasis">MP5000 SMU Calibration and Adjustment Manual</em></p>
 <p class="listcommand">slot[Z].smu[X].cal.restore() in the <em class="emphasis">MP5000 SMU Calibration and Adjustment Manual</em></p>
 <p class="listcommand">slot[Z].smu[X].cal.save() in the <em class="emphasis">MP5000 SMU Calibration and Adjustment Manual</em></p>
 <p class="listcommand">slot[Z].smu[X].cal.unlock() in the <em class="emphasis">MP5000 SMU Calibration and Adjustment Manual</em></p>

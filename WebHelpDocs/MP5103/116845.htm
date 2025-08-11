@@ -12,7 +12,7 @@
 <body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116845')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="116843.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="116842.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="116846.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
@@ -21,15 +21,15 @@
 <p class="bodyzero">This function creates a script from a specified file.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -73,13 +73,13 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">The file path may be absolute or relative to the current working directory. The root folder of the USB flash drive has the absolute path <code class="monospace">&quot;/usb1/&quot;</code>. Both the forward slash (/) and backslash (\) are supported as directory separators.</p>
-<p class="iclbody">The file to be loaded must start with the <code class="monospace">loadscript</code> or <code class="monospace">loadandrunscript</code> keywords, contain the body of the script, and end with the <code class="monospace">endscript</code> keyword.</p>
+<p class="iclbody">The file to be loaded must start with the <code class="monospace">loadscript</code> keywords, contain the body of the script, and end with the <code class="monospace">endscript</code> keyword.</p>
 <p class="iclbody">Script naming:</p>
-<ul class="listbullet"><li class="listbullet">If the <span class="monospaceitalic">name</span> parameter is an empty string, or <span class="monospaceitalic">name</span> is absent (or <code class="monospace">nil</code>) and the script name cannot be extracted from the file, <span class="monospaceitalic">scriptVar</span> is the only handle to the created script.</li><li class="listbullet">If <span class="monospaceitalic">name</span> is given (and not <code class="monospace">nil</code>), any script name embedded in the file is ignored.</li><li class="listbullet">If <span class="monospaceitalic">name</span> conflicts with the name of an existing script in the <code class="monospace">script.user.scripts</code> table, the existing script&#8217;s nameattribute is set to an empty string before it is replaced in the <code class="monospace">script.user.scripts</code> table by the new script.</li><li class="listbullet">If <span class="monospaceitalic">name</span> is absent or <code class="monospace">nil</code>, the command attempts to extract the name of the script from the file. Any conflict between the extracted name and that of an existing script in the scripts table generates an error. If the script name cannot be extracted, the created script's name attribute is initialized to the empty string and must be set to a valid nonempty string before saving the script to nonvolatile memory.</li></ul><p class="iclsubheading">Example</p>
+<ul class="listbullet"><li class="listbullet">If the <span class="monospaceitalic">name</span> parameter is an empty string, or <span class="monospaceitalic">name</span> is absent (or <code class="monospace">nil</code>) and the script name cannot be extracted from the file, <span class="monospaceitalic">scriptVar</span> is the only handle to the created script.</li><li class="listbullet">If <span class="monospaceitalic">name</span> is given (and not <code class="monospace">nil</code>), any script name embedded in the file is ignored.</li><li class="listbullet">If <span class="monospaceitalic">name</span> conflicts with the name of an existing script in <code class="monospace">script.table()</code>, the name attribute of the existing script is set to an empty string before it is replaced in <code class="monospace">script.table()</code> by the new script.</li><li class="listbullet">If <span class="monospaceitalic">name</span> is absent or <code class="monospace">nil</code>, the command attempts to extract the name of the script from the file. Any conflict between the extracted name and that of an existing script in the scripts table generates an error. If the script name cannot be extracted, the created script's name attribute is initialized to the empty string and must be set to a valid nonempty string before saving the script to nonvolatile memory.</li></ul><p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">myTest8 = <br>   script.load(&quot;/usb1/filename.tsp&quot;, &quot;myTest8&quot;)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">myTest8 = script.load(&quot;/usb1/filename.tsp&quot;, &quot;myTest8&quot;)</p>
 </td>
 </tr>
 <tr align="left" valign="top">

@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t115970" class="heading2-icl">bufferVar.fillcount</h2>
-<p class="bodyzero">This attribute sets the reading buffer fill count.</p>
+<p class="bodyzero">This attribute sets the number of readings to store before restarting at index&nbsp;1 when <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillmode</code> is set to restart at index 1 when the fill count reaches a specific value.  </p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -39,7 +39,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">See Details</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0</p>
 </td>
@@ -52,29 +52,29 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">fillCount</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer fill count; set to <code class="monospace">0</code> to use the full capacity of the buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">fillCount</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer fill count</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute sets the number of readings to store before restarting at index 1. If the value is <code class="monospace">0</code>, then the capacity of the buffer is used. Use this attribute to control when the SMU restarts filling the buffer at index 1, rather than having it restart when the buffer becomes full.</p>
+<p class="iclbody">If the value is <code class="monospace">0</code>, the full capacity of the buffer is used. Use this attribute to control when the SMU restarts filling the buffer at index 1, rather than having it restart when the buffer becomes full.</p>
 <p class="iclbody">If the <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillcount</code> attribute is set to a value higher than the capacity of the buffer, the behavior is the same as having a fill count of 0. When the buffer capacity is reached, storage continues at the starting index. </p>
-<p class="iclbody">This attribute is only used when the  <a id="h115978" class="jump" title="bufferVar.fillmode" href="115977.htm" target="_self">bufferVar.fillmode</a> attribute is set to <code class="monospace">smu[X].FILL_WINDOW</code>.</p>
-<p class="iclsubheading">Example</p>
+<p class="iclbody">This attribute is only used when the <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillmode</code> command is set to 1.</p>
+<p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">buffer1 = slot[1].smu[1].makebuffer(100)</p>
-<p class="codetable">buffer1.fillmode = smu[1].FILL_WINDOW</p>
+<p class="codetable">buffer1.fillmode = 1</p>
 <p class="codetable">buffer1.fillcount = 50</p>
 </td>
 </tr>
@@ -84,8 +84,21 @@
 </tr>
 
 </table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].smu[1].defbuffer1.fillcount = 50</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets the fill count for the slot 1 SMU channel&nbsp;1 reading buffer <code class="monospace">defbuffer1</code> to 50.</p>
+</td>
+</tr>
+
+</table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">None</p>
+<p class="listcommand"><a id="h115978" class="jump" title="bufferVar.fillmode" href="115977.htm" target="_self">bufferVar.fillmode</a></p>
 
 </body>
 </html>

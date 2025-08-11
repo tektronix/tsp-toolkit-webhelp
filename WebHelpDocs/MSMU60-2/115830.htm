@@ -14,22 +14,22 @@
 <td width= "18">
 <p class="bodytext"><a href="115829.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="117357.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="118011.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t115830" class="heading2-icl">slot[Z].smu[X].trigger.source.logY()</h2>
 <p class="bodyzero">This function configures a logarithmic sweep for the trigger model.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -47,7 +47,8 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.source.log<span class="monospaceitalic">Y</span>(<span class="monospaceitalic">StartY, EndY, Points</span>)</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.source.log<span class="monospaceitalic">Y</span>(s<span class="monospaceitalic">tart, end, points)</span></p>
+<p class="iclcode">slot[<em class="emphasis">Z</em>].smu[<span class="monospaceitalic">X</span>].trigger.source.log<span class="monospaceitalic">Y</span>(s<span class="monospaceitalic">tart, end, points, asymptote</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -65,69 +66,80 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Function:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage: <code class="monospace">v</code></li><li class="tablelistbullet9pt">Current: <code class="monospace">i</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function; <code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current</p>
+</td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">StartY</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">start</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Start source level</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">EndY</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">end</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">End source level</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Points</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">points</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Number of points used to calculate the step size</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">asymptote</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The asymptotic offset value (optional)</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command sets up a logarithmic sweep by configuring the start source level, end source level, and the number of steps to increase or decrease from the starting source level to the ending source level.</p>
+<p class="iclbody">This command sets up a logarithmic sweep by configuring the start source level, end source level, and the number of points to increase or decrease from the starting source level to the ending source level.</p>
 <p class="iclbody">The <span class="monospaceitalic">points</span> parameter does not set the number of steps in a sweep. Instead, it is used to calculate source values within a subsequent sweep. If the subsequent sweep has more points than specified in <span class="monospaceitalic">points</span>, the source restarts at the beginning. This means that if the number of times the <code class="monospace">source.action.step</code> block is visited is greater than the number of points in a sweep as configured, the instrument satisfies the block execution count by restarting the sweep values from the beginning.</p>
-<p class="iclbody">If the subsequent sweep has fewer points than specified in <span class="monospaceitalic">points</span>, <span class="monospaceitalic">endY</span> is not reached during the sweep. This means that if the block execution count is less than the number of source values configured, the instrument satisfies the block execution count and ignores the remaining source values.</p>
+<p class="iclbody">If the subsequent sweep has fewer points than specified in <span class="monospaceitalic">points</span>, <span class="monospaceitalic">end</span> is not reached during the sweep. This means that if the block execution count is less than the number of source values configured, the instrument satisfies the block execution count and ignores the remaining source values.</p>
 <p class="iclbody">In cases where the first sweep point is a nonzero value, it may be necessary to pre-charge the circuit so that the sweep returns a stable value for the first measured point without penalizing remaining points in the sweep.</p>
 <p class="iclbody">A logarithmic staircase sweep is similar to a linear staircase sweep. In a logarithmic sweep, however, the steps are scaled logarithmically.</p>
+<p class="iclbody">The <span class="monospaceitalic">asymptote</span> parameter customizes the inflection and offset of the source value curve. This allows log sweeps to cross zero. Setting this parameter to zero provides a conventional logarithmic sweep. The <span class="monospaceitalic">asymptote</span> value is the value that the curve has at either positive or negative infinity, depending on the direction of the sweep.</p>
+<p class="iclbody">The <span class="monospaceitalic">asymptote</span> value must be outside the range defined by the start and end values. It must not be equal to or between the start and end values.</p>
+<p class="bodytext">To advance through the configured sweep, use source action blocks in a trigger model. Available blocks include <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.action.step</code>, <code class="monospace">.set, .skip</code>, and <code class="monospace">.bias</code>. When you use trigger model source action blocks to progress through the sweep:</p>
+<ul class="listbullet"><li class="listbullet">If the number of source block executions exceeds the configured number of levels, the sweep wraps to the beginning.</li><li class="listbullet">If the number of executions is less than the configured number of levels, the remaining source values are ignored and not used.</li></ul><p class="bodytext">The SMU stores the most recent configured source action. The last call to a sweep command is used for the source action in a trigger model. The sweep commands are <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SmuCh1 = slot[1].smu[1]</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Set the logarithmic sweep starting at 0V rising to 5V over 6 steps  ---</p>
-<p class="codetable">slot[1].smu[1].trigger.source.logy(0,5,6)</p>
+<p class="codetable">--- Set the logarithmic sweep starting at 1 V rising to 5 V over 5 steps. ---</p>
+<p class="codetable">slot[1].smu[1].trigger.source.logv(1, 5, 6)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Delete old trigger model instances before creating new ones ---</p>
+<p class="codetable">--- Delete old trigger model instance before creating new one. ---</p>
 <p class="codetable">slot[1].trigger.model.delete(&quot;TM1&quot;)</p>
 <p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Loop for 6 times stepping the voltage from 0V to 5V for 6 steps as specified in the SmuCh1.trigger.logy specification above. Branch to &quot;SourceActionStep&quot; ---</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOn&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;TM1&quot;, &quot;SourceActionStep&quot;, 1, 0)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;Delay5ms&quot;, 0.005)</p>
+<p class="codetable">--- Loop 6 times, stepping the voltage from 1 V to 5 V for 5 steps. Branch to &quot;SourceActionStep&quot;. ---</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;TM1&quot;, &quot;SourceActionStep&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;&quot;, 0.005)</p>
 <p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;, &quot;BranchCounter&quot;, &quot;SourceActionStep&quot;, 6)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOff&quot;, 1, 0)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 0)</p>
 <p class="codetable">&nbsp;</p>
 <p class="codetable">--- Execute the trigger model ---</p>
 <p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example sets up a logarithmic sweep with source level beginning, end, and number of steps.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example sets up a trigger model to execute a logarithmic sweep.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h116806" class="jump" title="slot[Z].trigger.model.addblock.source.action.bias()" href="115504.htm" target="_self">slot[Z].trigger.model.addblock.source.action.bias()</a></p>
-<p class="listcommand"><a id="h116898" class="jump" title="slot[Z].trigger.model.addblock.source.action.skip()" href="115827.htm" target="_self">slot[Z].trigger.model.addblock.source.action.skip()</a></p>
-<p class="listcommand"><a id="h116807" class="jump" title="slot[Z].trigger.model.addblock.source.action.step()" href="114973.htm" target="_self">slot[Z].trigger.model.addblock.source.action.step()</a></p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.bias()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.set()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.skip()</p>
+<p class="listcommand">slot[Z].trigger.model.addblock.source.action.step()</p>
 
 </body>
 </html>

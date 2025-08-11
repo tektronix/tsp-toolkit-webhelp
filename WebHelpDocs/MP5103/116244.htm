@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute sets the precision (number of digits) for all numbers returned in the ASCII format.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">No</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Recall setup</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Power cycle</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
@@ -46,7 +46,6 @@
 </tr>
 
 </table>
-<p class="iclspacing"></p>
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><span class="monospaceitalic">precision</span> = format.asciiprecision</p>
 <p class="iclcode">format.asciiprecision = <span class="monospaceitalic">precision</span></p>
@@ -55,13 +54,13 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">precision</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A number representing the number of digits to be printed for numbers printed with the <code class="monospace">print()</code>, <code class="monospace">printbuffer()</code>, and <code class="monospace">printnumber()</code> functions; must be a number between <code class="monospace">1</code> and <code class="monospace">16</code></p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A number representing the number of digits to be printed for numbers printed with the <code class="monospace">print()</code>, <code class="monospace">printbuffer()</code>, and <code class="monospace">printnumber()</code> functions: 1 to 16; set to 0 to use the native Lua format</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute specifies the precision (number of digits) for numeric data printed with the print(), printbuffer(), and printnumber() functions. The format.asciiprecision attribute is only used with the ASCII format. The precision value must be a number from 0 to 16.</p>
+<p class="iclbody">This attribute specifies the precision (number of digits) for numeric data printed with the <code class="monospace">print()</code>, <code class="monospace">printbuffer()</code>, and <code class="monospace">printnumber()</code> functions. The <code class="monospace">format.asciiprecision</code> attribute is only used with the ASCII format. The precision value must be a number from 1 to 16.</p>
 <p class="iclbody">Note that the precision is the number of significant digits printed. There is always one digit to the left of the decimal point; be sure to include this digit when setting the precision.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
@@ -72,13 +71,15 @@
 <p class="codetable">printnumber(x)</p>
 <p class="codetable">format.asciiprecision = 3</p>
 <p class="codetable">printnumber(x)</p>
+<p class="codetable">format.asciiprecision = 0</p>
+<p class="codetable">printnumber(x)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Output:</p>
-<p class="codetable">2.54000000000e+00</p>
-<p class="codetable">&nbsp;</p>
+<p class="codetable">2.540000000e+00</p>
 <p class="codetable">2.54e+00</p>
+<p class="codetable">2.540000e+00</p>
 </td>
 </tr>
 

@@ -21,15 +21,15 @@
 <p class="bodyzero">This function creates a function that, when called, sets the value of an attribute.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -71,20 +71,21 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function is useful for aliasing attributes to improve execution speed. Calling the <span class="monospaceitalic">setter</span> function execute more quickly than accessing the attribute directly.</p>
+<p class="iclbody">This function is useful for aliasing attributes to improve execution speed. Calling the <span class="monospaceitalic">setter</span> function executes more quickly than accessing the attribute directly.</p>
 <p class="iclbody">Creating a <span class="monospaceitalic">setter</span> function is only useful if it is going to be called several times. If you are not calling the <span class="monospaceitalic">setter</span> function several times, it is more efficient to access the attribute directly. </p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">setlevel = makesetter(source, &quot;levelv&quot;)for v = 1, 10 do</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">setlevel = makesetter(slot[1].smu[1].source, &quot;levelv&quot;)</p>
+<p class="codetable">for v = 1, 10 do</p>
 <p class="codetable">   setlevel(v)</p>
 <p class="codetable">end</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Creates a setter function called <code class="monospace">setlevel</code>.</p>
-<p class="tablebodytext">Using <code class="monospace">setlevel()</code> in the loop sets the value of <code class="monospace">source.levelv</code>, performing a source sweep.</p>
+<p class="tablebodytext">Using <code class="monospace">setlevel()</code> in the loop sets the value of <code class="monospace">slot[1].smu[1].source.levelv</code>, performing a source sweep on channel 1 of the SMU installed in slot 1.</p>
 </td>
 </tr>
 

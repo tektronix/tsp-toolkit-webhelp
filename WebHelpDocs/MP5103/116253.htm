@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute defines the dynamic DNS host name.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">LAN restore defaults</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">lan.restoredefaults()</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Nonvolatile memory</p>
 </td>
@@ -61,19 +61,21 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This attribute holds the host name to request during dynamic DNS registration. Dynamic DNS registration works with DHCP to register the host name specified in this attribute with the DNS&nbsp;server.</p>
-<p class="iclbody">The factory default value for <span class="monospaceitalic">hostName</span> is &quot;xxxxxx<code class="monospace">-#######&quot;</code>), where xxxxx is the instrument model number and ####### is the instrument serial number. Note that a hyphen separates the characters of <span class="monospaceitalic">hostName</span>.</p>
+<p class="iclbody">The factory default value for <span class="monospaceitalic">hostName</span> is <code class="monospace">&quot;</code><span class="monospaceitalic">xxxxxx</span><code class="monospace">-</code><span class="monospaceitalic">#######</span><code class="monospace">&quot;</code>), where <span class="monospaceitalic">xxxxxx</span> is the instrument model number and <span class="monospaceitalic">########</span> is the instrument serial number. Note that a hyphen separates the characters of <span class="monospaceitalic">hostName</span>.</p>
 <p class="iclbody">The length of the fully qualified host name (combined length of the domain and host name with separator characters) must be less than or equal to 255 characters. Although up to 63 characters can be entered here, you must make sure the combined length is no more than 255 characters.</p>
 <p class="iclbody">Setting this attribute to an empty string (in other words, setting this attribute to a string of length zero or a string that consists entirely of whitespace characters) reverts the host name to the factory default value.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">print(lan.config.dns.hostname)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">lan.config.dns.hostname = &quot;Tester200&quot;</p>
+<p class="codetable">lan.applysettings()</p>
+<p class="codetable">print(lan.config.dns.hostname)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Outputs the present dynamic DNS host name. For example:</p>
-<p class="codetable">MP5103-5555555</p>
+<p class="codetable">Tester200</p>
 </td>
 </tr>
 

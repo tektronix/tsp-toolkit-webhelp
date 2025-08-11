@@ -12,7 +12,7 @@
 <body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116257')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="116256.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="132018.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="116258.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute contains the LAN settings configuration method.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,11 +37,11 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">LAN restore defaults</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">lan.restoredefaults()</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Nonvolatile memory</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0 (lan.AUTO)</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">lan.AUTO</p>
 </td>
 </tr>
 
@@ -55,7 +55,7 @@
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">method</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The method for configuring LAN settings; it can be one of the following values:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Selects automatic sequencing of configuration methods: <code class="monospace">0</code> or <code class="monospace">lan.AUTO</code></li><li class="tablelistbullet9pt">Use only manually specified configuration settings: <code class="monospace">1</code> or <code class="monospace">lan.MANUAL</code></li></ul></td>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Selects automatic sequencing of configuration methods: <code class="monospace">lan.AUTO</code></li><li class="tablelistbullet9pt">Use only manually specified configuration settings: <code class="monospace">lan.MANUAL</code></li></ul></td>
 </tr>
 
 </table>
@@ -67,13 +67,15 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">print(lan.config.method)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">lan.config.method = lan.MANUAL</p>
+<p class="codetable">lan.config.ipaddress = &quot;192.0.2.18&quot;</p>
+<p class="codetable">lan.config.gateway = &quot;192.0.2.19&quot;</p>
+<p class="codetable">lan.config.subnetmask = &quot;255.255.255.0&quot;</p>
+<p class="codetable">lan.applysettings()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Outputs the present method.</p>
-<p class="tablebodytext">For example:</p>
-<p class="codetable">1.0000000e+00</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set up LAN using manually specified settings and re-initialize the LAN interface with new settings.</p>
 </td>
 </tr>
 

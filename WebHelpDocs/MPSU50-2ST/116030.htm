@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t116030" class="heading2-icl">bufferVar.sourcevalues</h2>
-<p class="bodyzero">When enabled, this attribute contains the source levels being output when readings in the reading buffer were acquired.</p>
+<p class="bodyzero">This attribute contains the source levels that were programmed when the readings in the reading buffer were acquired.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,9 +37,9 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Clearing the buffer</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">See Details</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -59,7 +59,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a default reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -71,23 +71,31 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="bodytext">If the <span class="monospaceitalic">bufferVar</span><code class="monospace">.sourcevalues</code>&nbsp;attribute is enabled before readings are taken, the <code class="monospace">sourcevalues</code> buffer column is an array (a Lua table) of the sourced value at the time of the reading. You can only set the <span class="monospaceitalic">bufferVar</span><code class="monospace">.sourcevalues</code> attribute if the affected reading buffer is empty.</p>
+<p class="bodytext">The <code class="monospace">sourcevalues</code> buffer column is an array (a Lua table) of the programmed sourced value at the time of the reading.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer1 = slot[1].psu[1].makebuffer(100)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer1 = slot[1].psu[1].makebuffer(20) </p>
+<p class="codetable">slot[1].psu[1].source.levelv = 3.5</p>
+<p class="codetable">slot[1].psu[1].measure.count = 20</p>
+<p class="codetable">slot[1].psu[1].measure.v(buffer1)</p>
 <p class="codetable">printbuffer(1, 5, buffer1.sourcevalues)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Prints the source output for the first five readings in a reading buffer for channel 1 of the module installed in slot 1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create buffer1 that contains 20 readings.</p>
+<p class="tablebodytext">Set the voltage source level to 3.5.</p>
+<p class="tablebodytext">Set the measurement count to 20</p>
+<p class="tablebodytext">Make voltage measurements and store them in buffer1.</p>
+<p class="tablebodytext">Return the first 5 source values in buffer1:</p>
+<p class="codetable">3.50000e+00, 3.50000e+00, 3.50000e+00, 3.50000e+00, 3.50000e+00</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">None</p>
+<p class="listcommand"><a id="h116663" class="jump" title="bufferVar.n" href="116011.htm" target="_self">bufferVar.n</a></p>
 
 </body>
 </html>

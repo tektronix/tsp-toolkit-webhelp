@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title> bufferVar.seconds </title>
+<title> bufferVar.basetimestampseconds </title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <meta name="Generator" content="Author-it">
 <meta name="Keywords" content="">
@@ -12,24 +12,24 @@
 <body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('116918')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="107200.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="116917.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="107201.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="115948.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
-<h2 id="t116918" class="heading2-icl">bufferVar.seconds</h2>
-<p class="bodyzero">This contains the timestamp of a reading in seconds, in UTC format.</p>
+<h2 id="t116918" class="heading2-icl">bufferVar.basetimestampseconds</h2>
+<p class="bodyzero">This attribute contains the timestamp of a reading in seconds in UTC format.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -47,13 +47,13 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">nonFracSeconds</span> = <span class="monospaceitalic">bufferVar</span>.seconds[<span class="monospaceitalic">N</span>]</p>
+<p class="iclcode"><span class="monospaceitalic">nonFracSeconds</span> = <span class="monospaceitalic">bufferVar</span>.basetimestampseconds</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">nonFracSeconds</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The nonfractional seconds portion of the timestamp when the reading was stored</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The nonfractional seconds portion of the timestamp when the first reading was stored</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -62,39 +62,39 @@
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer or a user&#8209;defined buffer</p>
 </td>
 </tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading number <span class="monospaceitalic">N</span>; can be any value from 1 to the number of readings in the buffer; use the <span class="monospaceitalic">bufferVar.</span><code class="monospace">n</code> command to determine the number of readings in the&nbsp;buffer</p>
-</td>
-</tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute contains the nonfractional seconds portion of the timestamp when the reading was stored in Coordinated Universal Time (UTC) format.</p>
-<p class="iclbody">The nonfractional seconds portion of the timestamp gives the lowest resolution down to 1 second. To access additional resolution of a timestamp, see <code class="monospace">bufferVar.fractionalseconds</code>.</p>
+<p class="iclbody">This attribute contains the nonfractional seconds portion of the timestamp when the reading was stored. It is in Coordinated Universal Time (UTC) format.</p>
+<p class="iclbody">The nonfractional seconds portion of the timestamp gives the lowest resolution down to 1 second. To access more resolution of a timestamp, see <span class="monospaceitalic">bufferVar</span><code class="monospace">.basetimestampfractional</code>.</p>
 <p class="iclsubheading">Example</p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset() </p>
-<p class="codetable">testData = buffer.make(50)</p>
-<p class="codetable"> trigger.model.load(&quot;SimpleLoop&quot;, 6, 0, testData)</p>
-<p class="codetable">slot[1].trigger.model.initiate()</p>
-<p class="codetable">waitcomplete()</p>
-<p class="codetable">printbuffer(1, 6, testData.seconds)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">buffer1 = slot[2].smu[1].makebuffer(5)</p>
+<p class="codetable">buffer1.clear()</p>
+<p class="codetable">slot[2].smu[1].measure.count = 3</p>
+<p class="codetable">slot[2].smu[1].measure.v(buffer1)</p>
+<p class="codetable">printbuffer(1, buffer1.n, buffer1.readings)</p>
+<p class="codetable">print(buffer1.basetimestampseconds .. buffer1.basetimestampfractional)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create a reading buffer named <code class="monospace">testData</code>, configure the instrument to make six measurements, and store the readings in the buffer.</p>
-<p class="tablebodytext">Print the seconds portion for readings 1 to 6 in <code class="monospace">testData</code>. </p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Create the reading buffer <code class="monospace">buffer1</code>.</p>
+<p class="tablebodytext">Clear the buffer.</p>
+<p class="tablebodytext">Set the measurement count to 3.</p>
+<p class="tablebodytext">Set up voltage measurements to go into buffer1.</p>
+<p class="tablebodytext">Return the readings from buffer1.</p>
+<p class="tablebodytext">Return the seconds and fractional seconds.</p>
 <p class="tablebodytext">Example output:</p>
-<p class="tablebodytext"><code class="monospace">1362261492, 1362261492, 1362261493, 1362261493, 1362261493, 1362261494</code></p>
+<p class="codetable">-1.045526296e-04, -1.023707810e-04, -1.035681344e-04</p>
+<p class="codetable">127210.8870559</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h116920" class="jump" title="bufferVar.fractionalseconds" href="116917.htm" target="_self">buffervar.fractionalseconds</a></p>
+<p class="listcommand"><a id="h116920" class="jump" title="bufferVar.basetimestampfractional" href="116917.htm" target="_self">bufferVar.basetimestampfractional</a></p>
 
 </body>
 </html>

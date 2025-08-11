@@ -1,0 +1,309 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> status.request_event </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('118169')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="118168.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="117698.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t118169" class="heading2-icl">status.request_event</h2>
+<p class="bodyzero">This attribute stores the service request (SRQ) event register.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">requestSRQEventRegister </span>= status.request_event</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext"><span class="monospaceitalic">requestSRQEventRegister</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The status of the service request event register; a zero (0) indicates no bits set; other values indicate bits are set</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This attribute is used to read the service request event register, which is returned as a numeric value. Reading this register returns a value. The binary equivalent of the value of this attribute indicates which register bits are set. In the binary equivalent, the least significant bit is bit B0, and the most significant bit is bit B7. For example, if a value of <code class="monospace">1.32000e+02</code> (which is 132) is read as the value of this register, the binary equivalent is 1000&nbsp;0100. This value indicates that bits B2 and B7 are set.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="390" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-right:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="42"><p class="tablebodytextcenter">B7</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">B6</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">B5</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">B4</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">B3</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">B2</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">B1</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">B0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-right:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="42"><p class="tablebodytextcenter">**</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-bottom:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-bottom:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-bottom:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-bottom:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-bottom:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-right:1px solid #010101;border-bottom:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">&gt;</p>
+</td>
+<td style="border-left:1px solid #C0C0C0;border-bottom:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter">*</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border-top:1px solid #C0C0C0;" width="42"><p class="tablebodytextcenter"><code class="monospace">1</code></p>
+</td>
+<td style="border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style="border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style="border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style="border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style="border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter"><code class="monospace">1</code></p>
+</td>
+<td style="border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style="border-top:1px solid #C0C0C0;" width="50"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">* Least significant bit<br>** Most significant bit</p>
+<p class="iclbody">The returned value can indicate one or more status events occurred.</p>
+<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents. The individual bits of this register are defined in the following table.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Bit</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="528"><p class="tableheading">Value and description</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext">Not used</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext"><code class="monospace">status.SYSTEM_SUMMARY_BIT</code></p>
+<p class="tablebodytext"><code class="monospace">status.SSB</code></p>
+<p class="tablebodytext">Set summary bit indicates that an enabled event in the System Summary Register has occurred. </p>
+<p class="tablebodytext">Bit B1 decimal value: 2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext"><code class="monospace">status.ERROR_AVAILABLE</code></p>
+<p class="tablebodytext"><code class="monospace">status.EAV</code></p>
+<p class="tablebodytext">Set summary bit indicates that an error or status message is present in the error queue.</p>
+<p class="tablebodytext">Bit B2 decimal value: 4</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext">Not used</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext"><code class="monospace">status.MESSAGE_AVAILABLE</code></p>
+<p class="tablebodytext"><code class="monospace">status.MAV</code></p>
+<p class="tablebodytext">Set summary bit indicates that a response message is present in the output queue.</p>
+<p class="tablebodytext">Bit B4 decimal value: 16</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext"><code class="monospace">status.EVENT_SUMMARY_BIT</code></p>
+<p class="tablebodytext"><code class="monospace">status.ESB</code></p>
+<p class="tablebodytext">Set summary bit indicates that an enabled event in the Standard Event Status Register has occurred.</p>
+<p class="tablebodytext">Bit B5 decimal value: 32</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">status.MASTER_SUMMARY_STATUS</p>
+<p class="codetable">status.MSS</p>
+<p class="tablebodytext">Set bit indicates that an enabled Master Summary Status (MSS) bit of the Status Byte Register is&nbsp;set.</p>
+<p class="tablebodytext">Bit B6 decimal value: 64</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="tablebodytext"><code class="monospace">status.OPERATION_SUMMARY_BIT</code></p>
+<p class="tablebodytext"><code class="monospace">status.OSB</code></p>
+<p class="tablebodytext">Set summary bit indicates that an enabled event in the Operation Status Register has occurred.</p>
+<p class="tablebodytext">Bit B7 decimal value: 128</p>
+</td>
+</tr>
+
+</table>
+<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">requestEventRegister</span> can be set to the decimal equivalent of the bits set. When more than one bit of the register is set, <span class="monospaceitalic">requestEventRegister</span> contains the sum of their decimal weights.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Bit</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B7</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B6</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B5</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B3</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Binary value</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">0/1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Decimal</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">128</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">64</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">32</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">16</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">8</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">4</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">2</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Weights</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">7</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">6</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">5</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">4</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">3</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">2</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">1</sup>)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="54"><p class="tablebodytext">(2<sup class="superscript">0</sup>)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">requestEventRegister = status.request_event</p>
+<p class="codetable">print(requestEventRegister)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Reads the status request event register.</p>
+<p class="tablebodytext">Sample output:</p>
+<p class="tablebodytext"><code class="monospace">1.32000e+02</code></p>
+<p class="tablebodytext">Converting this output (132) to its binary equivalent yields 1000 0100.</p>
+<p class="tablebodytext">Therefore, this output indicates that the set bits of the status request event register are presently B2 (EAV) and B7 (OSB).</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h17173" class="jump" title="status.condition" href="116003.htm" target="_self">status.condition</a></p>
+<p class="listcommand"><a id="h17456" class="jump" title="status.system.*" href="15863.htm" target="_self">status.system.*</a></p>
+<p class="listcommand">Status byte and service request (SRQ)</p>
+
+</body>
+</html>

@@ -21,15 +21,15 @@
 <p class="bodyzero">This function reads data from the default input file.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -56,37 +56,37 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">data1</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The data read from the file</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The first data read from the file</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">data2</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The data read from the file</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The second data read from the file</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">dataN</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The data read from the file; the number of return values matches the number of format values given</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The last data read from the file; the number of return values matches the number of format values given</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">format1</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string or number indicating the type of data to be read</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string or number indicating the type of the first data to be read</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">format2</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string or number indicating the type of data to be read</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string or number indicating the type of the second data to be read</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">formatN</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string or number indicating the type of data to be read</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string or number indicating the type of the final data to be read</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -133,7 +133,7 @@
 </tr>
 
 </table>
-<p class="iclbody">Any number of format parameters may be passed to this command, each corresponding to a returned data value.</p>
+<p class="iclbody">Any number of format parameters may be passed to this command, each corresponding to a returned data&nbsp;value.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
@@ -147,7 +147,7 @@
 <p class="codetable">	print(&quot;Nothing removed&quot;)</p>
 <p class="codetable">end</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">errorqueue.clear()</p>
+<p class="codetable">eventlog.clear()</p>
 <p class="codetable">&nbsp;</p>
 <p class="codetable">-- io.read</p>
 <p class="codetable">print(&quot;\n*** io.read&quot;)</p>
@@ -162,7 +162,7 @@
 <p class="codetable">end</p>
 <p class="codetable">fileHandle:close()</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">print(errorqueue.next())</p>
+<p class="codetable">print(eventlog.next())</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -173,7 +173,7 @@
 </table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"></p>
-<p class="listcommand">None</p>
+<p class="listcommand">None&lt;CTMP5K_only_end_SHOW&gt;</p>
 
 </body>
 </html>

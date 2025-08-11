@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t116261" class="heading2-icl">lan.restoredefaults()</h2>
-<p class="bodyzero">This function resets LAN settings to default values.</p>
+<p class="bodyzero">This function resets the LAN commands to default values.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -68,7 +68,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.autoconnect</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">lan.ENABLE</p>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -86,19 +86,19 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.config.dns.dynamic</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">lan.ENABLE</p>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.config.dns.hostname</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">&quot;[model number]-[instrument serial number]&quot;</p>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="tablebodytext"><code class="monospace">&quot;MP5103-</code><span class="monospaceitalic">xxxxxxx</span><code class="monospace">&quot; </code>(where <span class="monospaceitalic">xxxxxxx</span> represents the instrument serial number)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.config.dns.verify</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">lan.ENABLE</p>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -108,15 +108,9 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.config.hislip.enable</p>
-</td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
-</td>
-</tr>
-<tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.config.ipaddress</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">&quot;192.168.0.2&quot;</p>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">&quot;0.0.0.0&quot;</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -132,25 +126,77 @@
 </td>
 </tr>
 <tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.hislip.access</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.PROTECT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.linktimeout</p>
 </td>
 <td style="border:1px solid #D3D3D3;" width="346"><p class="tablebodytext"><code class="monospace">20</code> (seconds)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.mdns.enable</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.nagle</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">lan.DISABLE</p>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.DISABLE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.ping.enable</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.rawsocket.access</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.PROTECT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.telnet.access</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.PROTECT</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">localnode.description</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="tablebodytext"><code class="monospace">&quot;MP5103-</code><span class="monospaceitalic">xxxxxxx</span><code class="monospace">&quot;</code> (where <span class="monospaceitalic">xxxxxxx</span> represents the instrument serial number)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">usbtmc.access</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">user.password.change()</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">&quot;admin&quot;</p>
 </td>
 </tr>
 
 </table>
 <p class="iclbody">This command is run when <code class="monospace">lan.reset()</code> is sent.</p>
+<p class="iclbody">If you are using TSP Toolkit, set <code class="monospace">lan.rawsocket.access</code> and <code class="monospace">lan.telnet.access</code> to <code class="monospace">localnode.ENABLE</code>.</p>
+<p class="iclbody">To apply the default settings, run <code class="monospace">lan.applysettings()</code> after <code class="monospace">lan.restoredefaults()</code>.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">This function resets the access to require a password for communications over LAN for <code class="monospace">lan.hislip.access</code>, <code class="monospace">lan.rawsocket.access</code>, and <code class="monospace">lan.telnet.access</code>. The <code class="monospace">lan.restoredefaults()</code> function does not reset the LAN password. The <code class="monospace">user.password.change()</code> attribute controls the LAN password, which can be reset with <code class="monospace">lan.reset()</code>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">lan.restoredefaults()</p>
+<p class="codetable">lan.applysettings()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -160,7 +206,10 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h117281" class="jump" title="lan.hislip.access" href="117275.htm" target="_self">lan.hislip.access</a></p>
+<p class="listcommand"><a id="h118176" class="jump" title="lan.rawsocket.access" href="118104.htm" target="_self">lan.rawsocket.access</a></p>
 <p class="listcommand"><a id="h116907" class="jump" title="lan.reset()" href="116906.htm" target="_self">lan.reset()</a></p>
+<p class="listcommand"><a id="h118177" class="jump" title="lan.telnet.access" href="118105.htm" target="_self">lan.telnet.access</a></p>
 
 </body>
 </html>

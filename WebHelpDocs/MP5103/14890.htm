@@ -21,15 +21,15 @@
 <p class="bodyzero">This function re-initializes the LAN interface with new settings.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -49,19 +49,25 @@
 <p class="iclsubheading">Usage</p>
 <p class="iclcode">lan.applysettings()</p>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">Disconnects all existing LAN connections to the instrument and re-initializes the LAN with the present configuration&nbsp;settings.</p>
+<p class="iclbody">Disconnects all existing LAN connections to the instrument and re-initializes the LAN with the present configuration&nbsp;settings. </p>
+<p class="iclbody">All existing socket sessions, such as HiSLIP or raw socket, will also be disconnected. If you are using TSP Toolkit, you must start a new session.</p>
 <p class="iclbody">This function initiates a background operation. LAN configuration can be a lengthy operation. Although the function returns immediately, the LAN initialization continues to run in the background.</p>
 <p class="iclbody">Even though the LAN configuration settings may not have changed since the LAN was last connected, new settings may take effect due to the dynamic nature of dynamic host configuration protocol (DHCP) or dynamic link local addressing (DLLA) configuration.</p>
 <p class="iclbody">Re-initialization takes effect even if the configuration has not changed since the last time the instrument connected to the&nbsp;LAN.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">Wait approximately 10 s to 20 s after sending this command for the new settings to be active.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">lan.applysettings()</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">lan.config.method = lan.MANUAL</p>
+<p class="codetable">lan.config.ipaddress = &quot;192.0.2.18&quot;</p>
+<p class="codetable">lan.config.gateway = &quot;192.0.2.19&quot;</p>
+<p class="codetable">lan.config.subnetmask = &quot;255.255.255.0&quot;</p>
+<p class="codetable">lan.applysettings()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Re-initialize the LAN interface with new settings.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set up LAN using manually specified settings and re-initialize the LAN interface with new settings.</p>
 </td>
 </tr>
 

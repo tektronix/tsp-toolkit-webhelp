@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute contains the operation status trigger overrun summary register set.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -101,7 +101,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">28,672 (all bits set)</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">14,336 (all bits set)</p>
 </td>
 </tr>
 
@@ -126,7 +126,7 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">These attributes are used to read or write to the operation status trigger overrun summary registers. Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15. For example, if a value of <code class="monospace">20.480e+03</code> (which is 20,480) is read as the value of the condition register, the binary equivalent is 0101 0000 0000 0000. This value indicates that bit B12 and bit B14 are set.</p>
+<p class="iclbody">These attributes are used to read or write to the operation status trigger overrun summary registers. Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15. For example, if a value of 2048 is read as the value of the condition register, the binary equivalent is 0000 1000 0000 0000. This value indicates that bit B11 is&nbsp;set.</p>
 <table class="tableintopic" width="576" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr>
 <td width="36" height="0"></td>
@@ -266,7 +266,7 @@
 </table>
 <p class="iclbody">* Least significant bit<br>** Most significant bit</p>
 <p class="iclbody">The bits in this register summarize events in other registers. A set bit in this summary register indicates that an enabled event in one of the summarized registers is set.</p>
-<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents and Enable and transition registers. The individual bits of this register are defined in the following table.</p>
+<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents. The individual bits of this register are defined in the following table.</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -278,7 +278,7 @@
 </th>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0 to B11</p>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0 to B10</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">Not used</p>
 </td>
@@ -286,11 +286,20 @@
 </td>
 </tr>
 <tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B11</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">status.operation.trigger_overrun.TRGTMR</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Set bit indicates one of the enabled bits in the Operation Status Trigger Timer Overrun register is&nbsp;set.</p>
+<p class="tablebodytext">Bit B12 decimal value: 2,048</p>
+</td>
+</tr>
+<tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B12</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">status.operation.trigger_overrun.DIGIO</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Set bit indicates one of the enabled bits in the operation status digital I/O overrun event register is&nbsp;set.</p>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Set bit indicates one of the enabled bits in the Operation Status Digital I/O Overrun Event register is&nbsp;set.</p>
 <p class="tablebodytext">Bit B12 decimal value: 4,096</p>
 </td>
 </tr>
@@ -299,7 +308,7 @@
 </td>
 <td style="border:1px solid #C0C0C0;" width="360"><p class="codetable">status.operation.trigger_overrun.TSPLINK</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Set bit indicates one of the enabled bits in the operation status TSP-Link overrun event register is&nbsp;set.</p>
+<td style="border:1px solid #C0C0C0;" width="192"><p class="tablebodytext">Set bit indicates one of the enabled bits in the Operation Status TSP-Link Overrun Event register is&nbsp;set.</p>
 <p class="tablebodytext">Bit B13 decimal value: 8,192</p>
 </td>
 </tr>

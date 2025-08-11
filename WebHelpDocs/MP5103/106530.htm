@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute determines if the instrument generates prompts in response to command messages.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -60,15 +60,15 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">When the prompting mode is enabled, the instrument generates prompts when the instrument isready to take another command. Because the prompt is not generated until the previous command completes, enabling prompts provides handshaking with the instrument to prevent buffer overruns.</p>
-<p class="iclbody">When prompting is enabled, the instrument might generate the following prompts:</p>
-<ul class="listbullet"><li class="listbullet"><strong class="specialbold">TSP&gt;</strong>. The standard prompt, which indicates that the previous command completed normally.</li><li class="listbullet"><strong class="specialbold">TSP?</strong>. The prompt that is issued if there are unread entries in the error queue when the prompt is issued. Like the TSP&gt; prompt, it indicates that processing of the command is complete. It does not mean the previous command generated an error, only that there were still errors in the queue when the command processing was complete.</li><li class="listbullet"><strong class="specialbold">&gt;&gt;&gt;&gt;</strong>. The continuation prompt, which occurs when downloading scripts. When downloading scripts, many command messages must be sent as a group. The continuation prompt indicates that the instrument is expecting more messages as part of the present command.</li></ul><p class="iclbody">Commands do not generate prompts. The instrument generates prompts in response to command completion.</p>
-<p class="iclbody">Prompts are enabled or disabled only for the remote interface that is active when you send the command. For example, if you enable prompts when the LAN connection is active, they are not enabled for a subsequent USB connection.</p>
+<p class="bodytext">When the prompting mode is enabled, the instrument generates prompts when the instrument is ready to take another command. Because the prompt is not generated until the previous command completes, enabling prompts provides handshaking with the instrument to prevent buffer overruns.</p>
+<p class="bodytext">When prompting is enabled, the instrument might generate the following prompts:</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">TSP&gt;</strong>. The standard prompt, which indicates that the previous command completed normally.</li><li class="listbullet"><strong class="specialbold">TSP?</strong>. The prompt that is issued if there are unread entries in the error queue when the prompt is issued. Like the TSP&gt; prompt, it indicates that processing of the command is complete. It does not mean the previous command generated an error, only that there were still errors in the queue when the command processing was complete.</li><li class="listbullet"><strong class="specialbold">&gt;&gt;&gt;&gt;</strong>. The continuation prompt, which occurs when downloading scripts. When downloading scripts, many command messages must be sent as a group. The continuation prompt indicates that the instrument is expecting more messages as part of the present command.</li></ul><p class="bodytext">Commands do not generate prompts. The instrument generates prompts in response to command completion.</p>
+<p class="bodytext">Prompts are enabled or disabled only for the remote interface that is active when you send the command. For example, if you enable prompts when the LAN connection is active, they are not enabled for a subsequent USB connection.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">localnode.ENABLE</code></p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">localnode.prompts = localnode.ENABLE</code></p>
 </td>
 </tr>
 <tr align="left" valign="top">

@@ -12,7 +12,7 @@
 <body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('117351')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="117323.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="118080.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="117342.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
@@ -21,15 +21,15 @@
 <p class="bodyzero">These attributes manage the questionable status register set of the status model.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -101,7 +101,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">6,400 (all bits set)</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">12,544 (all bits set)</p>
 </td>
 </tr>
 
@@ -120,7 +120,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext"><span class="monospaceitalic">questionableRegister</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The status of the questionable status register; a zero (0) indicates no bits set (also send 0 to clear all bits); other values indicate bit&nbsp;settings</p>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The status of the questionable status register; a zero (0) indicates no bits set (also send 0 to clear all bits); other values indicate bits are set</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -133,7 +133,7 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">These attributes are used to read or write to the questionable status registers. Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15. </p>
-<p class="iclbody">For example, if a value of 6,144 is read as the value of the condition register, the binary equivalent is 0001 1000 0000 0000. This value indicates that bits B11 and B12 are set.</p>
+<p class="iclbody">For example, if a value of 4,352 is read as the value of the condition register, the binary equivalent is 0001&nbsp;0001&nbsp;0000&nbsp;0000. This value indicates that bits B8 and B12 are set.</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="576" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -213,13 +213,13 @@
 </td>
 <td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">1</code></p>
 </td>
+<td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
+<td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
+</td>
 <td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">1</code></p>
-</td>
-<td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
-</td>
-<td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
-</td>
-<td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
 </td>
 <td style="border-top:1px solid #010101;" width="36"><p class="tablebodytextcenter"><code class="monospace">0</code></p>
 </td>
@@ -241,7 +241,7 @@
 
 </table>
 <p class="iclbody">* Least significant bit<br>** Most significant bit</p>
-<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents and Enable and transition registers. The individual bits of this register are defined in the following table.</p>
+<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents. The individual bits of this register are defined in the following table.</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -263,14 +263,32 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B8</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">status.questionable.CAL</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">slot[<em class="emphasis">Z</em>].status.questionable.CAL</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status calibration summary event register is set.</p>
 <p class="tablebodytext">Bit B8 decimal value: 256</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B9 to B10</p>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B9</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].status.questionable.WARMUP</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status warmup summary event register is set.</p>
+<p class="tablebodytext">Bit B9 decimal value: 512</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B10</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].status.questionable.ACAL</code></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status automatic calibration expired summary event register is set.</p>
+<p class="tablebodytext">Bit B10 decimal value: 1,024</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B11</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Not used</p>
 </td>
@@ -278,25 +296,25 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B11</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">status.questionable.OTEMP</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status over temperature summary event register is set.</p>
-<p class="tablebodytext">Bit B11 decimal value: 2,048</p>
-</td>
-</tr>
-<tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B12</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">status.questionable.INST</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">slot[<em class="emphasis">Z</em>].status.questionable.OTEMP</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status instrument summary event register is set.</p>
-<p class="tablebodytext">Bit B13 decimal value: 4,096</p>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status over temperature summary event register is set.</p>
+<p class="tablebodytext">Bit B12 decimal value: 4,096</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B13 to B15</p>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B13</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">slot[<em class="emphasis">Z</em>].status.questionable.INST</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status instrument summary event register is set.</p>
+<p class="tablebodytext">Bit B13 decimal value: 8,192</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B14 to B15</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Not used</p>
 </td>
@@ -305,8 +323,7 @@
 </tr>
 
 </table>
-<p class="iclbody">As an example, to set bit B8 of the questionable status enable register for slot 1, set<code class="monospace"> slot1.status.questionable.enable = status.questionable.CAL</code>.</p>
-<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">questionableRegister</span> can be set to the numeric equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">questionableRegister</span> to the sum of their decimal weights. For example, to set bits B11 and B12, set <span class="monospaceitalic">questionableRegister</span> to 6,144 (which is the sum of 2,048 + 4,096). </p>
+<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">questionableRegister</span> can be set to the numeric equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">questionableRegister</span> to the sum of their decimal weights. For example, to set bits B12 and B13, set <span class="monospaceitalic">questionableRegister</span> to 12,288 (which is the sum of 4,096 + 8,192). </p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -475,15 +492,28 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Example</p>
+<p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot1.status.questionable.enable = status.questionable.OTEMP</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].status.questionable.enable = slot[1].status.questionable.OTEMP</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Uses a constant to set the OTEMP bit of the questionable status enable register for slot&nbsp;1.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">slot[1].status.questionable.enable = slot[1].status.questionable.CAL</code></p>
+<p class="codetable"><code class="monospace">status.questionable.enable = 256</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Both of these commands set the CAL enable bit (B8).</p>
 </td>
 </tr>
 

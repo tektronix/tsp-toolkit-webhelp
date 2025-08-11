@@ -21,15 +21,15 @@
 <p class="bodyzero">This function overwrites a bit field at a specified index position.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -65,13 +65,13 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">index</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">One&#8209;based bit position in <span class="monospaceitalic">value</span> to set (<code class="monospace">1</code> to <code class="monospace">32</code>)</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">One&#8209;based bit position in value to set: 1 to 32</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">width</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of bits to include in the field (<code class="monospace">1</code> to <code class="monospace">32</code>)</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of bits to include in the field: 1 to 32</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -85,7 +85,7 @@
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This function returns <span class="monospaceitalic">result</span>, which is <span class="monospaceitalic">value</span> with a field of bits overwritten, starting at <span class="monospaceitalic">index</span>. The <span class="monospaceitalic">index</span> specifies the position of the least significant bit of <span class="monospaceitalic">value</span>. The <span class="monospaceitalic">width</span> bits starting at <span class="monospaceitalic">index</span> are set to&nbsp;<span class="monospaceitalic">fieldValue</span>.</p>
 <p class="iclbody">The least significant bit of <span class="monospaceitalic">value</span> is at <span class="monospaceitalic">index</span> position 1; the most significant bit is at <span class="monospaceitalic">index</span> position&nbsp;32.</p>
-<p class="iclbody">Before setting the field of bits, any fractional parts of <span class="monospaceitalic">value</span> and <span class="monospaceitalic">fieldValue</span> are truncated to form integers.</p>
+<p class="iclbody">Before setting the field of bits, any fractional parts of <span class="monospaceitalic">value</span> and <span class="monospaceitalic">fieldValue</span> are truncated to form&nbsp;integers.</p>
 <p class="iclbody">If <span class="monospaceitalic">fieldValue</span> is wider than <span class="monospaceitalic">width</span>, the most significant bits of the <span class="monospaceitalic">fieldValue</span> that exceed the width are truncated. For example, if <span class="monospaceitalic">width</span> is 4 bits and the binary value for <span class="monospaceitalic">fieldValue</span> is 11110 (5&nbsp;bits), the most significant bit of <span class="monospaceitalic">fieldValue</span> is truncated and a binary value of 1110 is used.</p>
 <p class="iclbody">The TSP scripting engine stores all numbers internally as IEEE Standard 754 double-precision floating-point values. The logical operations work on 32-bit integers. Fractional bits of any input values are truncated. Returned values are integers. For numbers larger than 4294967295, only the lower 32 bits are used.</p>
 <p class="iclsubheading">Example</p>
@@ -105,7 +105,7 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">***Bit manipulation and logic operations</p>
+<p class="listcommand">Bit manipulation and logic operations</p>
 <p class="listcommand"><a id="h116228" class="jump" title="bit.get()" href="116213.htm" target="_self">bit.get()</a></p>
 <p class="listcommand"><a id="h116229" class="jump" title="bit.set()" href="116215.htm" target="_self">bit.set()</a></p>
 <p class="listcommand"><a id="h116234" class="jump" title="bit.getfield()" href="116214.htm" target="_self">bit.getfield()</a></p>

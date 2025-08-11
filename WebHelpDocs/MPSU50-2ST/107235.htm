@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute contains the state of the overlapped mode.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,11 +37,11 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>PSU reset<br>Recall setup</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">slot[Z].psu.DISABLE or 0</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">slot[Z].psu[X].DISABLE</p>
 </td>
 </tr>
 
@@ -54,7 +54,9 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">overlappedMode</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu.DISABLE</code> or 0</li><li class="tablelistbullet9pt"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu.ENABLE</code> or 1</li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Disable overlapped commands: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].DISABLE</code></p>
+<p class="tablebodytext">Enable overlapped commands: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].ENABLE</code></p>
+</td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">Z</span></p>
@@ -71,9 +73,8 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute configures the state of the overlapped mode.</p>
-<p class="iclbody">When this attribute is set to <code class="monospace">DISABLE</code>, PSU operations proceed as normal. A command is processed before executing the next command.</p>
-<p class="iclbody">When this attribute is set to <code class="monospace">ENABLE</code>, a command returns as soon as it is able, even if it has not been reflected in the hardware. The command for setting the source voltage level for example, returns to Lua so it can process the next command, even if the PSU is not yet sourcing at that voltage level. This only applies to commands that specify settings. A command that retrieves a setting or a measure command waits for commands to complete before executing.</p>
+<p class="iclbody">When this attribute is set to <code class="monospace">DISABLE</code>, PSU both sequential and measure overlapped commands proceed as normal. For sequential commands, a command is processed fully before the next one is executed.</p>
+<p class="iclbody">When this attribute is set to <code class="monospace">ENABLE</code>, a command returns as soon as it is able, even if it has not been reflected in the hardware. For example, the command for setting the source voltage level returns to Lua so it can process the next command, even if the PSU is not yet sourcing at that voltage level. This only applies to commands that specify settings. A command that retrieves a setting or a measure command waits for commands to complete before executing. Note that measure commands do not wait for commands to fully complete on a different channel.</p>
 <p class="iclbody">This attribute is useful when performing operations on multiple channels. Changing the voltage level on channel 1 and channel 2 with this setting enabled should result in those changes occurring with less time between than if this setting was disabled.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>

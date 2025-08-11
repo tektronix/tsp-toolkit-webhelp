@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute contains the registers of the measurement event instrument summary register set.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -134,31 +134,26 @@
 <p class="iclsubheading">Details</p>
 <p class="iclbody">These attributes are used to read or write to the measurement event instrument summary registers. Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15.</p>
 <p class="iclbody">For example, assume the value 6 is returned for the enable register. The binary equivalent is 0000&nbsp;0000&nbsp;0000&nbsp;0110. This value indicates that bit B1 (SMU1) and bit B2 (SMU2) are set.</p>
-<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents and Enable and transition registers. The individual bits of this register are defined in the following table. </p>
+<p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents. The individual bits of this register are defined in the following table. </p>
 <p class="iclspacing"></p>
-<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<table class="tableintopic" width="624" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <th style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Bit</p>
 </th>
-<th style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">Value</p>
-</th>
-<th style="border:1px solid #C0C0C0;" width="216"><p class="tableheading">Description</p>
+<th style="border:1px solid #C0C0C0;" width="552"><p class="tableheading">Value</p>
 </th>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Not used</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Not applicable.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B1</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><code class="monospace">status.measurement.instrument.SMU1</code></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits of the measurement event SMU&nbsp;1 summary register is set.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.instrument.SMU1</p>
+<p class="tablebodytext">Set bit indicates one or more enabled bits of the measurement event SMU&nbsp;1 summary register is set.</p>
 <p class="tablebodytext">Bit B1 decimal value: 2</p>
 <p class="tablebodytext">Binary value: 0000 0010</p>
 </td>
@@ -166,9 +161,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B2</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><code class="monospace">status.measurement.instrument.SMU2</code></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Set bit indicates one or more enabled bits of the measurement event SMU 2 summary register is set.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.instrument.SMU2</p>
+<p class="tablebodytext">Set bit indicates one or more enabled bits of the measurement event SMU 2 summary register is set.</p>
 <p class="tablebodytext">Bit B2 decimal value: 4</p>
 <p class="tablebodytext">Binary value: 0000 0100</p>
 </td>
@@ -176,20 +170,17 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B3 to B15</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">Not used</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="216"><p class="tablebodytext">Not applicable.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
 </td>
 </tr>
 
 </table>
-<p class="iclbody">As an example, to set bit B1 of the measurement event instrument summary enable register, set<code class="monospace"> status.measurement.instrument.enable = status.measurement.instrument.SMU1</code>.</p>
 <p class="iclbody">In addition to the above constants, <span class="monospaceitalic">measurementRegister</span> can be set to the decimal equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">measurementRegister</span> to the sum of their decimal weights. For example, to set bits B1 and B2, set <span class="monospaceitalic">measurementRegister</span> to 6 (which is the sum of 2 + 4).</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot1.status.measurement.instrument.enable = status.measurement.instrument.SMU1</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].status.measurement.instrument.enable = slot[1].status.measurement.instrument.SMU1</p>
 </td>
 </tr>
 <tr align="left" valign="top">

@@ -9,10 +9,10 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('114956')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114956')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="117345.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="132065.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="114960.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
@@ -21,15 +21,15 @@
 <p class="bodyzero">This function stops trigger model execution on the specified module.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -47,6 +47,7 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.abort(&quot;&quot;)</p>
 <p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.abort(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
@@ -65,22 +66,36 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function stops the running trigger model on the specified module.</p>
+<p class="iclbody">This function stops the running trigger model on the specified&nbsp;module. If no trigger model name is provided, it aborts all trigger models running on the slot.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable"><code class="monospace">slot[1].trigger.model.abort(&quot;TM1&quot;)</code></p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SLOT = 1</p>
+<p class="codetable">slot[SLOT].trigger.model.delete(&quot;TM1&quot;)</p>
+<p class="codetable">slot[SLOT].trigger.model.create(&quot;TM1&quot;)</p>
+<p class="codetable">slot[SLOT].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput1&quot;, 1, 0)</p>
+<p class="codetable">slot[SLOT].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay2&quot;, 2)</p>
+<p class="codetable">slot[SLOT].trigger.model.addblock.logevent(&quot;TM1&quot;, &quot;logevent3&quot;, slot[SLOT].trigger.model.LOG_INFO3, &quot;logevent3&quot;)</p>
+<p class="codetable">slot[SLOT].trigger.model.addblock.branch.always(&quot;TM1&quot;, &quot;branchalways4&quot;, &quot;sourceoutput1&quot;)</p>
+<p class="codetable">slot[SLOT].trigger.model.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">print(slot[SLOT].trigger.model.state(&quot;TM1&quot;))</p>
+<p class="codetable">-- Please wait to allow the logevents to display.</p>
+<p class="codetable">-- Press &lt;Enter&gt; a few times to dump standard output.</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[SLOT].trigger.model.abort(&quot;TM1&quot;)</p>
+<p class="codetable">print(slot[SLOT].trigger.model.state(&quot;TM1&quot;))</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">Stops the <code class="monospace">TM1</code> trigger model running in the module located in slot 1.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">In this example, the trigger model will run an infinite loop, logging an eventlog message every two seconds. Use the abort function to correctly stop the infinite loop.</p>
+<p class="tablebodytext">Trigger models require one channel to be assigned. This is the reason for the <code class="monospace">source.output</code> block that always turns off the output.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h117393" class="jump" title="slot[Z].trigger.model.initiate()" href="114959.htm" target="_self">slot[Z].trigger.model.initiate()</a></p>
+<p class="listcommand">slot[Z].trigger.model.initiate()</p>
 
 </body>
 </html>

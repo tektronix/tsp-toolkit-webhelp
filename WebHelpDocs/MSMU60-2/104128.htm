@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t104128" class="heading2-icl">slot[Z].smu[X].defbufferY </h2>
-<p class="bodyzero">This attribute contains the default dedicated reading buffers.</p>
+<p class="bodyzero">This attribute contains the default reading buffers.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -39,7 +39,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">See Details</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -47,13 +47,14 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">bufferVar =</span> slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].defbufferY</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar =</span> slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em></p>
+<p class="iclcode"><em class="emphasis">bufferVar</em> = slot[<em class="emphasis">Z</em>].smu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em>[<em class="emphasis">N</em>]</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The dedicated reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The contents of the default reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -71,23 +72,33 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">Y</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Buffer (<code class="monospace">1</code> = <code class="monospace">debuffer1</code>, <code class="monospace">2</code> = <code class="monospace">debuffer2</code>)</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Buffer number; <code class="monospace">1</code> = defbuffer1, <code class="monospace">2</code> = defbuffer2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Index of the reading in the buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">Each SMU channel contains two dedicated reading buffers: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer1</code> and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer2</code>.</p>
+<p class="iclbody">Each SMU channel contains two default reading buffers: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer1</code> and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer2</code>.</p>
 <p class="iclbody">All routines that return measurements can store readings in either buffer.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].smu[2].measure.v(slot[1].smu[2].defbuffer1)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].smu[2].measure.count = 10</p>
+<p class="codetable">slot[1].smu[2].measure.v(slot[1].smu[2].defbuffer1)</p>
+<p class="codetable">format.data = format.ASCII</p>
+<p class="codetable">format.asciiprecision = 6</p>
+<p class="codetable">printbuffer(1, slot[1].smu[2].defbuffer1.n, slot[1].smu[2].defbuffer1.readings)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Stores voltage measurements in <code class="monospace">defbuffer1</code> of channel 2 of the module installed in slot 1.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the measurement count to 10. Make and store voltage measurements in <code class="monospace">defbuffer1</code> of channel 2 of the module installed in slot 1. Set the data format to ASCII with precision of 6, then return the information from <code class="monospace">defbuffer1</code>. The use of <code class="monospace">defbuffer1.n</code> (<span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>) indicates that the instrument should output all readings in the reading buffer.</p>
 </td>
 </tr>
 

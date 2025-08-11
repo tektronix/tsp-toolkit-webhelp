@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute controls the measurement delay.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,11 +37,11 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0 (s)</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0 s</p>
 </td>
 </tr>
 
@@ -54,7 +54,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">delay</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measure delay value (in seconds), set to a value between 0 and </p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measure delay value (in seconds): 0 to </p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -72,10 +72,9 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute allows for additional delay (settling time) before making a measurement. If <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.autodelay</code> is set to <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFF</code>, this value is used for the measure delay instead of using the automatic delay value, regardless of the range.</p>
-<p class="iclbody">When reading this attribute, if <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.autodelay</code> is set to <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].ON</code>, the value returned is the automatic delay value of the present source range. The user delay value can still be programmed and is not overwritten when autodelay is turned on, and that delay will be used when autodelay is turned off again.</p>
-<p class="iclbody">If <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.count</code> is greater than 1, the measurement delay is only inserted before the first measurement.</p>
-<p class="iclbody">To disable all measurement delays, set <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.autodelay</code> to <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFF</code> and set <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.delay</code> to <code class="monospace">0</code>.</p>
+<p class="iclbody">This attribute allows for additional delay (settling time) before making a measurement.</p>
+<p class="iclbody">If <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.count</code> is greater than 1, the measurement delay is inserted before the first measurement.</p>
+<p class="iclbody">To disable all measurement delays, set <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.delay</code> to <code class="monospace">0</code>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
@@ -90,7 +89,6 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h111545" class="jump" title="slot[Z].smu[X].measure.autodelay" href="111487.htm" target="_self">slot[Z].smu[X].measure.autodelay</a></p>
 <p class="listcommand"><a id="h111546" class="jump" title="slot[Z].smu[X].measure.interval" href="111489.htm" target="_self">slot[Z].smu[X].measure.interval</a></p>
 
 </body>

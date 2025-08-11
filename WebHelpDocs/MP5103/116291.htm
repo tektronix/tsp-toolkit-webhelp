@@ -21,15 +21,15 @@
 <p class="bodyzero">This function waits for a command interface trigger event.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -67,7 +67,7 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This function waits up to <span class="monospaceitalic">timeout</span> seconds for a trigger on the active command interface. A command interface trigger occurs when:</p>
-<ul class="listbullet"><li class="listbullet">A USBTMC TRIGGER message is received (USB only)</li><li class="listbullet">A VXI-11 device_trigger method is invoked (VXI-11 only)</li><li class="listbullet">A <code class="monospace">*TRG</code> message is received</li></ul><p class="iclbody">If one or more of these trigger events were previously detected, this function returns immediately.</p>
+<ul class="listbullet"><li class="listbullet">A USBTMC TRIGGER message is received (USB only)</li><li class="listbullet">A <code class="monospace">*TRG</code> message is received</li></ul><p class="iclbody">If one or more of these trigger events were previously detected, this function returns immediately.</p>
 <p class="iclbody">After waiting for a trigger with this function, the event detector is automatically reset and rearmed. This is true regardless of the number of events detected.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
@@ -79,7 +79,7 @@
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Waits up to 10 seconds for a trigger.</p>
-<p class="tablebodytext">If <code class="monospace">false</code> is returned, no trigger was detected during the 10&#8209;second timeout.</p>
+<p class="tablebodytext">If <code class="monospace">false</code> is returned, no trigger was detected during the 10&#8209;second period.</p>
 <p class="tablebodytext">If <code class="monospace">true</code> is returned, a trigger was detected.</p>
 </td>
 </tr>

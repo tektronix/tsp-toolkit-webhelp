@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t115930" class="heading2-icl">bufferVar.clearcache()</h2>
-<p class="bodyzero">This function clears the cache.</p>
+<p class="bodyzero">This function clears all readings from the specified cache.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -53,13 +53,12 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a dedicated reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function clears all readings from the specified cache. </p>
 <p class="iclbody">If you run successive operations that overwrite reading buffer data, the reading buffer may return stale cache data. This can happen when you:</p>
 <ul class="listbullet"><li class="listbullet">Initiate successive sweeps without reconfiguring the sweep measurements. Watch for this when running Lua code remotely on more than one node, because values in the reading buffer cache may change while the Lua code is running.</li><li class="listbullet">Overwrite data in the reading buffer by setting the <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillmode</code> attribute to <code class="monospace">FILL_WINDOW</code>.</li></ul><p class="iclbody">To avoid this, you can include explicit calls to the <span class="monospaceitalic">bufferVar</span><code class="monospace">.clearcache()</code> function to remove stale values from the reading buffer cache.</p>
 <p class="iclsubheading">Example</p>
@@ -71,14 +70,13 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Clears all readings from the reading buffer cache <code class="monospace">buffer1</code>.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Clears all readings from the reading buffer cache of <code class="monospace">buffer1</code>.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"><a id="h107550" class="jump" title="bufferVar.fillmode" href="107196.htm" target="_self">bufferVar.fillmode</a></p>
-<p class="listcommand">***Reading buffers</p>
 
 </body>
 </html>

@@ -12,7 +12,7 @@
 <body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116906')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="116905.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="118104.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="116261.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
@@ -21,15 +21,15 @@
 <p class="bodyzero">This function resets the LAN interface.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -49,10 +49,16 @@
 <p class="iclsubheading">Usage</p>
 <p class="iclcode">lan.reset()</p>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function resets the LAN interface. It performs the commands <code class="monospace">lan.restoredefaults()</code> and <code class="monospace">lan.applysettings()</code>.</p>
+<p class="bodytext">This function resets the LAN interface. It runs the command <code class="monospace">lan.restoredefaults()</code> and <code class="monospace">lan.applysettings()</code>. This function also resets the LAN password and disables LAN communications.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">This function resets the password, which requires the user to specify a new password. This must be set from the front panel or by sending <code class="monospace">user.password.change()</code> over a connection to the instrument. After setting the password, you must enable LAN communications with <code class="monospace">lan.enable</code>.</p>
+<p class="note">To configure which LAN protocols use the password with the commands, use <code class="monospace">lan.hislip.access</code>, <code class="monospace">lan.rawsocket.access</code>, and <code class="monospace">lan.telnet.access</code>.</p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"><a id="h14934" class="jump" title="lan.applysettings()" href="14890.htm" target="_self">lan.applysettings()</a></p>
+<p class="listcommand"><a id="h117281" class="jump" title="lan.hislip.access" href="117275.htm" target="_self">lan.hislip.access</a></p>
+<p class="listcommand"><a id="h118176" class="jump" title="lan.rawsocket.access" href="118104.htm" target="_self">lan.rawsocket.access</a></p>
 <p class="listcommand"><a id="h116355" class="jump" title="lan.restoredefaults()" href="116261.htm" target="_self">lan.restoredefaults()</a></p>
+<p class="listcommand"><a id="h118177" class="jump" title="lan.telnet.access" href="118105.htm" target="_self">lan.telnet.access</a></p>
+<p class="listcommand"><a id="h118099" class="jump" title="user.password.change()" href="118098.htm" target="_self">user.password.change()</a></p>
 
 </body>
 </html>

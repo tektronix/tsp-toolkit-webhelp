@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t116268" class="heading2-icl">node[N].execute()</h2>
-<p class="bodyzero">This function starts test scripts from a remote node.</p>
+<p class="bodyzero">This function starts test scripts from a remote TSP&#8209;Link node.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </td>
-<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </td>
-<td bgcolor="#E4E4E4" style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -53,7 +53,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">N</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The node number of this instrument</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The node number of the specified instrument</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -65,7 +65,7 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">Only the remote master node can use the execute command to run a script on this node. This function does not run test scripts on the master node; only on this node when initiated by the master node.</p>
+<p class="iclbody">Only the remote master node can use the execute command to run a script on this node. This function does not run test scripts on the master node; only on node <span class="monospaceitalic">N</span> when initiated by the master node.</p>
 <p class="iclbody">This function may only be called when the group number of the node is different than the node of the master.</p>
 <p class="iclbody">This function does not wait for the script to finish execution.</p>
 <p class="iclbody">This command should only be used from a remote master when controlling this instrument over a TSP-Link<sup class="superscript">TM</sup>.</p>
@@ -103,13 +103,12 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Runs the test script stored in the variable <code class="monospace">TestDut </code>(previously stored on the master node) on node 32.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Runs the test script stored in the script variable <code class="monospace">TestDut </code>(previously stored on the master node) on node 32.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">****TSP advanced features</p>
 <p class="listcommand"><a id="h116366" class="jump" title="tsplink.group" href="116292.htm" target="_self">tsplink.group</a></p>
 
 </body>

@@ -21,15 +21,15 @@
 <p class="bodyzero">These attributes manage the TSP-Link<sup class="superscript">TM</sup> system summary register of the status model for nodes 57 through 64.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -120,7 +120,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">enableRegister</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The status of the system summary 5 register; a zero (0) indicates no bits set; other values indicate bit settings</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The status of the system summary 5 register; a zero (0) indicates no bits set; other values indicate bits are set</p>
 </td>
 </tr>
 
@@ -328,7 +328,7 @@
 
 </table>
 <p class="iclbody">As an example, to set bit B1 of the system summary 5 enable register, set <code class="monospace">status.system5.enable = status.system5.NODE57</code>.</p>
-<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">enableRegister</span> can be set to the numeric equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">enableRegister</span> to the sum of their decimal weights. For example, to set bits B1 and B4, set <span class="monospaceitalic">enableRegister</span> to 18 (which is the sum of 2 + 16).</p>
+<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">enableRegister</span> can be set to the numeric equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">enableRegister</span> to the sum of their decimal weights.</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -497,7 +497,7 @@
 </tr>
 
 </table>
-<p class="tablebodytext">Example 1</p>
+<p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
@@ -521,7 +521,7 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Uses the decimal value to set bits B1 and B4 of the system summary 5 enable register.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Uses the decimal value 18 (the sum of 2+16) to set bits B1 and B4 of the system summary 5 enable register.</p>
 </td>
 </tr>
 

@@ -21,15 +21,15 @@
 <p class="bodyzero">This attribute configures the negative source off limit setting.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,26 +37,25 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>SMU reset<br>Recall setup</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Saved setup</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Voltage: −200e−3 V<br>Current: −1e-6 A</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Voltage: −200e−3 V<br>Current: −1e−6 A</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode">value = slot[Z].smu[X].source.offlimitnY</p>
-<p class="iclcode">slot[Z].smu[X].source.offlimitnY = value</p>
+<p class="iclcode"><span class="monospaceitalic">value</span> = slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].source.offlimitn<span class="monospaceitalic">Y</span></p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].source.offlimitn<span class="monospaceitalic">Y</span> = <span class="monospaceitalic">value</span></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Voltage: 0 V to −60 V</p>
-<p class="tablebodytext">Current: 0 A to −1.5 A</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">MSMU60-2:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage: 0 V to −60 V</li><li class="tablelistbullet9pt">Current: 0 A to −1.5 A</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">Z</span></p>
@@ -73,8 +72,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">Y</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Function:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Voltage: <code class="monospace">v</code></li><li class="tablelistbullet9pt">Current: <code class="monospace">i</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function; <code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current</p>
+</td>
 </tr>
 
 </table>
@@ -84,11 +83,11 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].smu[1].source.offlimitny = -2</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].smu[1].source.offlimitvy = -2</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets the negative voltage off limit to -2 V for channel 1 of the module installed in slot 1.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets the negative voltage off limit to −2 V for channel 1 of the module installed in slot 1.</p>
 </td>
 </tr>
 

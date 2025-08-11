@@ -14,22 +14,22 @@
 <td width= "18">
 <p class="bodytext"><a href="116258.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="117382.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="117275.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t116900" class="heading2-icl">lan.enable</h2>
 <p class="bodyzero">This attribute controls whether or not any communications using the LAN connector are enabled.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
 </td>
-<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">LAN restore defaults</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Front-panel LAN reset</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Nonvolatile memory</p>
 </td>
@@ -60,13 +60,14 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This is the master LAN control setting. When this is true (enabled), you may individually control DST, HiSLIP, raw socket, and telnet access to the instrument. However, when this is false (disabled), all LAN communications are disabled and this overrides the individual LAN enabled settings.</p>
+<p class="iclbody">This is the master LAN control setting. When this is true (enabled), you may individually control DST, HiSLIP, raw socket, and telnet access to the instrument. However, when this is false (disabled), all LAN communications are disabled, which overrides the individual LAN-enabled settings.</p>
 <p class="iclbody">To disable only certain LAN communications with the instrument, enable this attribute and set the specific LAN communications attribute to false for DST, HiSLIP, raw sockets, or telnet.</p>
 <p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">lan.enable = localnode.ENABLE</p>
+<p class="codetable">lan.applysettings()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -76,8 +77,8 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h117281" class="jump" title="lan.hislip.access" href="117275.htm" target="_self">lan.hislip.access</a></p>
 <p class="listcommand"><a id="h117413" class="jump" title="lan.status.port.dst" href="117408.htm" target="_self">lan.status.port.dst</a></p>
-<p class="listcommand"><a id="h116910" class="jump" title="lan.status.port.hislip" href="116909.htm" target="_self">lan.status.port.hislip</a></p>
 <p class="listcommand"><a id="h117414" class="jump" title="lan.status.port.rawsocket" href="117409.htm" target="_self">lan.status.port.rawsocket</a></p>
 <p class="listcommand"><a id="h117415" class="jump" title="lan.status.port.telnet" href="117410.htm" target="_self">lan.status.port.telnet</a></p>
 

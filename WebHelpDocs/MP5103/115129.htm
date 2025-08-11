@@ -21,15 +21,15 @@
 <p class="bodyzero">This function asserts a trigger pulse on one of the digital I/O lines</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -59,8 +59,8 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command asserts a trigger on the specified trigger line. When a trigger is asserted, it generates a pulse with the duration specified by <code class="monospace">digio.trigger[N].pulsewidth</code>.</p>
-<p class="iclsubheading">Examples</p>
+<p class="iclbody">This command asserts a trigger on the specified trigger line. When a trigger is asserted, it generates a pulse with the duration specified by <code class="monospace">digio.trigger[</code><span class="monospaceitalic">N</span><code class="monospace">].pulsewidth</code>.</p>
+<p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -73,6 +73,7 @@
 </tr>
 
 </table>
+<p class="iclsubheading">Example 2</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -84,11 +85,12 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Negative trigger out. This example uses indefinite-length triggers, as it sets the pulse width to 0 and uses <code class="monospace">digio.trigger[N].release()</code> rather than using automatic pulse generation.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Negative trigger out. This example uses indefinite-length triggers. It sets the pulse width to 0 and uses <code class="monospace">digio.trigger[N].release()</code> instead of automatic pulse generation.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Example 3</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -99,7 +101,7 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Positive trigger out.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Asserts a positive trigger out with a 10e-6 pulse width on digital I/O line 2..</p>
 </td>
 </tr>
 

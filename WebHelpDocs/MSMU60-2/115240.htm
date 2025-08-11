@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t115240" class="heading2-icl">slot[Z].smu[X].configlist.table()</h2>
-<p class="bodyzero">This function returns the name of one measure configuration lists that is stored on the instrument.</p>
+<p class="bodyzero">This function returns the names of measure configuration lists stored on the instrument.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -65,50 +65,42 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">You can use this command to retrieve the names of measure configuration lists that are stored in the instrument. </p>
-<p class="iclbody">This command returns one name each time you send it. This command returns <code class="monospace">nil</code> to indicate that there are no more names to return. If the command returns <code class="monospace">nil</code> the first time you send it, no measure configuration lists have been created for the instrument.</p>
-<p class="iclsubheading">Example</p>
+<p class="iclbody">You can use this command to retrieve the names of configuration lists that are stored in the instrument. </p>
+<p class="iclbody">To see the names of the configuration lists that have been created, use either of the code examples under Example 1 and Example 2. If no configuration lists exist, the table will be empty.</p>
+<p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">print(slot[<code class="monospace">1</code>].smu[1].configlist.table())</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">myConfigList = slot[3].smu[1].configlist.table()</p>
+<p class="codetable">for i, name in pairs(myConfigLists) do</p>
+<p class="codetable">    print(name)</p>
+<p class="codetable">end</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Requests the name of one configuration list that is stored in the instrument. Send the command again until it returns <code class="monospace">nil</code> to get all stored lists.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Requests the names of configuration lists stored on the instrument. If no configuration lists exist, no data is returned.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">myConfigLists = slot[3].smu[1].configlist.table()</p>
+<p class="codetable">for i = 1, table.getn(myConfigList) do</p>
+<p class="codetable">    print(myConfigLists[i])</p>
+<p class="codetable">end</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">print(slot[1].smu[1].configlist.table())</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">If there are two configuration lists on the instrument.</p>
-<p class="tablebodytext">Example output:</p>
-<p class="tablebodytext"><code class="monospace">testMeasList</code></p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">print(slot[1].smu[1].configlist.table())</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext"><code class="monospace">myMeasList</code></p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">print(slot[1].smu[1].configlist.table())</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext"><code class="monospace">nil</code></p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Requests the names of configuration lists stored on the instrument. If no configuration lists exist, no data is returned.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">&quot;Configuration lists&quot; in the General operation section of the <em class="emphasis">MP5000 Source-Measure Unit Reference Manual</em></p>
-<p class="listcommand">createconfigscript()</p>
 <p class="listcommand"><a id="h115260" class="jump" title="slot[Z].smu[X].configlist.create()" href="115235.htm" target="_self">slot[Z].smu[X].configlist.create()</a></p>
 
 </body>

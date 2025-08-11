@@ -21,15 +21,15 @@
 <p class="bodyzero">This function creates an empty configuration list.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -65,23 +65,23 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">configListName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that represents the name of a measure configuration list</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that represents the name of a configuration list</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This command creates an empty configuration list. To add configuration indexes to this list, use the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].configlist.store()</code> command.</p>
-<p class="iclbody">Configuration lists are not saved when the instrument is turned off. To save a configuration list, create a configuration script to save instrument settings, including any defined configuration lists. Configuration list names must be unique.</p>
+<p class="iclbody">Configuration lists are not saved when the instrument is turned off. Configuration list names must be unique.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[1].psu[1].configlist.create(&quot;MyMeasList&quot;)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[1].psu[1].configlist.create(&quot;MyConfigList&quot;)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Creates a configuration list named <code class="monospace">MyMeasList</code> on channel 1 of the module installed in slot 1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Creates a configuration list named <code class="monospace">MyConfigList</code> on channel 1 of the module installed in slot 1.</p>
 </td>
 </tr>
 
@@ -89,7 +89,6 @@
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">&quot;Configuration lists&quot; in the General operation section of the <em class="emphasis">MP5000 Modular Precision Test System Reference Manual</em></p>
 <p class="listcommand"><a id="h115251" class="jump" title="slot[Z].psu[X].configlist.delete()" href="115224.htm" target="_self">slot[Z].psu[X].configlist.delete()</a></p>
-<p class="listcommand"><a id="h115252" class="jump" title="slot[Z].psu[X].configlist.query()" href="115225.htm" target="_self">slot[Z].psu[X].configlist.query()</a></p>
 <p class="listcommand"><a id="h115253" class="jump" title="slot[Z].psu[X].configlist.recall()" href="115221.htm" target="_self">slot[Z].psu[X].configlist.recall()</a></p>
 <p class="listcommand"><a id="h115254" class="jump" title="slot[Z].psu[X].configlist.size()" href="115227.htm" target="_self">slot[Z].psu[X].configlist.size()</a></p>
 <p class="listcommand"><a id="h115255" class="jump" title="slot[Z].psu[X].configlist.store()" href="115223.htm" target="_self">slot[Z].psu[X].configlist.store()</a></p>

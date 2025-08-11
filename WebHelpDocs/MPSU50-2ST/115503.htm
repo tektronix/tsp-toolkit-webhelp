@@ -9,27 +9,27 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('115503')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('115503')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="116622.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="114967.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="116627.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="114968.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t115503" class="heading2-icl">slot[Z].trigger.model.addblock.logevent()</h2>
 <p class="bodyzero">This function allows you to log an event in the event log when the trigger model is running.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -71,10 +71,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">eventNumber</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The event number:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">trigger.LOG_INFO</code><span class="monospaceitalic">N</span></li><li class="tablelistbullet9pt"><code class="monospace">trigger.LOG_WARN</code><span class="monospaceitalic">N</span></li><li class="tablelistbullet9pt"><code class="monospace">trigger.LOG_ERROR</code><span class="monospaceitalic">N</span><p class="tablebodytext">Where <span class="monospaceitalic">N</span> is 1 to 4; you can define up to four of each type</p>
-<p class="tablebodytext">You can also set <code class="monospace">trigger.LOG_WARN_ABORT</code>, which aborts the trigger model immediately and posts a warning event log message</p>
-</li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The event number; see <strong class="specialbold">Details</strong></p>
+</td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">message</span></p>
@@ -85,34 +83,34 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="bodytext">This block allows you to log an event in the event log when trigger model execution reaches this block. You can also force the trigger model to abort with this block. When the trigger model executes the block, the defined event is logged. If the abort option is selected, the trigger model is also aborted immediately.</p>
-<p class="bodytext">You can define the type of event (information, warning, abort model, or error). All events generated by this block are logged in the event log. Warning and error events are also displayed in a popup on the front&#8209;panel display.</p>
-<p class="bodytext">Note that using this block too often in a trigger model could overflow the event log. It may also take away from the time needed to process more critical trigger model blocks.</p>
+<p class="iclbody">This block allows you to log an event in the event log when trigger model execution reaches this block. You can also force the trigger model to abort with this block. When the trigger model executes the block, the defined event is logged. If the abort option is selected, the trigger model is also aborted immediately.</p>
+<p class="iclbody">The <span class="monospaceitalic">eventNumber</span> parameter defines the type of event:</p>
+<ul class="listbullet"><li class="listbullet">Information: <code class="monospace">trigger.LOG_INFO</code><span class="monospaceitalic">N</span></li><li class="listbullet">Warning: <code class="monospace">trigger.LOG_WARN</code><span class="monospaceitalic">N</span></li><li class="listbullet">Error: <code class="monospace">trigger.LOG_ERROR</code><span class="monospaceitalic">N</span></li></ul><p class="bodytext">Where <span class="monospaceitalic">N</span> is 1 to 4. You can define up to four of each type.</p>
+<p class="bodytext">You can also set <span class="monospaceitalic">eventNumber</span> to be <code class="monospace">trigger.LOG_WARN_ABORT</code>, which aborts the trigger model immediately and posts a warning event log message.</p>
+<p class="iclbody">All events generated by this block are logged in the event log. Warning and error events are also displayed on the front&#8209;panel display.</p>
+<p class="iclbody">If you use this block too often in a trigger model, it could overflow the event log. The log event block takes additional time to record the event and may impact timing in critical paths. Avoid using this block in time-sensitive sections of the trigger model, such as when there must be a precise delay between two trigger model blocks or actions.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SLOT = 1</p>
-<p class="codetable">slot[SLOT].trigger.model.create(&quot;logevent1&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.source.output(&quot;logevent1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.logevent(&quot;logevent1&quot;, &quot;logevent2&quot;, slot[SLOT].trigger.model.LOG_INFO3, &quot;ran logevent2 block&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.branch.counter(&quot;logevent1&quot;, &quot;branchcounter3&quot;, &quot;sourceoutput1&quot;, 3)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.logevent(&quot;logevent1&quot;, &quot;logevent4&quot;, slot[SLOT].trigger.model.LOG_INFO2, &quot;Done.&quot;)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;TM1&quot;, &quot;logevent2&quot;, slot[1].trigger.model.LOG_INFO3, &quot;ran logevent2 block&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;, &quot;branchcounter3&quot;, &quot;sourceoutput1&quot;, 3)</p>
+<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;TM1&quot;, &quot;logevent4&quot;, slot[1].trigger.model.LOG_INFO2, &quot;Done.&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[SLOT].trigger.model.print(&quot;logevent1&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.initiate(&quot;logevent1&quot;)</p>
-<p class="codetable">errorqueue.next()</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">print(eventlog.next())</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses log events to show behavior. The <code class="monospace">'ran logeven2 block'</code> should report 3 times and then <code class="monospace">'Done'</code>. reported once. </p>
-<p class="tablebodytext">Note the assignment of the SLOT variable and change it accordingly.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses log events to show behavior. The message <code class="monospace">ran logevent2 block</code> should be reported three times, then <code class="monospace">Done.</code> is reported once.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">None</p>
+<p class="listcommand">Log event block</p>
 
 </body>
 </html>

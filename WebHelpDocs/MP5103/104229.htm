@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t104229" class="heading2-icl">eventlog.next()</h2>
-<p class="bodyzero">This function reads and returns the oldest unread event message from the event log,which is then removed from the event log.</p>
+<p class="bodyzero">This function reads and returns the oldest unread event message from the event log, which is then removed from the event log.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+<th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
-<th bgcolor="#191970" style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+<th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
 </th>
-<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -47,8 +47,8 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">eventNumber, message, severity, nodeID, timeSeconds, timeFractional = </span><code class="monospace">eventlog.next()</code><span class="monospaceitalic"> </span></p>
-<p class="iclcode"><span class="monospaceitalic">eventNumber, message, severity, nodeID, timeSeconds, timeFractional = </span><code class="monospace">eventlog.next</code><span class="monospaceitalic">(eventType)</span></p>
+<p class="iclcode"><span class="monospaceitalic">eventNumber, message, severity, nodeID, timeSeconds, timeFractional = </span><code class="monospace">eventlog.next()</code></p>
+<p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">eventNumber</span></p>
@@ -86,19 +86,13 @@
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The fractional seconds portion of the time when the event occurred</p>
 </td>
 </tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">eventType</span></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limits the return to specific event log types</p>
-</td>
-</tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">When an event occurs on the instrument, it is placed in the event log in a first-in, first-out (FIFO) queue. This command retrieves the oldest unread event from the event log and removes it from the event log.</p>
 <p class="iclbody">If there are no entries in the event log, the following is returned:</p>
-<p class="iclbody"><code class="monospace">0 No error 0 0 0 0</code></p>
-<p class="iclbody">To read multiple events, execute this command multiple times.</p>
+<p class="code">0.00000e+00     Queue Is Empty  0.00000e+00     1.00000e+00     0.00000e+00     0.00000e+00</p>
+<p class="iclbody">To read multiple events, run this command multiple times.</p>
 <p class="iclbody">If the event type is not defined, an event of any type is returned.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
@@ -109,7 +103,7 @@
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Returns the following if no event log entries exist:</p>
-<p class="codetable">0 No error 0 0 0 0</p>
+<p class="codetable">0.00000e+00     Queue Is Empty  0.00000e+00     1.00000e+00     0.00000e+00     0.00000e+00</p>
 </td>
 </tr>
 
