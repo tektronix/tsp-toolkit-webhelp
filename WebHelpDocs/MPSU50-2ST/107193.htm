@@ -53,29 +53,29 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a default reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a user-defined or default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function clears all readings and associated columns that are enabled, such as timestamps and source values, from the specified buffer. It also clears the buffer&nbsp;cache.</p>
+<p class="iclbody">This function clears all readings and associated columns that are enabled from the specified buffer. It also clears the buffer&nbsp;cache.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">buffer1 = slot[1].psu[1].makebuffer(100)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">buffer1 = slot[1].psu[1].debuffer1</p>
 <p class="codetable">buffer1.clear()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Clears readings from the <code class="monospace">buffer1</code> buffer.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Clears readings from the <code class="monospace">debuffer1</code> buffer on channel 1 of the module in slot 1.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">None</p>
+<p class="listcommand"><a id="h115963" class="jump" title="bufferVar.clearcache()" href="115930.htm" target="_self">bufferVar.clearcache()</a></p>
 
 </body>
 </html>

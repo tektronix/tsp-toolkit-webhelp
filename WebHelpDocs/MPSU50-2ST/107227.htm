@@ -92,9 +92,10 @@
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This function starts a measurement and immediately returns the readings. The measurements are stored in a reading buffer, along with any ancillary information also acquired. If the instrument is configured to return multiple readings, the readings become available as they are made.</p>
 <p class="iclbody">Measurements are in the following units: <code class="monospace">v</code> = volts, <code class="monospace">i</code> = amperes, <code class="monospace">r</code> = ohms, <code class="monospace">p</code> = watts.</p>
-<p class="iclbody">The <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].</code><code class="monospace">psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.overlappediv()</code> function stores current readings in <code class="monospace">ibuffer</code> and voltage readings in <code class="monospace">vbuffer</code>.</p>
+<p class="iclbody">The <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].</code><code class="monospace">psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.overlappediv()</code> function stores current readings in <span class="monospaceitalic">ibuffer</span> and voltage readings in <span class="monospaceitalic">vbuffer</span>.</p>
 <p class="iclbody">This function is an overlapped command. Script execution continues while measurements are made in the background. Attempts to access result values that have not yet been generated cause the script to wait for the data to become available. The <code class="monospace">waitcomplete()</code> function can also be used to wait for the measurements to complete before continuing with the script.</p>
 <p class="iclbody">Any data in a reading buffer is deleted before recording any measurements unless the reading buffer has been configured to append data.</p>
+<p class="bodytext">Overlapped measure commands cannot be used with the trigger model.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">

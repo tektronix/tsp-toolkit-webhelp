@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114975')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114975')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="114974.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -49,7 +49,6 @@
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.wait(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">event</span><code class="monospace">)</code></p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.wait(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">event</span><code class="monospace">, </code><span class="monospaceitalic">clear</span><code class="monospace">)</code></p>
-<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.wait(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">event</span><code class="monospace">, </code><span class="monospaceitalic">clear</span><code class="monospace">, </code><span class="monospaceitalic">logic</span><code class="monospace">)</code></p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.wait(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">event</span><code class="monospace">, </code><span class="monospaceitalic">clear</span><code class="monospace">, </code><span class="monospaceitalic">logic</span><code class="monospace">, </code><span class="monospaceitalic">event</span><code class="monospace">)</code></p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.wait(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">event</span><code class="monospace">, </code><span class="monospaceitalic">clear</span><code class="monospace">, </code><span class="monospaceitalic">logic</span><code class="monospace">, </code><span class="monospaceitalic">event</span><code class="monospace">, </code><span class="monospaceitalic">event</span><code class="monospace">)</code></p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.wait(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">event</span><code class="monospace">, </code><span class="monospaceitalic">clear</span><code class="monospace">, </code><span class="monospaceitalic">logic</span><code class="monospace">, </code><span class="monospaceitalic">event</span><code class="monospace">, </code><span class="monospaceitalic">event</span><code class="monospace">, </code><span class="monospaceitalic">event</span><code class="monospace">)</code></p>
@@ -70,7 +69,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger block being added by this command</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger block being added by this command; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -82,69 +81,63 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">clear</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">To clear previously detected trigger events when entering the wait block:</p>
-<p class="tablebodytext"><code class="monospace">trigger.CLEAR_ENTER</code></p>
-<p class="tablebodytext">To immediately act on any previously detected triggers and not clear them (default):</p>
-<p class="tablebodytext"><code class="monospace">trigger.CLEAR_NEVER</code></p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Determines how previously detected events are handled when entering the wait block:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Clear events: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.CLEAR_ENTER</code></li><li class="tablelistbullet9pt">Retain events: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.CLEAR_NEVER</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">logic</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">If each event must occur before the trigger model continues: <code class="monospace">trigger.WAIT_AND</code></p>
-<p class="tablebodytext">If at least one of the events must occur before the trigger model continues:</p>
-<p class="tablebodytext"><code class="monospace">trigger.WAIT_OR</code></p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Specifies how multiple events are evaluated:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Continue the trigger model when all listed events have occurred: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.WAIT_AND</code></li><li class="tablelistbullet9pt">Continue the trigger model when any listed event occurs: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.WAIT_OR</code></li></ul></td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="bodytext">You can use this command to synchronize measurements with other instruments and devices. You can set the instrument to wait for the following events:</p>
-<ul class="listbullet"><li class="listbullet">Notify</li><li class="listbullet">Command interface trigger</li><li class="listbullet">Digital input/output signals, such as DIGIO and TSP-Link</li></ul><p class="bodytext">The event can occur before trigger model execution reaches the wait block. If the event occurs after trigger model execution starts but before the trigger model execution reaches the wait block, the trigger model records the event.</p>
-<p class="bodytext">By default, when trigger model execution reaches the wait block, it executes the wait block without waiting for the event to occur again when the clear parameter is set to never. </p>
-<p class="iclbody">The instrument clears the memory of the recorded event when trigger model execution is at the start block and when the trigger model exits the wait block. It also clears the recorded trigger event when the clear parameter is set to enter.</p>
-<p class="bodytext">The following event IDs can be used with this command:</p>
-<table class="tableintopic" width="498" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<ul class="listbullet"><li class="listbullet">Notify</li><li class="listbullet">Command interface trigger</li><li class="listbullet">Digital input/output signals, such as digio and TSP-Link</li></ul><p class="bodytext">The event can occur before trigger model execution reaches the wait block. If the event occurs after trigger model execution starts but before the trigger model execution reaches the wait block, the trigger model records the event.</p>
+<p class="bodytext">When <span class="monospaceitalic">clear</span> is set to <code class="monospace">CLEAR_ENTER</code>, the wait responds only to events that occur after the trigger model enters the block. When it is set to <code class="monospace">CLEAR_NEVER</code>, if required events already occurred, the trigger model continues immediately. For both options, all events are cleared when the wait block completes.</p>
+<p class="bodytext">You can use the event IDs in the following table with this command.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tableheading">ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">ID</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tableheading">Description</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Description</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">digio.trigger[N].EVENT_ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">digio.trigger[N].EVENT_ID</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when a digital I/O line changes state according to its configured trigger mode</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h118327" class="jump" title="slot[Z].trigger.model.EVENT_AT_LIMIT" href="118326.htm" target="_self">slot[Z].trigger.model.EVENT_AT_LIMIT</a> (SMUs only)</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">&nbsp;</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when a digital I/O line changes state according to its configured trigger mode; <span class="monospaceitalic">N</span> is 1 to ***Set DigioLines variable***</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h118325" class="jump" title="slot[Z].trigger.model.EVENT_NOTIFYN" href="118323.htm" target="_self">slot[Z].trigger.model.EVENT_NOTIFYN</a></p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">slot[Z].smu[X].trigger.EVENT_AT_LIMIT (SMUs only)</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when the notify block of the trigger model is executed</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">trigger.generator[N].EVENT_ID</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Trigger generator event</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the channel of a SMU limits the output to stay within user&#8209;defined constraints</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">trigger.timer[N].EVENT_ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><a id="h118325" class="jump" title="slot[Z].trigger.model.EVENT_NOTIFYN" href="118323.htm" target="_self">slot[Z].trigger.model.EVENT_NOTIFYN</a></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when the timer delay of timer <code class="monospace">N</code> elapses</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the notify block of the trigger model is executed; <span class="monospaceitalic">N</span> is 1 to 8 for SMUs and 1 to 16 for PSUs</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">tsplink.trigger[N].EVENT_ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">trigger.generator[N].EVENT_ID</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when a TSP-Link line changes state according to its configured trigger mode</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Trigger generator event; <span class="monospaceitalic">N</span> is the generator number, 1 to 8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">trigger.timer[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the timer delay of timer <span class="monospaceitalic">N</span> elapses; <span class="monospaceitalic">N</span> is 1 to 8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">tsplink.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when a TSP-Link line changes state according to its configured trigger mode; <span class="monospaceitalic">N</span> is 1 to 3</p>
 </td>
 </tr>
 
@@ -153,32 +146,39 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SMU1 = slot[1].smu[1]</p>
-<p class="codetable">SMU2 = slot[1].smu[2]</p>
-<p class="codetable">SMU1.source.levelv = 4.2 ; SMU2.source.levelv = 5.3</p>
-<p class="codetable">SMU1.source.output = 0 ; SMU2.source.output = 0</p>
-<p class="codetable">EVENT = slot[1].trigger.model.EVENT_NOTIFY1</p>
-<p class="codetable">TM = slot[1].trigger.model</p>
-<p class="codetable">TM.delete(&quot;waitCH1&quot;) ; TM.delete(&quot;notifyCH2&quot;)</p>
-<p class="codetable">TM.create(&quot;waitCH1&quot;) ; TM.create(&quot;notifyCH2&quot;)</p>
-<p class="codetable">TM.addblock.wait(&quot;waitCH1&quot;, &quot;wait1&quot;, EVENT)</p>
-<p class="codetable">TM.addblock.source.output(&quot;waitCH1&quot;, &quot;sourceoutput2&quot;, 1, 1)</p>
-<p class="codetable">TM.addblock.delay.constant(&quot;waitCH1&quot;, &quot;delay2&quot;, 0.01)</p>
-<p class="codetable">TM.addblock.source.output(&quot;waitCH1&quot;, &quot;sourceoutput3&quot;, 1, 0)</p>
-<p class="codetable">TM.addblock.source.output(&quot;notifyCH2&quot;, &quot;sourceoutput1&quot;, 2, 1)</p>
-<p class="codetable">TM.addblock.notify(&quot;notifyCH2&quot;, &quot;notify2&quot;, EVENT)</p>
-<p class="codetable">TM.addblock.delay.constant(&quot;notifyCH2&quot;, &quot;delay3&quot;, 0.01)</p>
-<p class="codetable">TM.addblock.source.output(&quot;notifyCH2&quot;, &quot;sourceoutput3&quot;, 2, 0)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the digital I/O trigger.</p>
+<p class="codetable">digio.trigger[1].mode = digio.MODE_TRIGGER_OUT</p>
+<p class="codetable">digio.trigger[1].edge = digio.EDGE_RISING</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">TM.initiate(&quot;waitCH1&quot;) ; TM.initiate(&quot;notifyCH2&quot;)</p>
+<p class="codetable">-- Configure the source level.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 5</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.wait(&quot;myTM&quot;, &quot;&quot;, digio.trigger[1].EVENT_ID)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;myTM&quot;, &quot;&quot;, 1, slot[1].psu[1].ON)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Assert the digio trigger event to notify the trigger model.</p>
+<p class="codetable">digio.trigger[1].assert()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn the source output off.</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses 2 channels to create a wait and notify pair. The wait trigger model is initiated first and when the notify trigger model reaches the notify block, the outputs of both channels will turn on for approximately 10 ms.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example waits for a digital I/O trigger event to occur before turning on the output of a channel.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133344" src="mp5000_triggermodel_wait_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_Wait.png" height="121" width="147" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Wait block</p>
 

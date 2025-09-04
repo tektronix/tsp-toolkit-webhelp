@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114967')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114967')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115501.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t114967" class="heading2-icl">slot[Z].trigger.model.addblock.delay.constant()</h2>
-<p class="bodyzero">This function adds a constant delay to the execution of a trigger model.</p>
+<p class="bodyzero">This function defines a trigger model block that adds a constant delay to the execution of a trigger model.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -49,8 +49,8 @@
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.delay.constant(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">delayTime</span><code class="monospace">)</code></p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.delay.constant(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">delayTime, &quot;referenceBlockName&quot;</span><code class="monospace">)</code></p>
-<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.delay.constant(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><em class="emphasis">d</em><span class="monospaceitalic">elayList}</span><code class="monospace">)</code></p>
-<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.delay.constant(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">referenceBlockName</span><code class="monospace">&quot;, {</code><span class="monospaceitalic">delayList</span><code class="monospace">})</code></p>
+<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.delay.constant(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><em class="emphasis">d</em><span class="monospaceitalic">elayList</span><code class="monospace">})</code></p>
+<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.delay.constant(</code><span class="monospaceitalic">&quot;triggerModelName&quot;</span><code class="monospace">, </code><span class="monospaceitalic">&quot;blockName&quot;</span><code class="monospace">, {</code><span class="monospaceitalic">delayList</span><code class="monospace">}, </code><span class="monospaceitalic">&quot;referenceBlockName&quot;</span><code class="monospace">)</code></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -68,7 +68,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger block where execution will proceed when the evaluation result is true</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -92,34 +92,45 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">When the trigger model reaches a delay constant block, it pauses for the specified time. If <span class="monospaceitalic">referenceBlockName</span> is specified, the trigger model pauses for the time delay since the start of the reference block.</p>
-<p class="iclbody">Up to 32 different blocks can be used as reference blocks within a trigger model.</p>
-<p class="iclbody">If a reference block was not visited before the delay block, the entry time of the trigger model will be used instead.</p>
-<p class="iclbody">When <code class="monospace">delayList</code> is defined, for each time the delay block is encountered in the trigger model, the next value in the list is used as the delay time. After all elements in the array have been used, the delays restart at the beginning of the list. If the array contains more than one element, the average of the delay intervals in the list must be ≥ 50 µs. </p>
+<p class="iclbody">When the trigger model reaches this block, it pauses for a specified time. If <span class="monospaceitalic">referenceBlockName</span> is specified, the trigger model pauses for the time delay since the start of the reference block.</p>
+<p class="iclbody">If a reference block was not visited before the delay block, the entry time of the trigger model is used.</p>
+<p class="iclbody">When <span class="monospaceitalic">delayList</span> is defined, for each time the delay block is encountered in the trigger model, the next value in the list is used as the delay time. After all elements in the array have been used, the delays restart at the beginning of the list.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].smu[1].source.levelv = 1.0</p>
-<p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay2&quot;, 0.01)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput3&quot;, 1, 0)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay4&quot;, 0.01)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput5&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay6&quot;, 0.05, &quot;delay2&quot;)  </p>
-<p class="codetable">-- NOTE:  This pulse high will NOT be 50 milliseconds, because of the reference to &quot;delay2&quot;.</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput7&quot;, 1, 0)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep.</p>
+<p class="codetable">slot[1].psu[1].trigger.source.linearv(2, 4, 2)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;myTM&quot;, &quot;&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;myTM&quot;, &quot;Step2&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1, &quot;Step2&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn on output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn the output off.</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses <code class="monospace">delay.constant</code> to define a pair of 1.0 volt pulses. The first pulse is 10 ms wide. The second pulse is 30 ms wide because the use of a reference block in the <code class="monospace">delay.constant</code> will overlap some timing with the first pulse. The second pulse is accurately timed from a specific, much earlier, block.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that performs a source action step, delays 100 ms, performs a second step, and then delays another 100 ms (second delay is referenced to the start of the second step).</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133334" src="mp5000_triggermodel_delayconstant_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_DelayConstant.png" height="336" width="146" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">None</p>
 

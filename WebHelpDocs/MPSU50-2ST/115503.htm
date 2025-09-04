@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('115503')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115503')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="114967.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t115503" class="heading2-icl">slot[Z].trigger.model.addblock.logevent()</h2>
-<p class="bodyzero">This function allows you to log an event in the event log when the trigger model is running.</p>
+<p class="bodyzero">This function defines a trigger model block that logs an event in the event log.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -47,7 +47,7 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.logevent(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">eventNumber</span>, &quot;<span class="monospaceitalic">message</span>&quot;)</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.logevent(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">eventType</span>, &quot;<span class="monospaceitalic">message</span>&quot;)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -65,50 +65,54 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">eventNumber</span></p>
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">eventType</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The event number; see <strong class="specialbold">Details</strong></p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The type of event and event number; see <strong class="specialbold">Details</strong></p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">message</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">A string up to 31 characters</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Message to display in the event log, up to 31 characters</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This block allows you to log an event in the event log when trigger model execution reaches this block. You can also force the trigger model to abort with this block. When the trigger model executes the block, the defined event is logged. If the abort option is selected, the trigger model is also aborted immediately.</p>
-<p class="iclbody">The <span class="monospaceitalic">eventNumber</span> parameter defines the type of event:</p>
-<ul class="listbullet"><li class="listbullet">Information: <code class="monospace">trigger.LOG_INFO</code><span class="monospaceitalic">N</span></li><li class="listbullet">Warning: <code class="monospace">trigger.LOG_WARN</code><span class="monospaceitalic">N</span></li><li class="listbullet">Error: <code class="monospace">trigger.LOG_ERROR</code><span class="monospaceitalic">N</span></li></ul><p class="bodytext">Where <span class="monospaceitalic">N</span> is 1 to 4. You can define up to four of each type.</p>
-<p class="bodytext">You can also set <span class="monospaceitalic">eventNumber</span> to be <code class="monospace">trigger.LOG_WARN_ABORT</code>, which aborts the trigger model immediately and posts a warning event log message.</p>
-<p class="iclbody">All events generated by this block are logged in the event log. Warning and error events are also displayed on the front&#8209;panel display.</p>
+<p class="iclbody">The <span class="monospaceitalic">eventType</span> parameter defines the type of event:</p>
+<ul class="listbullet"><li class="listbullet">Information: <code class="monospace">trigger.LOG_INFO</code><span class="monospaceitalic">N</span></li><li class="listbullet">Warning: <code class="monospace">trigger.LOG_WARN</code><span class="monospaceitalic">N</span></li><li class="listbullet">Error: <code class="monospace">trigger.LOG_ERROR</code><span class="monospaceitalic">N</span></li><li class="listbullet">Abort: <code class="monospace">trigger.LOG_WARN_ABORT</code></li></ul><p class="bodytext">Where <span class="monospaceitalic">N</span> is 1 to 4. You can define up to four events of each type.</p>
+<p class="bodytext">You can also set <span class="monospaceitalic">eventNumber</span> to <code class="monospace">trigger.LOG_WARN_ABORT</code>, which aborts the trigger model immediately and posts a warning event log message.</p>
+<p class="iclbody">All events generated by this block are logged in the event log. Warning and error events are also displayed on the front&#8209;panel display. </p>
 <p class="iclbody">If you use this block too often in a trigger model, it could overflow the event log. The log event block takes additional time to record the event and may impact timing in critical paths. Avoid using this block in time-sensitive sections of the trigger model, such as when there must be a precise delay between two trigger model blocks or actions.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;TM1&quot;, &quot;logevent2&quot;, slot[1].trigger.model.LOG_INFO3, &quot;ran logevent2 block&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;, &quot;branchcounter3&quot;, &quot;sourceoutput1&quot;, 3)</p>
-<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;TM1&quot;, &quot;logevent4&quot;, slot[1].trigger.model.LOG_INFO2, &quot;Done.&quot;)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Create the trigger model</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;myTM&quot;, &quot;&quot;, 1, slot[1].psu[1].OFF)</p>
+<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;myTM&quot;, &quot;&quot;, slot[1].trigger.model.LOG_INFO1, &quot;Output Off&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
-<p class="codetable">print(eventlog.next())</p>
+<p class="codetable">-- Initiate the trigger model</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete</p>
+<p class="codetable">waitcomplete()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses log events to show behavior. The message <code class="monospace">ran logevent2 block</code> should be reported three times, then <code class="monospace">Done.</code> is reported once.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example logs an information message (<code class="monospace">Output Off</code>) immediately after the output is turned off by the source output block.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133330" src="mp5000_triggermodel_logevent_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_Logevent.png" height="182" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Log event block</p>
 

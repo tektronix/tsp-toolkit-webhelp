@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('104128')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('104128')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="111447.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -47,14 +47,14 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">bufferVar =</span> slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em></p>
-<p class="iclcode"><em class="emphasis">bufferVar</em> = slot[<em class="emphasis">Z</em>].smu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em>[<em class="emphasis">N</em>]</p>
+<p class="iclcode"><em class="emphasis">bufferContents</em> = slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em></p>
+<p class="iclcode"><em class="emphasis">bufferContents</em> = slot[<em class="emphasis">Z</em>].smu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em>[<em class="emphasis">N</em>]</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">bufferContents</em></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The contents of the default reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The readings in the default reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -85,7 +85,7 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">Each SMU channel contains two default reading buffers: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer1</code> and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer2</code>.</p>
-<p class="iclbody">All routines that return measurements can store readings in either buffer.</p>
+<p class="iclbody">All routines that return measurements can also store them in either reading buffer. Overlapped measurements are always stored in a reading buffer. Synchronous measurements return either a single-point measurement or are stored in a reading buffer if they are passed to the measurement command.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
@@ -93,12 +93,13 @@
 <td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].smu[2].measure.count = 10</p>
 <p class="codetable">slot[1].smu[2].measure.v(slot[1].smu[2].defbuffer1)</p>
 <p class="codetable">format.data = format.ASCII</p>
-<p class="codetable">format.asciiprecision = 6</p>
+<p class="codetable">format.asciiprecision = 3</p>
 <p class="codetable">printbuffer(1, slot[1].smu[2].defbuffer1.n, slot[1].smu[2].defbuffer1.readings)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the measurement count to 10. Make and store voltage measurements in <code class="monospace">defbuffer1</code> of channel 2 of the module installed in slot 1. Set the data format to ASCII with precision of 6, then return the information from <code class="monospace">defbuffer1</code>. The use of <code class="monospace">defbuffer1.n</code> (<span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>) indicates that the instrument should output all readings in the reading buffer.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set the measurement count to 10. Make and store voltage measurements in <code class="monospace">defbuffer1</code> of channel 2 of the module installed in slot 1. Set the data format to ASCII with precision of 6, then return the information from <code class="monospace">defbuffer1</code>. The use of <code class="monospace">defbuffer1.n</code> (<span class="monospaceitalic">bufferVar</span><code class="monospace">.n</code>) indicates that the instrument should output all readings in the reading buffer. Example output:</p>
+<p class="codetable">2.07e-05, 2.13e-05, 2.12e-05, 2.09e-05, 2.07e-05, 2.12e-05, 2.09e-05, 2.11e-05, 2.07e-05, 2.09e-05</p>
 </td>
 </tr>
 

@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114959')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114959')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="118323.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -65,28 +65,37 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function builds and runs the named trigger model on a module. When this function completes, the trigger model continues to run in the background. Any improperly configured trigger model blocks generate an error when this command is run.</p>
-<p class="iclbody">Initiating a trigger module that is already running or a trigger model that has not yet been created will cause an error.</p>
+<p class="iclbody">This command starts the named trigger model. Once the function completes, the trigger model runs in the background and the function returns.</p>
+<p class="iclbody">If any trigger model blocks are improperly configured, or if the trigger model is already running or has not been created, the trigger model will not start, and an error message will be returned.</p>
 <p class="iclbody">To pause execution until a trigger model is complete, use waitcomplete(). To abort a running trigger model, use <a id="h132961" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort</a>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SLOT =1</p>
-<p class="codetable">slot[1].smu[1].source.levelv = 1.0</p>
-<p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;&quot;, 0.1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 0)</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].psu[1].source.levelv = 5</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;myTM&quot;, &quot;&quot;, 1, slot[1].psu[1].ON)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for trigger models to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn off the source output.</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">Initiates trigger model <code class="monospace">initiate1</code>, which turns on the output of channel 1 installed in slot 1 for 100 ms. </p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example creates a trigger model, adds a block, starts the trigger model, and then waits for it to complete.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133347" src="mp5000_triggermodel_initiate_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_Initiate.png" height="62" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"><a id="h114987" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort</a></p>
 

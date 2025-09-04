@@ -107,20 +107,26 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = status.measurement.protection.condition</p>
-<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = status.measurement.protection.enable</p>
-<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = status.measurement.protection.event</p>
-<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = status.measurement.protection.ntr</p>
-<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = status.measurement.protection.ptr</p>
-<p class="iclcode">status.measurement.protection.enable = <span class="monospaceitalic">measurementRegister</span></p>
-<p class="iclcode">status.measurement.protection.ntr = <span class="monospaceitalic">measurementRegister</span></p>
-<p class="iclcode">status.measurement.protection.ptr = <span class="monospaceitalic">measurementRegister</span></p>
+<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = slot[<span class="monospaceitalic">Z</span>].status.measurement.protection.condition</p>
+<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = slot[<span class="monospaceitalic">Z</span>].status.measurement.protection.enable</p>
+<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = slot[<span class="monospaceitalic">Z</span>].status.measurement.protection.event</p>
+<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = slot[<span class="monospaceitalic">Z</span>].status.measurement.protection.ntr</p>
+<p class="iclcode"><span class="monospaceitalic">measurementRegister</span> = slot[<span class="monospaceitalic">Z</span>].status.measurement.protection.ptr</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].status.measurement.protection.enable = <span class="monospaceitalic">measurementRegister</span></p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].status.measurement.protection.ntr = <span class="monospaceitalic">measurementRegister</span></p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].status.measurement.protection.ptr = <span class="monospaceitalic">measurementRegister</span></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
 <td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext"><span class="monospaceitalic">measurementRegister</span></p>
 </td>
 <td style="border:1px solid #E0E0E0;" width="360"><p class="tablebodytext">The status of the measurement event protection summary register; a zero (0) indicates no bits set (also send 0 to clear all bits); other values indicate bits are&nbsp;set</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="240"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="360"><p class="tablebodytext">Module slot number</p>
 </td>
 </tr>
 

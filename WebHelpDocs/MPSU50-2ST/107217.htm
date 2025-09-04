@@ -53,7 +53,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the new reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The variable name of the new reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -78,9 +78,7 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">Reading buffers can be created and allocated dynamically using this function. Use <span class="monospaceitalic">bufferSize</span> to designate the number of readings the buffer can store.</p>
-<p class="bodytext">The names for a user-defined buffer must conform to the following rules:</p>
-<ul class="listbullet"><li class="listbullet">Start with an alphabetic character.</li><li class="listbullet">Cannot contain periods.</li><li class="listbullet">Cannot exist as a global variable, local variable, or array.</li></ul><p class="iclbody"> If you create a reading buffer that has the same name as an existing user-defined buffer, the existing buffer is overwritten by the new buffer. Any data in the existing buffer is lost.</p>
-<p class="iclbody">An error is returned if <span class="monospaceitalic">bufferSize</span> exceeds the maximum storage capacity of the module.</p>
+<p class="iclbody">An error is returned if <span class="monospaceitalic">bufferSize</span> exceeds the maximum storage capacity of the module. The available storage capacity varies and depends on how much memory is consumed by other reading buffers, configuration lists, trigger models, and sweep configurations.</p>
 <p class="iclbody">Dynamically allocated reading buffers can be used interchangeably with the dedicated <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer</code><span class="monospaceitalic">Y</span> buffers.</p>
 <p class="iclbody">To delete a reading buffer, set all references to the reading buffer equal to <code class="monospace">nil</code>, then run the garbage collector.</p>
 <p class="iclsubheading">Example</p>
@@ -91,7 +89,7 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Creates a 200-element reading buffer (<code class="monospace">mybuffer2</code>) for channel 2 of the module installed in slot 1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Creates a reading buffer (<code class="monospace">mybuffer2</code>) that holds 200 readings for channel 2 of the module installed in slot 1.</p>
 </td>
 </tr>
 

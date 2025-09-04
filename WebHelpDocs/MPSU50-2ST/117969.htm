@@ -252,7 +252,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">status.operation.CAL</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.CAL</p>
 <p class="tablebodytext">Set bit indicates that the summary bit of the <code class="monospace">status.operation.calibrating</code> register has been set.</p>
 <p class="tablebodytext">Bit B0 decimal value: 1</p>
 </td>
@@ -266,7 +266,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B3</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">status.operation.SWE</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.SWE</p>
 <p class="tablebodytext">Set bit indicates that the summary bit from the <code class="monospace">status.operation.sweeping</code> register is&nbsp;set.</p>
 <p class="tablebodytext">Bit B3 decimal value: 8</p>
 </td>
@@ -274,8 +274,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B4</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">status.operation.MEAS</p>
-<p class="tablebodytext">Set bit indicates that the summary bit of the <code class="monospace">status.operation.measuring</code> register is&nbsp;set.</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.MEAS</p>
+<p class="tablebodytext">Set bit indicates that the summary bit of the <code class="monospace">status.operation.measuring</code> register is set.</p>
 <p class="tablebodytext">Bit B4 decimal value: 16</p>
 </td>
 </tr>
@@ -288,7 +288,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B13</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">status.operation.INST</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.INST</p>
 <p class="tablebodytext">Set bit indicates that the summary bit from the <code class="monospace">status.operation.instrument</code> register is set.</p>
 <p class="tablebodytext">Bit B13 decimal value: 8,192</p>
 </td>
@@ -301,7 +301,6 @@
 </tr>
 
 </table>
-<p class="iclbody"></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -474,8 +473,8 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">operationRegister = status.operation.SWE + status.operation.INST</p>
-<p class="codetable">status.operation.enable = operationRegister</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">operationRegister = slot[1].status.operation.SWE + slot[1].status.operation.INST</p>
+<p class="codetable">slot[1].status.operation.enable = operationRegister</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -490,7 +489,7 @@
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- decimal 24 = binary <code class="monospace">0000 0000 0001 1000</code></p>
 <p class="codetable">operationRegister = 24</p>
-<p class="codetable">status.operation.enable = operationRegister</p>
+<p class="codetable">slot[1].status.operation.enable = operationRegister</p>
 </td>
 </tr>
 <tr align="left" valign="top">

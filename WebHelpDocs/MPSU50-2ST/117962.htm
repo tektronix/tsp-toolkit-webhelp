@@ -151,7 +151,7 @@
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B1</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.sweeping.PSU1</p>
-<p class="tablebodytext">Set bit indicates that PSU 1 is sweeping.</p>
+<p class="tablebodytext">Set bit indicates that PSU 1 has a source action trigger block in the trigger model when the trigger model is initiated.</p>
 <p class="tablebodytext">Bit B1 decimal value: 2</p>
 <p class="tablebodytext">Binary value: 0000 0010</p>
 </td>
@@ -160,7 +160,7 @@
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B2</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.sweeping.PSU2</p>
-<p class="tablebodytext">Set bit indicates PSU 2 is sweeping.</p>
+<p class="tablebodytext">Set bit indicates PSU 2 has a source action trigger block in the trigger model when the trigger model is initiated..</p>
 <p class="tablebodytext">Bit B2 decimal value: 4</p>
 <p class="tablebodytext">Binary value: 0000 0100</p>
 </td>
@@ -178,11 +178,29 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[1].status.operation.sweeping.enable = slot[1].status.operation.sweeping.PSU1</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[1].psu[1].source.levelv = 2</p>
+<p class="codetable">slot[1].psu[1].trigger.source.linearv(0,5,6)</p>
+<p class="codetable">slot[1].psu[1].source.output = 1</p>
+<p class="codetable">TM = slot[1].trigger.model</p>
+<p class="codetable">TM.delete(&quot;SweepTriggerModel&quot;)</p>
+<p class="codetable">TM.create(&quot;SweepTriggerModel&quot;)</p>
+<p class="codetable">TM.addblock.source.action.step(&quot;SweepTriggerModel&quot;, &quot;sourceActionStep&quot;, 1)</p>
+<p class="codetable">TM.addblock.delay.constant(&quot;SweepTriggerModel&quot;, &quot;delay50ms&quot;, 0.05)</p>
+<p class="codetable">TM.addblock.branch.counter(&quot;SweepTriggerModel&quot;,&quot;branchCounter&quot;, &quot;sourceActionStep&quot;, 6)</p>
+<p class="codetable">TM.initiate(&quot;SweepTriggerModel&quot;)</p>
+<p class="codetable">print(slot[1].status.operation.sweeping.condition)</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">print(&quot;Done&quot;)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Uses a constant to set the PSU 1 bit of the operation status sweeping summary enable register for slot 1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Set source for a level of 2&nbsp;V.</p>
+<p class="tablebodytext">Set up a voltage linear sweep.</p>
+<p class="tablebodytext">Turn on the source output.</p>
+<p class="tablebodytext">Set up the trigger model <code class="monospace">SweepTriggerModel</code> to run the sweep.</p>
+<p class="tablebodytext">Run the trigger model.</p>
+<p class="tablebodytext">Return the condition of the sweep.</p>
+<p class="tablebodytext">Wait for the results.</p>
 </td>
 </tr>
 

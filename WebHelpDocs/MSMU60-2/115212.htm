@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('115212')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115212')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115240.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -91,8 +91,7 @@
 <p class="iclsubheading">Details</p>
 <p class="iclbody">Contact check measurement calibration does not require range information.</p>
 <p class="iclbody">Typically, points one and two are near 0 Ω and 50 Ω, respectively.</p>
-<p class="iclbody">All four measurements (<span class="monospaceitalic">cp1Measured</span><code class="monospace">, </code><span class="monospaceitalic">cp1Reference</span><code class="monospace">, </code><span class="monospaceitalic">cp2Measured</span><code class="monospace">, and </code><span class="monospaceitalic">cp2Reference</span>) must be made with the active calibration set. If not, corruption of the calibration constants may result.</p>
-<p class="iclbody">The new calibration constants are activated immediately but are not written to nonvolatile memory. Use <code class="monospace">slot[Z].smu[X].cal.save()</code> to save the new constants to nonvolatile memory. The active calibration constants stay in effect until the instrument is power cycled or a calibration set is loaded from nonvolatile memory with the <code class="monospace">slot[Z].smu[X].cal.restore()</code> function.</p>
+<p class="iclbody">All four measurements (<span class="monospaceitalic">cp1Measured</span><code class="monospace">, </code><span class="monospaceitalic">cp1Reference</span><code class="monospace">, </code><span class="monospaceitalic">cp2Measured</span><code class="monospace">, and </code><span class="monospaceitalic">cp2Reference</span>) must be made with the active calibration set. If not, corruption of the calibration constants may result. The new calibration constants are activated immediately but are not written to nonvolatile memory. Use <code class="monospace">slot[Z].smu[X].cal.save()</code> to save the new constants to nonvolatile memory. The active calibration constants stay in effect until the instrument is power cycled or a calibration set is loaded from nonvolatile memory with the <code class="monospace">slot[Z].smu[X].cal.restore()</code> function.</p>
 <p class="iclbody">This function is disabled until a successful call to <code class="monospace">slot[z].smu[X].cal.unlock()</code> is made.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>

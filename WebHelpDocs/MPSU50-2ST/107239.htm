@@ -37,9 +37,9 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>PSU reset<br>Recall setup</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Power cycle<br>Mainframe reset<br>Module reset</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">slot[Z].psu[X].OFF</p>
 </td>
@@ -55,7 +55,7 @@
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">value</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">State of the source output:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Enable: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFF</code></li><li class="tablelistbullet9pt">Disable: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].ON</code></li></ul></td>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Enable: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].ON</code></li><li class="tablelistbullet9pt">Disable: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFF</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">Z</span></p>
@@ -72,12 +72,14 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This setting enables or disables the source output.</p>
+<p class="bodytext">When this attribute is read, it returns the output state of the source. When this attribute is set, it switches the output of the source on or off. The output voltage changes according to the slew rate set by <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.slewratev</code>.</p>
+<p class="bodytext">Set this attribute to <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFF</code> to place the output in a high&#8209;impedance state.</p>
+<p class="bodytext">The source output setting is not stored in configuration lists.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[2].source.output = slot[1].psu.ON</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[2].source.output = slot[1].psu[2].ON</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -87,7 +89,7 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">None</p>
+<p class="listcommand"><a id="h116990" class="jump" title="slot[Z].psu[X].source.slewratev" href="116988.htm" target="_self">slot[Z].psu[X].source.slewratev</a></p>
 
 </body>
 </html>

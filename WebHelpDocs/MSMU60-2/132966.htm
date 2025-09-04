@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('132966')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('132966')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115504.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t132966" class="heading2-icl">slot[Z].trigger.model.addblock.source.action.set()</h2>
-<p class="bodyzero">This function defines a trigger model block that sets the source output level to the value at the current index in the list of sweep values without advancing the index.</p>
+<p class="bodyzero">This function defines a trigger model block that sets the source output level to the value at the present index in the list of sweep values without advancing the index.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -35,7 +35,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">No</p>
+<td style="border:1px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
 <td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
 </td>
@@ -48,6 +48,7 @@
 </table>
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.</code>addblock.source.action.set<code class="monospace">(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">channel</span><code class="monospace">)</code></p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.source.action.set(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, {<span class="monospaceitalic">channelList</span>})</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -59,13 +60,13 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="216"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Name of the trigger model to which the block is added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="216"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Name of the block to be added</p>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Name of the block to be added; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -74,45 +75,48 @@
 <td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Channel number</p>
 </td>
 </tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="216"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Table of channels to make measurements on; for example:</p>
+<p class="tablebodytext"><code class="monospace">{channel1, channel2, ...}</code>. See <strong class="specialbold">Details</strong>.</p>
+</td>
+</tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command sets the source output to the sweep value at the current index without advancing to the next point. This allows you to apply the same value across multiple blocks or delay periods without changing the sweep position.</p>
-<p class="iclbody">This command can be used in a trigger model to reapply or hold a source value for a specified time before proceeding. This command does not increment the sweep index, so repeated executions will use the same value unless the index is modified using another action block.</p>
+<p class="iclbody">This block sets the source output to the sweep value at the present index without advancing to the next point. This allows you to apply the same value across multiple blocks or delay periods without changing the sweep position.</p>
+<p class="iclbody">This block can be used in a trigger model to reapply or hold a source value for a specified time before proceeding. This command does not increment the sweep index, so repeated executions use the same value unless the index is modified using another action block.</p>
+<p class="iclbody">The list of sweep values is created by one of the following commands:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span></li></ul><p class="bodytext">You can specify one or more channels for the source action to run on using <span class="monospaceitalic">channelList</span>. All source actions run on all specified channels in parallel, plus or minus 500 ns. The trigger model then waits for all measurements to complete before continuing.<strong class="specialbold"> </strong></p>
+<p class="bodytext">All specified channels must be on the module running the trigger model.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Variables</p>
-<p class="codetable">SLOT       = 1</p>
-<p class="codetable">CHANNEL    = 1</p>
-<p class="codetable">REPEATS    = 3</p>
-<p class="codetable">POINTS     = 5</p>
-<p class="codetable">PSU        = slot[SLOT].psu[CHANNEL]</p>
-<p class="codetable">TM         = slot[SLOT].trigger.model</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep.</p>
+<p class="codetable">slot[1].psu[1].trigger.source.linearv(0, 5, 5)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">-- Configure linear voltage sweep</p>
-<p class="codetable">PSU.trigger.source.linearv(0, 5, POINT)</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.set(&quot;myTM&quot;, &quot;set&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.005)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;myTM&quot;, &quot;&quot;, &quot;set&quot;, 3)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.skip(&quot;myTM&quot;, &quot;&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;myTM&quot;, &quot;&quot;, &quot;set&quot;, 5)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">-- Create a trigger model that repeats each sweep step three times</p>
-<p class="codetable">TM.create(&quot;myTM&quot;)</p>
-<p class="codetable">TM.addblock.source.action.set(&quot;myTM&quot;, &quot;set&quot;, CHANNEL)</p>
-<p class="codetable">TM.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.005)</p>
-<p class="codetable">TM.addblock.branch.counter(&quot;myTM&quot;, &quot;&quot;, &quot;set&quot;, REPEATS)</p>
-<p class="codetable">TM.addblock.source.action.skip(&quot;myTM&quot;, &quot;&quot;, CHANNEL)</p>
-<p class="codetable">TM.addblock.branch.counter(&quot;myTM&quot;, &quot;&quot;, &quot;set&quot;, POINTS)</p>
+<p class="codetable">-- Turn on the output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">-- Turn on the output before running the trigger model</p>
-<p class="codetable">PSU.source.levelv = 0</p>
-<p class="codetable">PSU.source.output = PSU.ON</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">-- Run the trigger model</p>
-<p class="codetable">TM.initiate(&quot;myTM&quot;)</p>
-<p class="codetable">&nbsp;</p>
-<p class="codetable">-- Turn off output after completion</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
 <p class="codetable">waitcomplete()</p>
-<p class="codetable">PSU.source.output = PSU.OFF</p>
 <p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn the output off.</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -121,14 +125,21 @@
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133340" src="mp5000_triggermodel_sourceactionset_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_SourceActionSet.png" height="503" width="146" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"><a id="h116806" class="jump" title="slot[Z].trigger.model.addblock.source.action.bias()" href="115504.htm" target="_self">slot[Z].trigger.model.addblock.source.action.bias()</a></p>
 <p class="listcommand"><a id="h116898" class="jump" title="slot[Z].trigger.model.addblock.source.action.skip()" href="115827.htm" target="_self">slot[Z].trigger.model.addblock.source.action.skip()</a></p>
 <p class="listcommand"><a id="h116807" class="jump" title="slot[Z].trigger.model.addblock.source.action.step()" href="114973.htm" target="_self">slot[Z].trigger.model.addblock.source.action.step()</a></p>
 <p class="listcommand">Source action set block</p>
 <p class="listcommand"></p>
-<p class="listcommand"><strong class="specialbold">Configuration commands</strong></p>
-<p class="listcommand">slot[Z].psu[X].trigger.source.linearY | slot[Z].smu[X].trigger.source.linearY</p>
+<p class="listcommand"><strong class="specialbold">Sweep configuration commands</strong></p>
+<p class="listcommand">slot[Z].psu[X].trigger.source.linearY</p>
+<p class="listcommand">slot[Z].psu[X].trigger.source.listY()</p>
+<p class="listcommand">slot[Z].psu[X].trigger.source.logY()</p>
+<p class="listcommand">slot[Z].smu[X].trigger.source.linearY</p>
+<p class="listcommand">slot[Z].smu[X].trigger.source.listY()</p>
+<p class="listcommand">slot[Z].smu[X].trigger.source.logY()</p>
 
 </body>
 </html>

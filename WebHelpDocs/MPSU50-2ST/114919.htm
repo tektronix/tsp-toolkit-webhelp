@@ -66,24 +66,38 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This function terminates all overlapped operations on the specified channel.</p>
-<p class="iclbody">This function does not turn the output off or change any setting.</p>
+<p class="iclbody">This function does not turn the output off or change any settings.</p>
 <p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[1].abort()</p>
-<p class="codetable">slot[1].psu[1].measure.count = 1000</p>
-<p class="codetable">slot[1].psu[1].measure.overlappedv(slot[1].psu[1].defbuffer1)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[1].overlapped = slot[1].psu[1].ENABLE</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 5</p>
+<p class="codetable">slot[1].psu[1].source.slewratev = 0.1</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">delay(1)</p>
 <p class="codetable">slot[1].psu[1].abort()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(slot[1].psu[1].source.levelv) -- This will not reach 5 V.</p>
+<p class="codetable"> </p>
+<p class="codetable">slot[3].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Aborts overlapped operations for channel 1 of the module installed in slot 1.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Enable overlapped mode for channel 1 of the module installed in slot 1.</p>
+<p class="tablebodytext">Set the source level to 5&nbsp;V and the slew rate to 0.1&nbsp;V/s.</p>
+<p class="tablebodytext">Turn the source output on.</p>
+<p class="tablebodytext">Set a 1 second delay.</p>
+<p class="tablebodytext">Abort the operations.</p>
+<p class="tablebodytext">Print the source level value.</p>
+<p class="tablebodytext">Turn the output off.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h107410" class="jump" title="slot[Z].psu[X].measure.aperture" href="107218.htm" target="_self">slot[Z].psu[X].measure.aperture</a></p>
+<p class="listcommand">None</p>
 
 </body>
 </html>

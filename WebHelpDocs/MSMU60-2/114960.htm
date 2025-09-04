@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114960')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114960')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="114956.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -59,19 +59,19 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Name of the trigger model to which the block is added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Name of the block to be added</p>
+<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Name of the block to be added; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="156"><p class="codetable"><span class="monospaceitalic">branchToBlockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Name of the next trigger block to run</p>
+<td style="border:1px solid #C0C0C0;" width="444"><p class="tablebodytext">Name of the block to branch to on true condition</p>
 </td>
 </tr>
 
@@ -82,27 +82,38 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].smu[1].source.levelv = 1.0</p>
-<p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay2&quot;, 0.1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput3&quot;, 1, 0)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay4&quot;, 0.1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.always(&quot;TM1&quot;, &quot;branchalways5&quot;, &quot;sourceoutput1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
-<p class="codetable">-- Wait to allow time for pulses to show up on the channel output.</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep.</p>
+<p class="codetable">slot[1].psu[1].trigger.source.linearv(0, 5, 6)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create a trigger model named myTM.</p>
+<p class="codetable">slot[1].trigger.model.delete(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;myTM&quot;, &quot;SourceActionStep&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.005)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.always(&quot;myTM&quot;, &quot;&quot;, &quot;SourceActionStep&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn on output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Abort the trigger model after 1 second.</p>
+<p class="codetable">delay(1.0)</p>
+<p class="codetable">slot[1].trigger.model.abort(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">In this example, the  trigger model turns on and turns off a 1 V signal with a pulse width of 100 ms. The trigger model runs infinitely on channel 1 of the module installed in slot 1.</p>
-<p class="tablebodytext">&nbsp;</p>
-<p class="tablebodytext">You can use the <code class="monospace">slot[Z].trigger.model.abort()</code> command to end the loop.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrate a trigger model that uses branch.always to repeatedly step through a linear sweep on channel 1 until aborting the trigger model.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Trigger model diagram</p>
-<p class="magicfigurecenter"><img id="f132079" src="mp5000_triggermodel_branchalwaysdiagram_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="Branch always example diagram" height="381" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="magicfigurecenter"><img id="f132079" src="mp5000_triggermodel_branchalwaysdiagram_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="Branch always example diagram" height="316" width="146" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"><a id="h114987" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort()</a></p>
 <p class="listcommand"><a id="h114988" class="jump" title="slot[Z].trigger.model.initiate()" href="114959.htm" target="_self">slot[Z].trigger.model.initiate()</a></p>

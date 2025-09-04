@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Power cycle</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -60,25 +60,38 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a default reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The reading buffer; can be a user-defined or default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="bodytext">The reading buffer cache improves access speed to reading buffer data. However, if you run successive operations that overwrite reading buffer data, the reading buffer may return stale cache data. This can happen when you initiate successive sweeps but do not reconfigure the sweep measurements. It can also happen when the <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillmode</code> attribute is set to <code class="monospace">FILL_WINDOW</code>, which causes reading buffer data to be overwritten.</p>
-<p class="bodytext">To prevent the return of stale cache data, disable the cache.</p>
-<p class="bodytext">To avoid stale cache data, you can also make an explicit call to <span class="monospaceitalic">bufferVar</span><code class="monospace">.clearcache()</code>.</p>
+<p class="bodytext">The reading buffer cache improves access speed to reading buffer data. However, if you run successive operations that overwrite reading buffer data, the reading buffer may return stale cache data. This can happen when you initiate successive sweeps but do not reconfigure the sweep measurements. It can also happen when the <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillmode</code> attribute is set to <code class="monospace">1</code>, which may cause reading buffer data to be overwritten.</p>
+<p class="bodytext">To prevent the return of stale cache data, disable the cache or make an explicit call to <span class="monospaceitalic">bufferVar</span><code class="monospace">.clearcache()</code>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer1 = slot[1].psu[1].makebuffer(100)</p>
-<p class="codetable">buffer1.cachemode = 1</p>
+<p class="codetable">buffer1.cachemode = 0</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Enables the reading buffer cache of user-defined reading buffer <code class="monospace">buffer1</code>.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Disables the reading buffer cache of user-defined reading buffer <code class="monospace">buffer1</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[2].psu[2].defbuffer1.cachemode = 0</p>
+<p class="codetable">print(slot[2].psu[2].defbuffer1.cachemode)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Disables the reading buffer cache of default reading buffer <code class="monospace">defbuffer1</code> on PSU channel 2 in slot 2.</p>
 </td>
 </tr>
 

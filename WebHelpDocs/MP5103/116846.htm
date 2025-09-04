@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116846')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('116846')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="116845.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -72,23 +72,23 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">The name parameter is the name that is added to <code class="monospace">script.table()</code>. If a name is not provided, an empty string is used, and the script is unnamed. If the name already exists in script.table(), the name attribute of the existing script is set to an empty string before it is replaced by the new script.</p>
-<p class="iclbody">You must save the new script into nonvolatile memory to retain it when the instrument is turned off.</p>
+<p class="iclbody">The name parameter is the name that is added to <code class="monospace">script.table()</code>. If a name is not provided, an empty string is used, and the script is unnamed. If the name already exists in <code class="monospace">script.table()</code>, the name attribute of the existing script is set to an empty string before it is replaced by the new script.</p>
+<p class="iclbody">You must use <span class="monospaceitalic">scriptVar</span><code class="monospace">.save()</code> to save the new script into nonvolatile memory to retain it when the instrument is turned off.</p>
 <p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">ModelNumbers = script.new(</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">InstModel = script.new(</p>
 <p class="codetable">   &quot;print(localnode.model)</p>
 <p class="codetable">    print(slot[1].model)</p>
 <p class="codetable">    print(slot[2].model)</p>
-<p class="codetable">    print(slot[3].model)&quot;, &quot;ModelNumbers&quot;)</p>
-<p class="codetable">ModelNumbers()</p>
+<p class="codetable">    print(slot[3].model)&quot;, &quot;InstModel&quot;)</p>
+<p class="codetable">InstModel()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Creates a new script referenced by the variable <code class="monospace">ModelNumbers</code> with the name <code class="monospace">ModelNumbers</code>.</p>
-<p class="tablebodytext">Runs the script. The model numbers for the mainframe and modules are displayed.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Creates a new script referenced by the variable <code class="monospace">InstModel</code> with the name <code class="monospace">InstModel</code>.</p>
+<p class="tablebodytext">Runs the script. The model numbers for the mainframe and modules are displayed. Empty models return an error.</p>
 </td>
 </tr>
 

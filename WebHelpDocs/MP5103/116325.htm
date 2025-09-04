@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116325')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('116325')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="14073.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -83,7 +83,6 @@
 <p class="iclbody">If neither a <span class="monospaceitalic">portNumber</span> nor an <span class="monospaceitalic">initString</span> is provided, the remote device is assumed to be a Keithley TSP&#8209;enabled device. Depending on the state of the <code class="monospace">tspnet.tsp.abortonconnect</code> attribute, the MP5103 sends an <code class="monospace">abort</code> command to the remote device on connection. </p>
 <p class="iclbody">The instrument also enables TSP prompts on the remote device and event management. The instrument places remote errors and events from the TSP&#8209;enabled device in its own event queue and prefaces these events with <code class="monospace">Remote Error</code>, followed by an event description. </p>
 <p class="iclbody">Do not manually change either the prompt functionality (<code class="monospace">localnode.prompts</code>) or show errors by changing <code class="monospace">localnode.showerrors</code> on the remote TSP-enabled device. If you do this, subsequent <code class="monospace">tspnet.tsp.*</code> commands using the connection may fail.</p>
-<p class="bodytext">When you are connecting to a host or IP address, you can add a layer of transport layer security (TLS). When security is enabled, the instrument negotiates the security protocol when connecting to the host or IP address. This security protocol is used when using <code class="monospace">tspnet.write()</code> to send data or <code class="monospace">tspnet.read()</code> to receive data. Typically, the port is 443 if TLS is enabled.</p>
 <p class="iclbody">You can simultaneously connect to a maximum of 32 remote devices.</p>
 <p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
@@ -119,27 +118,10 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Example 3 </p>
-<p class="iclspacing"></p>
-<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
-<tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">instrumentID = tspnet.connect(&quot;192.0.2.1&quot;, 443, &quot;&quot;, 1)</p>
-<p class="codetable">if instrumentID then</p>
-<p class="codetable">   -- Use instrumentID as needed here</p>
-<p class="codetable">   tspnet.disconnect(instrumentID)</p>
-<p class="codetable">end</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Connect to a TSP-enabled device with TLS enabled using port 443.</p>
-</td>
-</tr>
-
-</table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"><a id="h106793" class="jump" title="localnode.prompts" href="106530.htm" target="_self">localnode.prompts</a></p>
 <p class="listcommand"><a id="h109940" class="jump" title="localnode.showerrors" href="106533.htm" target="_self">localnode.showerrors</a></p>
-<p class="listcommand">tspnet.disconnect()</p>
+<p class="listcommand"><a id="h116417" class="jump" title="tspnet.disconnect()" href="14076.htm" target="_self">tspnet.disconnect()</a></p>
 
 </body>
 </html>
