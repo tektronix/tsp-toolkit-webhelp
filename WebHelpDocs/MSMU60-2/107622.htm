@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('107622')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('107622')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="107623.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t107622" class="heading2-icl">slot[Z].firmware.verify()</h2>
-<p class="bodyzero">This function verifies that an image downloaded to the mainframe is the exact firmware flashed onto a module.</p>
+<p class="bodyzero">This function verifies that the firmware update succeeded.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -54,7 +54,7 @@
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">result</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Status of the firmware verification:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Firmware does not match: <code class="monospace">false</code></li><li class="tablelistbullet9pt">Firmware does match: <code class="monospace">true</code></li></ul></td>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Firmware not correctly installed: <code class="monospace">false</code></li><li class="tablelistbullet9pt">Firmware update succeeded: <code class="monospace">true</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
@@ -65,7 +65,9 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function is useful to determine that the firmware has flashed correctly after performing the <code class="monospace">slot[Z].firmware.update</code> command.</p>
+<p class="iclbody">This function verifies that the firmware has updated correctly after you run the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].firmware.update()</code> command.</p>
+<p class="iclbody">This function compares the firmware downloaded to the mainframe and firmware in the module in the specified slot. If they are equal, the function returns <code class="monospace">true</code>. Otherwise, it returns <code class="monospace">false</code>.</p>
+<p class="iclbody">You can use this command to determine that the firmware has flashed correctly after performing the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].firmware.update()</code> command without downloading the image again.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
@@ -74,12 +76,12 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Verifies that the firmware of the module installed in slot 1 is the same as the firmware downloaded to the mainframe.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Verifies that the firmware of the module installed in slot 1 updated correctly.</p>
 </td>
 </tr>
 
 </table>
-<p class="iclsubheading">Also see</p>
+<p class="iclsubheading"> Also see</p>
 <p class="listcommand"><a id="h107626" class="jump" title="slot[Z].firmware.update()" href="107623.htm" target="_self">slot[Z].firmware.update</a></p>
 
 </body>

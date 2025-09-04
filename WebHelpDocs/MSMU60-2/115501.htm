@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('115501')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115501')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115500.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t115501" class="heading2-icl">slot[Z].trigger.model.addblock.configlist.recall()</h2>
-<p class="bodyzero">This function recalls the system settings that are stored in a configuration list.</p>
+<p class="bodyzero">This function recalls the settings that are stored in a configuration list.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -47,6 +47,7 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.configlist.recall(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">channel</span>, &quot;<span class="monospaceitalic">configlistName</span>&quot;)</p>
 <p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.configlist.recall(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">channel</span>, &quot;<span class="monospaceitalic">configlistName</span>&quot;, <span class="monospaceitalic">index</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
@@ -59,13 +60,13 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger model to which the block is added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -83,51 +84,79 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">index</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The index in the configuration list to recall; default is <code class="monospace">1</code></p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The index in the configuration list to recall; defaults to 1 if no index is specified</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">When the trigger model reaches a configuration recall block, the settings in the specified configuration list are recalled.</p>
-<p class="iclbody">You can restore a specific set of configuration settings in the configuration list by defining the index.</p>
-<p class="iclbody">The configuration lists must be defined before you can use this block. If one of the indexes for the configuration list changes (because of an item being added or removed from a config list), verify that the trigger model count is still accurate.</p>
+<p class="iclbody">When the trigger model reaches a configuration list recall block, the settings in the specified configuration list are recalled.</p>
+<p class="iclbody">You can recall a specific set of configuration settings in the configuration list by specifying its index.</p>
+<p class="iclbody">The configuration list must be defined before you can use this block. If one of the indexes for the configuration list changes (because of an item being added or removed from a configuration list), verify that the trigger model count is still accurate.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- Create and store a 3 config Config List.</p>
-<p class="codetable">LOOPS = 3 * 2</p>
-<p class="codetable">slot[1].smu[1].source.levelv = 0.0</p>
-<p class="codetable">slot[1].smu[1].configlist.create(&quot;MyConfigList3&quot;)</p>
-<p class="codetable">slot[1].smu[1].source.levelv = 1.0</p>
-<p class="codetable">slot[1].smu[1].configlist.store(&quot;MyConfigList3&quot;)</p>
-<p class="codetable">slot[1].smu[1].source.levelv = 2.0</p>
-<p class="codetable">slot[1].smu[1].configlist.store(&quot;MyConfigList3&quot;)</p>
-<p class="codetable">slot[1].smu[1].source.levelv = 3.0</p>
-<p class="codetable">slot[1].smu[1].configlist.store(&quot;MyConfigList3&quot;)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- Create and store a 3-point configuration list.</p>
+<p class="codetable">slot[1].psu[1].configlist.create(&quot;myConfigList&quot;)</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 1.0</p>
+<p class="codetable">slot[1].psu[1].configlist.store(&quot;myConfigList&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.delete(&quot;configlistrecall1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.create(&quot;configlistrecall1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;configlistrecall1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.configlist.recall(&quot;configlistrecall1&quot;, &quot;configlistrecall2&quot;, 1, &quot;MyConfigList3&quot;, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;configlistrecall1&quot;, &quot;delay3&quot;, 0.1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.configlist.next(&quot;configlistrecall1&quot;, &quot;configlistprev4&quot;, 1, &quot;MyConfigList3&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;configlistrecall1&quot;, &quot;branchcounter5&quot;, &quot;delay3&quot;, LOOPS)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;configlistrecall1&quot;, &quot;TheEnd&quot;, 1, 0)</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 2.0</p>
+<p class="codetable">slot[1].psu[1].configlist.store(&quot;myConfigList&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;configlistrecall1&quot;)</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 3.0</p>
+<p class="codetable">slot[1].psu[1].configlist.store(&quot;myConfigList&quot;)</p>
 <p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.configlist.recall(&quot;myTM&quot;, &quot;&quot;, 1, &quot;myConfigList&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.configlist.recall(&quot;myTM&quot;, &quot;&quot;, 1, &quot;myConfigList&quot;, 3)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn on output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--Turn output off.</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses <code class="monospace">configlistrecall</code> to start the stepping of the output through 3 states. As the number of loops loops is 6, there should be 6 output transitions.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This example demonstrates how to use the configlist.recall() trigger model block to cycle through a 3-point configuration list.</p>
+<p class="tablebodytext">The channel output steps through two voltage levels (1.0 V and 3.0 V) using two configlist.recall blocks with delays between each step.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133349" src="mp5000_triggermodel_configlistrecall_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_ConfiglistRecall.png" height="438" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Config list recall block</p>
+<p class="listcommand"><a id="h116800" class="jump" title="slot[Z].trigger.model.addblock.configlist.next()" href="115499.htm" target="_self">slot[Z].trigger.model.addblock.configlist.next()</a></p>
+<p class="listcommand"><a id="h116801" class="jump" title="slot[Z].trigger.model.addblock.configlist.prev()" href="115500.htm" target="_self">slot[Z].trigger.model.addblock.configlist.prev()</a></p>
+<p class="listcommand"></p>
+<p class="listcommand"><strong class="specialbold">Config list commands</strong></p>
+<p class="listcommand"></p>
+<p class="listcommand">slot[Z].psu[X].configlist.create()</p>
+<p class="listcommand">slot[Z].smu[X].configlist.create()</p>
+<p class="listcommand">slot[Z].psu[X].configlist.delete()</p>
+<p class="listcommand">slot[Z].smu[X].configlist.delete()</p>
+<p class="listcommand">slot[Z].psu[X].configlist.recall()</p>
+<p class="listcommand">slot[Z].smu[X].configlist.recall()</p>
+<p class="listcommand">slot[Z].psu[X].configlist.size()</p>
+<p class="listcommand">slot[Z].smu[X].configlist.size()</p>
+<p class="listcommand">slot[Z].psu[X].configlist.store()</p>
+<p class="listcommand">slot[Z].smu[X].configlist.store()</p>
+<p class="listcommand">slot[Z].psu[X].configlist.table()</p>
+<p class="listcommand">slot[Z].smu[X].configlist.table()</p>
 
 </body>
 </html>

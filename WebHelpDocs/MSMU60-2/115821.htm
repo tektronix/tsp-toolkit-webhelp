@@ -9,16 +9,16 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('115821')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115821')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="104155.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="118326.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="115828.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t115821" class="heading2-icl">slot[Z].smu[X].trigger.measure.Y()</h2>
-<p class="bodyzero">This function configures the measurements to be made during trigger model operation and identifies the reading buffer that stores the measurements.</p>
+<p class="bodyzero">This function configures the measurements to be made during trigger model operation.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -47,8 +47,8 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.measure.<span class="monospaceitalic">Y</span>(<span class="monospaceitalic">ReadingBuffer</span>)</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.measure.<code class="monospace">iv</code>(<em class="emphasis">CurrentBuffer</em><span class="monospaceitalic">, VoltageBuffer</span>)</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.measure.<span class="monospaceitalic">Y</span>(r<span class="monospaceitalic">eadingBuffer</span>)</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].trigger.measure.<code class="monospace">iv</code>(<span class="monospaceitalic">currentBuffer, voltageBuffer</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -66,57 +66,61 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function; <code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current, <code class="monospace">r</code> = resistance, <code class="monospace">iv</code> = current and voltage, <code class="monospace">p</code> = power</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The measurement function; <code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current, <code class="monospace">r</code> = resistance, <code class="monospace">p</code> = power</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">ReadingBuffer</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">readingBuffer</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Buffer to store the measurement result</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">CurrentBuffer</em></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Buffer to store current readings</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a user-defined or default reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">VoltageBuffer</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">currentBuffer</em></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Buffer to store voltage readings</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Reading buffer where current readings are stored; can be a user-defined buffer or a default reading buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">voltageBuffer</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Reading buffer where voltage readings are stored; can be a user-defined buffer or a default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command configures the measurements to be made during the trigger model. After configuring the measurements to be made, add a measure block to your trigger model to perform the measurements. Any measurements made in the trigger model are stored in this reading buffer according to the specified measurement type.</p>
+<p class="bodytext">This function configures the measurement subsystem for one or more synchronous measurements to be made while a trigger model is executed.</p>
+<p class="bodytext">Measurements are in the following units of measure:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">v</code> = volts</li><li class="listbullet"><code class="monospace">i</code> = amperes</li><li class="listbullet"><code class="monospace">r</code> = ohms</li><li class="listbullet"><code class="monospace">p</code> = watts</li></ul><p class="bodytext">This command only configures the measure functions and reading buffers to be used during a trigger model; it does not cause measurements to be made. To make measurements, you must add a measure block to the trigger model using the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.model.addblock.measure()</code> command.</p>
+<p class="bodytext">The <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.count</code> attribute is not used by the measure subsystem when a trigger model is executed. Instead, the measure count is passed in through the measure block command.</p>
+<p class="bodytext">The reading buffers are cleared when <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.initiate()</code> is called unless the buffer is configured to append data. Reading buffers are not optional for this command.</p>
+<p class="bodytext">The module only retains the last call to any one of these functions and only that measurement is made.</p>
+<p class="iclbody"></p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SmuCh1 = slot[1].smu[1]</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">--- Configure SMU channel 1 to measure voltage and save the result in the reading buffer.</p>
+<p class="codetable">ReadingBuffer = slot[1].smu[1].makebuffer(10)</p>
+<p class="codetable">slot[1].smu[1].trigger.measure.v(ReadingBuffer)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Configure SMU Ch1 to measure voltage and save the result in the reading buffer.</p>
-<p class="codetable">ReadingBuffer = SmuCh1.makebuffer(10)</p>
-<p class="codetable">SmuCh1.trigger.measure.v(ReadingBuffer)</p>
+<p class="codetable">--- Set the initial voltage output for SMU Ch1 to 2&nbsp;V.</p>
+<p class="codetable">slot[1].smu[1].source.levelv = 2</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Set the initial voltage output for SMU Ch1 to 2&nbsp;V. ---</p>
-<p class="codetable">SmuCh1.source.levelv = 2</p>
-<p class="codetable">&nbsp;</p>
-<p class="codetable">--- Delete old trigger model instances before creating new ones ---</p>
+<p class="codetable">--- Delete old trigger model instances and then create new one.</p>
 <p class="codetable">slot[1].trigger.model.delete(&quot;TM1&quot;)</p>
 <p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Make the voltage measurement 10 times ---</p>
+<p class="codetable">--- Make the voltage measurement 10 times.</p>
 <p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOn&quot;, 1, 1)</p>
 <p class="codetable">slot[1].trigger.model.addblock.measure(&quot;TM1&quot;, &quot;MeasureVoltage&quot;, 1, 10)</p>
 <p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;OutputOff&quot;, 1, 0)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--- Execute the trigger model ---</p>
+<p class="codetable">--- Execute the trigger model.</p>
 <p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
 <p class="codetable">waitcomplete()</p>
-<p class="codetable">-- Now printbuffer the 10 measurements.</p>
+<p class="codetable">-- Use printbuffer to return the 10 measurements.</p>
 <p class="codetable">printbuffer(1, ReadingBuffer.n, ReadingBuffer)</p>
 </td>
 </tr>

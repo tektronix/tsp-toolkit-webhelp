@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Power supply reset</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -47,14 +47,14 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">tripped</span> = slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].source.protect.trippedV</p>
+<p class="iclcode"><span class="monospaceitalic">tripped</span> = slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].source.protect.trippedv</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">tripped</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The overvoltage protection status:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">The overvoltage protection circuit was tripped: <code class="monospace">true</code></li><li class="tablelistbullet9pt">The protect circuit is not tripped: <code class="monospace">false</code></li></ul></td>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">The overvoltage protection circuit was tripped: <code class="monospace">true</code></li><li class="tablelistbullet9pt">The protection circuit is not tripped: <code class="monospace">false</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
@@ -71,9 +71,9 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute indicates if the overvoltage protection circuit was activated. When the overvoltage protection circuit is activated, the output is turned off.</p>
-<p class="iclbody">The status is reset to <code class="monospace">false</code> when the output is turned on.</p>
-<p class="iclsubheading">Example</p>
+<p class="bodytext">This attribute indicates whether the overvoltage protection circuit was activated. If the overvoltage protection circuit was activated, the output of the protected channel is turned off.</p>
+<p class="bodytext">The status is reset to <code class="monospace">false</code> and the protection circuit is reset when</p>
+<ul class="listbullet"><li class="listbullet">The output is turned on</li><li class="listbullet">The mainframe is reset</li><li class="listbullet">The module is reset</li></ul><p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
@@ -81,7 +81,7 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Determines if the overvoltage protection circuit was activated for channel 2 of the module installed in slot 1.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Reports if the overvoltage protection circuit was activated for channel 2 of the module installed in slot 1.</p>
 </td>
 </tr>
 

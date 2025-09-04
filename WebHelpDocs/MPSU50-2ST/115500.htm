@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('115500')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115500')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115499.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t115500" class="heading2-icl">slot[Z].trigger.model.addblock.configlist.prev()</h2>
-<p class="bodyzero">This function defines a trigger model block that recalls the settings stored at the previous index in a configuration list.</p>
+<p class="bodyzero">This function defines a trigger model block that recalls the settings that are stored in a configuration list.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -65,7 +65,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -83,46 +83,61 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This trigger model block recalls the settings stored at the previous index in a configuration list if a single configuration list is specified.</p>
-<p class="iclbody">The configuration list previous index trigger block type recalls the previous index in a configuration list. It configures the settings of the instrument based on the settings at that index. The trigger model executes the settings at that index before the next block is executed.</p>
-<p class="iclbody">The first time the trigger model encounters this block, the last index in the configuration list is recalled if the list has not already had an index recalled by the recall block command in an earlier trigger model block. If the configuration list has recalled an index with the recall block, the previous index in the list is called instead of the last. For example, the recall block recalls index 1 by default, so if the trigger model uses a recall block before this one, the first time the previous block is reached after that recall, the last index is recalled. If the recall block recalled index 3, the previous block would recall index 2. Each subsequent time trigger model execution reaches a configuration list previous block for this configuration list, it goes backward one index. When the first index in the list is reached, it goes to the last index in the configuration list.</p>
-<p class="iclbody">The configuration lists must be defined before you can use this block.</p>
+<p class="iclbody">When the trigger model reaches a configuration list previous block, the settings for the previous index in the specified configuration list are restored.</p>
+<p class="iclbody">On the first use in a trigger model, this block recalls the last index unless an earlier recall block has already recalled a specific index. In that case, the block will continue from that point and recall the previous index instead.</p>
+<p class="iclbody">When the beginning of the list is reached, the trigger model continues from the last index in the list.</p>
+<p class="iclbody">The configuration list must be defined before the trigger model uses this block.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">SLOT = 1</p>
-<p class="codetable">-- Create and store a config list with three indices.</p>
-<p class="codetable">LOOPS = 3 * 2</p>
-<p class="codetable">slot[SLOT].smu[1].source.levelv = 0.0</p>
-<p class="codetable">slot[SLOT].smu[1].configlist.create(&quot;MyConfigList2&quot;)</p>
-<p class="codetable">slot[SLOT].smu[1].source.levelv = 1.0</p>
-<p class="codetable">slot[SLOT].smu[1].configlist.store(&quot;MyConfigList2&quot;)</p>
-<p class="codetable">slot[SLOT].smu[1].source.levelv = 2.0</p>
-<p class="codetable">slot[SLOT].smu[1].configlist.store(&quot;MyConfigList2&quot;)</p>
-<p class="codetable">slot[SLOT].smu[1].source.levelv = 3.0</p>
-<p class="codetable">slot[SLOT].smu[1].configlist.store(&quot;MyConfigList2&quot;)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- Create and store a 3-point configuration list.</p>
+<p class="codetable">slot[1].psu[1].configlist.create(&quot;myConfigList&quot;)</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 1.0</p>
+<p class="codetable">slot[1].psu[1].configlist.store(&quot;myConfigList&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[SLOT].trigger.model.delete(&quot;configlistprev1&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.create(&quot;configlistprev1&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.source.output(&quot;configlistprev1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.configlist.recall(&quot;configlistprev1&quot;, &quot;configlistrecall2&quot;, 1, &quot;MyConfigList2&quot;, 1)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.delay.constant(&quot;configlistprev1&quot;, &quot;delay3&quot;, 0.1)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.configlist.prev(&quot;configlistprev1&quot;, &quot;configlistprev4&quot;, 1, &quot;MyConfigList2&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.branch.counter(&quot;configlistprev1&quot;, &quot;branchcounter5&quot;, &quot;delay3&quot;, LOOPS)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.source.output(&quot;configlistprev1&quot;, &quot;TheEnd&quot;, 1, 0)</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 2.0</p>
+<p class="codetable">slot[1].psu[1].configlist.store(&quot;myConfigList&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[SLOT].trigger.model.initiate(&quot;configlistprev1&quot;)</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 3.0</p>
+<p class="codetable">slot[1].psu[1].configlist.store(&quot;myConfigList&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.configlist.prev(&quot;myTM&quot;, &quot;&quot;, 1, &quot;myConfigList&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.configlist.prev(&quot;myTM&quot;, &quot;&quot;, 1, &quot;myConfigList&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.configlist.prev(&quot;myTM&quot;, &quot;&quot;, 1, &quot;myConfigList&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn on output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--Turn the source off.</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses <code class="monospace">configlist.prev </code>to step the output backwards through three states. As the number of loops is six, there should be six output transitions.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This example demonstrates how to use the configlist.prev() trigger model block to cycle through a 3-point configuration list.</p>
+<p class="tablebodytext">The channel output steps through three voltage levels (3.0 V, 2.0 V, and 1.0 V) using three consecutive configlist.prev blocks with delays between each step.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133332" src="mp5000_triggermodel_configlistprev_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_ConfiglistPrev" height="625" width="110" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Config list prev block</p>
+<p class="listcommand"><a id="h116800" class="jump" title="slot[Z].trigger.model.addblock.configlist.next()" href="115499.htm" target="_self">slot[Z].trigger.model.addblock.configlist.next()</a></p>
+<p class="listcommand"><a id="h116802" class="jump" title="slot[Z].trigger.model.addblock.configlist.recall()" href="115501.htm" target="_self">slot[Z].trigger.model.addblock.configlist.recall()</a></p>
 
 </body>
 </html>

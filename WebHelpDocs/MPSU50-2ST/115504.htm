@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('115504')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115504')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="114972.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t115504" class="heading2-icl">slot[Z].trigger.model.addblock.source.action.bias()</h2>
-<p class="bodyzero">This function creates a block that sets the source output level to the bias level.</p>
+<p class="bodyzero">This function defines a trigger model block that sets the source output level to the bias level.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -47,7 +47,8 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<em class="emphasis">Z</em>].trigger.model.addblock.source.action.bias(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<em class="emphasis">blockName</em>&quot;, <em class="emphasis">channel</em>)</p>
+<p class="iclcode">slot[<em class="emphasis">Z</em>].trigger.model.addblock.source.action.bias(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;,<span class="monospaceitalic"> channel</span>)</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.source.action.bias(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, {<span class="monospaceitalic">channelList</span>})</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -65,7 +66,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><em class="emphasis">blockName</em></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="462"><p class="tablebodytext">Name of the trigger block</p>
+<td style="border:1px solid #C0C0C0;" width="462"><p class="tablebodytext">Name of the trigger block; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -74,54 +75,70 @@
 <td style="border:1px solid #C0C0C0;" width="462"><p class="tablebodytext">Channel number</p>
 </td>
 </tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="462"><p class="tablebodytext">Table of channels to make measurements on; for example:</p>
+<p class="tablebodytext"><code class="monospace">{channel1, channel2,...}</code>; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">The bias level is defined by the <code class="monospace">*trigger.source.level</code><span class="monospaceitalic">Y</span> command, which must be set before the trigger model starts. When this block is reached, the source output is set to the bias level. For example, if you want to return to 2 V on each step, set the source level to 2 V, then define the action bias block as part of the trigger model.</p>
+<p class="iclbody">The bias level is defined by the <code class="monospace">*.source.level</code><span class="monospaceitalic">Y</span> command, which must be configured before the trigger model starts. When this block is reached, the source output is set to the bias level. For example, if you want to return to 2 V on each step, set the source level to 2 V, then define the action bias block as part of the trigger model.</p>
 <p class="iclbody">To create pulses that go to the voltage in the sweep array defined by the <code class="monospace">*.trigger.source.linearV</code>, <code class="monospace">*.trigger.source.listV</code>, and <code class="monospace">*.trigger.source.logV</code> commands and then to the bias voltage, you can use this command with the <a id="h116807" class="jump" title="slot[Z].trigger.model.addblock.source.action.step()" href="114973.htm" target="_self">slot[Z].trigger.model.addblock.source.action.step()</a> command.</p>
+<p class="iclbody">You can specify one or more channels for the source action to run on using <span class="monospaceitalic">channelList</span>. All source actions run on all specified channels in parallel, plus or minus 500 ns. The trigger model then waits for all measurements to complete before continuing. </p>
+<p class="iclbody">All specified channels must be on the module that is running the trigger model.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">--Set the bias level to 2 V.</p>
-<p class="codetable">slot[1].smu[1].source.levelv = 2</p>
-<p class="codetable">--Define a linear sweep from 0 V to 5 V with six points.</p>
-<p class="codetable">slot[1].smu[1].trigger.source.linearv(0,5,6)</p>
-<p class="codetable">--Turn the source output on.</p>
-<p class="codetable">slot[1].smu[1].source.output = 1</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep.</p>
+<p class="codetable">slot[1].smu[1].trigger.source.linearv(0, 5, 10)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">--Delete an existing trigger model named TM1.</p>
-<p class="codetable">slot[1].trigger.model.delete(&quot;TM1&quot;)</p>
-<p class="codetable">--Create a trigger model named TM1.</p>
-<p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
-<p class="codetable">--Change the source output level to the present level of the sweep configuration, then advance to the next step in the sweep.</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;TM1&quot;, &quot;sourceActionStep&quot;, 1)</p>
-<p class="codetable">--Delay for 50 ms before proceeding to the next block.</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay50ms&quot;, 0.05)</p>
-<p class="codetable">--Set the source output to return to the bias level.</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.action.bias(&quot;TM1&quot;, &quot;sourceActionBias&quot;, 1)</p>
-<p class="codetable">--Delay for 50 ms before proceeding to the next block.</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;delay50ms&quot;, 0.05)</p>
-<p class="codetable">--Step through the trigger mobel 6 times.</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;,&quot;branchCounter&quot;, &quot;sourceActionStep&quot;, 6)</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;myTM&quot;, &quot;step&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.bias(&quot;myTM&quot;, &quot;&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;myTM&quot;, &quot;&quot;, &quot;step&quot;, 10)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">waitcomplete() print(&quot;Done&quot;)</p>
-<p class="codetable">slot[1].smu[1].source.output = 0</p>
+<p class="codetable">-- Turn on the output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].smu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].smu[1].source.output = slot[1].smu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn off the output.</p>
+<p class="codetable">slot[1].smu[1].source.output = slot[1].smu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that creates a pulsed staircase sweep from 0 to 5 V in 1 V steps. The on-time for each pulse step is 50 ms and the off-time between pulse steps is 50 ms.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that performs a linear voltage sweep with 10 steps. After each step, it delays 100 ms, returns to the bias level, delays another 100 ms, and repeats this sequence for all steps, resulting in 10 pulses with 100 ms intervals.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133339" src="mp5000_triggermodel_sourceactionbias_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_SourceActionBias" height="472" width="136" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">slot[Z].smu[X].trigger.source.linearY()</p>
-<p class="listcommand">slot[Z].smu[X].trigger.source.logY()</p>
 <p class="listcommand"><a id="h116898" class="jump" title="slot[Z].trigger.model.addblock.source.action.skip()" href="115827.htm" target="_self">slot[Z].trigger.model.addblock.source.action.skip()</a></p>
 <p class="listcommand"><a id="h116807_2" class="jump" title="slot[Z].trigger.model.addblock.source.action.step()" href="114973.htm" target="_self">slot[Z].trigger.model.addblock.source.action.step()</a></p>
 <p class="listcommand">Source action bias block</p>
+<p class="listcommand"></p>
+<p class="listcommand"><strong class="specialbold">Sweep configuration commands</strong></p>
+<p class="listcommand"></p>
+<p class="listcommand">slot[Z].psu[X].trigger.source.linearY()</p>
+<p class="listcommand">slot[Z].smu[X].trigger.source.linearY()</p>
+<p class="listcommand">slot[Z].psu[X].trigger.source.listY()</p>
+<p class="listcommand">slot[Z].smu[X].trigger.source.listY()</p>
+<p class="listcommand">slot[Z].psu[X].trigger.source.logY()</p>
+<p class="listcommand">slot[Z].smu[X].trigger.source.logY()</p>
 
 </body>
 </html>

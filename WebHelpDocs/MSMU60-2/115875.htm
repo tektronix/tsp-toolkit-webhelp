@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('115875')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115875')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115932.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t115875" class="heading2-icl">bufferVar.timestamps</h2>
-<p class="bodyzero">This attribute contains the timestamp for each reading in the specified buffer.</p>
+<p class="bodyzero">This attribute contains the relative timestamp for each reading in the specified buffer.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">bufferVar.clear()</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -53,13 +53,13 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">timestamp</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The complete timestamp (including date, time, and fractional seconds) of reading number <span class="monospaceitalic">N</span> in the specified reading buffer when the reading was acquired</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The timestamp of reading number <span class="monospaceitalic">N</span> in the specified reading buffer when the reading was acquired, relative to the first reading in the buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer can be a dynamically allocated user-defined buffer or a default reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a user-defined or default reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -71,26 +71,38 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This buffer recall attribute is similar to an array (a Lua table) that contains UTC timestamp of when each reading occurred.</p>
+<p class="iclbody">This buffer recall attribute is a Lua table that contains the timestamp of when each reading occurred. The timestamp is in seconds relative to the first measurement added to the reading buffer. It is collected at the beginning of the aperture time of each measurement.</p>
+<p class="iclbody">The resolution of the timestamp is set by the <span class="monospaceitalic">bufferVar</span><code class="monospace">.timestampresolution</code> attribute.</p>
+<p class="iclbody">When used with the base timestamp attributes, you can calculate the absolute timestamp of each measurement.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer1 = slot[1].smu[1].makebuffer(100)</p>
-<p class="codetable">timestamp = buffer1.timestamps[1]</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">buffer = slot[1].smu[1].defbuffer2</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(buffer.timestamps[2])</p>
+<p class="codetable">printbuffer(1, buffer.n, buffer.timestamps)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Retrieve the timestamp of the first reading stored in <code class="monospace">buffer1</code>.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Retrieve the timestamp of the second reading stored in defbuffer2 on channel 1 of the SMU in slot 1.</p>
+<p class="tablebodytext">Then retrieve the timestamps of each reading stored in the same buffer.</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">6.63871e-02</p>
+<p class="codetable">0.00000e+00, 6.63871e-02, 1.32775e-01, 1.99160e-01, 2.65548e-01, 3.31938e-01, 3.98327e-01, 4.64711e-01, 5.31093e-01, 5.97480e-01</p>
+<p class="tablebodytext">This output indicates that the second measurement occurred 66.3871&nbsp;ms after the first measurement, then lists the timestamp for each measurement in <code class="monospace">slot[1].smu[1].defbuffer2</code> relative to its first measurement.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h116920" class="jump" title="bufferVar.basetimestampfractional" href="116917.htm" target="_self">bufferVar.basetimestampfractional</a></p>
+<p class="listcommand"><a id="h116919" class="jump" title="bufferVar.basetimestampseconds" href="116918.htm" target="_self">bufferVar.basetimestampseconds</a></p>
 <p class="listcommand"><a id="h115961" class="jump" title="bufferVar.clear()" href="115953.htm" target="_self">bufferVar.clear()</a></p>
 <p class="listcommand"><a id="h115877" class="jump" title="bufferVar.n" href="107199.htm" target="_self">bufferVar.n</a></p>
 <p class="listcommand"><a id="h115878" class="jump" title="bufferVar.readings" href="107200.htm" target="_self">bufferVar.readings</a></p>
 <p class="listcommand"><a id="h115879" class="jump" title="bufferVar.statuses" href="107205.htm" target="_self">bufferVar.statuses</a></p>
+<p class="listcommand"><a id="h116783" class="jump" title="bufferVar.timestampresolution" href="115932.htm" target="_self">bufferVar.timestampresolution</a></p>
 <p class="listcommand">Reading buffers</p>
 
 </body>

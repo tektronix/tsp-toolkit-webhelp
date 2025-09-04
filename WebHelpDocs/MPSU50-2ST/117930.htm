@@ -101,7 +101,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">138 (all bits set) </p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">395 (all bits set) </p>
 </td>
 </tr>
 
@@ -257,7 +257,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Reserved for future use.</p>
+<p class="tablebodytext">Bit B0 decimal value: 1</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -266,7 +267,6 @@
 <td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.instrument.psu[<em class="emphasis">X</em>].ILMT</p>
 <p class="tablebodytext">Set bit indicates that the current limit was exceeded.</p>
 <p class="tablebodytext">Bit B1 decimal value: 2</p>
-<p class="tablebodytext">This bit is updated only when a measurement is made or <code class="monospace">psu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.compliance</code> is invoked. </p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -279,7 +279,7 @@
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B3</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.instrument.psu[<em class="emphasis">X</em>].PROT</p>
-<p class="tablebodytext">Set bit indicates that </p>
+<p class="tablebodytext">Set bit indicates that voltage or current protection was tripped.</p>
 <p class="tablebodytext">Bit B3 decimal value: 8</p>
 </td>
 </tr>
@@ -298,7 +298,14 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B8 to B15</p>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B8</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Reserved for future use.</p>
+<p class="tablebodytext">Bit B8 decimal value: 256</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B9 to B15</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
 </td>
@@ -478,7 +485,7 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[1].status.measurement.instrument.psu[1].enable = slot[1].status.measurement.instrument.psu[1].VLMT</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">slot[1].status.measurement.instrument.psu[1].enable = slot[1].status.measurement.instrument.psu[1].ILMT</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -489,6 +496,9 @@
 </table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Measurement event registers</p>
+<p class="listcommand"><a id="h116743" class="jump" title="slot[Z].psu[X].source.limiti" href="107238.htm" target="_self">slot[Z].psu[X].source.limiti</a></p>
+<p class="listcommand"><a id="h107834" class="jump" title="slot[Z].psu[X].source.protect.trippedi" href="107828.htm" target="_self">slot[Z].psu[X].source.protect.trippedi</a></p>
+<p class="listcommand"><a id="h107832" class="jump" title="slot[Z].psu[X].source.protect.trippedv" href="107829.htm" target="_self">slot[Z].psu[X].source.protect.trippedv</a></p>
 
 </body>
 </html>

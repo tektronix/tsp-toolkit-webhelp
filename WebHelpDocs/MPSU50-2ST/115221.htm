@@ -71,15 +71,15 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">index</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A number starting from 1 that defines a specific configuration index in the measure configuration list</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A number starting from 1 that defines a specific configuration index in the configuration&nbsp;list</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">Use this command to recall the settings stored in a specific configuration index in a configuration list. If you do not specify an index when you send the command, an error message is displayed.</p>
-<p class="iclbody">If you recall an invalid index (for example, calling index 3 when there are only two indexes in the configuration list) or try to recall an index from an empty configuration list, an error message is displayed.</p>
-<p class="iclbody">Each index contains the settings for the selected function of that index. Settings for other functions are not affected when the configuration list index is recalled. A single index stores the settings associated with a single measurement.</p>
+<p class="iclbody">Use this command to recall the settings stored in a specific configuration index in a configuration list. Each index contains most of the measure and source attributes of the channel.</p>
+<p class="iclbody">An error message is displayed:</p>
+<ul class="listbullet"><li class="listbullet">If you do not specify an index.</li><li class="listbullet">If you specify an invalid index (for example, calling index 3 when there are only two indexes in the configuration list).</li><li class="listbullet">If you try to recall an index from an empty configuration list.</li></ul><p class="iclbody">For additional details about the information this command recalls when using a configuration list query command, see &quot;Settings stored in a configuration index&quot; in the <em class="emphasis">MP5000 Source&#8209;Measure Unit Reference Manual</em>.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
@@ -94,9 +94,12 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">&quot;Configuration lists&quot; in the General operation section of the <em class="emphasis">MP5000 Modular Precision Test System Reference Manual</em></p>
+<p class="listcommand">&quot;Configuration lists&quot; in the General operation section of the <em class="emphasis">MP5000 Reference Manual</em></p>
 <p class="listcommand"><a id="h115259" class="jump" title="slot[Z].psu[X].configlist.create()" href="115220.htm" target="_self">slot[Z].psu[X].configlist.create()</a></p>
+<p class="listcommand"><a id="h115251" class="jump" title="slot[Z].psu[X].configlist.delete()" href="115224.htm" target="_self">slot[Z].psu[X].configlist.delete()</a></p>
+<p class="listcommand"><a id="h115254" class="jump" title="slot[Z].psu[X].configlist.size()" href="115227.htm" target="_self">slot[Z].psu[X].configlist.size()</a></p>
 <p class="listcommand"><a id="h115255" class="jump" title="slot[Z].psu[X].configlist.store()" href="115223.htm" target="_self">slot[Z].psu[X].configlist.store()</a></p>
+<p class="listcommand"><a id="h115250" class="jump" title="slot[Z].psu[X].configlist.table()" href="115226.htm" target="_self">slot[Z].psu[X].configlist.table()</a></p>
 
 </body>
 </html>

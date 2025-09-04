@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114966')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114966')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="114961.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -59,75 +59,76 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger model to which the block is added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to be added; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">branchToBlockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to branch to on true condition</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to branch to when the condition is true</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">eventId</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The event that must occur before the trigger model branches to the specified block; for example, <code class="monospace">slot[Z].trigger.model.EVENT_NOTIFY4</code></p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">The event that must occur before the trigger model branches to the specified block; see <strong class="specialbold">Details</strong></p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">The <code class="monospace">branch.event</code> block goes to a specified trigger model block after a specified trigger event occurs. If the trigger event has not yet occurred when the trigger model reaches the <code class="monospace">branch.event</code> block, the trigger model continues to execute the blocks in the normal sequence. After the trigger event occurs, the trigger model proceeds to the specified trigger model block when the <code class="monospace">branch.event</code> block is encountered.</p>
-<p class="iclbody">After an event occurs and the <code class="monospace">branch.event</code> block executes, the branch is taken and the event detector is cleared. The trigger event must occur again for the trigger model to execute to the block again; otherwise, the blocks are executed in the normal sequence.</p>
+<p class="iclbody">This block goes to a specified trigger model block after a specified trigger event occurs. If the trigger event has not yet occurred when the trigger model reaches the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.branch.event</code> block, the trigger model continues to execute the blocks in the normal sequence. After the trigger event occurs, the trigger model proceeds to the specified trigger model block when the <code class="monospace">slot[Z].trigger.model.addblock.branch.event</code> block is encountered.</p>
+<p class="iclbody">After an event occurs and this block executes, the branch is taken and the event detector is cleared. The trigger event must occur again for the trigger model to execute to the block again; otherwise, the blocks are executed in the normal sequence.</p>
 <p class="iclbody">If you set the branch event to none, an error is generated when you run the trigger model.</p>
+<p class="iclbody">Trigger models containing a branch on event block cannot also contain a measure overlapped block.</p>
 <p class="iclbody">The following table shows the constants for the events.</p>
-<table class="tableintopic" width="498" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tableheading">ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">ID</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tableheading">Description</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Description</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">digio.trigger[N].EVENT_ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">digio.trigger[N].EVENT_ID</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when a digital I/O line changes state according to its configured trigger mode</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h118327" class="jump" title="slot[Z].trigger.model.EVENT_AT_LIMIT" href="118326.htm" target="_self">slot[Z].trigger.model.EVENT_AT_LIMIT</a> (SMUs only)</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">&nbsp;</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when a digital I/O line changes state according to its configured trigger mode; <span class="monospaceitalic">N</span> is 1 to ***Set DigioLines variable***</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h118325" class="jump" title="slot[Z].trigger.model.EVENT_NOTIFYN" href="118323.htm" target="_self">slot[Z].trigger.model.EVENT_NOTIFYN</a></p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">slot[Z].smu[X].trigger.EVENT_AT_LIMIT (SMUs only)</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when the notify block of the trigger model is executed</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">trigger.generator[N].EVENT_ID</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Trigger generator event</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the channel of a SMU limits the output to stay within user&#8209;defined constraints</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">trigger.timer[N].EVENT_ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><a id="h118325" class="jump" title="slot[Z].trigger.model.EVENT_NOTIFYN" href="118323.htm" target="_self">slot[Z].trigger.model.EVENT_NOTIFYN</a></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when the timer delay of timer <code class="monospace">N</code> elapses</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the notify block of the trigger model is executed; <span class="monospaceitalic">N</span> is 1 to 8 for SMUs and 1 to 16 for PSUs</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">tsplink.trigger[N].EVENT_ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">trigger.generator[N].EVENT_ID</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when a TSP-Link line changes state according to its configured trigger mode</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Trigger generator event; <span class="monospaceitalic">N</span> is the generator number, 1 to 8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">trigger.timer[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the timer delay of timer <span class="monospaceitalic">N</span> elapses; <span class="monospaceitalic">N</span> is 1 to 8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">tsplink.trigger[N].EVENT_ID</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when a TSP-Link line changes state according to its configured trigger mode; <span class="monospaceitalic">N</span> is 1 to 3</p>
 </td>
 </tr>
 
@@ -135,27 +136,38 @@
 <p class="iclsubheading">Example</p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].smu[1].source.levelv = 5.0</p>
-<p class="codetable">slot[1].trigger.model.delete(&quot;branchonevent2&quot;)</p>
-<p class="codetable">slot[1].trigger.model.create(&quot;TM2&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM2&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM2&quot;, &quot;delay2&quot;, 0.1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.event(&quot;TM2&quot;, &quot;branchonevent3&quot;, &quot;TheEnd&quot;, slot[1].trigger.model.EVENT_NOTIFY1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM2&quot;, &quot;branchcounter4&quot;, &quot;sourceoutput1&quot;, 3)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM2&quot;, &quot;sourceoutput5&quot;, 1, 0)</p>
-<p class="codetable">slot[1].trigger.model.addblock.notify(&quot;TM2&quot;, &quot;notify6&quot;, slot[1].trigger.model.EVENT_NOTIFY1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM2&quot;, &quot;branchcounter7&quot;, &quot;sourceoutput1&quot;, 3)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM2&quot;, &quot;TheEnd&quot;, 1, 0)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep.</p>
+<p class="codetable">slot[1].psu[1].trigger.source.linearv(5, 5, 1)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;TM2&quot;)</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.bias(&quot;myTM&quot;, &quot;start&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.event(&quot;myTM&quot;, &quot;&quot;, &quot;end&quot;, slot[1].trigger.model.EVENT_NOTIFY1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.set(&quot;myTM&quot;, &quot;start&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;myTM&quot;, &quot;end&quot;, slot[1].trigger.model.LOG_INFO1, &quot;End of Trigger Model&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn on output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn the output off.</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses <code class="monospace">branch.event</code> to differentiate two loops. The first loop lacks <code class="monospace">EVENT_NOTIFY1</code>, so its pulse is 300 ms. The second loop occurs after <code class="monospace">EVENT_NOTIFY1</code>, so its pulse is 100 ms long. The trigger model then stops.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This trigger model starts at bias level and sets 5 V unless EVENT_NOTIFY1 occurs, in which case it skips the voltage change and logs an event.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133324" src="mp5000_triggermodel_branchevent_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_BranchEvent" height="351" width="146" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Branch on event block</p>
 

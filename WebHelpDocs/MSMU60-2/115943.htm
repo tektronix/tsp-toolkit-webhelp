@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('115943')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115943')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="116607.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -68,14 +68,15 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a dynamically allocated user-defined buffer or a default reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a user-defined or default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">Assign a value to this attribute to enable or disable the buffer append mode. This value can only be changed when the buffer is empty. Use <span class="monospaceitalic">bufferVar</span><code class="monospace">.clear()</code> to empty the buffer.</p>
-<p class="iclbody">If the append mode is set to <code class="monospace">0</code>, any previously stored readings in the buffer are cleared before new ones are stored. If append mode is set to <code class="monospace">1</code>, any previously stored readings remain in the buffer and new readings are added to the buffer following the stored readings. With append mode on, the first new measurement is stored at <code class="monospace">rb[</code><span class="monospaceitalic">n</span><code class="monospace">+1]</code>, where <span class="monospaceitalic">n</span> is the number of readings stored in buffer <code class="monospace">rb</code>.</p>
+<p class="bodytext">If the append mode is set to <code class="monospace">0</code> (off), any previously stored readings in the buffer are cleared before new ones are stored. If append mode is set to <code class="monospace">1</code>, any previously stored readings remain in the buffer and new readings are added to the buffer following the stored readings.</p>
+<p class="iclbody">With append mode set to <code class="monospace">1</code> (on), the first new measurement is stored at reading buffer location <code class="monospace">[</code><span class="monospaceitalic">n</span><code class="monospace">+1]</code>, where <span class="monospaceitalic">n</span> is the number of readings stored in the buffer. When the fill mode is set to once, measurements are only appended to a buffer if the measure count is less than the available space in the buffer. If the buffer cannot hold the readings, an error is returned and no measurements are made.</p>
 <p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">

@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114965')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114965')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="114964.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -65,47 +65,59 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger block</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger block; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">branchToBlockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to branch to on the first pass through this block</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the block to branch to on true condition</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">The <code class="monospace">branch.onceexcluded</code> block is ignored the first time it is encountered by the trigger model. After the first encounter, the trigger model always branches to the specified block.</p>
-<p class="iclbody">The <code class="monospace">branch.onceexcluded</code> block is reset as part of the setup for starting execution of the trigger model. When the trigger model execution completes, the internal, hidden, code has the internal counter set to state that the <code class="monospace">branch.onceexcluded</code> block has been activated.</p>
+<p class="iclbody">This block is skipped the first time the trigger model encounters it; the trigger model proceeds to the next block. After the first encounter, the trigger model always branches to the specified block.</p>
+<p class="iclbody">Thismblock resets automatically each time the trigger model is initiated.</p>
+<p class="iclbody">The block specified by <span class="monospaceitalic">branchToBlockName</span> must exist in the trigger model before running.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].trigger.model.create(&quot;branchonceexcluded1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;branchonceexcluded1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep.</p>
+<p class="codetable">slot[1].psu[1].trigger.source.linearv(5, 5, 1)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;branchonceexcluded1&quot;, &quot;logevent2&quot;, slot[1].trigger.model.LOG_INFO3, &quot;Visiting branch.onceexcluded.&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;branchonceexcluded1&quot;, &quot;delay3&quot;, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.onceexcluded(&quot;branchonceexcluded1&quot;, &quot;branchonceexcluded4&quot;, &quot;sourceoutput1&quot;)</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.set(&quot;myTM&quot;, &quot;start&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.onceexcluded(&quot;myTM&quot;, &quot;&quot;, &quot;end&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.bias(&quot;myTM&quot;, &quot;&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.once(&quot;myTM&quot;, &quot;end&quot;, &quot;start&quot;)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.addblock.logevent(&quot;branchonceexcluded1&quot;, &quot;logevent5&quot;, slot[1].trigger.model.LOG_INFO2, &quot;Return because of branch counter.&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;branchonceexcluded1&quot;, &quot;branchcounter6&quot;, &quot;sourceoutput1&quot;, 4)</p>
+<p class="codetable">-- Turn on the output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;branchonceexcluded1&quot;)</p>
-<p class="codetable">slot[1.trigger.model.abort(&quot;branchonceexcluded1&quot;)</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">--Turn the output off.</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses <code class="monospace">branch.onceexcluded</code> to branch back many times, excluding the first visit. Log events show the behavior. Note the need for the call to <code class="monospace">slot[1].trigger.model.abort()</code> to exit the trigger model. Otherwise, the trigger model will run indefinitely.</p>
-<p class="tablebodytext">Trigger models require at least one channel-specific command when they are initiated. The <code class="monospace">sourceoutput1</code> block is meant only to assign a channel.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates how to create a trigger model that pulses once, then stays at 5 V and exits using branch.onceexcluded.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Trigger model diagram</p>
-<p class="magicfigurecenter"><img id="f132081" src="mp5000_triggermodel_branchonceexcludeddiagram_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="Branch once excluded diagram" height="412" width="121" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="magicfigurecenter"><img id="f132081" src="mp5000_triggermodel_branchonceexcludeddiagram_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="Branch once excluded diagram" height="534" width="146" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Branch once excluded block</p>
 <p class="listcommand"><a id="h115065" class="jump" title="slot[Z].trigger.model.addblock.branch.once()" href="114964.htm" target="_self">slot[Z].trigger.model.addblock.branch.once()</a></p>

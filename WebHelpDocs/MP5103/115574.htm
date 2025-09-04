@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('115574')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115574')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115131.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>Power cycle<br>Digital I/O trigger <em class="emphasis">N</em> reset</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Power cycle<br>Mainframe reset<br>digio.trigger[N].reset</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -69,47 +69,47 @@
 <p class="iclbody">Set this attribute to <code class="monospace">trigger.EVENT_NONE</code> to disable the automatic trigger output.</p>
 <p class="iclbody">Do not use this attribute to generate output triggers under script control. Use <code class="monospace">digio.trigger[N].assert()</code>&nbsp;instead.</p>
 <p class="iclbody">The event IDs that can be used for this command include mainframe-specific event IDs as well as event IDs for any installed modules capable of generating a trigger event. See the following table.</p>
-<table class="tableintopic" width="498" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tableheading">ID</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tableheading">ID</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tableheading">Description</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Description</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h116679" class="jump" title="digio.trigger[N].EVENT_ID" href="116241.htm" target="_self">digio.trigger[N].EVENT_ID</a></p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><a id="h116679" class="jump" title="digio.trigger[N].EVENT_ID" href="116241.htm" target="_self">digio.trigger[N].EVENT_ID</a></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when a digital I/O line changes state according to its configured trigger mode</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">slot[Z].trigger.model.EVENT_AT_LIMIT (SMUs only)</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">&nbsp;</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when a digital I/O line changes state according to its configured trigger mode; <span class="monospaceitalic">N</span> is 1 to 18</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext">slot[Z].trigger.model.EVENT_NOTIFYN</p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">slot[Z].smu[X].trigger.EVENT_AT_LIMIT (SMUs only)</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when the notify block of the trigger model is executed</p>
-</td>
-</tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h116380" class="jump" title="trigger.generator[N].EVENT_ID" href="116289.htm" target="_self">trigger.generator[N].EVENT_ID</a></p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Trigger generator event</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the channel of a SMU limits the output to stay within user&#8209;defined constraints</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h117264" class="jump" title="trigger.timer[N].EVENT_ID" href="117242.htm" target="_self">trigger.timer[N].EVENT_ID</a></p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext">slot[Z].trigger.model.EVENT_NOTIFYN</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when the timer delay of timer <code class="monospace">N</code> elapses</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the notify block of the trigger model is executed; <span class="monospaceitalic">N</span> is 1 to 8 for SMUs and 1 to 16 for PSUs</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="300"><p class="tablebodytext"><a id="h117264_2" class="jump" title="trigger.timer[N].EVENT_ID" href="117242.htm" target="_self">tsplink.trigger[N].EVENT_ID</a></p>
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><a id="h116380" class="jump" title="trigger.generator[N].EVENT_ID" href="116289.htm" target="_self">trigger.generator[N].EVENT_ID</a></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="198"><p class="tablebodytext">Occurs when a TSP-Link line changes state according to its configured trigger mode</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Trigger generator event; <span class="monospaceitalic">N</span> is the generator number, 1 to 8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><a id="h117264" class="jump" title="trigger.timer[N].EVENT_ID" href="117242.htm" target="_self">trigger.timer[N].EVENT_ID</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when the timer delay of timer <span class="monospaceitalic">N</span> elapses; <span class="monospaceitalic">N</span> is 1 to 8</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="312"><p class="tablebodytext"><a id="h15313" class="jump" title="tsplink.trigger[N].EVENT_ID" href="15294.htm" target="_self">tsplink.trigger[N].EVENT_ID</a></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Occurs when a TSP-Link line changes state according to its configured trigger mode; <span class="monospaceitalic">N</span> is 1 to 3</p>
 </td>
 </tr>
 

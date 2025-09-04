@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116150')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('116150')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="14789.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -47,34 +47,54 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode">firmware.load(<span class="monospaceitalic">filename)</span></p>
+<p class="iclcode">firmware.load(&quot;/usb1/<span class="monospaceitalic">filename</span>&quot;)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">filename</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Name of the firmware image file to load</p>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Name of the firmware file to load, including the directory if used</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This command loads a firmware image from a file on a USB flash drive. After loading the image, it can be installed on the mainframe or module using <code class="monospace">firmware.update()</code>.</p>
-<p class="iclsubheading">Example</p>
+<p class="iclbody">After loading the image, it can be installed on the mainframe or module using <code class="monospace">firmware.update()</code> or <code class="monospace">slot[Z].firmware.update()</code>.</p>
+<p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">Do not turn off power until the upgrade process is complete.</p>
+<p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">firmware.load(&quot;/usb1/mp5103-v1.0.1x&quot;)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">firmware.load(&quot;/usb1/MP5000-1.0.0.x&quot;)</p>
+<p class="codetable">firmware.update()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Loads and then updates the firmware from the <code class="monospace">mp5103-v1.0.1x</code> file on the USB drive inserted into the front of the mainframe.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Load the mainframe firmware file <code class="monospace">mp5100-v1.0.0.x</code> on the USB drive inserted into the front of the mainframe.</p>
+<p class="tablebodytext">Update the firmware.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">firmware.load(&quot;/usb1/module/MPSU50-2ST-1.0.0.x&quot;)</p>
+<p class="codetable">slot[1].firmware.update()</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Load the module firmware <code class="monospace">MPSU50-2ST-1.0.0.x</code> file in the <code class="monospace">module</code> folder of the USB drive inserted into the front of the mainframe.</p>
+<p class="tablebodytext">Update the module in slot 1.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
+<p class="listcommand">&quot;Upgrade the firmware using TSP&quot; in the <em class="emphasis">MP5000 Reference Manual</em></p>
 <p class="listcommand"><a id="h116157" class="jump" title="firmware.update()" href="106526.htm" target="_self">firmware.update()</a></p>
+<p class="listcommand">slot[Z].firmware.update()</p>
 
 </body>
 </html>

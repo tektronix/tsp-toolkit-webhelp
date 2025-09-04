@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('115235')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115235')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="118196.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -65,14 +65,15 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">configListName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that represents the name of a configuration list</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">A string that represents the name of a configuration list; must be unique on this channel</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">This command creates an empty configuration list. To add configuration indexes to this list, use the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].configlist.store()</code> command.</p>
-<p class="iclbody">Configuration lists are not saved when the instrument is turned off. Configuration list names must be unique.</p>
+<p class="iclbody">The <span class="monospaceitalic">configListName</span> parameter must be unique on the specified slot and channel. You can use the same name on other channels.</p>
+<p class="iclbody">Configuration lists are not saved when the instrument is turned off. They are preserved through resets.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
@@ -88,11 +89,11 @@
 </table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">&quot;Configuration lists&quot; in the General operation section of the <em class="emphasis">MP5000 Source-Measure Unit Reference Manual</em></p>
-<p class="listcommand"><a id="h115242" class="jump" title="slot[Z].smu[X].configlist.table()" href="115240.htm" target="_self">slot[Z].smu[X].configlist.table()</a></p>
 <p class="listcommand"><a id="h115243" class="jump" title="slot[Z].smu[X].configlist.delete()" href="115238.htm" target="_self">slot[Z].smu[X].configlist.delete()</a></p>
 <p class="listcommand"><a id="h115245" class="jump" title="slot[Z].smu[X].configlist.recall()" href="115236.htm" target="_self">slot[Z].smu[X].configlist.recall()</a></p>
 <p class="listcommand"><a id="h115246" class="jump" title="slot[Z].smu[X].configlist.size()" href="115241.htm" target="_self">slot[Z].smu[X].configlist.size()</a></p>
 <p class="listcommand"><a id="h115247" class="jump" title="slot[Z].smu[X].configlist.store()" href="115237.htm" target="_self">slot[Z].smu[X].configlist.store()</a></p>
+<p class="listcommand"><a id="h115242" class="jump" title="slot[Z].smu[X].configlist.table()" href="115240.htm" target="_self">slot[Z].smu[X].configlist.table()</a></p>
 
 </body>
 </html>

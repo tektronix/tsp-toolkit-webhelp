@@ -37,9 +37,9 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>PSU reset<br>Recall setup</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Power cycle<br>Mainframe reset<br>Module reset<br>Configuration list recall</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Configuration list store</p>
 </td>
 <td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">slot[Z].psu[X].DISABLE</p>
 </td>
@@ -73,18 +73,28 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">When this attribute is set to <code class="monospace">DISABLE</code>, PSU both sequential and measure overlapped commands proceed as normal. For sequential commands, a command is processed fully before the next one is executed.</p>
-<p class="iclbody">When this attribute is set to <code class="monospace">ENABLE</code>, a command returns as soon as it is able, even if it has not been reflected in the hardware. For example, the command for setting the source voltage level returns to Lua so it can process the next command, even if the PSU is not yet sourcing at that voltage level. This only applies to commands that specify settings. A command that retrieves a setting or a measure command waits for commands to complete before executing. Note that measure commands do not wait for commands to fully complete on a different channel.</p>
+<p class="iclbody">When this attribute is set to disable, both sequential and measure overlapped commands proceed as normal. For sequential commands, a command is processed fully before the next one is executed.</p>
+<p class="iclbody">When this attribute is set to enable, a command returns as soon as it is able, even if it has not been reflected in the hardware. For example, the command for setting the source voltage level returns to Lua so it can process the next command, even if the instrument has not yet transitioned to the new voltage level.</p>
+<p class="iclbody">Not all commands can be overlapped. If they can be, the command gets added to the processing queue of the channel and execute in order. Channels process their respective queue in parallel with other channels. If the command cannot be overlapped, the PSU inserts a <code class="monospace">waitcomplete()</code> between commands. For example, if a <code class="monospace">print(slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.rangev))</code> command is executed after a <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.levelv = </code><span class="monospaceitalic">newLevel</span> command, the PSU completes the level change before printing the source range as if there were a <code class="monospace">waitcomplete()</code> command executed between them.</p>
+<p class="iclbody">This only applies to commands that specify settings. A command that retrieves a setting or a measure command waits for commands to complete before executing. Note that measure commands do not wait for commands to fully complete on a different channel.</p>
 <p class="iclbody">This attribute is useful when performing operations on multiple channels. Changing the voltage level on channel 1 and channel 2 with this setting enabled should result in those changes occurring with less time between than if this setting was disabled.</p>
+<p class="iclbody">Overlapped measure commands cannot be used with the trigger model.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[2].overlapped = slot[1].psu.ENABLE</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[1].overlapped = slot[1].psu[1].ENABLE</p>
+<p class="codetable">slot[2].psu[2].overlapped = slot[2].psu[2].ENABLE</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 5</p>
+<p class="codetable">slot[2].psu[2].source.levelv = 5</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].psu[1].source.output = slot[1].psu[1].ON</p>
+<p class="codetable">slot[2].psu[2].source.output = slot[2].psu[2].ON</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Enables overlapped mode for channel 2 of the module installed in slot 1.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">PSU channel 2 begins to turn its output on while channel 1 is still completing its output on command.</p>
 </td>
 </tr>
 
