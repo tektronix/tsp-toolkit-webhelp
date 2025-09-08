@@ -101,7 +101,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">4352 (all bits set)</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">4,864 (all bits set)</p>
 </td>
 </tr>
 
@@ -250,13 +250,13 @@
 <tr align="left" valign="top">
 <th style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Bit</p>
 </th>
-<th style="border:1px solid #C0C0C0;" width="552"><p class="tableheading">Value</p>
+<th style="border:1px solid #C0C0C0;" width="552"><p class="tableheading">Value and description</p>
 </th>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0 to B7</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used.</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -268,16 +268,23 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B9 to B11</p>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B9</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.questionable.instrument.psu[<em class="emphasis">X</em>].WARMUP</p>
+<p class="tablebodytext">Set bit indicates that the channel is warmed up and ready for autocalibration.</p>
+<p class="tablebodytext">Bit B9 decimal value: 512</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B10 to B11</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used.</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B12</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.questionable.instrument.psu[<em class="emphasis">X</em>].OTEMP</p>
-<p class="tablebodytext">Set bit indicates that an over temperature condition was detected.</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Reserved for future use.</p>
 <p class="tablebodytext">Bit B12 decimal value: 4,096</p>
 </td>
 </tr>
@@ -290,7 +297,7 @@
 
 </table>
 <p class="iclbody">As an example, to set bit B8 of the questionable status PSU channel 1 summary enable register for slot 1, set <code class="monospace">slot[1].status.questionable.instrument.psu[1].enable = slot[1].status.questionable.instrument.psu[1].CAL</code>.</p>
-<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">questionableRegister</span> can be set to the numeric equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">questionableRegister</span> to the sum of their decimal weights. For example, to set bits B8 and B12, set <span class="monospaceitalic">questionableRegister</span> to 4352 (the sum of 256 + 4096).</p>
+<p class="iclbody">In addition to the above constants, <span class="monospaceitalic">questionableRegister</span> can be set to the numeric equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">questionableRegister</span> to the sum of their decimal weights.</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -463,13 +470,12 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">questionableRegister = slot[1].status.questionable.instrument.psu[1].CAL +</p>
-<p class="codetable">   slot[1].status.questionable.instrument.psu[1].OTEMP</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">questionableRegister = slot[1].status.questionable.instrument.psu[1].CAL</p>
 <p class="codetable">slot[1].status.questionable.instrument.psu[1].enable = questionableRegister</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Uses constants to set bit B8 and bit B12 of the questionable status PSU summary enable register for slot&nbsp;1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Uses constants to set bit B8 of the questionable status PSU summary enable register for slot&nbsp;1.</p>
 </td>
 </tr>
 

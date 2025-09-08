@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('116918')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('116918')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="116917.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t116918" class="heading2-icl">bufferVar.basetimestampseconds</h2>
-<p class="bodyzero">This attribute contains the timestamp of a reading in seconds in UTC format.</p>
+<p class="bodyzero">This attribute contains the whole seconds portion of the timestamp, which indicates when the first reading was stored in the reading&nbsp;buffer.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
@@ -37,7 +37,7 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">bufferVar.clear()</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
 </td>
@@ -59,14 +59,14 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer or a user&#8209;defined buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a user-defined or default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute contains the nonfractional seconds portion of the timestamp when the reading was stored. It is in Coordinated Universal Time (UTC) format.</p>
-<p class="iclbody">The nonfractional seconds portion of the timestamp gives the lowest resolution down to 1 second. To access more resolution of a timestamp, see <span class="monospaceitalic">bufferVar</span><code class="monospace">.basetimestampfractional</code>.</p>
+<p class="bodytext">The read-only base timestamp attributes contain the timestamp of the first reading stored in a buffer (<code class="monospace">rb[1]</code> stored in reading buffer <code class="monospace">rb</code>). The timestamp is the number of seconds since 12:00 AM January 1, 1970 (UTC) that the measurement was performed and stored.</p>
+<p class="bodytext">The base timestamp of the reading buffer is divided into two parts. This attribute contains the whole seconds portion of the base timestamp (resolution of 1&nbsp;second.) It can be used with the fractional seconds portion of the base timestamp for additional precision.</p>
 <p class="iclsubheading">Example</p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">

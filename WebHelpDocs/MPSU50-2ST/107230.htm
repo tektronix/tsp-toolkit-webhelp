@@ -37,9 +37,9 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Instrument reset<br>PSU reset<br>Recall setup</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Power cycle<br>Mainframe reset<br>Module reset<br>Configuration list recall</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Configuration list store</p>
 </td>
 <td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">0</p>
 </td>
@@ -78,18 +78,21 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute specifies the offset value used for relative measurements. When relative measurements are enabled (<code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.rel.enable</code><span class="monospaceitalic">Y</span>), all subsequent measured readings will be offset by the value of this attribute.</p>
+<p class="iclbody">When relative measurements are enabled (<code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.rel.enable</code><span class="monospaceitalic">Y</span>), all subsequent measured readings are offset by the value of this attribute.</p>
 <p class="iclbody">Each returned measured relative reading is the result of the following calculation: </p>
 <p class="iclbody"><strong class="specialbold">Relative reading = Actual measured reading − Relative offset value</strong></p>
+<p class="iclbody">To store the relative offset value in a configuration list, relative offset must be enabled.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].psu[2].measure.rel.levelv = slot[1].psu[2].measure.v()</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].psu[2].measure.rel.enablev = slot[1].psu[2].ENABLE</p>
+<p class="codetable">slot[1].psu[2].measure.rel.levelv = slot[1].psu[2].measure.v()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">Makes a voltage measurement using channel 2 of the module installed in slot 1 and then uses the reading as the relative offset value.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">Enable the relative offset for voltage measurement for channel 2 of the module installed in slot 1.</p>
+<p class="tablebodytext">Make a voltage measurement and then use the reading as the relative offset value.</p>
 </td>
 </tr>
 

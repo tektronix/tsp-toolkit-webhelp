@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114969')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114969')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="114968.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t114969" class="heading2-icl">slot[Z].trigger.model.addblock.measureoverlapped()</h2>
-<p class="bodyzero">This function defines a trigger model block that makes a measurement in an overlapped mode which allows you to measure the response of the device under test while the source is being stepped.</p>
+<p class="bodyzero">This function defines a trigger model block that starts a measurement in an overlap state (in the background), allowing the trigger model to continue execution without waiting for the measurement to complete.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -49,6 +49,8 @@
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">channel)</span></p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">channel, count)</span></p>
+<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><span class="monospaceitalic">channelList</span><code class="monospace">})</code></p>
+<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><span class="monospaceitalic">channelList</span><code class="monospace">}, </code><span class="monospaceitalic">count</span><code class="monospace">)</code></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -60,19 +62,19 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger model to which the block is added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger block</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Name of the trigger block; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">channel</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Module channel number to measure</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Channel to make the measurement on</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -81,48 +83,76 @@
 <td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Number of measurements to make when this block starts</p>
 </td>
 </tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Table of channels to take measurements on; for example:</p>
+<p class="tablebodytext"><code class="monospace">{channel1, channel2,...}</code>; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="bodytext">This command is used only with SMU instruments.</p>
 <p class="bodytext">This block triggers measurements based on the measure function that is selected when the trigger model is initiated. When trigger model execution reaches this block:</p>
-<ul class="listbullet"><li class="listbullet">Begins triggering measurements</li><li class="listbullet">The instrument processes the reading and places it into the specified reading buffer. If you are defining a reading buffer, you must create it before you define this block</li></ul><p class="iclbody">If there is one measure overlapped block for a channel, there may be no other measure or measure overlapped blocks for that channel.</p>
-<p class="iclbody">When running the trigger model with the <code class="monospace">measureoverlapped</code> block, overlapped measurements can only be taken with source autoranging turned off.  To turn the source autoranging off, set the <code class="monospace">slot[z].smu[x].source.autorangeY</code> attribute to <code class="monospace">slot[z].smu[x].OFF</code>.</p>
+<ul class="listbullet"><li class="listbullet">The instrument begins making measurements</li><li class="listbullet">The instrument processes the reading and places it into the specified reading buffer. If you are defining a reading buffer, you must create it before you define this block</li></ul><p class="bodytext">You can specify one or more channels for the measurement to run on using <span class="monospaceitalic">channelList</span>. All measurements run on on all specified channels at the same time, plus or minus 500 ns.</p>
+<p class="iclbody">All channels must be present on the same module running the trigger model. Only one measure overlapped block may exist on a channel; there may be no other measure or measure overlapped blocks for that channel.</p>
+<p class="iclbody">When running the trigger model with the measure overlapped block, overlapped measurements can only be taken with source autoranging turned off.  To turn the source autoranging off, set the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.autorange</code><span class="monospaceitalic">Y</span> attribute to <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFF</code>.</p>
 <p class="iclbody">The source limit must be fixed during the running of the trigger model, and it cannot be altered by the config list.</p>
+<p class="iclbody">Trigger models containing a measure overlapped block cannot also contain a branch on event block.</p>
 <p class="iclbody">If any of the above items are incorrectly configured, then the <code class="monospace">slot[z].smu[x].trigger.model.initiate()</code> function generates an error.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SLOT = 1</p>
-<p class="codetable">COUNT = 10</p>
-<p class="codetable">rb3 = slot[SLOT].smu[1].makebuffer(COUNT)</p>
-<p class="codetable">slot[SLOT].smu[1].trigger.measure.v(rb3)</p>
-<p class="codetable">slot[SLOT].smu[1].source.output = 0</p>
-<p class="codetable">slot[SLOT].smu[1].source.levelv = 5</p>
-<p class="codetable">slot[SLOT].trigger.model.create(&quot;measureoverlapped1&quot;)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.measureoverlapped(&quot;measureoverlapped1&quot;, &quot;measureoverlapped1&quot;, 1, COUNT)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.delay.constant(&quot;measureoverlapped1&quot;, &quot;delay2&quot;, 0.1)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.source.output(&quot;measureoverlapped1&quot;, &quot;source-output3&quot;, 1, 1)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.delay.constant(&quot;measureoverlapped1&quot;, &quot;delay4&quot;, 0.1)</p>
-<p class="codetable">slot[SLOT].trigger.model.addblock.source.output(&quot;measureoverlapped1&quot;, &quot;source-output5&quot;, 1, 0)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep.</p>
+<p class="codetable">slot[1].smu[1].trigger.source.linearv(5, 5, 1)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">rb3.clear() ; slot[SLOT].trigger.model.initiate(&quot;measureoverlapped1&quot;) ; print(&quot;DONE&quot;) ;</p>
-<p class="codetable">print(&quot;\nvoltages:&quot;) ; printbuffer(1, rb3.n, rb3) ; print(&quot;timestamps:&quot;) ; printbuffer(1, rb3.n, rb3.timestamps)</p>
+<p class="codetable">-- Configure the source range.</p>
+<p class="codetable">slot[1].smu[1].source.rangev = 6</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Configure the measurement.</p>
+<p class="codetable">READING_BUFFER = slot[1].smu[1].makebuffer(10)</p>
+<p class="codetable">slot[1].smu[1].trigger.measure.v(READING_BUFFER)</p>
+<p class="codetable">slot[1].smu[1].measure.aperture = 0.02</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create the trigger model</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.measureoverlapped(&quot;myTM&quot;, &quot;&quot;, 1, 10)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;myTM&quot;, &quot;&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.bias(&quot;myTM&quot;, &quot;&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn on output before initiating the trigger model</p>
+<p class="codetable">slot[1].smu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].smu[1].source.output = slot[1].smu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">slot[1].smu[1].source.output = slot[1].smu[1].OFF</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Print the measurement results</p>
+<p class="codetable">printbuffer(1, READING_BUFFER.n, READING_BUFFER)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">Demonstrates a trigger model that uses the measure overlapped block to collect measurements asynchronously. The overlapped measurements are started at block <code class="monospace">measureoverlapped1</code> and recur while the trigger model continues running. <code class="monospace">printbuffers()</code> prints the 10 overlapped measurements showing a 5 V pulse rise and fall over 1e−1 seconds.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates how to use the measureoverlapped block in a trigger model to perform 10 overlapped voltage measurements on SMU channel 1. Source range must be fixed when performing measure overlapped.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133336" src="mp5000_triggermodel_measureoverlapped_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_MeasureOverlapped" height="527" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Measure overlapped block</p>
-<p class="listcommand">slot[z].smu[x].source.autorangeY</p>
-<p class="listcommand">slot[z].smu[x].source.limitnY</p>
-<p class="listcommand">slot[z].smu[x].source.limitpY</p>
-<p class="listcommand">slot[z].smu[x].source.limitY</p>
+<p class="listcommand">slot[Z].smu[X].source.autorangeY</p>
+<p class="listcommand">slot[Z].smu[X].source.limitnY</p>
+<p class="listcommand">slot[Z].smu[X].source.limitpY</p>
+<p class="listcommand">slot[Z].smu[X].source.limitY</p>
 
 </body>
 </html>

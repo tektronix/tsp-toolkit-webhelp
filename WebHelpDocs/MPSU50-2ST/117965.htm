@@ -132,7 +132,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="144"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">Power supply unit (PSU) channel (for example<code class="monospace"> slot[1].status.operation.instrument.psu[1].enable</code> applies to PSU channel&nbsp;1 in slot 1)</p>
+<td style="border:1px solid #C0C0C0;" width="450"><p class="tablebodytext">Power supply unit (PSU) channel (for example<code class="monospace"> slot[1].status.operation.instrument.psu[2].enable</code> applies to PSU channel&nbsp;1 in slot 2)</p>
 </td>
 </tr>
 
@@ -258,7 +258,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">status.operation.instrument.psu[<span class="monospaceitalic">X</span>].CAL</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.instrument.psu[<span class="monospaceitalic">X</span>].CAL</p>
 <p class="tablebodytext">Set bit indicates that PSU is unlocked for calibration.</p>
 <p class="tablebodytext">Bit B0 decimal value: 1</p>
 </td>
@@ -272,7 +272,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B3</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">status.operation.instrument.psu[<span class="monospaceitalic">X</span>].SWE</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.instrument.psu[<span class="monospaceitalic">X</span>].SWE</p>
 <p class="tablebodytext">Set bit indicates that PSU is sweeping.</p>
 <p class="tablebodytext">Bit B3 decimal value: 8</p>
 </td>
@@ -280,7 +280,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B4</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">status.operation.instrument.psu[<span class="monospaceitalic">X</span>].MEAS</p>
+<td style="border:1px solid #C0C0C0;" width="528"><p class="codetable">slot[<em class="emphasis">Z</em>].status.operation.instrument.psu[<em class="emphasis">X</em>].MEAS</p>
 <p class="tablebodytext">Bit is set when making an overlapped measurement, but it is not set when making a normal synchronous measurement.</p>
 <p class="tablebodytext">Bit B4 decimal value: 16</p>
 </td>
@@ -467,11 +467,11 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable"><code class="monospace">slot[1].status.operation.instrument.psu[1].enable</code> = slot[1].status.operation.instrument.psu[1].MEAS</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable"><code class="monospace">slot[1].status.operation.instrument.psu[1].enable</code> = slot[1].status.operation.instrument.psu[1].SWE</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Use a constant to set bit B4 of the operation status PSU 1 summary enable register for slot 1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Use a constant to set bit B3 of the operation status PSU 1 summary enable register for slot 1.</p>
 </td>
 </tr>
 

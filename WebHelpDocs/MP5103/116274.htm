@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116274')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('116274')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="116273.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -85,18 +85,18 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">bufferVarN</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The last table or reading buffer column to print</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The last table or reading buffer column to print </p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">If overlapped commands use the specified reading buffers and the commands are not complete (at least to the specified index), this function outputs data as it becomes available.</p>
+<p class="bodytext">If overlapped commands use the specified reading buffers and the commands are not complete (at least to the specified index), this function outputs data as it becomes available.</p>
 <p class="iclbody">When there are outstanding overlapped commands to acquire data, <span class="monospaceitalic">endIndex</span> refers to the index of the last entry in the table after all the measurements have completed.</p>
 <p class="iclbody">If you pass a reading buffer instead of a reading buffer column, the default column for that reading buffer is used. </p>
 <p class="iclbody">This command generates a single response message that contains all data. The response message is stored in the output queue.</p>
 <p class="iclbody">The output of <code class="monospace">printbuffer()</code> is affected by the data format selected by <code class="monospace">format.data</code>. If you set <code class="monospace">format.data</code> to <code class="monospace">format.REAL32</code> or <code class="monospace">format.REAL64</code>, you have fewer options for buffer elements. With these formats, the only buffer elements available are <code class="monospace">readings</code>, statuses,  <code class="monospace">relativetimestamps</code>, and <code class="monospace">extravalues</code>. If you request a buffer element that is not permitted for the selected data format, the instrument returns <code class="monospace">9.91e37</code>.</p>
-<p class="iclbody">You can use the <span class="monospaceitalic">bufferVar</span> attributes that are listed in the following table with the print buffer command. For example, if <code class="monospace">testData</code> is the buffer, you can use <code class="monospace">testData.dates</code> attribute to print the date of each reading in the <code class="monospace">testData</code> buffer.</p>
+<p class="bodytext"> You can use the <span class="monospaceitalic">bufferVar</span> attributes that are listed in the following table with the print buffer command. For example, if <code class="monospace">testData</code> is the buffer, you can use <code class="monospace">testData.dates</code> attribute to print the date of each reading in the <code class="monospace">testData</code> buffer.</p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="tableheading">Attribute</p>
@@ -105,58 +105,76 @@
 </td>
 </tr>
 <tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.basetimestampfractional</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The fractional seconds portion of the timestamp, which indicates when the first reading was stored in the reading buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.basetimestampfractional</li><li class="tablelistbullet9pt">SMU: bufferVar.basetimestampfractional</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.basetimestampseconds</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The whole seconds portion of the timestamp, which indicates when the first reading was stored in the reading buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.basetimestampseconds</li><li class="tablelistbullet9pt">SMU: bufferVar.basetimestampseconds</li></ul></td>
+</tr>
+<tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.measurefunctions</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The measurement functions that were used to acquire a reading stored in a specified reading buffer. Refer to bufferVar.measurefunctions.</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The measurement functions that were used to acquire a reading stored in a specified reading buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.measurefunctions</li><li class="tablelistbullet9pt">SMU: bufferVar.measurefunctions</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.measureranges</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The measurement range values that were used for readings stored in a specified buffer. Refer to bufferVar.measureranges.</p>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The measurement range values that were used for readings stored in a specified buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.measureranges</li><li class="tablelistbullet9pt">SMU: bufferVar.measureranges</li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.n</p>
 </td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The number of readings in the buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.n</li><li class="tablelistbullet9pt">SMU: bufferVar.n</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.readings</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The readings stored in a specified reading buffer. Refer to bufferVar.readings.</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The readings stored in a specified reading buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.readings</li><li class="tablelistbullet9pt">SMU: bufferVar.readings</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.sourcefunctions</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source functions that were used for readings stored in a specified reading buffer. Refer to bufferVar.sourcefunctions.</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source functions that were used for readings stored in a specified reading buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.sourcefunctions</li><li class="tablelistbullet9pt">SMU: bufferVar.sourcefunctions</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.sourceoutputstates</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The states of the source output for readings stored in a specified buffer. Refer to bufferVar.sourceoutputstates.</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The states of the source output for readings stored in a specified buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.sourceoutputstates</li><li class="tablelistbullet9pt">SMU: bufferVar.sourceoutputstates</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><em class="emphasis">bufferVar</em>.sourceranges</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source range values for readings stored in the specified buffer. Refer to bufferVar.sourceranges.</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source range values for readings stored in the specified buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.sourceranges</li><li class="tablelistbullet9pt">SMU: bufferVar.sourceranges</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="monospaceitalic">bufferVar</span>.sourcevalues</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source levels that were being output when readings in the reading buffer were acquired. Refer to bufferVar.sourcevalues.</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The source levels that were being output when readings in the reading buffer were acquired. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.sourcevalues</li><li class="tablelistbullet9pt">SMU: bufferVar.sourcevalues</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="monospaceitalic">bufferVar</span>.statuses</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The status values of readings in the reading buffer. Refer to bufferVar.statuses.</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The status values of readings in the reading buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">PSU: bufferVar.statuses</li><li class="tablelistbullet9pt">SMU: bufferVar.statuses</li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="240"><p class="codetable"><span class="monospaceitalic">bufferVar</span>.timestamps</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The timestamps of readings stored in the reading buffer. Refer to bufferVar.timestamps.</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="360"><p class="tablebodytext">The timestamps of readings stored in the reading buffer. Refer to:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"> PSU: bufferVar.timestamps</li><li class="tablelistbullet9pt">SMU: bufferVar.timestamps</li></ul></td>
 </tr>
 
 </table>

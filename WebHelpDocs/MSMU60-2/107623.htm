@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('107623')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('107623')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115875.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t107623" class="heading2-icl">slot[Z].firmware.update()</h2>
-<p class="bodyzero">This function flashes a firmware image of a module installed in a slot after the image has been downloaded to the mainframe.</p>
+<p class="bodyzero">This function updates the firmware of a module after the firmware file is copied to the mainframe.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -59,21 +59,27 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This function flashes the firmware of a module connected to a slot. Send this command after the firmware image has been downloaded to the mainframe, either by opening a raw socket connection or by using an existing utility or tool to download the image, or after inserting a USB flash drive containing the image.</p>
+<p class="iclbody">This command updates the module firmware. If the update is successful, the module is also restarted.</p>
+<p class="bodytext">Before issuing this command, you need to load the firmware file onto the instrument using firmware.load(). </p>
+<p class="iclbody">To update multiple modules with the same firmware file, you can send this command multiple times with different slot numbers.</p>
+<p class="caution"><img id="f14260" src="caution_large_no_exclaim_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - CAUTION" height="17" width="79" vspace="0" hspace="0" align="bottom" border="0">Do not turn off power until the upgrade process is complete.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
-<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].firmware.update()</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">firmware.load(&quot;/usb1/module/MSMU60-2-1.0.0.x&quot;)</p>
+<p class="codetable">slot[1].firmware.update()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Flashes the firmware of the module installed in slot 1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Load the module firmware  <code class="monospace">MSMU60-2-1.0.0.x</code> file in the <code class="monospace">module</code> folder of the USB drive inserted into the front of the mainframe.</p>
+<p class="tablebodytext">Update the module in slot 1.</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
+<p class="listcommand">firmware.load()</p>
 <p class="listcommand"><a id="h107624" class="jump" title="slot[Z].firmware.verify()" href="107622.htm" target="_self">slot[Z].firmware.verify</a></p>
 
 </body>

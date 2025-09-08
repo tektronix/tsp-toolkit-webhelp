@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <meta name="Generator" content="Author-it">
 <meta name="Keywords" content="">
-<link rel="stylesheet" type="text/css" href="44.css">
+<link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
 <body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('118229')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
@@ -15,11 +15,9 @@
 <p class="bodytext"><a href="117962.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
 <p class="bodytext"><a href="117937.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
-<td width= "48">
-<p class="bodytext"><a href="javascript:expand('116608');expand('18079');highlight('118229')" onclick="loadTOC()" target="_self"><img id="f59380" src="4200a_lc_contents_button.png" class="linkedpngtemplate4200a-nocaption" alt="Contents Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
-<h3 id="t118229" class="heading3">slot[Z].status.questionable.*</h3>
+<h2 id="t118229" class="heading2-icl">slot[Z].status.questionable.*</h2>
 <p class="bodyzero">These attributes manage the questionable status register set of the status model.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
@@ -103,7 +101,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">12,544 (all bits set)</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">13,056 (all bits set)</p>
 </td>
 </tr>
 
@@ -274,10 +272,9 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B9</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].status.questionable.WRMUP</code></p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Reserved for future</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status warmup summary event register is set.</p>
-<p class="tablebodytext">Bit B9 decimal value: 512</p>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">Bit B9 decimal value: 512</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -293,7 +290,7 @@
 </td>
 <td style="border:1px solid #C0C0C0;" width="288"><p class="codetable">slot[<em class="emphasis">Z</em>].status.questionable.OTEMP</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status over temperature summary event register is&nbsp;set.</p>
+<td style="border:1px solid #C0C0C0;" width="240"><p class="tablebodytext">An enabled bit in the questionable status overtemperature summary event register is&nbsp;set.</p>
 <p class="tablebodytext">Bit B12 decimal value: 4,096</p>
 </td>
 </tr>
@@ -485,7 +482,7 @@
 </tr>
 
 </table>
-<p class="tablebodytext">Example 1</p>
+<p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
@@ -499,10 +496,11 @@
 
 </table>
 <p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">slot[1].status.questionable.enable = slot[1].status.questionable.CAL</code></p>
-<p class="codetable"><code class="monospace">status.questionable.enable = 256</code></p>
+<p class="codetable"><code class="monospace">slot[1].status.questionable.enable = 256</code></p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -513,13 +511,6 @@
 </table>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Questionable Status Registers</p>
-<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
-<tr valign="top">
-<td width= "227">
-<p class="relatedheading">See Also</p><p class="relateditem"><a href="116608.htm" target="_self">MP5000 PSU TSP commands</a></p><p class="relateditem"><a href="107189.htm" target="_self">bufferVar.appendmode</a></p><p class="relateditem"><a href="116911.htm" target="_self">bufferVar.basetimestampfractional</a></p><p class="relateditem"><a href="116913.htm" target="_self">bufferVar.basetimestampseconds</a></p><p class="relateditem"><a href="115929.htm" target="_self">bufferVar.cachemode</a></p><p class="relateditem"><a href="107191.htm" target="_self">bufferVar.capacity</a></p><p class="relateditem"><a href="107193.htm" target="_self">bufferVar.clear()</a></p><p class="relateditem"><a href="115930.htm" target="_self">bufferVar.clearcache()</a></p><p class="relateditem"><a href="107195.htm" target="_self">bufferVar.fillcount</a></p><p class="relateditem"><a href="107196.htm" target="_self">bufferVar.fillmode</a></p><p class="relateditem"><a href="116005.htm" target="_self">bufferVar.measurefunctions</a></p><p class="relateditem"><a href="116008.htm" target="_self">bufferVar.measureranges</a></p><p class="relateditem"><a href="116011.htm" target="_self">bufferVar.n</a></p><p class="relateditem"><a href="116017.htm" target="_self">bufferVar.readings</a></p><p class="relateditem"><a href="116020.htm" target="_self">bufferVar.sourcefunctions</a></p><p class="relateditem"><a href="116024.htm" target="_self">bufferVar.sourceoutputstates</a></p><p class="relateditem"><a href="116027.htm" target="_self">bufferVar.sourceranges</a></p><p class="relateditem"><a href="116030.htm" target="_self">bufferVar.sourcevalues</a></p><p class="relateditem"><a href="116034.htm" target="_self">bufferVar.statuses</a></p><p class="relateditem"><a href="116038.htm" target="_self">bufferVar.timestampresolution</a></p><p class="relateditem"><a href="116040.htm" target="_self">bufferVar.timestamps</a></p><p class="relateditem"><a href="116043.htm" target="_self">slot[Z].firmware.update()</a></p><p class="relateditem"><a href="116046.htm" target="_self">slot[Z].firmware.verify()</a></p><p class="relateditem"><a href="117422.htm" target="_self">slot[Z].license</a></p><p class="relateditem"><a href="107212.htm" target="_self">slot[Z].manufacturer</a></p><p class="relateditem"><a href="107213.htm" target="_self">slot[Z].model</a></p><p class="relateditem"><a href="114919.htm" target="_self">slot[Z].psu[X].abort()</a></p><p class="relateditem"><a href="115220.htm" target="_self">slot[Z].psu[X].configlist.create()</a></p><p class="relateditem"><a href="115224.htm" target="_self">slot[Z].psu[X].configlist.delete()</a></p><p class="relateditem"><a href="115221.htm" target="_self">slot[Z].psu[X].configlist.recall()</a></p><p class="relateditem"><a href="115227.htm" target="_self">slot[Z].psu[X].configlist.size()</a></p><p class="relateditem"><a href="115223.htm" target="_self">slot[Z].psu[X].configlist.store()</a></p><p class="relateditem"><a href="115226.htm" target="_self">slot[Z].psu[X].configlist.table()</a></p><p class="relateditem"><a href="107216.htm" target="_self">slot[Z].psu[X].defbufferY</a></p><p class="relateditem"><a href="107217.htm" target="_self">slot[Z].psu[X].makebuffer()</a></p><p class="relateditem"><a href="107218.htm" target="_self">slot[Z].psu[X].measure.aperture</a></p><p class="relateditem"><a href="107232.htm" target="_self">slot[Z].psu[X].measure.count</a></p><p class="relateditem"><a href="107220.htm" target="_self">slot[Z].psu[X].measure.nplc</a></p><p class="relateditem"><a href="107227.htm" target="_self">slot[Z].psu[X].measure.overlappedY()</a></p><p class="relateditem"><a href="107228.htm" target="_self">slot[Z].psu[X].measure.rangeY</a></p><p class="relateditem"><a href="107825.htm" target="_self">slot[Z].psu[X].measure.rate</a></p><p class="relateditem"><a href="107229.htm" target="_self">slot[Z].psu[X].measure.rel.enableY</a></p><p class="relateditem"><a href="107230.htm" target="_self">slot[Z].psu[X].measure.rel.levelY</a></p><p class="relateditem"><a href="107627.htm" target="_self">slot[Z].psu[X].measure.tempcomp</a></p><p class="relateditem"><a href="107231.htm" target="_self">slot[Z].psu[X].measure.Y()</a></p><p class="relateditem"><a href="107235.htm" target="_self">slot[Z].psu[X].overlapped</a></p><p class="relateditem"><a href="107236.htm" target="_self">slot[Z].psu[X].reset()</a></p><p class="relateditem"><a href="107233.htm" target="_self">slot[Z].psu[X].source.constantcurrent</a></p><p class="relateditem"><a href="107237.htm" target="_self">slot[Z].psu[X].source.levelv</a></p><p class="relateditem"><a href="107238.htm" target="_self">slot[Z].psu[X].source.limiti</a></p><p class="relateditem"><a href="107239.htm" target="_self">slot[Z].psu[X].source.output</a></p><p class="relateditem"><a href="109662.htm" target="_self">slot[Z].psu[X].source.protect.enablei</a></p><p class="relateditem"><a href="109663.htm" target="_self">slot[Z].psu[X].source.protect.enablev</a></p><p class="relateditem"><a href="107628.htm" target="_self">slot[Z].psu[X].source.protect.leveli</a></p><p class="relateditem"><a href="107833.htm" target="_self">slot[Z].psu[X].source.protect.levelv</a></p><p class="relateditem"><a href="107828.htm" target="_self">slot[Z].psu[X].source.protect.trippedi</a></p><p class="relateditem"><a href="107829.htm" target="_self">slot[Z].psu[X].source.protect.trippedv</a></p><p class="relateditem"><a href="107240.htm" target="_self">slot[Z].psu[X].source.rangev</a></p><p class="relateditem"><a href="116988.htm" target="_self">slot[Z].psu[X].source.slewratev</a></p><p class="relateditem"><a href="115818.htm" target="_self">slot[Z].psu[X].trigger.measure.Y()</a></p><p class="relateditem"><a href="116450.htm" target="_self">slot[Z].psu[X].trigger.source.linearY()</a></p><p class="relateditem"><a href="115833.htm" target="_self">slot[Z].psu[X].trigger.source.listY()</a></p><p class="relateditem"><a href="115834.htm" target="_self">slot[Z].psu[X].trigger.source.logY()</a></p><p class="relateditem"><a href="118008.htm" target="_self">slot[Z].psu[X].waitcomplete()</a></p><p class="relateditem"><a href="107215.htm" target="_self">slot[Z].revision</a></p><p class="relateditem"><a href="107214.htm" target="_self">slot[Z].serialno</a></p><p class="relateditem"><a href="117357.htm" target="_self">slot[Z].status</a></p><p class="relateditem"><a href="117935.htm" target="_self">slot[Z].status.measurement.*</a></p><p class="relateditem"><a href="117915.htm" target="_self">slot[Z].status.measurement.current_limit.*</a></p><p class="relateditem"><a href="117933.htm" target="_self">slot[Z].status.measurement.instrument.*</a></p><p class="relateditem"><a href="117930.htm" target="_self">slot[Z].status.measurement.instrument.psu[X].*</a></p><p class="relateditem"><a href="117919.htm" target="_self">slot[Z].status.measurement.protection.*</a></p><p class="relateditem"><a href="117920.htm" target="_self">slot[Z].status.measurement.reading_overflow.*</a></p><p class="relateditem"><a href="117969.htm" target="_self">slot[Z].status.operation.*</a></p><p class="relateditem"><a href="117960.htm" target="_self">slot[Z].status.operation.calibrating.*</a></p><p class="relateditem"><a href="117972.htm" target="_self">slot[Z].status.operation.instrument.*</a></p><p class="relateditem"><a href="117965.htm" target="_self">slot[Z].status.operation.instrument.psu[X].*</a></p><p class="relateditem"><a href="117961.htm" target="_self">slot[Z].status.operation.measuring.*</a></p><p class="relateditem"><a href="117962.htm" target="_self">slot[Z].status.operation.sweeping.*</a></p><p class="relateditem"><a href="117937.htm" target="_self">slot[Z].status.questionable.calibration.*</a></p><p class="relateditem"><a href="117944.htm" target="_self">slot[Z].status.questionable.instrument.*</a></p><p class="relateditem"><a href="117942.htm" target="_self">slot[Z].status.questionable.instrument.psu[X].*</a></p><p class="relateditem"><a href="117938.htm" target="_self">slot[Z].status.questionable.over_temperature.*</a></p><p class="relateditem"><a href="117995.htm" target="_self">slot[Z].status.reset()</a></p></td>
-</tr>
-</table>
-
 
 </body>
 </html>

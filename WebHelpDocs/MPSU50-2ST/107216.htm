@@ -47,14 +47,14 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">bufferVar =</span> slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em></p>
-<p class="iclcode"><em class="emphasis">bufferVar</em> = slot[<em class="emphasis">Z</em>].psu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em>[<em class="emphasis">N</em>]</p>
+<p class="iclcode"><em class="emphasis">bufferContents</em> = slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em></p>
+<p class="iclcode"><em class="emphasis">bufferContents</em> = slot[<em class="emphasis">Z</em>].psu[<span class="monospaceitalic">X</span>].defbuffer<em class="emphasis">Y</em>[<em class="emphasis">N</em>]</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><em class="emphasis">bufferContents</em></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The contents of the default reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The readings in the default reading buffer</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -84,22 +84,26 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">Each PSU channel contains two default reading buffers: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer1</code> and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu.debuffer2</code>.</p>
+<p class="iclbody">Each PSU channel contains two default reading buffers: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer1</code> and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu</code>.<code class="monospace">[</code><span class="monospaceitalic">X</span><code class="monospace">].defbuffer2</code>.</p>
+<p class="iclbody">All routines that return measurements can also store them in either reading buffer. Overlapped measurements are always stored in a reading buffer. Synchronous measurements return either a single-point measurement or are stored in a reading buffer if they are passed to the measurement command.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[2].measure.v(slot[1].psu[2].defbuffer1)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[2].measure.count = 10</p>
+<p class="codetable">slot[1].psu[2].measure.v(slot[1].psu[2].defbuffer1)</p>
+<p class="codetable">printbuffer(1, slot[1].psu[2].defbuffer1.n, slot[1].psu[2].defbuffer1.readings)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Stores voltage measurements in <code class="monospace">defbuffer1</code> of channel 2 of the module installed in slot 1.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Stores 10 voltage measurements in <code class="monospace">defbuffer1</code> of channel 2 of the module installed in slot 1 and returns the&nbsp;readings. The use of <code class="monospace">defbuffer1.n (</code><span class="monospaceitalic">bufferVar</span><code class="monospace">.n)</code> indicates that the instrument should output all readings in the reading buffer. Example output:</p>
+<p class="codetable">-7.70786e-04, -6.81580e-04, -7.87006e-04, -7.70786e-04, -7.46457e-04, -7.70786e-04, -6.81580e-04, -7.95115e-04, -7.70786e-04, -7.78896e-04</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Also see</p>
-<p class="listcommand">None</p>
+<p class="listcommand">Reading buffers</p>
 
 </body>
 </html>

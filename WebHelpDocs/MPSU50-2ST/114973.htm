@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114973')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114973')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115827.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t114973" class="heading2-icl">slot[Z].trigger.model.addblock.source.action.step()</h2>
-<p class="bodyzero">This function defines a trigger model block that advances the source output to the index in the list of sweep values for the specified channel.</p>
+<p class="bodyzero">This function defines a trigger model block that advances the index in the list of sweep values for the specified channel and then sets the source value to the value at that index.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -48,6 +48,7 @@
 </table>
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.action.step(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, c</code><span class="monospaceitalic">hannel</span><code class="monospace">)</code></p>
+<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.action.step(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;,</code><code class="monospace"></code><span class="monospaceitalic"> channelList</span><code class="monospace">)</code></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -65,7 +66,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger block defining where to branch</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger block defining where to branch; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -74,38 +75,58 @@
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Channel number</p>
 </td>
 </tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Table of channels to take measurements on; for example:</p>
+<p class="tablebodytext"><code class="monospace">{channel1, channel2,...}</code>. See <strong class="specialbold">Details</strong>.</p>
+</td>
+</tr>
 
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">To create pulses that go to the voltage in the sweep array and then to the bias voltage, you can use this command with the <a id="h116806" class="jump" title="slot[Z].trigger.model.addblock.source.action.bias()" href="115504.htm" target="_self">slot[Z].trigger.model.addblock.source.action.bias()</a> command.</p>
-<p class="bodytext">The list of sweep values is created by one of the following commands:</p>
-<ul class="listbullet"><li class="listbullet"><code class="monospace">smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">pxu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span></li></ul><p class="iclsubheading">Example</p>
+<p class="iclbody">This command advances the source output for the specified channel to the next value in the pre-defined sweep list. The sweep list must be created before running the trigger model using one of the supported sweep configuration commands.</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span></li></ul><p class="iclbody">Each time the block is executed, the sweep index increases by one, updating the output to the corresponding sweep value. Once the end of the sweep list is reached, it starts again at the beginning.</p>
+<p class="bodytext">You can specify one or more channels for the source action to run on using <span class="monospaceitalic">channelList</span>. All source actions run on all specified channels in parallel, plus or minus 500 ns. The trigger model then waits for all measurements to complete before continuing.</p>
+<p class="bodytext">All specified channels must be on the module running the trigger model.</p>
+<p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].smu[1].trigger.source.linearv(0,5,6)</p>
-<p class="codetable">slot[1].smu[1].source.output = 1</p>
-<p class="codetable">TM = slot[1].trigger.model</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep.</p>
+<p class="codetable">slot[1].smu[1].trigger.source.linearv(0, 5, 10)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">TM.delete(&quot;TM1&quot;)</p>
-<p class="codetable">TM.create(&quot;TM1&quot;)</p>
-<p class="codetable">--Go to the next step in the sweep.</p>
-<p class="codetable">TM.addblock.source.action.step(&quot;TM1&quot;, &quot;sourceActionStep&quot;, CHANNEL_NUM)</p>
-<p class="codetable">--Add a delay before executing the next step in the sweep.</p>
-<p class="codetable">TM.addblock.delay.constant(&quot;TM1&quot;, &quot;delay50ms&quot;, 0.05)</p>
-<p class="codetable">TM.addblock.branch.counter(&quot;TM1&quot;,&quot;branchCounter&quot;, &quot;sourceActionStep&quot;, 6)</p>
-<p class="codetable">TM.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;myTM&quot;, &quot;step&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.bias(&quot;myTM&quot;, &quot;&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;myTM&quot;, &quot;&quot;, &quot;step&quot;, 10)</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">waitcomplete() print(&quot;Done&quot;)</p>
-<p class="codetable">slot[1].smu[1].source.output = 0</p>
+<p class="codetable">-- Turn on the output before the trigger model is initiated.</p>
+<p class="codetable">slot[1].smu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].smu[1].source.output = slot[1].smu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn off the output.</p>
+<p class="codetable">slot[1].smu[1].source.output = slot[1].smu[1].OFF</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that increases from 0 V to 5 V in 1 V steps.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that increases from 0 V to 5 V with 5 steps at 1 V for each step.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133342" src="mp5000_triggermodel_sourceactionstep_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_SourceActionStep.png" height="472" width="136" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand"><a id="h116806_2" class="jump" title="slot[Z].trigger.model.addblock.source.action.bias()" href="115504.htm" target="_self">slot[Z].trigger.model.addblock.source.action.bias()</a></p>
 <p class="listcommand"><a id="h116898" class="jump" title="slot[Z].trigger.model.addblock.source.action.skip()" href="115827.htm" target="_self">slot[Z].trigger.model.addblock.source.action.skip()</a></p>

@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title> trigger.detector[N].wait </title>
+<title> trigger.detector[N].wait() </title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <meta name="Generator" content="Author-it">
 <meta name="Keywords" content="">
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116550')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('116550')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="116549.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -17,7 +17,7 @@
 <p class="bodytext"><a href="116546.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
-<h2 id="t116550" class="heading2-icl">trigger.detector[N].wait</h2>
+<h2 id="t116550" class="heading2-icl">trigger.detector[N].wait()</h2>
 <p class="bodyzero">This command waits for an event to be detected by the detector.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
@@ -53,8 +53,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">triggered</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Trigger detection indicator</p>
-</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Trigger event detection indicator:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Not detected: <code class="monospace">false</code></li><li class="tablelistbullet9pt">Detected: <code class="monospace">true </code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">N</span></p>
@@ -71,7 +71,7 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">If one or more trigger events were detected since the last time <code class="monospace">trigger.detector[N].wait()</code> or<code class="monospace"> trigger.detector[N].clear()</code> was called, this function immediately returns <code class="monospace">true</code>. Otherwise, it will wait for up to the number of sections specified in <span class="monospaceitalic">timeout</span> for the event to occur. It will return <code class="monospace">true</code> if the event occurs before the <span class="monospaceitalic">timeout</span> value and false if the <code class="monospace">event</code> does not occur before.</p>
+<p class="iclbody">If one or more trigger events were detected since the last time <code class="monospace">trigger.detector[N].wait()</code> or<code class="monospace"> trigger.detector[N].clear()</code> was called, this function immediately returns <code class="monospace">true</code>. Otherwise, it will wait for up to the number of sections specified in <span class="monospaceitalic">timeout</span> for the event to occur. It returns <code class="monospace">true</code> if the event occurs and false if the <code class="monospace">event</code> does not occur before the <span class="monospaceitalic">timeout</span> value.</p>
 <p class="iclbody">After waiting for a trigger event with this function, the event detector is automatically reset and rearmed. This is true regardless of the number of events detected.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>

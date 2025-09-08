@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116606');expand('18079');highlight('116261')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('116261')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="116906.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -68,7 +68,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.autoconnect</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE </p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -92,7 +92,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">lan.config.dns.hostname</p>
 </td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="tablebodytext"><code class="monospace">&quot;MP5103-</code><span class="monospaceitalic">xxxxxxx</span><code class="monospace">&quot; </code>(where <span class="monospaceitalic">xxxxxxx</span> represents the instrument serial number)</p>
+<td style="border:1px solid #D3D3D3;" width="346"><p class="tablebodytext"><code class="monospace">&quot;MP5103-</code><span class="monospaceitalic">xxxxxxx</span><code class="monospace">&quot; </code>(where <span class="monospaceitalic">xxxxxxx</span> represents the instrument serial number) </p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -171,6 +171,7 @@
 <td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">localnode.description</p>
 </td>
 <td style="border:1px solid #D3D3D3;" width="346"><p class="tablebodytext"><code class="monospace">&quot;MP5103-</code><span class="monospaceitalic">xxxxxxx</span><code class="monospace">&quot;</code> (where <span class="monospaceitalic">xxxxxxx</span> represents the instrument serial number)</p>
+<p class="tablebodytext">&nbsp;</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -179,18 +180,12 @@
 <td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">localnode.ENABLE</p>
 </td>
 </tr>
-<tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="254"><p class="codetable">user.password.change()</p>
-</td>
-<td style="border:1px solid #D3D3D3;" width="346"><p class="codetable">&quot;admin&quot;</p>
-</td>
-</tr>
 
 </table>
 <p class="iclbody">This command is run when <code class="monospace">lan.reset()</code> is sent.</p>
 <p class="iclbody">If you are using TSP Toolkit, set <code class="monospace">lan.rawsocket.access</code> and <code class="monospace">lan.telnet.access</code> to <code class="monospace">localnode.ENABLE</code>.</p>
 <p class="iclbody">To apply the default settings, run <code class="monospace">lan.applysettings()</code> after <code class="monospace">lan.restoredefaults()</code>.</p>
-<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">This function resets the access to require a password for communications over LAN for <code class="monospace">lan.hislip.access</code>, <code class="monospace">lan.rawsocket.access</code>, and <code class="monospace">lan.telnet.access</code>. The <code class="monospace">lan.restoredefaults()</code> function does not reset the LAN password. The <code class="monospace">user.password.change()</code> attribute controls the LAN password, which can be reset with <code class="monospace">lan.reset()</code>.</p>
+<p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">This function resets the access to require a password for communications over LAN for <code class="monospace">lan.hislip.access</code>, <code class="monospace">lan.rawsocket.access</code>, and <code class="monospace">lan.telnet.access</code>. The <code class="monospace">lan.restoredefaults()</code> function does not reset the LAN password. The <code class="monospace">user.password.change()</code> attribute controls the LAN password, which can be reset with <code class="monospace">lan.reset()</code>. </p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">

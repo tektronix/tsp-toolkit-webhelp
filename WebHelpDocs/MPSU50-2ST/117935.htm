@@ -101,7 +101,7 @@
 </td>
 <td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">Not saved</p>
 </td>
-<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">6,242 (all bits set)</p>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">6,539 (all bits set)</p>
 </td>
 </tr>
 
@@ -133,7 +133,7 @@
 </table>
 <p class="iclsubheading">Details</p>
 <p class="iclbody">These attributes read or write the Measurement Event registers.</p>
-<p class="iclbody">Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15.For example, assume value 257 is returned for the enable register. The binary equivalent is 0000&nbsp;0001&nbsp;0000&nbsp;0001. This value indicates that bit B0 (VLMT) and bit B8 (BAV) are&nbsp;set.</p>
+<p class="iclbody">Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15.</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="576" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -253,7 +253,8 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B0</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Reserved for future use.</p>
+<p class="tablebodytext">Bit B0 decimal value: 1</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -267,21 +268,21 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B2</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used.</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B3</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.PROT</p>
-<p class="tablebodytext">Set bit indicates that </p>
+<p class="tablebodytext">Set bit indicates that current or voltage protection was tripped.</p>
 <p class="tablebodytext">Bit B3 decimal value: 8</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B2 to B6</p>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B4 to B6</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used.</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -293,7 +294,14 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B8 to B10</p>
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B8</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Reserved for future use.</p>
+<p class="tablebodytext">Bit B8 decimal value: 256</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">B9 to B10</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="552"><p class="tablebodytext">Not used</p>
 </td>
@@ -311,7 +319,7 @@
 </td>
 <td style="border:1px solid #C0C0C0;" width="552"><p class="codetable">slot[<em class="emphasis">Z</em>].status.measurement.INST</p>
 <p class="tablebodytext">Set bit indicates that a bit in the measurement instrument summary register is set.</p>
-<p class="tablebodytext">Bit B12 decimal value: 4,056</p>
+<p class="tablebodytext">Bit B12 decimal value: 4,096</p>
 </td>
 </tr>
 <tr align="left" valign="top">

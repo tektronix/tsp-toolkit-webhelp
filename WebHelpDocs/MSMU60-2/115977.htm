@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('115977')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115977')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115970.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t115977" class="heading2-icl">bufferVar.fillmode</h2>
-<p class="bodyzero">This attribute determines if old data is overwritten when the reading buffer is filled.</p>
+<p class="bodyzero">This attribute sets the reading buffer fill mode.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
 <td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -54,30 +54,30 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">fillMode</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer fill mode, where <span class="monospaceitalic">X</span> is the channel of the module that contains the buffer; set to one of the following:</p>
-<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Do not overwrite old data: <code class="monospace">0</code></li><li class="tablelistbullet9pt">New readings restart at index 1 after acquiring reading at index <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillcount</code>: <code class="monospace">1</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer fill mode; set to one of the following:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Fill once (do not overwrite old data): <code class="monospace">0</code></li><li class="tablelistbullet9pt">Fill continuously; new readings restart at index 1 after acquiring reading at index <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillcount</code>: <code class="monospace">1</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a user-defined buffer or a default reading buffer</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The reading buffer; can be a user-defined or default reading buffer</p>
 </td>
 </tr>
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">When this attribute is set to <code class="monospace">0</code>,  the reading buffer does not overwrite readings. If the buffer fills, no more readings are made.</p>
-<p class="iclbody">When this attribute is set to <code class="monospace">1</code>, new readings are appended to existing readings until the buffer holds <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillcount</code> elements. The next reading overwrites the reading at index 1, the following reading overwrites the reading at index 2, and so on.</p>
+<p class="iclbody">When this attribute is set to fill once (<code class="monospace">0</code>),  the reading buffer does not overwrite readings. If the requested measurement operation would exceed the size of the buffer, no measurements are made and an error is returned.</p>
+<p class="iclbody">When this attribute is set to fill continuously (<code class="monospace">1</code>) and append mode is set on, new readings are added sequentially until the buffer holds <span class="monospaceitalic">bufferVar</span><code class="monospace">.fillcount</code> elements. The next reading overwrites the reading at index 1, the following reading overwrites the reading at index 2, and so on.</p>
 <p class="iclsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
 <td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">buffer1 = slot[1].smu[1].makebuffer(100)</p>
-<p class="codetable">buffer1.fillmode = 0</p>
+<p class="codetable">buffer1.fillmode = 1</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Sets the reading mode of the buffer for channel 1 of the module installed in slot 1 so that it does not overwrite readings.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Enable window fill mode for <code class="monospace">buffer1</code>. The readings will fill the buffer until the fillcount index and then wrap around.</p>
 </td>
 </tr>
 
@@ -96,6 +96,7 @@
 
 </table>
 <p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h116772" class="jump" title="bufferVar.appendmode" href="115943.htm" target="_self">bufferVar.appendmode</a></p>
 <p class="listcommand"><a id="h116777" class="jump" title="bufferVar.fillcount" href="115970.htm" target="_self">bufferVar.fillcount</a></p>
 
 </body>

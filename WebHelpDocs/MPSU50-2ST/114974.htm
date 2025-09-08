@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('132065');expand('18079');highlight('114974')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('114974')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="114973.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -48,6 +48,7 @@
 </table>
 <p class="iclsubheading">Usage</p>
 <p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.output(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">channel</span><code class="monospace">, </code><span class="monospaceitalic">state</span><code class="monospace">)</code></p>
+<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.output(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><span class="monospaceitalic">channelList</span><code class="monospace">}</code>, <span class="monospaceitalic">state</span><code class="monospace">)</code></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -59,13 +60,13 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger model to which the block is added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">blockName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger block to be added</p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Name of the trigger block to be added; an empty string is a valid block name</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -75,9 +76,17 @@
 </td>
 </tr>
 <tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Table of channels to make measurements on; for example:</p>
+<p class="tablebodytext"><code class="monospace">{channel1, channel2,...}</code>; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+<tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">state</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Turn the source off: <code class="monospace">slot[Z].smu.OFF</code></p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext"><strong class="specialbold">PSUs</strong><br>Turn the source off: <code class="monospace">slot[Z].psu.OFF</code></p>
+<p class="tablebodytext">Turn the source on: <code class="monospace">slot[Z].psu.ON</code><br><br><strong class="specialbold">SMUs</strong><br>Turn the source off: <code class="monospace">slot[Z].smu.OFF</code></p>
 <p class="tablebodytext">Turn the source on: <code class="monospace">slot[Z].smu.ON</code></p>
 </td>
 </tr>
@@ -86,28 +95,37 @@
 <p class="iclsubheading">Details</p>
 <p class="iclbody">The source output block determines if the output source is turned on or off when the trigger model reaches this block. This block does not determine the settings of the output source, such as the output voltage level. The source settings are determined by either the present settings of the instrument or by a configuration list.</p>
 <p class="iclbody">Although pulses can be created by turning the output on and off, the instrument typically performs multiple actions when turning the output on and off. For more precise timing, use the <a id="h116807" class="jump" title="slot[Z].trigger.model.addblock.source.action.step()" href="114973.htm" target="_self">slot[Z].trigger.model.addblock.source.action.step()</a> and <a id="h116806" class="jump" title="slot[Z].trigger.model.addblock.source.action.bias()" href="115504.htm" target="_self">slot[Z].trigger.model.addblock.source.action.bias()</a> blocks to create pulses at the output.</p>
+<p class="bodytext">You can specify one or more channels for the source action to run on using <span class="monospaceitalic">channelList</span>. All source actions run on all specified channels in parallel, plus or minus 500 ns. The trigger model then waits for all measurements to complete before continuing.</p>
+<p class="bodytext">All specified channels must be on the module running the trigger model.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">slot[1].smu[1].source.levelv = 4.2</p>
-<p class="codetable">slot[1].trigger.model.delete(&quot;TM1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;sourceoutput1&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;&quot;, 0.01)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 0)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;&quot;, 0.005)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;, &quot;branchcounter5&quot;, &quot;sourceoutput1&quot;, 10)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the source level.</p>
+<p class="codetable">slot[1].psu[1].source.levelv = 5.0</p>
 <p class="codetable">&nbsp;</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
+<p class="codetable">-- Create the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;myTM&quot;, &quot;&quot;, 1, slot[1].psu[1].ON)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;myTM&quot;, &quot;&quot;, 1, slot[1].psu[1].OFF)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model.</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete.</p>
+<p class="codetable">waitcomplete()</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model that uses <code class="monospace">source.output</code> blocks to create 10 pulses of 4.2 V that are approximately 10 ms wide with 5 ms between each pulse.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates how to use the source.output block in a trigger model to turn the output on and off with a delay.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133343" src="mp5000_triggermodel_sourceoutput_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_SourceOutput.png" height="444" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">Source output block</p>
 

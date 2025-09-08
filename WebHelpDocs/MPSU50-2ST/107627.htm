@@ -37,9 +37,9 @@
 </td>
 <td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Instrument reset<br>PSU reset</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Power cycle<br>Mainframe reset<br>Module reset<br>Configuration list recall<br>Calibration</p>
 </td>
-<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration list store</p>
 </td>
 <td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">slot[<em class="emphasis">Z</em>].psu[<em class="emphasis">X</em>].ENABLE</p>
 </td>
@@ -47,12 +47,12 @@
 
 </table>
 <p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">tempcomp</span> = slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].measure.<span class="monospaceitalic">tempcomp</span></p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].measure.<span class="monospaceitalic">tempcomp</span> = tempcomp</p>
+<p class="iclcode"><span class="monospaceitalic">status</span> = slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].measure.tempcomp</p>
+<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].measure.tempcomp = <em class="emphasis">status</em></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">tempcomp</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">status</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Temperature compensation control setting:</p>
 <ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Disable: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].DISABLE</code></li><li class="tablelistbullet9pt">Enable: <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].ENABLE</code></li></ul></td>
@@ -72,17 +72,18 @@
 
 </table>
 <p class="iclsubheading">Details</p>
-<p class="iclbody">This attribute enables or disables temperature compensation for current measurements. It does not affect voltage measurements. Enabling temperature compensation reduces the measure rate for current measurements because the analog-to-digital converter performs an additional temperature measurement.</p>
+<p class="iclbody">Temperature compensation improves accuracy for current measurements by accounting for the temperature coefficient of the current measure&nbsp;circuitry.</p>
+<p class="iclbody">When temperature compensation is enabled, the measure rate for current measurements is reduced because the analog-to-digital converter performs an additional temperature measurement. This attribute does not affect voltage measurements or current source accuracy. </p>
 <p class="note"><img id="f14261" src="notesmall_lr.png" class="linkedepsandpngtemplate" alt="VARIABLE - NOTE" height="17" width="41" vspace="0" hspace="0" align="bottom" border="0">This setting must be disabled when making measurements for current calibration.</p>
 <p class="iclsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[2].measure.tempcomp = slot[1].psu[2].ENABLE</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[2].measure.tempcomp = slot[1].psu[2].DISABLE</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Enables temperature compensation for channel 2 of the module installed in slot 1.</p>
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Disables temperature compensation for channel 2 of the module installed in slot 1.</p>
 </td>
 </tr>
 

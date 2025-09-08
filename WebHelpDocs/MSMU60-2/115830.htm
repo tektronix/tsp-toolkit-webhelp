@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116607');expand('18079');highlight('115830')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115830')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115829.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -109,32 +109,18 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">SmuCh1 = slot[1].smu[1]</p>
-<p class="codetable">&nbsp;</p>
-<p class="codetable">--- Set the logarithmic sweep starting at 1 V rising to 5 V over 5 steps. ---</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">--- Configure the sweep. ---</p>
 <p class="codetable">slot[1].smu[1].trigger.source.logv(1, 5, 6)</p>
-<p class="codetable">&nbsp;</p>
-<p class="codetable">--- Delete old trigger model instance before creating new one. ---</p>
-<p class="codetable">slot[1].trigger.model.delete(&quot;TM1&quot;)</p>
-<p class="codetable">slot[1].trigger.model.create(&quot;TM1&quot;)</p>
-<p class="codetable">&nbsp;</p>
-<p class="codetable">--- Loop 6 times, stepping the voltage from 1 V to 5 V for 5 steps. Branch to &quot;SourceActionStep&quot;. ---</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;TM1&quot;, &quot;SourceActionStep&quot;, 1)</p>
-<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;TM1&quot;, &quot;&quot;, 0.005)</p>
-<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;TM1&quot;, &quot;BranchCounter&quot;, &quot;SourceActionStep&quot;, 6)</p>
-<p class="codetable">slot[1].trigger.model.addblock.source.output(&quot;TM1&quot;, &quot;&quot;, 1, 0)</p>
-<p class="codetable">&nbsp;</p>
-<p class="codetable">--- Execute the trigger model ---</p>
-<p class="codetable">slot[1].trigger.model.initiate(&quot;TM1&quot;)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example sets up a trigger model to execute a logarithmic sweep.</p>
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">Configure a six-point logarithmic sweep from 1 V to 5 V on channel 1 in slot 1.</p>
 </td>
 </tr>
 
 </table>
+<p class="iclsubheading">Trigger model diagram</p>
+<p class="magicfigurecenter"><img id="f133351" src="mp5000_triggermodel_triggersourcelogy_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_TriggerSourceLogY.png" height="263" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
 <p class="iclsubheading">Also see</p>
 <p class="listcommand">slot[Z].trigger.model.addblock.source.action.bias()</p>
 <p class="listcommand">slot[Z].trigger.model.addblock.source.action.set()</p>
