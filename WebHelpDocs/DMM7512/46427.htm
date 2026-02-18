@@ -1,0 +1,165 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> buffer.write.format() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25641.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="46428.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t46427" class="heading2-icl">buffer.write.format()</h2>
+<p class="bodyzero">This function sets the units and number of digits of the readings that are written into the reading buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">buffer.write.format(<em class="emphasis">bufferVar</em>, <em class="emphasis">units</em>, <em class="emphasis">displayDigits</em>)</p>
+<p class="iclcode">buffer.write.format(<em class="emphasis">bufferVar</em>, <em class="emphasis">units</em>, <em class="emphasis">displayDigits, extraUnits)</em></p>
+<p class="iclcode">buffer.write.format(<em class="emphasis">bufferVar</em>, <em class="emphasis">units</em>, <em class="emphasis">displayDigits, extraUnits, extraDigits</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" colspan="2" width="480"><p class="tablebodytext">The name of the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="codetable"><span class="monospaceitalic">units</span></p>
+</td>
+<td style="border-left:1px solid #E0E0E0;border-top:1px solid #E0E0E0;border-bottom:1px solid #E0E0E0;" width="237"><p class="tablebodytext">The units for the first measurement in the buffer index: </p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_AMP</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_AMP_AC</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_CELSIUS</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_CUSTOM1</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_CUSTOM2</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_CUSTOM3</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_DAC</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_DBM</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_DECIBEL</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_DIO</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_FAHRENHEIT</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_FARAD</code></li></ul></td>
+<td style="border-right:1px solid #E0E0E0;border-top:1px solid #E0E0E0;border-bottom:1px solid #E0E0E0;" width="243"><p class="tablebodytext">&nbsp;</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_HERTZ</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_KELVIN</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_NONE</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_OHM</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_PERCENT</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_RATIO</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_RECIPROCAL</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_SECOND</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_TOT</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_VOLT</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_VOLT_AC</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_WATT</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.UNIT_X</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="codetable"><em class="emphasis">displayDigits</em></p>
+</td>
+<td style="border:1px solid #E0E0E0;" colspan="2" width="480"><p class="tablebodytext">The number of digits to use for the first measurement:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><code class="monospace">buffer.DIGITS_3_5</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.DIGITS_4_5</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.DIGITS_5_5</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.DIGITS_6_5</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.DIGITS_7_5</code></li><li class="tablelistbullet9pt"><code class="monospace">buffer.DIGITS_8_5</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="codetable"><span class="monospaceitalic">extraUnits</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" colspan="2" width="480"><p class="tablebodytext">The units for the second measurement in the buffer index; the selections are the same as <span class="monospaceitalic">units</span> (only valid for buffer style <code class="monospace">WRITABLE_FULL</code>); if not specified, uses the value for <span class="monospaceitalic">units</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="120"><p class="codetable"><span class="monospaceitalic">extraDigits</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" colspan="2" width="480"><p class="tablebodytext">The number of digits to use for the second measurement; the selections are the same as <span class="monospaceitalic">displayDigits</span> (only valid for buffer style <code class="monospace">WRITABLE_FULL</code>); if not specified, uses the value for <span class="monospaceitalic">displayDigits</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command is valid when the buffer style is writable or full writable. When the buffer style is set to full writable, you can include an extra value.</p>
+<p class="iclbody">The format defines the units and the number of digits that are reported for the data. This command affects how the data is shown in the reading buffer and what is shown on the front-panel Home, Histogram, Reading Table, and Graph screens.</p>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">extBuffer = buffer.make(100, buffer.STYLE_WRITABLE)</p>
+<p class="codetable">buffer.write.format(extBuffer, buffer.UNIT_WATT, buffer.DIGITS_3_5)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 1)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 2)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 3)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 4)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 5)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 6)</p>
+<p class="codetable">printbuffer(1, 6, extBuffer.readings, extBuffer.units)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Creates a 100-point reading buffer named <code class="monospace">extBuffer</code>. Style is writable.</p>
+<p class="tablebodytext">Set the data format to show units of watts with 3½ digit resolution.</p>
+<p class="tablebodytext">Write 6 pieces of data into the buffer.</p>
+<p class="tablebodytext">Print the buffer, including the readings and units.</p>
+<p class="tablebodytext">Read the buffer.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1.0000000000e+00, Watt DC, 2.0000000000e+00, Watt DC, 3.0000000000e+00, Watt DC, 4.0000000000e+00, Watt DC, 5.0000000000e+00, Watt DC, 6.0000000000e+00, Watt DC</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">extBuffer = buffer.make(100, buffer.STYLE_WRITABLE_FULL)</p>
+<p class="codetable">buffer.write.format(extBuffer, buffer.UNIT_WATT, buffer.DIGITS_3_5,<br>   buffer.UNIT_WATT, buffer.DIGITS_3_5)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 1, 7)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 2, 8)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 3, 9)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 4, 10)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 5, 11)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 6, 12)</p>
+<p class="codetable">printbuffer(1, 6, extBuffer.readings, extBuffer.units, extBuffer.extravalues,<br>   extBuffer.units)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Creates a 100-point reading buffer named <code class="monospace">extBuffer</code>. Style is full writable.</p>
+<p class="tablebodytext">Set the data format to show units of watts with 3½ digit resolution for the first value and for the second value in the buffer index.</p>
+<p class="tablebodytext">Write 12 pieces of data into the buffer.</p>
+<p class="tablebodytext">Print the buffer, including the readings and units.</p>
+<p class="tablebodytext">Read the buffer.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1, Watt DC, 7, Watt DC, 2, Watt DC, 8, Watt DC, 3, Watt DC, 9, Watt DC, 4, Watt DC, 10, Watt DC, 5, Watt DC, 11, Watt DC, 6, Watt DC, 12, Watt DC</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h76403" class="jump" title="buffer.unit()" href="76401.htm" target="_self">buffer.unit()</a></p>
+<p class="listcommand"><a id="h46433" class="jump" title="buffer.write.reading()" href="46428.htm" target="_self">buffer.write.reading()</a></p>
+
+
+<input id="topicId" type="hidden" value="46427" />
+<input id="topicDescription" type="hidden" value="buffer.write.format()" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2019 7:02:19 AM" />
+</body>
+</html>

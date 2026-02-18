@@ -1,0 +1,89 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Using Test Script Builder (TSB) </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="24700.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="17049.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t407" class="heading4">Using Test Script Builder (TSB)</h4>
+<p class="bodytext">Keithley Instruments Test Script Builder (TSB) is a software tool that simplifies building test scripts. You can use TSB to perform the following operations: </p>
+<ul class="listbullet"><li class="listbullet">Send remote commands and Lua statements </li><li class="listbullet">Receive responses (data) from commands and scripts</li><li class="listbullet">Upgrade instrument firmware</li><li class="listbullet">Create, manage, and run user scripts</li><li class="listbullet">Debug scripts</li><li class="listbullet">Import factory scripts to view or edit and convert to user scripts</li></ul><p class="bodytext">The Keithley Instruments Test Script Processor (TSP<sup class="superscript">&reg;</sup>) scripting engine is a Lua interpreter. In TSP-enabled instruments, the Lua programming language has been extended with Keithley-specific instrument control commands. For more information about using the Lua scripting language with Keithley TSP-enabled instruments, refer to the <a id="h16712" class="jump" title="Fundamentals of programming for TSP" href="33307.htm" target="_self">Fundamentals of programming for TSP</a>.</p>
+<p class="bodytext">Keithley has created a collection of remote commands specifically for use with Keithley TSP-enabled instruments; for detailed information about those commands, refer to the &quot;Command reference&quot; section of the documentation for your specific instrument. You can build scripts from a combination of these commands and Lua programming statements. Scripts that you create are referred to as &quot;user scripts.&quot; Also, some TSP-enabled instruments include built-in factory scripts.</p>
+<p class="bodytext">The following figure shows an example of the Test Script Builder. As shown, the workspace is divided into these areas:</p>
+<ul class="listbullet"><li class="listbullet">Project navigator</li><li class="listbullet">Script editor</li><li class="listbullet">Outline view</li><li class="listbullet">Programming interaction</li><li class="listbullet">Help files<p class="magicfigurecenter"><img id="f784" src="tsbworkspace_lr.png" class="linkedepsandpngtemplate" alt="Example of the Test Script Builder workspace" height="367" width="563" vspace="0" hspace="0" align="bottom" border="0"></p>
+</li></ul><p class="bodytext"></p>
+<table class="tableintopic" width="547" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tableheading">Item</p>
+</td>
+<td style="border:1px solid #010101;" width="493"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytextcenter">1</p>
+</td>
+<td style="border:1px solid #010101;" width="493"><p class="tablebodytext">Project navigator</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytextcenter">2</p>
+</td>
+<td style="border:1px solid #010101;" width="493"><p class="tablebodytext">Script editor; right-click to run the script that is displayed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytextcenter">3</p>
+</td>
+<td style="border:1px solid #010101;" width="493"><p class="tablebodytext">Outline view</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytextcenter">4</p>
+</td>
+<td style="border:1px solid #010101;" width="493"><p class="tablebodytext">Programming interaction</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="54"><p class="tablebodytextcenter">5</p>
+</td>
+<td style="border:1px solid #010101;" width="493"><p class="tablebodytext">Help; includes detailed information on using Test Script Builder</p>
+</td>
+</tr>
+
+</table>
+<p class="tablebodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="24976.htm" target="_self">Test Script Builder (TSB)</a></p><p class="relateditem"><a href="405.htm" target="_self">Installing the TSB software</a></p><p class="relateditem"><a href="24700.htm" target="_self">Installing the TSB add-in</a></p><p class="relateditem"><a href="17049.htm" target="_self">Project navigator</a></p><p class="relateditem"><a href="23845.htm" target="_self">Script editor</a></p><p class="relateditem"><a href="33264.htm" target="_self">Outline view</a></p><p class="relateditem"><a href="417.htm" target="_self">Programming interaction</a></p><p class="relateditem"><a href="23859.htm" target="_self">Connecting an instrument in TSB</a></p><p class="relateditem"><a href="23939.htm" target="_self">Creating a new TSP project</a></p><p class="relateditem"><a href="24592.htm" target="_self">Adding a new TSP file to a project</a></p><p class="relateditem"><a href="24519.htm" target="_self">Running a script</a></p><p class="relateditem"><a href="23885.htm" target="_self">Creating a run configuration</a></p></td>
+</tr>
+</table>
+
+
+
+<input id="topicId" type="hidden" value="407" />
+<input id="topicDescription" type="hidden" value="Using Test Script Builder (TSB)" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/9/2019 12:03:11 PM" />
+</body>
+</html>

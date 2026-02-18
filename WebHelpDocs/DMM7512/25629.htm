@@ -1,0 +1,118 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> buffer.make() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25624.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="73595.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t25629" class="heading2-icl">buffer.make()</h2>
+<p class="bodyzero">This function creates a user-defined reading buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar = </span>buffer.make(<em class="emphasis">bufferSize</em>)</p>
+<p class="iclcode"><span class="monospaceitalic">bufferVar = </span>buffer.make(<em class="emphasis">bufferSize</em>, <em class="emphasis">style)</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The name of the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferSize</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The maximum number of readings that can be stored in <span class="monospaceitalic">bufferVar</span>; minimum is&nbsp;<code class="monospace">10</code>; <code class="monospace">0</code> to maximize buffer size (see <strong class="specialbold">Details</strong>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><em class="emphasis">style</em></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The type of reading buffer to create:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Store readings with reduced accuracy (6.5 digits) with no formatting information, 1&nbsp;μs accurate timestamp: <code class="monospace">buffer.STYLE_COMPACT</code></li><li class="tablelistbullet9pt">Store readings with full accuracy with formatting: <code class="monospace">buffer.STYLE_STANDARD</code> (default)</li><li class="tablelistbullet9pt">Store the same information as standard, plus additional information, such as the ratio component of a DCV ratio measurement: <code class="monospace">buffer.STYLE_FULL</code></li><li class="tablelistbullet9pt">Store external reading buffer data: <code class="monospace">buffer.STYLE_WRITABLE</code></li><li class="tablelistbullet9pt">Store external reading buffer data with two reading values: <code class="monospace">buffer.STYLE_WRITABLE_FULL</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">You cannot assign user-defined reading buffers the name <code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>. In addition, the buffer name must not already exist as a global variable, a local variable, table, or array.</p>
+<p class="iclbody">If you create a reading buffer that has the same name as an existing user-defined buffer, the existing buffer is overwritten by the new buffer. Any data in the existing buffer is lost.</p>
+<p class="iclbody">When you create a reading buffer, it becomes the active buffer. If you create two reading buffers, the last one you create becomes the active buffer.</p>
+<p class="iclbody">If you select <code class="monospace">0</code>, the instrument creates the largest reading buffer possible based on the available memory when the buffer is created.</p>
+<p class="iclbody">The default fill mode of a user-defined buffer is once. You can change it to continuous later.</p>
+<p class="iclbody">Once the buffer style is selected, it cannot be changed.</p>
+<p class="iclbody">Once you store the first reading in a compact buffer, you cannot change certain measurement settings, including range, display digits, and units; you must clear the buffer first.</p>
+<p class="iclbody">Not all remote commands are compatible with the compact, writable, and full writable buffer styles. Check the Details section of the command descriptions before using them with any of these buffer styles.</p>
+<p class="iclbody">Writable reading buffers are used to bring external data into the instrument. You cannot assign them to collect data from the instrument.</p>
+<p class="iclbody">You can change the buffer capacity for an existing buffer through the front panel or by using the <span class="monospaceitalic">bufferVar</span><code class="monospace">.capacity</code> command.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">capTest2&nbsp;= buffer.make(200, <code class="monospace">buffer.STYLE_FULL</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Creates a 200-element reading buffer that stores readings with full accuracy named <code class="monospace">capTest2</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27586" class="jump" title="bufferVar.capacity" href="25706.htm" target="_self">bufferVar.capacity</a></p>
+<p class="listcommand"><a id="h18557" class="jump" title="bufferVar.fillmode" href="30489.htm" target="_self">bufferVar.fillmode</a></p>
+<p class="listcommand"><a id="h46438" class="jump" title="buffer.write.format()" href="46427.htm" target="_self">buffer.write.format()</a></p>
+<p class="listcommand"><a id="h46433" class="jump" title="buffer.write.reading()" href="46428.htm" target="_self">buffer.write.reading()</a></p>
+
+
+<input id="topicId" type="hidden" value="25629" />
+<input id="topicDescription" type="hidden" value="buffer.make()" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/28/2019 12:26:36 PM" />
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> localnode.showevents  </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25726.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="32595.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t30504" class="heading2-icl">localnode.showevents </h2>
+<p class="bodyzero">This attribute sets whether or not the instrument automatically outputs generated events to the remote interface.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">No</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not saved</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">0 (no events sent)</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">errorMode</em> = localnode.showevents</p>
+<p class="iclcode">localnode.showevents = <span class="monospaceitalic">errorMode</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">errorMode</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The errors that are returned:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">No events: <code class="monospace">0</code></li><li class="tablelistbullet9pt">Errors only: <code class="monospace">1</code> (<code class="monospace">eventlog.SEV_ERROR</code>)</li><li class="tablelistbullet9pt">Warnings only: <code class="monospace">2</code> (<code class="monospace">eventlog.SEV_WARN</code>)</li><li class="tablelistbullet9pt">Errors and warnings: <code class="monospace">3</code> (<code class="monospace">eventlog.SEV_ERROR | eventlog.SEV_WARN</code>)</li><li class="tablelistbullet9pt">Information only: <code class="monospace">4</code> (<code class="monospace">eventlog.SEV_INFO</code>)</li><li class="tablelistbullet9pt">Information and errors: <code class="monospace">5</code> (<code class="monospace">eventlog.SEV_INFO | eventlog.SEV_ERROR</code>)</li><li class="tablelistbullet9pt">Warnings and information: <code class="monospace">6</code> (<code class="monospace">eventlog.SEV_INFO | eventlog.SEV_WARN</code>)</li><li class="tablelistbullet9pt">All events: <code class="monospace">7</code> (<code class="monospace">eventlog.SEV_ALL</code>)</li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Enable this attribute to have the instrument output generated events to the remote interface.</p>
+<p class="iclbody">Events are output after a command message is executed but before prompts are issued (if prompts are enabled with <code class="monospace">localnode.prompts</code>).</p>
+<p class="iclbody">If this attribute is disabled, use <code class="monospace">eventlog.next()</code> to retrieve unread events from the event log.</p>
+<p class="iclbody">Events are enabled or disabled only for the remote interface that is active when you send the command. For example, if you enable show events when the GPIB connection is active, they will not be enabled for a subsequent USB connection.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">localnode.showevents = eventlog.SEV_ERROR | eventlog.SEV_INFO</p>
+<p class="codetable">trigger.digin[3].edge = trigger.EDGE_EITHER</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Send generated error and warning messages.</p>
+<p class="tablebodytext">Example output if the edge cannot be sent to either:</p>
+<p class="codetable">1805, Settings conflict: setting input edge when line 3 set for digital</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h1947" class="jump" title="eventlog.clear()" href="27637.htm" target="_self">eventlog.clear()</a></p>
+<p class="listcommand"><a id="h15032" class="jump" title="localnode.prompts" href="33148.htm" target="_self">localnode.prompts</a></p>
+
+
+<input id="topicId" type="hidden" value="30504" />
+<input id="topicDescription" type="hidden" value="localnode.showevents " />
+<input id="footer-modified" type="hidden" value="Last modified: 9/13/2019 8:36:11 AM" />
+</body>
+</html>

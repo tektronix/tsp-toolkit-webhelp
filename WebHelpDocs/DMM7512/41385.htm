@@ -1,0 +1,118 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.analogtrigger.pulse.condition </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41391.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41416.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41385" class="heading2-icl">dmm.digitize.analogtrigger.pulse.condition</h2>
+<p class="bodyzero">This attribute defines if the pulse must be greater than or less than the incoming pulse must have a duration greater than or less than the threshold pulse width before an analog trigger is generated.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.CONDITION_GREATER</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = dmm.digitize.analogtrigger.pulse.condition</p>
+<p class="iclcode">dmm.digitize.analogtrigger.pulse.condition = <em class="emphasis">value</em></p>
+<p class="iclcode"><em class="emphasis">value</em> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, dmm.ATTR_DIGI_<code class="monospace">ATRIG_</code>PULSE_CONDITION)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, dmm.ATTR_DIGI_<code class="monospace">ATRIG_</code>PULSE_CONDITION, <span class="monospaceitalic">value</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The setting:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">The pulse width must be greater than the specified pulse width: <code class="monospace">dmm.CONDITION_GREATER</code></li><li class="tablelistbullet9pt">The pulse width must be less than the specified pulse width: <code class="monospace">dmm.CONDITION_LESS</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The digitize function to which to assign this parameter:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: <code class="monospace">dmm.FUNC_DIGITIZE_CURRENT</code></li><li class="tablelistbullet9pt">Voltage: <code class="monospace">dmm.FUNC_DIGITIZE_VOLTAGE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">Only available when the analog trigger mode is set to pulse.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">dmm.digitize.func = dmm.FUNC_DIGITIZE_VOLTAGE</p>
+<p class="codetable">dmm.digitize.analogtrigger.mode = dmm.MODE_PULSE</p>
+<p class="codetable">dmm.digitize.analogtrigger.pulse.level = 5</p>
+<p class="codetable">dmm.digitize.analogtrigger.pulse.width = 30e-6</p>
+<p class="codetable">dmm.digitize.analogtrigger.pulse.condition = dmm.CONDITION_LESS</p>
+<p class="codetable">dmm.digitize.analogtrigger.pulse.polarity = dmm.POLARITY_BELOW</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set function to digitize voltage.</p>
+<p class="tablebodytext">Set the analog trigger mode to pulse.</p>
+<p class="tablebodytext">Set the analog trigger level to 5&nbsp;V.</p>
+<p class="tablebodytext">Set the analog trigger pulse width to 30&nbsp;us.</p>
+<p class="tablebodytext">Set the condition to be detect trigger within the pulse width.</p>
+<p class="tablebodytext">Set the trigger to occur when the pulse is below the level.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h46301" class="jump" title="Analog triggering overview" href="41756.htm" target="_self">Analog triggering overview</a></p>
+<p class="listcommand"><a id="h41594" class="jump" title="dmm.digitize.analogtrigger.mode" href="41391.htm" target="_self">dmm.digitize.analogtrigger.mode</a></p>
+<p class="listcommand"><a id="h41429" class="jump" title="dmm.digitize.func" href="41428.htm" target="_self">dmm.digitize.func</a></p>
+<p class="listcommand"><a id="h46316" class="jump" title="dmm.digitize.analogtrigger.pulse.level" href="41416.htm" target="_self">dmm.digitize.analogtrigger.pulse.level</a></p>
+<p class="listcommand"><a id="h46317" class="jump" title="dmm.digitize.analogtrigger.pulse.polarity" href="41402.htm" target="_self">dmm.digitize.analogtrigger.pulse.polarity</a></p>
+<p class="listcommand"><a id="h46318" class="jump" title="dmm.digitize.analogtrigger.pulse.width" href="41400.htm" target="_self">dmm.digitize.analogtrigger.pulse.width</a></p>
+<p class="listcommand"><a id="h46311" class="jump" title="dmm.measure.analogtrigger.pulse.condition" href="41387.htm" target="_self">dmm.measure.analogtrigger.pulse.condition</a></p>
+
+
+<input id="topicId" type="hidden" value="41385" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.analogtrigger.pulse.condition" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/2/2019 12:21:51 PM" />
+</body>
+</html>

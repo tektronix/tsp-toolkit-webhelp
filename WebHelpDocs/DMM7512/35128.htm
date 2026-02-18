@@ -1,0 +1,134 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.model.load() - LogicTrigger </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="46073.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="46040.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t35128" class="heading2-icl">trigger.model.load() - LogicTrigger</h2>
+<p class="bodyzero">This function loads a trigger-model template configuration that sets up a logic trigger through the digital or external I/O.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.model.load(&quot;LogicTrigger&quot;, <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">clear</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;LogicTrigger&quot;, <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">clear</span>, <span class="monospaceitalic">delay</span>)</p>
+<p class="iclcode">trigger.model.load(&quot;LogicTrigger&quot;, <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">clear</span>, <span class="monospaceitalic">delay, bufferName</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">digInLine</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The digital input line (1 to 6) or external input line (7); also, the event that the trigger model will wait on in block&nbsp;1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">digOutLine</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The digital output line (1 to 6) or external input line (7)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">count</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The number of measurements the instrument will make</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">clear</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">To clear previously detected trigger events when entering the wait block: <code class="monospace">trigger.CLEAR_ENTER</code></p>
+<p class="tablebodytext">To immediately act on any previously detected triggers and not clear them (default): <code class="monospace">trigger.CLEAR_NEVER</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">delay</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The delay time before each measurement (167&nbsp;ns to 10&nbsp;ks); default is <code class="monospace">0</code> for no delay</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer, which may be a default buffer (<code class="monospace">defbuffer1</code> or <code class="monospace">defbuffer2</code>) or a user-defined buffer; defaults to <code class="monospace">defbuffer1</code></p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This trigger model waits for a digital input or external trigger input event to occur, makes a measurement, and issues a notify event. If a digital output line is selected, a notify event asserts a digital output line. A notify event asserts the external trigger output line regardless of the line settings. You can set the line to <code class="monospace">7</code> to assert only the external trigger output line, or to another setting to assert both a digital output line and the external trigger output line.</p>
+<p class="iclbody">After selecting a trigger-model template, you can view the trigger-model blocks in a graphical format by pressing the front-panel MENU key and under Trigger, selecting Configure. You can also add or delete blocks and change trigger-model settings from this screen. You can use the <code class="monospace">trigger.model.getblocklist()</code> command to view the trigger model blocks in a list format.</p>
+<p class="iclbody">This command replaces the <code class="monospace">trigger.model.load() &#8212; ExtDigTrigger</code> command, which is deprecated.</p>
+<p class="iclbody">The following usage has been deprecated; replace it with the usage above that includes the <span class="monospaceitalic">clear</span> parameter.</p>
+<p class="iclbody"><code class="monospace">trigger.model.load(&quot;LogicTrigger&quot;,</code> <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>)<br><code class="monospace">trigger.model.load(&quot;LogicTrigger&quot;,</code> <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count, delay</span>)<br><code class="monospace">trigger.model.load(&quot;LogicTrigger&quot;,</code> <span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count, delay, bufferName</span>)<br><code class="monospace">trigger.model.load(&quot;LogicTrigger&quot;, </code><span class="monospaceitalic">digInLine</span>, <span class="monospaceitalic">digOutLine</span>, <span class="monospaceitalic">count</span>, <span class="monospaceitalic">delay, bufferName</span>, <span class="monospaceitalic">readingBlock</span>)</p>
+<p class="iclsubheading">Example </p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">trigger.model.load(&quot;LogicTrigger&quot;, 7, 2, 10, 0.001, defbuffer1)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Set up the template to use the external in line and wait for a pulse from the external in to trigger measurements.</p>
+<p class="tablebodytext">Pulse digital output line 2 and external trigger out when the measurement is complete.</p>
+<p class="tablebodytext">Make 10 measurements, with a delay of 1&nbsp;ms before each measurement.</p>
+<p class="tablebodytext">Store the measurements in <code class="monospace">defbuffer1</code>.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h33812" class="jump" title="trigger.digout[N].logic" href="33159.htm" target="_self">trigger.digout[N].logic</a></p>
+
+
+<input id="topicId" type="hidden" value="35128" />
+<input id="topicDescription" type="hidden" value="trigger.model.load() &#0151; LogicTrigger" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/16/2019 9:33:04 AM" />
+</body>
+</html>
