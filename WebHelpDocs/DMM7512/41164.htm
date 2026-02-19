@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.filter.type </title>
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41163.htm" target="_self"><img src="125.gif" alt="Previous Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41169.htm" target="_self"><img src="124.gif" alt="Next Topic" height="17" width="18" vspace="0" hspace="0" align="top" border="0"></a></p></td>
+</tr>
+</table>
+<h2 class="heading2-icl">dmm.digitize.filter.type</h2>
+<p class="bodyzero">This attribute defines the type of averaging filter that is used for the selected measurement function when the measurement filter is enabled.</p>
+<table class="tableintopic" width="654" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="156"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="102"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#191970" style="border:2px solid #C0C0C0;" width="192"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="156"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Never</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="102"><p class="tablebodytextsmall">Nonvolatile memory</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="192"><p class="tablebodytextsmall">dmm.FILTER_MOVING_AVG</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">value</em> = dmm.digitize.filter.type</p>
+<p class="iclcode">dmm.digitize.filter.type = <em class="emphasis">value</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="138"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="456"><p class="tablebodytext">The filter type to use when filtering is enabled; set to one of the following values:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Repeating filter: <code class="monospace">dmm.FILTER_REPEAT_AVG</code></li><li class="tablelistbullet9pt">Moving filter: <code class="monospace">dmm.FILTER_MOVING_AVG</code> </li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">dmm.digitize.func = dmm.FUNC_DCI_DIGITIZER or dmm.FUNC_DCV_DIGITIZER</p>
+<p class="bodytext">This command selects the type of averaging filter: repeating average or moving average.</p>
+<p class="bodytext">When the repeating average filter is selected, a set of measurements are made. These measurements are stored in a measurement stack and averaged together to produce the averaged sample. Once the averaged sample is produced, the stack is flushed and the next set of data is used to produce the next averaged sample. This type of filter is the slowest, since the stack has to be completely filled before an averaged sample can be produced.</p>
+<p class="bodytext">When the moving average filter is selected, the measurements are added to the stack continuously on a first-in, first-out basis. As each measurement is made, the oldest measurement is removed from the stack. A new averaged sample is produced using the new measurement and the data that is now in the stack.</p>
+<p class="note"><img src="notesmall.png" alt="VARIABLE - NOTE" height="26" width="63" vspace="0" hspace="0" align="bottom" border="0">When the moving average filter is first selected, the stack is empty. When the first measurement is made, it is copied into all the stack locations to fill the stack. A true average is not produced until the stack is filled with new measurements. The size of the stack is determined by the filter count setting.</p>
+<p class="bodytext">The repeating average filter produces slower results, but produces more stable results than the moving average filter. For either method, the greater the number of measurements that are averaged, the slower the averaged sample rate, but the lower the noise error. Trade-offs between speed and noise are normally required to tailor the instrumentation to your measurement application.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="348"><p class="codetable">dmm.func = &quot;twowireohms&quot;</p>
+<p class="codetable">dmm.filter.type = dmm.FILTER_MOVING_AVG</p>
+<p class="codetable">dmm.filter.enable = dmm.ON</p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="246"><p class="tablebodytext">Set the filter type for 2-wire ohms to moving average and enable filtered measurements.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41668" class="jumptemplate" title="dmm.digitize.filter.enable" href="41163.htm" target="_self">dmm.digitize.filter.enable</a></p>
+
+
+<input id="topicId" type="hidden" value="41164" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.filter.type" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/5/2014 12:53:43 PM" />
+</body>
+</html>

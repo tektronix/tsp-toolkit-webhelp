@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Effects of errors on scripts </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="33941.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="31125.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h4 id="t12162" class="heading4">Effects of errors on scripts</h4>
+<p class="bodytext">Most errors will not abort a running script. The only time a script is aborted is when a Lua run-time (event code -286, &quot;TSP runtime error&quot;) is detected. Run-time events are caused by actions such as trying to index into a variable that is not a table.</p>
+<p class="bodytext">Syntax errors (event code -285, &quot;Program syntax&quot;) in a script or command will prevent execution of the script or command.</p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="33195.htm" target="_self">Using the event log</a></p><p class="relateditem"><a href="34695.htm" target="_self">Information provided for each event log entry</a></p><p class="relateditem"><a href="33941.htm" target="_self">Event log settings</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="12162" />
+<input id="topicDescription" type="hidden" value="Effects of errors on scripts" />
+<input id="footer-modified" type="hidden" value="Last modified: 10/30/2018 12:46:35 PM" />
+</body>
+</html>

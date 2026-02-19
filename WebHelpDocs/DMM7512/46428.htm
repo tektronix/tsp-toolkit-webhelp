@@ -1,0 +1,246 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> buffer.write.reading() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="46427.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="34589.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t46428" class="heading2-icl">buffer.write.reading()</h2>
+<p class="bodyzero">This function allows you to write readings into the reading buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclbody">For buffers that are set to the writable buffer style:</p>
+<p class="iclcode">buffer.write.reading(<em class="emphasis">bufferVar</em>, <em class="emphasis">readingValue</em>)</p>
+<p class="iclcode">buffer.write.reading(<em class="emphasis">bufferVar</em>, <em class="emphasis">readingValue</em>, <em class="emphasis">seconds</em>)</p>
+<p class="iclcode">buffer.write.reading(<em class="emphasis">bufferVar</em>, <em class="emphasis">readingValue</em>, <em class="emphasis">seconds</em>, <em class="emphasis">fractionalSeconds</em>)</p>
+<p class="iclcode">buffer.write.reading(<em class="emphasis">bufferVar</em>, <em class="emphasis">readingValue</em>, <em class="emphasis">seconds</em>, <em class="emphasis">fractionalSeconds, status</em>)</p>
+<p class="iclbody">For buffers that are set to the full writable buffer style:</p>
+<p class="iclcode">buffer.write.reading(<em class="emphasis">bufferVar</em>, <em class="emphasis">readingValue</em>, <em class="emphasis">extraValue</em>)</p>
+<p class="iclcode">buffer.write.reading(<em class="emphasis">bufferVar</em>, <em class="emphasis">readingValue</em>, <em class="emphasis">extraValue</em>, <em class="emphasis">seconds</em>)</p>
+<p class="iclcode">buffer.write.reading(<em class="emphasis">bufferVar</em>, <em class="emphasis">readingValue</em>, <em class="emphasis">extraValue</em>, <em class="emphasis">seconds</em>, <em class="emphasis">fractionalSeconds</em>)</p>
+<p class="iclcode">buffer.write.reading(<em class="emphasis">bufferVar</em>, <em class="emphasis">readingValue</em>, <em class="emphasis">extraValue</em>, <em class="emphasis">seconds</em>, <em class="emphasis">fractionalSeconds</em>, <em class="emphasis">status</em>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">bufferVar</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The name of the buffer</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">readingValue</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The first value that is recorded in the buffer index</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">extraValue</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">A second value that is recorded in the buffer index (only valid for buffer style <code class="monospace">WRITABLE_FULL</code>)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><span class="monospaceitalic">seconds</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">An integer that represents the seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="codetable"><em class="emphasis">fractionalSeconds</em></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">The portion of the time that represents the fractional seconds</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">status</span></p>
+</td>
+<td style="border:1px solid #E0E0E0;" width="461"><p class="tablebodytext">Additional information about the reading; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command writes the data you specify into a reading buffer. The reading buffer must be set to the writable or full writable style, which is set when you make the buffer.</p>
+<p class="iclbody">Data must be added in chronological order. If the time is not specified for a reading, it is set to one integer second after the last reading. As you write the data, the front-panel home screen updates and displays the reading you entered.</p>
+<p class="iclbody">The <span class="monospaceitalic">status</span> parameter provides additional information about the reading. The options are shown in the following table.</p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="tableheading">Parameter</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tableheading">Description</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_LIMIT1_HIGH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Reading is above high limit 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_LIMIT1_LOW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Reading is below low limit 1</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_LIMIT2_HIGH</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Reading is above high limit 2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_LIMIT2_LOW</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Reading is below low limit 2</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_ORIGIN</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">A/D converter from which reading originated; for the DMM7510, this will always be 0 (main) or 2 (digitize)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_QUESTIONABLE</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Measure status questionable</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_REL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Relative offset</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_SCAN</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Scan</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_START_GROUP</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">First reading in a group</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="250"><p class="codetable">buffer.STAT_TERMINAL</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="350"><p class="tablebodytext">Measure terminal, front is 1, rear is 0</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">extBuffer = buffer.make(100, buffer.STYLE_WRITABLE)</p>
+<p class="codetable">buffer.write.format(extBuffer, buffer.UNIT_WATT, buffer.DIGITS_3_5)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 1)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 2)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 3)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 4)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 5)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 6)</p>
+<p class="codetable">printbuffer(1, 6, extBuffer.readings, extBuffer.units)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Creates a 100-point reading buffer named <code class="monospace">extBuffer</code>. Style is writable.</p>
+<p class="tablebodytext">Set the data format to show units of watts with 3½ digit resolution.</p>
+<p class="tablebodytext">Write 6 pieces of data into the buffer.</p>
+<p class="tablebodytext">Print the buffer, including the readings and units.</p>
+<p class="tablebodytext">Read the buffer.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1, Watt DC, 2, Watt DC, 3, Watt DC, 4, Watt DC, 5, Watt DC, 6, Watt DC</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E4E4E4" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">extBuffer = buffer.make(100, buffer.STYLE_WRITABLE_FULL)</p>
+<p class="codetable">buffer.write.format(extBuffer, buffer.UNIT_WATT, buffer.DIGITS_3_5,<br>   buffer.UNIT_WATT, buffer.DIGITS_3_5)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 1, 7)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 2, 8)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 3, 9)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 4, 10)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 5, 11)</p>
+<p class="codetable">buffer.write.reading(extBuffer, 6, 12)</p>
+<p class="codetable">printbuffer(1, 6, extBuffer.readings, extBuffer.units, extBuffer.extravalues,<br>   extBuffer.units)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Creates a 100-point reading buffer named <code class="monospace">extBuffer</code>. Style is full writable.</p>
+<p class="tablebodytext">Set the data format to show units of watts with 3½ digit resolution for the first value and for the second value in the buffer index.</p>
+<p class="tablebodytext">Write 12 pieces of data into the buffer.</p>
+<p class="tablebodytext">Print the buffer, including the readings and units.</p>
+<p class="tablebodytext">Read the buffer.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">1, Watt DC, 7, Watt DC, 2, Watt DC, 8, Watt DC, 3, Watt DC, 9, Watt DC, 4, Watt DC, 10, Watt DC, 5, Watt DC, 11, Watt DC, 6, Watt DC, 12, Watt DC</p>
+</td>
+</tr>
+
+</table>
+<p class="iclspacing"></p>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h27581" class="jump" title="buffer.make()" href="25629.htm" target="_self">buffer.make()</a></p>
+<p class="listcommand"><a id="h46438" class="jump" title="buffer.write.format()" href="46427.htm" target="_self">buffer.write.format()</a></p>
+
+
+<input id="topicId" type="hidden" value="46428" />
+<input id="topicDescription" type="hidden" value="buffer.write.reading()" />
+<input id="footer-modified" type="hidden" value="Last modified: 11/11/2019 7:02:16 AM" />
+</body>
+</html>

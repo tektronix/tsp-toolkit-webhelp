@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> trigger.ext.reset() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="30501.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41331.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41343" class="heading2-icl">trigger.ext.reset()</h2>
+<p class="bodyzero">This function resets the edge, logic, and stimulus values for the external in/out line to their default values.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">trigger.ext.reset()</p>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This function resets the following attributes to their default values:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">trigger.extin.edge</code></li><li class="listbullet"><code class="monospace">trigger.extout.logic</code></li><li class="listbullet"><code class="monospace">trigger.extout.stimulus</code></li></ul><p class="iclbody">It also clears <code class="monospace">trigger.extin.overrun</code>.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- Set the external I/O trigger line for a rising edge</p>
+<p class="codetable">trigger.extin.edge = trigger.EDGE_RISING</p>
+<p class="codetable">-- Set the logic to negative</p>
+<p class="codetable">trigger.extout.logic = trigger.LOGIC_NEGATIVE</p>
+<p class="codetable">-- Set the stimulus to timer 3</p>
+<p class="codetable">trigger.extout.stimulus = trigger.EVENT_TIMER3</p>
+<p class="codetable">-- Print configuration (before reset)</p>
+<p class="codetable">print(trigger.extin.edge, trigger.extout.logic, trigger.extout.stimulus)</p>
+<p class="codetable">-- Reset the external I/O trigger line to default values.</p>
+<p class="codetable">trigger.ext.reset()</p>
+<p class="codetable">-- Print configuration (after reset)</p>
+<p class="codetable">print(trigger.extin.edge, trigger.extout.logic, trigger.extout.stimulus)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Output before reset:</p>
+<p class="codetable">trigger.EDGE_RISING     trigger.LOGIC_NEGATIVE  trigger.EVENT_TIMER3</p>
+<p class="tablebodytext">&nbsp;</p>
+<p class="tablebodytext">Output after reset:</p>
+<p class="codetable">trigger.EDGE_FALLING    trigger.LOGIC_NEGATIVE  trigger.EVENT_NONE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41340" class="jump" title="trigger.extin.edge" href="41332.htm" target="_self">trigger.extin.edge</a></p>
+<p class="listcommand"><a id="h41341" class="jump" title="trigger.extout.logic" href="41336.htm" target="_self">trigger.extout.logic</a></p>
+<p class="listcommand"><a id="h46399" class="jump" title="trigger.extout.stimulus" href="41338.htm" target="_self">trigger.extout.stimulus</a></p>
+
+
+<input id="topicId" type="hidden" value="41343" />
+<input id="topicDescription" type="hidden" value="trigger.ext.reset()" />
+<input id="footer-modified" type="hidden" value="Last modified: 8/14/2019 12:36:29 PM" />
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.digitize.limit[Y].autoclear </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41685.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="41213.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t41210" class="heading2-icl">dmm.digitize.limit[Y].autoclear</h2>
+<p class="bodyzero">This attribute indicates if the test result for limit <span class="monospaceitalic">Y</span> should be cleared automatically or not.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script<br>Measure configuration list</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.ON</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = <code class="monospace">dmm</code>.digitize.limit[<em class="emphasis">Y</em>].autoclear</p>
+<p class="iclcode"><code class="monospace">dmm</code>.digitize.limit[<em class="emphasis">Y</em>].autoclear = <em class="emphasis">state</em></p>
+<p class="iclcode"><span class="monospaceitalic">state</span> = <code class="monospace">dmm</code>.measure.getattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_DIGI_LIMIT_AUTO_CLEAR_<span class="monospaceitalic">Y</span>)</p>
+<p class="iclcode"><code class="monospace">dmm</code>.measure.setattribute(<span class="monospaceitalic">function</span>, <code class="monospace">dmm</code>.ATTR_DIGI_LIMIT_AUTO_CLEAR_<span class="monospaceitalic">Y</span>, <span class="monospaceitalic">state</span>)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">state</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The auto clear setting:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Disable: <code class="monospace">dmm.OFF</code></li><li class="tablelistbullet9pt">Enable: <code class="monospace">dmm.ON</code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Limit number: <code class="monospace">1</code> or <code class="monospace">2</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">function</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The digitize function:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">Current: <code class="monospace">dmm.FUNC_DIGITIZE_CURRENT</code></li><li class="tablelistbullet9pt">Voltage: <code class="monospace">dmm.FUNC_DIGITIZE_VOLTAGE</code></li></ul></td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">When auto clear is set to on, limit conditions are cleared automatically after each measurement. If you are making a series of measurements, the instrument shows the limit test result of the last measurement for the pass or fail indication for the limit.</p>
+<p class="iclbody">If you want to know if any of a series of measurements failed the limit, set the auto clear setting to off. When this is set to off, a failed indication is not cleared automatically. It remains set until it is cleared with the clear command.</p>
+<p class="iclbody">The auto clear setting affects both the high and low limits.</p>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable"><code class="monospace">dmm</code>.digitize.func = <code class="monospace">dmm</code>.FUNC_DIGITIZE_VOLTAGE</p>
+<p class="codetable"><code class="monospace">dmm</code>.digitize.limit[1].autoclear = <code class="monospace">dmm</code>.OFF</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Turns off autoclear for limit 1 when measuring digitize voltage.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41674" class="jump" title="dmm.digitize.limit[Y].enable" href="41225.htm" target="_self">dmm.digitize.limit[Y].enable</a></p>
+
+
+<input id="topicId" type="hidden" value="41210" />
+<input id="topicDescription" type="hidden" value="dmm.digitize.limit[Y].autoclear" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/10/2019 9:50:05 AM" />
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Load a script by sending commands over a remote interface </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="34463.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="34474.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h6 id="t33293" class="heading6">Load a script by sending commands over a remote interface</h6>
+<p class="bodytext">To load a script over the remote interface, you can use the <code class="monospace">loadscript</code> and <code class="monospace">endscript</code> commands.</p>
+<p class="bodytext">Normally, when the instrument receives a command, it runs the command immediately. When the instrument receives the <code class="monospace">loadscript</code> command, the instrument starts collecting subsequent messages instead of running them immediately.</p>
+<p class="bodytext">The <code class="monospace">endscript</code> command tells the instrument to stop collecting messages. It then compiles the collection of messages into a script. The script is stored as a function. This script is loaded into the run-time environment &#8212; you need to save it to store it in the instrument.</p>
+<p class="headingprocedure">To load a script:</p>
+<p class="bodytext">Send the <code class="monospace">loadscript</code> command with a script name. This tells the instrument to start collecting messages for the function named <code class="monospace">testInfo</code>:</p>
+<p class="code">loadscript testInfo</p>
+<p class="bodytext">Send the commands for the script; this example displays text on the USER swipe screen when the script is run:</p>
+<p class="code">display.settext(display.TEXT1, &quot;Batch 233&quot;)</p>
+<p class="code">display.settext(display.TEXT2, &quot;Test Information&quot;)</p>
+<p class="code">display.changescreen(display.SCREEN_USER_SWIPE)</p>
+<p class="bodytext">Send the command that tells the instrument that the script is complete:</p>
+<p class="code">endscript</p>
+<p class="bodytext">Run the script by sending the script name followed by <code class="monospace">()</code>:</p>
+<p class="code">testInfo()</p>
+<p class="bodytext">The USER swipe screen on the front panel is displayed and shows the text &quot;Batch 233 Test Information&quot; when you run this script.</p>
+<p class="bodytext">To save the script to nonvolatile memory, send the command:</p>
+<p class="code">testInfo.save()</p>
+<p class="headingprocedure">To load a script by sending commands:</p>
+<ol class="listnumber"><li class="listnumber">Send the command <code class="monospace">loadscript</code> <span class="monospaceitalic">scriptName</span>, where <span class="monospaceitalic">scriptName</span> is the name of the script. The name must be a legal Lua variable name.</li><li class="listnumber">Send the commands that need to be included in the script.</li><li class="listnumber">Send the command <code class="monospace">endscript</code>.</li><li class="listnumber">You can now run the script. Send the script name followed by <code class="monospace">()</code>. For more information, see <a id="h33380" class="jump" title="Running scripts using a remote interface" href="26764.htm" target="_self">Running scripts using a remote interface</a>.</li></ol><table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="34459.htm" target="_self">Loading a script into the instrument</a></p><p class="relateditem"><a href="34463.htm" target="_self">Loading a script using a USB flash drive</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="33293" />
+<input id="topicDescription" type="hidden" value="Load a script by sending commands over a remote interface" />
+<input id="footer-modified" type="hidden" value="Last modified: 5/15/2019 10:57:52 AM" />
+</body>
+</html>

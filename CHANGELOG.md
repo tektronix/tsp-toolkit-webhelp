@@ -16,6 +16,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
     Security -- in case of vulnerabilities.
 -->
 
+## [0.19.4]
+ 
+### Added
+- Added DMM7512 webhelp documents
+
+
 ## [0.19.3]
 
 ### Changed

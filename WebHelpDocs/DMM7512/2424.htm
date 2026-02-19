@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Operator precedence </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="16450.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="2422.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h6 id="t2424" class="heading6">Operator precedence</h6>
+<p class="bodytext">Operator precedence in Lua follows the order below (from higher to lower priority):</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">^ </code>(exponentiation)</li><li class="listbullet"><code class="monospace">not, - </code>(unary), <code class="monospace">!</code> (logical NOT)</li><li class="listbullet"><code class="monospace">*, /</code>, <code class="monospace">&lt;&lt;</code>, <code class="monospace">&gt;&gt;</code></li><li class="listbullet"><code class="monospace">+, &#8211;</code>, <code class="monospace">&amp;</code>, <code class="monospace">|</code>, <code class="monospace">^^</code></li><li class="listbullet"><code class="monospace">.. </code>(concatenation)</li><li class="listbullet"><code class="monospace">&lt;</code>, <code class="monospace">&gt;</code>, <code class="monospace">&lt;=</code>, <code class="monospace">&gt;=</code>, <code class="monospace">~=</code>, <code class="monospace">!=</code>, <code class="monospace">==</code></li><li class="listbullet"><code class="monospace">and</code></li><li class="listbullet"><code class="monospace">or</code></li></ul><p class="bodytext">You can use parentheses to change the precedences in an expression. The concatenation (&quot;<code class="monospace">..</code>&quot;) and exponentiation (&quot;<code class="monospace">^</code>&quot;) operators are right associative. All other binary operators are left associative. The examples below show equivalent expressions.</p>
+<table class="tableintopic" width="588" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td style="border-left:1px solid #FFFFFF;border-bottom:1px solid #010101;" colspan="3" width="588"><p class="tableheading">&nbsp;</p>
+<p class="tableheading">Equivalent expressions</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">reading + offset &lt; testValue/2+0.5</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">(reading + offset) &lt; ((testValue/2)+0.5)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">3+reading^2*4</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">3+((reading^2)*4)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">Rdg &lt; maxRdg and lastRdg &lt;=</p>
+<p class="codetable">   expectedRdg</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">(Rdg &lt; maxRdg) and (lastRdg &lt;= expectedRdg)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">-reading^2</p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">-(reading^2)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border-left:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="258"><p class="codetable">reading^testAdjustment^2 </p>
+</td>
+<td style="border-top:1px solid #010101;border-bottom:1px solid #010101;" width="36"><p class="tablebodytextcenter">=</p>
+</td>
+<td bgcolor="#E0E0E0" style="border-right:1px solid #010101;border-top:1px solid #010101;border-bottom:1px solid #010101;" width="294"><p class="codetable">reading^(testAdjustment^2)</p>
+</td>
+</tr>
+
+</table>
+<p class="bodytext"></p>
+<table class="relatedtopics belowtopictext" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "227">
+<p class="relatedheading">See Also</p><p class="relateditem"><a href="16449.htm" target="_self">Operators</a></p><p class="relateditem"><a href="34484.htm" target="_self">Logical and bitwise operators</a></p><p class="relateditem"><a href="16450.htm" target="_self">String concatenation</a></p></td>
+</tr>
+</table>
+
+
+<input id="topicId" type="hidden" value="2424" />
+<input id="topicDescription" type="hidden" value="Operator precedence" />
+<input id="footer-modified" type="hidden" value="Last modified: 3/10/2017 11:01:06 AM" />
+</body>
+</html>

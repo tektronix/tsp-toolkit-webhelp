@@ -1,0 +1,292 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> buffer.math() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="25629.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="33210.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t73595" class="heading2-icl">buffer.math()</h2>
+<p class="bodyzero">This function allows you to run a mathematical expression on a measurement. The expression is applied when the measurement is placed in the reading buffer.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
+<tr align="left" valign="top">
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingwhitetext">Type</p>
+</th>
+<th bgcolor="#4A6B95" style="border:1px solid #D3D3D3;" width="130"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="134"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</th>
+<th bgcolor="#E4E4E4" style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="130"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="134"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:1px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_ADD)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_AVERAGE)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_DIVIDE)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_EXPONENT)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_LOG10)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_MULTIPLY)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_NONE)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_POLY, <span class="monospaceitalic">constant0</span>, <span class="monospaceitalic">constant1</span>, <span class="monospaceitalic">constant2</span>, <span class="monospaceitalic">constant3</span>, <span class="monospaceitalic">constant4</span>, <span class="monospaceitalic">constant5</span>)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_POWER, <span class="monospaceitalic">constant0</span>)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, <span class="monospaceitalic">unit</span>, buffer.EXPR_RATE)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, unit, buffer.EXPR_RECIPROCAL)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, unit, buffer.EXPR_SQROOT)</p>
+<p class="iclcode">buffer.math(<span class="monospaceitalic">readingBuffer</span>, unit, buffer.EXPR_SUBTRACT)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">readingBuffer</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The name of the reading buffer; the reading buffer selected must be set to the style <code class="monospace"><code class="monospace">FULL</code></code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">unit</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The units to be applied to the value generated by the expression:</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt">DC current: <code class="monospace"><code class="monospace">buffer.UNIT_AMP</code></code></li><li class="tablelistbullet9pt">AC current: <code class="monospace"><code class="monospace">buffer.UNIT_AMP_AC</code></code></li><li class="tablelistbullet9pt">Celsius: <code class="monospace"><code class="monospace">buffer.UNIT_CELSIUS</code></code></li><li class="tablelistbullet9pt">Custom unit 1 (defined by <code class="monospace"><code class="monospace">buffer.unit()</code></code>): <code class="monospace"><code class="monospace">buffer.UNIT_CUSTOM1</code></code></li><li class="tablelistbullet9pt">Custom unit 2 (defined by <code class="monospace"><code class="monospace">buffer.unit()</code></code>): <code class="monospace"><code class="monospace">buffer.UNIT_CUSTOM2</code></code></li><li class="tablelistbullet9pt">Custom unit 3 (defined by <code class="monospace"><code class="monospace">buffer.unit()</code></code>): <code class="monospace"><code class="monospace">buffer.UNIT_CUSTOM3</code></code></li><li class="tablelistbullet9pt">DAC (voltage): <code class="monospace"><code class="monospace">buffer.UNIT_DAC</code></code></li><li class="tablelistbullet9pt">Decibel-milliwatts: <code class="monospace"><code class="monospace">buffer.UNIT_DBM</code></code></li><li class="tablelistbullet9pt">Decibels: <code class="monospace"><code class="monospace">buffer.UNIT_DECIBEL</code></code></li><li class="tablelistbullet9pt">Digital I/O: <code class="monospace"><code class="monospace">buffer.UNIT_DIO</code></code></li><li class="tablelistbullet9pt">Fahrenheit: <code class="monospace"><code class="monospace">buffer.UNIT_FAHRENHEIT</code></code></li><li class="tablelistbullet9pt">Capacitance: <code class="monospace"><code class="monospace">buffer.UNIT_FARAD</code></code></li><li class="tablelistbullet9pt">Frequency: <code class="monospace"><code class="monospace">buffer.UNIT_HERTZ</code></code></li><li class="tablelistbullet9pt">Kelvin: <code class="monospace"><code class="monospace">buffer.UNIT_KELVIN</code></code></li><li class="tablelistbullet9pt">No unit: <code class="monospace"><code class="monospace">buffer.UNIT_NONE</code></code></li><li class="tablelistbullet9pt">Resistance: <code class="monospace"><code class="monospace">buffer.UNIT_OHM</code></code></li><li class="tablelistbullet9pt">Percent: <code class="monospace"><code class="monospace">buffer.UNIT_PERCENT</code></code></li><li class="tablelistbullet9pt">DC voltage ratio: <code class="monospace"><code class="monospace">buffer.UNIT_RATIO</code></code></li><li class="tablelistbullet9pt">Reciprocal: <code class="monospace"><code class="monospace">buffer.UNIT_RECIPROCAL</code></code></li><li class="tablelistbullet9pt">Period: <code class="monospace"><code class="monospace">buffer.UNIT_SECOND</code></code></li><li class="tablelistbullet9pt">Totalizer: <code class="monospace"><code class="monospace">buffer.UNIT_TOT</code></code></li><li class="tablelistbullet9pt">DC voltage: <code class="monospace"><code class="monospace">buffer.UNIT_VOLT</code></code></li><li class="tablelistbullet9pt">AC voltage: <code class="monospace"><code class="monospace">buffer.UNIT_VOLT_AC</code></code></li><li class="tablelistbullet9pt">Power: <code class="monospace"><code class="monospace">buffer.UNIT_WATT</code></code></li><li class="tablelistbullet9pt"><code class="monospace"><code class="monospace">buffer.UNIT_X</code></code></li></ul></td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">constant0</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The constant to be used for <code class="monospace"><code class="monospace">c0</code></code> in the expression</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">constant1</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The constant to be used for <code class="monospace"><code class="monospace">c1</code></code> in the expression</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">constant2</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The constant to be used for <code class="monospace"><code class="monospace">c2</code></code> in the expression</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">constant3</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The constant to be used for <code class="monospace"><code class="monospace">c3</code></code> in the expression</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">constant4</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The constant to be used for <code class="monospace"><code class="monospace">c4</code></code> in the expression</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">constant5</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The constant to be used for <code class="monospace"><code class="monospace">c5</code></code> in the expression</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="bodytext">This command applies a mathematical expression to a reading as it is stored in the reading buffer. The result of the expression is then calculated and stored in the Extra column of the reading buffer.</p>
+<p class="bodytext">You must use remote commands to set up the expressions, but you can view results from the front panel using the reading table and the graph.</p>
+<p class="bodytext">To use mathematical expressions, you must use a reading buffer that is set to the style <code class="monospace"><code class="monospace">FULL</code></code>. You cannot use expressions with the default reading buffers (<code class="monospace"><code class="monospace">defbuffer1</code></code> and <code class="monospace"><code class="monospace">defbuffer2</code></code>).</p>
+<p class="bodytext">The expressions you can apply to readings are listed in the following table. In the formulas:</p>
+<ul class="listbullet"><li class="listbullet">r = present reading</li><li class="listbullet">a = previous reading</li><li class="listbullet">t = timestamp of the reading</li><li class="listbullet">c = constant</li></ul><p class="bodytext"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #010101">
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tableheading">Expression</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="tableheading">TSP parameter</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tableheading">Formula</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Remove math expression</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_NONE</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">Not applicable</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Add</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_ADD</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">r + p</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Average</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_AVERAGE</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73608" src="6510_formulas_average_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas average" height="36" width="29" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Divide</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_DIVIDE</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73609" src="6510_formulas_divide_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas divide" height="36" width="9" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Exponent</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_EXPONENT</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73605" src="6510_formulas_exponent_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas exponent" height="20" width="19" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Log10</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_LOG10</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73606" src="6510_formulas_log_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas log" height="20" width="37" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Multiply</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_MULTIPLY</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">r * a</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Polynomial</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_POLY</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73601" src="6510_formulas_polynomial_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas polynomial" height="18" width="263" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Power</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_POWER</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73604" src="6510_formulas_power_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas power" height="18" width="10" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Rate of change</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_RATE</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73607" src="6510_formulas_rate_of_change_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas rate of change" height="32" width="41" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Reciprocal</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_RECIPROCAL</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73602" src="6510_formulas_reciprocal_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas reciprocal" height="36" width="9" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Square Root</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_SQROOT</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext"><img id="f73600" src="6510_formulas_square_root2_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="6510 formulas square root" height="14" width="14" vspace="0" hspace="0" align="bottom" border="0"></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #010101;" width="144"><p class="tablebodytext">Subtract</p>
+</td>
+<td style="border:1px solid #010101;" width="168"><p class="codetable">buffer.EXPR_SUBTRACT</p>
+</td>
+<td style="border:1px solid #010101;" width="288"><p class="tablebodytext">r &#8211; a</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">mathExp = buffer.make(200, buffer.STYLE_FULL)</p>
+<p class="codetable"><code class="monospace">dmm</code>.measure.func = <code class="monospace">dmm</code>.FUNC_DC_VOLTAGE</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">buffer.math(mathExp, buffer.UNIT_NONE, buffer.EXPR_MULTIPLY)</p>
+<p class="codetable">for x = 1, 3 do </p>
+<p class="codetable">     print(&quot;Reading: &quot;, <code class="monospace">dmm</code>.measure.read(mathExp))</p>
+<p class="codetable">end</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">display.changescreen(display.SCREEN_READING_TABLE)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">print(&quot;Extra value reading 1: &quot;, mathExp.extravalues[1])</p>
+<p class="codetable">print(&quot;Extra value reading 2: &quot;, mathExp.extravalues[2])</p>
+<p class="codetable">print(&quot;Extra value reading 3: &quot;, mathExp.extravalues[3])</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Reset the instrument.</p>
+<p class="tablebodytext">Make a buffer named <code class="monospace"><code class="monospace">mathExp</code></code> set to hold 200 readings with a buffer style of FULL.</p>
+<p class="tablebodytext">Set the measure function to DC voltage.</p>
+<p class="tablebodytext">Set the buffer math expression to multiply readings against the previous readings.</p>
+<p class="tablebodytext">Make three readings.</p>
+<p class="tablebodytext">Display the reading table on the front panel of the instrument, where you can view the extra readings.</p>
+<p class="tablebodytext">Print the extra values (the calculated values).</p>
+<p class="tablebodytext">Example output:</p>
+<p class="codetable">Reading: 6.3863430578e-05</p>
+<p class="codetable">Reading: 6.7818055872e-05</p>
+<p class="codetable">Reading: 1.9871571784e-05</p>
+<p class="codetable">Extra value reading 1: 6.3863430578e-05</p>
+<p class="codetable">Extra value reading 2: 4.3310937031e-09</p>
+<p class="codetable">Extra value reading 3: 1.3476513655e-09</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h76403" class="jump" title="buffer.unit()" href="76401.htm" target="_self">buffer.unit()</a></p>
+
+
+<input id="topicId" type="hidden" value="73595" />
+<input id="topicDescription" type="hidden" value="buffer.math()" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 8:18:35 AM" />
+</body>
+</html>

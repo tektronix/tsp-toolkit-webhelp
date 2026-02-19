@@ -1,0 +1,189 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> dmm.trigger.digitize.stimulus </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
+<script type="text/javascript">
+        function isTOCLoaded() {
+            //this function for loading the topic within the application if loaded by itself
+            //i.e. open the topic .htm file or as search engines link
+            var url = window.location.href;
+            var baseUrl = url.substring(0, url.lastIndexOf("/") + 1);
+            var topicFile = url.substring(url.lastIndexOf("/") + 1)
+            var newUrl = baseUrl + "index.htm#" + topicFile;
+            location.href = newUrl;
+            return false;
+        }
+</script>
+</head>
+<body>
+<table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="41309.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="44068.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t44069" class="heading2-icl">dmm.trigger.digitize.stimulus</h2>
+<p class="bodyzero">This attribute sets the instrument to digitize a measurement the next time it detects the specified trigger event.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingwhitetext">Type</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingwhitetext">TSP-Link accessible</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Affected by</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingwhitetext">Where saved</p>
+</td>
+<td bgcolor="#4A6B95" style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingwhitetext">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Restore configuration<br>Instrument reset<br>Power cycle</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration script</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">dmm.EVENT_NONE</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Usage</p>
+<p class="iclcode"><em class="emphasis">event</em> = dmm.trigger.digitize.stimulus</p>
+<p class="iclcode">dmm.trigger.digitize.stimulus = <em class="emphasis">event</em></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">event</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The event to use as a stimulus; see <strong class="specialbold">Details</strong></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Details</p>
+<p class="iclbody">This command is intended to provide the lowest possible latency between a trigger event such as digital I/O and a reading. It forces the instrument to make a digitize measurement the next time it detects the specified trigger event. Options for the trigger event parameter are listed in the following table.</p>
+<p class="iclbody">A digitize function must be active before sending this command. The measurement is digitized for the active function. If a measure function is active, an error is generated.</p>
+<p class="iclbody">Before using this command, set the active reading buffer. Readings are stored in the active reading buffer.</p>
+<p class="iclbody">If the count is set to more than 1, the first reading is initialized by this trigger. Subsequent readings occur as rapidly as the instrument can make them. If a trigger occurs during the group measurement, the trigger is latched and another group of measurements with the same count will be triggered after the current group completes.</p>
+<p class="iclbody">If the stimulus is set to none, this command has no effect on readings.</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" colspan="2" width="600"><p class="tableheadingsmall">Trigger events</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<th style="border:1px solid #C0C0C0;" width="336"><p class="tableheadingsmall">Event description</p>
+</th>
+<th style="border:1px solid #C0C0C0;" width="264"><p class="tableheadingsmall">Event constant</p>
+</th>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Analog trigger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_ANALOGTRIGGER</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger event blender <span class="monospaceitalic">N</span> (1 to 2), which combines trigger&nbsp;events</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_BLENDER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">A command interface trigger (bus trigger):</p>
+<ul class="tablelistbullet9pt"><li class="tablelistbullet9pt"><strong class="specialbold">Any remote interface:</strong> *<code class="monospace">TRG</code></li><li class="tablelistbullet9pt"><strong class="specialbold">GPIB only:</strong> GET bus command</li><li class="tablelistbullet9pt"><strong class="specialbold">USB only:</strong> A USBTMC TRIGGER message </li><li class="tablelistbullet9pt"><strong class="specialbold">VXI-11:</strong> VXI-11 command <code class="monospace">device_trigger</code></li></ul></td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_COMMAND</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Digital input line edge (either rising, falling, or either based on the configuration of the line) detected on digital input line&nbsp;<span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;6)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DIGIO<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Front-panel TRIGGER key press</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_DISPLAY</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">External in trigger</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_EXTERNAL</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Appropriate LXI trigger packet is received on LAN trigger object <span class="monospaceitalic">N</span> (1 to 8)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_LAN<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">No trigger event</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NONE</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Notify trigger block <span class="monospaceitalic">N</span> (1 to 8) generates a trigger event when the trigger model executes it</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_NOTIFY<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Trigger timer <span class="monospaceitalic">N</span> (1 to 4) expired</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TIMER<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="336"><p class="tablebodytext">Line edge detected on TSP-Link synchronization line&nbsp;<span class="monospaceitalic">N</span> (1&nbsp;to&nbsp;3)</p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="264"><p class="codetable">trigger.EVENT_TSPLINK<span class="monospaceitalic">N</span></p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">reset()</p>
+<p class="codetable">dmm.digitize.func = dmm.FUNC_DIGITIZE_VOLTAGE</p>
+<p class="codetable">dmm.digitize.analogtrigger.mode = dmm.MODE_EDGE</p>
+<p class="codetable">dmm.digitize.analogtrigger.edge.slope = dmm.SLOPE_RISING</p>
+<p class="codetable">dmm.digitize.analogtrigger.edge.level = 0.5</p>
+<p class="codetable">dmm.trigger.digitize.stimulus = trigger.EVENT_ANALOGTRIGGER</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Reset the instrument.</p>
+<p class="tablebodytext">Set the function to digitize voltage.</p>
+<p class="tablebodytext">Set the analog trigger mode to edge.</p>
+<p class="tablebodytext">Set the slope to rising.</p>
+<p class="tablebodytext">Set the level to 0.5 V.</p>
+<p class="tablebodytext">Set the stimulus to be the analog trigger.</p>
+</td>
+</tr>
+
+</table>
+<p class="iclsubheading">Also see</p>
+<p class="listcommand"><a id="h41300" class="jump" title="dmm.digitize.count" href="41297.htm" target="_self">dmm.digitize.count</a></p>
+<p class="listcommand"><a id="h41429" class="jump" title="dmm.digitize.func" href="41428.htm" target="_self">dmm.digitize.func</a></p>
+
+
+<input id="topicId" type="hidden" value="44069" />
+<input id="topicDescription" type="hidden" value="dmm.trigger.digitize.stimulus" />
+<input id="footer-modified" type="hidden" value="Last modified: 9/12/2019 3:09:40 PM" />
+</body>
+</html>
