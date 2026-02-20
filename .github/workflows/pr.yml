@@ -76,6 +76,8 @@ jobs:
     needs:
       - package
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     container:
       image: ghcr.io/tektronix/tsp-toolkit-build:latest
       credentials:
