@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('116034')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('116034')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="116030.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,7 +18,7 @@
 </tr>
 </table>
 <h2 id="t116034" class="heading2-icl">bufferVar.statuses</h2>
-<p class="bodyzero">This attribute contains the status values of readings in the reading buffer.</p>
+<p class="bodyzero">This attribute contains the status values of readings in the specified reading buffer.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
 <tr align="left" valign="top">
 <td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
@@ -46,8 +46,8 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">statusInformation</span> = <span class="monospaceitalic">bufferVar</span>.statuses[<span class="monospaceitalic">N</span>]</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax"><span class="monospaceitalic">statusInformation</span> = <span class="monospaceitalic">bufferVar</span>.statuses[<span class="monospaceitalic">N</span>]</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -70,20 +70,21 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
+<p class="commandsubheading">Details</p>
 <p class="iclbody">This buffer column is a Lua table of the status values for each reading in the buffer. The status values are floating-point numbers that encode the status value.</p>
+<p class="iclbody">The buffer status values are not updated during trigger model operation.</p>
 <p class="bodytext">The buffer status bits are listed in the following table.</p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="48"><p class="tableheading">Bit</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="48"><p class="tableheading">Bit</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="96"><p class="tableheading">Name</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="96"><p class="tableheading">Name</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="96"><p class="tableheading">Decimal value</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="96"><p class="tableheading">Decimal value</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Hex value</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Hex value</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Description</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="288"><p class="tableheading">Description</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -101,13 +102,13 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="48"><p class="tablebodytext">B1</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">Reserved</p>
+<td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">Overtemp</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="96"><p class="tablebodytext">2</p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="72"><p class="tablebodytext">0x02</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Reserved for future use</p>
+<td style="border:1px solid #C0C0C0;" width="288"><p class="tablebodytext">Overtemperature shutdown; measurement made with output off</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -184,7 +185,7 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Example</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -212,7 +213,7 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Also see</p>
+<p class="commandsubheading">Also see</p>
 <p class="listcommand"><a id="h107416" class="jump" title="slot[Z].psu[X].measure.rel.enableY" href="107229.htm" target="_self">slot[Z].psu[X].measure.rel.enableY</a></p>
 <p class="listcommand"><a id="h116743" class="jump" title="slot[Z].psu[X].source.limiti" href="107238.htm" target="_self">slot[Z].psu[X].source.limiti</a></p>
 <p class="listcommand"></p>

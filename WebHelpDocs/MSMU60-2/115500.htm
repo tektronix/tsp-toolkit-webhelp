@@ -25,11 +25,11 @@
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,8 +46,8 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.configlist.prev(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">channel</span>, &quot;<span class="monospaceitalic">configlistName</span>&quot;)</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.configlist.prev(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">channel</span>, &quot;<span class="monospaceitalic">configlistName</span>&quot;)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -71,7 +71,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">channel</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Module channel number</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Module channel number; see <strong class="specialbold">Details</strong></p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -82,12 +82,13 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
+<p class="commandsubheading">Details</p>
 <p class="iclbody">When the trigger model reaches a configuration list previous block, the settings for the previous index in the specified configuration list are restored.</p>
 <p class="iclbody">On the first use in a trigger model, this block recalls the last index unless an earlier recall block has already recalled a specific index. In that case, the block will continue from that point and recall the previous index instead.</p>
 <p class="iclbody">When the beginning of the list is reached, the trigger model continues from the last index in the list.</p>
+<p class="iclbody">The channels are specified as either integers or slot notation <code class="monospace">Z00X</code>, where <code class="monospace">Z</code> is the slot number and <code class="monospace">X</code> is the channel number. For example, channel 1 on slot 1 is specified as either <code class="monospace">1</code> or <code class="monospace">1001</code>.</p>
 <p class="iclbody">The configuration list must be defined before the trigger model uses this block.</p>
-<p class="iclsubheading">Example</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -126,18 +127,19 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This example demonstrates how to use the configlist.prev() trigger model block to cycle through a 3-point configuration list.</p>
-<p class="tablebodytext">The channel output steps through three voltage levels (3.0 V, 2.0 V, and 1.0 V) using three consecutive configlist.prev blocks with delays between each step.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This example demonstrates how to use the <code class="monospace">configlist.prev()</code> trigger model block to cycle through a 3-point configuration list.</p>
+<p class="tablebodytext">The channel output steps through three voltage levels (3.0 V, 2.0 V, and 1.0 V) using three consecutive <code class="monospace">configlist.prev()</code> blocks with delays between each step.</p>
 </td>
 </tr>
 
 </table>
-<p class="iclsubheading">Trigger model diagram</p>
-<p class="magicfigurecenter"><img id="f133332" src="mp5000_triggermodel_configlistprev_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_ConfiglistPrev" height="625" width="110" vspace="0" hspace="0" align="bottom" border="0"></p>
-<p class="iclsubheading">Also see</p>
-<p class="listcommand">Config list prev block</p>
+<p class="commandsubheading">Trigger model diagram</p>
+<p class="bodytext"><img id="f133332" src="mp5000_triggermodel_configlistprev_lr.png" class="linkedimagetemplatenocaption" alt="MP5000_TriggerModel_ConfiglistPrev" height="484" width="124" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand">Configuration list recall previous block</p>
 <p class="listcommand"><a id="h116800" class="jump" title="slot[Z].trigger.model.addblock.configlist.next()" href="115499.htm" target="_self">slot[Z].trigger.model.addblock.configlist.next()</a></p>
 <p class="listcommand"><a id="h116802" class="jump" title="slot[Z].trigger.model.addblock.configlist.recall()" href="115501.htm" target="_self">slot[Z].trigger.model.addblock.configlist.recall()</a></p>
+<a name="o279474"></a>
 
 </body>
 </html>

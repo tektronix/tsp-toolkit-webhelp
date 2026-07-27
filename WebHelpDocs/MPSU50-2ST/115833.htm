@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('115833')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115833')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="116450.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t115833" class="heading2-icl">slot[Z].psu[X].trigger.source.listY()</h2>
-<p class="bodyzero">This function configures the list sweep for the trigger model.</p>
+<p class="bodyzero">This function configures a list sweep for the trigger model.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,8 +46,8 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].trigger.source.list<span class="monospaceitalic">Y</span>(<span class="monospaceitalic">SourceLevels</span>)</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].trigger.source.list<span class="monospaceitalic">Y</span>(s<span class="monospaceitalic">ourceLevels</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -65,22 +65,22 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The voltage measurement function; <code class="monospace">v</code></p>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The voltage source function; <code class="monospace">v</code></p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">SourceLevels</span></p>
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">sourceLevels</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">List of source levels such as <code class="monospace">{1, 2, 3}</code>; see <strong class="specialbold">Details</strong></p>
 </td>
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
-<p class="iclbody">This command sets up a list sweep by configuring the list of source levels.</p>
+<p class="commandsubheading">Details</p>
+<p class="bodytext">This function configures a sweep from a predetermined list passed through the <span class="monospaceitalic">sourceLevels</span> parameter. The number of elements in <span class="monospaceitalic">sourceLevels</span> does not set the number of steps in a sweep. Instead, it provides the list of source values to be used by a subsequent sweep.</p>
 <p class="bodytext">To advance through the configured sweep, use source action blocks in a trigger model. Available blocks include <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.source.action.step</code>, <code class="monospace">.set, .skip</code>, and <code class="monospace">.bias</code>. When you use trigger model source action blocks to progress through the sweep:</p>
-<ul class="listbullet"><li class="listbullet">If the number of source block executions exceeds the configured number of levels, the sweep wraps to the beginning.</li><li class="listbullet">If the number of executions is less than the configured number of levels, the remaining source values are ignored and not used.</li></ul><p class="bodytext">The PSU stores the most recent configured source action. The last call to a sweep command is used for the source action in a trigger model. The sweep commands are <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>, and <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code>.</p>
-<p class="iclsubheading">Example</p>
+<ul class="listbullet"><li class="listbullet">If the number of source block executions exceeds the configured number of levels, the sweep wraps to the beginning.</li><li class="listbullet">If the number of executions is less than the configured number of levels, the remaining source values are ignored and not used.</li></ul><p class="bodytext">The PSU stores the most recent configured source action. The last call to a sweep command is used for the source action in a trigger model. The sweep commands are:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.linear</code><span class="monospaceitalic">Y</span><code class="monospace">()</code></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.list</code><span class="monospaceitalic">Y</span><code class="monospace">()</code></li><li class="listbullet"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.source.log</code><span class="monospaceitalic">Y</span><code class="monospace">()</code></li></ul><p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -94,12 +94,13 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Trigger model diagram</p>
-<p class="magicfigurecenter"><img id="f133327" src="mp5000_triggermodel_triggersourcelisty_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_TriggerSourceListY.png" height="263" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
-<p class="iclsubheading">Also see</p>
+<p class="commandsubheading">Trigger model diagram</p>
+<p class="bodytext"><img id="f133327" src="mp5000_triggermodel_triggersourcelisty_lr.png" class="linkedimagetemplatenocaption" alt="MP5000_TriggerModel_TriggerSourceListY.png" height="242" width="134" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="commandsubheading">Also see</p>
 <p class="listcommand">slot[Z].trigger.model.addblock.source.action.bias()</p>
 <p class="listcommand">slot[Z].trigger.model.addblock.source.action.skip()</p>
 <p class="listcommand">slot[Z].trigger.model.addblock.source.action.step</p>
+<a name="o279474"></a>
 
 </body>
 </html>

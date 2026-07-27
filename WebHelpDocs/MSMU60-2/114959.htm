@@ -14,7 +14,7 @@
 <td width= "18">
 <p class="bodytext"><a href="118323.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="115826.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="296820.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t114959" class="heading2-icl">slot[Z].trigger.model.initiate()</h2>
@@ -25,11 +25,11 @@
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,8 +46,8 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.initiate(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;)</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].trigger.model.initiate(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -64,11 +64,14 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
-<p class="iclbody">This command starts the named trigger model. Once the function completes, the trigger model runs in the background and the function returns.</p>
+<p class="commandsubheading">Details</p>
+<p class="iclbody">This command starts the named trigger model. The trigger model will begin to run in the background by the end of this function.</p>
 <p class="iclbody">If any trigger model blocks are improperly configured, or if the trigger model is already running or has not been created, the trigger model will not start, and an error message will be returned.</p>
-<p class="iclbody">To pause execution until a trigger model is complete, use waitcomplete(). To abort a running trigger model, use <a id="h132961" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort</a>.</p>
-<p class="iclsubheading">Example</p>
+<p class="iclbody">Sending <a id="h296843" class="jump" title="slot[Z].trigger.model.load()" href="296820.htm" target="_self">slot[Z].trigger.model.load()</a> is not necessary for this command to execute a trigger model.</p>
+<p class="iclbody">If the trigger model is loaded using <a id="h296843_2" class="jump" title="slot[Z].trigger.model.load()" href="296820.htm" target="_self">slot[Z].trigger.model.load()</a>, this command executes without performing the load step, and the trigger model remains loaded after completion. If the trigger model is not loaded, this command loads it before execution and unloads it when the run completes.</p>
+<p class="iclbody">If the trigger model is loaded, the instrument also restores all channels used by that model to the pre-run, pre-execution state. This ensures consistent and repeatable operation across multiple runs.</p>
+<p class="iclbody">To pause execution until a trigger model is complete, use waitcomplete(). To abort a running trigger model, use <a id="h132961" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort()</a>.</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -94,10 +97,11 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Trigger model diagram</p>
-<p class="magicfigurecenter"><img id="f133347" src="mp5000_triggermodel_initiate_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_Initiate.png" height="62" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
-<p class="iclsubheading">Also see</p>
-<p class="listcommand"><a id="h114987" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort</a></p>
+<p class="commandsubheading">Trigger model diagram</p>
+<p class="bodytext"><img id="f133347" src="mp5000_triggermodel_initiate_lr.png" class="linkedimagetemplatenocaption" alt="MP5000_TriggerModel_Initiate.png" height="62" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand"><a id="h132961_2" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort()</a></p>
+<p class="listcommand"><a id="h296843_3" class="jump" title="slot[Z].trigger.model.load()" href="296820.htm" target="_self">slot[Z].trigger.model.load()</a></p>
 
 </body>
 </html>

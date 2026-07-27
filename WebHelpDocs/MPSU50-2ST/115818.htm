@@ -9,12 +9,12 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('115818')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115818')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="107240.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="307381.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="116988.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="116450.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t115818" class="heading2-icl">slot[Z].psu[X].trigger.measure.Y()</h2>
@@ -25,11 +25,11 @@
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,9 +46,9 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].trigger.measure.<span class="monospaceitalic">Y</span>(r<span class="monospaceitalic">eadingBuffer</span>)</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].trigger.measure.<code class="monospace">iv</code>(<span class="monospaceitalic">currentBuffer, voltageBuffer</span>)</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].trigger.measure.<span class="monospaceitalic">Y</span>(r<span class="monospaceitalic">eadingBuffer</span>)</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].trigger.measure.<code class="monospace">iv</code>(<span class="monospaceitalic">currentBuffer, voltageBuffer</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -89,15 +89,14 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
+<p class="commandsubheading">Details</p>
 <p class="bodytext">This function configures the measurement subsystem for one or more synchronous measurements to be made while a trigger model is executed.</p>
 <p class="bodytext">Measurements are in the following units of measure:</p>
 <ul class="listbullet"><li class="listbullet"><code class="monospace">v</code> = volts</li><li class="listbullet"><code class="monospace">i</code> = amperes</li><li class="listbullet"><code class="monospace">r</code> = ohms</li><li class="listbullet"><code class="monospace">p</code> = watts</li></ul><p class="bodytext">This command only configures the measure functions and reading buffers to be used during a trigger model; it does not cause measurements to be made. To make measurements, you must add a measure block to the trigger model using the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].trigger.model.addblock.measure()</code> command.</p>
 <p class="bodytext">The <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].psu[</code><span class="monospaceitalic">X</span><code class="monospace">].measure.count</code> attribute is not used by the measure subsystem when a trigger model is executed. Instead, the measure count is passed in through the measure block command.</p>
 <p class="bodytext">The reading buffers are cleared when <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.initiate()</code> is called unless the buffer is configured to append data. Reading buffers are not optional for this command.</p>
 <p class="bodytext">The module only retains the last call to any one of these functions and only that measurement is made.</p>
-<p class="iclbody"></p>
-<p class="iclsubheading">Example</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -130,8 +129,9 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Also see</p>
+<p class="commandsubheading">Also see</p>
 <p class="listcommand">slot[Z].trigger.model.addblock.measure()</p>
+<a name="o279474"></a>
 
 </body>
 </html>

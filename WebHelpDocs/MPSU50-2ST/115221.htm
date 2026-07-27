@@ -9,27 +9,27 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('115221')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115221')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
-<p class="bodytext"><a href="115224.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="298513.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 <td width= "18">
-<p class="bodytext"><a href="115227.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<p class="bodytext"><a href="298509.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t115221" class="heading2-icl">slot[Z].psu[X].configlist.recall()</h2>
-<p class="bodyzero">This function recalls a configuration index in a configuration list.</p>
+<p class="bodyzero">This function recalls and applies the configuration at a specified index to the channel.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,8 +46,8 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].configlist.recall(&quot;c<span class="monospaceitalic">onfigListName</span>&quot;, <span class="monospaceitalic">index</span>)</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].configlist.recall(&quot;c<span class="monospaceitalic">onfigListName</span>&quot;, <span class="monospaceitalic">index</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -76,30 +76,33 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
-<p class="iclbody">Use this command to recall the settings stored in a specific configuration index in a configuration list. Each index contains most of the measure and source attributes of the channel.</p>
-<p class="iclbody">An error message is displayed:</p>
-<ul class="listbullet"><li class="listbullet">If you do not specify an index.</li><li class="listbullet">If you specify an invalid index (for example, calling index 3 when there are only two indexes in the configuration list).</li><li class="listbullet">If you try to recall an index from an empty configuration list.</li></ul><p class="iclbody">For additional details about the information this command recalls when using a configuration list query command, see &quot;Settings stored in a configuration index&quot; in the <em class="emphasis">MP5000 Source&#8209;Measure Unit Reference Manual</em>.</p>
-<p class="iclsubheading">Example</p>
+<p class="commandsubheading">Details</p>
+<p class="iclbody">Use this command to recall the settings stored in a specific configuration index in a configuration list. These recalled settings are immediately applied to the channel. The active configuration of the instrument channel is modified to match the recalled configuration. A configuration can be called if the channel output is on or off. Each index contains most of the measure and source attributes of the channel.</p>
+<p class="iclbody">An error message is generated:</p>
+<ul class="listbullet"><li class="listbullet">If you do not specify an index.</li><li class="listbullet">If you specify an invalid index (for example, calling index 3 when there are only two indexes in the configuration list).</li><li class="listbullet">If you try to recall an index from an empty configuration list.</li></ul><p class="iclbody">For additional details about the information this command recalls when using a configuration list query command, see Settings stored in a configuration index.</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable"><code class="monospace">slot[1].psu[1]</code>.configlist.recall(&quot;MyMeasList&quot;, 5)</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable"><code class="monospace">slot[1].psu[1]</code>.configlist.recall(&quot;MyConfigList&quot;, 5)</p>
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Recalls configuration index 5 in a configuration list named <code class="monospace">MyMeasList</code> on channel 1 of the module installed in slot 1.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">Recalls and applies configuration index 5 in a configuration list named <code class="monospace">MyConfigList</code> on channel 1 of the module installed in slot 1.</p>
 </td>
 </tr>
 
 </table>
-<p class="iclsubheading">Also see</p>
-<p class="listcommand">&quot;Configuration lists&quot; in the General operation section of the <em class="emphasis">MP5000 Reference Manual</em></p>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand">Configuration lists</p>
+<p class="listcommand"><a id="h300034" class="jump" title="slot[Z].psu[X].configlist.append()" href="298510.htm" target="_self">slot[Z].psu[X].configlist.append()</a></p>
 <p class="listcommand"><a id="h115259" class="jump" title="slot[Z].psu[X].configlist.create()" href="115220.htm" target="_self">slot[Z].psu[X].configlist.create()</a></p>
 <p class="listcommand"><a id="h115251" class="jump" title="slot[Z].psu[X].configlist.delete()" href="115224.htm" target="_self">slot[Z].psu[X].configlist.delete()</a></p>
+<p class="listcommand"><a id="h300035" class="jump" title="slot[Z].psu[X].configlist.query()" href="298513.htm" target="_self">slot[Z].psu[X].configlist.query()</a></p>
 <p class="listcommand"><a id="h115254" class="jump" title="slot[Z].psu[X].configlist.size()" href="115227.htm" target="_self">slot[Z].psu[X].configlist.size()</a></p>
 <p class="listcommand"><a id="h115255" class="jump" title="slot[Z].psu[X].configlist.store()" href="115223.htm" target="_self">slot[Z].psu[X].configlist.store()</a></p>
 <p class="listcommand"><a id="h115250" class="jump" title="slot[Z].psu[X].configlist.table()" href="115226.htm" target="_self">slot[Z].psu[X].configlist.table()</a></p>
+<a name="o279474"></a>
 
 </body>
 </html>

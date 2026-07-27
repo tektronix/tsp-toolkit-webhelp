@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('115223')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('115223')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115227.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -18,18 +18,18 @@
 </tr>
 </table>
 <h2 id="t115223" class="heading2-icl">slot[Z].psu[X].configlist.store()</h2>
-<p class="bodyzero">This function stores the active settings into the named configuration list.</p>
+<p class="bodyzero">This function stores a configuration into the named configuration list.</p>
 <table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #D3D3D3">
 <tr align="left" valign="top">
 <th style="border:1px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,9 +46,10 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].configlist.store(&quot;<em class="emphasis">configListName</em>&quot;)</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].configlist.store(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">index</span>)</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].configlist.store(&quot;<em class="emphasis">configListName</em>&quot;)</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].configlist.store(&quot;configListName&quot;, <span class="monospaceitalic">index</span>)</p>
+<p class="commandsyntax">slot[Z].psu[<span class="monospaceitalic">X</span>].configlist.store(&quot;<span class="monospaceitalic">configListName</span>&quot;, <span class="monospaceitalic">index, config</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr>
@@ -81,12 +82,21 @@
 <td style="border:1px solid #C0C0C0;" colspan="2" width="461"><p class="tablebodytext">A number starting from 1 that defines a specific configuration index in the configuration&nbsp;list</p>
 </td>
 </tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" colspan="2" width="139"><p class="tablebodytext"><span class="monospaceitalic">config</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" colspan="2" width="461"><p class="tablebodytext">A table of channel attributes</p>
+</td>
+</tr>
 
 </table>
-<p class="iclsubheading">Details</p>
-<p class="iclbody">Use this command to store the active settings to a configuration index in a configuration list. If the <span class="monospaceitalic">index</span> parameter is not provided, the new settings are appended to the end of the list.</p>
-<p class="iclbody">Configuration lists are not saved when the instrument is turned off.</p>
-<p class="iclsubheading">Example</p>
+<p class="commandsubheading">Details</p>
+<p class="iclbody">Use this command to store a set of attributes to a configuration list at the specified index. If no configuration is provided, the active settings on the specified channel and slot are used. If a partial configuration is used, the missing values are taken from the reference configuration for the configuration list.</p>
+<p class="iclbody">If the index already contains a configuration, that configuration is overwritten. If the index is the number of steps plus 1 or not specified, the configuration is saved at the end of the list. An error is generated if the index is greater than 1 more than the number of steps already present in the configuration list. To always add the configuration to the end of the configuration list, use <code class="monospace">slot[Z].psu[X].configlist.append()</code>.</p>
+<p class="bodyzero">Configuration lists are not saved when the instrument is turned off. They are preserved through a reset.</p>
+<p class="bodyzero">The former functionality of this command is supported but deprecated beginning with mainframe firmware version 1.1.0. Use this command to store a configuration into a named configuration list and <code class="monospace">slot[Z].psu[X].configlist.append()</code> to add steps to an existing configuration list.</p>
+<p class="iclbody">For additional details about the attributes stored in a configuration list, see Settings stored in a configuration index.</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -107,11 +117,14 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Also see</p>
-<p class="listcommand">&quot;Configuration lists&quot; in the General operation section of the <em class="emphasis">MP5000 Reference Manual</em></p>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand">Configuration lists</p>
+<p class="listcommand"><a id="h300034" class="jump" title="slot[Z].psu[X].configlist.append()" href="298510.htm" target="_self">slot[Z].psu[X].configlist.append()</a></p>
 <p class="listcommand"><a id="h115259" class="jump" title="slot[Z].psu[X].configlist.create()" href="115220.htm" target="_self">slot[Z].psu[X].configlist.create()</a></p>
 <p class="listcommand"><a id="h115251" class="jump" title="slot[Z].psu[X].configlist.delete()" href="115224.htm" target="_self">slot[Z].psu[X].configlist.delete()</a></p>
+<p class="listcommand"><a id="h300035" class="jump" title="slot[Z].psu[X].configlist.query()" href="298513.htm" target="_self">slot[Z].psu[X].configlist.query()</a></p>
 <p class="listcommand"><a id="h115253" class="jump" title="slot[Z].psu[X].configlist.recall()" href="115221.htm" target="_self">slot[Z].psu[X].configlist.recall()</a></p>
+<p class="listcommand"><a id="h300036" class="jump" title="slot[Z].psu[X].configlist.reference()" href="298509.htm" target="_self">slot[Z].psu[X].configlist.reference()</a></p>
 <p class="listcommand"><a id="h115254" class="jump" title="slot[Z].psu[X].configlist.size()" href="115227.htm" target="_self">slot[Z].psu[X].configlist.size()</a></p>
 <p class="listcommand"><a id="h115250" class="jump" title="slot[Z].psu[X].configlist.table()" href="115226.htm" target="_self">slot[Z].psu[X].configlist.table()</a></p>
 

@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="16408.css">
 <script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
 </head>
-<body onload="if (isTOCLoaded()) {expand('116608');expand('18079');highlight('117972')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('117972')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="117960.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
@@ -106,15 +106,15 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.condition</p>
-<p class="iclcode"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.enable</p>
-<p class="iclcode"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.event</p>
-<p class="iclcode"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.ntr</p>
-<p class="iclcode"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.ptr</p>
-<p class="iclcode">slot[<em class="emphasis">Z</em>].status.operation.instrument.enable = <span class="monospaceitalic">operationRegister</span></p>
-<p class="iclcode">slot[<em class="emphasis">Z</em>].status.operation.instrument.ntr = <span class="monospaceitalic">operationRegister</span></p>
-<p class="iclcode">slot[<em class="emphasis">Z</em>].status.operation.instrument.ptr = <span class="monospaceitalic">operationRegister </span></p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.condition</p>
+<p class="commandsyntax"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.enable</p>
+<p class="commandsyntax"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.event</p>
+<p class="commandsyntax"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.ntr</p>
+<p class="commandsyntax"><em class="emphasis">operationRegister</em> = slot[<em class="emphasis">Z</em>].status.operation.instrument.ptr</p>
+<p class="commandsyntax">slot[<em class="emphasis">Z</em>].status.operation.instrument.enable = <span class="monospaceitalic">operationRegister</span></p>
+<p class="commandsyntax">slot[<em class="emphasis">Z</em>].status.operation.instrument.ntr = <span class="monospaceitalic">operationRegister</span></p>
+<p class="commandsyntax">slot[<em class="emphasis">Z</em>].status.operation.instrument.ptr = <span class="monospaceitalic">operationRegister </span></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -131,14 +131,14 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
+<p class="commandsubheading">Details</p>
 <p class="iclbody">These attributes are used to read or write to the operation status instrument summary registers. Reading a status register returns a value. The binary equivalent of the returned value indicates which register bits are set. The least significant bit of the binary number is bit B0, and the most significant bit is bit B15.</p>
 <p class="iclbody">For information about .condition, .enable, .event, .ntr, and .ptr registers, refer to Status register set contents. The individual bits of this register are defined in the following table.</p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Bit</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="72"><p class="tableheading">Bit</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="528"><p class="tableheading">Value</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="528"><p class="tableheading">Value</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -171,29 +171,30 @@
 </tr>
 
 </table>
+<p class="spacing"></p>
 <p class="iclbody">As an example, to set bit B1 of the operation status instrument summary enable register, set <code class="monospace">slot[1].status.operation.instrument.enable</code> <code class="monospace">= slot[1].status.operation.instrument.PSU1</code></p>
 <p class="iclbody">In addition to the above constants, <span class="monospaceitalic">operationRegister</span> can be set to the numeric equivalent of the bit to set. To set more than one bit of the register, set <span class="monospaceitalic">operationRegister</span> to the sum of their decimal weights. For example, to set bits B1 and B2, set <span class="monospaceitalic">operationRegister</span> to 6 (the sum of 2 + 4).</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Bit</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B7</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B6</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B5</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B4</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B3</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B2</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B1</p>
-</td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B0</p>
-</td>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Bit</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B7</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B6</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B5</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B4</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B3</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B2</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B1</p>
+</th>
+<th bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B0</p>
+</th>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Binary value</p>
@@ -260,23 +261,23 @@
 <p class="iclspacing"></p>
 <table class="tableintopic" width="582" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Bit</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="150"><p class="tableheading">Bit</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B15</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B15</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B14</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B14</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B13</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B13</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B12</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B12</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B11</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B11</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B10</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B10</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B9</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B9</p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B8</p>
+<td bgcolor="#C0C0C0" style="border:1px solid #C0C0C0;" width="54"><p class="tableheading">B8</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -341,7 +342,7 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Example 1</p>
+<p class="commandsubheading">Example 1</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -356,7 +357,7 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Example 2</p>
+<p class="commandsubheading">Example 2</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -371,7 +372,7 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Also see</p>
+<p class="commandsubheading">Also see</p>
 <p class="listcommand">Operation Status Registers</p>
 <p class="listcommand">status.operation.*</p>
 

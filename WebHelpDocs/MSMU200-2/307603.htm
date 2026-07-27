@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> slot[Z].smu[X].source.activelimitnY </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('307603')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="111051.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="307602.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t307603" class="heading2-icl">slot[Z].smu[X].source.activelimitnY</h2>
+<p class="bodyzero">This attribute contains the active negative source limit value presently in use by the module.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (R)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Power cycle<br>Mainframe reset<br>Module reset</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">Not applicable</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax"><em class="emphasis">activeValue</em> = slot[<span class="monospaceitalic">Z</span>].smu[<span class="monospaceitalic">X</span>].source.activelimitn<span class="monospaceitalic">Y</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">activeValue</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The active negative source limit</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Module slot number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Module channel number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Y</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The source function; <code class="monospace">v</code> = voltage, <code class="monospace">i</code> = current</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Details</p>
+<p class="iclbody">When an SMU module is configured to use asymmetric voltage or current source limits, the instrument will accept values outside of the source limit range. The starting source limit range is specified by the larger absolute value of the limits set by <code class="monospace">slot[Z].smu[X].source.limitpY</code> and <code class="monospace">slot[Z].smu[X].source.limitnY</code>. The source limit range is adjusted by the the instrument as needed.</p>
+<p class="iclbody">The lowest level that the module will limit when sourcing is 10% of the source limit range. If the smaller limit is less than that value, the module may limit the source to 10% of the source limit range.</p>
+<p class="iclbody">For example, setting a positive current source limit of 1 A and a negative current source limit of -500 mA will result in the source limit range being set to 1 A and the source being limited to -500 mA, as they are on the same range. However, setting a positive current source limit of 1 A and a negative current source limit of -1 uA, may lead to the source being limited to 100 mA (10% of 1 A).</p>
+<p class="iclbody">Tektronix suggests setting asymmetric limits and then using the <code class="monospace">slot[Z].smu[X].source.activelimitpY</code> and<code class="monospace"> slot[Z].smu[X].source.activelimitnY</code> commands to monitor limit values during a test.</p>
+<p class="commandsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].smu[1].source.limitpi = 100e-3</p>
+<p class="codetable">slot[1].smu[1].source.limitni = -100e-6</p>
+<p class="codetable">slot[1].smu[1].source.leveli = 50e-3</p>
+<p class="codetable">slot[1].smu[1].source.output = 1</p>
+<p class="codetable">print(slot[1].smu[1].source.limitni)</p>
+<p class="codetable">print(slot[1].smu[1].source.activelimitni)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Might return</p>
+<p class="tablebodytext"><code class="monospace">-1e-6</code><br><code class="monospace">-10e-3</code></p>
+<p class="tablebodytext">This example sets the asymmetric positive and negative limits to 100 mA and -1 uA, respectively. The starting source limit range is automatically set to 100 mA. Sets the source level to 50 mA and turns the source output on. Printing the set negative source limit returns the user set value of -100 uA (-1e-6). Printing the active negative limit returns 10 % of the current source limit range, or -10 mA (-10e-3).</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand"><a id="h307605" class="jump" title="slot[Z].smu[X].source.activelimitpY" href="307602.htm" target="_self">slot[Z].smu[X].source.activelimitpY</a></p>
+<p class="listcommand"><a id="h110857" class="jump" title="slot[Z].smu[X].source.limitnY" href="110849.htm" target="_self">slot[Z].smu[X].source.limitnY</a></p>
+<p class="listcommand"><a id="h110855" class="jump" title="slot[Z].smu[X].source.limitpY" href="110848.htm" target="_self">slot[Z].smu[X].source.limitpY</a></p>
+
+</body>
+</html>

@@ -16,6 +16,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
     Security -- in case of vulnerabilities.
 -->
 
+## [0.19.5]
+ 
+### Added
+- Added MSMU200-2 module webhelp documents
+
+### Changed
+- Updated latest command set manual for MPSU50-2ST and MSMU60-2
+
 ## [0.19.4]
  
 ### Added

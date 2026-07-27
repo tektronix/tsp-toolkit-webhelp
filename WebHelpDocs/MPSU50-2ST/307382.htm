@@ -1,0 +1,96 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> slot[Z].psu[X].source.slewrate.risev </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('307382')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="307383.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="307381.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t307382" class="heading2-icl">slot[Z].psu[X].source.slewrate.risev</h2>
+<p class="bodyzero">This attribute sets the rising voltage source slew rate.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tableheadingsmall">Type</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Affected by</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tableheadingsmall">Where saved</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tableheadingsmall">Default value</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #C0C0C0;" width="86"><p class="tablebodytextsmall">Attribute (RW)</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Module reset</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="144"><p class="tablebodytextsmall">Configuration list index</p>
+</td>
+<td style="border:2px solid #C0C0C0;" width="178"><p class="tablebodytextsmall">10 kV per second</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax"><em class="emphasis">value</em> = slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].source.slewrate.risev</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].psu[<span class="monospaceitalic">X</span>].source.slewrate.risev = <span class="monospaceitalic">value</span></p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">value</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The slew rate in volts per second, 1 V to 10 kV</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">Z</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Module slot number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">Module channel number</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Details</p>
+<p class="iclbody">This attribute configures the rising slew rate of the voltage source in volts per second. The rate can be set to any value between 1 V per second and 10 kV per second.</p>
+<p class="commandsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">slot[1].psu[1].source.slewrate.risev = 5.0</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">This example sets the rising slew rate to 5 V per second for channel 1 of the module in slot 1.</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand"><a id="h107831" class="jump" title="slot[Z].psu[X].source.levelv" href="107237.htm" target="_self">slot[Z].psu[X].source.levelv</a></p>
+<p class="listcommand"><a id="h116745" class="jump" title="slot[Z].psu[X].source.output" href="107239.htm" target="_self">slot[Z].psu[X].source.output</a></p>
+<p class="listcommand"><a id="h307385" class="jump" title="slot[Z].psu[X].source.slewrate.fallv" href="307383.htm" target="_self">slot[Z].psu[X].source.slewrate.fallv</a></p>
+<p class="listcommand"><a id="h307387" class="jump" title="slot[Z].psu[X].source.slewrate.v" href="307381.htm" target="_self">slot[Z].psu[X].source.slewrate.v</a></p>
+
+</body>
+</html>
