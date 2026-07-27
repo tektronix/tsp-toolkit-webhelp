@@ -25,11 +25,11 @@
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,11 +46,11 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">channel)</span></p>
-<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">channel, count)</span></p>
-<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><span class="monospaceitalic">channelList</span><code class="monospace">})</code></p>
-<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><span class="monospaceitalic">channelList</span><code class="monospace">}, </code><span class="monospaceitalic">count</span><code class="monospace">)</code></p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">channel)</span></p>
+<p class="commandsyntax"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, </code><span class="monospaceitalic">channel, count)</span></p>
+<p class="commandsyntax"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><span class="monospaceitalic">channelList</span><code class="monospace">})</code></p>
+<p class="commandsyntax"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.addblock.measureoverlapped(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, {</code><span class="monospaceitalic">channelList</span><code class="monospace">}, </code><span class="monospaceitalic">count</span><code class="monospace">)</code></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -74,7 +74,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">channel</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Channel to make the measurement on</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Channel to make the measurement on; see <strong class="specialbold">Details</strong></p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -86,22 +86,24 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">channelList</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Table of channels to take measurements on; for example:</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Table of channels to make measurements on; for example:</p>
 <p class="tablebodytext"><code class="monospace">{channel1, channel2,...}</code>; see <strong class="specialbold">Details</strong></p>
 </td>
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
+<p class="commandsubheading">Details</p>
 <p class="bodytext">This command is used only with SMU instruments.</p>
 <p class="bodytext">This block triggers measurements based on the measure function that is selected when the trigger model is initiated. When trigger model execution reaches this block:</p>
-<ul class="listbullet"><li class="listbullet">The instrument begins making measurements</li><li class="listbullet">The instrument processes the reading and places it into the specified reading buffer. If you are defining a reading buffer, you must create it before you define this block</li></ul><p class="bodytext">You can specify one or more channels for the measurement to run on using <span class="monospaceitalic">channelList</span>. All measurements run on on all specified channels at the same time, plus or minus 500 ns.</p>
+<ul class="listbullet"><li class="listbullet">The instrument begins making measurements</li><li class="listbullet">The instrument processes the reading and places it into the specified reading buffer. In the trigger model, the reading buffer must be specified in the slot[Z].smu[X].trigger.measureY() or slot[Z].psu[X].trigger.measureY() measurement configuration commands. New reading buffers must be created before these commands are called.</li></ul><p class="bodytext">You can specify one or more channels for the measurement to run on using <span class="monospaceitalic">channelList</span>. All measurements run on all specified channels at the same time, plus or minus 500 ns.</p>
+<p class="iclbody">The channels are specified as either integers or slot notation <code class="monospace">Z00X</code>, where <code class="monospace">Z</code> is the slot number and <code class="monospace">X</code> is the channel number. For example, channel 1 on slot&nbsp;1 is specified as either <code class="monospace">1</code> or <code class="monospace">1001</code>.</p>
 <p class="iclbody">All channels must be present on the same module running the trigger model. Only one measure overlapped block may exist on a channel; there may be no other measure or measure overlapped blocks for that channel.</p>
-<p class="iclbody">When running the trigger model with the measure overlapped block, overlapped measurements can only be taken with source autoranging turned off.  To turn the source autoranging off, set the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.autorange</code><span class="monospaceitalic">Y</span> attribute to <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFF</code>.</p>
-<p class="iclbody">The source limit must be fixed during the running of the trigger model, and it cannot be altered by the config list.</p>
+<p class="iclbody">The channels are specified as either integers or slot notation <code class="monospace">Z00X</code>, where <code class="monospace">Z</code> is the slot number and <code class="monospace">X</code> is the channel number. For example, channel 1 on slot 1 is specified as either <code class="monospace">1</code> or <code class="monospace">1001</code>.</p>
+<p class="iclbody">When running the trigger model with the measure overlapped block, overlapped measurements can only be made with source autoranging turned off. To turn the source autoranging off, set the <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].source.autorange</code><span class="monospaceitalic">Y</span> attribute to <code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].smu[</code><span class="monospaceitalic">X</span><code class="monospace">].OFF</code>.</p>
+<p class="iclbody">The source limit must be fixed during the running of the trigger model, and it cannot be altered by the configuration list.</p>
 <p class="iclbody">Trigger models containing a measure overlapped block cannot also contain a branch on event block.</p>
 <p class="iclbody">If any of the above items are incorrectly configured, then the <code class="monospace">slot[z].smu[x].trigger.model.initiate()</code> function generates an error.</p>
-<p class="iclsubheading">Example</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -145,9 +147,9 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Trigger model diagram</p>
-<p class="magicfigurecenter"><img id="f133336" src="mp5000_triggermodel_measureoverlapped_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_MeasureOverlapped" height="527" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
-<p class="iclsubheading">Also see</p>
+<p class="commandsubheading">Trigger model diagram</p>
+<p class="bodytext"><img id="f133336" src="mp5000_triggermodel_measureoverlapped_lr.png" class="linkedimagetemplatenocaption" alt="MP5000_TriggerModel_MeasureOverlapped" height="392" width="120" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="commandsubheading">Also see</p>
 <p class="listcommand">Measure overlapped block</p>
 <p class="listcommand">slot[Z].smu[X].source.autorangeY</p>
 <p class="listcommand">slot[Z].smu[X].source.limitnY</p>

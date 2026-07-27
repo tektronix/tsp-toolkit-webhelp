@@ -25,11 +25,11 @@
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,8 +46,8 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.</code>addblock.reset.branch.counter<code class="monospace">(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">resetBranchCountBlockName</span><code class="monospace">&quot;)</code></p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.</code>addblock.reset.branch.counter<code class="monospace">(&quot;</code><span class="monospaceitalic">triggerModelName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">blockName</span><code class="monospace">&quot;, &quot;</code><span class="monospaceitalic">resetBranchCountBlockName</span><code class="monospace">&quot;)</code></p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -59,7 +59,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="216"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Name of the trigger model to which the block will be added</p>
+<td style="border:1px solid #C0C0C0;" width="384"><p class="tablebodytext">Name of the trigger model to which the block is added</p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -76,9 +76,9 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
+<p class="commandsubheading">Details</p>
 <p class="iclbody">This command defines a trigger model building block that resets the count of the branch counter block specified by <span class="monospaceitalic">resetBranchCountBlockName</span>.</p>
-<p class="iclsubheading">Example</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -87,7 +87,8 @@
 <p class="codetable">&nbsp;</p>
 <p class="codetable">-- Create the trigger model.</p>
 <p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
-<p class="codetable">slot[1].trigger.model.addblock.reset.branch.counter(&quot;myTM&quot;, &quot;resetCount&quot;, &quot;branchCounter&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.reset.branch.counter(&quot;myTM&quot;, &quot;resetCount&quot;,</p>
+<p class="codetable">&quot;branchCounter&quot;)</p>
 <p class="codetable">slot[1].trigger.model.addblock.branch.always(&quot;myTM&quot;, &quot;&quot;, &quot;branchCounter&quot;)</p>
 <p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;myTM&quot;, &quot;step&quot;, 1)</p>
 <p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
@@ -114,11 +115,12 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Trigger model diagram</p>
-<p class="magicfigurecenter"><img id="f133338" src="mp5000_triggermodel_resetbranchcounter_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_ResetBranchCounter.png" height="552" width="145" vspace="0" hspace="0" align="bottom" border="0"></p>
-<p class="iclsubheading">Also see</p>
+<p class="commandsubheading">Trigger model diagram</p>
+<p class="bodytext"><img id="f133338" src="mp5000_triggermodel_resetbranchcounter_lr.png" class="linkedimagetemplatenocaption" alt="MP5000_TriggerModel_ResetBranchCounter.png" height="601" width="178" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="commandsubheading">Also see</p>
 <p class="listcommand">Reset branch count block</p>
 <p class="listcommand"><a id="h115837" class="jump" title="slot[Z].trigger.model.addblock.branch.counter()" href="114961.htm" target="_self">slot[Z].trigger.model.addblock.branch.counter()</a></p>
+<a name="o279474"></a>
 
 </body>
 </html>

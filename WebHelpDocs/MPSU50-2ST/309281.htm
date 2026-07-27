@@ -1,0 +1,118 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> slot[Z].bank[X].meminfo() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('309281')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="116040.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="116043.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t309281" class="heading2-icl">slot[Z].bank[X].meminfo()</h2>
+<p class="bodyzero">This function returns memory information for a specified module bank.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax"><span class="monospaceitalic">memory </span>= slot[<span class="monospaceitalic">Z</span>].bank[<span class="monospaceitalic">X</span>].meminfo()</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">memory</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Contains information about the memory usage for the specified memory bank</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">Z</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Module slot number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">X</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Module memory bank number</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Details</p>
+<p class="iclbody">Use this command to retrieve a table of the allocated or used memory for a module bank.</p>
+<p class="iclbody">The returned table contains the following fields:</p>
+<ul class="listbullet"><li class="listbullet"><code class="monospace">total</code>: The total memory available for allocation</li><li class="listbullet"><code class="monospace">readingbuffer</code>: Memory in use by reading buffers</li><li class="listbullet"><code class="monospace">used:</code> The total memory in use</li><li class="listbullet"><code class="monospace">configlist</code>: Memory in use by configuration lists</li></ul><p class="iclbody">PSU modules use one bank for both channels (bank <code class="monospace">1</code>).</p>
+<p class="commandsubheading">Example 1</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">memory = slot[1].bank[1].meminfo()</p>
+<p class="codetable">for i, value in pairs(memory) do</p>
+<p class="codetable">print(i, value)end</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Queries and retrieves all lists of memory values on bank 1 of the module installed in slot 1.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">total             1.02400e+05</p>
+<p class="codetable">readingbuffer     4.35200e+03</p>
+<p class="codetable">used              4.35200e+03</p>
+<p class="codetable">configlist        0.00000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Example 2</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #E0E0E0">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #E0E0E0;" width="600"><p class="codetable">memory = slot[1].bank[1].meminfo()</p>
+<p class="codetable">print(memory.used)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #E0E0E0;" width="600"><p class="tablebodytext">Retrieves the total amount of memory used for bank 1 of the module installed in slot 1.</p>
+<p class="tablebodytext">Output:</p>
+<p class="codetable">used              4.35200e+03</p>
+<p class="codetable">configlist        0.00000e+00</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand">Memory considerations for the runtime environment</p>
+
+</body>
+</html>

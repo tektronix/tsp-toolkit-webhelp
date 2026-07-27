@@ -1,0 +1,123 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> slot[Z].trigger.model.unload() </title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta name="Generator" content="Author-it">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="16408.css">
+<script language="javascript" type="text/javascript" charset="UTF-8" src="dhtml_toc.js"></script>
+</head>
+<body onload="if (isTOCLoaded()) {expand('18079');highlight('296821')}" text="#000000" link="#0000A0" alink="#008000" vlink="#FF0000"><table class="relatedtopics aboveheading" cellpadding="0" cellspacing="0" border="0">
+<tr valign="top">
+<td width= "18">
+<p class="bodytext"><a href="115506.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+</tr>
+</table>
+<h2 id="t296821" class="heading2-icl">slot[Z].trigger.model.unload()</h2>
+<p class="bodyzero">This function unloads a trigger model.</p>
+<table class="tableintopic" width="672" cellpadding="2" cellspacing="0" border="2" style="border-collapse:collapse; border:2px solid #D3D3D3">
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tableheadingsmall">Type</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:2px solid #D3D3D3;" width="86"><p class="tablebodytextsmall">Function</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="120"><p class="tablebodytextsmall">Yes</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="144"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+<td style="border:2px solid #D3D3D3;" width="178"><p class="tablebodytextsmall">&nbsp;</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].trigger.model.unload(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;)</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="594" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">Z</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Module slot number</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">triggerModelName</span></p>
+</td>
+<td style="border:1px solid #C0C0C0;" width="455"><p class="tablebodytext">Name of the trigger model to unload</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Details</p>
+<p class="iclbody">This function unloads a previously-loaded trigger model and releases the protections for all channels used. After unloading, the channels can be reconfigured and the trigger model definition can be edited.</p>
+<p class="iclbody">A trigger model is automatically unloaded if deleted or if a running trigger model is aborted.</p>
+<p class="commandsubheading">Example</p>
+<p class="iclspacing"></p>
+<table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
+<tr align="left" valign="top">
+<td bgcolor="#E0E0E0" style="border:1px solid #D3D3D3;" width="600"><p class="codetable">-- Configure the sweep</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].smu[1].trigger.source.linearv(0, 5, 10)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Create the trigger model</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].trigger.model.create(&quot;myTM&quot;)</p>
+<p class="codetable">slot[1].trigger.model.addblock.source.action.step(&quot;myTM&quot;, &quot;step&quot;, 1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.delay.constant(&quot;myTM&quot;, &quot;&quot;, 0.1)</p>
+<p class="codetable">slot[1].trigger.model.addblock.branch.counter(&quot;myTM&quot;, &quot;&quot;, &quot;step&quot;, 10)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn on the output before the trigger model is loaded</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].smu[1].source.levelv = 0</p>
+<p class="codetable">slot[1].smu[1].source.output = slot[1].smu[1].ON</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Load the trigger model</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].trigger.model.load(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Initiate the trigger model</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].trigger.model.initiate(&quot;myTM&quot;)</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Wait for the trigger model to complete</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">waitcomplete()</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Unload the trigger model</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].trigger.model.unload(&quot;myTM&quot;) </p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">-- Turn off the output.</p>
+<p class="codetable">&nbsp;</p>
+<p class="codetable">slot[1].smu[1].source.output = slot[1].smu[1].OFF</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates a trigger model being loaded before being executed and then unloaded once it completes</p>
+</td>
+</tr>
+
+</table>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand">Load or unload a trigger model</p>
+<p class="listcommand"><a id="h132961" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort()</a></p>
+<p class="listcommand"><a id="h132960" class="jump" title="slot[Z].trigger.model.initiate()" href="114959.htm" target="_self">slot[Z].trigger.model.initiate()</a></p>
+<p class="listcommand"><a id="h296841" class="jump" title="slot[Z].trigger.model.state()" href="115506.htm" target="_self">slot[Z].trigger.model.state()</a></p>
+<p class="listcommand"><a id="h296842" class="jump" title="slot[Z].trigger.model.unload()" href="296821.htm" target="_self">slot.[Z].trigger.model.unload()</a></p>
+
+</body>
+</html>

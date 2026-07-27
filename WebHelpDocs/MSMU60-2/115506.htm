@@ -13,6 +13,8 @@
 <tr valign="top">
 <td width= "18">
 <p class="bodytext"><a href="115826.htm" target="_self"><img id="f125" src="4200a_lc_previous_button.png" class="linkedpngtemplate4200a-nocaption" alt="Previous Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
+<td width= "18">
+<p class="bodytext"><a href="296821.htm" target="_self"><img id="f124" src="4200a_lc_next_button.png" class="linkedpngtemplate4200a-nocaption" alt="Next Icon" height="23" width="74" vspace="0" hspace="0" align="bottom" border="0"></a></p></td>
 </tr>
 </table>
 <h2 id="t115506" class="heading2-icl">slot[Z].trigger.model.state()</h2>
@@ -23,11 +25,11 @@
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -44,15 +46,15 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode"><span class="monospaceitalic">status</span> = slot[<span class="monospaceitalic">Z</span>].trigger.model.state(<span class="monospaceitalic">&quot;triggerModelName&quot;</span>)</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax"><span class="monospaceitalic">status</span> = slot[<span class="monospaceitalic">Z</span>].trigger.model.state(<span class="monospaceitalic">&quot;triggerModelName&quot;</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="tablebodytext"><span class="monospaceitalic">status</span></p>
 </td>
 <td style="border:1px solid #C0C0C0;" width="461"><p class="tablebodytext">The status of the trigger model:</p>
-<ul class="tablelistbullet"><li class="tablelistbullet"><code class="monospace">STATE_ABORTED</code></li><li class="tablelistbullet"><code class="monospace">STATE_ABORTING</code></li><li class="tablelistbullet"><code class="monospace">STATE_BUILDING</code></li><li class="tablelistbullet"><code class="monospace">STATE_EMPTY</code></li><li class="tablelistbullet"><code class="monospace">STATE_FAILED</code></li><li class="tablelistbullet"><code class="monospace">STATE_IDLE</code></li><li class="tablelistbullet"><code class="monospace">STATE_RUNNING</code></li></ul></td>
+<ul class="tablelistbulletsmall"><li class="tablelistbulletsmall"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.STATE_ABORTED</code></li><li class="tablelistbulletsmall"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.STATE_ABORTING</code></li><li class="tablelistbulletsmall"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.STATE_BUILDING</code></li><li class="tablelistbulletsmall"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.STATE_EMPTY</code></li><li class="tablelistbulletsmall"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.STATE_FAILED</code></li><li class="tablelistbulletsmall"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.STATE_IDLE</code></li><li class="tablelistbulletsmall"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.STATE_LOADED</code></li><li class="tablelistbulletsmall"><code class="monospace">slot[</code><span class="monospaceitalic">Z</span><code class="monospace">].trigger.model.STATE_RUNNING</code></li></ul></td>
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="139"><p class="codetable"><span class="monospaceitalic">Z</span></p>
@@ -68,10 +70,10 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
+<p class="commandsubheading">Details</p>
 <p class="iclbody">This function returns the state of the trigger model. The instrument checks the state of a trigger model as the model executes. A trigger model name is required; an empty set of parentheses will cause an error.</p>
 <p class="iclbody">The trigger model states are:</p>
-<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Aborted:</strong> The trigger model is stopped</li><li class="listbullet"><strong class="specialbold">Aborting:</strong> The trigger model is stopping</li><li class="listbullet"><strong class="specialbold">Building:</strong> Blocks have been added</li><li class="listbullet"><strong class="specialbold">Empty:</strong> The trigger model is created, but no blocks are defined</li><li class="listbullet"><strong class="specialbold">Failed:</strong> The trigger model is stopped because of an error</li><li class="listbullet"><strong class="specialbold">Idle:</strong> The trigger model has completed and is now stopped</li><li class="listbullet"><strong class="specialbold">Running:</strong> The trigger model is running</li></ul><p class="iclsubheading">Example</p>
+<ul class="listbullet"><li class="listbullet"><strong class="specialbold">Aborted:</strong> The trigger model is stopped</li><li class="listbullet"><strong class="specialbold">Aborting:</strong> The trigger model is stopping</li><li class="listbullet"><strong class="specialbold">Building:</strong> The trigger model is created but has not run since new blocks were added</li><li class="listbullet"><strong class="specialbold">Empty:</strong> The trigger model is created, but no blocks are defined</li><li class="listbullet"><strong class="specialbold">Failed:</strong> The trigger model is stopped because of an error</li><li class="listbullet"><strong class="specialbold">Idle:</strong> The trigger model has completed and is now stopped</li><li class="listbullet"><strong class="specialbold">Loaded:</strong> The trigger model is loaded and has reserved hardware resources for rapid initiates</li><li class="listbullet"><strong class="specialbold">Running:</strong> The trigger model is running</li></ul><p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="0" style="border-collapse:collapse">
 <tr align="left" valign="top">
@@ -90,13 +92,16 @@
 </tr>
 <tr align="left" valign="top">
 <td style="border:1px solid #D3D3D3;" width="600"><p class="tablebodytext">This example demonstrates how to create a trigger model, check its state, add a delay block, and check its state again.</p>
+<p class="tablebodytext">After the trigger model is created, the state of the trigger model returns <code class="monospace">STATE_EMPTY</code>. After the delay constant block is added, the state of the trigger model returns <code class="monospace">STATE_BUILDING</code>. </p>
 </td>
 </tr>
 
 </table>
-<p class="iclsubheading">Also see</p>
+<p class="commandsubheading">Also see</p>
 <p class="listcommand"><a id="h132961" class="jump" title="slot[Z].trigger.model.abort()" href="114956.htm" target="_self">slot[Z].trigger.model.abort()</a></p>
 <p class="listcommand"><a id="h132960" class="jump" title="slot[Z].trigger.model.initiate()" href="114959.htm" target="_self">slot[Z].trigger.model.initiate()</a></p>
+<p class="listcommand"><a id="h296843" class="jump" title="slot[Z].trigger.model.load()" href="296820.htm" target="_self">slot[Z].trigger.model.load()</a></p>
+<p class="listcommand"><a id="h296842" class="jump" title="slot[Z].trigger.model.unload()" href="296821.htm" target="_self">slot[Z].trigger.model.unload()</a></p>
 
 </body>
 </html>

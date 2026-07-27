@@ -25,11 +25,11 @@
 </th>
 <th style="border:1px solid #D3D3D3;" width="120"><p class="tableheadingsmall">TSP-Link accessible</p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Affected by</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Affected by</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheading"><span class="grayedout">Where saved</span></p>
+<th style="border:1px solid #D3D3D3;" width="144"><p class="tableheadingsmall"><span class="grayedout">Where saved</span></p>
 </th>
-<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheading"><span class="grayedout">Default value</span></p>
+<th style="border:1px solid #D3D3D3;" width="178"><p class="tableheadingsmall"><span class="grayedout">Default value</span></p>
 </th>
 </tr>
 <tr align="left" valign="top">
@@ -46,9 +46,9 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Usage</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.configlist.recall(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">channel</span>, &quot;<span class="monospaceitalic">configlistName</span>&quot;)</p>
-<p class="iclcode">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.configlist.recall(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">channel</span>, &quot;<span class="monospaceitalic">configlistName</span>&quot;, <span class="monospaceitalic">index</span>)</p>
+<p class="commandsubheading">Usage</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.configlist.recall(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">channel</span>, &quot;<span class="monospaceitalic">configlistName</span>&quot;)</p>
+<p class="commandsyntax">slot[<span class="monospaceitalic">Z</span>].trigger.model.addblock.configlist.recall(&quot;<span class="monospaceitalic">triggerModelName</span>&quot;, &quot;<span class="monospaceitalic">blockName</span>&quot;, <span class="monospaceitalic">channel</span>, &quot;<span class="monospaceitalic">configlistName</span>&quot;, <span class="monospaceitalic">index</span>)</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
@@ -72,7 +72,7 @@
 <tr align="left" valign="top">
 <td style="border:1px solid #C0C0C0;" width="168"><p class="codetable"><span class="monospaceitalic">channel</span></p>
 </td>
-<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Module channel number</p>
+<td style="border:1px solid #C0C0C0;" width="432"><p class="tablebodytext">Module channel number; see <strong class="specialbold">Details</strong></p>
 </td>
 </tr>
 <tr align="left" valign="top">
@@ -89,15 +89,16 @@
 </tr>
 
 </table>
-<p class="iclsubheading">Details</p>
+<p class="commandsubheading">Details</p>
 <p class="iclbody">When the trigger model reaches a configuration list recall block, the settings in the specified configuration list are recalled.</p>
 <p class="iclbody">You can recall a specific set of configuration settings in the configuration list by specifying its index.</p>
 <p class="iclbody">The configuration list must be defined before you can use this block. If one of the indexes for the configuration list changes (because of an item being added or removed from a configuration list), verify that the trigger model count is still accurate.</p>
-<p class="iclsubheading">Example</p>
+<p class="iclbody">The channels are specified as either integers or slot notation <code class="monospace">Z00X</code>, where <code class="monospace">Z</code> is the slot number and <code class="monospace">X</code> is the channel number. For example, channel 1 on slot 1 is specified as either <code class="monospace">1</code> or <code class="monospace">1001</code>.</p>
+<p class="commandsubheading">Example</p>
 <p class="iclspacing"></p>
 <table class="tableintopic" width="600" cellpadding="2" cellspacing="0" border="1" style="border-collapse:collapse; border:1px solid #C0C0C0">
 <tr align="left" valign="top">
-<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- Create and store a 3-point configuration list.</p>
+<td bgcolor="#E0E0E0" style="border:1px solid #C0C0C0;" width="600"><p class="codetable">-- Create and store a configuration list with 3 indexes.</p>
 <p class="codetable">slot[1].psu[1].configlist.create(&quot;myConfigList&quot;)</p>
 <p class="codetable">slot[1].psu[1].source.levelv = 1.0</p>
 <p class="codetable">slot[1].psu[1].configlist.store(&quot;myConfigList&quot;)</p>
@@ -130,21 +131,20 @@
 </td>
 </tr>
 <tr align="left" valign="top">
-<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This example demonstrates how to use the configlist.recall() trigger model block to cycle through a 3-point configuration list.</p>
-<p class="tablebodytext">The channel output steps through two voltage levels (1.0 V and 3.0 V) using two configlist.recall blocks with delays between each step.</p>
+<td style="border:1px solid #C0C0C0;" width="600"><p class="tablebodytext">This example demonstrates how to use the <code class="monospace">configlist.recall()</code> trigger model block to cycle through a configuration list with 3 indexes.</p>
+<p class="tablebodytext">The channel output steps through two voltage levels (1.0 V and 3.0 V) using two <code class="monospace">configlist.recall()</code> blocks with delays between each step.</p>
 </td>
 </tr>
 
 </table>
-<p class="iclsubheading">Trigger model diagram</p>
-<p class="magicfigurecenter"><img id="f133349" src="mp5000_triggermodel_configlistrecall_lr.png" class="linkedepsandpngtemplatenofigurenumberortitle" alt="MP5000_TriggerModel_ConfiglistRecall.png" height="438" width="122" vspace="0" hspace="0" align="bottom" border="0"></p>
-<p class="iclsubheading">Also see</p>
-<p class="listcommand">Config list recall block</p>
+<p class="commandsubheading">Trigger model diagram</p>
+<p class="bodytext"><img id="f133349" src="mp5000_triggermodel_configlistrecall_lr.png" class="linkedimagetemplatenocaption" alt="MP5000_TriggerModel_ConfiglistRecall.png" height="315" width="123" vspace="0" hspace="0" align="bottom" border="0"></p>
+<p class="commandsubheading">Also see</p>
+<p class="listcommand">Configuration list recall block</p>
 <p class="listcommand"><a id="h116800" class="jump" title="slot[Z].trigger.model.addblock.configlist.next()" href="115499.htm" target="_self">slot[Z].trigger.model.addblock.configlist.next()</a></p>
 <p class="listcommand"><a id="h116801" class="jump" title="slot[Z].trigger.model.addblock.configlist.prev()" href="115500.htm" target="_self">slot[Z].trigger.model.addblock.configlist.prev()</a></p>
-<p class="listcommand"></p>
-<p class="listcommand"><strong class="specialbold">Config list commands</strong></p>
-<p class="listcommand"></p>
+<p class="bodytext"></p>
+<p class="bodytext"><strong class="specialbold">Configuration list commands</strong></p>
 <p class="listcommand">slot[Z].psu[X].configlist.create()</p>
 <p class="listcommand">slot[Z].smu[X].configlist.create()</p>
 <p class="listcommand">slot[Z].psu[X].configlist.delete()</p>
